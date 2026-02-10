@@ -21,17 +21,22 @@ A visual documentation system for Kubernetes APIs with release notes, KEP integr
 Upstream Sources → Pipeline (Python) → Parquet → DuckDB WASM → React UI
 ```
 
+## Prerequisites
+
+- [just](https://github.com/casey/just) — command runner used for all project tasks
+- [Bun](https://bun.sh) — JavaScript runtime for the web frontend
+- [uv](https://docs.astral.sh/uv/) — Python package manager for the data pipeline
+
+Run `just` to see all available commands.
+
 ## Quick Start
 
 ```bash
-# Install Bun (if not already installed)
-curl -fsSL https://bun.sh/install | bash
-
 # Install dependencies
 bun install
 
 # Start development server
-bun run dev
+just web dev
 ```
 
 Open http://localhost:5173
@@ -41,7 +46,7 @@ Open http://localhost:5173
 ### Development Build
 
 ```bash
-bun run build
+just web build
 ```
 
 Output goes to `packages/web/dist/`
@@ -51,7 +56,7 @@ Output goes to `packages/web/dist/`
 Build a self-contained HTML file with all data embedded (~2.85 MB):
 
 ```bash
-bun run build:single
+just web build:single
 ```
 
 Output: `k8s-api-explorer.html` in the repo root. Opens directly in a browser without a server.
@@ -63,16 +68,14 @@ The pipeline fetches Kubernetes data from multiple upstream sources and generate
 ### Quick Start
 
 ```bash
-cd pipeline
-
 # Launch the interactive TUI (recommended)
-uv run k8s-pipeline tui
+just k8s-pipeline tui
 
 # Or process a release via CLI
-uv run k8s-pipeline release process 1.35
+just k8s-pipeline release process 1.35
 
 # Export to Parquet (required for UI)
-uv run k8s-pipeline export parquet
+just k8s-pipeline export parquet
 ```
 
 ### Pipeline Documentation

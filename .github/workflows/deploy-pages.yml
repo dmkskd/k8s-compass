@@ -37,7 +37,7 @@ jobs:
       - name: Prepare pages artifact
         run: |
           mkdir -p _site
-          cp packages/web/dist/k8s-api-explorer.html _site/index.html
+          cp k8s-api-explorer.html _site/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
