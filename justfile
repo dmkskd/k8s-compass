@@ -3,6 +3,12 @@
 default:
     @just --list
 
+# ── Setup ─────────────────────────────────────────────────────────────────────
+
+# Install all dependencies
+install:
+    bun install
+
 # ── Web ──────────────────────────────────────────────────────────────────────
 
 # Run bun commands in packages/web (e.g., just web dev, just web build)

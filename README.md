@@ -36,8 +36,8 @@ Run `just` to see all available commands.
 git clone https://github.com/your-org/k8s-compass.git
 cd k8s-compass
 
-# 2. Install frontend dependencies
-bun install
+# 2. Install dependencies
+just install
 
 # 3. Generate parquet data (converts pipeline JSON → parquet for the UI)
 just k8s-pipeline export parquet
