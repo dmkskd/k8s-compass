@@ -1,0 +1,84 @@
+{
+  "content": [
+    {
+      "url": "app://deep-dive/cpu-numa-low-latency",
+      "title": "CPU Affinity, NUMA Topology & Resource Management",
+      "type": "deep-dive",
+      "source": "k8s-compass",
+      "isOfficial": true,
+      "publishedDate": "2025-01-15",
+      "author": "K8s Compass",
+      "summary": "Optimizing Kubernetes for Low-Latency Workloads",
+      "description": "Master CPU Manager, Topology Manager, Memory Manager, and Device Manager for high-performance workloads requiring predictable latency. Interactive guide with 3D visualizations, decision flowcharts, and live data from the Kubernetes API.",
+      "labels": [
+        "cpu-manager",
+        "topology-manager",
+        "numa",
+        "low-latency",
+        "guaranteed-qos",
+        "hugepages",
+        "device-plugin",
+        "scheduling",
+        "in-place-resize",
+        "smt",
+        "hyperthreading",
+        "deep-dive"
+      ],
+      "attrs": {
+        "deepDiveId": "cpu-numa-low-latency",
+        "status": "wip",
+        "estimatedReadTime": 45,
+        "relatedFeatureGates": [
+          "CPUManager",
+          "TopologyManager",
+          "MemoryManager",
+          "CPUManagerPolicyOptions",
+          "TopologyManagerPolicyOptions",
+          "InPlacePodVerticalScaling"
+        ]
+      },
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3570"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-693"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1769"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2625"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4540"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2902"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4800"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3327"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4176"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        }
+      ]
+    }
+  ]
+}

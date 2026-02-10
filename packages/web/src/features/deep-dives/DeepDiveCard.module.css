@@ -1,0 +1,254 @@
+/**
+ * DeepDiveCard Styles
+ *
+ * Styled consistently with regular content cards in LearnView.
+ * Uses the same base styles with a "deep dive" content type badge.
+ */
+
+/* =============================================================================
+   Card Base - matches .contentCard in LearnView.module.css
+   ============================================================================= */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: var(--card-hover-bg);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.card:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.card.expanded {
+  background: var(--card-hover-bg);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* =============================================================================
+   Card Header - matches .cardHeader in LearnView.module.css
+   ============================================================================= */
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contentType {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #f472b6; /* pink for deep dives */
+}
+
+/* Status Badge */
+.statusBadge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  margin-left: auto;
+}
+
+.statusDraft {
+  background: rgba(107, 114, 128, 0.2);
+  color: rgba(156, 163, 175, 0.9);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.statusWip {
+  background: rgba(245, 158, 11, 0.15);
+  color: rgba(251, 191, 36, 0.95);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.statusReview {
+  background: rgba(59, 130, 246, 0.15);
+  color: rgba(96, 165, 250, 0.95);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* =============================================================================
+   Title - matches .cardTitle in LearnView.module.css
+   ============================================================================= */
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-star);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.card:hover .cardTitle {
+  color: rgba(99, 102, 241, 1);
+}
+
+/* =============================================================================
+   Summary/Subtitle - matches .cardSummary in LearnView.module.css
+   ============================================================================= */
+
+.cardSummary {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =============================================================================
+   Description
+   ============================================================================= */
+
+.cardDescription {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expanded .cardDescription {
+  -webkit-line-clamp: unset;
+}
+
+/* =============================================================================
+   Labels - matches .cardLabels in LearnView.module.css
+   ============================================================================= */
+
+.cardLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.cardLabel {
+  padding: 0.125rem 0.375rem;
+  background: var(--badge-bg);
+  border: none;
+  border-radius: 3px;
+  color: var(--badge-text);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cardLabel:hover {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.cardLabel.active {
+  background: rgba(99, 102, 241, 0.4);
+  color: var(--color-star);
+}
+
+.moreLabels {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* =============================================================================
+   Linked Items - matches .linkedItems in LearnView.module.css
+   ============================================================================= */
+
+.linkedItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  padding-top: 0.5rem;
+}
+
+.linkedLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.kepBadge {
+  font-size: 0.7rem;
+  padding: 0.125rem 0.375rem;
+  background: rgba(245, 158, 11, 0.15);
+  color: rgba(245, 158, 11, 0.9);
+  border-radius: 3px;
+}
+
+/* =============================================================================
+   Footer - matches .cardFooter in LearnView.module.css
+   ============================================================================= */
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--divider);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.metaDot {
+  color: var(--divider);
+}
+
+.cardSource {
+  color: var(--text-muted);
+}
+
+.cardDate {
+  color: var(--text-muted);
+}
+
+.expandHint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.card:hover .expandHint {
+  color: rgba(99, 102, 241, 0.8);
+}
+
+/* =============================================================================
+   Responsive
+   ============================================================================= */
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+}

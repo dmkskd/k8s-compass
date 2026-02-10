@@ -1,0 +1,1898 @@
+[
+  {
+    "kep": "KEP-1748",
+    "kepPath": "sig-instrumentation/1748-pod-resource-metrics",
+    "title": "Expose Pod Resource Request Metrics",
+    "stage": "stable",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "metrics",
+      "scheduling",
+      "pod",
+      "capacity-planning"
+    ],
+    "description": "This KEP proposes adding a new multi-dimensional Prometheus metric, pod_resources, to expose pod resource request information such as requests, limits, and lifecycle state. The metric enables administrators to more easily monitor cluster capacity, plan resources, and detect contention without relying on high-cardinality kube-state-metrics data.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.20",
+      "beta": "1.21",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2053",
+    "kepPath": "sig-node/2053-downward-api-hugepages",
+    "title": "Downward API HugePages",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "downward-api",
+      "hugepages",
+      "resource-management",
+      "feature-gate",
+      "cgroups"
+    ],
+    "description": "This KEP adds support for exposing hugepages resource requests and limits via the Downward API, allowing pods to discover their hugepage allocations through environment variables or volume files. It introduces a feature gate (DownwardAPIHugePages) to control the API server validation and ensures kubelet support for projecting these values, improving visibility and configurability of hugepage usage in pods.",
+    "impact": "",
+    "featureGate": "DownwardAPIHugePages",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.20",
+      "beta": "1.21",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2091",
+    "kepPath": "sig-network/2091-admin-network-policy",
+    "title": "Add support for AdminNetworkPolicy resources",
+    "stage": "stable",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "security",
+      "policy",
+      "admin"
+    ],
+    "description": "This KEP introduces two new cluster\u2011scoped resources, AdminNetworkPolicy and BaselineAdminNetworkPolicy, enabling administrators to express explicit allow, deny, and pass actions for intra\u2011cluster traffic. The APIs add priority ordering, rule naming, and the ability to enforce immutable guardrails that cannot be overridden by namespace\u2011scoped NetworkPolicies.",
+    "impact": "",
+    "featureGate": "AdminNetworkPolicy",
+    "affectedKinds": [
+      "AdminNetworkPolicy",
+      "BaselineAdminNetworkPolicy"
+    ],
+    "affectedFields": [
+      "spec.priority",
+      "spec.ingress[].action",
+      "spec.ingress[].name",
+      "spec.egress[].action",
+      "spec.egress[].name"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2227",
+    "kepPath": "sig-cli/2227-kubectl-default-container",
+    "title": "kubectl default container",
+    "stage": "stable",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "annotations",
+      "pod"
+    ],
+    "description": "This KEP introduces a well\u2011known optional annotation (kubectl.kubernetes.io/default-container) that allows pod creators to specify which container should be used by default for kubectl commands such as exec, attach, cp, and logs. It improves operator experience by removing reliance on container order, especially in multi\u2011container pods with sidecars.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.21",
+      "beta": "1.24",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2413",
+    "kepPath": "sig-node/2413-seccomp-by-default",
+    "title": "Seccomp by default",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "security",
+      "seccomp",
+      "kubelet",
+      "feature-gate",
+      "runtime",
+      "pod-security"
+    ],
+    "description": "This KEP proposes enabling seccomp profiles by default for all workloads through a new feature gate (SeccompDefault) and kubelet configuration flag. When enabled, pods and containers will automatically receive the RuntimeDefault seccomp profile, improving cluster security without requiring explicit configuration from users.",
+    "impact": "",
+    "featureGate": "SeccompDefault",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.25",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2438",
+    "kepPath": "sig-network/2438-dual-stack-apiserver",
+    "title": "Dual Stack API Server",
+    "stage": "stable",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "dual-stack",
+      "networking",
+      "apiserver",
+      "service",
+      "endpointslice"
+    ],
+    "description": "This KEP enables the kube-apiserver to listen on and advertise both IPv4 and IPv6 addresses in dual\u2011stack clusters. It adds command\u2011line support for dual\u2011stack bind and advertise addresses, updates the kubernetes Service and EndpointSlice handling to be dual\u2011stack aware, and enhances InClusterConfig to prefer reachable dual\u2011stack IPs.",
+    "impact": "",
+    "featureGate": "DualStackAPIServer",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.26",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2727",
+    "kepPath": "sig-node/2727-grpc-probe",
+    "title": "Add gRPC probe to Pod.Spec.Container.{Liveness,Readiness,Startup}Probe",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "grpc",
+      "healthz",
+      "health-probe",
+      "container",
+      "node"
+    ],
+    "description": "This KEP introduces native gRPC health checking support for containers by adding a new GRPC probe type to Pod.Spec.Container.{liveness,readiness,startup}Probe. It enables the Kubelet to perform health checks over HTTP/2 without requiring users to bundle external binaries, aligning Kubernetes with widespread gRPC usage.",
+    "impact": "",
+    "featureGate": "GRPCContainerProbe",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.containers[].livenessProbe.grpc",
+      "spec.containers[].readinessProbe.grpc",
+      "spec.containers[].startupProbe.grpc"
+    ],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.24",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2804",
+    "kepPath": "sig-apps/2804-consolidate-workload-controllers-status",
+    "title": "Consolidate Workload controllers life cycle status",
+    "stage": "stable",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "workload",
+      "status",
+      "conditions",
+      "deployment",
+      "daemonset",
+      "statefulset",
+      "job"
+    ],
+    "description": "This KEP introduces a unified set of status conditions (Progressing, Complete, Failed, Available, Waiting, Running) across major workload controllers (Deployment, DaemonSet, StatefulSet, ReplicaSet, ReplicationController, Job) to provide consistent lifecycle visibility. It also adds a feature gate (ExtendedWorkloadConditions) and proposes a new .spec.progressDeadlineSeconds field for DaemonSet and StatefulSet to support failure detection.",
+    "impact": "",
+    "featureGate": "ExtendedWorkloadConditions",
+    "affectedKinds": [
+      "Deployment",
+      "DaemonSet",
+      "StatefulSet",
+      "Job",
+      "ReplicaSet",
+      "ReplicationController"
+    ],
+    "affectedFields": [
+      "status.conditions[].type",
+      "spec.progressDeadlineSeconds"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.26",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2885",
+    "kepPath": "sig-api-machinery/2885-server-side-unknown-field-validation",
+    "title": "Server Side Unknown Field Validation",
+    "stage": "stable",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "api-server",
+      "validation",
+      "schema",
+      "kubectl",
+      "feature-gate"
+    ],
+    "description": "The Server Side Unknown Field Validation KEP introduces a feature gate that allows the API server to reject create, update, and patch requests containing fields not defined in the object's schema. By adding an opt\u2011in query parameter and adjusting kubectl's --validate flag, it moves unknown\u2011field validation from the client to the server, improving consistency and reducing client\u2011side maintenance.",
+    "impact": "",
+    "featureGate": "ServerSideFieldValidation",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.25",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2896",
+    "kepPath": "sig-api-machinery/2896-openapi-v3",
+    "title": "OpenAPI V3",
+    "stage": "stable",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "openapi",
+      "apiserver",
+      "discovery",
+      "schema",
+      "versioning"
+    ],
+    "description": "This KEP introduces a new /openapi/v3 endpoint that serves OpenAPI v3 specifications for Kubernetes types, providing a lossless representation of schemas and improving transparency compared to the existing OpenAPI v2 endpoint. It also splits the schema per group\u2011version with etag support to reduce aggregation overhead and enable efficient client caching.",
+    "impact": "",
+    "featureGate": "OpenAPIV3",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.24",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2906",
+    "kepPath": "sig-cli/2906-kustomize-function-catalog",
+    "title": "Kustomize Function Catalog",
+    "stage": "stable",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kustomize",
+      "function-catalog",
+      "discovery",
+      "packaging",
+      "oci"
+    ],
+    "description": "This KEP introduces a new Catalog API kind that centralizes discovery and distribution of Kustomize functions, allowing Kustomization, Component, and Composition resources to reference functions via a standard catalog rather than explicit container references. The catalog can be sourced locally, via HTTP(S), or as OCI artifacts, simplifying function installation and enabling official extensions to be distributed as containers.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Catalog",
+      "Kustomization"
+    ],
+    "affectedFields": [
+      "spec.krmFunctions[]",
+      "spec.krmFunctions[].group",
+      "spec.krmFunctions[].names.kind",
+      "spec.krmFunctions[].description",
+      "spec.krmFunctions[].versions[]",
+      "spec.krmFunctions[].versions[].name",
+      "spec.krmFunctions[].runtime.container.image",
+      "spec.catalogs[]"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2926",
+    "kepPath": "sig-scheduling/2926-job-mutable-scheduling-directives",
+    "title": "Mutable Node Scheduling Directives for Jobs",
+    "stage": "stable",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "job",
+      "node-affinity",
+      "tolerations",
+      "queueing"
+    ],
+    "description": "This KEP proposes relaxing the immutability of a Job's pod template scheduling fields (node affinity, node selector, tolerations, annotations, and labels) for jobs that have never been unsuspended. By allowing these fields to be mutated before a job starts, higher\u2011level queue controllers can dynamically inject placement constraints, enabling more flexible batch job scheduling without altering the core job controller.",
+    "impact": "",
+    "featureGate": "JobMutableNodeSchedulingDirectives",
+    "affectedKinds": [
+      "Job"
+    ],
+    "affectedFields": [],
+    "history": {
+      "beta": "1.23",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3000",
+    "kepPath": "sig-release/3000-artifact-distribution",
+    "title": "Artifact Distribution Policy",
+    "stage": "stable",
+    "sig": "Release",
+    "category": "Release",
+    "labels": [
+      "artifact-distribution",
+      "registry",
+      "mirroring",
+      "oci-proxy",
+      "cloud-costs"
+    ],
+    "description": "The KEP defines a policy and procedure for promoting and mirroring Kubernetes container images across multiple registries and cloud providers, enabling a redirecting OCI proxy (registry.k8s.io) that routes traffic to the nearest mirror (e.g., AWS S3). This reduces egress costs and ensures global accessibility of images, especially for users behind restrictive firewalls.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.26",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3140",
+    "kepPath": "sig-apps/3140-TimeZone-support-in-CronJob",
+    "title": "TimeZone support in CronJob",
+    "stage": "stable",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "cronjob",
+      "timezone",
+      "scheduling",
+      "feature-gate",
+      "controller"
+    ],
+    "description": "This KEP introduces a new .spec.timeZone field to the CronJob API, allowing users to specify the time zone for job scheduling. By doing so, it decouples CronJob execution times from the kube\u2011controller\u2011manager's host time zone, providing more predictable and portable scheduling across clusters.",
+    "impact": "",
+    "featureGate": "CronJobTimeZone",
+    "affectedKinds": [
+      "CronJob"
+    ],
+    "affectedFields": [
+      "spec.timeZone"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3720",
+    "kepPath": "sig-release/3720-freezing-k8s-gcr-io",
+    "title": "Freezing `k8s.gcr.io` image registry",
+    "stage": "stable",
+    "sig": "Release",
+    "category": "Release",
+    "labels": [
+      "image",
+      "distribution",
+      "infra",
+      "release"
+    ],
+    "description": "The KEP proposes to freeze the legacy k8s.gcr.io image registry by stopping all new image pushes after the v1.27 release, directing all future images exclusively to the community\u2011run registry.k8s.io. This reduces infrastructure costs and encourages users to migrate to the newer, faster, and cheaper registry.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3726",
+    "kepPath": "sig-network/3726-standard-application-protocols",
+    "title": "standard-application-protocols",
+    "stage": "stable",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "service",
+      "networking",
+      "protocol"
+    ],
+    "description": "This KEP proposes to standardize the values used in the Service and Endpoint `appProtocol` field by defining a set of Kubernetes\u2011prefixed protocol names (e.g., kubernetes.io/h2c, kubernetes.io/ws, kubernetes.io/wss). The aim is to improve interoperability between implementations by providing a clear, shared naming scheme for common non\u2011IANA application protocols.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Service",
+      "Endpoints"
+    ],
+    "affectedFields": [],
+    "history": {
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3744",
+    "kepPath": "sig-release/3744-stay-on-supported-go-versions",
+    "title": "Stay on supported go versions",
+    "stage": "stable",
+    "sig": "Release",
+    "category": "Release",
+    "labels": [
+      "go",
+      "release",
+      "security",
+      "process"
+    ],
+    "description": "This KEP defines a process for Kubernetes release branches to adopt newer minor versions of the Go compiler while preserving compatibility and stability of patch releases. By tracking prerequisite changes, backporting them, and updating branches after thorough testing, Kubernetes can stay on supported Go versions and benefit from security fixes without introducing regressions.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-693",
+    "kepPath": "sig-node/693-topology-manager",
+    "title": "Node Topology Manager",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "topology",
+      "cpu-manager",
+      "device-manager",
+      "numa",
+      "scheduling",
+      "kubelet"
+    ],
+    "description": "The Node Topology Manager introduces a new kubelet component that coordinates CPU, device, and network resource assignments to respect NUMA topology, providing a two\u2011phase topology coherence protocol. It collects topology hints from existing managers during pod admission and enforces policies (none, best\u2011effort, restricted, single\u2011numa\u2011node) to improve performance for latency\u2011critical and high\u2011throughput workloads.",
+    "impact": "",
+    "featureGate": "TopologyManager",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.16",
+      "beta": "1.18",
+      "stable": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-1610",
+    "kepPath": "sig-autoscaling/1610-container-resource-autoscaling",
+    "title": "Container Resource based Autoscaling",
+    "stage": "beta",
+    "sig": "Autoscaling",
+    "category": "Scaling",
+    "labels": [
+      "autoscaling",
+      "horizontal-pod-autoscaler",
+      "container-resource",
+      "metrics",
+      "scaling"
+    ],
+    "description": "This KEP introduces a new ContainerResource metric source for the Horizontal Pod Autoscaler, allowing scaling decisions to be based on individual container resource usage rather than summed pod usage. It adds a container field to specify which container's metrics to consider, enabling finer\u2011grained autoscaling for multi\u2011container pods.",
+    "impact": "",
+    "featureGate": "HPAContainerMetrics",
+    "affectedKinds": [
+      "HorizontalPodAutoscaler"
+    ],
+    "affectedFields": [
+      "spec.metrics[].resource.container"
+    ],
+    "history": {
+      "alpha": "1.20",
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-1710",
+    "kepPath": "sig-storage/1710-selinux-relabeling",
+    "title": "Skip SELinux relabeling of volumes",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "selinux",
+      "storage",
+      "security",
+      "csi",
+      "pod"
+    ],
+    "description": "This KEP introduces a mechanism to avoid costly recursive SELinux relabeling of volumes by using the mount option `-o context=XYZ`. It adds feature gates and API fields to allow default mount\u2011with\u2011context for ReadWriteOncePod volumes and provides an opt\u2011out via a new SELinuxChangePolicy field for workloads that require recursive relabeling.",
+    "impact": "",
+    "featureGate": "SELinuxMountReadWriteOncePod",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.27",
+      "stable": "1.34",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-1847",
+    "kepPath": "sig-apps/1847-autoremove-statefulset-pvcs",
+    "title": "Auto delete PVCs created by StatefulSet",
+    "stage": "beta",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "storage",
+      "statefulset",
+      "pvc",
+      "lifecycle",
+      "retention"
+    ],
+    "description": "This KEP introduces a PersistentVolumeClaimRetentionPolicy field in the StatefulSet spec, allowing PVCs created from volumeClaimTemplates to be automatically deleted on StatefulSet deletion or scale\u2011down based on user\u2011defined policies. The feature is gated by StatefulSetAutoDeletePVC and defaults to retain, giving users opt\u2011in control over PVC lifecycle, which simplifies cleanup for short\u2011lived StatefulSets while preserving data safety.",
+    "impact": "",
+    "featureGate": "StatefulSetAutoDeletePVC",
+    "affectedKinds": [
+      "StatefulSet"
+    ],
+    "affectedFields": [
+      "spec.persistentVolumeClaimRetentionPolicy",
+      "spec.persistentVolumeClaimRetentionPolicy.whenDeleted",
+      "spec.persistentVolumeClaimRetentionPolicy.whenScaled"
+    ],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.27",
+      "stable": "1.32",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2485",
+    "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+    "title": "ReadWriteOncePod PersistentVolume AccessMode",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "scheduling",
+      "csi",
+      "persistentvolume",
+      "accessmode"
+    ],
+    "description": "This KEP adds a new ReadWriteOncePod (RWOP) access mode for PersistentVolumes that restricts volume usage to a single pod on a single node, addressing scenarios where the existing ReadWriteOnce mode is too permissive. It also defines the required changes to the CSI specification, drivers, and sidecars to support the new mode while preserving compatibility with the current RWO mode.",
+    "impact": "",
+    "featureGate": "ReadWriteOncePod",
+    "affectedKinds": [
+      "PersistentVolume",
+      "PersistentVolumeClaim"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2590",
+    "kepPath": "sig-cli/2590-kubectl-subresource",
+    "title": "Kubectl Subresource Support",
+    "stage": "beta",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "subresource",
+      "api"
+    ],
+    "description": "This KEP proposes adding a new `--subresource` flag to the kubectl commands `get`, `patch`, `edit`, `apply`, and `replace`. The flag enables users to fetch and update common subresources such as `status`, `scale`, and `resize` directly through kubectl, eliminating the need for raw API calls via curl and improving the debugging and management workflow.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.27",
+      "stable": "1.33",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2831",
+    "kepPath": "sig-instrumentation/2831-kubelet-tracing",
+    "title": "Kubelet OpenTelemetry Tracing",
+    "stage": "beta",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "tracing",
+      "open-telemetry",
+      "cri"
+    ],
+    "description": "This KEP enhances the kubelet to generate and export OpenTelemetry spans for its gRPC and HTTP interactions, including CRI, CNI, and CSI calls. By adding tracing configuration to the kubelet, operators can collect distributed trace data to diagnose node\u2011level latency and failures, improving observability of Kubernetes clusters.",
+    "impact": "",
+    "featureGate": "KubeletTracing",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.34",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2923",
+    "kepPath": "sig-storage/2923-csi-migration-ceph-rbd",
+    "title": "In-tree Storage Plugin to CSI Migration - Ceph RBD",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "migration",
+      "rbd",
+      "ceph"
+    ],
+    "description": "The KEP adds support for migrating the in\u2011tree Ceph RBD storage plugin to the external CSI driver. It introduces the CSIMigrationRbd and InTreePluginRbdUnregister feature gates, allowing RBD volume operations to be transparently redirected to the CSI driver when enabled alongside CSIMigration, simplifying operations for users and preparing the in\u2011tree plugin for eventual removal.",
+    "impact": "",
+    "featureGate": "CSIMigrationRbd",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3017",
+    "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+    "title": "Pod Healthy Policy for PDB",
+    "stage": "beta",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "poddisruptionbudget",
+      "eviction",
+      "availability",
+      "policy"
+    ],
+    "description": "This KEP adds a new field `unhealthyPodEvictionPolicy` to the PodDisruptionBudget API, allowing users to control how pods that are Running but not Ready are treated during eviction. It enables either preserving availability by only evicting such pods when the budget is healthy, or always allowing eviction to avoid deadlocks and aid node drain and autoscaling.",
+    "impact": "",
+    "featureGate": "PodDisruptionBudgetPodHealthyPolicy",
+    "affectedKinds": [
+      "PodDisruptionBudget"
+    ],
+    "affectedFields": [
+      "spec.unhealthyPodEvictionPolicy"
+    ],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.31",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3107",
+    "kepPath": "sig-storage/3107-csi-nodeexpandsecret",
+    "title": "SecretRef field addition to NodeExpandVolume request",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "csi",
+      "storage",
+      "node-expand",
+      "secrets"
+    ],
+    "description": "This KEP adds a `nodeExpandSecretRef` field to the CSI PersistentVolumeSource, allowing a secret to be passed from the kubelet to CSI drivers during the NodeExpandVolume RPC. The change enables per\u2011PVC secrets for volume resizing operations such as encrypted device expansion or backend size verification.",
+    "impact": "",
+    "featureGate": "CSINodeExpandSecret",
+    "affectedKinds": [
+      "PersistentVolume"
+    ],
+    "affectedFields": [
+      "spec.csi.nodeExpandSecretRef"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3141",
+    "kepPath": "sig-storage/3141-prevent-volume-mode-conversion",
+    "title": "Prevent unauthorised volume mode conversion",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "security",
+      "csi",
+      "snapshot",
+      "volume"
+    ],
+    "description": "This KEP adds validation to prevent unauthorized conversion of volume mode when restoring a PersistentVolumeClaim from a VolumeSnapshot. It introduces a new immutable field `spec.sourceVolumeMode` in the VolumeSnapshotContent API and an annotation to allow trusted users to explicitly permit volume mode changes, leveraging RBAC to enforce the rule.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "VolumeSnapshotContent"
+    ],
+    "affectedFields": [
+      "spec.sourceVolumeMode"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3178",
+    "kepPath": "sig-network/3178-iptables-cleanup",
+    "title": "Cleaning up IPTables Chain Ownership",
+    "stage": "beta",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "iptables",
+      "security",
+      "kubelet",
+      "kube-proxy"
+    ],
+    "description": "This KEP proposes cleaning up IPTables chain ownership by removing unnecessary IPTables chain creation from kubelet and shifting responsibility to kube-proxy. It introduces a new hint chain for iptables mode detection and eliminates duplicate or unused chains such as KUBE-MARK-MASQ, KUBE-MARK-DROP, and related rules, improving security and reducing external component reliance on Kubernetes internal IPTables chains.",
+    "impact": "",
+    "featureGate": "IPTablesOwnershipCleanup",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3203",
+    "kepPath": "sig-security/3203-auto-refreshing-official-cve-feed",
+    "title": "Auto-refreshing official CVE feed",
+    "stage": "beta",
+    "sig": "Security",
+    "category": "Security",
+    "labels": [
+      "security",
+      "cve",
+      "automation",
+      "json",
+      "rss"
+    ],
+    "description": "This KEP introduces an automated process that periodically generates a machine\u2011readable JSON feed of official Kubernetes CVEs and publishes it to the website, enabling users to programmatically consume up\u2011to\u2011date vulnerability information. It adds a Prow job, GitHub issue labeling, and GCS storage to keep the CVE list refreshed without manual effort.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "TBD"
+    }
+  },
+  {
+    "kep": "KEP-3243",
+    "kepPath": "sig-scheduling/3243-respect-pod-topology-spread-after-rolling-upgrades",
+    "title": "Respect PodTopologySpread after rolling upgrades",
+    "stage": "beta",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "pod-topology-spread",
+      "deployment",
+      "rolling-update",
+      "topology-spread"
+    ],
+    "description": "This KEP adds a new field, `matchLabelKeys`, to the `TopologySpreadConstraint` in pod specifications. The field lets the scheduler consider only the values of specified label keys when calculating pod topology spread, enabling spreading to be scoped to a Deployment revision during rolling upgrades and eliminating the need for manual label management or external deschedulers.",
+    "impact": "",
+    "featureGate": "MatchLabelKeysInPodTopologySpread",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.topologySpreadConstraints[].matchLabelKeys"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.36",
+      "tentative": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3294",
+    "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
+    "title": "Provision volumes from cross-namespace snapshots",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "volume",
+      "cross-namespace",
+      "reference-grant"
+    ],
+    "description": "This KEP adds the ability to provision PersistentVolumeClaims from VolumeSnapshots that reside in a different namespace. It extends the PVC API to reference a cross\u2011namespace snapshot and leverages the ReferenceGrant resource for permission control, enabling shared snapshot use cases such as testing and golden images.",
+    "impact": "",
+    "featureGate": "CrossNamespaceSourceProvisioning",
+    "affectedKinds": [
+      "PersistentVolumeClaim"
+    ],
+    "affectedFields": [
+      "spec.dataSourceRef"
+    ],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3299",
+    "kepPath": "sig-auth/3299-kms-v2-improvements",
+    "title": "KMS v2 Improvements",
+    "stage": "beta",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "auth",
+      "kms",
+      "encryption",
+      "security",
+      "observability"
+    ],
+    "description": "KEP-3299 introduces a KMS v2 service contract that adds key rotation without API server restarts, improves health checks, and enhances observability of envelope operations. It adds a new KMS API version, DEK seed reuse, key_id handling, status RPC, and hot\u2011reload of EncryptionConfiguration to reduce latency and rate\u2011limit impacts in large clusters.",
+    "impact": "",
+    "featureGate": "KMSv2",
+    "affectedKinds": [
+      "KMSConfiguration",
+      "EncryptionConfiguration"
+    ],
+    "affectedFields": [
+      "encryption.kms.apiVersion",
+      "EncryptRequest.uid",
+      "DecryptRequest.uid"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3325",
+    "kepPath": "sig-auth/3325-self-subject-attributes-review-api",
+    "title": "Review attibutes of a current user",
+    "stage": "beta",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "authentication",
+      "rbac",
+      "debugging",
+      "api"
+    ],
+    "description": "The KEP adds a new SelfSubjectReview API endpoint in the authentication.k8s.io group that returns the attributes of the currently authenticated user (UserInfo). It also introduces a corresponding kubectl command (kubectl auth whoami) to help operators debug and inspect authentication results.",
+    "impact": "",
+    "featureGate": "APISelfSubjectReview",
+    "affectedKinds": [
+      "SelfSubjectReview"
+    ],
+    "affectedFields": [
+      "status.userInfo",
+      "status.userInfo.name",
+      "status.userInfo.uid",
+      "status.userInfo.groups",
+      "status.userInfo.extra"
+    ],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3327",
+    "kepPath": "sig-node/3327-align-by-socket",
+    "title": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
+    "stage": "beta",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "cpu-manager",
+      "numa",
+      "socket",
+      "topology"
+    ],
+    "description": "This KEP introduces a new CPUManager policy option called `align-by-socket` for the static CPU manager. When enabled, the CPU manager prefers topology hints that are socket\u2011aligned, allowing the TopologyManager to allocate CPUs within the same socket, which improves performance for latency\u2011sensitive workloads when NUMA alignment is not possible.",
+    "impact": "",
+    "featureGate": "CPUManagerPolicyAlphaOptions",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3335",
+    "kepPath": "sig-apps/3335-statefulset-slice",
+    "title": "StatefulSet Slice",
+    "stage": "beta",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "statefulset",
+      "migration",
+      "scaling",
+      "orchestration",
+      "pod"
+    ],
+    "description": "This KEP introduces the ability for a StatefulSet to start its pod ordinals at an arbitrary number, enabling the creation of StatefulSet slices. By allowing the first ordinal to be set via a new field, operators can migrate StatefulSets across namespaces or clusters without downtime, supporting gradual migration and scaling of subsets of replicas.",
+    "impact": "",
+    "featureGate": "StatefulSetStartOrdinal",
+    "affectedKinds": [
+      "StatefulSet"
+    ],
+    "affectedFields": [
+      "spec.ordinals.start"
+    ],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.31",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3352",
+    "kepPath": "sig-api-machinery/3352-aggregated-discovery",
+    "title": "Aggregated Discovery",
+    "stage": "beta",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "discovery",
+      "apiserver",
+      "client",
+      "aggregation",
+      "api"
+    ],
+    "description": "Aggregated Discovery introduces a new aggregated discovery document served via the existing /api and /apis endpoints using a new content\u2011negotiation type. This reduces the number of individual discovery requests clients must make, lowering latency and throttling while providing ETag support for efficient updates.",
+    "impact": "",
+    "featureGate": "AggregatedDiscovery",
+    "affectedKinds": [
+      "APIGroupDiscovery",
+      "APIGroupDiscoveryList"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3453",
+    "kepPath": "sig-network/3453-minimize-iptables-restore",
+    "title": "Minimize iptables-restore input size",
+    "stage": "beta",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "iptables",
+      "kube-proxy",
+      "performance"
+    ],
+    "description": "This KEP introduces an optimization to kube-proxy's iptables mode by minimizing the size of the input to iptables-restore. It tracks changes to Service and EndpointSlice objects and only regenerates the iptables chains that actually changed, reducing CPU usage and latency in large clusters while preserving correctness.",
+    "impact": "",
+    "featureGate": "MinimizeIPTablesRestore",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3458",
+    "kepPath": "sig-network/3458-remove-transient-node-predicates-from-service-controller",
+    "title": "Remove transient node predicates from KCCM's service controller",
+    "stage": "beta",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "service",
+      "loadbalancer",
+      "autoscaling",
+      "cloud-provider"
+    ],
+    "description": "This KEP introduces the StableLoadBalancerNodeSet feature gate to stop the cloud controller manager's service controller from adding or removing nodes from load balancer node sets when nodes experience transient readiness changes or receive the ToBeDeletedByClusterAutoscaler taint. By avoiding these syncs, connection draining is preserved, cloud provider API calls are reduced, and large clusters experience fewer rate\u2011limiting issues.",
+    "impact": "",
+    "featureGate": "StableLoadBalancerNodeSet",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3466",
+    "kepPath": "sig-instrumentation/3466-kubernetes-component-health-slis",
+    "title": "Kubernetes Component Health SLIs",
+    "stage": "beta",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "metrics",
+      "slis",
+      "health",
+      "component"
+    ],
+    "description": "The KEP adds a new `/metrics/slis` endpoint to Kubernetes components that emits health\u2011check data as structured Prometheus metrics, enabling monitoring agents to collect Service Level Indicator (SLI) data at higher scrape intervals and build Service Level Objectives (SLOs) and alerts. This provides a uniform, low\u2011cardinality health\u2011checking interface without requiring specialized parsing logic.",
+    "impact": "",
+    "featureGate": "ComponentSLIs",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3498",
+    "kepPath": "sig-instrumentation/3498-extending-stability",
+    "title": "Extending Metrics Stability",
+    "stage": "beta",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "metrics",
+      "stability",
+      "instrumentation"
+    ],
+    "description": "This KEP extends the existing metric stability framework by introducing additional stability classes\u2014beta and internal\u2014along with refined semantics for alpha metrics, enabling finer-grained stability guarantees aligned with the feature release cycle. It also enhances the static analysis tooling that validates metric definitions, improving reliability and documentation of Kubernetes metrics.",
+    "impact": "",
+    "featureGate": "n/a",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3515",
+    "kepPath": "sig-cli/3515-kubectl-explain-openapiv3",
+    "title": "Kubectl Explain OpenAPIv3",
+    "stage": "beta",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "openapi",
+      "documentation",
+      "crd"
+    ],
+    "description": "This KEP enhances kubectl explain by switching its data source from OpenAPI v2 to the richer OpenAPI v3 spec and replacing the hand\u2011written printer with a go/template based implementation. The change provides richer type information (e.g., nullable, defaults, validation) and new output formats while gracefully falling back when v3 is unavailable.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3521",
+    "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+    "title": "Pod Scheduling Readiness",
+    "stage": "beta",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "pod",
+      "webhook",
+      "enqueue"
+    ],
+    "description": "This KEP adds a new .spec.schedulingGates field to the Pod API, enabling controllers or mutating webhooks to mark a Pod as not ready for scheduling until the gates are cleared. The scheduler will keep Pods with non\u2011nil schedulingGates in an internal unschedulable pool, reducing unnecessary scheduling cycles and improving overall scheduling throughput.",
+    "impact": "",
+    "featureGate": "PodSchedulingReadiness",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.schedulingGates"
+    ],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3715",
+    "kepPath": "sig-apps/3715-elastic-indexed-job",
+    "title": "Elastic Indexed Job",
+    "stage": "beta",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "job",
+      "indexed",
+      "autoscaling",
+      "batch"
+    ],
+    "description": "This KEP makes the `spec.completions` field mutable for Indexed Jobs when it remains equal to `spec.parallelism`, allowing elastic scaling of indexed batch workloads while preserving stable pod identities. This enables use cases like MPI, Ray, and PyTorch training that need dynamic scaling without switching to StatefulSets.",
+    "impact": "",
+    "featureGate": "ElasticIndexedJob",
+    "affectedKinds": [
+      "Job"
+    ],
+    "affectedFields": [],
+    "history": {
+      "beta": "1.27",
+      "stable": "1.31",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3756",
+    "kepPath": "sig-storage/3756-volume-reconstruction",
+    "title": "Robust VolumeManager reconstruction after kubelet restart",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "kubelet",
+      "volume",
+      "restart"
+    ],
+    "description": "This KEP introduces a robust reconstruction of the kubelet VolumeManager after a kubelet restart by rapidly rebuilding the ActualStateOfWorld from the host OS and then populating the DesiredStateOfWorld from the API server. The change improves volume cleanup, provides accurate mount information for downstream features like SELinux relabeling, and resolves known bugs where volumes were not properly unmounted after restarts.",
+    "impact": "",
+    "featureGate": "NewVolumeManagerReconstruction",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.26",
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3838",
+    "kepPath": "sig-scheduling/3838-pod-mutable-scheduling-directives",
+    "title": "Pod Mutable Scheduling Directives",
+    "stage": "beta",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "pod",
+      "affinity",
+      "node-selector",
+      "mutable"
+    ],
+    "description": "This KEP makes the pod's node selector and node affinity mutable while the pod is blocked by a scheduling readiness gate, allowing external controllers to influence pod placement before scheduling. It enables lightweight custom schedulers to adjust where a pod should run without replacing kube-scheduler.",
+    "impact": "",
+    "featureGate": "PodSchedulingReadiness",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [],
+    "history": {
+      "beta": "1.27",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-647",
+    "kepPath": "sig-instrumentation/647-apiserver-tracing",
+    "title": "APIServer Tracing",
+    "stage": "beta",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "tracing",
+      "apiserver",
+      "open-telemetry",
+      "instrumentation"
+    ],
+    "description": "The KEP adds native OpenTelemetry-based tracing to the Kubernetes API server, enabling it to generate, propagate, and export spans for incoming and outgoing requests. This provides observability through distributed tracing, helping operators debug control-plane issues and integrate with existing tracing backends.",
+    "impact": "",
+    "featureGate": "APIServerTracing",
+    "affectedKinds": [],
+    "affectedFields": [
+      "TracingConfiguration.url",
+      "TracingConfiguration.samplingRatePerMillion"
+    ],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.27",
+      "stable": "1.34",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-1287",
+    "kepPath": "sig-node/1287-in-place-update-pod-resources",
+    "title": "In-place Update of Pod Resources",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "vertical-scaling",
+      "pod",
+      "cri",
+      "cpu",
+      "memory"
+    ],
+    "description": "The KEP introduces in\u2011place update of Pod resources through a new /resize subresource, allowing CPU and memory requests and limits to be changed without restarting the Pod. It adds status fields to report actual and allocated resources and a ResizePolicy to control whether a container must be restarted on resize, extending CRI APIs to support these operations across runtimes.",
+    "impact": "",
+    "featureGate": "InPlacePodVerticalScaling",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.containers[].resizePolicy",
+      "status.containerStatuses[].resources",
+      "status.containerStatuses[].allocatedResources"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.33",
+      "stable": "1.35",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-1880",
+    "kepPath": "sig-network/1880-multiple-service-cidrs",
+    "title": "Multiple Service CIDRs",
+    "stage": "alpha",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "service",
+      "ipam",
+      "ipv6",
+      "cidr"
+    ],
+    "description": "This KEP introduces a new allocation model that adds ServiceCIDR and IPAddress API objects, enabling clusters to dynamically expand the pool of Service IP addresses by creating additional CIDR ranges. It improves scalability, supports IPv6 best\u2011practice /64 prefixes, and remains backwards compatible with existing Service semantics.",
+    "impact": "",
+    "featureGate": "MultiCIDRServiceAllocator",
+    "affectedKinds": [
+      "ServiceCIDR",
+      "IPAddress",
+      "Service"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.31",
+      "stable": "1.33",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2258",
+    "kepPath": "sig-windows/2258-node-log-query",
+    "title": "Node log query",
+    "stage": "alpha",
+    "sig": "Windows",
+    "category": "Platform",
+    "labels": [
+      "observability",
+      "logging",
+      "node",
+      "windows",
+      "kubelet"
+    ],
+    "description": "This KEP adds a node log query feature that exposes a `/proxy/logs/` endpoint on the kubelet, allowing cluster administrators to retrieve logs from node services (systemd/journald on Linux, /var/log/, and Windows Event logs) via the API or a kubectl plugin without needing to SSH into the node. The feature is gated by the `NodeLogQuery` feature gate and requires enabling `enableSystemLogQuery` (alongside `enableSystemLogHandler`) in the KubeletConfiguration, providing secure, streaming access to node logs for troubleshooting.",
+    "impact": "",
+    "featureGate": "NodeLogQuery",
+    "affectedKinds": [
+      "KubeletConfiguration"
+    ],
+    "affectedFields": [
+      "enableSystemLogQuery"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.30",
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2570",
+    "kepPath": "sig-node/2570-memory-qos",
+    "title": "Memory QoS",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "cgroups",
+      "memory-qos",
+      "node",
+      "resource-management",
+      "kubelet"
+    ],
+    "description": "This KEP adds memory quality\u2011of\u2011service (QoS) support by leveraging cgroups v2 memory controller knobs. It maps pod/container memory requests to memory.min, limits to memory.max, and introduces a memory.high throttle for containers, providing better memory isolation and guarantees for pods, containers, and node resources.",
+    "impact": "",
+    "featureGate": "MemoryQoS",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-2699",
+    "kepPath": "sig-cloud-provider/2699-add-webhook-hosting-to-ccm",
+    "title": "Add webhook hosting to CCM.",
+    "stage": "alpha",
+    "sig": "Cloud Provider",
+    "category": "Cloud",
+    "labels": [
+      "cloud-provider",
+      "webhook",
+      "admission",
+      "controller"
+    ],
+    "description": "This KEP proposes extending the Cloud Controller Manager (CCM) framework to host cloud\u2011provider\u2011specific admission webhooks. It adds extension hooks, command\u2011line flags, and a builder pattern so providers can run mutating webhooks (such as PersistentVolumeLabel) in\u2011line with API server request handling, simplifying deployment and integration while preserving flexibility to run controllers and webhooks separately.",
+    "impact": "",
+    "featureGate": "CloudWebhookServer",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "TBD",
+      "stable": "TBD"
+    }
+  },
+  {
+    "kep": "KEP-2718",
+    "kepPath": "sig-auth/2718-20210511-client-exec-proxy",
+    "title": "Client Executable Proxy",
+    "stage": "alpha",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "auth",
+      "client-auth",
+      "request-signing",
+      "kube-proxy",
+      "tls"
+    ],
+    "description": "The Client Executable Proxy KEP adds a client\u2011side exec\u2011proxy mechanism that forwards Kubernetes API requests to an external process for arbitrary modification, such as request signing or header injection, before they reach the API server. This enables secure, configurable authentication methods like AWS Signature V4 or hardware\u2011protected TLS signing without relying on traditional HTTP proxy setups.",
+    "impact": "",
+    "featureGate": "ClientExecProxy",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "TBD",
+      "stable": "TBD"
+    }
+  },
+  {
+    "kep": "KEP-3157",
+    "kepPath": "sig-api-machinery/3157-watch-list",
+    "title": "Allow informers for getting a stream of data instead of chunking",
+    "stage": "alpha",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "apiserver",
+      "watch",
+      "informer",
+      "memory",
+      "performance"
+    ],
+    "description": "The WatchList KEP adds a feature gate that enables informers to retrieve list data as a continuous stream of watch events instead of a traditional bulk LIST request. By using a WATCH request with SendInitialEvents=true, memory consumption on the kube\u2011apiserver becomes constant and predictable, reducing OOM risk and load on etcd while maintaining consistency and backward compatibility.",
+    "impact": "",
+    "featureGate": "WatchList",
+    "affectedKinds": [],
+    "affectedFields": [
+      "WatchOptions.SendInitialEvents",
+      "ListOptions.SendInitialEvents"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.32",
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3280",
+    "kepPath": "sig-scheduling/3280-guarantee-pdb-when-preemption-happens",
+    "title": "Guarantee PodDisruptionBudget When Preemption Happens",
+    "stage": "alpha",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "preemption",
+      "poddisruptionbudget",
+      "priorityclass",
+      "high-availability"
+    ],
+    "description": "This KEP proposes adding a new field `allowDisruptionByPriorityGreaterThanOrEqual` to the PriorityClass API so that administrators can specify the minimum pod priority required to violate a PodDisruptionBudget during scheduler preemption. By making PDB guarantees configurable, the change improves high\u2011availability guarantees for critical workloads while preserving preemption semantics.",
+    "impact": "",
+    "featureGate": "DisruptionPolicyInPriorityClass",
+    "affectedKinds": [
+      "PriorityClass"
+    ],
+    "affectedFields": [
+      "spec.allowDisruptionByPriorityGreaterThanOrEqual"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "TBD",
+      "stable": "TBD"
+    }
+  },
+  {
+    "kep": "KEP-3476",
+    "kepPath": "sig-storage/3476-volume-group-snapshot",
+    "title": "Volume Group Snapshot",
+    "stage": "alpha",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "snapshot",
+      "volume",
+      "backup"
+    ],
+    "description": "The KEP adds a new group snapshot API that lets users take a crash\u2011consistent snapshot of multiple PersistentVolumeClaims at once by selecting them with a label selector. It introduces VolumeGroupSnapshot, VolumeGroupSnapshotClass, and VolumeGroupSnapshotContent resources and integrates with CSI drivers that support group snapshot capabilities, simplifying consistent backup and restore of multi\u2011volume applications.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "VolumeGroupSnapshot",
+      "VolumeGroupSnapshotContent",
+      "VolumeGroupSnapshotClass"
+    ],
+    "affectedFields": [
+      "spec.volumeGroupSnapshotClassName",
+      "spec.source.labelSelector",
+      "status.readyToUse",
+      "status.creationTime",
+      "status.volumeSnapshotHandlePairList",
+      "status.volumeSnapshotInfoList",
+      "spec.volumeGroupSnapshotHandle"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.32",
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3638",
+    "kepPath": "sig-cli/3638-kubectl-plugin-subcommands",
+    "title": "Improve kubectl plugin resolution for non-shadowing subcommands",
+    "stage": "alpha",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "plugins",
+      "subcommands",
+      "environment"
+    ],
+    "description": "This KEP enhances kubectl by allowing external plugins to act as subcommands of built-in commands when the subcommand does not already exist. By searching for matching plugins (e.g., kubectl-create-foo) and executing them, it reduces the need to add new static subcommands to the binary, easing maintenance and supporting custom resources. An opt\u2011in environment variable KUBECTL_ENABLE_CMD_SHADOW controls the feature during the alpha and beta phases.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.29",
+      "stable": "1.30",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3659",
+    "kepPath": "sig-cli/3659-kubectl-apply-prune",
+    "title": "ApplySet: kubectl apply --prune redesign and graduation strategy",
+    "stage": "alpha",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "apply",
+      "prune",
+      "crd",
+      "api"
+    ],
+    "description": "This KEP redesigns the kubectl apply --prune functionality by introducing a low\u2011level grouping concept called ApplySet. The new design provides a safer, more performant pruning mechanism that works across namespaced and cluster\u2011scoped resources, including custom resources, and serves as a foundation for higher\u2011level tooling.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "ApplySet"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "TBD",
+      "stable": "TBD"
+    }
+  },
+  {
+    "kep": "KEP-3668",
+    "kepPath": "sig-network/3668-reserved-service-nodeport-range",
+    "title": "Reserve Nodeport Ranges For Dynamic And Static Port Allocation",
+    "stage": "alpha",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "service",
+      "nodeport",
+      "ip-allocation",
+      "feature-gate"
+    ],
+    "description": "This KEP introduces a reservation sub\u2011range within the Service NodePort range, separating ports used for static assignments from those allocated dynamically. By allocating static ports from a lower band and dynamic ports from an upper band, it reduces the risk of port conflicts without changing the existing allocation mechanism.",
+    "impact": "",
+    "featureGate": "ServiceNodePortStaticSubrange",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.28",
+      "stable": "1.29",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3673",
+    "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+    "title": "Kubelet limit of Parallel Image Pulls",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "kubelet",
+      "image-pull",
+      "node",
+      "configuration",
+      "parallelism"
+    ],
+    "description": "This KEP adds a node-level limit on the number of concurrent image pulls by introducing a new `maxParallelImagePulls` field to the Kubelet configuration. It allows operators to control disk I/O and network bandwidth consumption during pod startup, improving cluster stability and performance.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "KubeletConfiguration"
+    ],
+    "affectedFields": [
+      "maxParallelImagePulls"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.32",
+      "stable": "1.35",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3695",
+    "kepPath": "sig-node/3695-pod-resources-for-dra",
+    "title": "Extend the PodResources API to include resources allocated by DRA",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "podresources",
+      "dynamic-resource-allocation",
+      "observability",
+      "grpc",
+      "cdi"
+    ],
+    "description": "This KEP extends the kubelet's PodResources gRPC API to expose resources allocated by Dynamic Resource Allocation (DRA). It adds a new `dynamic_resources` field to each container's resource description and introduces a `Get` RPC to retrieve resources for a specific pod, enabling node monitoring agents to observe DRA\u2011allocated resources.",
+    "impact": "",
+    "featureGate": "DynamicResourceAllocation",
+    "affectedKinds": [],
+    "affectedFields": [
+      "ContainerResources.dynamic_resources",
+      "DynamicResource.claim_name",
+      "DynamicResource.claim_namespace",
+      "DynamicResource.claim_resources",
+      "ClaimResource.cdi_devices",
+      "ClaimResource.driver_name",
+      "ClaimResource.pool_name",
+      "ClaimResource.device_name",
+      "CDIDevice.name",
+      "PodResourcesLister.Get"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.34",
+      "stable": "1.36",
+      "tentative": [
+        "stable"
+      ],
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3705",
+    "kepPath": "sig-network/3705-cloud-node-ips",
+    "title": "Cloud Dual-Stack --node-ip Handling",
+    "stage": "alpha",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "dual-stack",
+      "cloud-provider",
+      "node",
+      "kubelet",
+      "networking"
+    ],
+    "description": "This KEP adds support for specifying dual\u2011stack IP addresses via the kubelet --node-ip flag in clusters that use external cloud providers. It introduces handling of comma\u2011separated IPv4 and IPv6 addresses, propagates them through the existing provided-node-ip annotation, and implements the behavior behind the CloudDualStackNodeIPs feature gate.",
+    "impact": "",
+    "featureGate": "CloudDualStackNodeIPs",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.29",
+      "stable": "1.30",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3716",
+    "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+    "title": "Admission Webhook Match Conditions",
+    "stage": "alpha",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "admission",
+      "webhook",
+      "cel",
+      "security",
+      "policy"
+    ],
+    "description": "This KEP introduces a new `matchConditions` field for ValidatingWebhook and MutatingWebhook configurations, allowing administrators to specify CEL expressions that must evaluate to true for a request to be sent to the webhook. By enabling fine-grained filtering of admission requests, the feature improves webhook reliability, reduces latency, and enhances supportability for managed clusters.",
+    "impact": "",
+    "featureGate": "AdmissionWebhookMatchConditions",
+    "affectedKinds": [
+      "ValidatingWebhookConfiguration",
+      "MutatingWebhookConfiguration"
+    ],
+    "affectedFields": [
+      "spec.webhooks[].matchConditions",
+      "spec.webhooks[].matchConditions[].name",
+      "spec.webhooks[].matchConditions[].expression"
+    ],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.28",
+      "stable": "1.30",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3766",
+    "kepPath": "sig-auth/3766-referencegrant",
+    "title": "Move ReferenceGrant to sig-auth API Group",
+    "stage": "alpha",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "authorization",
+      "api",
+      "networking",
+      "storage",
+      "security"
+    ],
+    "description": "This KEP proposes moving the ReferenceGrant resource from the gateway.networking.k8s.io API group to the neutral authorization.k8s.io API group managed by SIG Auth. By doing so, ReferenceGrant becomes the canonical API for enabling safe cross\u2011namespace object references across multiple SIGs such as Gateway API and SIG Storage.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "ReferenceGrant"
+    ],
+    "affectedFields": [
+      "spec.from[].group",
+      "spec.from[].resource",
+      "spec.from[].namespace",
+      "spec.to[].group",
+      "spec.to[].resource"
+    ],
+    "history": {
+      "alpha": "1.27"
+    }
+  },
+  {
+    "kep": "KEP-3805",
+    "kepPath": "sig-cli/3805-ssa-default",
+    "title": "Kubectl Server-Side Apply by default",
+    "stage": "alpha",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kubectl",
+      "apply",
+      "server-side-apply",
+      "migration"
+    ],
+    "description": "This KEP proposes making Server-Side Apply the default behavior for kubectl apply (and kubectl diff) by introducing an \"auto\" value for the --server-side flag, gradually transitioning to true. The change aims to increase adoption of Server-Side Apply, simplify kubectl maintenance, and reduce confusion between client-side and server-side apply mechanisms while providing a smooth migration path for existing users.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.27",
+      "beta": "1.30",
+      "stable": "1.32",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  }
+]

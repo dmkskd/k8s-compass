@@ -1,0 +1,689 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nodeLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease, background var(--transition-base), border-color var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.nodeLabelDimmed {
+  opacity: 0.75;
+  transform: scale(0.85);
+}
+
+.nodeLabelDimmed .nodeName {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.nodeLabelHighlighted {
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Connection line labels */
+.connectionLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  white-space: nowrap;
+  animation: fadeIn 0.15s ease;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.connectionType {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.connectionDescription {
+  font-size: 10px;
+  color: var(--text-muted);
+  max-width: 150px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nodeName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nodeGroup {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.clusterBadge {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.instructions p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Canvas wrapper for dimming */
+.canvasWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  z-index: 1;
+}
+
+.canvasWrapper canvas {
+  position: relative;
+  z-index: 1;
+}
+
+.canvasDimmed {
+  opacity: 0.15;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* 2D Relationship Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.overlayWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--color-dim);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease, background var(--transition-base), border-color var(--transition-base);
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background: var(--card-hover-bg);
+  color: var(--color-star);
+  transform: scale(1.1);
+}
+
+.connectionsSvg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.connectionsSvg line,
+.connectionsSvg polygon,
+.connectionsSvg rect,
+.connectionsSvg text {
+  transform-origin: center;
+}
+
+/* 3D Relationship Overlay */
+.overlayWrapper3D {
+  position: relative;
+  width: 90vw;
+  height: 80vh;
+  max-width: 1000px;
+  max-height: 800px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.closeButton3D {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--color-dim);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease, background var(--transition-base), border-color var(--transition-base);
+  z-index: 10;
+}
+
+.closeButton3D:hover {
+  background: var(--card-hover-bg);
+  color: var(--color-star);
+  transform: scale(1.1);
+}
+
+.overlayLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  white-space: nowrap;
+  transform: translateY(35px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.overlayLabel .overlayLabelName,
+.overlayLabel .overlayLabelGroup,
+.overlayLabel .overlayLabelHint {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.overlayLabel:hover .overlayLabelName {
+  color: var(--color-star);
+}
+
+.overlayLabelName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--overlay-label-color);
+  text-shadow: var(--overlay-label-shadow);
+}
+
+.overlayLabelGroup {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--overlay-label-muted);
+  text-shadow: var(--overlay-label-shadow);
+}
+
+.overlayLabelHint {
+  font-size: 8px;
+  font-weight: 600;
+  color: #c4b5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+  opacity: 0.9;
+  text-shadow: var(--overlay-label-shadow);
+}
+
+.overlayRelLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.legend3D {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 24px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  z-index: 1000;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.legend3D .legendTitle {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.legend3D .legendItems {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 8px 24px;
+}
+
+.legend3D .legendItems span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--color-starlight);
+  white-space: nowrap;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Center the SVG coordinate system */
+.connectionsSvg {
+  transform: translate(50%, 50%);
+}
+
+/* Central node (selected) */
+.centralNode {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 130px;
+  height: 150px;
+  background: transparent;
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform: translateY(30px); /* Shift down to center with connection lines */
+}
+
+.centralNode:hover {
+  /* Scale is applied to shape child instead */
+}
+
+.centralNode:hover .viewSpecHint {
+  opacity: 1;
+}
+
+.centralNodeShape {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.centralNode:hover .centralNodeShape {
+  transform: scale(1.1);
+}
+
+.centralNodeShape canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.viewSpecHint {
+  font-size: 9px;
+  font-weight: 600;
+  color: #c4b5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  margin-top: 4px;
+  padding: 4px 10px;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 4px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.centralNodeName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.centralNodeGroup {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.centralClusterBadge {
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 1px 4px;
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  border-radius: 3px;
+}
+
+/* Connected nodes */
+.connectedNode {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100px;
+  height: 110px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
+
+.connectedNode:hover {
+  z-index: 10;
+}
+
+.connectedNode:hover .connectedNodeShape {
+  transform: scale(1.1);
+}
+
+.connectedNodeShape {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.connectedNode:hover .connectedNodeShape {
+  transform: scale(1.15);
+}
+
+.connectedNodeShape canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.connectedNodeName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.connectedNodeGroup {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Legend */
+.legend {
+  position: relative;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 8px 24px;
+  padding: 12px 16px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.legendTitle {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendColor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--color-starlight);
+}
+
+
+/* Collapsible left panel */
+.rightPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 50;
+}
+
+.panelToggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 28px;
+  min-height: 80px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--badge-border);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.2s ease;
+  color: var(--badge-text);
+}
+
+.panelToggle:hover {
+  background: var(--tab-active-bg);
+  border-color: var(--color-core);
+  color: var(--color-core);
+}
+
+.toggleIcon {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.toggleLabel {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.rightPanelOpen .panelToggle {
+  border-radius: 0;
+  border-right: 1px solid var(--divider);
+  background: var(--panel-bg);
+  color: var(--badge-text);
+}
+
+.rightPanelOpen .panelToggle:hover {
+  background: var(--tab-hover-bg);
+  transform: none;
+}
+
+
+/* Shape Legend - theme aware */
+.shapeLegend {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 12px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  z-index: 10;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.shapeLegendInner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.shapeLegendCanvas {
+  width: 50px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.shapeLegendLabels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 0;
+  height: 160px;
+}
+
+.shapeLegendLabels span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Legacy - keep for backwards compat */
+.shapeLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shapeCanvas {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.shapeLegendItem span {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* API Group Container Label */
+.groupContainerLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0.5;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}

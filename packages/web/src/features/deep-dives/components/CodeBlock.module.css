@@ -1,0 +1,172 @@
+/**
+ * CodeBlock Styles
+ */
+
+/* =============================================================================
+   Code Block Container
+   ============================================================================= */
+
+.codeBlock {
+  background: #1e1e2e; /* Dark background for code - consistent across themes */
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Header
+   ============================================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #252536; /* Slightly lighter than code block */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a0a0b0;
+}
+
+.copyButton {
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: #a0a0b0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copyButton:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #c4b5fd;
+}
+
+/* =============================================================================
+   Code Container
+   ============================================================================= */
+
+.codeContainer {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* =============================================================================
+   Line Numbers
+   ============================================================================= */
+
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  background: #252536; /* Slightly lighter than code block */
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.lineNumber {
+  padding: 0 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #606070;
+  text-align: right;
+}
+
+.lineNumber.highlighted {
+  background: rgba(99, 102, 241, 0.15);
+  color: rgba(99, 102, 241, 0.8);
+}
+
+/* =============================================================================
+   Pre and Code
+   ============================================================================= */
+
+.pre {
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e0e0e8; /* Light text for dark code block */
+  white-space: pre;
+}
+
+/* =============================================================================
+   Syntax Highlighting
+   ============================================================================= */
+
+.code :global(.key) {
+  color: #7dd3fc; /* Light blue */
+}
+
+.code :global(.string) {
+  color: #86efac; /* Light green */
+}
+
+.code :global(.number) {
+  color: #fcd34d; /* Yellow */
+}
+
+.code :global(.boolean) {
+  color: #c4b5fd; /* Light purple */
+}
+
+.code :global(.comment) {
+  color: #9ca3af; /* Light gray - visible on dark code block */
+  font-style: italic;
+}
+
+.code :global(.keyword) {
+  color: #f472b6; /* Pink */
+}
+
+.code :global(.flag) {
+  color: #fdba74; /* Orange */
+}
+
+/* =============================================================================
+   Inline Code
+   ============================================================================= */
+
+.inlineCode {
+  padding: 0.125rem 0.375rem;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  color: rgba(99, 102, 241, 0.9);
+}
+
+/* =============================================================================
+   Scrollbar
+   ============================================================================= */
+
+.codeContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.codeContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.codeContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.codeContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

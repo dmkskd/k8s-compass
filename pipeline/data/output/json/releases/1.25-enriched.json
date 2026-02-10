@@ -1,0 +1,1246 @@
+[
+  {
+    "kep": "KEP-1487",
+    "kepPath": "sig-storage/1487-csi-migration-aws",
+    "title": "In-tree Storage Plugin to CSI Migration - AWS",
+    "stage": "stable",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "migration",
+      "aws",
+      "ebs"
+    ],
+    "description": "This KEP introduces vendor\u2011specific feature gates to migrate the built\u2011in AWS EBS in\u2011tree volume plugin to its CSI driver. Enabling CSIMigrationAWS (along with the generic CSIMigration flag) redirects volume operations from the legacy plugin to the CSI driver transparently, improving maintainability and allowing deprecation of the in\u2011tree implementation.",
+    "impact": "",
+    "featureGate": "CSIMigrationAWS",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.14",
+      "beta": "1.17",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-1488",
+    "kepPath": "sig-storage/1488-csi-migration-gce-pd",
+    "title": "In-tree Storage Plugin to CSI Migration - GCE PD",
+    "stage": "stable",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "migration",
+      "gce-pd",
+      "feature-gate"
+    ],
+    "description": "This KEP defines the migration of the in\u2011tree GCE Persistent Disk (gce\u2011pd) storage plugin to its CSI driver by introducing the CSIMigrationGCE feature gate (and optionally InTreePluginGCEUnregister). When enabled together with the generic CSIMigration gate, all GCE PD operations are transparently redirected to the CSI driver, simplifying the storage stack and preparing Kubernetes for GA of the CSI migration.",
+    "impact": "",
+    "featureGate": "CSIMigrationGCE",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.14",
+      "beta": "1.17",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-1591",
+    "kepPath": "sig-apps/1591-daemonset-surge",
+    "title": "Allow DaemonSets to surge during update like Deployments",
+    "stage": "stable",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "daemonset",
+      "rolling-update",
+      "surge",
+      "availability",
+      "apps"
+    ],
+    "description": "This KEP adds a MaxSurge field to DaemonSet RollingUpdate strategy, allowing DaemonSets to create surge pods during updates similar to Deployments. The feature enables zero\u2011downtime upgrades for node\u2011level components such as CNI, CSI, and other per\u2011node integrations, improving availability during rollouts.",
+    "impact": "",
+    "featureGate": "DaemonSetUpdateSurge",
+    "affectedKinds": [
+      "DaemonSet"
+    ],
+    "affectedFields": [
+      "spec.updateStrategy.rollingUpdate.maxSurge"
+    ],
+    "history": {
+      "alpha": "1.21",
+      "beta": "1.22",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2079",
+    "kepPath": "sig-network/2079-network-policy-port-range",
+    "title": "Network Policy to support Port Ranges",
+    "stage": "stable",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "security",
+      "networkpolicy",
+      "port-range"
+    ],
+    "description": "This KEP introduces an optional `endPort` field to NetworkPolicyPort, allowing users to specify a range of ports instead of enumerating each port individually. The change simplifies creation of NetworkPolicies for port ranges, enhancing usability and aligning with common use cases such as NodePort ranges and passive FTP server requirements.",
+    "impact": "",
+    "featureGate": "NetworkPolicyEndPort",
+    "affectedKinds": [
+      "NetworkPolicy"
+    ],
+    "affectedFields": [
+      "spec.ingress[].ports[].endPort",
+      "spec.egress[].ports[].endPort"
+    ],
+    "history": {
+      "alpha": "1.21",
+      "beta": "1.22",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2254",
+    "kepPath": "sig-node/2254-cgroup-v2",
+    "title": "cgroups v2",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "cgroups",
+      "cri",
+      "node",
+      "runtime",
+      "cpu-manager",
+      "cgroup-namespace"
+    ],
+    "description": "This KEP proposes adding support for Linux cgroups v2 in the Kubernetes Kubelet, allowing nodes to run with either cgroups v1 or v2 and providing parity of functionality. Supporting cgroups v2 is important because the kernel API is now stable, newer kernel features (e.g., PSI) depend on it, and many distributions are moving to cgroups v2 by default, which currently blocks Kubernetes operation.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.18",
+      "beta": "1.22",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2579",
+    "kepPath": "sig-auth/2579-psp-replacement",
+    "title": "PSP Replacement Policy",
+    "stage": "stable",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "security",
+      "admission",
+      "pod-security",
+      "policy",
+      "namespace"
+    ],
+    "description": "The KEP replaces the deprecated PodSecurityPolicy with a built-in PodSecurity admission controller that enforces the Pod Security Standards via namespace labels. It introduces enforce, audit, and warn modes, versioned policies, and dry\u2011run checks to provide secure, flexible, and backward\u2011compatible pod security enforcement.",
+    "impact": "",
+    "featureGate": "PodSecurity",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.23",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2599",
+    "kepPath": "sig-apps/2599-minreadyseconds-for-statefulsets",
+    "title": "minReadySeconds for StatefulSets",
+    "stage": "stable",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "statefulset",
+      "readiness",
+      "availability",
+      "apps",
+      "feature-gate"
+    ],
+    "description": "This KEP adds an optional minReadySeconds field to the StatefulSet spec and an AvailableReplicas field to its status. The feature ensures that a StatefulSet pod must remain ready for a configurable period before being considered available, aligning StatefulSet behavior with other workload controllers.",
+    "impact": "",
+    "featureGate": "StatefulSetMinReadySeconds",
+    "affectedKinds": [
+      "StatefulSet"
+    ],
+    "affectedFields": [
+      "spec.minReadySeconds",
+      "status.availableReplicas"
+    ],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.23",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-277",
+    "kepPath": "sig-node/277-ephemeral-containers",
+    "title": "Ephemeral Containers",
+    "stage": "stable",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "debugging",
+      "observability",
+      "security",
+      "pod",
+      "cri"
+    ],
+    "description": "This KEP adds a new EphemeralContainers field to Pod specifications, enabling the creation of temporary containers that run inside an existing pod's namespaces for debugging and troubleshooting. It introduces a dedicated /ephemeralcontainers subresource and associated API changes, allowing users to add, attach to, and view these containers without affecting the pod's primary containers.",
+    "impact": "",
+    "featureGate": "EphemeralContainers",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.ephemeralContainers"
+    ],
+    "history": {
+      "alpha": "1.16",
+      "beta": "1.23",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2802",
+    "kepPath": "sig-windows/2802-identify-windows-pods-apiserver-admission",
+    "title": "Identify Pod's OS during API Server admission",
+    "stage": "stable",
+    "sig": "Windows",
+    "category": "Platform",
+    "labels": [
+      "windows",
+      "security",
+      "admission",
+      "pod",
+      "os"
+    ],
+    "description": "This KEP adds an optional OS field to the Pod spec, allowing users to declare the operating system (linux or windows) a pod is intended to run on. Admission plugins and the kubelet can then enforce OS\u2011specific security constraints and reject pods that cannot be scheduled on the host OS, improving security and correctness for mixed\u2011OS clusters.",
+    "impact": "",
+    "featureGate": "IdentifyPodOS",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.os",
+      "spec.os.name"
+    ],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.24",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2853",
+    "kepPath": "sig-release/2853-k-core-branch-rename",
+    "title": "Changing kubernetes/kubernetes default branch name to main",
+    "stage": "stable",
+    "sig": "Release",
+    "category": "Release",
+    "labels": [
+      "git",
+      "branch",
+      "naming",
+      "inclusivity",
+      "process"
+    ],
+    "description": "This KEP proposes renaming the default branch of the primary Kubernetes repository (kubernetes/kubernetes) from \"master\" to \"main\" to adopt more inclusive terminology. The change includes a coordinated plan for communication, migration, and updating CI jobs to minimize impact on downstream consumers.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2891",
+    "kepPath": "sig-scheduling/2891-simplified-config",
+    "title": "Simplified Scheduler Config",
+    "stage": "stable",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "plugins",
+      "configuration",
+      "extensibility"
+    ],
+    "description": "This KEP adds a new \u201cMultiPoint\u201d extension point to the kube-scheduler configuration, allowing a plugin to be enabled across all (or a subset of) scheduler extension points with a single config entry. It simplifies scheduler plugin configuration for cluster administrators while preserving the flexibility of the scheduling framework.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "KubeSchedulerConfiguration"
+    ],
+    "affectedFields": [
+      "profiles[].plugins.multiPoint",
+      "profiles[].plugins.multiPoint.enabled",
+      "profiles[].plugins.multiPoint.disabled"
+    ],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.24",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-361",
+    "kepPath": "sig-storage/361-local-ephemeral-storage-isolation",
+    "title": "Local Ephemeral Storage Capacity Isolation",
+    "stage": "stable",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "scheduling",
+      "eviction",
+      "resource-quota",
+      "node"
+    ],
+    "description": "This KEP introduces capacity isolation for local ephemeral storage on a node, allowing pods and containers to request and limit the amount of shared local disk space they consume. It adds support for tracking, scheduling, and evicting pods based on the new 'ephemeral-storage' resource similar to CPU and memory, enabling better resource guarantees and management for scratch space, caching, and logs.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Pod",
+      "ResourceQuota",
+      "LimitRange",
+      "Node"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.8",
+      "beta": "1.10",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-596",
+    "kepPath": "sig-storage/596-csi-inline-volumes",
+    "title": "Ephemeral Inline CSI Volumes",
+    "stage": "stable",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "csi",
+      "storage",
+      "ephemeral",
+      "inline",
+      "pod"
+    ],
+    "description": "This KEP adds support for defining CSI volumes directly inside a Pod spec as ephemeral inline volumes, allowing CSI drivers to create and mount short\u2011lived volumes without PersistentVolume and PersistentVolumeClaim objects. It introduces new API fields for inline CSI volume specifications and a driver capability flag, enabling drivers to handle mount/unmount lifecycle only.",
+    "impact": "",
+    "featureGate": "CSIInlineVolume",
+    "affectedKinds": [
+      "Pod",
+      "CSIDriver"
+    ],
+    "affectedFields": [
+      "spec.volumes[].csi",
+      "spec.volumes[].csi.driver",
+      "spec.volumes[].csi.readOnly",
+      "spec.volumes[].csi.fsType",
+      "spec.volumes[].csi.volumeAttributes",
+      "spec.volumes[].csi.nodePublishSecretRef",
+      "spec.volumeLifecycleModes"
+    ],
+    "history": {
+      "alpha": "1.15",
+      "beta": "1.16",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-625",
+    "kepPath": "sig-storage/625-csi-migration",
+    "title": "In-tree Storage Plugin to CSI Migration",
+    "stage": "stable",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "csi",
+      "storage",
+      "migration",
+      "in-tree"
+    ],
+    "description": "This KEP defines the design and implementation of migrating in\u2011tree storage plugins to the Container Storage Interface (CSI) by introducing an opt\u2011in feature gate that redirects in\u2011tree plugin operations to corresponding CSI drivers. It enables a seamless transition to CSI while preserving existing API contracts and allowing upgrade/downgrade paths.",
+    "impact": "",
+    "featureGate": "CSIMigration",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.14",
+      "beta": "1.17",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-785",
+    "kepPath": "sig-scheduling/785-scheduler-component-config-api",
+    "title": "Scheduler Component Config API",
+    "stage": "stable",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "component-config",
+      "api",
+      "configuration"
+    ],
+    "description": "This KEP introduces and graduates the kube-scheduler component configuration API (kubescheduler.config.k8s.io) through multiple versions (v1beta1, v1beta2, v1beta3) to GA v1, allowing cluster operators to declaratively configure the scheduler via API objects instead of command\u2011line flags. The graduated API provides versioned, validated, and extensible scheduler configuration, improving stability, upgrade safety, and configurability of scheduling plugins and profiles.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "KubeSchedulerConfiguration"
+    ],
+    "affectedFields": [
+      "profiles[].pluginConfig[].args.bindTimeoutSeconds"
+    ],
+    "history": {
+      "beta": "1.19",
+      "stable": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-1432",
+    "kepPath": "sig-storage/1432-volume-health-monitor",
+    "title": "Volume Health Monitor",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "observability",
+      "volume-health",
+      "metrics"
+    ],
+    "description": "The Volume Health Monitor KEP adds a mechanism for CSI drivers and Kubelet to report health status of Persistent Volumes. It introduces a new VolumeHealthStats field in Kubelet's VolumeStats metrics and defines new CSI RPCs and capabilities to surface volume condition information, enabling early detection of storage issues via events and metrics.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.21",
+      "beta": "1.25",
+      "stable": "1.26",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2091",
+    "kepPath": "sig-network/2091-admin-network-policy",
+    "title": "Add support for AdminNetworkPolicy resources",
+    "stage": "beta",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "security",
+      "policy",
+      "admin"
+    ],
+    "description": "This KEP introduces two new cluster\u2011scoped resources, AdminNetworkPolicy and BaselineAdminNetworkPolicy, enabling administrators to express explicit allow, deny, and pass actions for intra\u2011cluster traffic. The APIs add priority ordering, rule naming, and the ability to enforce immutable guardrails that cannot be overridden by namespace\u2011scoped NetworkPolicies.",
+    "impact": "",
+    "featureGate": "AdminNetworkPolicy",
+    "affectedKinds": [
+      "AdminNetworkPolicy",
+      "BaselineAdminNetworkPolicy"
+    ],
+    "affectedFields": [
+      "spec.priority",
+      "spec.ingress[].action",
+      "spec.ingress[].name",
+      "spec.egress[].action",
+      "spec.egress[].name"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2413",
+    "kepPath": "sig-node/2413-seccomp-by-default",
+    "title": "Seccomp by default",
+    "stage": "beta",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "security",
+      "seccomp",
+      "kubelet",
+      "feature-gate",
+      "runtime",
+      "pod-security"
+    ],
+    "description": "This KEP proposes enabling seccomp profiles by default for all workloads through a new feature gate (SeccompDefault) and kubelet configuration flag. When enabled, pods and containers will automatically receive the RuntimeDefault seccomp profile, improving cluster security without requiring explicit configuration from users.",
+    "impact": "",
+    "featureGate": "SeccompDefault",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.22",
+      "beta": "1.25",
+      "stable": "1.27",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2578",
+    "kepPath": "sig-windows/2578-windows-conformance",
+    "title": "Windows Conformance",
+    "stage": "beta",
+    "sig": "Windows",
+    "category": "Platform",
+    "labels": [
+      "windows",
+      "conformance",
+      "testing",
+      "networking",
+      "scheduling"
+    ],
+    "description": "The KEP defines an operational readiness specification for Kubernetes clusters that run Windows workloads, establishing a set of core and feature\u2011specific conformance tests that Windows clusters must pass alongside Linux conformance. It standardizes how these tests are expressed (via Ginkgo tags) and executed (e.g., through Sonobuoy), providing a clear certification path for vendors and users to verify production\u2011ready Windows Kubernetes deployments.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2589",
+    "kepPath": "sig-storage/2589-csi-migration-portworx",
+    "title": "In-tree Storage Plugin to CSI Migration - Portworx",
+    "stage": "beta",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "csi",
+      "storage",
+      "migration",
+      "feature-gate",
+      "portworx"
+    ],
+    "description": "This KEP adds vendor\u2011specific feature gates to migrate the Portworx in\u2011tree storage plugin to the Portworx CSI driver. Enabling CSIMigrationPortworx (and related flags) redirects volume operations from the in\u2011tree driver to CSI, aligning with the broader CSI migration effort and simplifying storage provisioning for users of Portworx.",
+    "impact": "",
+    "featureGate": "CSIMigrationPortworx",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.25",
+      "stable": "1.33",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2876",
+    "kepPath": "sig-api-machinery/2876-crd-validation-expression-language",
+    "title": "CRD Validation Expression Language",
+    "stage": "beta",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "crd",
+      "validation",
+      "cel",
+      "admission",
+      "api"
+    ],
+    "description": "This KEP introduces an inline expression language based on the Common Expression Language (CEL) to CustomResourceDefinitions, allowing developers to define validation rules directly within the CRD schema via the new x-kubernetes-validations extension. By integrating CEL, CRDs become more self\u2011contained and declarative, reducing the need for external admission webhooks for many validation use cases while providing compile\u2011time type checking and safety.",
+    "impact": "",
+    "featureGate": "CustomResourceValidationExpressions",
+    "affectedKinds": [
+      "CustomResourceDefinition"
+    ],
+    "affectedFields": [
+      "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations",
+      "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].rule",
+      "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].message",
+      "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].messageExpression"
+    ],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.25",
+      "stable": "1.29",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2885",
+    "kepPath": "sig-api-machinery/2885-server-side-unknown-field-validation",
+    "title": "Server Side Unknown Field Validation",
+    "stage": "beta",
+    "sig": "Api Machinery",
+    "category": "API",
+    "labels": [
+      "api-server",
+      "validation",
+      "schema",
+      "kubectl",
+      "feature-gate"
+    ],
+    "description": "The Server Side Unknown Field Validation KEP introduces a feature gate that allows the API server to reject create, update, and patch requests containing fields not defined in the object's schema. By adding an opt\u2011in query parameter and adjusting kubectl's --validate flag, it moves unknown\u2011field validation from the client to the server, improving consistency and reducing client\u2011side maintenance.",
+    "impact": "",
+    "featureGate": "ServerSideFieldValidation",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.23",
+      "beta": "1.25",
+      "stable": "1.27",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2906",
+    "kepPath": "sig-cli/2906-kustomize-function-catalog",
+    "title": "Kustomize Function Catalog",
+    "stage": "beta",
+    "sig": "Cli",
+    "category": "CLI",
+    "labels": [
+      "kustomize",
+      "function-catalog",
+      "discovery",
+      "packaging",
+      "oci"
+    ],
+    "description": "This KEP introduces a new Catalog API kind that centralizes discovery and distribution of Kustomize functions, allowing Kustomization, Component, and Composition resources to reference functions via a standard catalog rather than explicit container references. The catalog can be sourced locally, via HTTP(S), or as OCI artifacts, simplifying function installation and enabling official extensions to be distributed as containers.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Catalog",
+      "Kustomization"
+    ],
+    "affectedFields": [
+      "spec.krmFunctions[]",
+      "spec.krmFunctions[].group",
+      "spec.krmFunctions[].names.kind",
+      "spec.krmFunctions[].description",
+      "spec.krmFunctions[].versions[]",
+      "spec.krmFunctions[].versions[].name",
+      "spec.krmFunctions[].runtime.container.image",
+      "spec.catalogs[]"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3022",
+    "kepPath": "sig-scheduling/3022-min-domains-in-pod-topology-spread",
+    "title": "Tuning the number of domains in PodTopologySpread",
+    "stage": "beta",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "topology-spread",
+      "autoscaling",
+      "pod"
+    ],
+    "description": "This KEP introduces a new optional field `minDomains` to the PodSpec TopologySpreadConstraint, allowing users to specify a minimum number of topology domains (e.g., nodes, zones) over which Pods must be spread when `whenUnsatisfiable=DoNotSchedule`. This helps ensure better distribution and can trigger cluster-autoscaler provisioning when insufficient domains exist.",
+    "impact": "",
+    "featureGate": "MinDomainsInPodTopologySpread",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.topologySpreadConstraints[].minDomains"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.30",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3070",
+    "kepPath": "sig-network/3070-reserved-service-ip-range",
+    "title": "Reserve Service IP Range For Dynamic and Static IP Allocation",
+    "stage": "beta",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "service",
+      "networking",
+      "ip-allocation"
+    ],
+    "description": "This KEP introduces a configurable sub\u2011range within the Service ClusterIP CIDR to separate static and dynamic IP allocations. By reserving a lower band of IPs for static assignments and preferring the upper band for dynamic allocations, it reduces the risk of IP conflicts for services that require well\u2011known static IPs.",
+    "impact": "",
+    "featureGate": "ServiceIPStaticSubrange",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.26",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3130",
+    "kepPath": "sig-auth/3130-kms-observability",
+    "title": "KMS Observability",
+    "stage": "beta",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "security",
+      "observability",
+      "encryption",
+      "api-server",
+      "kms"
+    ],
+    "description": "This KEP introduces a transaction ID (UID) for each envelope encryption/decryption operation, adding the UID field to the kms-plugin API and logging it in the kube-apiserver. The UID enables correlation of logs across kube-apiserver, kms-plugin, and external KMS, improving observability of secret encryption processes.",
+    "impact": "",
+    "featureGate": "KMSUID",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.26",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3140",
+    "kepPath": "sig-apps/3140-TimeZone-support-in-CronJob",
+    "title": "TimeZone support in CronJob",
+    "stage": "beta",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "cronjob",
+      "timezone",
+      "scheduling",
+      "feature-gate",
+      "controller"
+    ],
+    "description": "This KEP introduces a new .spec.timeZone field to the CronJob API, allowing users to specify the time zone for job scheduling. By doing so, it decouples CronJob execution times from the kube\u2011controller\u2011manager's host time zone, providing more predictable and portable scheduling across clusters.",
+    "impact": "",
+    "featureGate": "CronJobTimeZone",
+    "affectedKinds": [
+      "CronJob"
+    ],
+    "affectedFields": [
+      "spec.timeZone"
+    ],
+    "history": {
+      "alpha": "1.24",
+      "beta": "1.25",
+      "stable": "1.27",
+      "verified": [
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-127",
+    "kepPath": "sig-node/127-user-namespaces",
+    "title": "Support User Namespaces",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "security",
+      "user-namespaces",
+      "cri",
+      "pod",
+      "runtime"
+    ],
+    "description": "This KEP introduces support for Linux user namespaces in Kubernetes by adding a new pod.spec.hostUsers field that enables pods to run in isolated user namespaces with configurable UID/GID mappings. It enhances node\u2011to\u2011pod and pod\u2011to\u2011pod isolation, mitigating several high\u2011severity container escape vulnerabilities.",
+    "impact": "",
+    "featureGate": "UserNamespacesSupport",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.hostUsers"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.35",
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-1979",
+    "kepPath": "sig-storage/1979-object-storage-support",
+    "title": "Object Storage Support",
+    "stage": "alpha",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "object-storage",
+      "cosi",
+      "api",
+      "provisioning",
+      "security"
+    ],
+    "description": "The KEP introduces the Container Object Storage Interface (COSI), a standardized Kubernetes API for provisioning, accessing, and managing object storage buckets. It enables automated bucket lifecycle operations, credential generation, and bucket sharing across namespaces, bringing object storage to the same level of first\u2011class treatment as CSI volumes.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [
+      "Bucket",
+      "BucketClaim",
+      "BucketClass",
+      "BucketAccess",
+      "BucketAccessClass",
+      "BucketInfo"
+    ],
+    "affectedFields": [
+      "Bucket.spec.bucketClassName",
+      "Bucket.spec.protocols[]",
+      "Bucket.spec.parameters",
+      "Bucket.spec.driverName",
+      "Bucket.status.conditions[].type",
+      "Bucket.status.conditions[].status",
+      "BucketClaim.spec.bucketClassName",
+      "BucketClaim.spec.protocols[]",
+      "BucketClaim.spec.parameters",
+      "BucketClaim.spec.driverName",
+      "BucketClass.spec.deletionPolicy",
+      "BucketClass.spec.driverName",
+      "BucketClass.spec.parameters",
+      "BucketAccess.spec.bucketAccessClassName",
+      "BucketAccess.spec.bucketClaimName",
+      "BucketAccess.spec.credentialsSecretName",
+      "BucketAccess.spec.protocol",
+      "BucketAccess.status.conditions[].name",
+      "BucketAccess.status.conditions[].value",
+      "BucketAccessClass.spec.driverName",
+      "BucketAccessClass.spec.parameters",
+      "BucketAccessClass.spec.authenticationType",
+      "BucketInfo.spec.bucketName",
+      "BucketInfo.spec.protocols[]",
+      "BucketInfo.spec.parameters"
+    ],
+    "history": {
+      "alpha": "1.25"
+    }
+  },
+  {
+    "kep": "KEP-2008",
+    "kepPath": "sig-node/2008-forensic-container-checkpointing",
+    "title": "Forensic Container Checkpointing",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "cri",
+      "checkpoint",
+      "forensics",
+      "security",
+      "kubelet"
+    ],
+    "description": "This KEP adds a new kubelet HTTP endpoint and extends the CRI API with a CheckpointContainer RPC to allow checkpointing of individual containers for forensic analysis. The feature enables operators to capture a running container's state without stopping it, facilitating offline examination of potential security incidents.",
+    "impact": "",
+    "featureGate": "ContainerCheckpoint",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.30",
+      "stable": "1.33",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-2831",
+    "kepPath": "sig-instrumentation/2831-kubelet-tracing",
+    "title": "Kubelet OpenTelemetry Tracing",
+    "stage": "alpha",
+    "sig": "Instrumentation",
+    "category": "Observability",
+    "labels": [
+      "observability",
+      "tracing",
+      "open-telemetry",
+      "cri"
+    ],
+    "description": "This KEP enhances the kubelet to generate and export OpenTelemetry spans for its gRPC and HTTP interactions, including CRI, CNI, and CSI calls. By adding tracing configuration to the kubelet, operators can collect distributed trace data to diagnose node\u2011level latency and failures, improving observability of Kubernetes clusters.",
+    "impact": "",
+    "featureGate": "KubeletTracing",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.34",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3000",
+    "kepPath": "sig-release/3000-artifact-distribution",
+    "title": "Artifact Distribution Policy",
+    "stage": "alpha",
+    "sig": "Release",
+    "category": "Release",
+    "labels": [
+      "artifact-distribution",
+      "registry",
+      "mirroring",
+      "oci-proxy",
+      "cloud-costs"
+    ],
+    "description": "The KEP defines a policy and procedure for promoting and mirroring Kubernetes container images across multiple registries and cloud providers, enabling a redirecting OCI proxy (registry.k8s.io) that routes traffic to the nearest mirror (e.g., AWS S3). This reduces egress costs and ensures global accessibility of images, especially for users behind restrictive firewalls.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.26",
+      "stable": "1.27",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3094",
+    "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+    "title": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+    "stage": "alpha",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "topology-spread",
+      "taint",
+      "tolerations"
+    ],
+    "description": "This KEP adds an optional feature that allows users to include or ignore node taints/tolerations when calculating PodTopologySpread skew. It introduces two new fields in the TopologySpreadConstraint API to explicitly define node inclusion policies, giving finer control over spread calculations and preventing unexpected pending pods on tainted nodes.",
+    "impact": "",
+    "featureGate": "NodeInclusionPolicyInPodTopologySpread",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.topologySpreadConstraints[].nodeAffinityPolicy",
+      "spec.topologySpreadConstraints[].nodeTaintsPolicy"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.26",
+      "stable": "1.33",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3107",
+    "kepPath": "sig-storage/3107-csi-nodeexpandsecret",
+    "title": "SecretRef field addition to NodeExpandVolume request",
+    "stage": "alpha",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "csi",
+      "storage",
+      "node-expand",
+      "secrets"
+    ],
+    "description": "This KEP adds a `nodeExpandSecretRef` field to the CSI PersistentVolumeSource, allowing a secret to be passed from the kubelet to CSI drivers during the NodeExpandVolume RPC. The change enables per\u2011PVC secrets for volume resizing operations such as encrypted device expansion or backend size verification.",
+    "impact": "",
+    "featureGate": "CSINodeExpandSecret",
+    "affectedKinds": [
+      "PersistentVolume"
+    ],
+    "affectedFields": [
+      "spec.csi.nodeExpandSecretRef"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3178",
+    "kepPath": "sig-network/3178-iptables-cleanup",
+    "title": "Cleaning up IPTables Chain Ownership",
+    "stage": "alpha",
+    "sig": "Network",
+    "category": "Networking",
+    "labels": [
+      "networking",
+      "iptables",
+      "security",
+      "kubelet",
+      "kube-proxy"
+    ],
+    "description": "This KEP proposes cleaning up IPTables chain ownership by removing unnecessary IPTables chain creation from kubelet and shifting responsibility to kube-proxy. It introduces a new hint chain for iptables mode detection and eliminates duplicate or unused chains such as KUBE-MARK-MASQ, KUBE-MARK-DROP, and related rules, improving security and reducing external component reliance on Kubernetes internal IPTables chains.",
+    "impact": "",
+    "featureGate": "IPTablesOwnershipCleanup",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3203",
+    "kepPath": "sig-security/3203-auto-refreshing-official-cve-feed",
+    "title": "Auto-refreshing official CVE feed",
+    "stage": "alpha",
+    "sig": "Security",
+    "category": "Security",
+    "labels": [
+      "security",
+      "cve",
+      "automation",
+      "json",
+      "rss"
+    ],
+    "description": "This KEP introduces an automated process that periodically generates a machine\u2011readable JSON feed of official Kubernetes CVEs and publishes it to the website, enabling users to programmatically consume up\u2011to\u2011date vulnerability information. It adds a Prow job, GitHub issue labeling, and GCS storage to keep the CVE list refreshed without manual effort.",
+    "impact": "",
+    "featureGate": null,
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "TBD",
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3243",
+    "kepPath": "sig-scheduling/3243-respect-pod-topology-spread-after-rolling-upgrades",
+    "title": "Respect PodTopologySpread after rolling upgrades",
+    "stage": "alpha",
+    "sig": "Scheduling",
+    "category": "Scheduling",
+    "labels": [
+      "scheduling",
+      "pod-topology-spread",
+      "deployment",
+      "rolling-update",
+      "topology-spread"
+    ],
+    "description": "This KEP adds a new field, `matchLabelKeys`, to the `TopologySpreadConstraint` in pod specifications. The field lets the scheduler consider only the values of specified label keys when calculating pod topology spread, enabling spreading to be scoped to a Deployment revision during rolling upgrades and eliminating the need for manual label management or external deschedulers.",
+    "impact": "",
+    "featureGate": "MatchLabelKeysInPodTopologySpread",
+    "affectedKinds": [
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.topologySpreadConstraints[].matchLabelKeys"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.36",
+      "tentative": [
+        "stable"
+      ],
+      "verified": [
+        "beta"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3299",
+    "kepPath": "sig-auth/3299-kms-v2-improvements",
+    "title": "KMS v2 Improvements",
+    "stage": "alpha",
+    "sig": "Auth",
+    "category": "Security",
+    "labels": [
+      "auth",
+      "kms",
+      "encryption",
+      "security",
+      "observability"
+    ],
+    "description": "KEP-3299 introduces a KMS v2 service contract that adds key rotation without API server restarts, improves health checks, and enhances observability of envelope operations. It adds a new KMS API version, DEK seed reuse, key_id handling, status RPC, and hot\u2011reload of EncryptionConfiguration to reduce latency and rate\u2011limit impacts in large clusters.",
+    "impact": "",
+    "featureGate": "KMSv2",
+    "affectedKinds": [
+      "KMSConfiguration",
+      "EncryptionConfiguration"
+    ],
+    "affectedFields": [
+      "encryption.kms.apiVersion",
+      "EncryptRequest.uid",
+      "DecryptRequest.uid"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.29",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3327",
+    "kepPath": "sig-node/3327-align-by-socket",
+    "title": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
+    "stage": "alpha",
+    "sig": "Node",
+    "category": "Workloads",
+    "labels": [
+      "cpu-manager",
+      "numa",
+      "socket",
+      "topology"
+    ],
+    "description": "This KEP introduces a new CPUManager policy option called `align-by-socket` for the static CPU manager. When enabled, the CPU manager prefers topology hints that are socket\u2011aligned, allowing the TopologyManager to allocate CPUs within the same socket, which improves performance for latency\u2011sensitive workloads when NUMA alignment is not possible.",
+    "impact": "",
+    "featureGate": "CPUManagerPolicyAlphaOptions",
+    "affectedKinds": [],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.27",
+      "stable": "1.28",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3329",
+    "kepPath": "sig-apps/3329-retriable-and-non-retriable-failures",
+    "title": "Retriable and non-retriable Pod failures for Jobs",
+    "stage": "alpha",
+    "sig": "Apps",
+    "category": "Workloads",
+    "labels": [
+      "job",
+      "pod",
+      "failure",
+      "retry",
+      "scheduling"
+    ],
+    "description": "This KEP adds a policy to Kubernetes Jobs that distinguishes between retriable (infrastructure) and non-retriable (software bug) Pod failures. It introduces new Pod and Job conditions as well as JobSpec fields so that infra\u2011related failures do not count toward backoffLimit, while failures deemed non\u2011retriable can terminate the Job early, saving compute resources.",
+    "impact": "",
+    "featureGate": "PodDisruptionConditions",
+    "affectedKinds": [
+      "Job",
+      "Pod"
+    ],
+    "affectedFields": [
+      "spec.template.spec.restartPolicy",
+      "spec.template.spec.podFailurePolicy",
+      "status.conditions[?(@.type==\"FailureTarget\")]"
+    ],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.26",
+      "stable": "1.31",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  },
+  {
+    "kep": "KEP-3333",
+    "kepPath": "sig-storage/3333-retroactive-default-storage-class",
+    "title": "Retroactive default StorageClass assignment",
+    "stage": "alpha",
+    "sig": "Storage",
+    "category": "Storage",
+    "labels": [
+      "storage",
+      "csi",
+      "default-storageclass",
+      "persistentvolumeclaim"
+    ],
+    "description": "This KEP introduces retroactive default StorageClass assignment, allowing the PV controller to automatically assign the current default StorageClass to existing unbound PersistentVolumeClaims that have no storageClassName set. This change reduces the ordering dependencies between PVC creation and default StorageClass availability, simplifying cluster administration and installation workflows.",
+    "impact": "",
+    "featureGate": "RetroactiveDefaultStorageClass",
+    "affectedKinds": [
+      "PersistentVolumeClaim"
+    ],
+    "affectedFields": [],
+    "history": {
+      "alpha": "1.25",
+      "beta": "1.26",
+      "stable": "1.28",
+      "verified": [
+        "beta",
+        "stable"
+      ]
+    }
+  }
+]

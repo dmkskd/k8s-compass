@@ -1,0 +1,316 @@
+{
+  "categories": {
+    "pod-management": {
+      "description": "Enhancements related to pod lifecycle, scheduling, and management",
+      "related_terms": [
+        "pod",
+        "pods",
+        "job",
+        "jobs",
+        "controller",
+        "controllers",
+        "scheduling",
+        "scheduler",
+        "statefulset",
+        "restart",
+        "terminating",
+        "creation",
+        "creation"
+      ]
+    },
+    "api-evolution": {
+      "description": "Changes and improvements to Kubernetes APIs, including versioning and compatibility",
+      "related_terms": [
+        "api",
+        "apis",
+        "openapi",
+        "spec",
+        "schema",
+        "crd",
+        "crds",
+        "custom",
+        "configuration",
+        "config",
+        "apply",
+        "commands",
+        "command",
+        "adding",
+        "added",
+        "dynamic",
+        "semantics",
+        "conditions",
+        "enable",
+        "enabled"
+      ]
+    },
+    "node-and-cluster": {
+      "description": "Features affecting nodes, clusters, and kubelet behavior",
+      "related_terms": [
+        "node",
+        "nodes",
+        "cluster",
+        "clusters",
+        "kubelet",
+        "kube-apiserver",
+        "apiserver",
+        "etcd",
+        "provider",
+        "providers",
+        "cloud provider",
+        "cloud providers",
+        "capacity",
+        "plane",
+        "environment",
+        "host",
+        "linux",
+        "windows",
+        "shutdown",
+        "restart",
+        "build",
+        "building",
+        "built-in",
+        "don",
+        "don",
+        "parent",
+        "plane"
+      ]
+    },
+    "storage-and-volumes": {
+      "description": "Storage solutions, volume management, and CSI drivers",
+      "related_terms": [
+        "csi",
+        "volume",
+        "volumes",
+        "storage",
+        "pvc",
+        "csi driver",
+        "csi migration",
+        "driver",
+        "drivers",
+        "in-tree",
+        "data",
+        "block",
+        "migration",
+        "devices",
+        "device"
+      ]
+    },
+    "service-and-networking": {
+      "description": "Service definitions, networking, and traffic management",
+      "related_terms": [
+        "service",
+        "services",
+        "endpoint",
+        "endpoints",
+        "network",
+        "kube-proxy",
+        "load",
+        "traffic",
+        "dns",
+        "iptables",
+        "proxy",
+        "discovery",
+        "gateway",
+        "webhooks",
+        "admission"
+      ]
+    },
+    "resource-and-performance": {
+      "description": "Resource management, quotas, and performance monitoring",
+      "related_terms": [
+        "resource",
+        "resources",
+        "cpu",
+        "memory",
+        "metrics",
+        "metric",
+        "performance",
+        "capacity",
+        "numa",
+        "logging",
+        "logs",
+        "cache",
+        "metric"
+      ]
+    },
+    "security-and-authentication": {
+      "description": "Authentication, authorization, and security enhancements",
+      "related_terms": [
+        "access",
+        "tokens",
+        "secrets",
+        "account",
+        "certificate",
+        "policies",
+        "gate",
+        "security",
+        "auth",
+        "admission",
+        "webhook",
+        "policy"
+      ]
+    },
+    "cli-and-client": {
+      "description": "Improvements to kubectl, kustomize, and other client tools",
+      "related_terms": [
+        "kubectl",
+        "kustomize",
+        "client",
+        "clients",
+        "commands",
+        "command",
+        "apply",
+        "client",
+        "client"
+      ]
+    },
+    "scheduler-and-topology": {
+      "description": "Scheduler improvements and topology-aware features",
+      "related_terms": [
+        "scheduling",
+        "scheduler",
+        "topology",
+        "numa",
+        "affinity",
+        "topology",
+        "scheduler"
+      ]
+    },
+    "cloud-integration": {
+      "description": "Cloud provider integrations and infrastructure management",
+      "related_terms": [
+        "cloud",
+        "cloud provider",
+        "cloud providers",
+        "provider",
+        "providers",
+        "aws",
+        "provider",
+        "infrastructure"
+      ]
+    },
+    "container-runtime": {
+      "description": "Container runtime interfaces and implementations",
+      "related_terms": [
+        "container",
+        "containers",
+        "cri",
+        "runtime",
+        "image",
+        "images",
+        "container"
+      ]
+    },
+    "application-lifecycle": {
+      "description": "Application deployment, scaling, and management features",
+      "related_terms": [
+        "application",
+        "applications",
+        "deployment",
+        "jobs",
+        "statefulset",
+        "autoscaling",
+        "scaling"
+      ]
+    },
+    "configuration-and-secrets": {
+      "description": "Configuration management, secrets handling, and environment variables",
+      "related_terms": [
+        "configuration",
+        "config",
+        "secrets",
+        "account",
+        "environment",
+        "variables",
+        "configmaps"
+      ]
+    },
+    "monitoring-and-logging": {
+      "description": "Observability features including monitoring and logging",
+      "related_terms": [
+        "metrics",
+        "metric",
+        "logging",
+        "logs",
+        "monitoring",
+        "events",
+        "instrumentation"
+      ]
+    },
+    "release-and-graduation": {
+      "description": "Features related to release processes and graduation stages",
+      "related_terms": [
+        "beta",
+        "alpha",
+        "graduate",
+        "releases",
+        "implementation",
+        "implementations",
+        "enhancement",
+        "enhancements",
+        "features",
+        "deprecate",
+        "removal"
+      ]
+    },
+    "windows-support": {
+      "description": "Enhancements specifically for Windows node support",
+      "related_terms": [
+        "windows",
+        "windows",
+        "host",
+        "windows"
+      ]
+    },
+    "testing-and-reliability": {
+      "description": "Testing frameworks, reliability improvements, and stability enhancements",
+      "related_terms": [
+        "testing",
+        "reliability",
+        "stability",
+        "conditions",
+        "events",
+        "failure",
+        "resilience"
+      ]
+    },
+    "architecture-and-design": {
+      "description": "Fundamental architecture changes and design improvements",
+      "related_terms": [
+        "architecture",
+        "design",
+        "core",
+        "semantics",
+        "schema",
+        "principles",
+        "foundations"
+      ]
+    },
+    "events-and-observability": {
+      "description": "Event handling and broader observability features",
+      "related_terms": [
+        "events",
+        "event",
+        "observability",
+        "monitoring",
+        "instrumentation",
+        "logging",
+        "logs"
+      ]
+    },
+    "namespace-and-isolation": {
+      "description": "Namespace management and resource isolation features",
+      "related_terms": [
+        "namespace",
+        "namespaces",
+        "isolation",
+        "multi-tenancy",
+        "access",
+        "security"
+      ]
+    }
+  },
+  "version": "2.0",
+  "description": "Data-driven taxonomy built from 556 KEPs",
+  "source": "TF-IDF extraction + LLM refinement"
+}

@@ -1,0 +1,1010 @@
+{
+  "version": "1.33",
+  "summary": {
+    "totalFieldsAdded": 131,
+    "linkedFields": 57,
+    "unlinkedFields": 74,
+    "canonicalFields": 57
+  },
+  "links": [
+    {
+      "fieldPath": "spec.behavior.scaleDown.tolerance",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "kep": "KEP-4951",
+      "kepTitle": "Configurable tolerance for HPA",
+      "kepPath": "sig-autoscaling/4951-configurable-hpa-tolerance",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: HPAConfigurableTolerance",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.behavior.scaleUp.tolerance",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "kep": "KEP-4951",
+      "kepTitle": "Configurable tolerance for HPA",
+      "kepPath": "sig-autoscaling/4951-configurable-hpa-tolerance",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: HPAConfigurableTolerance",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRAAdminAccess",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].taints",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.adminAccess",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRAAdminAccess",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DRADeviceTaints",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "endpoints[].hints.forNodes",
+      "kind": "EndpointSlice",
+      "group": "discovery.k8s.io",
+      "kep": "KEP-3015",
+      "kepTitle": "PreferSameZone and PreferSameNode Traffic Distribution",
+      "kepPath": "sig-network/3015-prefer-same-node",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5018",
+      "kepTitle": "DRA Admin Access",
+      "kepPath": "sig-auth/5018-dra-adminaccess",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.nodeAllocatableUpdatePeriodSeconds",
+      "kind": "CSIDriver",
+      "group": "storage.k8s.io",
+      "kep": "KEP-4876",
+      "kepTitle": "Mutable CSINode Allocatable Property",
+      "kepPath": "sig-storage/4876-mutable-csinode-allocatable",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'allocatable' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.attachError.errorCode",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "kep": "KEP-4876",
+      "kepTitle": "Mutable CSINode Allocatable Property",
+      "kepPath": "sig-storage/4876-mutable-csinode-allocatable",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.detachError.errorCode",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "kep": "KEP-4876",
+      "kepTitle": "Mutable CSINode Allocatable Property",
+      "kepPath": "sig-storage/4876-mutable-csinode-allocatable",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations[].effect",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].effect",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations[].key",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations[].value",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].key",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].value",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'device' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3094",
+      "kepTitle": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+      "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'tolerations' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'device' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3094",
+      "kepTitle": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+      "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'tolerations' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].allNodes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-2902",
+      "kepTitle": "CPUManager Policy Option to Distribute CPUs Across NUMA Nodes Instead of Packing Them",
+      "kepPath": "sig-node/2902-cpumanager-distribute-cpus-policy-option",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'nodes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].capacity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4049",
+      "kepTitle": "Storage Capacity Scoring of Nodes for Dynamic Provisioning",
+      "kepPath": "sig-storage/4049-storage-capacity-scoring-of-nodes-for-dynamic-provisioning",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'capacity' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-2902",
+      "kepTitle": "CPUManager Policy Option to Distribute CPUs Across NUMA Nodes Instead of Packing Them",
+      "kepPath": "sig-node/2902-cpumanager-distribute-cpus-policy-option",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'nodes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-2902",
+      "kepTitle": "CPUManager Policy Option to Distribute CPUs Across NUMA Nodes Instead of Packing Them",
+      "kepPath": "sig-node/2902-cpumanager-distribute-cpus-policy-option",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'nodes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].value",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.perDeviceNodeSelection",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-2902",
+      "kepTitle": "CPUManager Policy Option to Distribute CPUs Across NUMA Nodes Instead of Packing Them",
+      "kepPath": "sig-node/2902-cpumanager-distribute-cpus-policy-option",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'nodes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'device' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations[].tolerationSeconds",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3094",
+      "kepTitle": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+      "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'tolerations' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-5055",
+      "kepTitle": "DRA: device taints and tolerations",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'device' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3094",
+      "kepTitle": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+      "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'tolerations' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3094",
+      "kepTitle": "Take taints/tolerations into consideration when calculating PodTopologySpread skew",
+      "kepPath": "sig-scheduling/3094-pod-topology-spread-considering-taints",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'tolerations' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.conditions[].observedGeneration",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5067",
+      "kepTitle": "Pod Generation",
+      "kepPath": "sig-node/5067-pod-generation",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'generation' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.nodeInfo.swap.capacity",
+      "kind": "Node",
+      "group": "core",
+      "kep": "KEP-4049",
+      "kepTitle": "Storage Capacity Scoring of Nodes for Dynamic Provisioning",
+      "kepPath": "sig-storage/4049-storage-capacity-scoring-of-nodes-for-dynamic-provisioning",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'capacity' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.observedGeneration",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5067",
+      "kepTitle": "Pod Generation",
+      "kepPath": "sig-node/5067-pod-generation",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'generation' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.terminatingReplicas",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3973",
+      "kepTitle": "Consider Terminating Pods in Deployments",
+      "kepPath": "sig-apps/3973-consider-terminating-pods-deployment",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'terminating' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.terminatingReplicas",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3973",
+      "kepTitle": "Consider Terminating Pods in Deployments",
+      "kepPath": "sig-apps/3973-consider-terminating-pods-deployment",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'terminating' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "status.nodeInfo.swap",
+      "kind": "Node",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.tolerations[].operator",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].name",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].consumesCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].consumesCounters[].counterSet",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].timeAdded",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].consumesCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].effect",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "endpoints[].hints.forNodes[].name",
+      "kind": "EndpointSlice",
+      "group": "discovery.k8s.io"
+    }
+  ]
+}

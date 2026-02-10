@@ -1,0 +1,15 @@
+{
+  "version": "1.29",
+  "codename": "Mandala",
+  "description": "Join us on a cosmic journey! 'Mandala (The Universe)' reflects the community's interconnectedness—a vibrant tapestry woven by enthusiasts and experts alike. Each contributor adds their unique energy, like diverse patterns in Mandala art. The final release of 2023 brings ReadWriteOncePod to GA for single-pod volume access, KMS v2 improvements for encryption at rest, and nftables kube-proxy in alpha. Like stars in the Kubernetes universe, each contributor lights the way.",
+  "releaseDate": "2023-12-13",
+  "endOfLifeDate": "2025-02-28",
+  "summary": {
+    "total": 49,
+    "stable": 11,
+    "beta": 19,
+    "alpha": 19
+  },
+  "themes": ["Storage", "Security", "Networking", "Windows"],
+  "features": []
+}

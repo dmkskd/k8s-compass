@@ -1,0 +1,15 @@
+{
+  "version": "1.28",
+  "codename": "Planternetes",
+  "description": "Kubernetes 1.28 'Planternetes' 🌱 cultivates 45 enhancements with the care of a master gardener. Like tending a thriving garden, this release nurtures native sidecar containers (alpha), extends the supported version skew to n-3 for more flexible upgrades, and brings non-graceful node shutdown recovery to stable bloom. The community planted seeds of innovation across CDI injection, job tracking, and mixed version proxy—each feature carefully grown to harmonious maturity.",
+  "releaseDate": "2023-08-15",
+  "endOfLifeDate": "2024-10-28",
+  "summary": {
+    "total": 45,
+    "stable": 12,
+    "beta": 14,
+    "alpha": 19
+  },
+  "themes": ["Workloads", "Upgrades", "Jobs", "Node"],
+  "features": []
+}

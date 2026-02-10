@@ -1,0 +1,2250 @@
+{
+  "fromVersion": "1.32",
+  "toVersion": "1.33",
+  "summary": {
+    "kindsAdded": 1,
+    "kindsRemoved": 0,
+    "fieldsAdded": 131,
+    "fieldsRemoved": 17,
+    "fieldsModified": 96,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "DeviceTaintRule",
+      "group": "resource.k8s.io"
+    }
+  ],
+  "kindsRemoved": [],
+  "fieldsAdded": [
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "status.terminatingReplicas",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "status.nodeInfo.swap.capacity",
+      "kind": "Node",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "status.nodeInfo.swap",
+      "kind": "Node",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.observedGeneration",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.containers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.conditions[].observedGeneration",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].stopSignal",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations[].effect",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.results[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations[].value",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].exactly.tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].firstAvailable[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.nodeAllocatableUpdatePeriodSeconds",
+      "kind": "CSIDriver",
+      "group": "storage.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations[].key",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations[].value",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations[].operator",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations[].effect",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations[].key",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations[].value",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.tolerations[].tolerationSeconds",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations[].tolerationSeconds",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.adminAccess",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].name",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].firstAvailable[].tolerations[].effect",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.behavior.scaleDown.tolerance",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "type": "string"
+    },
+    {
+      "path": "spec.behavior.scaleUp.tolerance",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.detachError.errorCode",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "status.attachError.errorCode",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.sharedCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].nodeSelector",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].taints[].value",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].allNodes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.devices[].attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].consumesCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].taints",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.sharedCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].consumesCounters[].counterSet",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices[].taints[].timeAdded",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].capacity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].taints[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.perDeviceNodeSelection",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.devices[].consumesCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].taints[].effect",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.sharedCounters[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "status.terminatingReplicas",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "endpoints[].hints.forNodes",
+      "kind": "EndpointSlice",
+      "group": "discovery.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "endpoints[].hints.forNodes[].name",
+      "kind": "EndpointSlice",
+      "group": "discovery.k8s.io",
+      "type": "string"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices[].basic.attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].basic",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices[].basic.capacity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    }
+  ],
+  "fieldsModified": [
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "PodDisruptionBudget",
+      "group": "policy",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchConstraints.namespaceSelector.matchExpressions[].operator",
+      "kind": "MutatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchConstraints.objectSelector.matchExpressions[].operator",
+      "kind": "MutatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.jobTemplate.spec.selector.matchExpressions[].operator",
+      "kind": "CronJob",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "CronJob",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.scopeSelector.matchExpressions[].scopeName",
+      "kind": "ResourceQuota",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "VolumeAttributesClass"
+      ],
+      "removed": []
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.selector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.namespaceSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.namespaceSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.selector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "status.failedIndexes",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [],
+      "removed": [
+        "JobBackoffLimitPerIndex"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.namespaceSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.namespaceSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.labelSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.labelSelector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.selector.matchExpressions[].operator",
+      "kind": "PodTemplate",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "webhooks[].objectSelector.matchExpressions[].operator",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "webhooks[].namespaceSelector.matchExpressions[].operator",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "nodeTopology.matchExpressions[].operator",
+      "kind": "CSIStorageCapacity",
+      "group": "storage.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.egress[].to[].podSelector.matchExpressions[].operator",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.ingress[].from[].podSelector.matchExpressions[].operator",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.egress[].to[].namespaceSelector.matchExpressions[].operator",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.podSelector.matchExpressions[].operator",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.ingress[].from[].namespaceSelector.matchExpressions[].operator",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchResources.objectSelector.matchExpressions[].operator",
+      "kind": "MutatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.paramRef.selector.matchExpressions[].operator",
+      "kind": "MutatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchResources.namespaceSelector.matchExpressions[].operator",
+      "kind": "MutatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.metrics[].object.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "status.currentMetrics[].object.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.metrics[].pods.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "status.currentMetrics[].pods.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "status.currentMetrics[].external.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.metrics[].external.metric.selector.matchExpressions[].operator",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchResources.objectSelector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.paramRef.selector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchResources.namespaceSelector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "webhooks[].objectSelector.matchExpressions[].operator",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "webhooks[].namespaceSelector.matchExpressions[].operator",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchConstraints.namespaceSelector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.matchConstraints.objectSelector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].namespaceSelector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.topologySpreadConstraints[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.selector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].labelSelector.matchExpressions[].operator",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    },
+    {
+      "path": "aggregationRule.clusterRoleSelectors[].matchExpressions[].operator",
+      "kind": "ClusterRole",
+      "group": "rbac.authorization.k8s.io",
+      "change": "enum",
+      "added": [
+        "Equal",
+        "Exists"
+      ],
+      "removed": [
+        "In",
+        "NotIn"
+      ]
+    }
+  ],
+  "fieldsDeprecated": []
+}

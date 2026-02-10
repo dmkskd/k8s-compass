@@ -1,0 +1,65 @@
+# LLM Provider Configuration for KEP Enrichment
+# 
+# This file configures which LLM provider and model to use for enriching
+# KEP features with descriptions and metadata.
+#
+# To switch providers, just change the 'provider' field and ensure the
+# corresponding section is configured.
+#
+# Available providers: ollama, bedrock, anthropic
+
+# Active provider (change this to switch)
+# Options: bedrock, anthropic, openai, gemini, ollama
+provider: bedrock
+
+# Ollama configuration (local models)
+# Requires: ollama running locally (ollama serve)
+# Install: https://ollama.ai
+ollama:
+  host: http://localhost:11434
+  model_id: gpt-oss:20b
+  # How long to keep model loaded in memory
+  keep_alive: 5m
+  # Lower temperature = more deterministic/predictable output (0.0-1.0)
+  temperature: 0.1
+  # max_tokens: 4096
+
+# Amazon Bedrock configuration
+# Requires: AWS credentials configured (aws configure)
+# 
+# Available models (no approval needed):
+#   - minimax.minimax-m2-v1:0     (MiniMax M2 - excellent for coding/agentic tasks, 8% cost of Claude)
+#   - us.deepseek.r1-v1:0         (DeepSeek-R1 - excellent reasoning, cost-effective)
+#   - us.amazon.nova-2-lite-v1:0  (Nova 2 - best quality, cross-region)
+#   - amazon.nova-pro-v1:0        (Nova 1 Pro)
+#   - amazon.nova-lite-v1:0       (Nova 1 Lite)
+#   - amazon.nova-micro-v1:0      (fastest, basic tasks)
+#   - us.meta.llama3-3-70b-instruct-v1:0
+#   - mistral.mistral-large-3-675b-instruct
+#   - openai.gpt-oss-120b-1:0
+#   - google.gemma-3-27b-it
+# Anthropic models (require approval):
+#   - us.anthropic.claude-sonnet-4-20250514-v1:0
+bedrock:
+  model_id: openai.gpt-oss-120b-1:0
+  max_tokens: 4096
+  # region: us-east-1  # Optional, uses default region
+
+# Anthropic API configuration
+# Requires: ANTHROPIC_API_KEY environment variable
+anthropic:
+  model_id: claude-sonnet-4-20250514
+  max_tokens: 4096
+
+# OpenAI API configuration
+# Requires: OPENAI_API_KEY environment variable
+openai:
+  model_id: gpt-4o
+  max_tokens: 4096
+
+# Google Gemini configuration (has free tier!)
+# Requires: GOOGLE_API_KEY environment variable
+# Get free key at: https://aistudio.google.com/apikey
+gemini:
+  model_id: gemini-2.0-flash
+  max_tokens: 4096

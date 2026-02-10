@@ -1,0 +1,2132 @@
+{
+  "version": "1.31",
+  "summary": {
+    "totalFieldsAdded": 239,
+    "linkedFields": 154,
+    "unlinkedFields": 85,
+    "canonicalFields": 98
+  },
+  "links": [
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4601",
+      "kepTitle": "Authorize with Selectors",
+      "kepPath": "sig-auth/4601-authorize-with-selectors",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'health' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'health' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'health' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].image",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumes[].image",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].image",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'devices' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'devices' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.constraints",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.constraints[].matchAttribute",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.constraints[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'device' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.pool.name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'devices' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.constraints",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.constraints[].matchAttribute",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.constraints[].requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'device' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'devices' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.config",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].request",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.config[].opaque.driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.config[].opaque.driver",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].opaque.driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.features.supplementalGroupsPolicy",
+      "kind": "Node",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'control' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.config[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices.requests[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4358",
+      "kepTitle": "Custom Resource Field Selectors",
+      "kepPath": "sig-api-machinery/4358-custom-resource-field-selectors",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'selectors' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].basic.attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'attributes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.driver",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4033",
+      "kepTitle": "Discover cgroup driver from CRI",
+      "kepPath": "sig-node/4033-group-driver-detection-over-cri",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'driver' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.pool.resourceSliceCount",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3335",
+      "kepTitle": "StatefulSet Slice",
+      "kepPath": "sig-apps/3335-statefulset-slice",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'slice' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceClaims[].resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.controller",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'control' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.config[].requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4358",
+      "kepTitle": "Custom Resource Field Selectors",
+      "kepPath": "sig-api-machinery/4358-custom-resource-field-selectors",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'selectors' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumes[].image.pullPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].source",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].device",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4009",
+      "kepTitle": "Add CDI devices to device plugin API",
+      "kepPath": "sig-node/4009-add-cdi-devices-to-device-plugin-api",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'device' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4033",
+      "kepTitle": "Discover cgroup driver from CRI",
+      "kepPath": "sig-node/4033-group-driver-detection-over-cri",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'driver' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'match' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4622",
+      "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
+      "kepPath": "sig-node/4622-topologymanager-max-allowable-numa-nodes",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'value' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.containers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.resourceClaims[].resourceClaimName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].image.pullPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "template.spec.volumes[].image.reference",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].image.reference",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.strategy",
+      "kind": "Lease",
+      "group": "coordination.k8s.io"
+    },
+    {
+      "fieldPath": "spec.preferredHolder",
+      "kind": "Lease",
+      "group": "coordination.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.config",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].pool",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].basic.capacity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.allNodes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].basic",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.pool",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.pool.generation",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.features",
+      "kind": "Node",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.runtimeHandlers[].features.userNamespaces",
+      "kind": "Node",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.volumes[].image.reference",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.config[].opaque.parameters",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.config[].opaque",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].name",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.config",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    }
+  ]
+}

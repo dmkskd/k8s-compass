@@ -1,0 +1,3372 @@
+{
+  "content": [
+    {
+      "url": "https://www.youtube.com/watch?v=4WokHq-RyeQ",
+      "title": "Demystifying Cloud Native Concepts for the Business World",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "general",
+        "cncf",
+        "service-mesh",
+        "cloud-native",
+        "kubecon",
+        "glossary",
+        "business"
+      ],
+      "links": [],
+      "author": "Catherine Paganini & Jason Morgan",
+      "summary": "The session introduces the CNCF Cloud Native Glossary, explaining core cloud native concepts such as containers and service meshes in business-friendly terms, helping organizations align these technologies with strategic goals.",
+      "description": "As co-chairs of the CNCF Business Value Subcommittee, Jason Morgan and Catherine Paganini seek to democratize cloud native concepts. Technologists have been talking about these topics for years, yet, for many, the cloud native space is still largely inaccessible. What is a service mesh? How do containers fit in? And how do any of these technologies help my organization achieve its strategic goals?In this session, Jason and Catherine will talk about their first project: the CNCF Cloud Native Glos",
+      "schedUrl": "https://kccnceu2021.sched.com/event/1c82f7afd45a7765e73f37825eedb440",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7_xPnGUrjQ4",
+      "title": "Evaluating Business Risk for Open Source Cloud Native Projects",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "governance",
+        "kubecon-eu-2021",
+        "general",
+        "community",
+        "security",
+        "risk",
+        "kubecon",
+        "open-source",
+        "supply-chain"
+      ],
+      "links": [],
+      "author": "Dawn Foster",
+      "summary": "The session discusses how businesses can assess and mitigate risk when adopting open source cloud native projects, focusing on governance, contributor health, and security/release processes, which is crucial for Kubernetes operators looking to build reliable, low\u2011risk platforms.",
+      "description": "Most business decisions boil down to an assessment of risk and making tradeoffs. We should all be thinking about risks relative to how we\u2019re using cloud native open source projects within our business. If we build our business on top of an open source technology, we want it to be as low of a risk as possible. This talk will: * Compare the risk between projects under neutral foundations vs. those owned by individual companies. * Provide details about how governance impacts risk relative to leader",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/5f/Evaluating_Risk_OSS_CNCF_KubeConEU.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/00b0a5744eb48fe555b2f50962e40fca",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=FU7A6WXoCt0",
+      "title": "Harbor - Enterprise Cloud Native Artifact Registry",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "cncf",
+        "registry",
+        "security",
+        "kubecon",
+        "maintainer-track",
+        "platform-engineering",
+        "supply-chain"
+      ],
+      "links": [],
+      "author": "Daniel Jiang & Yan Wang",
+      "summary": "The session provides an overview of Harbor, a CNCF\u2011graduated cloud\u2011native artifact registry, highlighting its key features, recent releases, upcoming development, and community challenges, helping Kubernetes users manage and secure their container image supply chain.",
+      "description": "Harbor is a CNCF graduated project, which help enterprise distribute and manage cloud native artifacts. We\u2019ll use this session to give audience an overview of this project and the community we built around it. We\u2019ll talk about Harbor\u2019s key features and use cases, the latest updates introduced in the most recent release. In addition to that, we\u2019ll give a sneak peek about the development that is working in progress in this project. We\u2019ll also use this session to discuss with the users regarding th",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/ca/KubeCon_EU_2021_Harbor.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/5de6dfa531fcf3a22a215592fffb55e7"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=4yTdJph2Knk",
+      "title": "Intro and Deep Dive: Kubernetes SIG Instrumentation",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "sig-instrumentation",
+        "kubecon-eu-2021",
+        "instrumentation",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Frederic Branczyk",
+      "summary": "An intro and deep\u2011dive into SIG Instrumentation\u2019s work on consistent, high\u2011quality observability in Kubernetes, outlining past achievements, current efforts, and how the community can get involved.",
+      "description": "Kubernetes SIG Instrumentation is responsible for ensuring high quality and consistent instrumentation across the Kubernetes project. We will begin with an introductory overview of the efforts the SIG Instrumentation has worked on in the past and is currently working on. This deep dive session will go in detail currently ongoing efforts happening within SIG Instrumentation to share with the audience concrete pieces of work to encourage future collaboration. Software engineering and operations ar",
+      "schedUrl": "https://kccnceu2021.sched.com/event/3c116cfa2d41a91c05a13fea1359497c"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=LNMPg5n2lf0",
+      "title": "Introduction and Deep Dive Into Containerd",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "plugins",
+        "storage",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Kohei Tokunaga & Akihiro Suda",
+      "summary": "The session provides an introduction and deep dive into containerd, covering its architecture, recent updates, and how it integrates with Kubernetes, Docker, and other systems, plus guidance on extending it with plugins and custom clients.",
+      "description": "Join containerd maintainers and reviewers in a combined introduction and deep dive session. They will discuss the overview and the recent updates of containerd as well as how it is being used by Kubernetes, Docker and other container-based systems. The brief introduction about its architecture and service design will be included. The talk will also deep dive into how to leverage contained by extending and customizing it for your use case with low-level plugins like remote snapshotters, as well a",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d3/containerd-KubeConEU2021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0eeda8372bc0b7384f4804213f11a018"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=jHR_sAYGGAw",
+      "title": "Protecting Ourselves from CNCFgate. Software Supply Chain Security at CNCF - Practices, and Tools",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "cicd",
+        "kubecon",
+        "software-supply-chain",
+        "maintainer-track",
+        "supply-chain"
+      ],
+      "links": [],
+      "author": "Andres Vega & Emily Fox",
+      "summary": "The session explores the challenges of securing the software supply chain within the CNCF ecosystem, sharing SIG-Security\u2019s experiences, best practices, and tooling to mitigate high\u2011profile attacks and protect downstream Kubernetes users.",
+      "description": "As the complexity of our software systems grows \u2013 and they ingest more and more dependencies to deliver their functionality \u2013 the supply chain becomes more complex, and thus more difficult to secure. The industry is forming a consensus around a baseline set of properties for a secure software supply chain, yet these are not enough to protect against some of the high-profile attacks we have seen in recent years. In some cases they may not even have made detection easier. The industry needs to do ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/a2/Protecting_Ourselves_from_CNCF_gate.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0440c78983ada3d52d814681a36779b2"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=mtwwUqeIHAw",
+      "title": "Thanos: Easier Than Ever to Scale Prometheus and Make It Highly Available",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "storage",
+        "kubecon",
+        "maintainer-track",
+        "thanos",
+        "prometheus",
+        "query"
+      ],
+      "links": [],
+      "author": "Giedrius Statkevi\u010dius, Red Hat",
+      "summary": "The session explains how Thanos extends Prometheus with high\u2011availability and scalability, teaching attendees how to adopt Thanos in Kubernetes or other cloud\u2011native environments and detailing recent enhancements such as series deletion, query caching, and scalable rulership.",
+      "description": "Prometheus is a leading CNCF Graduated project that provides a solution for all things metrics. However, it lacks scalability and high availability features. Thanos turbocharges Prometheus by adding those features while keeping storage and maintenance costs low. In the first part of the session, you will discover how to leverage Thanos in your organization just as many other companies have already done . You will learn enough to continue on your journey toward deploying Thanos in Kubernetes or a",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/99/KubeCon%202021%20Thanos.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/cd51cce1d2010bac381ac6e461785bbe"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JvbwpiFnBuA",
+      "title": "Building a Portable Kubernetes Deployment Pipeline with Argo Workflows and Events",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "argo",
+        "case-study",
+        "multi-cloud",
+        "terraform",
+        "kubecon",
+        "ci-cd",
+        "platform-engineering"
+      ],
+      "links": [],
+      "author": "Thomas Meadows",
+      "summary": "The session shares practical lessons from building a portable, multi\u2011cloud Kubernetes deployment platform using Argo Workflows, Argo Events, and Terraform, highlighting custom CI/CD approaches, multi\u2011tenant isolation, and infrastructure\u2011agnostic portability.",
+      "description": "In this session, Jetstack and Improbable will uncover the key learnings from building a Kubernetes based platform, driven by Argo workflows and events. Featuring discussion on the platform's strong data aggregation and the ability to deploy on any estate (including air-gapped facilities), this session will investigate the problems and benefits of using Argo and Kubernetes as the key ingredients towards the goal of a holistic approach to portable platforms. The technical content of the presentati",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/62/Kubecon-Slides-Final.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a64e73ebd18ab090bf58955100aae623",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Kvog7aZ3esY",
+      "title": "Dedicated Infrastructure in a Multitenant World",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "envoy",
+        "multi-tenant",
+        "security",
+        "service-mesh",
+        "case-study",
+        "networking",
+        "kubecon",
+        "platform-engineering"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Carlos Sanchez",
+      "summary": "The session details Adobe's approach to providing each tenant with dedicated infrastructure\u2014such as unique egress IPs, DNS, and VPN connectivity\u2014while still running services in shared Kubernetes clusters, leveraging Envoy for secure tunnels and automation via Terraform.",
+      "description": "Running multitenant Kubernetes clusters is challenging, particularly when different tenants require their own dedicated infrastructure. At Adobe Experience Manager Cloud Service we built solutions to provide customers with their own dedicated infrastructure, such as ips, DNS, VPN connectivity,... while running most services in multitenant Kubernetes clusters. We will share how we built our solution making extensive use of Envoy to run networking tunnels between Kubernetes pods and customer dedic",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/66/Dedicated%20Infrastructure%20in%20a%20Multitenant%20World.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/b4f323314a619b38466a16a9027e36e1",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lnXeONAaQfs",
+      "title": "Cloud Native Distributed Event Streaming from TiKV",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "streaming",
+        "data-pipeline",
+        "cloud-native",
+        "storage",
+        "kubecon",
+        "deep-dive",
+        "database"
+      ],
+      "links": [],
+      "author": "Zixiong Liu",
+      "summary": "The session explains how TiKV\u2019s architectural features enable low\u2011latency, fault\u2011tolerant distributed event streaming, allowing Kubernetes\u2011based workloads to consume ordered change streams directly from the store for real\u2011time data pipelines.",
+      "description": "Data processing is evolving to be stream-oriented to enable interconnection between subsystems or microservices, but it could be challenging for distributed data stores, such as TiKV, to stream data effectively. Zixiong Liu and his team have successfully achieved distributed event streaming from TiKV with low computational cost, low latency, and elimination of single points of failure. Now it is possible to produce a stream of updates from TiKV, which, with suitable deduplication, are ordered by",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/3e/KubeCon%20Talk_%20Cloud%20Native%20Distributed%20Event%20Streaming%20from%20TiKV.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/49d3d1910126871d2d218c639fc390c6",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=o5h6s3A9bXY",
+      "title": "The Long, Winding and Bumpy Road to CronJob\u2019s GA",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "sig-apps",
+        "performance",
+        "deep-dive",
+        "kubecon",
+        "job",
+        "api",
+        "controller",
+        "batch",
+        "cronjob"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "CronJob",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-19",
+          "confidence": 0.98,
+          "reason": "The session discusses the six\u2011year evolution of the CronJob API from beta to GA, the new high\u2011performance controller, and future directions. KEP-19 is the specific KEP that introduced and defined the CronJob (ScheduledJob) API and its graduation to GA, directly matching the session's focus on the implementation and graduation of this feature."
+        }
+      ],
+      "author": "Maciej Szulik",
+      "summary": "This session recounts the six\u2011year evolution of the Kubernetes CronJob API from beta to GA, highlighting past reliability issues, the new high\u2011performance controller, and future directions, which is critical for operators relying on scheduled workloads.",
+      "description": "The CronJob API just reached GA, and the new controller is solving all the performance and reliability problems of the past. Come join us to learn about the 6 year journey that got us here! We will talk about the people who sparked the discussions and delivered the initial implementation. We will cover all the major problems that users were faced to handle over the years. Finally, we will discuss the solutions and our gratitude to the users and developers standing behind this part of Kubernetes.",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f2/KubeCon%20EU%202021%20-%20The%20Long%2C%20Winding%20and%20Bumpy%20Road%20to%20CronJob%E2%80%99s%20GA.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9c3de1da1c65375e7fe0c5f5be65e480",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=hCTgCRlU-M0",
+      "title": "Helm Users! What Flux 2 Can Do For You",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "helm",
+        "gitops",
+        "deep-dive",
+        "kubecon",
+        "ci-cd",
+        "flux",
+        "continuous-delivery"
+      ],
+      "links": [],
+      "author": "Scott Rigby & Kingdon Barrett",
+      "summary": "The session demonstrates how Helm users can leverage Flux v2's GitOps capabilities for continuous delivery, showcasing live demos of the combined power of Helm and Flux to simplify Kubernetes deployments.",
+      "description": "Helm, the Package manager for Kubernetes. Flux, the GitOps continuous delivery solution for Kubernetes. Both can be used independently, but are more powerful together. Scott Rigby, Helm and Flux maintainer \u2014 and Kingdon Barrett, OSS engineer \u2014 will share the benefits of Helm and GitOps for developers, with live demos showcasing the extra awesomeness of Flux v2 and Helm together. This talk is for Helm users who have either never used Flux, or Flux v1 users looking forward to new features in Flux ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/12/kccnceu2021-helm-users-flux-guide.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a288563202e4d1edac6a6388f3952f8a",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=IilnJ6C2MnQ",
+      "title": "Build your Contributor Pipeline",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "onboarding",
+        "community",
+        "maintainer",
+        "contributor",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Carolyn Van Slyck",
+      "summary": "The session teaches project maintainers how to attract, onboard, and retain new contributors using SIG Contributor Strategy best practices, helping projects sustainably grow their communities.",
+      "description": "Would you like to attract new contributors to your project and grow your contributor base? CNCF SIG Contributor Strategy has developed best practices to improve your contributor pipeline and can help you adapt them to your project's needsAttract new contributors to your project with good first issues.Create onboarding materials, such as a contributing guide and onboarding tutorial, to guide their first contribution towards success.Improve the contributor experience, encouraging people to join yo",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/56/slides.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/53242fc6c969f41a0101da09e53e7063"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dOjoiUuaCiY",
+      "title": "CloudEvents - Looking Beyond Event Delivery",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "knative",
+        "kubecon-eu-2021",
+        "cloudevents",
+        "serverless",
+        "kubecon",
+        "maintainer-track",
+        "eventing"
+      ],
+      "links": [],
+      "author": "Remi Cattiau",
+      "summary": "The talk examines the broader lifecycle of CloudEvents, covering discovery, transport options, and subscription mechanisms, and updates the audience on the new specifications being developed to make event delivery more consistent for Kubernetes users.",
+      "description": "While CloudEvents helps in the delivery of events from a producer to a destination, when considering the entire lifecycle of an event there's a lot more to consider. For example, how does someone discover which events can be generated and by which producer? What transport mechanisms for event delivery are available? How does someone subscribe to receive events? Today there's no consistent mechanism to answer these questions. This session will explore how the CloudEvents project is working to sol",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/7b/KubeCon-CloudEvents-2021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/24352680119d1a3a40736c5738a032aa"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ZffZzGbjy1k",
+      "title": "CoreDNS Deep Dive: Building Custom Plugins",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service-discovery",
+        "plugin",
+        "golang",
+        "coredns",
+        "dns",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Yong Tang",
+      "summary": "The session provides a technical deep dive into CoreDNS's plugin architecture, walking through building a custom plugin from scratch and outlining the project's roadmap, which is crucial for Kubernetes operators and developers extending DNS functionality.",
+      "description": "CoreDNS is a cloud-native DNS server with a focus on service discovery. While best known as the default cluster DNS for Kubernetes, CoreDNS is very flexible and extensible for any new features thanks to its plugin-based architecture: new functionalities can be easily added as plugins with Golang. In this session, we will take a detailed look at the plugin system of CoreDNS. We will walk through the complete code of a demo plugin from the scratch to showcase the simplicity and ease of convenience",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/0b/KubeCon%20-%20EU%20Virtual%20-%20CoreDNS.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/acfd23694b8f39b24dc168b965b26163"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=n1KiMD-Tids",
+      "title": "Using a Distributed Key-Value Store",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "distributed",
+        "storage",
+        "kubecon",
+        "maintainer-track",
+        "database"
+      ],
+      "links": [],
+      "author": "Nick Cameron & Andy Lok",
+      "summary": "The session walks through building applications with TiKV, a distributed transactional key-value store, covering its architecture, client APIs, and practical considerations for leveraging TiKV at scale in Kubernetes environments.",
+      "description": "Key-value stores are well-known and the concept is simple, but there are myriad differences in the details of different stores. How you choose and use a key-value store in your projects is dictated by these details. TiKV is a distributed and transactional key-value store, which makes it massively scalable and a great choice if you have huge volumes of data and need low-latency access with low tolerance for inconsistency. In this talk, Nick Cameron and Di\u2019an Luo will walk through building an appl",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/70/using%20a%20kv%20store.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/5df6ef408130450e05dcf59e5d0fb8b8"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=cGJXkZ7jiDk",
+      "title": "xDS in gRPC for Service Mesh",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "envoy",
+        "service-mesh",
+        "grpc",
+        "xds",
+        "networking",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Megan Yahya",
+      "summary": "The session introduces how gRPC leverages the xDS API to provide service mesh capabilities, explaining the benefits for Kubernetes operators looking to adopt lightweight, gRPC\u2011based mesh solutions.",
+      "description": "This presentation will introduce the xDS functionality in gRPC and talk about the exciting development of service mesh features in gRPC.",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/2a/Service%20Mesh%20with%20gRPC%20and%20xDS.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/681ab1081cf88618eb6a16fae45e625d"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8D4XDPnRkr0",
+      "title": "Operationalizing Kubernetes Sidecars in Production at Salesforce",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "admission-webhooks",
+        "case-study",
+        "operator",
+        "kubecon",
+        "pod",
+        "sidecar"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-492",
+          "confidence": 0.96,
+          "reason": "The session discusses mutating admission webhooks for sidecar injection, which directly relates to the implementation and graduation of admission webhooks as defined in KEP-492 (Graduate Admission Webhooks to GA)."
+        }
+      ],
+      "author": "Mayank Kumar",
+      "summary": "The session explains how Salesforce operationalizes mutating admission webhooks to inject and roll out sidecars at scale, sharing their open\u2011source framework, an operator for rolling updates, and best\u2011practice recipes for building highly available admission webhooks in production.",
+      "description": "Mutating admission webhooks have become a key part of every kubernetes cluster. It helped make the sidecar pattern ubiquitous. Salesforce embraced it by creating an open source framework for injecting sidecars. It did not take long for them to realize that webhooks should be written and deployed with great caution. This talk is about how Salesforce is using mutating admission webhooks for some of their most critical infra services in the Hyperforce architecture. They will cover the open source f",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/82/Operationalizing%20Kubernetes%20sidecars%20in%20Production%20at%20Salesforce.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/c7c6c37d26319fbdb227d58e705799ad",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=KoweR6u0t8c",
+      "title": "Compliance the Easy Way: Zero-conf mTLS for Dev and smooth Day-2 for Ops",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "linkerd",
+        "cert-manager",
+        "security",
+        "service-mesh",
+        "case-study",
+        "kubecon",
+        "mtls"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Christian H\u00fcning & Lutz Behnke",
+      "summary": "The session presents a Finleap case study on adopting Linkerd to provide zero\u2011configuration mTLS for internal traffic, highlighting compliance, observability, and operational practices such as cert\u2011manager driven CA rotation for a large pod fleet.",
+      "description": "Finleap Connect operates in a strong financial context under which regulatory requirements demand that all internal traffic between critical applications be encrypted. In this case study Christian H\u00fcning and Lutz Behnke will review the decision making process that led to selecting Linkerd for the task of securing traffic for the Finleap application infrastructure. Christian will also provide insights into the integration process with the application teams and how Linkerd positively affected obse",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/66/Compliance%20the%20Easy%20Way.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/3d63ac274d819e3d8b93bd305fb101a6",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=w0k7MI6sCJg",
+      "title": "Secrets Store CSI Driver: Keeping Secrets Secret",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "secret",
+        "security",
+        "external-secrets",
+        "csi",
+        "storage",
+        "kubecon",
+        "deep-dive"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Secret",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2907",
+          "confidence": 0.98,
+          "reason": "The session focuses on the Secrets Store CSI Driver, which is the subject of KEP-2907 that defines the CSI driver and its CRDs for integrating external secret stores."
+        }
+      ],
+      "author": "Anish Ramasekar",
+      "summary": "The session explains how the Secrets Store CSI Driver enables Kubernetes workloads to securely retrieve and rotate secrets from external secret stores (e.g., Azure Key Vault, Google Secret Manager, HashiCorp Vault) using CSI volumes and CRDs, highlighting trade\u2011offs versus alternative approaches.",
+      "description": "Applications running on Kubernetes require access to sensitive information (passwords, SSH keys and authentication tokens). But how do you configure your applications when the source of truth for these secrets is an external secret store? What if you need to store, retrieve and perform zero touch rotation of these secrets securely? Meet the Secrets Store CSI Driver, a sig-auth subproject providing a simple way to retrieve secrets from enterprise-grade external stores such as Azure Key Vault, Goo",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/14/SecretsStoreCSIDriverKeepingSecretsSecret_AnishRamasekar_TommyMurphy_050521.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9874516572c3b3972f5133482e2b9249",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=mWQetXFVrao",
+      "title": "Multi-Cluster Service Deployments with Operators and KubeCarrier",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service",
+        "operators",
+        "networking",
+        "kubecon",
+        "deep-dive",
+        "platform-engineering",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "Rastislav Szab\u00f3",
+      "summary": "The session demonstrates how to deploy complex, multi-component applications across multiple Kubernetes clusters using operators, the KubeCarrier service hub, and Submariner for cross\u2011cluster connectivity, addressing challenges of communication, multi\u2011tenancy, and resource specialization.",
+      "description": "Complex application services consisting of multiple interconnected components can benefit from deployment in multiple Kubernetes clusters: Examples include for instance running the application core at a cloud provider and the database with sensitive data in a on-premises cluster or running computational-intensive tasks in a cluster with specialized hardware resources (e.g. GPUs) at the same time. This approach however brings several challenges. How can we interconnect the clusters so that the ap",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/28/Multi_Cluster_Service_Deployments_With_Operators_KubeCarrier_Rastislav_Szabo_050521_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/bf83501f07fdd8a10db4fc5504363e77",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ewCnqDgewMg",
+      "title": "How DoD Uses K8s and Flux to Achieve Compliance and Deployment Consistency",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "helm",
+        "security",
+        "case-study",
+        "gitops",
+        "kubecon",
+        "platform-engineering",
+        "flux"
+      ],
+      "links": [],
+      "author": "Michael Medellin & Gordon Tillman",
+      "summary": "The talk describes how the U.S. Department of Defense modernized its application delivery by adopting Helm and Flux for GitOps, enabling declarative, version\u2011controlled deployments across both connected (AWS GovCloud) and air\u2011gapped environments, improving consistency and compliance.",
+      "description": "Like many other organizations, the DoD also started the journey to K8s and had its own challenges. Due to the nature of DoD systems, there are applications that are deployed in a more relaxed environment such as AWS GovCloud and also in a more restricted air-gapped environments with no internet or external connectivity. In the beginning, it was all about manual deployment and operations. By introducing Helm and Flux, DoD moved to a more declarative model where everything is version controlled an",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/70/How_DoD_Uses_K8s_and_Flux_to_Achieve_Compliance_and_Deployment_Consistency_MichaelMedellin_GordonTillman_050521_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a42d98cb884bcf660a382e2b7622575a",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xX2z8ndp_zg",
+      "title": "Scaling Apache Spark on Kube to Apple Scale",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "ml",
+        "spark",
+        "data-pipeline",
+        "deep-dive",
+        "autoscaling",
+        "kubecon",
+        "platform-engineering"
+      ],
+      "links": [],
+      "author": "Amanda Moran & Holden Karau",
+      "summary": "The session discusses how to run Apache Spark workloads at massive scale on Kubernetes, covering migration from YARN, best\u2011practice guidance for operators and end users, and new Spark\u2011on\u2011K8s features such as shuffle tracking and graceful decommissioning.",
+      "description": "Amanda and Holden will explore the customer workloads that easily ported to Apache Spark on Kubernetes, and which ones had more difficulty. The goal of this talk is to help the audience in their journey as either the operators of an Apache Spark-Kubernetes platform or as an end user. Considerations and best practices for end users of an Apache Spark on Kubernetes platform will be discussed. Additional advice for folks migrating from YARN with HDFS to Kubernetes will be included. This talk will i",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d0/Scaling_Apache_Spark_on_Kube_to_Apple_Scale_AmandaMoran_05052021_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/4203787826c315e9e99424bf49a355e3",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=AJ9uzrfO_hE",
+      "title": "Cloud Native Storage - a View of the Landscape, Projects and Technology",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "performance",
+        "storage",
+        "sig-storage",
+        "kubecon",
+        "maintainer-track",
+        "benchmarking",
+        "disaster-recovery"
+      ],
+      "links": [],
+      "author": "Alex Chircop, Xing Yang",
+      "summary": "The session provides an overview of the CNCF Storage SIG, its processes for onboarding new projects, and the future direction of cloud\u2011native storage, highlighting recent work like the Storage Landscape, performance benchmarking, and disaster\u2011recovery guidance.",
+      "description": "This talk will discuss how the CNCF storage SIG in the CNCF operates, identifies projects for Cloud Native admission and where we see the future of storage in the Cloud Native Ecosystem heading.During this session we will cover:- Overview of the SIG, how to join and how to help- Overview of storage projects in the CNCF- Projects that are currently being being reviewedWe will also share updates of our latest work including:- the CNCF Storage Landscape document- the Performance and Benchmarking do",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/ee/CloudNativeStorage-KubeConEU.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/265ca99527399ead5d2c0c6fc5db768a"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=YEtV9k25IUY",
+      "title": "CNCF SIG-Runtime: The Cloud Native Runtimes Outlook",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containers",
+        "ml",
+        "runtime",
+        "wasm",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Ricardo Aravena",
+      "summary": "The session introduces the CNCF SIG\u2011Runtime, explains how projects are selected for CNCF admission, and outlines future directions for cloud\u2011native runtimes including containers, VMs, WebAssembly, and MLOps, helping Kubernetes users understand emerging runtime trends and how to get involved.",
+      "description": "This talk will discuss the purpose of the CNCF SIG-Runtime, together with how we identify projects for CNCF admission and where we see the future of runtimes in the cloud native ecosystem. The session will cover: - Overview of the SIG-Runtime, how to join, and how to help. - Overview of related projects in the CNCF and the projects that have presented in our meetings. - Existing Workgroups in the SIG and how to get involved. - Future trends for cloud native technologies in the SIG scope such as ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f2/CNCF%20SIG-Runtime_%20The%20Cloud%20Native%20Runtimes%20Outlook.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/403d262b82552dfe107abf5ff8b2c49f"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=PBIbQ4PBXBA",
+      "title": "Contour, a High Performance Multitenant Ingress Controller for Kubernetes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "ingress",
+        "envoy",
+        "kubecon-eu-2021",
+        "security",
+        "gateway-api",
+        "networking",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        }
+      ],
+      "author": "Steve Sloka",
+      "summary": "The session presents Contour, an incubating CNCF ingress controller backed by Envoy, focusing on its high\u2011performance, multitenant capabilities and features such as authentication, rate\u2011limiting, and Service APIs, helping operators efficiently expose and secure workloads in Kubernetes.",
+      "description": "Contour, a CNCF incubating project, is a high performance ingress and load balancer solution for Kubernetes. Contour offers a richer feature set than some common alternatives while maintaining a lightweight profile. At its core, Contour is providing a control plane for the Envoy edge and service proxy. This session will show you how to leverage Contour and Envoy for Kubernetes workloads in a multi-tenant environment, demonstrate recent Contour features like authentication, rate-limiting, service",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/59/Contour_a_High_Performance_Multitenant_Ingress_Controller_for_Kubernetes_05052021_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a6f1a91443920c89cf7435aa7838fd45"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0_s6zkyRpME",
+      "title": "Get In Containerds, We\u2019re Going Securing: Kubernetes SIG Security is Here!",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "documentation",
+        "security",
+        "kubecon",
+        "maintainer-track",
+        "audit"
+      ],
+      "links": [],
+      "author": "Ian Coldwater, Tabitha Sable, Savitha Raghunathan, Aaron Small",
+      "summary": "The session introduces Kubernetes SIG Security, outlining its work on security audits, cross\u2011project documentation, and community engagement, and explains how users can contribute to improving Kubernetes security.",
+      "description": "Kubernetes SIG Security is a newer and evolving SIG, and we\u2019re excited to be here and tell you what we\u2019re all about! Come learn about our work on horizontal security initiatives for the Kubernetes project including regular third-party security audits, cross-cutting security documentation, and building bridges both internally and externally to improve the security of the project as a whole. Most importantly, learn how you can get involved. Bring your thoughts, questions, and ideas! Can\u2019t wait to ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/82/KubeCon_EU_2021_sig-security-audit-update.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a9d889e199ab20d5a122553d453c91b2"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=nx1ABG8-uvs",
+      "title": "SIG Multicluster Intro",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "governance",
+        "kubecon-eu-2021",
+        "kubecon",
+        "maintainer-track",
+        "cluster-set",
+        "multi-cluster",
+        "hybrid-cloud"
+      ],
+      "links": [],
+      "author": "Paul Morie",
+      "summary": "An introductory session on SIG Multicluster that surveys the multi\u2011cluster problem space, best practices, ClusterSet concepts, current projects, and ways for users and contributors to get involved.",
+      "description": "SIG-Multicluster is focused on solving common challenges related to the management of many Kubernetes clusters, across multiple cloud providers (so-called hybrid cloud) and applications deployed across many clusters. In the introduction, we'll give attendees an overview of the current status of the multi-cluster problem space in Kubernetes and of the SIG. We\u2019ll discuss current thinking around best practices for multi-cluster deployments and what it means to be part of a ClusterSet. Then we\u2019ll hi",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/64/SIG%20Multicluster%20Intro%20KubeCon%20EU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/b5dd7710f18f81be4c504d4fbd866b21"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=eLxx8WjmEdk",
+      "title": "Turning Your Cloud Native Apps Inside Out With a Service Mesh",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "envoy",
+        "kubecon-eu-2021",
+        "service-mesh",
+        "deep-dive",
+        "networking",
+        "kubecon",
+        "platform-engineering"
+      ],
+      "links": [],
+      "author": "Adam Zwickey & Liam White",
+      "summary": "The session examines the evolution from in\u2011app libraries for load balancing, circuit breaking, and service discovery to using an Envoy\u2011based service mesh, highlighting the benefits for agility, safety, and faster delivery of cloud\u2011native applications.",
+      "description": "Cloud native best practices have come a long way from the mid-2010\u2019s when adopters of cloud native patterns were utilizing in-app libraries to manage concerns around load balancing, circuit breaking, service discovery, etc. Many adopters of modern cloud platforms have now realized greater agility and ease of use when those primitives are separated away from the application and managed independently in a cloud platform. This talk will review the pitfalls of those earlier application patterns with",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f3/Kubecon%2BCloudNativeCon.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/6a06fdaf3edd7d2d56085fed896fc6e9",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=IrJyrGQ_R9c",
+      "title": "Lessons Learned from Operating ETCD",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "etcd",
+        "case-study",
+        "storage",
+        "kubecon",
+        "platform-engineering",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "Pierre Zemb",
+      "summary": "A real\u2011world case study on how OVHcloud operates large\u2011scale etcd clusters for multi\u2011tenant Kubernetes control\u2011planes, covering observability, deployment, and management lessons learned.",
+      "description": "OVHcloud is the biggest European cloud provider. From dedicated servers to Managed Kubernetes, from VMware\u00ae based Hosted Private Cloud to OpenStack-based Public Cloud, we have over 1.4 million customers worldwide. Because of our Kubinception design(using Kubernetes to run Kubernetes), we are putting hundreds of customers in an ETCD cluster. This design is great to easily spawn control-planes for customers, but it is also putting a lot of pressure on ETCD. To keep it healthy while growing up cons",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/79/Lessons%20learned%20from%20operating%20ETCD%282%29.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9a351f2c7a630f38a94ed33f84d1ed33",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ajc2ngGv0m8",
+      "title": "Zero Pain Microservice Development and Deployment with Dapr and KubeVela",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "dapr",
+        "service-mesh",
+        "case-study",
+        "kubecon",
+        "kubevela",
+        "platform-engineering",
+        "deployment",
+        "alibaba"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Hongchao Deng",
+      "summary": "The session shows how Alibaba uses Dapr and KubeVela to hide underlying infrastructure complexity, letting developers focus on business logic while the platform automatically configures and manages microservice components via a sidecar approach.",
+      "description": "Developing and deploying microservices could be cumbersome on Kubernetes as developers need to manage deployment configurations of the services per se, MySQL, Kafka, Redis, etc. Those config files are complex and time consuming to learn and write. It becomes a huge burden to developers as they want to focus on business logic, not underlying platform details. In this talk, we will introduce how Alibaba abstracts away infrastructure details and provides consistent experience across various deploym",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/fb/KubeCon_EU_2021_ppt.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9b96a95881b1570f6b3bd633e54cb36e",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qjY2Df-Po-g",
+      "title": "Houston, We\u2019ve Got a Problem! : How to Debug your Pipeline in Tekton",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "debugging",
+        "kubecon-eu-2021",
+        "cicd",
+        "pipeline",
+        "kubecon",
+        "deep-dive",
+        "tekton"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Vibhav Bobade & Vincent Demeester",
+      "summary": "The session demonstrates how to debug Tekton pipelines at the step level without interrupting PipelineRuns, giving Kubernetes users practical techniques to troubleshoot CI/CD workflows directly on the cluster.",
+      "description": "It\u2019s always been nice to have CI/CD as a part of your infrastructure. Nothing better than being able to automate your workflows and have jobs done for you in a timely manner. It would be a shame if your jobs/pipelines break now would it. Now all you need to do is sit and take apart the individual components of your pipeline and figure out where you went wrong. We have all been there. Only if we could debug our Pipelines :) As common as task debugging is in the programming world, in the CI/CD wor",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f6/Houston%2C%20we%27ve%20got%20a%20problem%3A%20debugging%20your%20pipelines%20in%20Tekton.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/311e28f4e7a2bbd0a1dae4d395aedf2d",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=vz_5EdhHrmI",
+      "title": "Writing for Developers: Take your Project Docs to the Next Level",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "general",
+        "documentation",
+        "community",
+        "kubecon",
+        "technical-writing",
+        "open-source",
+        "developer-experience"
+      ],
+      "links": [],
+      "author": "Celeste Horgan",
+      "summary": "The session teaches maintainers and developers how to write effective documentation for open source projects, covering planning, user perspective, and practical improvements to real CNCF project docs, thereby enhancing project adoption and support.",
+      "description": "As maintainers know, when choosing an open source project to use in production, great documentation and community support are key. Yet they often struggle with creating and maintaining documentation because of lack of time and skill. This talk, delivered by one of CNCF\u2019s full-time technical writers, will teach you how to approach writing for developers. We\u2019ll go over deciding what to write, thinking about documentation from a user\u2019s perspective, and what makes great writing. We\u2019ll walk through i",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/22/KCCNC%20EU%202021%20-%20Writing%20for%20Developers_%20take%20your%20%20project%20docs%20to%20the%20next%20level.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a25e9074200109ce8fe200e7b41e2c9c",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=74VpVe-pZx0",
+      "title": "App Delivery in Cloud Native: Where are We? What's Next?",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "app-delivery",
+        "helm",
+        "gitops",
+        "crossplane",
+        "kustomize",
+        "kubecon",
+        "maintainer-track",
+        "platform-engineering",
+        "argocd",
+        "flux"
+      ],
+      "links": [],
+      "author": "Lei Zhang",
+      "summary": "The session reviews current trends and challenges in cloud\u2011native application delivery, showcasing real\u2011world case studies and open\u2011source projects that enable end\u2011to\u2011end workflows from defining an app to production. It helps attendees understand best practices, compare approaches, and explore the evolving CNCF ecosystem for building robust application platforms.",
+      "description": "In 2021, there are more and more buzz around the CNCF landscape and it's getting overly complex! So, where are we now? Where are we heading to? In this session we walk through key trends we observed in cloud native application delivery ecosystem and illustrate major challenges we are facing. We will also demo practices tried to solve these issues based on real world case studies collected by SIG App Delivery, with projects available in open source community, for example, the full application del",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/91/App%20Delivery%20Session.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/90c087fc1f4a2088a36bc7b1212586b1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VPBKNfRRytg",
+      "title": "Cortex: Multi-tenant Scalable Prometheus",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "multi-tenant",
+        "storage",
+        "kubecon",
+        "maintainer-track",
+        "scalability",
+        "prometheus"
+      ],
+      "links": [],
+      "author": "Bryan Boreham",
+      "summary": "The session introduces Cortex, a highly scalable, multi-tenant Prometheus-compatible time\u2011series store, and explains its recent enhancements including cross\u2011tenant querying for administrators, which is vital for operators managing large, shared monitoring infrastructures.",
+      "description": "Cortex is a time-series data store based on Prometheus.Cortex adds: - Scalability: run across dozens of servers to handle millions of samples per second. - Availability: if one server fails then work will be redirected to others. - Multi-tenancy: store data from different groups or customers, segregated so a user from one tenant cannot see data from another. - Durability: use cloud stores (such as S3) to reduce the chance of data loss.This session will provide an overview of Cortex, an update on",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/06/Cortex%20maintainer%20session%20KubeCon%20EU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/d5b89fc287a0e02c8bcdc4fbac0b69aa"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=z5aY4e2RENA",
+      "title": "Kubernetes SIG Node Intro and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "sig-node",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track",
+        "pod",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Elana Hashman",
+      "summary": "An introductory overview and deep dive into SIG Node, covering the Kubelet, CRI, Node API, pod lifecycle management, and upcoming features for Kubernetes 1.21/1.22, aimed at operators and contributors who want to understand and improve node\u2011level functionality.",
+      "description": "Kubernetes SIG Node is responsible for components that control interactions between pods and host resources, including the Kubelet, Container Runtime Interface (CRI), and Node API. SIG Node is responsible for the Pod\u2019s lifecycle from allocation to teardown, to liveness checks and shared resource management. We work with the various container runtimes, kernels, networking, storage, and more; anything a pod touches is SIG Node\u2019s responsibility! In this session, we will begin with an introductory o",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/2c/KubeCon%20EU%202021%20Node.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/8e6d86da84f93ccb37b7155d55e21b54"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=h9QYbaJzBe0",
+      "title": "Towards CNI v2.0",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "cni",
+        "sig-network",
+        "kubecon",
+        "networking",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Casey Callendrello",
+      "summary": "The session explores the future of the Container Network Interface (CNI) as Kubernetes looks toward a next\u2011generation networking model, reviewing current strengths and gaps and proposing improvements for tighter Kubernetes integration.",
+      "description": "CNI v1.0 is out! In this talk, we'll discuss some directions the CNI project could take as we look to define the next generation of container networking.We'll look at -- Where CNI is today -- What it does and doesn't do well -- How we might improve it -- How can Kubernetes better use CNI?",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/8a/Towards%20CNI%202.0.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/36bd09682de1a6430bdab36e04890d18"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=1bi5H9hMuFY",
+      "title": "Ghosts in the Runtime: Who Ate My Capabilities and Other Mysteries",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "containerd",
+        "case-study",
+        "kubecon",
+        "pod",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Laurent Bernaille & Eric Mountain",
+      "summary": "The session shares real\u2011world investigations of hard\u2011to\u2011debug kubelet and container\u2011runtime bugs encountered at Datadog\u2019s massive multi\u2011cluster fleet, giving operators deeper insight into low\u2011level components that run containers.",
+      "description": "In the last 3 years Datadog migrated most of its workloads to dozens of Kubernetes clusters, many of which consist of thousands of nodes each. At this scale, our engineers encounter strange and surprising bugs on a regular basis. Some of the most difficult bugs to investigate are those related to the kubelet and its interactions with the container runtime.In this talk we will share some of our favorite investigations on this front, such as the container image that only worked when built on our l",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/a8/Ghosts%20in%20the%20Runtime%2C%20Who%20Ate%20My%20Capabilities%20and%20Other%20Mysteries_Laurent%20Bernaille%20and%20Eric%20Mountain_2021-05-05_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/980a021c5b9ca26e062c772e07ab5212",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=X70Tb54Y-o4",
+      "title": "Seamless multi-cluster Communication and Observability with Linkerd",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "linkerd",
+        "security",
+        "service-mesh",
+        "case-study",
+        "networking",
+        "kubecon",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "Max K\u00f6rb\u00e4cher",
+      "summary": "The session details a real\u2011world migration of a GDPR\u2011sensitive, cross\u2011cluster application to a Kubernetes architecture using Linkerd\u2019s service mesh, highlighting multi\u2011cluster communication, observability, and security challenges and solutions.",
+      "description": "Considering migrating a traditional cross-cluster app containing sensitive data to a meshed microservices-based application? In this session, Max will discuss how his team migrated an app with GDPR protected data to a Kubernetes-based architecture meshed with Linkerd for one of their telco customers. He'll share lessons learned, insights into the motivation driving this change, as well the challenges faced along the way. Technical examples and concrete solutions implemented by his team will illu",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d7/seamless_multi_cluster_communication_and_observability_with_linkerd_MaxKoerbaecher_50521_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/b6110bb8efdd07d1d68852768f2585d9",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=A9IwOHGt7gM",
+      "title": "CSI Volume Attacks \u2013 The SRE Strikes Back",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "storage",
+        "kubecon",
+        "deep-dive",
+        "pod",
+        "pod-security"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolume",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Hendrik Land",
+      "summary": "The session explains how to secure data accessed through the Container Storage Interface (CSI) by covering Kubernetes security models, Pod Security Policies, filesystem permissions, and protection of storage protocols and drivers, helping operators prevent unauthorized access to volumes.",
+      "description": "Container Storage Interface (CSI) has made it easy for stateful workloads to consume storage - but does it protect your data from unauthorized access? The CSI standard only orchestrates the creation of volumes, snapshots or clones. How do you ensure that neither other workloads in the same Kubernetes cluster nor someone outside the cluster can access your data? You will learn the inherent security models provided by Kubernetes as well as additional configurations you can and should apply. Beyond",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/48/CSI%20Volume%20Attacks%20%E2%80%93%20The%20SRE%20Strikes%20Back.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7a65cf91991d62143a7af3f36e8735d3",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rfRiqLtwMwE",
+      "title": "Building the Multi-Cluster Data Layer",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service-mesh",
+        "storage",
+        "kubecon",
+        "deep-dive",
+        "database",
+        "statefulset",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "Chirag Narang",
+      "summary": "This session explains how to deploy and operate a distributed SQL database across multiple Kubernetes clusters using a service mesh, addressing challenges of global consistency, scalability, high availability, and geo\u2011distribution. It is relevant for operators building stateful, multi\u2011cluster applications that need a reliable data layer.",
+      "description": "Getting the data layer right is critical to building a cloud-native application. The global accessibility of persistent data across multi-cluster Kubernetes environments is the biggest challenge for building stateful workloads. As organizations rush to scale their infrastructure on multi-cluster Kubernetes, they often struggle with database deployments. Many traditional databases have not worked at the scale needed; either they are not horizontally scalable or highly available and do not provide",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/7b/Kubecon%20Europe%202021%20-%20Building%20the%20Multi-Cluster%20Data%20Layer.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/969090e0decd7dd4000e7fcf70538d2a",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_DgCc4-BLW8",
+      "title": "Putting Chaos Into Continuous Delivery to Increase Application Resiliency",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "keptn",
+        "gitops",
+        "litmuschaos",
+        "resiliency",
+        "kubecon",
+        "ci-cd",
+        "platform-engineering",
+        "chaos-engineering",
+        "maintainer-track",
+        "continuous-delivery"
+      ],
+      "links": [],
+      "author": "Juergen Etzlstorfer",
+      "summary": "The session shows how to integrate chaos engineering into GitOps\u2011driven continuous delivery pipelines using Keptn and LitmusChaos, enabling quality gates that verify application resiliency before production rollout.",
+      "description": "Continuous Delivery practices have evolved significantly with the cloud-native paradigm. GitOps & Chaos Engineering are at the forefront of this new CD approach, with an ever-increasing pattern involving Git-backed pipeline definitions that implement \u201cchaos stages\u201d in pre-prod environments to gauge SLO compliance. In this talk, maintainers of the Keptn (Juergen) & LitmusChaos (Karthik) CNCF sandbox projects will discuss how you can construct pipelines that include chaos experimentation (mapped t",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/fd/PuttingChaosIntoCD_JuergenEtzlstorfer.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9ca703d7add3120abd4fb5b0deadaaa7"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fxqV24h_ocs",
+      "title": "From Tweet to BadIdea: Creating an Embeddable Kubernetes Style API Server",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "crd",
+        "custom-resource",
+        "extending",
+        "deep-dive",
+        "kubecon",
+        "platform-engineering",
+        "apiserver"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "CustomResourceDefinition",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Jason DeTiberus",
+      "summary": "The session explores how to build a minimal, embeddable Kubernetes\u2011style API server that supports Custom Resource Definitions without requiring a full Kubernetes cluster, addressing bootstrapping challenges for infrastructure tooling.",
+      "description": "Kubernetes Custom Resource Definitions (CRDs) have made building Kubernetes-style declarative APIs easy. However they depend on an existing Kubernetes cluster, which can lead to difficult bootstrapping issues when building infrastructure management tooling. Would it be possible to remove the Kubernetes cluster dependency by piecing together the components that Kubernetes itself uses to implement the features needed to support CRDs? This talk explores the process of attempting to do just that thr",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/79/From%20Tweet%20to%20BadIdea.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/37dcdcd41f75f96416379051d469e86f",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HuWt1N8NFzU",
+      "title": "Building and Managing a Centralized ML Platform with Kubeflow at CERN",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "ml",
+        "model-serving",
+        "gpu",
+        "data-pipeline",
+        "case-study",
+        "kubecon",
+        "platform-engineering",
+        "cost"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ],
+      "author": "Ricardo Rocha & Dejan Golubovic",
+      "summary": "The session describes CERN's centralized machine\u2011learning platform built on Kubeflow, covering data preparation, model training, and serving while optimizing scarce accelerator resources across GPUs, vGPUs, and TPUs. It shares the architectural journey and lessons for Kubernetes operators managing large\u2011scale AI workloads.",
+      "description": "CERN\u2019s main mission is to expand human knowledge trying to understand the nature of the universe, and machine learning has been growing as a solution for challenges in different areas of development and operations. Areas where ML is being looked at include particle classification using graph neural networks during reconstruction, 3DGANs for much faster generation of simulation data, or reinforced learning for beam calibration. This session presents a recently introduced centralized service cover",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d8/Building%20and%20Managing%20a%20Centralized%20ML%20Platform%20with%20Kubeflow%20at%20CERN%20.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/89cc098e85cb2a720e106fb68646c55a",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Nov8Phb1sTM",
+      "title": "Cluster API Provider AWS (CAPA) Update",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "infrastructure",
+        "cluster-api",
+        "kubecon",
+        "maintainer-track",
+        "aws",
+        "provisioning"
+      ],
+      "links": [],
+      "author": "Richard Case",
+      "summary": "An update on the Cluster API Provider AWS (CAPA) project, highlighting new features, the roadmap, and ways the community can contribute to building declarative, scalable Kubernetes clusters on AWS.",
+      "description": "Cluster API Provider AWS (CAPA) is a SIG Cluster Lifecycle project, which is responsible for building the UX for deploying and upgrading Kubernetes clusters by also handling infrastructure provisioning in AWS. It can be utilized to build declarative, replicable, scalable Kubernetes clusters in AWS.Learn about the new features in Cluster API (CAPI)/Cluster API Provider AWS (CAPA), the roadmap ahead, and how you can contribute to the project.",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/1e/ClusterAPIProviderAWS_Update.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9c8eff01befadbee173df5aab6bd0f7b"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fxscFF7Jwk8",
+      "title": "CNCF SIG Observability Updates",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "community",
+        "sig-observability",
+        "open-source",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Bartlomiej P\u0142otka",
+      "summary": "The session provides an overview of the CNCF SIG Observability\u2019s recent and upcoming work, inviting contributors and users to get involved in shaping the observability ecosystem for Kubernetes.",
+      "description": "The CNCF SIG Observability started in Summer 2020 to gather contributors and users from different areas passionate about Observability topics. During this talk, we will be giving an overview of work done, work to come, and areas where you can get involved and help. Consisting of open source project maintainers, standards authors, end-users, and more, we cover a wide range of experience and invite you to join us as well! Help us make the CNCF Observability space better, diverse, and more approach",
+      "schedUrl": "https://kccnceu2021.sched.com/event/efc4cd98edec38dcc93dd781727bbb03"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=05NMwOhD6Ks",
+      "title": "Contributing to Kubernetes Conformance Coverage - Zach Mandeville & Caleb Woodbine, ii.coop - https://ii.coop/",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "conformance",
+        "certified-kubernetes",
+        "testing",
+        "kubecon",
+        "maintainer-track",
+        "prow",
+        "apisnoop"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1618",
+          "confidence": 0.95,
+          "reason": "The session focuses on the Certified Kubernetes Program and tooling (apisnoop) to achieve and maintain certification by addressing conformance test coverage. This directly relates to KEP-1618, which defines Conformance Profiles for certification and specifies the testing requirements developers must implement."
+        }
+      ],
+      "summary": "The session explains the Certified Kubernetes Program and dives into the apisnoop tooling used to identify, close, and prevent gaps in conformance test coverage, highlighting how providers can achieve and maintain certification.",
+      "description": "In this session we'll walk through the Certified Kubernetes program (cncf.io/ck) followed by a deep-dive into the tooling developed for identification, removal and prevention of gaps in certification test coverage.In the intro, we will cover the steps required to become a CNCF Certified Kubernetes provider.We will also deep dive into the APISnoop technologies supporting conformance, specifically:- Identifying Gaps (apisnoop.cncf.io) Closing Gaps (apisnoop audit sink + test writing w/ humacs.org)",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/a6/kubecon2021-europe-conformance.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/38c2470c52cc2cb004e9a0145f0ae2eb"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HDdnZsWcSac",
+      "title": "Taking the Helm: Becoming a Maintainer",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "governance",
+        "kubecon-eu-2021",
+        "helm",
+        "kubecon",
+        "open-source",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Bridget Kromhout & Matt Butcher, Karena Angell, Matt Farina",
+      "summary": "The session explores how the Helm project scales its maintainer community, guiding new contributors and outlining future directions, which is crucial for Kubernetes users who depend on Helm for reliable package management.",
+      "description": "As a graduated CNCF project, Helm is well-known as the package manager for Kubernetes. Despite being established for years, Helm continues to require ongoing work in the realm of growing the maintainer community. Join long-time and new Helm maintainers as we discuss scaling an open source project, illustrated by specifics from Helm\u2019s journey. We\u2019ll talk about where new contributors can make the most impact and how to navigate when the waters get choppy. Learn about where the Helm project is head",
+      "schedUrl": "https://kccnceu2021.sched.com/event/4ed1517652b8bef69f0419fb289f3352"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=GxTocRiS8I4",
+      "title": "Cluster API as Code",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "infrastructure",
+        "automation",
+        "programming",
+        "cluster-api",
+        "deep-dive",
+        "kubecon",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "David McKay",
+      "summary": "The session introduces programming language bindings for Cluster API, allowing operators to manage Kubernetes clusters declaratively via TypeScript, Go, and Python instead of raw YAML, streamlining multi-cluster provisioning and upgrades.",
+      "description": "Cluster API is a Kubernetes sub-project focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters. Cluster API provides clusterctl, which can be configured with environment variables and allows the generation of Kubernetes manifests that describe your workload clusters. While this provides a great on-boarding experience, managing and wrangling more YAML isn't something we're all yearning to do. Fortunately, there's a better ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/24/Cluster%20API%20as%20Code.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/4ef67f6b15f5a599b8f8276d17177196",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ti5Uj984CLY",
+      "title": "The Art of Hiding Yourself",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "logging",
+        "etcd",
+        "security",
+        "pod-security",
+        "deep-dive",
+        "kubecon",
+        "audit",
+        "network"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Lorenzo Fontana",
+      "summary": "The session explores how attackers conceal their presence after compromising a Kubernetes cluster, covering tactics like tampering audit logs, hiding processes and containers, storing malicious data in etcd, and obscuring network traffic. Understanding these methods helps operators and security teams improve detection and harden clusters against post\u2011compromise persistence.",
+      "description": "Kubernetes security is an ongoing effort today. In this talk we look at how a hacker would attempt to remain anonymous while compromising a Kubernetes cluster. Seconds after a node or a cluster are compromised, the bad actors start to take measures to make sure their hard work can profit for a while. What do they do? They start hiding their traces. Depending on the attack vector, they will need to hide their traces at multiple levels. They will begin by asking themselves some questions: - Are th",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/c6/deck.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7b62c5e1b45e8f9cfa3d054f90c48ced",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=vTh6jkW_xtI",
+      "title": "BuildKit CLI for kubectl: A New Way to Build Container Images",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "buildkit",
+        "dev-loop",
+        "kubectl",
+        "dockerd",
+        "kubecon",
+        "deep-dive",
+        "image-build"
+      ],
+      "links": [],
+      "author": "Daniel Hiltgen & Patrick Devine",
+      "summary": "The session introduces a new kubectl CLI plugin that leverages BuildKit to build Dockerfiles directly inside a Kubernetes cluster, enabling developers to instantly test images without pushing to an external registry, thereby speeding up the development feedback loop.",
+      "description": "The Dockerfile is a tremendously popular format used to build container images. Various projects exist that focus on CI for Dockerfiles inside a kubernetes cluster, but what about developers and their inner loop? In this talk we\u2019ll introduce a new CLI plugin optimized for developers which implements a familiar UX for building container images. It utilizes a powerful open source component called BuildKit to build Dockerfiles into images directly inside your Kubernetes cluster. When you build imag",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/61/BuildKit_CLI_for_kubectl_DanielHiltgen_PatrickDevine_50621_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/3519280977642d8f04c811fd097b8907",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wTENRhYt3mw",
+      "title": "Running Cache-Efficient Builds at Scale on Kubernetes with BuildKit",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "buildkit",
+        "security",
+        "deep-dive",
+        "kubecon",
+        "caching",
+        "ci-cd",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ],
+      "author": "Gautier Delorme",
+      "summary": "The session demonstrates how to run rootless, daemonless BuildKit on Kubernetes to achieve secure, fast, and cache\u2011efficient builds, teaching operators how to leverage BuildKit caching and scheduler features for scalable CI/CD pipelines, and developers how to write Dockerfiles that maximize cache reuse.",
+      "description": "Many organizations already deploy services to Kubernetes, but to fully transition from bare-metal to ephemeral infrastructure they need a cache-efficient way to run build systems on top of Kubernetes (e.g. to build docker images). In this talk, Gautier Delorme will demonstrate how to use rootless and daemonless BuildKit to run secure, fast and cache-efficient builds in Kubernetes. As an operator, you will learn how to leverage BuildKit caching mechanisms and Kubernetes Scheduler features to scal",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/c2/Running_cache_efficient_builds_at_scale_on_kubernetes_with_buildkit.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/45f4dc85ad2bcc190100387b60814b6c",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ng7rpcKvpyQ",
+      "title": "Building a Community: How Cortex Went from a Vendor Project to a Community",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "cortex",
+        "community",
+        "case-study",
+        "kubecon",
+        "thanos",
+        "prometheus"
+      ],
+      "links": [],
+      "author": "Goutham Veeramachaneni",
+      "summary": "The session recounts how the Cortex project transformed from a vendor\u2011driven effort into a vibrant, multi\u2011vendor community within the CNCF, sharing the strategies and philosophies that enabled broader adoption and collaboration with projects like Prometheus and Thanos.",
+      "description": "In 2018, Cortex was largely vendor-driven, and almost no one other than maintainers could run it. Its docs were lacking; you had to read the code instead. While that might be acceptable for a new project, it's not for wide adoption. Over the last few years, since joining the CNCF, we have put a focus on building a vibrant community. It was a long and arduous journey, but we're very happy with the healthy community we have today, with maintainers from 5 different companies and a 5x increase in ac",
+      "schedUrl": "https://kccnceu2021.sched.com/event/4bb505d3928a4416d26aa22757867374",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=mcKNistZkrY",
+      "title": "Akri: Making IoT Devices Accessible to Your Edge Kubernetes Clusters",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "device",
+        "custom-resource",
+        "service",
+        "deep-dive",
+        "kubecon",
+        "iot",
+        "edge"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Kate Goldenring",
+      "summary": "This session explains how Akri, an open\u2011source Kubernetes\u2011native project, discovers and abstracts IoT devices at the edge, exposing them as Kubernetes resources so workloads can automatically consume them even as devices appear or disappear.",
+      "description": "As Kubernetes solutions move to the edge, nodes are taken out of the homogeneity of the cloud and put in environments surrounded by an array of IoT devices such as sensors and cameras. These devices are often too small to run Kubernetes, so how can they be dynamically leveraged by Kubernetes workloads? Akri is an extensible open-source Kubernetes-native project that aims to provide a solution. Akri provides an abstraction layer, removing the work of finding, utilizing, and monitoring the availab",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/40/Akri_KubeCon_EU_2021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/d7e010d4e3b08507878517f44530363a",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Z53KkGThFNo",
+      "title": "Automated Machine Learning Performance Evaluation",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "ml",
+        "model-serving",
+        "argo",
+        "gpu",
+        "deep-dive",
+        "kubecon",
+        "benchmarking",
+        "inference",
+        "ai",
+        "seldon"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Alejandro Saucedo",
+      "summary": "The session explains how to benchmark machine\u2011learning models on Kubernetes to determine optimal hardware configurations, covering theory, performance metrics, and a hands\u2011on example using Argo Workflows, Seldon Core, and GPU\u2011enabled nodes.",
+      "description": "## Overview Deployed production machine learning models come on different sizes, shapes and flavours when deployed in cloud native infrastructure - each with varying hardware (and software) requirements. Whether it is RAM, CPU, GPU or Disk Space, there won't be an optimal global configuration for all your models' training and inference. In this talk we will cover the motivations and concepts around general benchmarking in software, as well as the key nuanced requirements to leverage these concep",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/50/Automating%20Machine%20Learning%20Benchmarking%20at%20Scale.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/bc9398bb364fdfb903bffc2ac9de6fe6",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=gRz77PnmY54",
+      "title": "Cloud-Native Computing For Research Users",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "community",
+        "cloud-native",
+        "research",
+        "kubecon",
+        "maintainer-track",
+        "platform-engineering"
+      ],
+      "links": [],
+      "author": "Jamie Poole",
+      "summary": "The session introduces the CNCF Research User Group, outlines the distinct challenges research institutions face, and explains how cloud\u2011native technologies can be leveraged to advance research cloud computing, offering valuable insights for Kubernetes operators and platform engineers supporting scientific and fintech workloads.",
+      "description": "The CNCF Research User Group\u2019s purpose is to function as a focal point for the discussion and advancement of Research Computing using \u201cCloud Native\u201d technologies. This includes enumerating current practices, identifying gaps, and directing effort to improve the Research Cloud Computing ecosystem. In this session we will introduce the user group, discuss our mission and the particular challenges that research institutions face that we aim to meet with cloud-native technology. We will hear from sp",
+      "schedUrl": "https://kccnceu2021.sched.com/event/b33968831cb407f41ffc470a6e41f39e"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HC6JSMVaRe8",
+      "title": "Intro + DeepDive: Kubernetes Cloud Provider Project for IBM Cloud",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "cloud-provider",
+        "deep-dive",
+        "kubecon",
+        "sig-cloud-provider",
+        "ibm",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-671",
+          "confidence": 0.97,
+          "reason": "The session focuses on the IBM Cloud Provider subproject and its implementation details. KEP-671 defines support for an out-of-tree IBM Cloud Provider, which directly matches the discussed development and implementation of IBM's cloud provider in Kubernetes."
+        }
+      ],
+      "author": "Sahdev Zala & Richard Theis",
+      "summary": "The session introduces the IBM Cloud Provider subproject and its recent additions, including IBM Cluster API Provider support for VPC Gen\u202f2 and PowerVS, followed by a deep dive into its implementation and updates from the Cloud Provider SIG, targeting both existing and new contributors.",
+      "description": "In this session, the project leads will provide an overview of the IBM Cloud Provider subproject, its activities, and learning resources. The introduction will be followed by the newly added support in Kubernetes IBM Cluster API Provider for IBM VPC Gen 2 and PowerVS. The session will also deep dive into the IBM Cloud Provider and provide updates on the general Cloud Provider SIG. This session will be of value to a broad audience including active contributors, new contributors, and those with an",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/48/KubeCon_EU_2021_SahdevZalaRichardTheis.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0108cabf145aac61ba0ccccf3abc85cd"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VDGr79WX11I",
+      "title": "Jaeger Intro and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "tracing",
+        "open-telemetry",
+        "jaeger",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Prithvi Raj",
+      "summary": "The session introduces Jaeger, guiding users through installation on Kubernetes and fundamentals of distributed tracing, then dives into Jaeger's future architecture built on the OpenTelemetry collector, highlighting upcoming features and impacts for operators.",
+      "description": "In this session we will cover both introductory and deep dive material for the Jaeger distributed tracing backend. For intro we will review methods of getting started installing Jaeger and the basics of distributed tracing. For the deep dive we will be discuss the future of Jaeger built on top of the OpenTelemetry collector and what that means for Jaeger architecture, future development and features. Jaeger is the most popular open source distributed tracing backend. Whether your goal is to get ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/6d/Jaeger%20Kubecon%20EU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9ee82c0795d2c6cc1a7e63fbd192ef85"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=vPK3QmVOE4Y",
+      "title": "SIG Contributor Experience Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "community",
+        "scaling",
+        "deep-dive",
+        "mentoring",
+        "kubecon",
+        "maintainer-track",
+        "contributor-experience"
+      ],
+      "links": [],
+      "author": "Bob Killen, Alison Dowdney, Christoph Blecker, Nikhita Raghunath",
+      "summary": "The session introduces the SIG Contributor Experience, outlines its role in fostering a healthy Kubernetes community, and explores its subprojects covering feature velocity, scaling, mentoring, and pull\u2011request latency, while inviting participation.",
+      "description": "The Kubernetes Contributor Experience Special Interest Group (SIG) is tasked with developing and sustaining a healthy contributor community. Things like feature velocity, community scaling, mentoring, pull request latency, and more all fall within scope of the SIG. In this talk, we will provide an introduction to SIG Contributor Experience, its role within the project, and dive into the various subprojects that support its mission. Additionally, we will provide a general community update and go ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/91/Introduction%20to%20SIG%20Contributor%20Experience%20-%20KubeConEU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/1ba25a2ff1b36e380c990c484a928519"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=WB3_sV_EQrQ",
+      "title": "Resource Requests and Limits Under the Hood: The Journey of a Pod Spec",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "resource-requests",
+        "kubecon-eu-2021",
+        "containerd",
+        "resource-limits",
+        "kubelet",
+        "deep-dive",
+        "kubecon",
+        "pod",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Kohei Ota",
+      "summary": "The session explains how Kubernetes resource requests and limits are processed, tracing the flow from the Pod spec through kubelet, the CRI/OCI runtime, and down to the Linux kernel, giving operators a clear view of compute resource management.",
+      "description": "Let's learn how resource requests and limits work by illustrating what is really happening inside of your cluster - literally! CNCF Ambassadors Kohei Ota and Kaslin Fields will use fun hand-drawn artwork to walk you through understanding what your cluster is really doing when you set a resource restriction in Kubernetes. Engineers and their applications are going through a transformation. From running apps on a machine or VM directly, to running it in containers, and then to container orchestrat",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/95/Resource%20Requests%20and%20Limits%20Under%20the%20Hood_%20The%20Journey%20of%20a%20Pod%20Spec.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/2900ba516d9929f62952783460b83a0c",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=9DRAZez-UhE",
+      "title": "Compliance Beyond Security: a Cloud Native GDPR Implementation Experience",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "data",
+        "security",
+        "compliance",
+        "case-study",
+        "storage",
+        "kubecon",
+        "policy"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "StatefulSet",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Johan Tordsson",
+      "summary": "The session explores technical challenges and recommendations for implementing GDPR\u2011style data protection\u2014especially the right to be forgotten\u2014within a cloud native Kubernetes environment, covering data lifecycle management across logs, backups, and other stateful resources. It matters to Kubernetes operators because compliance now requires systematic data deletion and governance that must be integrated into cluster operations and tooling.",
+      "description": "Regulatory compliance has traditionally been focused on core system aspects such as availability, data integrity, and overall IT system security. Compliance has been achieved through various processes and (security) tooling. With recent evolution of the regulatory landscape (including the European GDPR, Californian CCPA, and Japanese APPI legislations), there is a stronger focus on end user rights to data, in particular the right to be forgotten. This session will discuss the technical challenge",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/06/Compliance%20Beyond%20Security%20-%20a%20cloud%20native%20GDPR%20implementation%20experience.-%20Johan%20Tordsson%20-%20Elastisys.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/75f0686da49bd0e432bfbd665d80a380",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=As2u-xT-i_c",
+      "title": "Kubernetes on Windows - A Journey",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "microservice",
+        "windows",
+        "case-study",
+        "kubecon",
+        "kubernetes",
+        "deployment",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-116",
+          "confidence": 0.93,
+          "reason": "The session describes the design, development, installation, and deployment of Kubernetes clusters on Windows Server, directly covering the implementation and usage of Windows node support introduced by KEP-116."
+        }
+      ],
+      "author": "Jerry Lozano",
+      "summary": "The session follows a developer\u2019s experience designing, building, and deploying Kubernetes clusters on Windows Server, highlighting the benefits, differences from Linux, and practical lessons for running microservice workloads on Windows nodes.",
+      "description": "Kubernetes is almost always used in a Linux environment. Tutorials and examples, regardless of hardware platform, always run some distribution of Linux. Yet since 1.14, Kubernetes worker nodes are actively supported on Windows. This session describes one developer\u2019s journey of designing, developing, installing, and deploying Kubernetes on modern Windows Server. The need for microservice implementations on Windows is just as valid as it is on Linux. Windows Server is hosted on at least 3-times th",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/c4/Windows_On_Kubernetes_KubeConEU_Virtual_2020.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/2ecd64f41310b08f1b8d9aa9e66b5697",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6lwgFzRykPY",
+      "title": "Live Experiments with K8s Applications: Pitfalls and How to Avoid Them",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "ingress",
+        "kubecon-eu-2021",
+        "service-mesh",
+        "gitops",
+        "deep-dive",
+        "autoscaling",
+        "kubecon",
+        "deployment"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4444",
+          "confidence": 0.93,
+          "reason": "The session focuses on implementing metrics\u2011driven live experiments (canary, A/B) by shifting traffic between versions using ingress controllers or service meshes. This directly relates to KEP-4444, which defines the Traffic Distribution feature for Services, a Kubernetes API change enabling weighted traffic splitting for such rollout strategies."
+        }
+      ],
+      "author": "Fabio Oliveira & Srinivasan Parthasarathy",
+      "summary": "The session explains how to implement metrics\u2011driven live experiments such as canary, A/B, and A/B/n in Kubernetes, highlighting design pitfalls that can skew results and offering statistically sound remedies to make rollouts reliable.",
+      "description": "Your K8s apps are instrumented for observability. You are using ingress controllers/service meshes in your production K8s cluster and can shift traffic between different versions of your app. You wish to take your CI/CD to the next level by introducing metrics-driven automated rollouts using live experiments like canary, A/B, and A/B/n comparisons. What could go wrong? We demonstrate how subtle differences in the design of the experiment---how metrics are collected, queried, and used; the traffi",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/7d/iter8.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/e5aba789f30fabbe5deadfc8f9ef14ef",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=cDPGmhVcj7Y",
+      "title": "Optimizing Knowledge Distillation Training With Volcano",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "ml",
+        "gpu",
+        "deep-dive",
+        "kubecon",
+        "inference",
+        "ai",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ],
+      "author": "Ti Zhou",
+      "summary": "The session shows how to leverage Volcano, a Kubernetes batch scheduler, to run knowledge distillation workloads on GPU clusters, improving throughput and resilience by using fragmented and idle resources while handling preemptions. This matters to Kubernetes operators looking to maximize cluster utilization for AI/ML training workloads.",
+      "description": "Knowledge distillation is a classic model compression technology, which is a way of migrating knowledge from a complex model (Teacher) to another lightweight model (Student) to achieve model compression. EDL use Volcano as scheduler to deploy the Teacher model to an online Kubernetes GPU inference card cluster, and use the resources of the online inference GPU card to increase the throughput of the teacher model in knowledge distillation. At the same time, because the Teacher model can be flexib",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/c5/KubeCon_EU_2021_TiZhou_LeiboWang_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/e7ac1d7087b78e759a8c953eb0687072",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kv5zaJ_o3iQ",
+      "title": "\"Extend All The Things!\": Cloud Provider Edition",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "konnectivity",
+        "cloud-provider",
+        "cloud-controller-manager",
+        "gcp",
+        "gke",
+        "kubecon",
+        "maintainer-track",
+        "credential-provider"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2395",
+          "confidence": 0.96,
+          "reason": "The session focuses on the Cloud Provider Extraction effort, which moves in\u2011tree cloud provider code out of the core repo. KEP\u20112395 \"Removing In\u2011Tree Cloud Providers\" is the KEP that defines this extraction and the migration to out\u2011of\u2011tree Cloud Controller Managers."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2025",
+          "confidence": 0.94,
+          "reason": "The session explicitly mentions the Konnectivity server and agent as part of the new extensibility points. KEP\u20112025 \"Extending Apiserver Network Proxy to handle traffic originated from Node network\" introduces and implements the Konnectivity component."
+        }
+      ],
+      "author": "Joe Betz",
+      "summary": "The session explains the Cloud Provider Extraction effort that moves cloud integration code out of the core Kubernetes repo into separate components, focusing on the new extensibility points like Cloud Controller Managers, Credential Provider extensions, and Konnectivity, and how they enable better portability and community contributions.",
+      "description": "Kubernetes integrates with a ton of Cloud Provider platforms, and as part of the \"Cloud Provider Extraction\" effort, all platform integration code in the main Kubernetes code base is being moved out of into separate repos. To make this possible, extensibility points have been introduced that create interesting ways to extend Kubernetes, including Cloud Controller Managers, Credential Provider Extensions and the Konnectivity server and agent.Learn the details from an engineer who helped bring the",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/4b/Extend%20all%20the%20things.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/39aa1d274ff95eb9a794b42bb3b43534"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ZF5UJD7YJIw",
+      "title": "Cloud Native Network Function (CNF) WG: K8s Best Practices for Telco Apps",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "cnf",
+        "cloud-native",
+        "networking",
+        "kubecon",
+        "maintainer-track",
+        "best-practices",
+        "telco"
+      ],
+      "links": [],
+      "author": "Taylor Carpenter",
+      "summary": "The session introduces the Cloud Native Network Function (CNF) Working Group, shares updates on its best\u2011practice guidance for telco networking workloads on Kubernetes, and explains how developers and operators can get involved.",
+      "description": "The Cloud Native Network Function (CNF) Working Group is focused on identifying cloud native best practices for networking applications in order to help CNF Developers and telco operators best utilize the capabilities of Kubernetes. In the session, attendees will get an overview of the working group, updates since its kick-off at KubeCon NA 2020, what\u2019s next, and how to get involved. Ready to get started now? Join the CNF WG mailing list at https://lists.cncf.io/g/cnf-wg or talk to us in the #cn",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/6d/%5BKubeCon%20EU%202021%5D%20CNF%20WG_%20K8s%20Best%20Practices%20for%20Telco%20Apps.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/15100721debb12a8f202fdec6ca9f54d"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=iWTYTwsbxL4",
+      "title": "CRI-O Still Loves Kubernetes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "container-runtime",
+        "security",
+        "kubelet",
+        "kubecon",
+        "maintainer-track",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2221",
+          "confidence": 0.96,
+          "reason": "The session discusses CRI-O replacing the deprecated dockershim and enhancing Kubelet integration. KEP-2221 specifically addresses removing the dockershim from the kubelet, which is the exact implementation change the session describes."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1547",
+          "confidence": 0.93,
+          "reason": "The talk mentions building a Dockerless Kubelet and CRI-O as an alternative runtime. KEP-1547 focuses on building a Dockerless Kubelet, directly relating to the implementation effort highlighted in the session."
+        }
+      ],
+      "author": "Sasha Grunert",
+      "summary": "This maintainer\u2011track session explains how CRI\u2011O, a Kubernetes\u2011native container runtime, replaces the deprecated dockershim and showcases recent enhancements in Kubelet integration, security, and observability.",
+      "description": "In Kubernetes 1.20, support for the dockershim was deprecated, leaving many wondering what will take its place. Wonder no longer: CRI-O is a container runtime written exclusively for Kubernetes, and is ready to take the dockershim\u2019s place. In addition to being a standard component for deploying secure and stable Kubernetes clusters, CRI-O has the unique advantage of being able to tailor its behavior to the needs of the Kubelet. In this talk, the maintainers of CRI-O will provide an update about ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/71/kubecon-eu-2021-crio.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0b053de91606b2b1be0502730364b900"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=O9v0G5VXHZw",
+      "title": "Kubernetes VMware UG: What\u2019s New for K8s Users on VMware Infrastructure",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "tanzu",
+        "cloud-provider",
+        "storage",
+        "kubecon",
+        "maintainer-track",
+        "maintenance"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2086"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolume",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Steven Wong & Myles Gray",
+      "summary": "The session explains the upcoming deprecation of in\u2011tree vSphere cloud provider and storage plugins and guides users through migration paths for Kubernetes 1.22\u20111.24, while highlighting new features, best practices, and community involvement for running K8s on VMware infrastructure.",
+      "description": "The K8s VMware User Group exists to serve users, and authors of tooling and support applications for running K8s on vSphere and desktop hypervisors. Agenda: -Users who initially deployed K8s using the legacy in-tree cloud provider and storage plugins have already received a deprecation warning and will be facing a migration in the 1.22-1.24 release timeframe - we'll cover what this means for those affected. -Recent and upcoming features and changes. -Top 3 under-recognized do\u2019s and don\u2019t\u2019s for K",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/a7/Kubernetes%20VMare%20UG_StevenWongMylesGray_50621_v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/5944c992eb5f3a8019940802e4df8434"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ATUkfUwbBvo",
+      "title": "Overview and State of Linkerd",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "security",
+        "service-mesh",
+        "networking",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "William Morgan & Matei David",
+      "summary": "Project maintainers present an overview of Linkerd, its latest features and upcoming releases, comparing it to other service meshes and showing how users can get involved.",
+      "description": "In this talk, maintainers from the Linkerd project will present an overview of the project and an update on upcoming releases. They'll cover what Linkerd is and how it compares to other service meshes; what the latest features and functionality are; what to expect in upcoming releases; and how you can get involved in one of the CNCF's most talked-about projects. This talk will cover Linkerd's modular control plane (2.10) and upcoming policy (2.11) features, as well as the latest on Linkerd's Rus",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/c6/Overview%20and%20State%20of%20Linkerd%20-%20Kubecon%20EU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/c10fd76577ded602109f6c30522d1512"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=pnNE5ZWpenE",
+      "title": "SIG Scheduling Intro and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "kubecon",
+        "sig-scheduling",
+        "maintainer-track",
+        "descheduler",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Mike Dame & Jan Chaloupka",
+      "summary": "An introduction and deep dive into SIG Scheduling, covering the kube-scheduler, scheduling framework, and Descheduler, and outlining current goals, ongoing work, and ways for contributors to get involved.",
+      "description": "SIG Scheduling is responsible for kube-scheduler and its related subprojects such as the scheduling framework and Descheduler. These projects share the common goal of enabling users and developers to ensure that pods are assigned to the appropriate nodes based on various scheduling criteria. This talk will introduce attendees to SIG-Scheduling with an overview of the current goals and ongoing work within the SIG, as well as opportunities for new contributors to get involved. About half of the ti",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/19/KubeConEU21%20-%20SIG%20Scheduling.pptx.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/d0d22d4ce766557030bdc058362381e3"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=i6MQb8QsUdU",
+      "title": "COSI: The Common Operating System Interface",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "operating-system",
+        "grpc",
+        "plugin",
+        "deep-dive",
+        "networking",
+        "kubecon",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1979",
+          "confidence": 0.94,
+          "reason": "The session is a deep dive on COSI (Common Operating System Interface), which is the exact feature introduced by KEP-1979 (Object Storage Support) that adds a COSI API and plugin framework for configuring container operating systems."
+        }
+      ],
+      "author": "Steven Borrelli",
+      "summary": "The session introduces COSI, an API and plugin framework for configuring container operating systems (DNS, networking, kernel settings) and demonstrates node management using Go and Rust back\u2011ends, addressing the fragmentation of minimal Linux distributions for Kubernetes.",
+      "description": "This talk introduces COSI, the Common Operating System Interface, which defines an API for the configuration of container operating systems. While there has been innovation in the development of minimal Linux distributions for running Kubernetes, the distributions diverge from each other in terms of management and API endpoints. Similar to other projects such as the Container Network Interface (CNI) , COSI has a focus on the configuration of the underlying operating system, providing Protocol Bu",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/63/COSI_KubeconEU_2021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/f68724b31047aaa27e0913d69693fad5",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=bohnofE_dvw",
+      "title": "Uncovering a Sophisticated Kubernetes Attack in Real-Time",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "security",
+        "deep-dive",
+        "networking",
+        "kubecon",
+        "policy",
+        "ebpf"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Jed Salazar & Nat\u00e1lia R\u00e9ka Iv\u00e1nk\u00f3",
+      "summary": "The session demonstrates how eBPF can provide real\u2011time, node\u2011level visibility into pod processes and network traffic to detect and respond to sophisticated Kubernetes attacks, highlighting a new approach to runtime security monitoring.",
+      "description": "As Kubernetes adoption continues to explode, the threat actors working on attacks are growing in sophistication. Simple mitigations and security best practices are no longer sufficient alone to protect production workloads. While tools like vulnerability scanning, signed container images, and distroless containers help, constant monitoring must take place in a running environment to ensure it remains safe from compromise. eBPF, an emerging Linux kernel technology, provides us unique visibility d",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/3e/UncoveringASophisticatedAttackInRealTime_JedSalazar_NataliaRekaIvanko_06052021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/d14c8d99f74fddc7fe08de6f1e2afba4",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=plpgm12i7Hs",
+      "title": "Lessons Learned Deploying Traditional Web Applications on Top of Kubernetes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service",
+        "helm",
+        "case-study",
+        "autoscaling",
+        "kubecon",
+        "deployment",
+        "configmap"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Marcos Bjoerkelund",
+      "summary": "The session shares Bitnami\u2019s practical experience of containerizing and deploying traditional web applications on Kubernetes, showing step\u2011by\u2011step how to build images, configure Helm charts, and address scaling and automated updates.",
+      "description": "Traditional web applications are still very popular among developers, and it is unlikely that this will change over the course of the next few years. Deploying these applications on top of Kubernetes is a challenge as they are not usually designed to be run in such environments. In this session, you will learn from Bitnami\u2019s experience how best to make your traditional web application run on Kubernetes. Attend this session to see a step by step guide on how you can create a container image for a",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/09/DeployingTraditionalWebApplicationsOnTopOfKubernetes_MarcosBjoerkelund.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/30807d806b7f2969fd95b545a9d278f9",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=iyskOvOKHVw",
+      "title": "From Zero to Hero: Outcomes from Cloud-Native El Salvador Community Creation",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "outreach",
+        "inclusivity",
+        "community",
+        "case-study",
+        "kubecon",
+        "training",
+        "education"
+      ],
+      "links": [],
+      "author": "Raul Flamenco",
+      "summary": "The session shares how a virtual community was built in El Salvador, Honduras, and Guatemala to provide access to cloud\u2011native technologies, fostering talent and open\u2011source contributions despite regional challenges.",
+      "description": "People in El Salvador, Honduras and Guatemala leave the region for two reasons: security and lack of opportunities. We want people in those countries to have access to Cloud Native technologies. Our mission is: building the foundation to inspire talent. During the last few months, we have created a virtual space offering resources which help enthusiasts to understand and contribute to open source projects. The pandemic brought many challenges to local preexisting communities but this wasn't our ",
+      "schedUrl": "https://kccnceu2021.sched.com/event/841765535786d7d31e95ee402b9ca28b",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=YB5rlo2cq9s",
+      "title": "Sidecars at Netflix: From Basic Injection to First Class Citizens",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "kinvolk",
+        "case-study",
+        "customization",
+        "extending-kubernetes",
+        "kubecon",
+        "pod",
+        "sidecar"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2086"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Rodrigo Campos Catelin",
+      "summary": "The session details Netflix\u2019s evolution of sidecar container usage on Kubernetes, from simple process injection to a forked Kubernetes version that treats sidecars as first\u2011class citizens, and discusses their collaboration on a KEP to formalize this pattern.",
+      "description": "The concept of sidecar containers has been around since the early days of Kubernetes. Over the years the sidecar pattern has become more common in applications, gained popularity and the uses cases are getting more diverse. The current Kubernetes primitives handled that well, but they are starting to fall short for several use cases and force weird work-arounds in the applications. During this talk we will share how Netflix is using sidecar containers on Kubernetes, from their early design of pr",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d7/Sidecars_at_Netflix.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/f4a5cabfb2a6c7a23a85c0832638b83f",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=oMaJhpxd4FE",
+      "title": "Building MLOps POCs and Sandbox Environments Using k3s and Argo",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "ml",
+        "spark",
+        "argo",
+        "rancher",
+        "data-pipeline",
+        "gitops",
+        "case-study",
+        "kubecon"
+      ],
+      "links": [],
+      "author": "Sergio Mendez",
+      "summary": "The session shows how to use the lightweight k3s distribution together with Argo to quickly build MLOps proof\u2011of\u2011concepts and sandbox environments, demonstrating a full pipeline from ETL with Spark to model training with Scikit\u2011Learn and deployment via Argo workflows, helping Kubernetes users reduce time\u2011to\u2011value and infrastructure costs.",
+      "description": "This talk presents the challenges that corporations have when they evaluate technologies for data pipelines automation or for MLOps workflows, this includes processes like ETL, ML model generation and ML model deployments. At the same time, this talk shows how open source technologies can help to reduce implementation time and infrastructure costs for MLOps systems. The talk also presents the advantages of using k3s as a lightweight Kubernetes for POCs, the lessons learned at work when trying to",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/18/Building_MLOps_POCs_and_Sandbox_Environments_Using_K3s_and_Argo_Sergio_Mendez.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/d08152fb815fcac327e817dfb6106a12",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dedCB6kPJlc",
+      "title": "Kubernetes SIG-Storage Intro and Update",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "storage",
+        "kubecon",
+        "maintainer-track",
+        "sig-storage",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolume",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "VolumeSnapshot",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Xing Yang",
+      "summary": "An overview of the Kubernetes SIG Storage, covering its responsibilities for providing file and block storage, capacity management, scheduling influences, and generic storage operations, followed by a deep dive into current projects, status updates, and future directions.",
+      "description": "Kubernetes SIG Storage is responsible for ensuring that different types of file and block storage are available wherever a container is scheduled, storage capacity management (container ephemeral storage usage, volume resizing, etc.), influencing scheduling of containers based on storage (data gravity, availability, etc.), and generic operations on storage (snapshotting, etc.). In this session, we will give an introduction to SIG Storage and then deep dive into some projects that SIG Storage is ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/a3/KubeCon%20Europe%202021%20-%20Kubernetes%20SIG-Storage%20Intro%20and%20Update.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0399fb127d4502a35c7d315209d0fa5c"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=nqKYgeUtk8s",
+      "title": "Minikube and Three Different Local Kubernetes Learning Environments - Anders Bj\u00f6rklund & Predrag Rogic",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "local-kubernetes",
+        "bare-metal",
+        "development",
+        "kubecon",
+        "container",
+        "maintainer-track",
+        "minikube",
+        "hypervisor",
+        "learning"
+      ],
+      "links": [],
+      "summary": "The session introduces Minikube, outlines its development roadmap, and deep-dives into the three local Kubernetes environments it supports\u2014hypervisor, container, and bare\u2011metal\u2014helping users choose the right setup for learning and development.",
+      "description": "We will do an Introduction to the Minikube project for running Kubernetes locally, including an updated development roadmap. Users will learn what is new with the project, and how they can contribute to it and get started wtih learning Kubernetes. The Deep Dive will be going into the three different environments that Minikube supports: Hypervisor, Container and Bare Metal There will be details about the pros and cons of each, and some suggestions and where you would choose one over the other...",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f8/KubeCon_EU_2021-minikube-merged.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a7a3b4bdcfb2a954dc217eebcfaad585"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SZMbuirEQVU",
+      "title": "Notary v2: Supply Chain Security for Containers",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containers",
+        "notary",
+        "registry",
+        "security",
+        "kubecon",
+        "maintainer-track",
+        "supply-chain"
+      ],
+      "links": [],
+      "author": "Justin Cormack",
+      "summary": "The session provides an overview of Notary v2, a community\u2011driven project aimed at bringing registry\u2011native supply\u2011chain security to containers, and explains its roadmap toward production and its relationship to other supply\u2011chain initiatives.",
+      "description": "Notary v2 is a community project to solve the issues that the existing Notary project has that have hindered widespread adoption. The project is a community initiative with the main registry operators, including Docker, Microsoft and Amazon, as well as a broad community of other interested parties and end users. We will provide an overview of the state of the Notary v2 project to build registry native supply chain security for containers, and will show how it fits in with other supply chain init",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7d0a265b44ed9e5e61977ef29cf7ebad"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=odxPyW_rZNQ",
+      "title": "SIG-Autoscaling Deep Dive and Q+A",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "node",
+        "deep-dive",
+        "autoscaling",
+        "kubecon",
+        "maintainer-track",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Maciek Pytel & Marcin Wielgus",
+      "summary": "This session deep dives into the scale\u2011down logic of the Cluster Autoscaler, covering the criteria it uses, customization options, and best practices to improve node reduction, followed by a Q&A with SIG\u2011Autoscaling experts on autoscaling components.",
+      "description": "During this talk we will focus on scale-down logic of Cluster Autoscaler. You will learn what are the criteria that Cluster Autoscaler uses to decide whether a node can be scaled down, how this process can be customized and how you can help autoscaler scale-down your cluster more effectively. You will also have a chance to participate in Q&A session with SIG-Autoscaling members specializing in all our projects: Cluster Autoscaler, Horizontal Pod Autoscaler, Vertical Pod Autoscaler, and ask quest",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/3a/Kubecon%20Virtual%202021%20-%20Sig%20Autoscaling%20deep-dive.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0446fb9dff181a07780182c52b3150d4"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ypq-nXh38Zk",
+      "title": "Log Support in OpenTelemetry",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "collector",
+        "kubecon-eu-2021",
+        "opentelemetry",
+        "logging",
+        "deep-dive",
+        "java",
+        "kubecon"
+      ],
+      "links": [],
+      "author": "Steve Flanders",
+      "summary": "The session explores OpenTelemetry\u2019s emerging support for logs, detailing the data model, Java client implementation, and collector capabilities, and explains how logs integrate with traces and metrics for Kubernetes observability.",
+      "description": "OpenTelemetry\u2019s charter is to provide an observability framework for cloud-native software. Its goal is to provide full support for traces, metrics, and logs and provide a single implementation that can be leveraged. Traces have already reached a stable maturity level and metrics are well on their way. While logs were outside the GA scope of the project, they are an important data source and initial work has already kicked off to support them. - An initial data model has been accepted by the pro",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/cd/Log_Support_in_OpenTelemetry_SteveFlanders.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7a37c389f0f40658a7eecdfe0c40ea4f",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=btGFt5-37hs",
+      "title": "Power Level 9000! Improving Application Performance with Chaos Engineering",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "k3s",
+        "performance",
+        "service-mesh",
+        "deep-dive",
+        "autoscaling",
+        "kubecon",
+        "ci-cd",
+        "chaos-engineering"
+      ],
+      "links": [],
+      "author": "Saiyam Pathak",
+      "summary": "The session explores how chaos engineering experiments can be used to identify and fix performance bottlenecks in Kubernetes clusters and cloud\u2011native applications, highlighting tools like LitmusChaos, Kraken, and Chaos\u00a0Mesh and showing a live CI pipeline demo on k3s.",
+      "description": "Chaos engineering is becoming a standard to test the resiliency and performance of cloud native applications. It allows you to validate assumptions, catch loopholes, and generally improve resiliency in your cluster. This talk will focus on the specific experiments that will improve cluster and application performance and cover tools in the ecosystem, including Litmuschaos, Kraken, and Chaos Mesh. At the end of the talk, the audience will understand the basics of experiments, apply them in their ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/e6/chaos_engineering_kubecon_eu_2021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/08292428797f7ffea554d788dc8c9773",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xisAIB3kOJo",
+      "title": "Enhancing Kubernetes with the Security Profiles Operator",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "seccomp",
+        "operator",
+        "profiles",
+        "kubecon",
+        "deep-dive",
+        "policy",
+        "pod-security"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Colleen Murphy & Sascha Grunert",
+      "summary": "The session explains how the Security Profiles Operator provides cloud\u2011native APIs to manage seccomp, AppArmor, and SELinux profiles, simplifying workload security and enabling a single source of truth for profile\u2011based policies in Kubernetes.",
+      "description": "Kubernetes provides ways for container workloads to leverage Linux security features like seccomp, Apparmor, and SELinux, technologies that allow applications to be bound by security profiles that prevent unexpected and malicious behavior. But crafting and deploying these profiles is a manual process that requires administrators to operate directly on the underlying host and end-users to have knowledge of the security configurations of the hosts.The Security Profiles Operator is an out-of-tree K",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/8a/kubecon-eu-2021-security-profiles-operator.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/e86670b61783e82723cd54c2520de505",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ZT1PXt87qSs",
+      "title": "Cluster API Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "cluster-api",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track",
+        "platform-engineering",
+        "multi-cluster"
+      ],
+      "links": [],
+      "author": "Jason DeTiberus",
+      "summary": "The session provides a deep dive into Cluster API, showing how its declarative APIs and tooling simplify provisioning, upgrading, and operating multiple Kubernetes clusters, enabling consistent machine management and declarative upgrades for operators.",
+      "description": "Cluster API is a Kubernetes sub-project focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters. In this deep dive, we will provide a brief overview of Cluster API and how it simplifies the cluster management experience for cluster operators by enabling consistent machine management across environments, and bringing declarative upgrades to Kubernetes clusters. You\u2019ll also learn about the latest features and improvements to",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/6a/Cluster%20API%20Deep%20Dive%20%40%20Kubecon%20EU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/1dfa4b2f4938461052a3317d5f52eab1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=7BVVhfCWwDM",
+      "title": "Securing Content Distribution with The Update Framework (TUF)",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "package-management",
+        "kubecon",
+        "maintainer-track",
+        "cnab",
+        "supply-chain"
+      ],
+      "links": [],
+      "author": "Lukas Puehringer",
+      "summary": "The session introduces The Update Framework (TUF), a supply\u2011chain security project that protects content distribution systems\u2014including software updaters and configuration management tools\u2014by preventing and detecting attacks and mitigating damage. It explains TUF\u2019s architecture and real\u2011world integrations, showing why secure update mechanisms matter for Kubernetes operators and the broader cloud\u2011native ecosystem.",
+      "description": "Time and again we see insecure content delivery systems \u2013 such as software updaters, and configuration management systems \u2013 being compromised to deliver malicious content. The Update Framework (TUF) was designed not only to prevent and detect attacks, but also with risk mitigation (reducing the damage from a successful attack) as a core principle. Being the first security-focused project to graduate in the CNCF, TUF is widely used both inside and outside of the cloud ecosystem. It is in use toda",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/70/KubeCon_Europe_2021_TUF_slides.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/3f9d15717973c55c9bbcc068be3da8da"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=f_P-wKjXrTs",
+      "title": "SIG CLI: Intro and Updates",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "kustomize",
+        "sig-cli",
+        "kubectl",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1441",
+          "confidence": 0.94,
+          "reason": "The session includes a deep dive on \"kubectl debug\", which directly corresponds to KEP-1441 that defines the kubectl debug command implementation."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2377",
+          "confidence": 0.91,
+          "reason": "The session provides an overview of SIG CLI projects including kustomize; KEP-2377 is the specific KEP for integrating Kustomize into kubectl, making it a relevant implementation focus."
+        }
+      ],
+      "author": "Maciej Szulik, Katrina Verey",
+      "summary": "The session provides an overview of the SIG CLI projects, including kubectl and kustomize, outlines the contribution process for new contributors, and offers deep dives such as kubectl debug, followed by a live Q&A.",
+      "description": "During the introduction section of the presentation, the leadership of the SIG CLI will give an overview of the projects hosted by the SIG. The presenters will describe the current state of these projects, including such popular ones as kubectl and kustomize. The introduction will also cover the contribution process for the SIG, including specific steps on how new contributors can successfully on-board. In addition to this introduction, the leaders will provide several short educational presenta",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/3e/KubeCon%20EU%202021%20-%20SIG-CLI.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/aba96faed1e94c44928bae9f906d5128"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Byn0N_ZstE0",
+      "title": "Studying Kubernetes' Users with SIG Usability",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "community",
+        "usability",
+        "kubecon",
+        "user-research",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Gaby Moreno Cesar, Josie Pynadath & Tasha Drew, Carl J Pearson",
+      "summary": "SIG Usability presents its latest user research and Jobs\u2011to\u2011Be\u2011Done study, revealing who uses Kubernetes, their goals, and gaps in the user experience, guiding future improvements and community contributions.",
+      "description": "Part of our charter is to make sure that the upstream community is building for users of Kubernetes, as well as for the builders of Kubernetes. To further that goal, SIG Usability has been engaging in user research and a jobs to be done study, to better understand who is using Kubernetes, what they are trying to accomplish, and how our project is meeting their needs, and where we need to improve the project and the user experience. Join our SIG's update to learn about our latest research results",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7d644b7e687d2d76c24bd8c4eb7e5260"
+    },
+    {
+      "url": "https://kccnceu2021.sched.com/event/bcc2b8ffca42802c939f4c085e48caae",
+      "title": "High Throughput with Low Resource Usage: A Logging Journey",
+      "type": "reference",
+      "source": "KubeCon EU 2021",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "logging",
+        "performance",
+        "data-pipeline",
+        "case-study",
+        "networking",
+        "kubecon",
+        "fluent-bit"
+      ],
+      "links": [],
+      "author": "Eduardo Silva",
+      "summary": "The session explores a real\u2011world performance journey of the Fluent Bit logging pipeline, detailing how design improvements and Linux OS interfaces boosted log throughput from 5k to over 30k records per second on a single\u2011core CPU while minimizing resource usage.",
+      "description": "In Logging, there is a common fact: more applications means more data to handle. Running services at scale in a distributed environment brings exciting challenges for data management, but with the volume of data increasing there is a necessity to ship this data faster, but a few ones realize the side effect: high resource consumption. On implementing a logging pipeline, pre-processing of the data is mandatory, a simple example of this is Kubernetes metadata enrichment for every log record, but m",
+      "experienceLevel": "Advanced (Expert level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zTn9Xt1k1OA",
+      "title": "Trust No One: Bringing Confidential Computing to Containers",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "trusted-execution-environment",
+        "security",
+        "runtime",
+        "deep-dive",
+        "kata",
+        "confidential-computing",
+        "kubecon"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Samuel Ortiz",
+      "summary": "The session explores how confidential computing, using Trusted Execution Environments (TEE) and secure container runtimes like Kata, can protect container workloads from untrusted cloud providers, and presents a software architecture for bringing these capabilities to Kubernetes.",
+      "description": "Today\u2019s containers run in wildly heterogeneous environments. When deployed on multi-tenant clouds, they can span across nodes, regions, and multiple Cloud Service Providers (CSPs) while sharing CSP-owned resources between tenants. In such hostile environments, protecting containers data and code requires full trust on the CSP stack. Confidential computing leverages emerging hardware technologies to build Trusted Execution Environments (TEE) that protect cloud code and data at rest, in transit an",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f9/Zero%20Trust_%20Confidential%20Computing%20Containers.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0cc87b2473d2ccd2fb0a9f6909bf1696",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=pUDm8Xx4RXg",
+      "title": "CNCF - SIG Network Intro and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "load-balancing",
+        "observability",
+        "kubecon-eu-2021",
+        "sig-network",
+        "service-mesh",
+        "networking",
+        "kubecon",
+        "policy",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "NetworkPolicy",
+          "targetGroup": "networking.k8s.io"
+        }
+      ],
+      "author": "Lee Calcote",
+      "summary": "This session provides an overview and deep dive into the CNCF Network SIG\u2019s focus areas, covering core networking primitives such as load balancing, observability, security policies, QoS, and service mesh integrations that are critical for cloud\u2011native deployments.",
+      "description": "\u201cIt\u2019s the network!\u201d is the cry of every system administrator, every developer. With the increased prevalence of microservice-based distributed systems, it\u2019s true - networking as a discipline has never been more critical in the efficient operation of cloud native deployments. Networking primitives, including load balancing, observability, authentication, authorization, policy, rate limiting, QoS, mesh networks, legacy infrastructure bridging, and so on are now receiving substantial development an",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/77/SIG%20Network%20at%20KubeCon%20EU%202021%20with%20Lee%20Calcote%20and%20Ken%20Owens.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/0a89dcf598c6c3b53737c046afd5e1a2",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Y9Umfsig6WQ",
+      "title": "How You Can Tell Your Kubernetes Contributor Story with These Tips",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "community",
+        "storytelling",
+        "marketing",
+        "contributors",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Matt Broberg & Chris Short, Kaslin Fields, Peeyush Gupta",
+      "summary": "The session equips Kubernetes contributors with practical guidance on crafting and sharing their personal contribution stories, covering narrative structure, calls to action, blog publishing, SEO, and leveraging upstream marketing channels to inspire future open\u2011source contributors.",
+      "description": "The Upstream Marketing Working Group began as a vision to connect contributors. It has grown into a set of practices, channels, and bots that unite us all across the Kubernetes community. In this talk, contributors will walk through their experience of learning to tell their own contributor story. In doing so, we will walk through how anyone can write a great story, including key takeaways around narrative, call to action (CTA), structure, and available channels. Along the way, we'll highlight t",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/e1/KubeCon%20EU%202021%20-%20Upstream%20Marketing%20Comms.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/2ba7c095dc733b74c0319dae96b21891"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2CgeiWkliaw",
+      "title": "Open Policy Agent Intro",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "admission",
+        "security",
+        "rbac",
+        "kubecon",
+        "policy",
+        "maintainer-track",
+        "gatekeeper"
+      ],
+      "links": [],
+      "author": "Ash Narkar",
+      "summary": "This session introduces the Open Policy Agent (OPA) and its Gatekeeper extension, showing how they provide a unified policy engine for Kubernetes and other cloud\u2011native workloads, enabling operators to enforce security and compliance at scale.",
+      "description": "Come to this session to learn about the Open Policy Agent (OPA) project. OPA is a general-purpose policy engine that solves a number of policy-related use cases for Kubernetes, microservices, CI/CD, cloud, and more. During this session the OPA maintainers will introduce the project for newcomers and then provide updates on the latest and greatest features landing in OPA and OPA Gatekeeper. If you are interested in policy and security as it relates to cloud native technology, this session is for ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/fc/OPA%20Intro%20Kubecon%20EU%202021%20%28virtual%29.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/6328a598ff53d9a574df78dc398d8df4"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UsxIDNNIwa0",
+      "title": "Prometheus \u2013 What it is, What is New, and What is Coming",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "alerting",
+        "kubecon",
+        "monitoring",
+        "maintainer-track",
+        "prometheus"
+      ],
+      "links": [],
+      "author": "Richard Hartmann",
+      "summary": "The session provides an overview of Prometheus, explaining its core concepts and why it became a cornerstone of CNCF monitoring, then highlights the newest features and upcoming roadmap, including ways for the community to contribute.",
+      "description": "Prometheus is a metrics-based monitoring and alerting system and also the project with the second longest tenure within the CNCF. As such you have probably heard about it by now. We will give you a short introduction to Prometheus, what it is and why it was such a big deal when it was initially released. In all those years since then, the project has only gained speed, which provides us with the opportunity to tell you about all the exciting new features that have just been released or are in th",
+      "schedUrl": "https://kccnceu2021.sched.com/event/72f0aec800dbf3c9c8c74b086bfefe5a"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=OuKm2SiwnGM",
+      "title": "Petabyte Scale Logging with Fluentd and Fluent Bit: A Use Case From Intuit",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "logging",
+        "fluentd",
+        "case-study",
+        "scaling",
+        "fluentbit",
+        "troubleshooting",
+        "kubecon"
+      ],
+      "links": [],
+      "author": "Hanzel Jesheen",
+      "summary": "Intuit shares how they achieved petabyte\u2011scale logging in Kubernetes using Fluentd and Fluent Bit, covering buffering, backpressure handling, and troubleshooting strategies essential for reliable observability at massive data rates.",
+      "description": "In financial and software companies like Intuit, it\u2019s mandatory to provide a reliable observability layer so internal end-users like developers from different line-of-businesses can access their application data. In the last few years, we faced several problems when scaling up logging. For all the new applications we deployed in our Kubernetes clusters, the data rate increased, creating decreased throughput, higher resource consumption, and unexpected backpressure. In this session, you will lear",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/cb/KubeCon%20EU_%20Petabyte%20Scale%20%281%29.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a001804252e3f0a9495f0cbf20a00408",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=43g8uPohTgc",
+      "title": "Groupless Autoscaling with Karpenter",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "provisioning",
+        "performance",
+        "karpenter",
+        "autoscaling",
+        "kubecon",
+        "deep-dive",
+        "cloud\u2011native",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Ellis Tarn & Prateek Gogia",
+      "summary": "The session presents Karpenter, an open\u2011source, vendor\u2011neutral node autoscaling solution that eliminates the need for pre\u2011configured node groups, enabling fast, low\u2011latency provisioning of nodes across cloud providers for cost and reliability benefits.",
+      "description": "Autoscaling is a powerful technique to improve reliability and save costs. However, configuration of node autoscaling systems is a complex art. Karpenter is an open source, vendor neutral project that enables node autoscaling without the need for configuration and discovery for node groups in any cloud provider. With direct provider integration and out-of-the-box support for common node parameters like architecture, operating systems etc., taints, and labels, Karpenter gets users up and running ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/57/Groupless_Autoscaling_with_Karpenter_Ellis_Prateek_050721_version1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/4f281222acee9d5653443c7055848f8f",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BwQmjunIsFI",
+      "title": "Maximizing Workload's Performance With Smarter Runtimes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "resource-management",
+        "container-runtime",
+        "linux",
+        "performance",
+        "deep-dive",
+        "kubecon",
+        "cri-o"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Krisztian Litkey & Alexander Kanevskiy",
+      "summary": "The session explores innovative container runtime extensions\u2014especially for containerd and CRI-O\u2014including the NRI proposal and the CRI-Resource-Manager project, to boost workload performance and resource utilization using Linux kernel hints without modifying the workloads.",
+      "description": "Mitigating noisy neighbours in the world of containers is not an easy task. There are several solutions exists and many of those have own limitations. This presentation will be focusing on exploring new ways of innovations for container runtimes that helps get maximum performance and resource utilisation without modifications of the workloads. In this talk we are planning to briefly cover existing extension points for containerd and CRI-O, talk about new ideas from NRI proposal, as well as cover",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/e4/Maximizing%20workloads%20performance%20with%20smarter%20runtimes%20-%20v1.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7f185cb8794f1cff214251637cc85fc8",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wEW2kVKxgss",
+      "title": "Cert-Manager Beyond Ingress \u2013 Exploring the Variety of Use Cases",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "ingress",
+        "kubecon-eu-2021",
+        "istio",
+        "cert-manager",
+        "security",
+        "service-mesh",
+        "deep-dive",
+        "networking",
+        "kubecon"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        }
+      ],
+      "author": "Matthew Bates",
+      "summary": "The session showcases how cert-manager, beyond its popular ACME/Ingress integration, can automate TLS certificates for a wide range of Kubernetes components such as control plane nodes, webhooks, intra\u2011service mTLS via CSI, and service\u2011mesh workloads, helping operators secure their clusters comprehensively.",
+      "description": "Cert-manager is a widely used project for the automation of X.509 TLS certificates. In 2020, it reached 1.0 and landed in the CNCF Sandbox. cert-manager has been popularised by its support of ACME and Ingress, enabling many millions of certificates to be issued and renewed, and to help secure the cloud native web with Kubernetes and all the various ingress controllers. But cert-manager, with its custom resources and controllers, extensible with issuers including those out-of-tree, can also be us",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/29/KubeCon%20Europe%202021%20-%20cert-manager%20Beyond%20Ingress.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/9085c5b2c61a8bb5fd06a22957409004",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=H5eZEq_wqSE",
+      "title": "Application Autoscaling Made Easy With Kubernetes Event-Driven Autoscaling",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "keda",
+        "kafka",
+        "deep-dive",
+        "autoscaling",
+        "serverless",
+        "prometheus",
+        "kubecon",
+        "event-driven"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Tom Kerkhove",
+      "summary": "The session introduces Kubernetes Event-Driven Autoscaling (KEDA), explaining how it extends the Horizontal Pod Autoscaler to scale workloads based on external event sources such as Kafka, Redis, and cloud provider metrics, making autoscaling of serverless\u2011style applications on Kubernetes straightforward.",
+      "description": "Deploying applications to Kubernetes is one thing, but how do you scale them? Horizontal Pod Autoscalers to the rescue! But when you want to scale on external providers such as Kafka, Redis or another dependency it is not a walk in the park anymore. Enter Kubernetes Event-Driven Autoscaling (KEDA) which allows you to take your existing apps and easily configure how it should scale without having to worry about the magic! Using Kafka, Azure, AWS, GCP, Prometheus, etc? Don't worry, we've got your ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/55/Application%20Autoscaling%20Made%20Easy%20With%20Kubernetes%20Event-Driven%20Autoscaling.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/c486f9531332089b00d78442683aee30",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=y4UF9ML0BDw",
+      "title": "K8s Labels Everywhere! Decluttering With Node Profile Discovery.",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "node",
+        "customization",
+        "kubecon",
+        "deep-dive",
+        "platform-engineering",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5328",
+          "confidence": 0.93,
+          "reason": "The session describes Node Profile Discovery, a system that aggregates low\u2011level node features into higher\u2011level profiles and applies them as node labels for scheduling. KEP-5328 (Node Declared Features) proposes a standardized mechanism for exposing node feature information via node labels, directly aligning with the implementation focus of the session."
+        }
+      ],
+      "author": "Conor Nolan & Dave Cremins",
+      "summary": "The session introduces Node Profile Discovery (NPD), a layer atop Node Feature Discovery that aggregates low\u2011level node features into higher\u2011level profiles, simplifying labeling and scheduling for large, heterogeneous clusters.",
+      "description": "A recent CNCF community survey showed that 57% of respondents have 100+ machines in their fleet and 17% have more than 5000 machines (including VM, bare metal etc.). When managing such broad and diverse clusters, variations in node capabilities and features are inevitable. So how exactly are individual features tracked on a node-by-node basis? Node Feature Discovery (NFD) is commonly used for basic feature discovery and labelling across a Kubernetes cluster. This talk, however, introduces a new ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/f4/K8s%20Labels%20Everywhere%21%20Decluttering%20With%20Node%20Profile%20Discovery.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/7d9a978228f59610ae9f38ff2a5fe184",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=LedW9szFP1Y",
+      "title": "Cloud Provider AWS Update and Roadmap",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service",
+        "cloud-provider",
+        "kubecon",
+        "sig-cloud-provider",
+        "maintainer-track",
+        "aws",
+        "loadbalancer"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2394",
+          "confidence": 0.96,
+          "reason": "The session focuses on the migration from the in\u2011tree to an out\u2011of\u2011tree (external) AWS cloud provider, which is the exact subject of KEP\u20112394 (Support Out\u2011of\u2011Tree AWS Cloud Provider)."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-423",
+          "confidence": 0.91,
+          "reason": "Discussion of the AWS Load Balancer Controller roadmap and future load\u2011balancer integration aligns with KEP\u2011423 (graduate\u2011aws\u2011nlb\u2011to\u2011beta), which defines the implementation of AWS NLB support in Kubernetes."
+        }
+      ],
+      "author": "Nick Turner",
+      "summary": "The session provides an update and roadmap for the Kubernetes AWS cloud provider and the AWS Load Balancer Controller, covering the migration to an out\u2011of\u2011tree external provider, the ECR credential provider, the upcoming V2 provider, and future work on load balancer integration.",
+      "description": "We will give an update on the status of the kubernetes/cloud-provider-aws and kubernetes-sigs/aws-load-balancer-controller repositories, and the roadmap for the future. We loosely divide the talk into 4 topics: 1. the migration from in-tree to out-of-tree (external) cloud-provider, 2. the ECR credential provider, 3. the future of the AWS cloud provider, including the work on the V2 provider, and 4. the current state and future of AWS load balancer controller. We welcome discussion and feedback d",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d0/Cloud%20Provider%20AWS%20Update%20and%20Roadmap%20-%20KUBECONEU%202021.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/fabe031a64f601621f0abd9e89d73f5f"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QmOMnmY2KBI",
+      "title": "NATS v2.2: The JetStream Release",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "streaming",
+        "security",
+        "networking",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Waldemar Quevedo Salinas",
+      "summary": "The session introduces NATS v2.2 and its JetStream streaming capabilities, highlighting new features such as websockets, embedded account server, extended metrics, and security enhancements that are relevant for Kubernetes operators building secure, high\u2011performance messaging layers.",
+      "description": "NATS v2.2 is the largest feature release since version v2.0. The NATS v2.2 release provides highly scalable, highly performant, secure and easy-to-use next generation streaming in the form of JetStream. It allows remote access via websockets, has simplified NATS account management with an embedded account server, extended monitoring metrics, subject mapping & traffic shaping, built-in headers, which together further enables NATS toward our goal of securely democratizing streams and services for ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/37/NATS%20v2.2%20-%20The%20JetStream%20Release%20-%20KubeCon2021.pptx.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/06c7bfd871c753d533c0ca11f9fa15f5"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=j86OXjC1Jr8",
+      "title": "Rook: Intro and Ceph Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "cassandra",
+        "ceph",
+        "kubecon-eu-2021",
+        "rook",
+        "storage",
+        "deep-dive",
+        "kubecon",
+        "nfs",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolume",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "StorageClass",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Blaine Gardner",
+      "summary": "The session introduces Rook, the cloud\u2011native storage operator for Kubernetes, and provides a deep dive into its Ceph integration, showing how Rook delivers self\u2011managing block, file, and object storage for production workloads.",
+      "description": "The Rook project will be introduced to attendees of all levels and experience. Rook is an open source cloud-native storage operator for Kubernetes, providing the platform, framework, and support for a diverse set of storage solutions to natively integrate with Kubernetes. Rook turns storage software into self-managing and self-healing storage services. The benefits and use cases of Rook will be explored along with an overview of each of the Rook storage providers: Ceph, NFS, and Cassandra. A dee",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/82/Slides.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/46be4606277fa7ab8f40c8dcbac1dbe2"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Nn-qrp0TRnM",
+      "title": "SIG-network: Updates and Future Directions",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "service",
+        "sig-network",
+        "networkpolicy",
+        "gateway-api",
+        "deep-dive",
+        "networking",
+        "kubecon",
+        "maintainer-track"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "EndpointSlice",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "NetworkPolicy",
+          "targetGroup": "networking.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Gateway",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2829",
+          "confidence": 0.93,
+          "reason": "The session covers the Gateway API as a core networking API and discusses recent changes; KEP-2829 is the specific KEP that migrates the Gateway API to the k8s.io group, representing the implementation work being highlighted."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-563",
+          "confidence": 0.9,
+          "reason": "The session mentions IPv4/6 dual\u2011stack support, which is directly addressed by KEP-563 that implements Kubernetes dual\u2011stack networking."
+        }
+      ],
+      "author": "Bowei Du & Tim Hockin",
+      "summary": "A deep\u2011dive into recent SIG\u2011Network changes, covering core networking APIs (Service, EndpointSlice, DNS, Gateway, NetworkPolicy) and infrastructure components like kube\u2011proxy and IPv4/6 dual\u2011stack, helping operators understand current capabilities and future directions.",
+      "description": "This session will be a deep-dive into recent changes in networking in Kubernetes. The talk will provide an overview of current and future projects, including APIs and interfaces (Service, Endpoint[Slice], DNS, Gateway, NetworkPolicy), infrastructure (kube-proxy, IPv4/6 dual-stack. Attendees to this session will come away with a good understanding of the areas covered by sig-network and what the future directions will be.",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/ee/Kubecon%202021_%20SIG-NETWORK.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/dd43d7310843e49c58cfcbf5d274bd74"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=g5tHHD4crtQ",
+      "title": "Traces from Events: A New Way to Visualise Kubernetes Activities",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "observability",
+        "kubecon-eu-2021",
+        "opentelemetry",
+        "tracing",
+        "jaeger",
+        "deep-dive",
+        "events",
+        "kubecon"
+      ],
+      "links": [],
+      "author": "Bryan Boreham",
+      "summary": "The session demonstrates how native Kubernetes Events can be transformed into OpenTelemetry traces and visualized with Jaeger, giving operators a new way to understand cluster activity without additional instrumentation.",
+      "description": "Many people know Distributed Tracing as a powerful way to visualise such complex operations, but as yet Kubernetes is not instrumented for tracing.In this talk, Bryan will explore how Events, which are already emitted from all parts of Kubernetes, can be turned into OpenTelemetry Traces and visualised using Jaeger.Outline of the talk:- What are Kubernetes Events?- What is Distributed Tracing?- The Event data model- Turning Events into Spans- Reconstructing the parent-child relationships between ",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/fd/Traces%20from%20Events%20%28Kspan%29.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/335b7733c9f821dc8f97fa1353406bbe",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xNY9cbaLuGk",
+      "title": "A Deep Dive on Supporting Multi-Instance GPUs in Containers and Kubernetes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "ml",
+        "device-plugin",
+        "gpu",
+        "deep-dive",
+        "kubecon",
+        "ai",
+        "scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Kevin Klues",
+      "summary": "This session provides a technical deep dive into NVIDIA's Multi-Instance GPU (MIG) support in containers and Kubernetes, covering how MIG devices are exposed to containers, challenges and solutions in the NVIDIA k8s-device-plugin, and best\u2011practice patterns for distributing and managing MIG resources across a cluster.",
+      "description": "MIG (short for Multi-Instance GPU) is a mode of operation in the newest generation of NVIDIA Ampere GPUs. It allows one to partition a GPU into a set of \"MIG Devices\", each of which appears to the software consuming it as a mini-GPU, with a fixed partition of memory and compute resources. In this talk, we take a deep dive into the details of how we built support for MIG in containers and Kubernetes. You will learn how MIG is made available to containers, what challenges we faced building MIG sup",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/e9/KubeconEU-2021-MIG-Deep-Dive-Containers-Kubernetes.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/33ef69db248efae4760a741fd41dd06c",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Rx-ksmLUHEY",
+      "title": "Isolate the Users! Supporting User Namespaces in K8s for Increased Security",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "containerd",
+        "security",
+        "user-namespaces",
+        "deep-dive",
+        "kubecon",
+        "pod-security",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Mauricio V\u00e1squez",
+      "summary": "The session introduces Linux user namespaces as a method to map root inside containers to non\u2011root on the host, outlines the KEP\u2011127 effort to add this capability to Kubernetes, and discusses implementation challenges such as volume handling with shiftfs and idmapped mounts.",
+      "description": "Running a process as root inside containers is a security risk: if such a process is able to break out of the container into the host, it can cause considerable damage as it will be running as a privileged user there. The good news is that Linux has a solution for this problem: user namespaces isolate user and group IDs, so a process running as root in a container runs as non-root in the host. The bad news is that Kubernetes doesn\u2019t yet support user namespaces. So, we created a Kubernetes Enhanc",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/45/Isolate%20the%20Users%21%20Supporting%20User%20Namespaces%20in%20K8s%20for%20Increased%20Security.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/6ba768f5b4230a926dba4180b33b3ed0",
+      "experienceLevel": "Any (No experience required)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Bhw5Qi78jj8",
+      "title": "Making Dynamic Admission Control Even More Dynamic Using WebAssembly",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "admission",
+        "extensibility",
+        "security",
+        "dynamic-admission",
+        "wasm",
+        "kubecon",
+        "deep-dive"
+      ],
+      "links": [],
+      "author": "Flavio Castelli & Rafael Fern\u00e1ndez L\u00f3pez",
+      "summary": "The session demonstrates how WebAssembly can be leveraged to build a dynamic admission controller that runs policies as WASM binaries, enabling flexible, secure validation and mutation of Kubernetes API requests.",
+      "description": "WebAssembly is a portable binary instruction format that was originally created with the browser as the main execution runtime. However, during the last years, WebAssembly is finding its way also outside of the browser because of the many benefits it provides like portability, security and flexibility. We think WebAssembly can be leveraged by Kubernetes in many ways. This session will focus on how WebAssembly can be used to write Kubernetes admission policies. We will show an open source Kuberne",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/2c/KubeCon%20EU%202021%20-%20Kubewarden.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/09737d34b85ebfac522be4ac53807f0d",
+      "experienceLevel": "Intermediate (Mid-level experience)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dsuo1VQQZ2E",
+      "title": "CNCF Serverless WG - Serverless Workflow Project Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "knative",
+        "kubecon-eu-2021",
+        "workflow",
+        "kubecon",
+        "serverless",
+        "maintainer-track",
+        "cloud-events"
+      ],
+      "links": [],
+      "author": "Tihomir Surdilovic",
+      "summary": "The session delivers an in\u2011depth overview of the CNCF Serverless Workflow project, its integration with CloudEvents, and best\u2011practice deployment patterns on Kubernetes platforms, helping operators adopt robust, event\u2011driven workflows. It also covers advanced workflow language features such as error handling, retries, compensation, event correlation, and long\u2011running executions.",
+      "description": "The Serverless WG will provide a short update on the CloudEvents project and then give an in-depth update on the current state and planned future work of the Serverless Workflow project. In this session we will explain the benefits of using workflows in your application architectures. You will learn the ins and outs of the Serverless Workflow project and its ecosystem, its tight integration with the CloudEvents specification for event-orchestration, as well as its design and deployment strategie",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/d2/KubeConEU2021ServerlessWGUpdate.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/8d0a92fa2dbabc8ec76db423b41d8959"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=DBxOBzBkimo",
+      "title": "Kubernetes Data Protection WG Intro and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "storage",
+        "deep-dive",
+        "kubecon",
+        "maintainer-track",
+        "sig-storage"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-177",
+          "confidence": 0.93,
+          "reason": "The session focuses on developing backup, restore, and snapshot capabilities within Kubernetes, and KEP-177 defines the CSI Snapshot feature which provides the snapshot API and implementation that the Data Protection WG is working on."
+        }
+      ],
+      "author": "Xing Yang",
+      "summary": "The session introduces the Kubernetes Data Protection Working Group, outlines the current state of data protection features in Kubernetes, and explains upcoming initiatives and how the community can contribute to building backup, restore, and snapshot capabilities.",
+      "description": "Data Protection WG is dedicated to promoting data protection support in Kubernetes. The Working Group is working on identifying missing functionalities and collaborating across multiple SIGs to design features to enable data protection in Kubernetes. In this session, the co-chairs of this WG will discuss what is the current state of data protection in Kubernetes and where it is heading in the future. They will also talk about how interested parties (including backup and storage vendors, applicat",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/41/KubeCon%20Europe%202021%20-%20Kubernetes%20Data%20Protection%20WG%20Intro%20and%20Deep%20Dive.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/dfb7e0bc98fb2f3663427f9a9990c3fa"
+    },
+    {
+      "url": "https://kccnceu2021.sched.com/event/aa9902287cce39974b4b7d65fee6da4d",
+      "title": "Maintainer Q&A",
+      "type": "reference",
+      "source": "KubeCon EU 2021",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "envoy",
+        "service-mesh",
+        "kubecon",
+        "networking",
+        "maintainer-track"
+      ],
+      "links": [],
+      "author": "Matt Klein",
+      "summary": "An open Q&A session with the Envoy maintainers where attendees can ask live questions about Envoy, its integration with Kubernetes, and service-mesh usage, providing valuable insight for operators and developers using Envoy on Kubernetes.",
+      "description": "Open Q&A with Envoy maintainers. Come and ask questions and we will answer them live!"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=2iFbfPWNjYE",
+      "title": "OLM: A Declarative Way to Install, Manage, and Upgrade Operators",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "catalog",
+        "declarative",
+        "lifecycle",
+        "package-management",
+        "kubecon",
+        "maintainer-track",
+        "operators",
+        "dependency"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "CustomResourceDefinition",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Dan Sover & Alex Greene",
+      "summary": "The session introduces the Operator Lifecycle Manager (OLM), showing how its declarative APIs simplify installing, managing, and upgrading operators on Kubernetes clusters, and walks through its bundle format, dependency model, catalog system, and future roadmap.",
+      "description": "This presentation will cover the Operator Lifecycle Manager (OLM) \u2014 a suite of production-ready operators and tools that help manage the complexity of installing and upgrading operators on a Kubernetes cluster. OLM provides the following features out of the box: \u25aa Over-the-Air Operator Updates and Catalogs \u25aa A Rich Dependency Model \u25aa Operator Discoverability \u25aa Cluster Stability This talk will focus on the following topics: \u25aa Introduction to OLM and its APIs \u25aa Discovering and installing an operat",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/15/OLM%20Kubecon%20EU%20Presentation.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/a913313146e9304e9344828909715538"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=IqrKFBxf_Dk",
+      "title": "Battle of Black Friday: Proactively Autoscaling StockX",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "e-commerce",
+        "performance",
+        "cluster-autoscaler",
+        "case-study",
+        "autoscaling",
+        "kubecon",
+        "hpa",
+        "proactive"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Mario Loria",
+      "summary": "The session shares StockX\u2019s journey from manual traffic\u2011spike handling to a proactive, automated autoscaling solution using HPA and Cluster\u2011Autoscaler, highlighting operational, development, and team\u2011education challenges. Attendees learn advanced autoscaling strategies, scaling at e\u2011commerce event scale, and an open\u2011source tool for proactive scaling.",
+      "description": "When we started our Kubernetes journey, manual responses to traffic spikes were the norm, causing significant brown-outs greatly impacting the customer experience. Graduating into an autoscaling implementation for both workloads and cluster nodes took time but yielded immense results. With this talk, we\u2019ll explore how StockX has grown to solve these challenges operationally and developmentally, even enabling a proactive solution in addition to our reactive methods. Attendees will gain advanced c",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/18/Battle%20of%20Black%20Friday%20-%20Kyle%20and%20Mario.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/cb322c3b62f11ba2d8a342006d419347",
+      "experienceLevel": "Beginner (Very basic information)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=jPHnakrPAyE",
+      "title": "Understanding Isolation Levels in the Kubernetes Landscape",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2021-05-04",
+      "labels": [
+        "kubecon-eu-2021",
+        "security",
+        "isolation",
+        "kubecon",
+        "deep-dive",
+        "policy",
+        "pod",
+        "namespace",
+        "pod-security"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Namespace",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Jiaqi Liu",
+      "summary": "The session explains the various isolation guarantees offered by Kubernetes at the cluster, namespace, pod, and container levels, helping operators decide the right isolation strategy and trade\u2011offs, and illustrates concepts with a Jupyter notebook multi\u2011tenant case study.",
+      "description": "In building open-source software with Kubernetes, it becomes important to understand the support and limitations for isolation and security at different levels. The ecosystem can be complex and it might be challenging to verify or fully understand the guarantees for isolation at each layer - from the cluster level to the container level. More importantly, how do you know what level of isolation you need at each level? Maybe if your cluster is secure, there is less of a concern for container leve",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccnceu2021/89/Isolation_Layers_Jiaqi_Liu.pdf",
+      "schedUrl": "https://kccnceu2021.sched.com/event/49477aaa03c9cdf879d8a142e37b025e",
+      "experienceLevel": "Any (No experience required)"
+    }
+  ]
+}

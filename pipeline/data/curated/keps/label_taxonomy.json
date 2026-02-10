@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "description": "Curated taxonomy of labels for Kubernetes features/KEPs",
+  "categories": {
+    "resource-management": {
+      "description": "CPU, memory, resource limits, requests, quotas, cgroups",
+      "aliases": ["resources", "resource-limits", "resource-requests", "quotas"],
+      "related_terms": ["cpu", "memory", "hugepages", "cgroups", "limits", "requests", "qos"]
+    },
+    "scheduling": {
+      "description": "Pod scheduling, node selection, affinity, taints, tolerations",
+      "aliases": ["scheduler", "pod-scheduling"],
+      "related_terms": ["affinity", "anti-affinity", "taints", "tolerations", "node-selector", "preemption", "priority"]
+    },
+    "networking": {
+      "description": "Network policies, services, ingress, DNS, CNI",
+      "aliases": ["network", "net"],
+      "related_terms": ["network-policy", "service", "ingress", "dns", "cni", "load-balancer", "endpoint", "ip", "port"]
+    },
+    "storage": {
+      "description": "Persistent volumes, CSI, storage classes, snapshots",
+      "aliases": ["volumes", "pv", "pvc"],
+      "related_terms": ["persistent-volume", "csi", "storage-class", "snapshot", "volume-mount", "ephemeral"]
+    },
+    "security": {
+      "description": "RBAC, pod security, secrets, service accounts, authentication",
+      "aliases": ["auth", "rbac"],
+      "related_terms": ["pod-security", "psa", "pss", "secrets", "service-account", "authentication", "authorization", "encryption"]
+    },
+    "workloads": {
+      "description": "Deployments, StatefulSets, Jobs, DaemonSets, ReplicaSets",
+      "aliases": ["apps", "controllers"],
+      "related_terms": ["deployment", "statefulset", "job", "cronjob", "daemonset", "replicaset", "pod"]
+    },
+    "autoscaling": {
+      "description": "HPA, VPA, cluster autoscaler, KEDA",
+      "aliases": ["scaling", "hpa", "vpa"],
+      "related_terms": ["horizontal-pod-autoscaler", "vertical-pod-autoscaler", "scale", "replicas", "metrics"]
+    },
+    "observability": {
+      "description": "Metrics, logging, tracing, events, auditing",
+      "aliases": ["monitoring", "metrics", "logging"],
+      "related_terms": ["prometheus", "logs", "traces", "events", "audit", "healthcheck", "probe"]
+    },
+    "api": {
+      "description": "API machinery, CRDs, admission controllers, API versioning",
+      "aliases": ["api-machinery", "crd"],
+      "related_terms": ["custom-resource", "admission", "webhook", "api-server", "openapi", "validation"]
+    },
+    "node": {
+      "description": "Kubelet, node lifecycle, device plugins, container runtime",
+      "aliases": ["kubelet", "node-lifecycle"],
+      "related_terms": ["kubelet", "container-runtime", "cri", "device-plugin", "node-status", "graceful-shutdown"]
+    },
+    "windows": {
+      "description": "Windows container support, Windows nodes",
+      "aliases": ["win"],
+      "related_terms": ["windows-container", "windows-node", "hostprocess"]
+    },
+    "gpu": {
+      "description": "GPU scheduling, device plugins, DRA for accelerators",
+      "aliases": ["accelerator", "device"],
+      "related_terms": ["nvidia", "device-plugin", "dra", "resource-claim", "accelerator"]
+    },
+    "dra": {
+      "description": "Dynamic Resource Allocation for devices and accelerators",
+      "aliases": ["dynamic-resource-allocation"],
+      "related_terms": ["resource-claim", "device-class", "resource-slice", "structured-parameters"]
+    },
+    "sidecar": {
+      "description": "Sidecar containers, init containers, container lifecycle",
+      "aliases": ["init-container"],
+      "related_terms": ["sidecar-container", "init", "lifecycle", "restartable-init"]
+    },
+    "in-place-update": {
+      "description": "In-place pod updates, vertical scaling without restart",
+      "aliases": ["in-place-resize", "vertical-scaling"],
+      "related_terms": ["resize", "vertical", "update", "no-restart"]
+    },
+    "cli": {
+      "description": "kubectl, client tools, command-line interface",
+      "aliases": ["kubectl"],
+      "related_terms": ["kubectl", "client", "apply", "diff", "prune"]
+    },
+    "testing": {
+      "description": "E2E testing, conformance, test infrastructure",
+      "aliases": ["e2e", "conformance"],
+      "related_terms": ["test", "e2e", "conformance", "ci"]
+    },
+    "multi-cluster": {
+      "description": "Federation, multi-cluster services, cluster API",
+      "aliases": ["federation", "cluster-api"],
+      "related_terms": ["federation", "multi-cluster", "cluster-api", "mcs"]
+    },
+    "etcd": {
+      "description": "etcd storage, consistency, backup/restore",
+      "aliases": ["storage-backend"],
+      "related_terms": ["etcd", "raft", "backup", "restore", "consistency"]
+    },
+    "feature-gates": {
+      "description": "Feature gate lifecycle, graduation, deprecation",
+      "aliases": ["graduation"],
+      "related_terms": ["alpha", "beta", "stable", "deprecated", "feature-gate"]
+    }
+  }
+}

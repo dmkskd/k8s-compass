@@ -1,0 +1,2003 @@
+{
+  "version": "1.35",
+  "releaseDate": "2025-12-17",
+  "groups": [
+    {
+      "name": "core",
+      "displayName": "Core",
+      "description": "Core Kubernetes API objects including Pods, Services, ConfigMaps, and Secrets",
+      "color": "#3B82F6",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "APIGroup",
+              "singularName": "apigroup",
+              "pluralName": "apigroups",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/APIGroup.json",
+              "fieldCount": 8,
+              "description": "APIGroup contains the name, the supported versions, and the preferred version of a group.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "APIVersions",
+              "singularName": "apiversions",
+              "pluralName": "apiversionses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/APIVersions.json",
+              "fieldCount": 4,
+              "description": "APIVersions lists the versions that are available, to allow clients to discover the API at /api, which is the root path of the legacy v1 API.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "Binding",
+              "singularName": "binding",
+              "pluralName": "bindings",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Binding.json",
+              "fieldCount": 8,
+              "description": "Binding ties one object to another; for example, a pod is bound to a node by a scheduler.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "ComponentStatus",
+              "singularName": "componentstatus",
+              "pluralName": "componentstatuses",
+              "scope": "Cluster",
+              "shortNames": [
+                "cs"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/ComponentStatus.json",
+              "fieldCount": 5,
+              "description": "ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "ConfigMap",
+              "singularName": "configmap",
+              "pluralName": "configmaps",
+              "scope": "Namespaced",
+              "shortNames": [
+                "cm"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/ConfigMap.json",
+              "fieldCount": 3,
+              "description": "ConfigMap holds configuration data for pods to consume.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/configuration/configmap/",
+              "relationships": []
+            },
+            {
+              "name": "Endpoints",
+              "singularName": "endpoints",
+              "pluralName": "endpoints",
+              "scope": "Namespaced",
+              "shortNames": [
+                "ep"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Endpoints.json",
+              "fieldCount": 19,
+              "description": "Endpoints is a collection of endpoints that implement the actual service. Example:\n\n\t Name: \"mysvc\",\n\t Subsets: [\n\t   {\n\t     Addresses: [{\"ip\": \"10.10.1.1\"}, {\"ip\": \"10.10.2.2\"}],\n\t     Ports: [{\"name\": \"a\", \"port\": 8675}, {\"name\": \"b\", \"port\": 309}]\n\t   },\n\t   {\n\t     Addresses: [{\"ip\": \"10.10.3.3\"}],\n\t     Ports: [{\"name\": \"a\", \"port\": 93}, {\"name\": \"b\", \"port\": 76}]\n\t   },\n\t]\n\nEndpoints is a legacy API and does not contain information about all Service features. Use discoveryv1.EndpointSlice",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/service/#endpoints",
+              "relationships": []
+            },
+            {
+              "name": "Event",
+              "singularName": "event",
+              "pluralName": "events",
+              "scope": "Namespaced",
+              "shortNames": [
+                "ev"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Event.json",
+              "fieldCount": 25,
+              "description": "Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.",
+              "docsUrl": "https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/",
+              "relationships": []
+            },
+            {
+              "name": "LimitRange",
+              "singularName": "limitrange",
+              "pluralName": "limitranges",
+              "scope": "Namespaced",
+              "shortNames": [
+                "limits"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/LimitRange.json",
+              "fieldCount": 8,
+              "description": "LimitRange sets resource usage limits for each kind of resource in a Namespace.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/policy/limit-range/",
+              "relationships": []
+            },
+            {
+              "name": "Namespace",
+              "singularName": "namespace",
+              "pluralName": "namespaces",
+              "scope": "Cluster",
+              "shortNames": [
+                "ns"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Namespace.json",
+              "fieldCount": 10,
+              "description": "Namespace provides a scope for Names. Use of multiple namespaces is optional.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/",
+              "relationships": []
+            },
+            {
+              "name": "Node",
+              "singularName": "node",
+              "pluralName": "nodes",
+              "scope": "Cluster",
+              "shortNames": [
+                "no"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Node.json",
+              "fieldCount": 68,
+              "description": "Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).",
+              "docsUrl": "https://kubernetes.io/docs/concepts/architecture/nodes/",
+              "relationships": []
+            },
+            {
+              "name": "PersistentVolume",
+              "singularName": "persistentvolume",
+              "pluralName": "persistentvolumes",
+              "scope": "Cluster",
+              "shortNames": [
+                "pv"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/PersistentVolume.json",
+              "fieldCount": 163,
+              "description": "PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/persistent-volumes/",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "StorageClass",
+                  "targetGroup": "storage.k8s.io",
+                  "description": "Uses StorageClass",
+                  "fieldPath": "spec.storageClassName"
+                }
+              ]
+            },
+            {
+              "name": "PersistentVolumeClaim",
+              "singularName": "persistentvolumeclaim",
+              "pluralName": "persistentvolumeclaims",
+              "scope": "Namespaced",
+              "shortNames": [
+                "pvc"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/PersistentVolumeClaim.json",
+              "fieldCount": 41,
+              "description": "PersistentVolumeClaim is a user's request for and claim to a persistent volume",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "PersistentVolume",
+                  "targetGroup": "core",
+                  "description": "Binds to PV",
+                  "fieldPath": "spec.volumeName"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "StorageClass",
+                  "targetGroup": "storage.k8s.io",
+                  "description": "Uses StorageClass",
+                  "fieldPath": "spec.storageClassName"
+                }
+              ]
+            },
+            {
+              "name": "Pod",
+              "singularName": "pod",
+              "pluralName": "pods",
+              "scope": "Namespaced",
+              "shortNames": [
+                "po"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/core/Pod.json",
+              "fieldCount": 594,
+              "description": "Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/pods/",
+              "relationships": [
+                {
+                  "type": "mounts",
+                  "targetKind": "ConfigMap",
+                  "targetGroup": "core",
+                  "description": "Mounts ConfigMaps as volumes",
+                  "fieldPath": "spec.volumes[].configMap"
+                },
+                {
+                  "type": "mounts",
+                  "targetKind": "Secret",
+                  "targetGroup": "core",
+                  "description": "Mounts Secrets as volumes",
+                  "fieldPath": "spec.volumes[].secret"
+                },
+                {
+                  "type": "mounts",
+                  "targetKind": "PersistentVolumeClaim",
+                  "targetGroup": "core",
+                  "description": "Mounts PVCs as volumes",
+                  "fieldPath": "spec.volumes[].persistentVolumeClaim"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "ServiceAccount",
+                  "targetGroup": "core",
+                  "description": "Runs as ServiceAccount",
+                  "fieldPath": "spec.serviceAccountName"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "Node",
+                  "targetGroup": "core",
+                  "description": "Scheduled to Node",
+                  "fieldPath": "spec.nodeName"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "PriorityClass",
+                  "targetGroup": "scheduling.k8s.io",
+                  "description": "Uses PriorityClass",
+                  "fieldPath": "spec.priorityClassName"
+                }
+              ]
+            },
+            {
+              "name": "PodTemplate",
+              "singularName": "podtemplate",
+              "pluralName": "podtemplates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/PodTemplate.json",
+              "fieldCount": 519,
+              "description": "PodTemplate describes a template for creating copies of a predefined pod.",
+              "docsUrl": null,
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Defines Pod template for creating copies",
+                  "fieldPath": "template"
+                }
+              ]
+            },
+            {
+              "name": "ReplicationController",
+              "singularName": "replicationcontroller",
+              "pluralName": "replicationcontrollers",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/ReplicationController.json",
+              "fieldCount": 532,
+              "description": "ReplicationController represents the configuration of a replication controller.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceQuota",
+              "singularName": "resourcequota",
+              "pluralName": "resourcequotas",
+              "scope": "Namespaced",
+              "shortNames": [
+                "quota"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/ResourceQuota.json",
+              "fieldCount": 11,
+              "description": "ResourceQuota sets aggregate quota restrictions enforced per namespace",
+              "docsUrl": "https://kubernetes.io/docs/concepts/policy/resource-quotas/",
+              "relationships": []
+            },
+            {
+              "name": "Secret",
+              "singularName": "secret",
+              "pluralName": "secrets",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Secret.json",
+              "fieldCount": 4,
+              "description": "Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/configuration/secret/",
+              "relationships": []
+            },
+            {
+              "name": "Service",
+              "singularName": "service",
+              "pluralName": "services",
+              "scope": "Namespaced",
+              "shortNames": [
+                "svc"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/core/Service.json",
+              "fieldCount": 46,
+              "description": "Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/service/",
+              "relationships": [
+                {
+                  "type": "selects",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Routes traffic to Pods via label selector",
+                  "fieldPath": "spec.selector"
+                }
+              ]
+            },
+            {
+              "name": "ServiceAccount",
+              "singularName": "serviceaccount",
+              "pluralName": "serviceaccounts",
+              "scope": "Namespaced",
+              "shortNames": [
+                "sa"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/ServiceAccount.json",
+              "fieldCount": 11,
+              "description": "ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets",
+              "docsUrl": "https://kubernetes.io/docs/concepts/security/service-accounts/",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Secret",
+                  "targetGroup": "core",
+                  "description": "References image pull secrets",
+                  "fieldPath": "imagePullSecrets"
+                }
+              ]
+            },
+            {
+              "name": "Status",
+              "singularName": "status",
+              "pluralName": "statuses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/Status.json",
+              "fieldCount": 14,
+              "description": "Status is a return value for calls that don't return other objects.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "WatchEvent",
+              "singularName": "watchevent",
+              "pluralName": "watchevents",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/core/WatchEvent.json",
+              "fieldCount": 2,
+              "description": "Event represents a single event to a watched resource.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "admissionregistration.k8s.io",
+      "displayName": "Admission",
+      "description": "Dynamic admission control webhooks",
+      "color": "#14B8A6",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "MutatingAdmissionPolicy",
+              "singularName": "mutatingadmissionpolicy",
+              "pluralName": "mutatingadmissionpolicies",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/MutatingAdmissionPolicy.json",
+              "fieldCount": 35,
+              "description": "MutatingAdmissionPolicy describes the definition of an admission mutation policy that mutates the object coming into admission chain.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "MutatingAdmissionPolicyBinding",
+              "singularName": "mutatingadmissionpolicybinding",
+              "pluralName": "mutatingadmissionpolicybindings",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/MutatingAdmissionPolicyBinding.json",
+              "fieldCount": 24,
+              "description": "MutatingAdmissionPolicyBinding binds the MutatingAdmissionPolicy with parametrized resources. MutatingAdmissionPolicyBinding and the optional parameter resource together define how cluster administrators configure policies for clusters.\n\nFor a given admission request, each binding will cause its policy to be evaluated N times, where N is 1 for policies/bindings that don't use params, otherwise N is the number of parameters selected by the binding. Each evaluation is constrained by a [runtime cos",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1alpha1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "MutatingAdmissionPolicy",
+              "singularName": "mutatingadmissionpolicy",
+              "pluralName": "mutatingadmissionpolicies",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/MutatingAdmissionPolicy.json",
+              "fieldCount": 35,
+              "description": "MutatingAdmissionPolicy describes the definition of an admission mutation policy that mutates the object coming into admission chain.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "MutatingAdmissionPolicyBinding",
+              "singularName": "mutatingadmissionpolicybinding",
+              "pluralName": "mutatingadmissionpolicybindings",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/MutatingAdmissionPolicyBinding.json",
+              "fieldCount": 24,
+              "description": "MutatingAdmissionPolicyBinding binds the MutatingAdmissionPolicy with parametrized resources. MutatingAdmissionPolicyBinding and the optional parameter resource together define how cluster administrators configure policies for clusters.\n\nFor a given admission request, each binding will cause its policy to be evaluated N times, where N is 1 for policies/bindings that don't use params, otherwise N is the number of parameters selected by the binding. Each evaluation is constrained by a [runtime cos",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "MutatingWebhookConfiguration",
+              "singularName": "mutatingwebhookconfiguration",
+              "pluralName": "mutatingwebhookconfigurations",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/MutatingWebhookConfiguration.json",
+              "fieldCount": 32,
+              "description": "MutatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and may change the object.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/",
+              "relationships": []
+            },
+            {
+              "name": "ValidatingAdmissionPolicy",
+              "singularName": "validatingadmissionpolicy",
+              "pluralName": "validatingadmissionpolicies",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/ValidatingAdmissionPolicy.json",
+              "fieldCount": 49,
+              "description": "ValidatingAdmissionPolicy describes the definition of an admission validation policy that accepts or rejects an object without changing it.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/",
+              "relationships": []
+            },
+            {
+              "name": "ValidatingAdmissionPolicyBinding",
+              "singularName": "validatingadmissionpolicybinding",
+              "pluralName": "validatingadmissionpolicybindings",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/ValidatingAdmissionPolicyBinding.json",
+              "fieldCount": 25,
+              "description": "ValidatingAdmissionPolicyBinding binds the ValidatingAdmissionPolicy with paramerized resources. ValidatingAdmissionPolicyBinding and parameter CRDs together define how cluster administrators configure policies for clusters.\n\nFor a given admission request, each binding will cause its policy to be evaluated N times, where N is 1 for policies/bindings that don't use params, otherwise N is the number of parameters selected by the binding.\n\nThe CEL expressions of a policy must have a computed CEL co",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "ValidatingWebhookConfiguration",
+              "singularName": "validatingwebhookconfiguration",
+              "pluralName": "validatingwebhookconfigurations",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/admissionregistration.k8s.io/ValidatingWebhookConfiguration.json",
+              "fieldCount": 31,
+              "description": "ValidatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and object without changing it.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apiextensions.k8s.io",
+      "displayName": "API Extensions",
+      "description": "Custom Resource Definitions (CRDs)",
+      "color": "#6366F1",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "CustomResourceDefinition",
+              "singularName": "customresourcedefinition",
+              "pluralName": "customresourcedefinitions",
+              "scope": "Cluster",
+              "shortNames": [
+                "crd",
+                "crds"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/apiextensions.k8s.io/CustomResourceDefinition.json",
+              "fieldCount": 109,
+              "description": "CustomResourceDefinition represents a resource that should be exposed on the API server.  Its name MUST be in the format <.spec.name>.<.spec.group>.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apiregistration.k8s.io",
+      "displayName": "Apiregistration",
+      "description": "API group: apiregistration.k8s.io",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "APIService",
+              "singularName": "apiservice",
+              "pluralName": "apiservices",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/apiregistration.k8s.io/APIService.json",
+              "fieldCount": 18,
+              "description": "APIService represents a server for a particular GroupVersion. Name must be \"version.group\".",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apps",
+      "displayName": "Apps",
+      "description": "Higher-level application management including Deployments, StatefulSets, and DaemonSets",
+      "color": "#10B981",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "ControllerRevision",
+              "singularName": "controllerrevision",
+              "pluralName": "controllerrevisions",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/apps/ControllerRevision.json",
+              "fieldCount": 2,
+              "description": "ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this objec",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "DaemonSet",
+              "singularName": "daemonset",
+              "pluralName": "daemonsets",
+              "scope": "Namespaced",
+              "shortNames": [
+                "ds"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/apps/DaemonSet.json",
+              "fieldCount": 544,
+              "description": "DaemonSet represents the configuration of a daemon set.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Runs Pod on each node",
+                  "fieldPath": "spec.template"
+                }
+              ]
+            },
+            {
+              "name": "Deployment",
+              "singularName": "deployment",
+              "pluralName": "deployments",
+              "scope": "Namespaced",
+              "shortNames": [
+                "deploy"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/apps/Deployment.json",
+              "fieldCount": 547,
+              "description": "Deployment enables declarative updates for Pods and ReplicaSets.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "ReplicaSet",
+                  "targetGroup": "apps",
+                  "description": "Creates and manages ReplicaSets",
+                  "fieldPath": "spec.template"
+                }
+              ]
+            },
+            {
+              "name": "ReplicaSet",
+              "singularName": "replicaset",
+              "pluralName": "replicasets",
+              "scope": "Namespaced",
+              "shortNames": [
+                "rs"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/apps/ReplicaSet.json",
+              "fieldCount": 536,
+              "description": "ReplicaSet ensures that a specified number of pod replicas are running at any given time.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Creates and manages Pods",
+                  "fieldPath": "spec.template"
+                }
+              ]
+            },
+            {
+              "name": "StatefulSet",
+              "singularName": "statefulset",
+              "pluralName": "statefulsets",
+              "scope": "Namespaced",
+              "shortNames": [
+                "sts"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/apps/StatefulSet.json",
+              "fieldCount": 574,
+              "description": "StatefulSet represents a set of pods with consistent identities. Identities are defined as:\n  - Network: A single stable DNS and hostname.\n  - Storage: As many VolumeClaims as requested.\n\nThe StatefulSet guarantees that a given network identity will always map to the same storage identity.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Creates ordered, sticky Pods",
+                  "fieldPath": "spec.template"
+                },
+                {
+                  "type": "owns",
+                  "targetKind": "PersistentVolumeClaim",
+                  "targetGroup": "core",
+                  "description": "Creates PVCs from templates",
+                  "fieldPath": "spec.volumeClaimTemplates"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "Service",
+                  "targetGroup": "core",
+                  "description": "Requires headless Service",
+                  "fieldPath": "spec.serviceName"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "authentication.k8s.io",
+      "displayName": "Authentication",
+      "description": "API group: authentication.k8s.io",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "SelfSubjectReview",
+              "singularName": "selfsubjectreview",
+              "pluralName": "selfsubjectreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authentication.k8s.io/SelfSubjectReview.json",
+              "fieldCount": 6,
+              "description": "SelfSubjectReview contains the user information that the kube-apiserver has about the user making this request. When using impersonation, users will receive the user info of the user being impersonated.  If impersonation or request header authentication is used, any extra keys will have their case ignored and returned as lowercase.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "TokenRequest",
+              "singularName": "tokenrequest",
+              "pluralName": "tokenrequests",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authentication.k8s.io/TokenRequest.json",
+              "fieldCount": 11,
+              "description": "TokenRequest requests a token for a given service account.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "TokenReview",
+              "singularName": "tokenreview",
+              "pluralName": "tokenreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authentication.k8s.io/TokenReview.json",
+              "fieldCount": 12,
+              "description": "TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "authorization.k8s.io",
+      "displayName": "Authorization",
+      "description": "API group: authorization.k8s.io",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "LocalSubjectAccessReview",
+              "singularName": "localsubjectaccessreview",
+              "pluralName": "localsubjectaccessreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authorization.k8s.io/LocalSubjectAccessReview.json",
+              "fieldCount": 33,
+              "description": "LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "SelfSubjectAccessReview",
+              "singularName": "selfsubjectaccessreview",
+              "pluralName": "selfsubjectaccessreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authorization.k8s.io/SelfSubjectAccessReview.json",
+              "fieldCount": 29,
+              "description": "SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means \"in all namespaces\".  Self is a special case, because users should always be able to check whether they can perform an action",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "SelfSubjectRulesReview",
+              "singularName": "selfsubjectrulesreview",
+              "pluralName": "selfsubjectrulesreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authorization.k8s.io/SelfSubjectRulesReview.json",
+              "fieldCount": 13,
+              "description": "SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revo",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "SubjectAccessReview",
+              "singularName": "subjectaccessreview",
+              "pluralName": "subjectaccessreviews",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/authorization.k8s.io/SubjectAccessReview.json",
+              "fieldCount": 33,
+              "description": "SubjectAccessReview checks whether or not a user or group can perform an action.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "autoscaling",
+      "displayName": "Autoscaling",
+      "description": "Horizontal and vertical pod autoscaling",
+      "color": "#06B6D4",
+      "versions": [
+        {
+          "name": "v2",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "HorizontalPodAutoscaler",
+              "singularName": "horizontalpodautoscaler",
+              "pluralName": "horizontalpodautoscalers",
+              "scope": "Namespaced",
+              "shortNames": [
+                "hpa"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/autoscaling/HorizontalPodAutoscaler.json",
+              "fieldCount": 80,
+              "description": "HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.",
+              "docsUrl": "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Deployment",
+                  "targetGroup": "apps",
+                  "description": "Scales workloads",
+                  "fieldPath": "spec.scaleTargetRef"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "HorizontalPodAutoscaler",
+              "singularName": "horizontalpodautoscaler",
+              "pluralName": "horizontalpodautoscalers",
+              "scope": "Namespaced",
+              "shortNames": [
+                "hpa"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/autoscaling/HorizontalPodAutoscaler.json",
+              "fieldCount": 14,
+              "description": "configuration of a horizontal pod autoscaler.",
+              "docsUrl": "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Deployment",
+                  "targetGroup": "apps",
+                  "description": "Scales workloads",
+                  "fieldPath": "spec.scaleTargetRef"
+                }
+              ]
+            },
+            {
+              "name": "Scale",
+              "singularName": "scale",
+              "pluralName": "scales",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/autoscaling/Scale.json",
+              "fieldCount": 5,
+              "description": "Scale represents a scaling request for a resource.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "batch",
+      "displayName": "Batch",
+      "description": "Batch processing workloads including Jobs and CronJobs",
+      "color": "#F59E0B",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "CronJob",
+              "singularName": "cronjob",
+              "pluralName": "cronjobs",
+              "scope": "Namespaced",
+              "shortNames": [
+                "cj"
+              ],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/batch/CronJob.json",
+              "fieldCount": 491,
+              "description": "CronJob represents the configuration of a single cron job.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Job",
+                  "targetGroup": "batch",
+                  "description": "Creates Jobs on schedule",
+                  "fieldPath": "spec.jobTemplate"
+                }
+              ]
+            },
+            {
+              "name": "Job",
+              "singularName": "job",
+              "pluralName": "jobs",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [
+                "all"
+              ],
+              "schemaRef": "/schemas/1.35/batch/Job.json",
+              "fieldCount": 567,
+              "description": "Job represents the configuration of a single job.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/controllers/job/",
+              "relationships": [
+                {
+                  "type": "owns",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Creates Pods to run to completion",
+                  "fieldPath": "spec.template"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "certificates.k8s.io",
+      "displayName": "Certificates",
+      "description": "Certificate signing requests and management",
+      "color": "#A855F7",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "ClusterTrustBundle",
+              "singularName": "clustertrustbundle",
+              "pluralName": "clustertrustbundles",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/certificates.k8s.io/ClusterTrustBundle.json",
+              "fieldCount": 3,
+              "description": "ClusterTrustBundle is a cluster-scoped container for X.509 trust anchors (root certificates).\n\nClusterTrustBundle objects are considered to be readable by any authenticated user in the cluster, because they can be mounted by pods using the `clusterTrustBundle` projection.  All service accounts have read access to ClusterTrustBundles by default.  Users who only have namespace-level access to a cluster can read ClusterTrustBundles by impersonating a serviceaccount that they have access to.\n\nIt can",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "PodCertificateRequest",
+              "singularName": "podcertificaterequest",
+              "pluralName": "podcertificaterequests",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/certificates.k8s.io/PodCertificateRequest.json",
+              "fieldCount": 24,
+              "description": "PodCertificateRequest encodes a pod requesting a certificate from a given signer.\n\nKubelets use this API to implement podCertificate projected volumes",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1alpha1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "ClusterTrustBundle",
+              "singularName": "clustertrustbundle",
+              "pluralName": "clustertrustbundles",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/certificates.k8s.io/ClusterTrustBundle.json",
+              "fieldCount": 3,
+              "description": "ClusterTrustBundle is a cluster-scoped container for X.509 trust anchors (root certificates).\n\nClusterTrustBundle objects are considered to be readable by any authenticated user in the cluster, because they can be mounted by pods using the `clusterTrustBundle` projection.  All service accounts have read access to ClusterTrustBundles by default.  Users who only have namespace-level access to a cluster can read ClusterTrustBundles by impersonating a serviceaccount that they have access to.\n\nIt can",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "CertificateSigningRequest",
+              "singularName": "certificatesigningrequest",
+              "pluralName": "certificatesigningrequests",
+              "scope": "Cluster",
+              "shortNames": [
+                "csr"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/certificates.k8s.io/CertificateSigningRequest.json",
+              "fieldCount": 18,
+              "description": "CertificateSigningRequest objects provide a mechanism to obtain x509 certificates by submitting a certificate signing request, and having it asynchronously approved and issued.\n\nKubelets use this API to obtain:\n 1. client certificates to authenticate to kube-apiserver (with the \"kubernetes.io/kube-apiserver-client-kubelet\" signerName).\n 2. serving certificates for TLS endpoints kube-apiserver can connect to securely (with the \"kubernetes.io/kubelet-serving\" signerName).\n\nThis API can be used to ",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "coordination.k8s.io",
+      "displayName": "Coordination",
+      "description": "Leader election and distributed coordination",
+      "color": "#F43F5E",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "LeaseCandidate",
+              "singularName": "leasecandidate",
+              "pluralName": "leasecandidates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/coordination.k8s.io/LeaseCandidate.json",
+              "fieldCount": 7,
+              "description": "LeaseCandidate defines a candidate for a Lease object. Candidates are created such that coordinated leader election will pick the best leader from the list of candidates.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1alpha2",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "LeaseCandidate",
+              "singularName": "leasecandidate",
+              "pluralName": "leasecandidates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/coordination.k8s.io/LeaseCandidate.json",
+              "fieldCount": 7,
+              "description": "LeaseCandidate defines a candidate for a Lease object. Candidates are created such that coordinated leader election will pick the best leader from the list of candidates.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "Lease",
+              "singularName": "lease",
+              "pluralName": "leases",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/coordination.k8s.io/Lease.json",
+              "fieldCount": 8,
+              "description": "Lease defines a lease concept.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/architecture/leases/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "discovery.k8s.io",
+      "displayName": "Discovery",
+      "description": "Endpoint slices for scalable service discovery",
+      "color": "#0EA5E9",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "EndpointSlice",
+              "singularName": "endpointslice",
+              "pluralName": "endpointslices",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/discovery.k8s.io/EndpointSlice.json",
+              "fieldCount": 29,
+              "description": "EndpointSlice represents a set of service endpoints. Most EndpointSlices are created by the EndpointSlice controller to represent the Pods selected by Service objects. For a given service there may be multiple EndpointSlice objects which must be joined to produce the full set of endpoints; you can find all of the slices for a given service by listing EndpointSlices in the service's namespace whose `kubernetes.io/service-name` label contains the service's name.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "events.k8s.io",
+      "displayName": "Events",
+      "description": "Cluster events and audit logging",
+      "color": "#22C55E",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "Event",
+              "singularName": "event",
+              "pluralName": "events",
+              "scope": "Namespaced",
+              "shortNames": [
+                "ev"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/events.k8s.io/Event.json",
+              "fieldCount": 25,
+              "description": "Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system. Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.",
+              "docsUrl": "https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "flowcontrol.apiserver.k8s.io",
+      "displayName": "Flow Control",
+      "description": "API server request prioritization and fairness",
+      "color": "#EAB308",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "FlowSchema",
+              "singularName": "flowschema",
+              "pluralName": "flowschemas",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/flowcontrol.apiserver.k8s.io/FlowSchema.json",
+              "fieldCount": 32,
+              "description": "FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with similar attributes and is identified by a pair of strings: the name of the FlowSchema and a \"flow distinguisher\".",
+              "docsUrl": "https://kubernetes.io/docs/concepts/cluster-administration/flow-control/",
+              "relationships": []
+            },
+            {
+              "name": "PriorityLevelConfiguration",
+              "singularName": "prioritylevelconfiguration",
+              "pluralName": "prioritylevelconfigurations",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/flowcontrol.apiserver.k8s.io/PriorityLevelConfiguration.json",
+              "fieldCount": 22,
+              "description": "PriorityLevelConfiguration represents the configuration of a priority level.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/cluster-administration/flow-control/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "internal.apiserver.k8s.io",
+      "displayName": "Internal",
+      "description": "API group: internal.apiserver.k8s.io",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1alpha1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "StorageVersion",
+              "singularName": "storageversion",
+              "pluralName": "storageversions",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/internal.apiserver.k8s.io/StorageVersion.json",
+              "fieldCount": 15,
+              "description": "Storage version of a specific resource.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "networking.k8s.io",
+      "displayName": "Networking",
+      "description": "Network policies, Ingress, and service mesh configurations",
+      "color": "#8B5CF6",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "IPAddress",
+              "singularName": "ipaddress",
+              "pluralName": "ipaddresses",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/IPAddress.json",
+              "fieldCount": 6,
+              "description": "IPAddress represents a single IP of a single IP Family. The object is designed to be used by APIs that operate on IP addresses. The object is used by the Service core API for allocation of IP addresses. An IP address can be represented in different formats, to guarantee the uniqueness of the IP, the name of the object is the IP address in canonical format, four decimal digits separated by dots suppressing leading zeros for IPv4 and the representation defined by RFC 5952 for IPv6. Valid: 192.168.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "ServiceCIDR",
+              "singularName": "servicecidr",
+              "pluralName": "servicecidrs",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/ServiceCIDR.json",
+              "fieldCount": 10,
+              "description": "ServiceCIDR defines a range of IP addresses using CIDR format (e.g. 192.168.0.0/24 or 2001:db2::/64). This range is used to allocate ClusterIPs to Service objects.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "IPAddress",
+              "singularName": "ipaddress",
+              "pluralName": "ipaddresses",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/IPAddress.json",
+              "fieldCount": 6,
+              "description": "IPAddress represents a single IP of a single IP Family. The object is designed to be used by APIs that operate on IP addresses. The object is used by the Service core API for allocation of IP addresses. An IP address can be represented in different formats, to guarantee the uniqueness of the IP, the name of the object is the IP address in canonical format, four decimal digits separated by dots suppressing leading zeros for IPv4 and the representation defined by RFC 5952 for IPv6. Valid: 192.168.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "Ingress",
+              "singularName": "ingress",
+              "pluralName": "ingresses",
+              "scope": "Namespaced",
+              "shortNames": [
+                "ing"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/Ingress.json",
+              "fieldCount": 31,
+              "description": "Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/ingress/",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Service",
+                  "targetGroup": "core",
+                  "description": "Routes to Services",
+                  "fieldPath": "spec.rules"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "Secret",
+                  "targetGroup": "core",
+                  "description": "Uses TLS secrets",
+                  "fieldPath": "spec.tls"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "IngressClass",
+                  "targetGroup": "networking.k8s.io",
+                  "description": "Uses IngressClass",
+                  "fieldPath": "spec.ingressClassName"
+                }
+              ]
+            },
+            {
+              "name": "IngressClass",
+              "singularName": "ingressclass",
+              "pluralName": "ingressclasses",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/IngressClass.json",
+              "fieldCount": 8,
+              "description": "IngressClass represents the class of the Ingress, referenced by the Ingress Spec. The `ingressclass.kubernetes.io/is-default-class` annotation can be used to indicate that an IngressClass should be considered default. When a single IngressClass resource has this annotation set to true, new Ingress resources without a class specified will be assigned this default class.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class",
+              "relationships": []
+            },
+            {
+              "name": "NetworkPolicy",
+              "singularName": "networkpolicy",
+              "pluralName": "networkpolicies",
+              "scope": "Namespaced",
+              "shortNames": [
+                "netpol"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/NetworkPolicy.json",
+              "fieldCount": 22,
+              "description": "NetworkPolicy describes what network traffic is allowed for a set of Pods",
+              "docsUrl": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+              "relationships": [
+                {
+                  "type": "selects",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Applies to Pods via selector",
+                  "fieldPath": "spec.podSelector"
+                }
+              ]
+            },
+            {
+              "name": "ServiceCIDR",
+              "singularName": "servicecidr",
+              "pluralName": "servicecidrs",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/networking.k8s.io/ServiceCIDR.json",
+              "fieldCount": 10,
+              "description": "ServiceCIDR defines a range of IP addresses using CIDR format (e.g. 192.168.0.0/24 or 2001:db2::/64). This range is used to allocate ClusterIPs to Service objects.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "node.k8s.io",
+      "displayName": "Node",
+      "description": "Node-specific configurations and runtime classes",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "RuntimeClass",
+              "singularName": "runtimeclass",
+              "pluralName": "runtimeclasses",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/node.k8s.io/RuntimeClass.json",
+              "fieldCount": 11,
+              "description": "RuntimeClass defines a class of container runtime supported in the cluster. The RuntimeClass is used to determine which container runtime is used to run all containers in a pod. RuntimeClasses are manually defined by a user or cluster provisioner, and referenced in the PodSpec. The Kubelet is responsible for resolving the RuntimeClassName reference before running the pod.  For more details, see https://kubernetes.io/docs/concepts/containers/runtime-class/",
+              "docsUrl": "https://kubernetes.io/docs/concepts/containers/runtime-class/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "policy",
+      "displayName": "Policy",
+      "description": "Pod security and disruption policies",
+      "color": "#EC4899",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "Eviction",
+              "singularName": "eviction",
+              "pluralName": "evictions",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/policy/Eviction.json",
+              "fieldCount": 11,
+              "description": "Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/<pod name>/evictions.",
+              "docsUrl": null,
+              "relationships": []
+            },
+            {
+              "name": "PodDisruptionBudget",
+              "singularName": "poddisruptionbudget",
+              "pluralName": "poddisruptionbudgets",
+              "scope": "Namespaced",
+              "shortNames": [
+                "pdb"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/policy/PodDisruptionBudget.json",
+              "fieldCount": 24,
+              "description": "PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods",
+              "docsUrl": "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/",
+              "relationships": [
+                {
+                  "type": "selects",
+                  "targetKind": "Pod",
+                  "targetGroup": "core",
+                  "description": "Protects Pods via selector",
+                  "fieldPath": "spec.selector"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rbac.authorization.k8s.io",
+      "displayName": "RBAC",
+      "description": "Role-based access control for Kubernetes resources",
+      "color": "#EF4444",
+      "versions": [
+        {
+          "name": "v1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "ClusterRole",
+              "singularName": "clusterrole",
+              "pluralName": "clusterroles",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/rbac.authorization.k8s.io/ClusterRole.json",
+              "fieldCount": 13,
+              "description": "ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole",
+              "relationships": []
+            },
+            {
+              "name": "ClusterRoleBinding",
+              "singularName": "clusterrolebinding",
+              "pluralName": "clusterrolebindings",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/rbac.authorization.k8s.io/ClusterRoleBinding.json",
+              "fieldCount": 9,
+              "description": "ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "ClusterRole",
+                  "targetGroup": "rbac.authorization.k8s.io",
+                  "description": "Binds to ClusterRole",
+                  "fieldPath": "roleRef"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "ServiceAccount",
+                  "targetGroup": "core",
+                  "description": "Grants to ServiceAccounts",
+                  "fieldPath": "subjects"
+                }
+              ]
+            },
+            {
+              "name": "Role",
+              "singularName": "role",
+              "pluralName": "roles",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/rbac.authorization.k8s.io/Role.json",
+              "fieldCount": 6,
+              "description": "Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole",
+              "relationships": []
+            },
+            {
+              "name": "RoleBinding",
+              "singularName": "rolebinding",
+              "pluralName": "rolebindings",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/rbac.authorization.k8s.io/RoleBinding.json",
+              "fieldCount": 9,
+              "description": "RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.",
+              "docsUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Role",
+                  "targetGroup": "rbac.authorization.k8s.io",
+                  "description": "Binds to Role",
+                  "fieldPath": "roleRef"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "ServiceAccount",
+                  "targetGroup": "core",
+                  "description": "Grants to ServiceAccounts",
+                  "fieldPath": "subjects"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "resource.k8s.io",
+      "displayName": "Resource",
+      "description": "Dynamic resource allocation and claims",
+      "color": "#FB923C",
+      "versions": [
+        {
+          "name": "v1beta2",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "DeviceClass",
+              "singularName": "deviceclass",
+              "pluralName": "deviceclasses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/DeviceClass.json",
+              "fieldCount": 9,
+              "description": "DeviceClass is a vendor- or admin-provided resource that contains device configuration and selectors. It can be referenced in the device requests of a claim to apply these presets. Cluster scoped.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaim",
+              "singularName": "resourceclaim",
+              "pluralName": "resourceclaims",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaim.json",
+              "fieldCount": 85,
+              "description": "ResourceClaim describes a request for access to resources in the cluster, for use by workloads. For example, if a workload needs an accelerator device with specific properties, this is how that request is expressed. The status stanza tracks whether this claim has been satisfied and what specific resources have been allocated.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaimTemplate",
+              "singularName": "resourceclaimtemplate",
+              "pluralName": "resourceclaimtemplates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaimTemplate.json",
+              "fieldCount": 67,
+              "description": "ResourceClaimTemplate is used to produce ResourceClaim objects.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceSlice",
+              "singularName": "resourceslice",
+              "pluralName": "resourceslices",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceSlice.json",
+              "fieldCount": 38,
+              "description": "ResourceSlice represents one or more resources in a pool of similar resources, managed by a common driver. A pool may span more than one ResourceSlice, and exactly how many ResourceSlices comprise a pool is determined by the driver.\n\nAt the moment, the only supported resources are devices with attributes and capacities. Each device in a given pool, regardless of how many ResourceSlices, must have a unique name. The ResourceSlice in which a device gets published may change over time. The unique i",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1beta1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "DeviceClass",
+              "singularName": "deviceclass",
+              "pluralName": "deviceclasses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/DeviceClass.json",
+              "fieldCount": 9,
+              "description": "DeviceClass is a vendor- or admin-provided resource that contains device configuration and selectors. It can be referenced in the device requests of a claim to apply these presets. Cluster scoped.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaim",
+              "singularName": "resourceclaim",
+              "pluralName": "resourceclaims",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaim.json",
+              "fieldCount": 84,
+              "description": "ResourceClaim describes a request for access to resources in the cluster, for use by workloads. For example, if a workload needs an accelerator device with specific properties, this is how that request is expressed. The status stanza tracks whether this claim has been satisfied and what specific resources have been allocated.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaimTemplate",
+              "singularName": "resourceclaimtemplate",
+              "pluralName": "resourceclaimtemplates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaimTemplate.json",
+              "fieldCount": 66,
+              "description": "ResourceClaimTemplate is used to produce ResourceClaim objects.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceSlice",
+              "singularName": "resourceslice",
+              "pluralName": "resourceslices",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceSlice.json",
+              "fieldCount": 39,
+              "description": "ResourceSlice represents one or more resources in a pool of similar resources, managed by a common driver. A pool may span more than one ResourceSlice, and exactly how many ResourceSlices comprise a pool is determined by the driver.\n\nAt the moment, the only supported resources are devices with attributes and capacities. Each device in a given pool, regardless of how many ResourceSlices, must have a unique name. The ResourceSlice in which a device gets published may change over time. The unique i",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1alpha3",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "DeviceTaintRule",
+              "singularName": "devicetaintrule",
+              "pluralName": "devicetaintrules",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/DeviceTaintRule.json",
+              "fieldCount": 18,
+              "description": "DeviceTaintRule adds one taint to all devices which match the selector. This has the same effect as if the taint was specified directly in the ResourceSlice by the DRA driver.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "DeviceClass",
+              "singularName": "deviceclass",
+              "pluralName": "deviceclasses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/DeviceClass.json",
+              "fieldCount": 9,
+              "description": "DeviceClass is a vendor- or admin-provided resource that contains device configuration and selectors. It can be referenced in the device requests of a claim to apply these presets. Cluster scoped.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaim",
+              "singularName": "resourceclaim",
+              "pluralName": "resourceclaims",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaim.json",
+              "fieldCount": 85,
+              "description": "ResourceClaim describes a request for access to resources in the cluster, for use by workloads. For example, if a workload needs an accelerator device with specific properties, this is how that request is expressed. The status stanza tracks whether this claim has been satisfied and what specific resources have been allocated.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceClaimTemplate",
+              "singularName": "resourceclaimtemplate",
+              "pluralName": "resourceclaimtemplates",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceClaimTemplate.json",
+              "fieldCount": 67,
+              "description": "ResourceClaimTemplate is used to produce ResourceClaim objects.\n\nThis is an alpha type and requires enabling the DynamicResourceAllocation feature gate.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            },
+            {
+              "name": "ResourceSlice",
+              "singularName": "resourceslice",
+              "pluralName": "resourceslices",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/resource.k8s.io/ResourceSlice.json",
+              "fieldCount": 38,
+              "description": "ResourceSlice represents one or more resources in a pool of similar resources, managed by a common driver. A pool may span more than one ResourceSlice, and exactly how many ResourceSlices comprise a pool is determined by the driver.\n\nAt the moment, the only supported resources are devices with attributes and capacities. Each device in a given pool, regardless of how many ResourceSlices, must have a unique name. The ResourceSlice in which a device gets published may change over time. The unique i",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scheduling.k8s.io",
+      "displayName": "Scheduling",
+      "description": "Pod scheduling priorities and preemption",
+      "color": "#F97316",
+      "versions": [
+        {
+          "name": "v1alpha1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "Workload",
+              "singularName": "workload",
+              "pluralName": "workloads",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/scheduling.k8s.io/Workload.json",
+              "fieldCount": 11,
+              "description": "Workload allows for expressing scheduling constraints that should be used when managing lifecycle of workloads from scheduling perspective, including scheduling, preemption, eviction and other phases.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "PriorityClass",
+              "singularName": "priorityclass",
+              "pluralName": "priorityclasses",
+              "scope": "Cluster",
+              "shortNames": [
+                "pc"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/scheduling.k8s.io/PriorityClass.json",
+              "fieldCount": 4,
+              "description": "PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/",
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "storage.k8s.io",
+      "displayName": "Storage",
+      "description": "Storage classes and CSI driver configurations",
+      "color": "#84CC16",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "VolumeAttributesClass",
+              "singularName": "volumeattributesclass",
+              "pluralName": "volumeattributesclasses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/VolumeAttributesClass.json",
+              "fieldCount": 2,
+              "description": "VolumeAttributesClass represents a specification of mutable volume attributes defined by the CSI driver. The class can be specified during dynamic provisioning of PersistentVolumeClaims, and changed in the PersistentVolumeClaim spec after provisioning.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        },
+        {
+          "name": "v1",
+          "isPreferred": false,
+          "kinds": [
+            {
+              "name": "CSIDriver",
+              "singularName": "csidriver",
+              "pluralName": "csidrivers",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/CSIDriver.json",
+              "fieldCount": 13,
+              "description": "CSIDriver captures information about a Container Storage Interface (CSI) volume driver deployed on the cluster. Kubernetes attach detach controller uses this object to determine whether attach is required. Kubelet uses this object to determine whether pod information needs to be passed on mount. CSIDriver objects are non-namespaced.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/volumes/#csi",
+              "relationships": []
+            },
+            {
+              "name": "CSINode",
+              "singularName": "csinode",
+              "pluralName": "csinodes",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/CSINode.json",
+              "fieldCount": 7,
+              "description": "CSINode holds information about all CSI drivers installed on a node. CSI drivers do not need to create the CSINode object directly. As long as they use the node-driver-registrar sidecar container, the kubelet will automatically populate the CSINode object for the CSI driver as part of kubelet plugin registration. CSINode has the same name as a node. If the object is missing, it means either there are no CSI Drivers available on the node, or the Kubelet version is low enough that it doesn't creat",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/volumes/#csi",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Node",
+                  "targetGroup": "core",
+                  "description": "Associated with Node",
+                  "fieldPath": "metadata.name"
+                }
+              ]
+            },
+            {
+              "name": "CSIStorageCapacity",
+              "singularName": "csistoragecapacity",
+              "pluralName": "csistoragecapacities",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/CSIStorageCapacity.json",
+              "fieldCount": 9,
+              "description": "CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.\n\nFor example this can express things like: - StorageClass \"standard\" has \"1234 GiB\" available in \"topology.kubernetes.io/zone=us-east1\" - StorageClass \"localssd\" has \"10 GiB\" available in \"kubernetes.io/hostname=knode-abc123\"\n\nThe following three cases all ",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/storage-capacity/",
+              "relationships": []
+            },
+            {
+              "name": "StorageClass",
+              "singularName": "storageclass",
+              "pluralName": "storageclasses",
+              "scope": "Cluster",
+              "shortNames": [
+                "sc"
+              ],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/StorageClass.json",
+              "fieldCount": 10,
+              "description": "StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.\n\nStorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/storage-classes/",
+              "relationships": []
+            },
+            {
+              "name": "VolumeAttachment",
+              "singularName": "volumeattachment",
+              "pluralName": "volumeattachments",
+              "scope": "Cluster",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/VolumeAttachment.json",
+              "fieldCount": 171,
+              "description": "VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.\n\nVolumeAttachment objects are non-namespaced.",
+              "docsUrl": "https://kubernetes.io/docs/concepts/storage/volumes/#primitives",
+              "relationships": [
+                {
+                  "type": "references",
+                  "targetKind": "Node",
+                  "targetGroup": "core",
+                  "description": "Attached to Node",
+                  "fieldPath": "spec.nodeName"
+                },
+                {
+                  "type": "references",
+                  "targetKind": "PersistentVolume",
+                  "targetGroup": "core",
+                  "description": "Attaches PV",
+                  "fieldPath": "spec.source"
+                }
+              ]
+            },
+            {
+              "name": "VolumeAttributesClass",
+              "singularName": "volumeattributesclass",
+              "pluralName": "volumeattributesclasses",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storage.k8s.io/VolumeAttributesClass.json",
+              "fieldCount": 2,
+              "description": "VolumeAttributesClass represents a specification of mutable volume attributes defined by the CSI driver. The class can be specified during dynamic provisioning of PersistentVolumeClaims, and changed in the PersistentVolumeClaim spec after provisioning.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "storagemigration.k8s.io",
+      "displayName": "Storagemigration",
+      "description": "API group: storagemigration.k8s.io",
+      "color": "#64748B",
+      "versions": [
+        {
+          "name": "v1beta1",
+          "isPreferred": true,
+          "kinds": [
+            {
+              "name": "StorageVersionMigration",
+              "singularName": "storageversionmigration",
+              "pluralName": "storageversionmigrations",
+              "scope": "Namespaced",
+              "shortNames": [],
+              "categories": [],
+              "schemaRef": "/schemas/1.35/storagemigration.k8s.io/StorageVersionMigration.json",
+              "fieldCount": 13,
+              "description": "StorageVersionMigration represents a migration of stored data to the latest storage version.",
+              "docsUrl": null,
+              "relationships": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

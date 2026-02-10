@@ -1,0 +1,1654 @@
+{
+  "version": "1.26",
+  "feature_gate_count": 103,
+  "feature_gates": [
+    {
+      "name": "APIListChunking",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIPriorityAndFairness",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIResponseCompression",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APISelfSubjectReview",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@nabokihms",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AdvancedAuditing",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AggregatedDiscoveryEndpoint",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AnyVolumeDataSource",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@bswartz",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AppArmor",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@tallclair",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUCFSQuotaPeriod",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@szuecs",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyAlphaOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@fromanirh",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyBetaOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@fromanirh",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@fromanirh",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationAzureFile",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@andyzhangx",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationPortworx",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@trierra",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationRBD",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@humblec",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSINodeExpandSecret",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@humblec, @zhucan",
+      "kep_link": "https://kep.k8s.io/3171",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIVolumeHealth",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@fengzixu",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ConsistentHTTPGetHandlers",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@bhcleek @wzshiming",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ContainerCheckpoint",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@adrianreber",
+      "kep_link": "https://kep.k8s.io/2008",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CronJobTimeZone",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@deejross, @soltysh",
+      "kep_link": "https://kep.k8s.io/3140",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CrossNamespaceVolumeDataSource",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@username",
+      "kep_link": "https://kep.k8s.io/NNN",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CustomResourceValidationExpressions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DisableCloudProviders",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@andrewsykim",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DisableKubeletCloudCredentialProviders",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@andrewsykim",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DownwardAPIHugePages",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@derekwaynecarr",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DynamicResourceAllocation",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@pohly",
+      "kep_link": "http://kep.k8s.io/3063",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "EventedPLEG",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@harche",
+      "kep_link": "http://kep.k8s.io/3386",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExecProbeTimeout",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@andrewsykim @SergeyKanzhelev",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExpandCSIVolumes",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@gnufied",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExpandInUsePersistentVolumes",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@mlmhl @gnufied",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExpandPersistentVolumes",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@gnufied",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExpandedDNSConfig",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@gjkim42",
+      "kep_link": "https://kep.k8s.io/2595",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExperimentalHostUserNamespaceDefaultingGate",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@pweil-",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "GRPCContainerProbe",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@yuzhiquan, @bowei, @PxyUp, @SergeyKanzhelev",
+      "kep_link": "https://kep.k8s.io/2727",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "GracefulNodeShutdown",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@bobbypage",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "GracefulNodeShutdownBasedOnPodPriority",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@wzshiming",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HPAContainerMetrics",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@arjunrn @mwielgus @josephburnett",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HPAScaleToZero",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@dxist",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HonorPVReclaimPolicy",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@deepakkinni @xing-yang",
+      "kep_link": "https://kep.k8s.io/2680",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "IPTablesOwnershipCleanup",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@danwinship",
+      "kep_link": "https://kep.k8s.io/3178",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAWSUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@leakingtapan",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAzureDiskUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@andyzhangx",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAzureFileUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@andyzhangx",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginGCEUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@Jiawei0227",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginOpenStackUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@adisky",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginPortworxUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@trierra",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginRBDUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@humblec",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginvSphereUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@divyenpatel",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobMutableNodeSchedulingDirectives",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@ahg",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobPodFailurePolicy",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@mimowo",
+      "kep_link": "https://kep.k8s.io/3329",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobReadyPods",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@alculquicondor",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletInUserNamespace",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@AkihiroSuda",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResources",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@dashpole",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResourcesGetAllocatable",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@fromanirh",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletTracing",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@sallyom",
+      "kep_link": "https://kep.k8s.io/2832",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LegacyServiceAccountTokenNoAutoGeneration",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@zshihang",
+      "kep_link": "https://kep.k8s.io/2800",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "stable",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LegacyServiceAccountTokenTracking",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@zshihang",
+      "kep_link": "http://kep.k8s.io/2800",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LocalStorageCapacityIsolationFSQuotaMonitoring",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@RobertKrawitz",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LogarithmicScaleDown",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@damemi",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MatchLabelKeysInPodTopologySpread",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@denkensk",
+      "kep_link": "https://kep.k8s.io/3243",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MaxUnavailableStatefulSet",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@krmayankk",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MemoryManager",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@cynepco3hahue",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MemoryQoS",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@xiaoxubeii",
+      "kep_link": "https://kep.k8s.io/2570",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MinDomainsInPodTopologySpread",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@sanposhiho",
+      "kep_link": "https://kep.k8s.io/3022",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MinimizeIPTablesRestore",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@danwinship",
+      "kep_link": "http://kep.k8s.io/3453",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MultiCIDRRangeAllocator",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@sarveshr7",
+      "kep_link": "https://kep.k8s.io/2593",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NetworkPolicyStatus",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@rikatz",
+      "kep_link": "https://kep.k8s.io/2943",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeInclusionPolicyInPodTopologySpread",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@kerthcet",
+      "kep_link": "https://kep.k8s.io/3094",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeOutOfServiceVolumeDetach",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@xing-yang @sonasingh46",
+      "kep_link": "https://kep.k8s.io/2268",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeSwap",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@ehashman",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "OpenAPIEnums",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "OpenAPIV3",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PDBUnhealthyPodEvictionPolicy",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@mortent, @atiratree, @ravig",
+      "kep_link": "http://kep.k8s.io/3018",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodAndContainerStatsFromCRI",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@haircommander",
+      "kep_link": "https://kep.k8s.io/2364",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodDeletionCost",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@ahg-g",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodDisruptionConditions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@mimowo",
+      "kep_link": "https://kep.k8s.io/3329",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodHasNetworkCondition",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@ddebroy",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodSchedulingReadiness",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@Huang-Wei",
+      "kep_link": "https://kep.k8s.io/3521",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ProbeTerminationGracePeriod",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@ehashman",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ProcMountType",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@jessfraz",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ProxyTerminatingEndpoints",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@andrewsykim",
+      "kep_link": "https://kep.k8s.io/1669",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "QOSReserved",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@sjenning",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ReadWriteOncePod",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@chrishenzie",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RecoverVolumeExpansionFailure",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@gnufied",
+      "kep_link": "https://kep.k8s.io/1790",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RetroactiveDefaultStorageClass",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@RomanBednar",
+      "kep_link": "https://kep.k8s.io/3333",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RotateKubeletServerCertificate",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@mikedanese",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SELinuxMountReadWriteOncePod",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@jsafrane",
+      "kep_link": "https://kep.k8s.io/1710",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SeccompDefault",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@saschagrunert",
+      "kep_link": "https://kep.k8s.io/2413",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServerSideFieldValidation",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SizeMemoryBackedVolumes",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@derekwaynecarr",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StatefulSetAutoDeletePVC",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@mattcary",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StatefulSetStartOrdinal",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@psch",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyAwareHints",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@robscott",
+      "kep_link": "https://kep.k8s.io/2433",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManager",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@lmdaly",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyAlphaOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@PiotrProkop",
+      "kep_link": "https://kep.k8s.io/3545",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyBetaOptions",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@PiotrProkop",
+      "kep_link": "https://kep.k8s.io/3545",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@PiotrProkop",
+      "kep_link": "https://kep.k8s.io/3545",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "UserNamespacesStatelessPodsSupport",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@rata, @giuseppe",
+      "kep_link": "https://kep.k8s.io/127",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ValidatingAdmissionPolicy",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": null,
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "VolumeCapacityPriority",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@cofyc",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WinDSR",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "owner": "@ksubrmnn",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": false,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WinOverlay",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@ksubrmnn",
+      "kep_link": null,
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "beta",
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WindowsHostNetwork",
+      "stage": "alpha",
+      "default": true,
+      "lock_to_default": false,
+      "owner": "@marosset",
+      "kep_link": "https://kep.k8s.io/3503",
+      "version_history": [
+        {
+          "version": "unknown",
+          "default": true,
+          "stage": "alpha",
+          "lock_to_default": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kubernetes Release Notes Schema v2",
+  "description": "Enhanced schema capturing major releases, patch releases, highlights, and bug fixes. Based on analysis of CHANGELOG-1.30 through CHANGELOG-1.34.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Minor version (e.g., '1.35')"
+    },
+    "codename": {
+      "type": "string",
+      "description": "Release codename (e.g., 'Timbernetes')"
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Initial release date (1.35.0)"
+    },
+    "endOfLifeDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When this version goes EOL (typically ~14 months after release)"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer", "description": "Total enhancements" },
+        "stable": { "type": "integer", "description": "Features graduating to stable" },
+        "beta": { "type": "integer", "description": "Features graduating to beta" },
+        "alpha": { "type": "integer", "description": "New alpha features" }
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Major themes (e.g., 'DRA', 'Security', 'Observability')"
+    },
+    "securityInformation": {
+      "type": "array",
+      "description": "CVE fixes included in this release branch (from '## Important Security Information' section). Present in 1.30-1.33, not in 1.34+.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cve": { "type": "string", "description": "CVE identifier (e.g., 'CVE-2024-5321')" },
+          "title": { "type": "string", "description": "CVE title from CHANGELOG" },
+          "description": { "type": "string" },
+          "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+          "affectedVersions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "e.g., ['kubelet <= 1.30.2', 'kubelet <= 1.29.6']"
+          },
+          "fixedVersions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "e.g., ['1.30.3', '1.29.7']"
+          },
+          "affectedComponents": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "e.g., ['kubelet', 'kube-apiserver']"
+          },
+          "reporter": { "type": "string", "description": "Who reported/fixed the vulnerability" },
+          "patchVersion": { "type": "string", "description": "Patch version where this CVE was fixed (e.g., '1.30.3')" }
+        },
+        "required": ["cve", "title", "description"]
+      }
+    },
+    "urgentUpgradeNotes": {
+      "type": "array",
+      "description": "Breaking changes requiring immediate action before upgrade (from '## Urgent Upgrade Notes' section). Present in 1.31+, not in 1.30.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "action": { "type": "string", "description": "What users must do" },
+          "affectedComponents": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "e.g., ['kubelet', 'kube-apiserver']"
+          },
+          "sigs": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "SIGs involved (extracted from [SIG ...] suffix)"
+          },
+          "prNumber": { "type": "integer" }
+        },
+        "required": ["title", "description"]
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kep": { "type": "string", "description": "KEP number (e.g., 'KEP-4381')" },
+          "kepPath": { "type": "string", "description": "Path in enhancements repo" },
+          "title": { "type": "string" },
+          "stage": { "type": "string", "enum": ["alpha", "beta", "stable"] },
+          "sig": { "type": "string", "description": "Primary owning SIG" },
+          "category": { "type": "string", "description": "Functional category" },
+          "description": { "type": "string" },
+          "impact": { "type": "string", "description": "Why this matters to users" },
+          "isHighlight": {
+            "type": "boolean",
+            "default": false,
+            "description": "Featured in official blog spotlight section"
+          },
+          "featureGate": { "type": "string" },
+          "affectedKinds": { "type": "array", "items": { "type": "string" } },
+          "affectedFields": { "type": "array", "items": { "type": "string" } },
+          "affectedComponents": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "e.g., ['kubelet', 'scheduler', 'kube-apiserver']"
+          },
+          "history": {
+            "type": "object",
+            "properties": {
+              "alpha": { "type": "string" },
+              "beta": { "type": "string" },
+              "stable": { "type": "string" }
+            }
+          }
+        },
+        "required": ["kep", "title", "stage", "sig", "category", "description"]
+      }
+    },
+    "changesByKind": {
+      "type": "object",
+      "description": "Changes organized by kind (from '## Changes by Kind' section in CHANGELOG)",
+      "properties": {
+        "deprecation": {
+          "type": "array",
+          "description": "Items being deprecated (### Deprecation)",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "apiChange": {
+          "type": "array",
+          "description": "API-level changes (### API Change)",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "feature": {
+          "type": "array",
+          "description": "New features (### Feature)",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "bugOrRegression": {
+          "type": "array",
+          "description": "Bug fixes (### Bug or Regression)",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "documentation": {
+          "type": "array",
+          "description": "Documentation changes (### Documentation) - present in 1.30, 1.32-1.34",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "failingTest": {
+          "type": "array",
+          "description": "Test fixes (### Failing Test) - present in 1.30-1.32, 1.34",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "other": {
+          "type": "array",
+          "description": "Cleanup/flake fixes (### Other (Cleanup or Flake))",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        },
+        "uncategorized": {
+          "type": "array",
+          "description": "Uncategorized changes (### Uncategorized) - present in 1.30-1.31 only",
+          "items": { "$ref": "#/definitions/changeEntry" }
+        }
+      }
+    },
+    "deprecations": {
+      "type": "array",
+      "description": "Summary of deprecations (derived from changesByKind.deprecation)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" },
+          "reason": { "type": "string" },
+          "replacement": { "type": "string" },
+          "removalTarget": { "type": "string" },
+          "deprecatedIn": { "type": "string", "description": "Version when deprecated" }
+        }
+      }
+    },
+    "removals": {
+      "type": "array",
+      "description": "Items removed in this release",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" },
+          "reason": { "type": "string" },
+          "deprecatedIn": { "type": "string", "description": "Version when it was deprecated" }
+        }
+      }
+    },
+    "apiChanges": {
+      "type": "array",
+      "description": "Summary of API-level changes (derived from changesByKind.apiChange)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["added", "modified", "deprecated", "removed"]
+          },
+          "kind": { "type": "string" },
+          "group": { "type": "string" },
+          "apiVersion": { "type": "string" },
+          "description": { "type": "string" },
+          "fields": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Affected field paths"
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "Dependency changes (from '## Dependencies' section)",
+      "properties": {
+        "added": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "New dependencies added"
+        },
+        "changed": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Dependencies with version changes"
+        },
+        "removed": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Dependencies removed"
+        }
+      }
+    },
+    "patchReleases": {
+      "type": "array",
+      "description": "Patch releases (1.35.1, 1.35.2, etc.) - each has its own section in CHANGELOG",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": { "type": "string", "description": "e.g., '1.35.1'" },
+          "releaseDate": { "type": "string", "format": "date" },
+          "changelogSince": { "type": "string", "description": "Previous version (from '## Changelog since vX.YY.Z')" },
+          "summary": { "type": "string", "description": "Brief summary of patch" },
+          "downloads": {
+            "type": "object",
+            "description": "Download links (from '## Downloads for vX.YY.Z' section)",
+            "properties": {
+              "sourceCode": { "type": "array", "items": { "$ref": "#/definitions/downloadEntry" } },
+              "clientBinaries": { "type": "array", "items": { "$ref": "#/definitions/downloadEntry" } },
+              "serverBinaries": { "type": "array", "items": { "$ref": "#/definitions/downloadEntry" } },
+              "nodeBinaries": { "type": "array", "items": { "$ref": "#/definitions/downloadEntry" } },
+              "containerImages": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "securityFixes": {
+            "type": "array",
+            "description": "CVEs fixed in this patch (from '## Important Security Information')",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cve": { "type": "string" },
+                "title": { "type": "string" },
+                "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+                "description": { "type": "string" },
+                "affectedVersions": { "type": "array", "items": { "type": "string" } },
+                "fixedVersions": { "type": "array", "items": { "type": "string" } },
+                "affectedComponents": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "changesByKind": {
+            "type": "object",
+            "description": "Changes in this patch release",
+            "properties": {
+              "bugOrRegression": { "type": "array", "items": { "$ref": "#/definitions/changeEntry" } },
+              "feature": { "type": "array", "items": { "$ref": "#/definitions/changeEntry" } },
+              "apiChange": { "type": "array", "items": { "$ref": "#/definitions/changeEntry" } },
+              "other": { "type": "array", "items": { "$ref": "#/definitions/changeEntry" } }
+            }
+          },
+          "dependencies": {
+            "type": "object",
+            "properties": {
+              "added": { "type": "array", "items": { "type": "string" } },
+              "changed": { "type": "array", "items": { "type": "string" } },
+              "removed": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "required": ["version", "releaseDate"]
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" },
+          "type": { "type": "string", "enum": ["official", "blog", "video", "tutorial", "changelog"] }
+        }
+      }
+    },
+    "projectVelocity": {
+      "type": "object",
+      "description": "Release statistics from official blog",
+      "properties": {
+        "commits": { "type": "integer" },
+        "contributors": { "type": "integer" },
+        "companies": { "type": "integer" },
+        "prsCreated": { "type": "integer" },
+        "prsMerged": { "type": "integer" },
+        "issuesCreated": { "type": "integer" },
+        "issuesClosed": { "type": "integer" }
+      }
+    }
+  },
+  "required": ["version", "releaseDate", "summary", "features"],
+  "definitions": {
+    "changeEntry": {
+      "type": "object",
+      "description": "A single change entry from CHANGELOG",
+      "properties": {
+        "description": { "type": "string", "description": "The change description" },
+        "prNumber": { "type": "integer", "description": "GitHub PR number" },
+        "prUrl": { "type": "string", "description": "Full PR URL" },
+        "author": { "type": "string", "description": "GitHub username of author" },
+        "sigs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "SIGs involved (from [SIG ...] suffix)"
+        }
+      },
+      "required": ["description"]
+    },
+    "downloadEntry": {
+      "type": "object",
+      "description": "A download link entry from CHANGELOG",
+      "properties": {
+        "filename": { "type": "string", "description": "e.g., 'kubernetes-client-darwin-amd64.tar.gz'" },
+        "url": { "type": "string", "description": "Download URL" },
+        "sha512": { "type": "string", "description": "SHA512 hash" }
+      },
+      "required": ["filename", "url"]
+    }
+  }
+}

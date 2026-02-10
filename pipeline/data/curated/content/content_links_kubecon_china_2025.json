@@ -1,0 +1,1281 @@
+{
+  "content": [
+    {
+      "url": "https://www.youtube.com/watch?v=G1uH_RP3r54",
+      "title": "AI Model Distribution Challenges and Best Practices",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "ml",
+        "multi-cluster",
+        "model-serving",
+        "panel",
+        "kubecon",
+        "cost",
+        "storage",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "StatefulSet",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Wenbo Qi, Wenpeng Li, Han Jiang",
+      "summary": "The panel discusses technical and operational strategies for distributing large AI/ML models in cloud‑native environments, covering storage, transfer, multi‑cluster consistency, and standards like OCI artifacts to help Kubernetes operators efficiently serve models at scale.",
+      "description": "As the demand for scalable AI/ML grows, efficiently distributing AI models in cloud-native infrastructure has become a pivotal challenge for enterprises. The panel dives into the technical and operational strategies for deploying models at scale -- from optimizing model storage and transfer to ensuring consistency across clusters and regions. Experts from different companies and CNCF projects will debate critical questions like: How can Kubernetes-native workflows automate and accelerate model d",
+      "schedUrl": "https://kccncchn2025.sched.com/event/47c848e56969477779fdf6ab6a71d0b7",
+      "experienceLevel": "Beginner"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Wl5i2XZwREk",
+      "title": "Argo Workflows: Intro, Update and Deep Dive",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "deep-dive",
+        "scheduling",
+        "kubecon",
+        "storage",
+        "maintainer-track",
+        "argo-workflows",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Shuangkun Tian & Yashi Su",
+      "summary": "The session introduces Argo Workflows, outlines recent community updates such as scheduling strategies, dynamic templates, and backfill, and deep dives into best‑practice patterns for large‑scale, high‑availability orchestration and storage optimization.",
+      "description": "Since graduating from CNCF, Argo Workflows has seen widespread adoption across industries. But how does it work? What are its latest features? And how can it handle large-scale task orchestration effectively? This talk will answer these questions. The talk begins with an overview of Argo Workflows’ core principles and the latest community developments, including new features like scheduling strategies, dynamic templates, and backfill capabilities. It then dives into best practices for large-scal",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/07/KubeCon-China-2025-Argo-Workflows-Intro-Updates-and-Deep-Dive.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/0c81fd5640c2979040dfae3cde2b8d95"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=MGOa8Nn8_S0",
+      "title": "An Alternative Metadata System for Large Kubernetes Clusters",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "platform-engineering",
+        "etcd",
+        "case-study",
+        "kubecon",
+        "performance",
+        "scalability",
+        "storage",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4743",
+          "confidence": 0.94,
+          "reason": "The session focuses on developing a high‑performance alternative to etcd (KubeBrain) for metadata storage. Implementing a non‑etcd backend requires the Kubernetes‑etcd interface defined by KEP-4743, which specifies how the API server interacts with the persistent storage layer."
+        }
+      ],
+      "author": "Yingcai Xue & Yixiang Chen",
+      "summary": "The session presents ByteDance's experience building a high‑performance alternative to etcd, called KubeBrain, for metadata storage in massive Kubernetes clusters (20k+ nodes, 1M+ pods). It explains ETCD production challenges, requirements for large‑scale metadata handling, and demonstrates how KubeBrain improves cluster performance and stability.",
+      "description": "For an event-driven distributed system like Kubernetes, where components communicate by synchronizing incremental data through the KubeAPIServer, the metadata system is the most critical component. The ETCD is the only official supported metadata system, but some projects like kine explored alternative metadata storage, but they're either not open-sourced or have performance issues.\nThis talk covers ByteDance's work on high-performance Kubernetes metadata systems. It summarizes ETCD's production",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/a3/KubeCon%20China%202025%20-%20An%20Alternative%20Metadata%20System%20for%20%20Large%20Kubernetes%20Clusters.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/ce0f179b4d80119867d3f50c10928e69",
+      "experienceLevel": "Advanced"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=5UABmfrYu9s",
+      "title": "Kubernetes New Contributor Orientation",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "governance",
+        "contributor",
+        "community",
+        "kubecon",
+        "maintainer-track",
+        "onboarding",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Paco Xu, ZhenYu Jiang & Mengjiao Liu",
+      "summary": "An orientation session that introduces newcomers to the Kubernetes community, covering its structure, contribution process, common pitfalls, and real experiences from recent contributors to help them start contributing effectively.",
+      "description": "This meeting is meant to orient you in the Kubernetes community.\n\nPart 1: Presentation and Intro\n● Welcome to Kubernetes!\n● What is Kubernetes?\n● Kubernetes Community Structure\n● What does it mean to be a “Contributor”?\n● How to Start Contributing\n● Current Work Opportunities\n● Contribution Pitfalls\n\nPart 2: New contributors journey\nWe will invite some new contributors in the community to share their fresh experience and tips to you.\n● How did I get involved with Kubernetes?\n● What is most impor",
+      "schedUrl": "https://kccncchn2025.sched.com/event/bd75657ab928784a8567bfb2bc0cf66e"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fESU-jZHpjg",
+      "title": "Fast and Furious: Practice in Horizon Robotics on Large-scale End-to-end Model Training",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "ml",
+        "gpu",
+        "case-study",
+        "volcano",
+        "scheduling",
+        "kubecon",
+        "storage",
+        "networking",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Chen Yangxue",
+      "summary": "A case-study on how Horizon Robotics runs large‑scale end‑to‑end AI model training on Kubernetes, using 2000 GPUs, RDMA, and CNCF projects like Volcano and Fluid to address data caching, network topology, scheduling, and job resilience.",
+      "description": "End-to-end large model training is crucial for advancing autonomous driving technology. Horizon Robotics leads in this field by leveraging deep learning algorithms and chip design. They efficiently train and deploy advanced perception models like Sparse4D using cloud-native technologies.\nTraining these models poses challenges, such as managing massive video data and numerous small files. Ensuring high-performance training with over 2000 GPUs on RDMA, quickly identifying different failures, and d",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/75/Fast_and_Furious_Practice_in_Horizon_Robotics_on_Large-scale_End-to-end_Model_Training_v1.0_sched.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/031ab4a05c8aec05c8b932140ec6abe8",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BU2XT2DpI2Q",
+      "title": "Multi-cluster Orchestration System: Karmada Updates and Use Cases",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "policy",
+        "multi-cluster",
+        "migration",
+        "operator",
+        "kubecon",
+        "statefulset",
+        "ha",
+        "maintainer-track",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "StatefulSet",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Hongcai Ren",
+      "summary": "The session provides an overview of Karmada, a multi‑cluster orchestration system, highlighting its recent features, real‑world use cases, governance model, and roadmap, which is crucial for operators managing workloads across multiple Kubernetes clusters.",
+      "description": "Karmada (Kubernetes Armada) is a Kubernetes management system that enables you to run your cloud-native applications across multiple Kubernetes clusters and clouds. In this presentation, the maintainer of the Karmada project will share: - A Brief introduction to Karmada, including what it is and why you need it. - Key features and real-world use cases - Overview of the community, including the governance and how it works - New features over the last year * Migration Rollback (with Zendesk, MoMo)",
+      "schedUrl": "https://kccncchn2025.sched.com/event/aa69d8cd746c44ac903057919305feb9"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_51bffwxEQM",
+      "title": "Building Ultra-Large-Scale Cloud Native Edge Systems Using Chaos Engineering",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "operations",
+        "large-scale",
+        "edge",
+        "case-study",
+        "kubecon",
+        "chaos-engineering",
+        "performance",
+        "kubeedge",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Yue Bao",
+      "summary": "The session explores how to build ultra‑large‑scale edge computing platforms with KubeEdge, tackling massive heterogeneous node management and using ChaosMesh for chaos engineering to improve reliability at scale.",
+      "description": "Fast growing technologies, such as 5G networks, industrial Internet, and AI, are giving edge computing an important role in driving digital transformation. As each new technology brings benefits, it brings challenges. First, there are massive heterogeneous edge devices and it encompass a broad range of device types. Second, Edge devices are often located in unstable and complex physical and network environments, such as limited bandwidth, high latency, etc. How to overcome these challenges and b",
+      "schedUrl": "https://kccncchn2025.sched.com/event/0a22f30b9fea5e135c237bbe71bb243c",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/f6ebab4c427275e99bdb1bd72e9149f3",
+      "title": "Maintainer Meetup",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "governance",
+        "community",
+        "kubecon-china-2025",
+        "kubecon",
+        "maintainer-track",
+        "contributing",
+        "best-practices"
+      ],
+      "links": [],
+      "summary": "The Maintainer Meetup provides CNCF project maintainers a forum to exchange best practices, discuss contribution workflows, and collaboratively address common challenges across CNCF projects, fostering stronger community and more effective Kubernetes ecosystem development.",
+      "description": "The Maintainer Meetup is for CNCF Maintainers to share best practices, dive into contributing processes, and solve common problems across projects."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Yzk30z_exIs",
+      "title": "More Than Model Sharding: LWS & Distributed Inference",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "inference",
+        "ml",
+        "deep-dive",
+        "gpu",
+        "ray",
+        "scheduling",
+        "autoscaling",
+        "kubecon",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "StatefulSet",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Peter Pan & Nicole Li",
+      "summary": "The session explores the LeaderWorkerSet (LWS) project, a new Kubernetes abstraction for coordinating leader‑worker pods to enable efficient, gang‑scheduled, auto‑scaling distributed inference of large LLMs, addressing challenges like startup order, scaling, and fault tolerance.",
+      "description": "Large LLM like Llama3.1-405B or Deepseek-V3 (671B), require distributed inference across multiple-nodes like vLLM + Ray backend.\nHowever, it's more than just model-slicing with tensor-parallelism, Native K8S treats those workloads across nodes irrelevantly , so challenges come:\n- standalone statefulSets without coordination\n- demand of Gang-scheduling\n- uncontrolled startup order among master & workers, causing boot lag\n- HPA as a whole instead of for each sts, to scale together for both Ray hea",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/56/More%20than%20Model%20Sharding%20-LWS%20-%20v2.7.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/ad7b094d3c2730b489dbd4344a8df357",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Jou7j-X_VJA",
+      "title": "New Pattern for Sailing Multi-host LLM Inference",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "inference",
+        "gpu",
+        "model-serving",
+        "kubecon",
+        "maintainer-track",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Kante Yin",
+      "summary": "The session introduces LeaderWorkerSet (LWS), a Kubernetes SIG-Apps and Serving Working Group project that enables multi-host, model-parallel inference for massive LLMs, simplifying deployment and scaling of large AI workloads.",
+      "description": "Inference workloads are becoming increasingly prevalent and vital in Cloud Native world. However, it's not easy, one of the biggest challenges is large foundation model can not fit into a single node, like llama 3.1-405B or DeepSeek R1, which brings out the distributed inference with model parallelism, again, make serving inference workloads more complicated.\n\nLeaderWorkerSet, aka. LWS, is a dedicated multi-host inference project aims to solve this problem, it's a project under the guidance of K",
+      "schedUrl": "https://kccncchn2025.sched.com/event/f20c85ed163300ff20212ccbc17240cc"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_KQijmHBk6E",
+      "title": "Unlocking Kyverno: Mastering Policy Management in Large-Scale Kubernetes Clusters",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "policy",
+        "operations",
+        "governance",
+        "deep-dive",
+        "security",
+        "kyverno",
+        "kubecon",
+        "performance",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Namespace",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ConfigMap",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Di Xu",
+      "summary": "This session explains how Kyverno, a native Kubernetes policy engine, can be used to centrally manage configuration and compliance policies at scale, offering practical lessons and best‑practice guidance for operators of large clusters.",
+      "description": "With the growing adoption of Kubernetes, managing configurations and ensuring compliance across extensive clusters becomes increasingly complex. Kyverno, a native Kubernetes policy engine, offers a streamlined solution to these challenges. In this session, we'll explore how adopting Kyverno can enhance efficiency, simplify operations, centralize control, and reduce maintenance in Kubernetes environments. We'll demonstrate how Kyverno empowers organizations to effectively manage policies and tack",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/d8/KubeCon%20China%202025%20-%20Unlocking%20Kyverno.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/5bf9376df641ab7650db8c8bf74131a9",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/6b1581e5073d54b9c085bd239fd0395a",
+      "title": "Project Pavilion Tables | Tuesday Afternoon",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "lightning-talk",
+        "opentelemetry",
+        "platform-engineering",
+        "kubecon-china-2025",
+        "storage",
+        "argo",
+        "cilium",
+        "autoscaling",
+        "kubecon",
+        "ebpf",
+        "observability"
+      ],
+      "links": [],
+      "summary": "This session showcases a selection of open‑source CNCF projects, highlighting their roles and opportunities for the Kubernetes ecosystem, helping users discover tools for networking, autoscaling, observability, and platform engineering.",
+      "description": "Argo P-3\nCilium P-2\nCloud Native Buildpacks P-8\nCozystack P-6\nDragonfly P-7\nKarpenter P-1\nLoxiLB P-5\nOpenTelemetry P-4"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VQJBxquobQc",
+      "title": "Smart GPU Management: Dynamic Pooling, Sharing, and Scheduling for AI Workloads in Kubernetes",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "deep-dive",
+        "ml",
+        "gpu",
+        "scheduling",
+        "kubecon",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaim",
+          "targetGroup": "resource.k8s.io"
+        }
+      ],
+      "author": "Wei Chen",
+      "summary": "The session presents a unified approach for dynamic GPU pooling, sharing, and scheduling in Kubernetes, combining techniques like vCUDA, MPS, and MIG with Volcano and HAMi to automatically select optimal GPU partitioning and improve utilization for AI workloads.",
+      "description": "With the rapid growth of AI applications, optimal GPU utilization is essential, particularly in GPU sharing and job scheduling. Balancing performance, flexibility, and isolation is as challenging as the “Impossible Trinity”. Technologies such as vCUDA, MPS, and MIG are promising attempts, but each has its pros and cons. Managing clusters with multiple sharing techniques adds complexity due to differing resource names and configurations.\nIn this talk, we will demonstrate how to combine these meth",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/d3/SmartGPUManagement-KubeCon%20China%202025.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/0389959369622c08d0004366141bbfa3",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kZuewTKKcQY",
+      "title": "Revolutionizing Sidecarless Service Mesh With eBPF",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "istio",
+        "deep-dive",
+        "cilium",
+        "ambient",
+        "kubecon",
+        "service-mesh",
+        "ebpf",
+        "networking",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Zhonghu Xu & Muyang Tian",
+      "summary": "The session examines the drawbacks of sidecar‑based service meshes and demonstrates how eBPF and kernel‑level programmability can enable sidecar‑less meshes, improving performance and reducing resource overhead. It compares Istio, Ambient, and Cilium implementations and presents real‑world use cases for microservice workloads.",
+      "description": "It is widely recognized service meshes sidecar have introduced significant resource overhead, adversely affecting memory and CPU utilization. Farthermore, the tight coupling of sidecars with workloads complicates lifecycle management.\n\nIn this session, we will compare pros and cons of the main stream implement: Istio, Ambient and Cilium. But all use a userspace proxy per node, introducing a single point of failure and increasing connection numbers per hop. In this discussion, we aim to demonstra",
+      "schedUrl": "https://kccncchn2025.sched.com/event/795d58325912dd50214e753c8340a76f",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QAhx8kdzvEI",
+      "title": "Introducing AIBrix: Cost-Effective and Scalable Kubernetes Control Plane for VLLM",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "inference",
+        "ml",
+        "deep-dive",
+        "gpu",
+        "autoscaling",
+        "kubecon",
+        "cost",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Jiaxin Shan & Liguang Xie",
+      "summary": "The session introduces AIBrix, a Kubernetes‑native control plane that enables cost‑effective, large‑scale LLM inference by providing modular autoscaling, high‑density LoRA management, distributed KV cache, and other advanced serving features, demonstrating performance gains and resource optimization for AI workloads.",
+      "description": "Managing large-scale LLM inference workloads on Kubernetes requires more than just high-performance inference engines like vLLM. It demands a comprehensive control plane that integrates deeply with engines while addressing the complexities of large-scale operations. This need inspired the creation of AIBrix, a Kubernetes-native control plane designed to scale LLM inference with modularity, flexibility, and cutting-edge algorithms.\n\nAIBrix introduces a pluggable architecture with components for L",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/82/KubeCon_CN_2025_AIBrix.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/1f4908c15bfcec539bfab229d9bf431b",
+      "experienceLevel": "Advanced"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6V-2xKUCV7A",
+      "title": "Guardians of the Gateway: Keeping Chaos Out of Your Cloud Highway",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "deep-dive",
+        "kubecon-china-2025",
+        "gateway-api",
+        "operator",
+        "kubecon",
+        "chaos-engineering",
+        "networking",
+        "observability"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Gateway",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "HTTPRoute",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Sayan Mondal",
+      "summary": "The session explores Kong Gateway Operator’s resilience in Kubernetes, showing how to handle control‑plane failures, configuration issues, and traffic spikes to keep API gateways reliable and secure.",
+      "description": "Imagine an API gateway standing tall as the guardian of your cloud-native applications - directing traffic, enforcing policies, and ensuring everything runs smoothly. The Kong Gateway Operator orchestrates the control and data planes in Kubernetes, ensuring this process stays on track. But what happens when things start to wobble? A misstep here, a failure there and suddenly, chaos! In this session, we’ll dive into the twists and turns of API gateway resilience. Think of it as an adventure where",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/b4/Guardians%20of%20the%20Gateway_%20Keeping%20Chaos%20Out%20of%20Your%20Cloud%20Highway.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/640102e62dbf2741b7345d69080efa37",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=W9ynhEWKmdA",
+      "title": "OpenTelemetry Project Update",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "instrumentation",
+        "collector",
+        "profiling",
+        "kubecon-china-2025",
+        "kubecon",
+        "go",
+        "telemetry",
+        "maintainer-track",
+        "observability"
+      ],
+      "links": [],
+      "author": "Zihao Rao, Hui Wang, Jared Tan",
+      "summary": "The session provides a project update on OpenTelemetry, covering recent developments such as SDK and instrumentation improvements, profiling, Go compile‑time instrumentation injection, and enhancements to the OpenTelemetry Collector, highlighting why these advances matter for observability in Kubernetes environments.",
+      "description": "OpenTelemetry, one of the most active projects within the CNCF, has become the industry standard for observability. Join us for the official project update session at KubeCon+CloudNativeCon China. In this session, contributors from the OpenTelemetry community will share some of the latest project developments and milestones, including SDK/Instrumentation, profiling, Go compile-time instrumentation injection, and the OpenTelemetry Collector. Don't miss this opportunity to stay informed and contri",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/35/OTel%20Project%20Updates%20for%20KubeCon%20China%202025.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/475a43c915a448986a06afd4598340f2"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=yczf87w0JDk",
+      "title": "Portrait Service: AI-Driven PB-Scale Data Mining for Cost Optimization and Stability Enhancement",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "finops",
+        "kubecon-china-2025",
+        "case-study",
+        "scheduling",
+        "kubecon",
+        "cost",
+        "observability"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Yuji Liu & Zhiheng Sun",
+      "summary": "The session presents Kuaishou’s real‑world use of AI‑driven portrait services at PB‑scale to improve cluster stability and performance, integrating health‑score based scheduling and micro‑architecture‑aware resource optimization to dramatically boost availability and reduce operational costs.",
+      "description": "Kuaishou's Kubernetes-based platform manages 200,000+ machines and 10M+ Pods, generating 10TB+ daily data. AI-driven intelligent portrait service enhances stability and performance:\n● Stability Management: AI analyzes system and workload metrics to generate machine health scores, integrated into Kubernetes scheduling to evict/avoid unhealthy nodes. This reduced pod creation delays from 20 to 0.1 cases/day and boosted service availability from 90% to 99.99%.\n● Performance Optimization:\nServing 10",
+      "schedUrl": "https://kccncchn2025.sched.com/event/ac163d149ec4d710dfe2bfad3c8feb4b",
+      "experienceLevel": "Beginner"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xNWHOJPiAqk",
+      "title": "Unlocking the Power of CEL for Advanced Multi-Cluster Scheduling",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "istio",
+        "deep-dive",
+        "multi-cluster",
+        "gpu",
+        "scheduling",
+        "kubecon",
+        "envoy",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Qing Hao & Jian Qiu",
+      "summary": "This session explains how the Common Expression Language (CEL) can be leveraged to create granular, programmable multi-cluster scheduling policies, demonstrated with Open Cluster Management’s ClusterProfile API. It shows how CEL-based expressions enable advanced filtering, CRD-driven criteria, and improved GPU bin-packing for AI workloads.",
+      "description": "The Common Expression Language (CEL) is a powerful solution already used in the Kubernetes API, with the recent Kubernetes v1.32 highlighting it for mutating admission policies. It is also used in Envoy and Istio. This topic will explore the benefits and features that CEL can offer for multi-cluster scheduling.\n\nThere is a growing demand for granular and customizable requirements in scheduling. For example, users may want to filter clusters with the label \"version\" > v1.30.0 instead of listing a",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/ed/KubeCon%20China%202025%20-%20Unlocking%20the%20Power%20of%20CEL%20%20for%20Advanced%20Multi-Cluster%20%20Scheduling.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/8e4394b9f61da81b968349284b608e52",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/d9adf03250c787032666210d6d2a8d0b",
+      "title": "Peer Group Mentoring",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "accessibility",
+        "diversity",
+        "community",
+        "career",
+        "mentoring",
+        "general",
+        "kubecon",
+        "inclusion",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "summary": "Peer Group Mentoring connects participants with seasoned CNCF contributors in small pods to discuss technical, community, and career topics, promoting inclusion, accessibility, and knowledge sharing within the Kubernetes ecosystem.",
+      "description": "Peer Group Mentoring allows participants to meet with experienced open source veterans across many CNCF projects. Mentees are paired with 2 – 10 other people in a pod-like setting to explore technical, community, and career questions together.\n\nSign-up to be a Mentee\n\nSign-up to be a Mentor",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HRZ79SmUbv0",
+      "title": "Destroy Your System To Make It More Reliable: An Easy Way To Start Chaos Engineering With LitmusChao",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "deployment",
+        "kubecon-china-2025",
+        "kubecon",
+        "chaos-engineering",
+        "pod",
+        "maintainer-track",
+        "observability"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Sayan Mondal",
+      "summary": "This session introduces LitmusChaos as a straightforward way to begin chaos engineering, showing how to inject controlled failures to improve the reliability and observability of cloud‑native applications.",
+      "description": "Imagine your cloud-native applications as a bustling city. To ensure everything runs smoothly, you need to test its resilience by introducing controlled chaos, like planned roadblocks, to spot and fix weaknesses before they cause real trouble.\n\nJoin the LitmusChaos team, the folks behind this CNCF Incubating project, as they share the latest and greatest in chaos engineering. They'll walk you through new features from recent updates, like better resilience testing, improved observability, and sc",
+      "schedUrl": "https://kccncchn2025.sched.com/event/c33a44f5ceaceb56843ddc5043353070"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=L9mRWljLnzw",
+      "title": "Resilient Multiregion Global Control Planes With Crossplane and K8gb",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "operations",
+        "crossplane",
+        "deep-dive",
+        "multicluster",
+        "failover",
+        "resilience",
+        "k8gb",
+        "kubecon",
+        "performance",
+        "dns",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Yury Tsarev & Steven Borrelli",
+      "summary": "The session presents a reference architecture for building resilient, multiregion Global Control Planes using Crossplane and k8gb, demonstrating Active/Passive setups with DNS‑based failover to ensure high availability of Kubernetes control planes.",
+      "description": "Ensuring resilience in control planes is critical for organizations managing infrastructure and applications across multiple regions with Kubernetes. This talk presents a reference architecture for creating a Crossplane-based Global Control Plane, enhanced with k8gb for DNS-based failover and leveraging an Active/Passive setup. We’ll explore how Crossplane’s declarative infrastructure provisioning integrates with k8gb to build robust, scalable, and resilient multicluster environments. Key takeaw",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/09/KubeCon%20China%202025%20Crossplane%20%2B%20k8gb.pptx.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/54a3326a85d37ecbb097136b07dcc008",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=oQMJj5Mf7QA",
+      "title": "How Bloomberg Creates a Resilient Data Analytics Platform Using Karmada",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "trino",
+        "flink",
+        "data-pipeline",
+        "multi-cluster",
+        "kubecon-china-2025",
+        "case-study",
+        "scheduling",
+        "kubecon",
+        "spark"
+      ],
+      "links": [],
+      "author": "Michas Szacillo & Ilan Filonenko",
+      "summary": "Bloomberg shares how it uses Karmada to achieve resilient, multi‑cluster deployment and management of data‑analytics workloads like Apache Flink, Spark, and Trino, focusing on resource‑aware scheduling, custom health checks, and state preservation during failover.",
+      "description": "Bloomberg’s Data Analytics Platform Engineering team supports a wide-range of real-time streaming, large batch ETL, and data exploration use-cases by using Apache Flink, Apache Spark, and Trino across multi-cluster Kubernetes. However, deploying and managing these workflows at scale efficiently can be challenging due to varying resource requirements and uptime needs. For stateful applications like Apache Flink, ensuring recovery and state conservation after downtime is especially important.\n\nThi",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/b8/How%20Bloomberg%20Creates%20a%20Resilient%20Data%20Analytics%20Platform%20using%20Karmada.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/1f3826f4d31d5aa12e3d1b12f221b882",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=fwLzZsYOAeo",
+      "title": "KubeEdge DeepDive: Architecture, Use Cases, and Project Graduation Updates",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "edge-computing",
+        "case-study",
+        "iot",
+        "kubecon",
+        "kubeedge",
+        "maintainer-track",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Yue Bao",
+      "summary": "The session provides a deep dive into KubeEdge’s architecture, showcasing how it extends Kubernetes for edge computing workloads and presenting real-world use cases such as smart cities, industrial IoT, edge AI, and robotics, while also covering the project’s conformance testing, certification, and graduation updates.",
+      "description": "In this session, KubeEdge project maintainers will provide an overview of KubeEdge's architecture and its industry-specific use cases. The session will begin with a brief introduction to edge computing and its growing importance in IoT and distributed systems. The maintainers will then delve into the core components and architecture of KubeEdge, demonstrating how it extends Kubernetes' capabilities to manage edge computing workloads efficiently. They will share success stories and insights from ",
+      "schedUrl": "https://kccncchn2025.sched.com/event/2004484c764a2287523295979c891b0a"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zN1j4EpVwjY",
+      "title": "China Mobile's Panji Platform: Observability Practices and Implementations for LLM Applications Base",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "platform-engineering",
+        "kubecon-china-2025",
+        "case-study",
+        "kubecon",
+        "wasm",
+        "ebpf",
+        "observability"
+      ],
+      "links": [],
+      "author": "Jing Shang",
+      "summary": "The session showcases China Mobile’s Panji platform, which leverages eBPF and Wasm to provide zero‑code, full‑stack observability for large language model (LLM) applications, enabling real‑time tracing and metric analysis without impacting performance.",
+      "description": "As large language model (LLM) applications are widely deployed, their complex architectures challenge business observability. APM probes, which rely on instrumentation or proxy operation, consume system resources and impact traffic and performance, restricting their use in complex scenarios. Also, multiple teams handling different LLM instances make it hard to coordinate unified observability construction.\nTo solve this, China Mobile‘'s Panji platform collaborates with DeepFlow to achieve zero-i",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/a5/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E7%A3%90%E5%9F%BA%E5%B9%B3%E5%8F%B0%20LLM%20%E5%BA%94%E7%94%A8%E7%9A%84%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7%E5%AE%9E%E8%B7%B5.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/879b1bbcdcd865f2e5ccd15eb90bebc0",
+      "experienceLevel": "Advanced"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Ef1DisgzlwE",
+      "title": "Kube Intelligence - A Metric Based Insightful Remediation Recommender",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "finops",
+        "platform-engineering",
+        "kubecon-china-2025",
+        "case-study",
+        "kubecon",
+        "cost",
+        "observability"
+      ],
+      "links": [],
+      "author": "Yash Bhatnagar",
+      "summary": "This session presents a real‑world case study on building an internal platform that uses extensive metrics to recommend post‑deployment remediation actions such as rightsizing, migrating to serverless, and scheduling maintenance windows, demonstrating measurable cost and performance improvements for Kubernetes workloads.",
+      "description": "Not everything can be thought about while designing or developing the applications, and as such lot of the design decisions are based on estimates and potential usage patterns. More often that not, these estimates differ from reality and introduce inefficiencies in the system across several fronts - and if at all visible, it always much later in the lifecycle when you already have several customers & high footprint. And hence, unless there is a clear sign of performance degradation or unjustifie",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/85/Kube-Intelligence.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/a87e6c59a12663a8dd4bb7a008e14ed6",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/a63fe7b6b8300298c17f585e6014b0cb",
+      "title": "Project Pavilion Tables | Wednesday Afternoon",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "lightning-talk",
+        "opentelemetry",
+        "argocd",
+        "kubecon-china-2025",
+        "storage",
+        "cilium",
+        "autoscaling",
+        "kubecon",
+        "karpenter",
+        "networking",
+        "observability"
+      ],
+      "links": [],
+      "summary": "The Project Pavilion Tables session spotlights a range of CNCF projects—including Argo, Cilium, Karpenter, and OpenTelemetry—offering Kubernetes users insight into tools for GitOps, networking, autoscaling, and observability to extend their clusters.",
+      "description": "Argo P-3\nCilium P-2\nCloud Native Buildpacks P-8\nDragonfly P-7\nFluid P-5\nKarpenter P-1\nOpenGemini P-6\nOpenTelemetry P-4"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/1b0ee6926591398f1e2f76cbf6b6b7a5",
+      "title": "OPEA: The Key Open Platform for Enabling Enterprise AI Deployment",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "inference",
+        "gpu",
+        "platform-engineering",
+        "model-serving",
+        "case-study",
+        "kubecon",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Kenny Chen",
+      "summary": "The session explains how OPEA, an open‑source enterprise AI platform built on modular micro‑services, allows operators to deploy and manage inference workloads on Kubernetes across diverse hardware, simplifying integration, performance tuning, and reliability. It matters to Kubernetes users because it provides a standardized, certified way to run AI model serving at scale with GPU resources.",
+      "description": "In today's tech landscape, AI drives industry transformation, but enterprises face challenges in AI adoption—diverse hardware, complex workflows, data privacy. OPEA, an open-source enterprise AI platform with modular microservices, offers unified solutions for rapid deployment. Through DeepSeek inference appliance case, see how OPEA integrates with IT infrastructure, optimizes performance, and enhances reliability. Discover the new \"Powered by OPEA\" certification for confident AI deployment."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JB0mpdU58XI",
+      "title": "Solidigm CSAL Solution Brings Advanced IO Shaping, Caching and Data Placement Into NVIDIA DPU DOCA S",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "beegfs",
+        "ai",
+        "data",
+        "spdk",
+        "case-study",
+        "dpu",
+        "kubecon",
+        "storage",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Wayne Gao",
+      "summary": "The session presents Solidigm's Cloud Storage Acceleration Layer (CSAL) integrated with NVIDIA DPU DOCA, demonstrating advanced I/O shaping, caching, and data placement to improve storage latency for AI and big data workloads on Kubernetes clusters.",
+      "description": "CSAL is Cloud Storage Acceleration Layer for BigData and AI. it is open-source user mode FTL, cache and io trace component inside SPDK(upstreamed). It commercially helps Alibaba cloud storage system. refer https://www.solidigm.com/products/technology/cloud-storage-acceleration-layer-write-shaping-csal.html. Alibaba and Solidigm joint top computer conference paper Eurosys2024 https://dl.acm.org/doi/pdf/10.1145/3627703.3629566 Session Topics: This session is joint development with NVIDIA DPU team ",
+      "schedUrl": "https://kccncchn2025.sched.com/event/234de86631cac65755dcac50fcd0df4a",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ZjXCSLpMHwo",
+      "title": "The Next Steps for Ingress-NGINX and the Ingate Project",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "maintainer-track",
+        "gateway-api",
+        "kubecon",
+        "ingress",
+        "networking",
+        "ingress-nginx",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Gateway",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "HTTPRoute",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Jintao Zhang",
+      "summary": "The session reviews the latest progress of the Ingress‑NGINX controller and introduces Ingate, a new incubating project that adopts the Gateway API, outlining future development plans based on lessons learned and user demand.",
+      "description": "I will share the progress of the Ingress-NGINX project in this topic, as well as our newly incubated project, Ingate. Ingate is a project we created to actively adopt the Gateway API, and we will explore the next steps in the Ingate project based on the successes and failures we've experienced in the Ingress-NGINX project, along with user demands for frequently used features.",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/a5/2025%20Next%20steps%20of%20Ingress%20NGINX%20-%20Jintao.pptx.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/f345c70843a0e11a7f3c78af35a77de3"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=C34TJFDsq-s",
+      "title": "Progressive Delivery Made Easy With Argo Rollouts",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "istio",
+        "argocd",
+        "prometheus",
+        "deep-dive",
+        "gitops",
+        "platform-engineering",
+        "kubecon-china-2025",
+        "kubecon",
+        "service-mesh",
+        "observability"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        }
+      ],
+      "author": "Kevin Dubois",
+      "summary": "The session explains how to implement progressive delivery patterns such as canary, blue‑green, and dark launches on Kubernetes using GitOps tools like ArgoCD and Argo Rollouts, combined with service‑mesh (Istio) and observability (Prometheus) to safely validate changes in production.",
+      "description": "ou might already be using a CI/CD solution, but are you 100% sure things will roll out without a glitch once you go to production?  Unfortunately differences between testing/staging and production environments are virtually unavoidable. There’s always a risk for unforeseen issues related to your production environment and/or actual load which can lead to potential disruptions to your users.\n\nProgressive delivery is the next step after Continuous Delivery to roll out your application in a control",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/25/Kubecon%20China%2025%20-%20Progressive%20Delivery%20Made%20Easy%20with%20Argo%20Rollouts.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/7857f267a8336cb02d2c00616f445302",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=J7UjDccpQCA",
+      "title": "Connecting Dots: Unified Hybrid Multi-Cluster Auth Experience With SPIFFE and Cluster Inventory API",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "spiffe",
+        "deep-dive",
+        "multi-cluster",
+        "platform-engineering",
+        "security",
+        "cluster-inventory-api",
+        "kubecon",
+        "openid",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ServiceAccount",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4322",
+          "confidence": 0.93,
+          "reason": "The session focuses on a unified authentication solution for hybrid multi‑cluster environments leveraging the Cluster Inventory API. KEP-4322 defines the Cluster Profile API, which includes the Cluster Inventory API for multicluster resource discovery and management, making the session directly about the implementation of that KEP."
+        }
+      ],
+      "author": "Chen Yu",
+      "summary": "The session demonstrates a unified authentication solution for hybrid multi‑cluster environments using OpenID, SPIFFE/SPIRE, and the Cluster Inventory API, aiming to reduce credential sprawl and simplify secure access across clusters.",
+      "description": "As the multi-cluster pattern continues to evolve, managing K8s identities, credentials, and permissions for teams and multi-cluster apps, such as Argo and Kueue, has become a hassle, typically involving managing individual service accounts on each cluster and passing credentials around. Such setup is often scattered, repetitive, difficult to track/audit, and may impose security and ops complications. This is especially true with hybrid environments, where different solutions could be in play acr",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/40/Kubecon%20China%202025%20-%20Unified%20Hybrid%20Multi-Cluster%20Auth%20Experience%20with%20SPIFFE%20and%20Cluster%20Inventory%20API%20v2.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/03e72ecdcec02ffb3f2473ca147bb1e9",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/bfe5024b65f6a22f00ea1fafbfff229e",
+      "title": "Leveraging Multi-Agent Dynamic Programming and Hierarchical Reflection for Next-Generation AI Decision-Making (Co-sight)",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "reflection",
+        "ml",
+        "multi-agent",
+        "kubecon-china-2025",
+        "case-study",
+        "kubecon",
+        "planning"
+      ],
+      "links": [],
+      "author": "ShiQing Jiang",
+      "summary": "The session showcases ZTE's Co‑Sight multi‑agent system that separates planning and execution to improve AI decision‑making, dynamic task adjustment, and stability on complex multi‑step benchmarks, highlighting how such architectures can be built on open‑source platforms.",
+      "description": "As AI tackles increasingly complex tasks, traditional LLMs show limitations in action decision-making and multi-step reasoning, making autonomous planning and dynamic correction key challenges. ZTE's Co-Sight agent system addresses this with a multi-agent (Plan-Actor) collaborative architecture. Its dual-level design separates planning (task decomposition, path generation) from execution, significantly reducing LLM search space. Dynamic task adjustment is achieved via DAG parallel thinking, dyna"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xj56NvrvN5A",
+      "title": "Building Custom GPU Clusters at Scale: Using Kubespray To Create High-Performance AI Infrastructure",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "inference",
+        "gpu",
+        "gateway-api",
+        "kubecon",
+        "kubespray",
+        "dra",
+        "maintainer-track",
+        "kubecon-china-2025",
+        "kueue"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaim",
+          "targetGroup": "resource.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Gateway",
+          "targetGroup": "core"
+        }
+      ],
+      "author": "Kay Yan",
+      "summary": "The session explains how to use Kubespray to deploy and manage large-scale GPU‑focused Kubernetes clusters, covering integration of AI‑centric components such as Kueue, the Gateway API inference extension, DRA, and tensor‑parallelism to improve performance and resource utilization.",
+      "description": "Kubespray, recognized by Kubernetes' SIG Cluster Lifecycle, deploys production-ready Kubernetes clusters on bare metal, enhancing performance for AI applications with robust GPU support. This session covers Kubespray's fundamentals, key features, and updates. As AI workloads like LLMs grow, scalable GPU clusters are essential. Engineers will share insights from deploying custom GPU clusters at scale with Kubespray, discussing challenges and best practices. Attendees will learn to integrate Kuber",
+      "schedUrl": "https://kccncchn2025.sched.com/event/cc0c84a100a109ed322288baaf4bfc8d"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lkbn9pgAtaw",
+      "title": "The Past, the Present, and the Future of Platform Engineering",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "platform-engineering",
+        "general",
+        "developer-platform",
+        "devops",
+        "kubecon",
+        "kubernetes",
+        "challenges",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Mauricio \"Salaboy\" Salatino",
+      "summary": "The session reviews the evolution of platform engineering, examining past failures, current practices, and future directions for building Kubernetes‑based developer platforms, and highlights the hard truths teams face in this journey.",
+      "description": "Do you think platform engineering is too hard? Or is it just a buzzword? Is the CNCF landscape too tricky to visualize? If you’ve been in this industry long enough, you should know that platform engineering has been around for a long time.\n\nMost of us have been trying to build developer platforms for decades, and most of us have failed at that. That begs the questions: “What is different now?” “Why will this time be different?” and “Do we have a chance to succeed?”\n\nWe’ll take a look at the past",
+      "schedUrl": "https://kccncchn2025.sched.com/event/6743c8b5afa8f172c0bceb4a9b57a27b",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/3364bbf6f4b955433163ad36a654dac3",
+      "title": "Heterogeneous Hybrid Distributed Training for Large-Scale Language Models",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "deep-dive",
+        "ml",
+        "gpu",
+        "scheduling",
+        "hybrid",
+        "kubecon",
+        "heterogenous",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Yanjun Chen",
+      "summary": "The session presents open‑source solutions for heterogeneous hybrid distributed training of large language models, enabling AI operators to split workloads, predict performance, and manage communication across different accelerator architectures, which is crucial for maximizing Kubernetes cluster resource utilization.",
+      "description": "With the development of AI technology, the demand for computing power for large model training has accelerated the deployment of AI infrastructure. Data centers often have a \"resource wall\" problem between AI acceleration hardware of different generations and manufacturers, which caused the incompatibility issue of software and hardware stack. Thus, it’s a big challenge for AI infra operators to maximize resource utilization. This topic focuses on technical solutions for collaborative training u"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Jdbvo5NSZ9U",
+      "title": "Stability in Large Model Training: Practices in Software and Hardware Fault Self-Healing",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "ai",
+        "ml",
+        "gpu",
+        "kubecon-china-2025",
+        "case-study",
+        "kubecon",
+        "cost",
+        "reliability",
+        "observability"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ],
+      "author": "Yang Cao",
+      "summary": "The session discusses how Ant Group maintains high GPU utilization for large‑scale AI model training by implementing comprehensive monitoring, automated fault isolation, self‑healing, and predictive maintenance for clusters of 10,000+ GPUs, illustrating real‑world practices that Kubernetes operators can adopt to improve reliability and reduce cost.",
+      "description": "Training trillion-parameter AI models requires significant GPU resources, where any idle time leads to increased costs. Maintaining full-speed GPU utilization is crucial, yet hardware and software failures (such as firmware, kernel, or hardware issues) often disrupt large-scale training. For example, LLaMA3 experienced 419 interruptions over 54 days, with 78% due to hardware issues, underscoring the necessity for automated anomaly recovery. At Ant Group, we will share: GPU Monitoring: Comprehens",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/d3/stability-in-large-model-training-practices-in-software-and-hardware-fault-self-healing.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/9f26b375cb65a7b7ad976e9036608740",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6_Dh6xhqoys",
+      "title": "Policy as Code: Past, Present and Future for Novice",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "policy",
+        "admission",
+        "deep-dive",
+        "validation",
+        "cel",
+        "security",
+        "kubecon",
+        "mutating",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ValidatingAdmissionPolicy",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "MutatingAdmissionPolicy",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3488",
+          "confidence": 0.96,
+          "reason": "Session discusses the evolution to CEL-enabled ValidatingAdmissionPolicy, which directly implements the CEL for Admission Control feature introduced in KEP-3488."
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3960",
+          "confidence": 0.95,
+          "reason": "Session mentions the upcoming MutatingAdmissionPolicy (Alpha v1.32), which is the feature described and implemented in KEP-3960 Mutating Admission Policies."
+        }
+      ],
+      "author": "Hoon Jo",
+      "summary": "The session explains Policy as Code in Kubernetes, covering the evolution of admission control policies—from webhook-based to CEL-enabled ValidatingAdmissionPolicy (GA v1.30) and the upcoming MutatingAdmissionPolicy (Alpha v1.32)—and demonstrates how to write policies directly in Kubernetes YAML.",
+      "description": "When you're new to Kubernetes, Policy as Code (PaC) can be a very unfamiliar topic. But as you get more familiar with Kubernetes, you'll probably be interested in how you can use it securely, especially since Kubernetes is essentially a declarative system via YAML, so having security also be done in code will help with usability and reducing human error. In order to make PaC easier to understand, I'll demonstrate the Admission Control part directly in Kubernetes. Until recently, this part was ba",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/ef/Policy%20as%20Code%20-%20Past%2C%20Present%20and%20Future%20for%20Novice_v1.0.0.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/eab7cc00b96686e6e57bead0d4add83b",
+      "experienceLevel": "Beginner"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Cvib3yHxMik",
+      "title": "Composable Platforms: Modular Platform Engineering With Kratix and Backstage",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "governance",
+        "deep-dive",
+        "modular",
+        "platform-engineering",
+        "composable",
+        "self-service",
+        "kubecon",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Hossein Salahi",
+      "summary": "The session introduces composable platforms for Kubernetes, showing how Kratix and Backstage can be combined to build modular, self‑service platform engineering solutions that balance standardization with flexibility.",
+      "description": "Constructing and managing platforms for diverse teams and workloads presents a significant challenge in today's cloud-native environment. This session introduces the concept of composable platforms, using modular, reusable components as the foundation for platform engineering. This talk will demonstrate how using Kratix, a workload-centric framework, and Backstage an extensible developer portal enables the creation of self-service platforms that balance standardization with adaptability. The ses",
+      "schedUrl": "https://kccncchn2025.sched.com/event/6e5616a788a641d427397d4446a1fac7",
+      "experienceLevel": "Intermediate"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=26CaKlujVyI",
+      "title": "Taming Dependency Chaos for LLM in K8s",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "llm",
+        "ai",
+        "job",
+        "deep-dive",
+        "gpu",
+        "kubecon",
+        "storage",
+        "kubecon-china-2025"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1495",
+          "confidence": 0.93,
+          "reason": "The session presents a Kubernetes-native solution using a custom CRD to pre‑load Python dependencies into PVCs for AI workloads, which directly aligns with KEP-1495 (Volume Populators) that defines a CRD for populating PersistentVolumeClaims via custom controllers."
+        }
+      ],
+      "author": "Peter Pan",
+      "summary": "The session presents a Kubernetes‑native solution for managing rapidly changing Python dependencies in LLM and AI workloads, using a custom CRD, pre‑loading jobs, PVCs, and conda environments to improve productivity and reduce GPU cost waste.",
+      "description": "AI developer in K8S: either in Jupyter notebook or LLM serving: Python Dependency is always a headache :\n- Prepare a set of base Images? The maintenance amounts & efforts will be a nightmare: Since (1) packages in AI world are rapidly version bumping, (2) diff llm codes require diff packages permutation/combination.\n- Leave users to `pip install` by themselves ? The resigned waiting blocks productivity and efficiency. You may agree if you did it.\n- If on a GPU Cloud, the pkg preparation time may",
+      "slidesUrl": "https://static.sched.com/hosted_files/kccncchn2025/e0/KubeCon%20HK%202025.06%20-%20Taming%20Dependency%20Chaos%20for%20LLM%20in%20K8S.pdf",
+      "schedUrl": "https://kccncchn2025.sched.com/event/ecaff8134d8b912961d8edc108292ff3",
+      "experienceLevel": "Any"
+    },
+    {
+      "url": "https://kccncchn2025.sched.com/event/202c1253cb3a38703e9caf125586deec",
+      "title": "Apache Gravitno: unified metadata lake for Data and AI",
+      "type": "reference",
+      "source": "KubeCon China 2025",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "governance",
+        "ai",
+        "deep-dive",
+        "ml",
+        "data",
+        "platform-engineering",
+        "kubecon",
+        "storage",
+        "metadata",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Shaofeng Shi",
+      "summary": "The session introduces Apache Gravitino, a unified metadata lake that provides a single API for accessing heterogeneous structured and unstructured data sources, enabling AI and data applications to discover, manage, and govern data across enterprises. It matters to Kubernetes users because Gravitino can be integrated with Kubernetes-native data platforms and AI workloads, simplifying data lifecycle management and compliance in cloud‑native environments.",
+      "description": "In the AIera, enterprises need to collect more data to build high-quality AI applications, including structured data (databases, data warehouses, etc.) and unstructured data (data lakes, document libraries, real-time data, etc.). Data integrity and compliance play a key role in building AI applications, which is the value of metadata. Providing AI users with a unified data view so that they can better discover and use multi-source heterogeneous data, including data discovery, data semantics, dat"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=D9zumj3ffk4",
+      "title": "High-Performance Cloud Native Traffic Authentication Solutions",
+      "type": "video",
+      "source": "youtube.com",
+      "isOfficial": true,
+      "publishedDate": "2025-06-10",
+      "labels": [
+        "deep-dive",
+        "xdp",
+        "security",
+        "kubecon",
+        "service-mesh",
+        "ebpf",
+        "networking",
+        "kubecon-china-2025"
+      ],
+      "links": [],
+      "author": "Muyang Tian & Zengzeng Yao",
+      "summary": "The session explores using Linux kernel XDP (eBPF) to provide high‑performance, low‑latency traffic authentication for service‑to‑service communication, reducing bottlenecks in cloud‑native environments. It shares real‑world insights from projects like Kmesh, covering performance tuning, security trade‑offs, and integration with broader network security strategies.",
+      "description": "In the rapidly evolving landscape of cloud computing and microservices architecture, efficiently and securely managing communication between services has become a critical challenge. Traditional methods of network traffic authentication often become a performance bottleneck, especially when handling large-scale data flows. This session introduces an innovative solution — leveraging Linux kernel technology XDP (eXpress Data Path) to achieve efficient traffic authentication for service-to-service ",
+      "schedUrl": "https://kccncchn2025.sched.com/event/b56b418231491e753db6a21beebd09b0",
+      "experienceLevel": "Any"
+    }
+  ]
+}

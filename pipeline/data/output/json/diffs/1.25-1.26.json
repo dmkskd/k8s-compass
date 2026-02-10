@@ -1,0 +1,937 @@
+{
+  "fromVersion": "1.25",
+  "toVersion": "1.26",
+  "summary": {
+    "kindsAdded": 7,
+    "kindsRemoved": 0,
+    "fieldsAdded": 147,
+    "fieldsRemoved": 1,
+    "fieldsModified": 0,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "PodScheduling",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "SelfSubjectReview",
+      "group": "authentication.k8s.io"
+    },
+    {
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "ResourceClass",
+      "group": "resource.k8s.io"
+    }
+  ],
+  "kindsRemoved": [],
+  "fieldsAdded": [
+    {
+      "path": "template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.schedulingGates[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.schedulingGates",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.initContainers[].resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.resourceClaims[].source",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.schedulingGates",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].resources.claims",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.schedulingGates[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.limited.nominalConcurrencyShares",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.limited.lendablePercent",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.limited.borrowingLimitPercent",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.dataSourceRef.namespace",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resources.claims",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.resources.claims[].name",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.schedulingGates",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceClaims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.schedulingGates[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].source",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.ordinals.start",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.dataSourceRef.namespace",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.ordinals",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.unhealthyPodEvictionPolicy",
+      "kind": "PodDisruptionBudget",
+      "group": "policy",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGates[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "spec.limited.assuredConcurrencyShares",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "type": "integer"
+    }
+  ],
+  "fieldsModified": [],
+  "fieldsDeprecated": []
+}

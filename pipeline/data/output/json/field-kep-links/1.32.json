@@ -1,0 +1,609 @@
+{
+  "version": "1.32",
+  "summary": {
+    "totalFieldsAdded": 82,
+    "linkedFields": 31,
+    "unlinkedFields": 51,
+    "canonicalFields": 10
+  },
+  "links": [
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources.claims",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "template.spec.resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4381",
+      "kepTitle": "DRA Structured Parameters",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.securityContext.seLinuxChangePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.devices[].networkData.hardwareAddress",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4817",
+      "kepTitle": "Resource Claim Status With Possible Standardized Network Interface Data",
+      "kepPath": "sig-node/4817-resource-claim-device-status",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.devices[].networkData.interfaceName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4817",
+      "kepTitle": "Resource Claim Status With Possible Standardized Network Interface Data",
+      "kepPath": "sig-node/4817-resource-claim-device-status",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'interface' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.devices[].networkData.ips",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4817",
+      "kepTitle": "Resource Claim Status With Possible Standardized Network Interface Data",
+      "kepPath": "sig-node/4817-resource-claim-device-status",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources.limits",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.limits",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "status.devices[].networkData",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "kep": "KEP-4817",
+      "kepTitle": "Resource Claim Status With Possible Standardized Network Interface Data",
+      "kepPath": "sig-node/4817-resource-claim-device-status",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'network' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.resources.limits",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "template.spec.resources.requests",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.resources",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resources.requests",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.strategy",
+      "kind": "LeaseCandidate",
+      "group": "coordination.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "status.devices[].device",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].pool",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].data",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].type",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].observedGeneration",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].reason",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].message",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].status",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].conditions[].lastTransitionTime",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resources.requests",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resources",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resources.claims[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resources.claims[].request",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "deleteOptions.ignoreStoreReadErrorWithClusterBreakingPotential",
+      "kind": "Eviction",
+      "group": "policy"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].name",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.requests",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.resources.claims[].request",
+      "kind": "Job",
+      "group": "batch"
+    }
+  ]
+}

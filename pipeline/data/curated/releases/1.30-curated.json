@@ -1,0 +1,15 @@
+{
+  "version": "1.30",
+  "codename": "Uwubernetes",
+  "description": "The cutest release to date! 'Uwubernetes' (a portmanteau of 'kubernetes' and 'UwU') celebrates the joy contributors bring from their outside lives. For the people who built it, for the people who release it, and for the furries who keep all of our clusters online. Pod scheduling readiness graduates to stable, volume manager reconstruction improves robustness, and min domains in PodTopologySpread reaches GA. UwU ♥️",
+  "releaseDate": "2024-04-17",
+  "endOfLifeDate": "2025-06-28",
+  "summary": {
+    "total": 45,
+    "stable": 17,
+    "beta": 18,
+    "alpha": 10
+  },
+  "themes": ["Security", "Observability", "Autoscaling", "Storage"],
+  "features": []
+}

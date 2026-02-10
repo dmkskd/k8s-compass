@@ -1,0 +1,1944 @@
+{
+  "fromVersion": "1.30",
+  "toVersion": "1.31",
+  "summary": {
+    "kindsAdded": 2,
+    "kindsRemoved": 3,
+    "fieldsAdded": 239,
+    "fieldsRemoved": 78,
+    "fieldsModified": 0,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "LeaseCandidate",
+      "group": "coordination.k8s.io"
+    }
+  ],
+  "kindsRemoved": [
+    {
+      "kind": "ResourceClaimParameters",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "ResourceClass",
+      "group": "resource.k8s.io"
+    },
+    {
+      "kind": "ResourceClassParameters",
+      "group": "resource.k8s.io"
+    }
+  ],
+  "fieldsAdded": [
+    {
+      "path": "template.spec.volumes[].image",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.containers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.volumes[].image.pullPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.volumes[].image.reference",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims[].resourceClaimName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.volumes[].image",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.volumes[].image.reference",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.strategy",
+      "kind": "Lease",
+      "group": "coordination.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.preferredHolder",
+      "kind": "Lease",
+      "group": "coordination.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.constraints[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.devices.results[].request",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.constraints",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.config",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.devices.results[].device",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.config",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.devices.results[].driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.config[].opaque.driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices.constraints[].matchAttribute",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.devices.results[].pool",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.config[].opaque.driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.config[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.config[].requests",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.nodeSelector",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.results",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices.requests[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "status.allocation.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.config[].source",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices[].basic.attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.devices[].basic.capacity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.pool.resourceSliceCount",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.allNodes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].basic",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.driver",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.devices[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.devices",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.pool",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.pool.generation",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.nodeSelector.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.nodeSelector",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.pool.name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.features",
+      "kind": "Node",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.features.supplementalGroupsPolicy",
+      "kind": "Node",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "status.runtimeHandlers[].features.userNamespaces",
+      "kind": "Node",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].user",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.containerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].user",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].user",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.containerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.containerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "status.initContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].image.pullPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "status.initContainerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].image.reference",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus[].resources[].resourceID",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].image",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].user.linux.supplementalGroups",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus[].resources[].health",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.resourceClaims[].resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.reference",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].values",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].values",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.requests[].deviceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.controller",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.config[].opaque.parameters",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.config[].opaque",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.devices.config[].opaque.driver",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.constraints[].requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].name",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.config",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].count",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.spec.devices.requests[].selectors[].cel.expression",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.constraints[].matchAttribute",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.devices.config[].requests",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.constraints",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resourceClaims[].source",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchFields",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.parametersRef",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.allocationMode",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.results",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.parametersRef.apiGroup",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.resourceHandles",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].driverName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.parametersRef.kind",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.results[].namedResources.name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.vendorClaimParameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.vendorClassParameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.results[].vendorRequestParameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].data",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.shareable",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchExpressions",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.nodeName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.parametersRef.name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.driverName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClassName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.availableOnNodes.nodeSelectorTerms[].matchFields[].values",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.results[].namedResources",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].intSlice.ints",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "namedResources.instances[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].int",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].bool",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].intSlice",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].stringSlice.strings",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "namedResources",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "driverName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].version",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].string",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].stringSlice",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes[].quantity",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "namedResources.instances[].attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resourceClaims[].source",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.parametersRef.kind",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.allocationMode",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.resourceClassName",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.parametersRef.apiGroup",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.spec.parametersRef",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.parametersRef.name",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    }
+  ],
+  "fieldsModified": [],
+  "fieldsDeprecated": []
+}

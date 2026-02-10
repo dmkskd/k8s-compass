@@ -1,0 +1,153 @@
+/**
+ * InfoCallout Styles
+ */
+
+/* =============================================================================
+   Base Callout
+   ============================================================================= */
+
+.callout {
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* =============================================================================
+   Header
+   ============================================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =============================================================================
+   Content
+   ============================================================================= */
+
+.content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.content p {
+  margin: 0 0 0.5rem;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.content ul,
+.content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.content li {
+  margin: 0.25rem 0;
+}
+
+.content code {
+  padding: 0.125rem 0.375rem;
+  background: #1e1e2e; /* Dark background for code */
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  color: #e0e0e8;
+}
+
+/* =============================================================================
+   Type: Tip
+   ============================================================================= */
+
+.tip {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.tip .title {
+  color: #10b981;
+}
+
+.tip .content code {
+  color: #86efac; /* Light green for dark bg */
+}
+
+/* =============================================================================
+   Type: Warning
+   ============================================================================= */
+
+.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.warning .title {
+  color: #f59e0b;
+}
+
+.warning .content code {
+  color: #fcd34d; /* Light yellow for dark bg */
+}
+
+/* =============================================================================
+   Type: Note
+   ============================================================================= */
+
+.note {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.note .title {
+  color: #6366f1;
+}
+
+.note .content code {
+  color: #c4b5fd; /* Light purple for dark bg */
+}
+
+/* =============================================================================
+   Type: Info
+   ============================================================================= */
+
+.info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.info .title {
+  color: #3b82f6;
+}
+
+.info .content code {
+  color: #7dd3fc; /* Light blue for dark bg */
+}
+
+/* =============================================================================
+   Type: Danger
+   ============================================================================= */
+
+.danger {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.danger .title {
+  color: #ef4444;
+}
+
+.danger .content code {
+  color: #fca5a5; /* Light red for dark bg */
+}

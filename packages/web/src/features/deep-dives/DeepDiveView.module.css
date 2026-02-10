@@ -1,0 +1,351 @@
+/**
+ * DeepDiveView Styles
+ *
+ * Container styles for the deep dive router component.
+ * Follows the dark theme aesthetic consistent with K8s Compass.
+ */
+
+/* =============================================================================
+   Container
+   ============================================================================= */
+
+.container {
+  height: 100%;
+  overflow-y: auto;
+  background: linear-gradient(180deg, var(--color-space) 0%, var(--color-void) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================================================
+   Header with Back Navigation
+   ============================================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--tab-hover-bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--color-star);
+  transform: translateX(-2px);
+}
+
+.backButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.backIcon {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+/* =============================================================================
+   Content Area
+   ============================================================================= */
+
+.content {
+  flex: 1;
+  min-height: 0;
+}
+
+/* =============================================================================
+   Not Found State
+   ============================================================================= */
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notFoundContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.notFoundIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+
+.notFoundTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0 0 1rem;
+}
+
+.notFoundMessage {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+  max-width: 400px;
+}
+
+.notFoundMessage code {
+  background: rgba(99, 102, 241, 0.2);
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: rgba(99, 102, 241, 0.9);
+}
+
+.notFoundHint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+}
+
+.notFoundAction {
+  padding: 0.75rem 1.5rem;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 8px;
+  color: var(--color-star);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notFoundAction:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.notFoundAction:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+/* =============================================================================
+   Coming Soon State
+   ============================================================================= */
+
+.comingSoon {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comingSoonContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.comingSoonIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.comingSoonTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0 0 0.5rem;
+  max-width: 600px;
+}
+
+.comingSoonSubtitle {
+  font-size: 1.1rem;
+  color: rgba(99, 102, 241, 0.8);
+  margin: 0 0 1rem;
+  max-width: 500px;
+}
+
+.comingSoonMessage {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.comingSoonMeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.metaIcon {
+  font-size: 1rem;
+}
+
+.metaDot {
+  color: var(--divider);
+}
+
+/* =============================================================================
+   Loading State
+   ============================================================================= */
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(99, 102, 241, 0.2);
+  border-top-color: rgba(99, 102, 241, 0.8);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =============================================================================
+   Error State
+   ============================================================================= */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(239, 68, 68, 0.9);
+  margin: 0 0 0.5rem;
+}
+
+.errorMessage {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  max-width: 400px;
+}
+
+.errorRetry {
+  padding: 0.5rem 1rem;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: rgba(239, 68, 68, 0.9);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.errorRetry:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: var(--color-star);
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .backButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .notFoundContent,
+  .comingSoonContent {
+    padding: 2rem 1rem;
+  }
+
+  .notFoundIcon,
+  .comingSoonIcon {
+    font-size: 3rem;
+  }
+
+  .notFoundTitle,
+  .comingSoonTitle {
+    font-size: 1.5rem;
+  }
+
+  .comingSoonMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .metaDot {
+    display: none;
+  }
+}

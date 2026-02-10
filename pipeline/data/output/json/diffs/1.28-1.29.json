@@ -1,0 +1,2039 @@
+{
+  "fromVersion": "1.28",
+  "toVersion": "1.29",
+  "summary": {
+    "kindsAdded": 2,
+    "kindsRemoved": 1,
+    "fieldsAdded": 271,
+    "fieldsRemoved": 15,
+    "fieldsModified": 24,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "VolumeAttributesClass",
+      "group": "storage.k8s.io"
+    },
+    {
+      "kind": "ServiceCIDR",
+      "group": "networking.k8s.io"
+    }
+  ],
+  "kindsRemoved": [
+    {
+      "kind": "ClusterCIDR",
+      "group": "networking.k8s.io"
+    }
+  ],
+  "fieldsAdded": [
+    {
+      "path": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "status.loadBalancer.ingress[].ipMode",
+      "kind": "Service",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.source.inlineVolumeSpec.volumeAttributesClassName",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeAttributesClassName",
+      "kind": "PersistentVolume",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.modifyVolumeStatus",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.currentVolumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.modifyVolumeStatus.status",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.modifyVolumeStatus.targetVolumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].key",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].values",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Pod",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core",
+      "type": "integer"
+    },
+    {
+      "path": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].status.modifyVolumeStatus",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].status.modifyVolumeStatus.targetVolumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].status.modifyVolumeStatus.status",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].status.currentVolumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.volumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Job",
+      "group": "batch",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Job",
+      "group": "batch",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].optionalOldSelf",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
+      "type": "boolean"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.resources.claims",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.resources.claims[].name",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].spec.resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.parentRef.uid",
+      "kind": "IPAddress",
+      "group": "networking.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    }
+  ],
+  "fieldsModified": [
+    {
+      "path": "spec.jobTemplate.spec.podFailurePolicy.rules[].onPodConditions[].status",
+      "kind": "CronJob",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "HorizontalPodAutoscaler",
+      "group": "autoscaling",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "APIService",
+      "group": "apiregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Service",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "ReplicationController",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Deployment",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Node",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Pod",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Namespace",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "spec.volumeClaimTemplates[].status.conditions[].status",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "StorageVersion",
+      "group": "internal.apiserver.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "conditions[].status",
+      "kind": "ComponentStatus",
+      "group": "core",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "PodDisruptionBudget",
+      "group": "policy",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "spec.podFailurePolicy.rules[].onPodConditions[].status",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "Job",
+      "group": "batch",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "FlowSchema",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "CertificateSigningRequest",
+      "group": "certificates.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    },
+    {
+      "path": "status.conditions[].status",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
+      "change": "enum",
+      "added": [
+        "InProgress",
+        "Pending",
+        "Infeasible"
+      ],
+      "removed": []
+    }
+  ],
+  "fieldsDeprecated": []
+}

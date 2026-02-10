@@ -1,0 +1,6 @@
+# Individual deep dive content
+# Each deep dive is a subdirectory with:
+# - index.tsx: Main deep dive component
+# - styles.module.css: Deep dive specific styles
+# - sections/: Section components
+# - visualizations/: Topic-specific visualizations

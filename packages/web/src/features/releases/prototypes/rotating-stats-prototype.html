@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Stats Cards Prototype</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: linear-gradient(180deg, #0a0a0f 0%, #0d0d15 50%, #12121a 100%);
+      color: white;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    
+    h1 { text-align: center; margin-bottom: 8px; color: #a5b4fc; font-size: 24px; }
+    .subtitle { text-align: center; color: rgba(255,255,255,0.5); margin-bottom: 30px; font-size: 14px; }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      height: 140px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color, rgba(255,255,255,0.2)), transparent);
+      transition: opacity 0.3s;
+    }
+    
+    .stat-card.paused {
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+    
+    /* Rotating content */
+    .stat-content {
+      position: absolute;
+      inset: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+    
+    .stat-content.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .stat-content.exiting {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--number-color, #fff) 0%, var(--number-glow, #a5b4fc) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px var(--number-glow, rgba(165, 180, 252, 0.3));
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+    
+    .stat-sublabel {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 4px;
+    }
+    
+    /* Progress dots */
+    .progress-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+    
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.3s;
+    }
+    
+    .dot.active {
+      background: var(--accent-color, #6366f1);
+      box-shadow: 0 0 8px var(--accent-color, #6366f1);
+    }
+    
+    /* Mini chart in card */
+    .mini-chart {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 8px;
+    }
+    
+    /* Color themes */
+    .stat-card.features { --accent-color: #6366f1; --number-color: #fff; --number-glow: #a5b4fc; }
+    .stat-card.stable { --accent-color: #10b981; --number-color: #34d399; --number-glow: #10b981; }
+    .stat-card.beta { --accent-color: #f59e0b; --number-color: #fbbf24; --number-glow: #f59e0b; }
+    .stat-card.alpha { --accent-color: #8b5cf6; --number-color: #a78bfa; --number-glow: #8b5cf6; }
+    .stat-card.changes { --accent-color: #3b82f6; --number-color: #60a5fa; --number-glow: #3b82f6; }
+    .stat-card.bugs { --accent-color: #ef4444; --number-color: #f87171; --number-glow: #ef4444; }
+    .stat-card.api { --accent-color: #ec4899; --number-color: #f472b6; --number-glow: #ec4899; }
+    .stat-card.urgent { --accent-color: #ef4444; --number-color: #fca5a5; --number-glow: #ef4444; }
+    .stat-card.security { --accent-color: #fbbf24; --number-color: #fcd34d; --number-glow: #fbbf24; }
+    .stat-card.deprecations { --accent-color: #f97316; --number-color: #fb923c; --number-glow: #f97316; }
+    
+    /* 3D canvas card */
+    .stat-card.has-3d .stat-content {
+      flex-direction: row;
+      gap: 16px;
+    }
+    
+    .stat-card.has-3d .stat-info {
+      text-align: left;
+    }
+    
+    .canvas-container {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    
+    .info-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .info-section h3 {
+      color: #a5b4fc;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    
+    .info-section p {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>K8s 1.35 - Timbernetes</h1>
+  <p class="subtitle">December 17, 2025 • Hover to pause, click to see details</p>
+  
+  <div class="stats-container">
+    <div class="stat-card features" id="card-features"></div>
+    <div class="stat-card changes" id="card-changes"></div>
+    <div class="stat-card urgent" id="card-critical"></div>
+    <div class="stat-card has-3d" id="card-viz"></div>
+  </div>
+  
+  <div class="info-section">
+    <h3>How it works</h3>
+    <p>Each card cycles through related stats every 3 seconds. Hover to pause. The 4th card shows a mini 3D visualization that continuously rotates. This packs all the release stats into a compact space without overwhelming the user.</p>
+  </div>
+
+  <script>
+    // Data for K8s 1.35
+    const data = {
+      features: [
+        { value: 58, label: 'Total Features', sublabel: 'KEPs in this release', theme: 'features' },
+        { value: 19, label: 'Stable', sublabel: 'Graduating to GA', theme: 'stable' },
+        { value: 22, label: 'Beta', sublabel: 'Moving to beta', theme: 'beta' },
+        { value: 17, label: 'Alpha', sublabel: 'New in alpha', theme: 'alpha' },
+      ],
+      changes: [
+        { value: 243, label: 'Total Changes', sublabel: 'PRs in release', theme: 'changes' },
+        { value: 85, label: 'Bug Fixes', sublabel: 'Bugs & regressions', theme: 'bugs' },
+        { value: 38, label: 'API Changes', sublabel: 'API modifications', theme: 'api' },
+        { value: 57, label: 'Other', sublabel: 'Misc improvements', theme: 'changes' },
+      ],
+      critical: [
+        { value: 4, label: 'Urgent Notes', sublabel: 'Action required', theme: 'urgent' },
+        { value: 0, label: 'Security CVEs', sublabel: 'Vulnerabilities', theme: 'security' },
+        { value: 3, label: 'Deprecations', sublabel: 'Being removed', theme: 'deprecations' },
+      ]
+    };
+
+    // Rotating card class
+    class RotatingCard {
+      constructor(element, items, interval = 3000) {
+        this.element = element;
+        this.items = items;
+        this.interval = interval;
+        this.currentIndex = 0;
+        this.paused = false;
+        this.timer = null;
+        
+        this.render();
+        this.startRotation();
+        this.bindEvents();
+      }
+      
+      render() {
+        // Create content elements for each item
+        this.items.forEach((item, i) => {
+          const content = document.createElement('div');
+          content.className = `stat-content ${i === 0 ? 'active' : ''}`;
+          content.innerHTML = `
+            <div class="stat-number">${item.value}</div>
+            <div class="stat-label">${item.label}</div>
+            ${item.sublabel ? `<div class="stat-sublabel">${item.sublabel}</div>` : ''}
+          `;
+          this.element.appendChild(content);
+        });
+        
+        // Progress dots
+        const dots = document.createElement('div');
+        dots.className = 'progress-dots';
+        this.items.forEach((_, i) => {
+          const dot = document.createElement('div');
+          dot.className = `dot ${i === 0 ? 'active' : ''}`;
+          dots.appendChild(dot);
+        });
+        this.element.appendChild(dots);
+        
+        this.contents = this.element.querySelectorAll('.stat-content');
+        this.dots = this.element.querySelectorAll('.dot');
+        
+        // Set initial theme
+        this.updateTheme(this.items[0].theme);
+      }
+      
+      updateTheme(theme) {
+        // Remove all theme classes
+        this.element.className = this.element.className.replace(/\b(features|stable|beta|alpha|changes|bugs|api|urgent|security|deprecations)\b/g, '');
+        this.element.classList.add(theme);
+      }
+      
+      rotate() {
+        const prevIndex = this.currentIndex;
+        this.currentIndex = (this.currentIndex + 1) % this.items.length;
+        
+        // Animate out
+        this.contents[prevIndex].classList.remove('active');
+        this.contents[prevIndex].classList.add('exiting');
+        this.dots[prevIndex].classList.remove('active');
+        
+        // Animate in
+        setTimeout(() => {
+          this.contents[prevIndex].classList.remove('exiting');
+          this.contents[this.currentIndex].classList.add('active');
+          this.dots[this.currentIndex].classList.add('active');
+          this.updateTheme(this.items[this.currentIndex].theme);
+        }, 200);
+      }
+      
+      startRotation() {
+        this.timer = setInterval(() => {
+          if (!this.paused) this.rotate();
+        }, this.interval);
+      }
+      
+      bindEvents() {
+        this.element.addEventListener('mouseenter', () => {
+          this.paused = true;
+          this.element.classList.add('paused');
+        });
+        
+        this.element.addEventListener('mouseleave', () => {
+          this.paused = false;
+          this.element.classList.remove('paused');
+        });
+        
+        // Click dots to jump
+        this.dots.forEach((dot, i) => {
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.jumpTo(i);
+          });
+        });
+      }
+      
+      jumpTo(index) {
+        if (index === this.currentIndex) return;
+        const prevIndex = this.currentIndex;
+        this.currentIndex = index;
+        
+        this.contents[prevIndex].classList.remove('active');
+        this.contents[prevIndex].classList.add('exiting');
+        this.dots[prevIndex].classList.remove('active');
+        
+        setTimeout(() => {
+          this.contents[prevIndex].classList.remove('exiting');
+          this.contents[this.currentIndex].classList.add('active');
+          this.dots[this.currentIndex].classList.add('active');
+          this.updateTheme(this.items[this.currentIndex].theme);
+        }, 200);
+      }
+    }
+
+    // 3D Mini Radial Burst
+    function create3DCard() {
+      const card = document.getElementById('card-viz');
+      
+      // Create layout
+      card.innerHTML = `
+        <div class="stat-content active">
+          <div class="canvas-container" id="mini-canvas"></div>
+          <div class="stat-info">
+            <div class="stat-number" style="font-size: 28px;">287</div>
+            <div class="stat-label">Total Items</div>
+            <div class="stat-sublabel">Features + Changes</div>
+          </div>
+        </div>
+        <div class="progress-dots">
+          <div class="dot active"></div>
+        </div>
+      `;
+      
+      const container = document.getElementById('mini-canvas');
+      const size = 80;
+      
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+      camera.position.set(0, 8, 8);
+      camera.lookAt(0, 0, 0);
+      
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(size, size);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+      
+      scene.add(new THREE.AmbientLight(0x404040, 0.6));
+      const light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(0, 10, 5);
+      scene.add(light);
+      
+      // Mini radial segments
+      const segments = [
+        { value: 19, color: 0x10b981 },  // stable
+        { value: 22, color: 0xf59e0b },  // beta
+        { value: 17, color: 0x8b5cf6 },  // alpha
+        { value: 85, color: 0x3b82f6 },  // bugs
+        { value: 38, color: 0xec4899 },  // api
+        { value: 57, color: 0x64748b },  // other
+        { value: 4, color: 0xef4444 },   // urgent
+        { value: 3, color: 0xf97316 },   // deprecations
+      ];
+      
+      const total = segments.reduce((sum, s) => sum + s.value, 0);
+      let currentAngle = 0;
+      const innerRadius = 0.8;
+      const outerRadius = 2.5;
+      const meshes = [];
+      
+      segments.forEach((seg, i) => {
+        const angleSize = (seg.value / total) * Math.PI * 2;
+        
+        const shape = new THREE.Shape();
+        const segs = Math.max(4, Math.floor(angleSize * 8));
+        
+        for (let j = 0; j <= segs; j++) {
+          const a = currentAngle + (j / segs) * angleSize;
+          const x = Math.cos(a) * innerRadius;
+          const y = Math.sin(a) * innerRadius;
+          if (j === 0) shape.moveTo(x, y);
+          else shape.lineTo(x, y);
+        }
+        
+        for (let j = segs; j >= 0; j--) {
+          const a = currentAngle + (j / segs) * angleSize;
+          const x = Math.cos(a) * outerRadius;
+          const y = Math.sin(a) * outerRadius;
+          shape.lineTo(x, y);
+        }
+        shape.closePath();
+        
+        const height = 0.3 + (seg.value / 85) * 0.8;
+        const geometry = new THREE.ExtrudeGeometry(shape, { depth: height, bevelEnabled: false });
+        const material = new THREE.MeshPhongMaterial({
+          color: seg.color,
+          emissive: seg.color,
+          emissiveIntensity: 0.3,
+          transparent: true,
+          opacity: 0.9
+        });
+        
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.userData = { phase: i * 0.5 };
+        scene.add(mesh);
+        meshes.push(mesh);
+        
+        currentAngle += angleSize;
+      });
+      
+      // Center glow
+      const centerGeo = new THREE.SphereGeometry(0.6, 16, 16);
+      const centerMat = new THREE.MeshPhongMaterial({
+        color: 0x6366f1,
+        emissive: 0x6366f1,
+        emissiveIntensity: 0.5
+      });
+      const center = new THREE.Mesh(centerGeo, centerMat);
+      center.position.y = 0.5;
+      scene.add(center);
+      
+      let time = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        time += 0.015;
+        
+        scene.rotation.y += 0.008;
+        center.scale.setScalar(1 + Math.sin(time * 2) * 0.1);
+        
+        meshes.forEach(mesh => {
+          mesh.material.emissiveIntensity = 0.3 + Math.sin(time * 2 + mesh.userData.phase) * 0.15;
+        });
+        
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+    
+    // Initialize
+    window.addEventListener('load', () => {
+      new RotatingCard(document.getElementById('card-features'), data.features, 3000);
+      new RotatingCard(document.getElementById('card-changes'), data.changes, 3500);
+      new RotatingCard(document.getElementById('card-critical'), data.critical, 4000);
+      create3DCard();
+    });
+  </script>
+</body>
+</html>

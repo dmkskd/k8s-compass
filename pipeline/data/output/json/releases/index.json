@@ -1,0 +1,126 @@
+{
+  "latestVersion": "1.35",
+  "releases": [
+    {
+      "version": "1.35",
+      "codename": "Timbernetes (The World Tree Release)",
+      "releaseDate": "2025-12-17",
+      "summary": {
+        "total": 58,
+        "stable": 19,
+        "beta": 22,
+        "alpha": 17
+      }
+    },
+    {
+      "version": "1.34",
+      "codename": "Of Wind & Will (O' WaW)",
+      "releaseDate": "2025-08-27",
+      "summary": {
+        "total": 59,
+        "stable": 27,
+        "beta": 18,
+        "alpha": 14
+      }
+    },
+    {
+      "version": "1.33",
+      "codename": "Octarine: The Color of Magic",
+      "releaseDate": "2025-04-23",
+      "summary": {
+        "total": 58,
+        "stable": 18,
+        "beta": 16,
+        "alpha": 24
+      }
+    },
+    {
+      "version": "1.32",
+      "codename": "Penelope",
+      "releaseDate": "2024-12-11",
+      "summary": {
+        "total": 42,
+        "stable": 13,
+        "beta": 11,
+        "alpha": 18
+      }
+    },
+    {
+      "version": "1.31",
+      "codename": "Elli",
+      "releaseDate": "2024-08-13",
+      "summary": {
+        "total": 41,
+        "stable": 11,
+        "beta": 21,
+        "alpha": 9
+      }
+    },
+    {
+      "version": "1.30",
+      "codename": "Uwubernetes",
+      "releaseDate": "2024-04-17",
+      "summary": {
+        "total": 45,
+        "stable": 18,
+        "beta": 15,
+        "alpha": 12
+      }
+    },
+    {
+      "version": "1.29",
+      "codename": "Mandala",
+      "releaseDate": "2023-12-13",
+      "summary": {
+        "total": 39,
+        "stable": 12,
+        "beta": 12,
+        "alpha": 15
+      }
+    },
+    {
+      "version": "1.28",
+      "codename": "Planternetes",
+      "releaseDate": "2023-08-15",
+      "summary": {
+        "total": 39,
+        "stable": 15,
+        "beta": 8,
+        "alpha": 16
+      }
+    },
+    {
+      "version": "1.27",
+      "codename": "Chill Vibes",
+      "releaseDate": "2023-04-11",
+      "summary": {
+        "total": 65,
+        "stable": 18,
+        "beta": 29,
+        "alpha": 18
+      }
+    },
+    {
+      "version": "1.26",
+      "codename": "Electrifying",
+      "releaseDate": "2022-12-09",
+      "summary": {
+        "total": 47,
+        "stable": 16,
+        "beta": 12,
+        "alpha": 19
+      }
+    },
+    {
+      "version": "1.25",
+      "codename": "Combiner",
+      "releaseDate": "2022-08-23",
+      "summary": {
+        "total": 41,
+        "stable": 15,
+        "beta": 12,
+        "alpha": 14
+      }
+    }
+  ]
+}

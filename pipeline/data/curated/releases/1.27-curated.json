@@ -1,0 +1,15 @@
+{
+  "version": "1.27",
+  "codename": "Chill Vibes",
+  "description": "Kubernetes 1.27 'Chill Vibes' 😎 lives up to its name—the first release in Kubernetes history with zero exception requests. This remarkably smooth release delivers 60 enhancements including in-place pod resource updates (alpha), seccomp defaults graduating to GA, and pod scheduling readiness gates. The calm energy extends to the historic freeze on k8s.gcr.io as the project transitions to registry.k8s.io. Sometimes the best releases are the ones that just... flow.",
+  "releaseDate": "2023-04-11",
+  "endOfLifeDate": "2024-06-28",
+  "summary": {
+    "total": 60,
+    "stable": 13,
+    "beta": 29,
+    "alpha": 18
+  },
+  "themes": ["Security", "Scheduling", "Registry", "Resource Management"],
+  "features": []
+}

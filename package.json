@@ -1,0 +1,27 @@
+{
+  "name": "k8s-api-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Curated Kubernetes API documentation with visual exploration and KEP integration",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --cwd packages/web dev",
+    "build": "bun run --cwd packages/web build",
+    "build:single": "bun run --cwd packages/web build:single",
+    "preview": "bun run --cwd packages/web preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/k8s-api-explorer"
+  },
+  "keywords": [
+    "kubernetes",
+    "k8s",
+    "api",
+    "documentation",
+    "kep"
+  ],
+  "license": "MIT"
+}

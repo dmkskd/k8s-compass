@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+
+# Coverage
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Vite
+*.local
+pipeline/test_k8s.duckdb
+pipeline/test_k8s_compact.duckdb
+
+# Legacy lockfiles (using bun.lockb now)
+package-lock.json
+yarn.lock
+
+# Generated single-file builds
+k8s-api-explorer.compressed.html
+k8s-api-explorer.web.html
+k8s-api-explorer.html
+
+# Benchmark output (large experimental format files)
+pipeline/data/output/benchmark/
+
+# Web app data (copied from pipeline output, regenerated on export)
+packages/web/public/data/

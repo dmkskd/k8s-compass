@@ -1,0 +1,429 @@
+{
+  "version": "1.0",
+  "normalizations": [
+    {
+      "canonical": "pod",
+      "aliases": [
+        "pods"
+      ],
+      "reason": "Singular vs plural form; consolidate to singular for consistency."
+    },
+    {
+      "canonical": "feature-gate",
+      "aliases": [
+        "feature-gates"
+      ],
+      "reason": "Both refer to the same mechanism; unify under the singular canonical label."
+    },
+    {
+      "canonical": "scheduling",
+      "aliases": [
+        "scheduler"
+      ],
+      "reason": "Scheduler component is part of scheduling; use the higher\u2011volume, broader label."
+    },
+    {
+      "canonical": "controller",
+      "aliases": [
+        "controller-manager"
+      ],
+      "reason": "Controller\u2011manager is a specific controller implementation; merge into the general controller category."
+    },
+    {
+      "canonical": "observability",
+      "aliases": [
+        "monitoring"
+      ],
+      "reason": "Monitoring is a sub\u2011area of observability; keep the more widely used, broader term."
+    },
+    {
+      "canonical": "resource-management",
+      "aliases": [
+        "resource-allocation"
+      ],
+      "reason": "Both address how resources are allocated and managed; consolidate under the higher\u2011usage term."
+    },
+    {
+      "canonical": "topology",
+      "aliases": [
+        "topology-manager"
+      ],
+      "reason": "Topology\u2011manager is a concrete implementation of topology concepts; merge into the broader topology label."
+    },
+    {
+      "canonical": "crd",
+      "aliases": [
+        "customresources"
+      ],
+      "reason": "CustomResources are represented by CustomResourceDefinitions; unify under the canonical CRD term."
+    },
+    {
+      "canonical": "kube-proxy",
+      "aliases": [
+        "proxy"
+      ],
+      "reason": "Proxy label is generic but in Kubernetes context most proxy work relates to kube\u2011proxy; prefer the explicit component name."
+    },
+    {
+      "canonical": "kubectl",
+      "aliases": [
+        "cli"
+      ],
+      "reason": "CLI usage is dominated by kubectl commands; merge generic CLI label into the specific kubectl label."
+    },
+    {
+      "canonical": "resource-quota",
+      "aliases": [
+        "quota"
+      ],
+      "reason": "\"quota\" is a generic reference to the ResourceQuota object; using the specific term improves clarity."
+    },
+    {
+      "canonical": "persistentvolume",
+      "aliases": [
+        "persistent-volume"
+      ],
+      "reason": "Both labels refer to the same PersistentVolume concept; the hyphenated form is just a variant."
+    },
+    {
+      "canonical": "taint",
+      "aliases": [
+        "taints"
+      ],
+      "reason": "Standard singular/plural normalization; use singular form for consistency."
+    },
+    {
+      "canonical": "horizontal-pod-autoscaler",
+      "aliases": [
+        "hpa"
+      ],
+      "reason": "\"hpa\" is an abbreviation of the full feature name; prefer the complete term for clarity."
+    },
+    {
+      "canonical": "go",
+      "aliases": [
+        "golang"
+      ],
+      "reason": "Both labels denote the Go programming language; use the short canonical form."
+    },
+    {
+      "canonical": "image-pull",
+      "aliases": [
+        "image-pulling"
+      ],
+      "reason": "Singular form preferred; both refer to pulling container images."
+    },
+    {
+      "canonical": "rolling-update",
+      "aliases": [
+        "rolling-upgrade"
+      ],
+      "reason": "Same concept of progressive upgrade; rolling-update is the more common KEP term."
+    },
+    {
+      "canonical": "hostname",
+      "aliases": [
+        "fqdn"
+      ],
+      "reason": "FQDN is a fully qualified hostname; merging simplifies host naming labels."
+    },
+    {
+      "canonical": "labeling",
+      "aliases": [
+        "node-labels"
+      ],
+      "reason": "Node labels are a specific instance of labeling; consolidating under the generic term."
+    },
+    {
+      "canonical": "load-balancing",
+      "aliases": [
+        "traffic-routing"
+      ],
+      "reason": "Both address distributing traffic across services; load-balancing is the primary term."
+    },
+    {
+      "canonical": "healthz",
+      "aliases": [
+        "probe"
+      ],
+      "reason": "Probes are used to implement health endpoints like /healthz; merge for unified health checking label."
+    },
+    {
+      "canonical": "ui",
+      "aliases": [
+        "headlamp",
+        "desktop",
+        "kubernetes-dashboard"
+      ],
+      "reason": "All refer to UI components or dashboards for Kubernetes; consolidate under a single UI label."
+    },
+    {
+      "canonical": "infra",
+      "aliases": [
+        "infrastructure"
+      ],
+      "reason": "Same concept of underlying infrastructure; prefer concise hyphenated form."
+    },
+    {
+      "canonical": "endpoint",
+      "aliases": [
+        "endpoints",
+        "endpoint-slice"
+      ],
+      "reason": "Singular form for endpoint resources; combine plural and slice variants."
+    },
+    {
+      "canonical": "ip-allocation",
+      "aliases": [
+        "host-ip",
+        "static-ip",
+        "dynamic-ip",
+        "allocation"
+      ],
+      "reason": "All labels describe allocation or assignment of IP addresses."
+    },
+    {
+      "canonical": "protocol",
+      "aliases": [
+        "application-protocol",
+        "app-protocol"
+      ],
+      "reason": "Synonymous ways to specify network protocol; unify under generic protocol."
+    },
+    {
+      "canonical": "image",
+      "aliases": [
+        "images",
+        "base-image",
+        "image-registry",
+        "container-registry"
+      ],
+      "reason": "Related to container images and registries; consolidate for clarity."
+    },
+    {
+      "canonical": "dns",
+      "aliases": [
+        "external-dns",
+        "geo-dns",
+        "http-redirector"
+      ],
+      "reason": "All deal with DNS services or redirection; group under DNS."
+    },
+    {
+      "canonical": "volume",
+      "aliases": [
+        "mount",
+        "attach",
+        "detach",
+        "subpath",
+        "volumemode",
+        "volumeattributesclass",
+        "volume-snapshot",
+        "modifyvolume",
+        "volume-population",
+        "volume-group"
+      ],
+      "reason": "Collects various volume lifecycle and feature labels into a single volume label."
+    },
+    {
+      "canonical": "user-experience",
+      "aliases": [
+        "ux"
+      ],
+      "reason": "UX is an abbreviation of user experience; they refer to the same concept."
+    },
+    {
+      "canonical": "component",
+      "aliases": [
+        "components"
+      ],
+      "reason": "Singular vs plural form; keep singular as canonical."
+    },
+    {
+      "canonical": "extension-apis",
+      "aliases": [
+        "extension"
+      ],
+      "reason": "Extension-apis specifically describe the API extension mechanism; generic 'extension' is covered by it."
+    },
+    {
+      "canonical": "secret-management",
+      "aliases": [
+        "secret-generator",
+        "credential-management",
+        "credential-provider",
+        "token-management"
+      ],
+      "reason": "All labels deal with creation, storage, or provision of secrets/credentials for workloads."
+    },
+    {
+      "canonical": "health-probes",
+      "aliases": [
+        "liveness-probe",
+        "readiness-probe"
+      ],
+      "reason": "Liveness and readiness probes are concrete types of health probes; they can be grouped under the broader health-probes category."
+    },
+    {
+      "canonical": "modules",
+      "aliases": [
+        "go-modules"
+      ],
+      "reason": "go-modules are a specific kind of module used by Kubernetes; grouping under the generic 'modules' consolidates related discussions."
+    },
+    {
+      "canonical": "custom-resource",
+      "aliases": [
+        "custom-resources",
+        "customresource"
+      ],
+      "reason": "Plural form and concatenated form both refer to the same concept of custom resources in the API."
+    },
+    {
+      "canonical": "parallelism",
+      "aliases": [
+        "parallel"
+      ],
+      "reason": "Singular/plural phrasing of the concept controlling the degree of parallel execution."
+    },
+    {
+      "canonical": "egress-selector",
+      "aliases": [
+        "egressselector"
+      ],
+      "reason": "Hyphenated version is the preferred style for compound terms."
+    },
+    {
+      "canonical": "failure",
+      "aliases": [
+        "failure-handling",
+        "failure-reason",
+        "podfailurepolicy"
+      ],
+      "reason": "All labels deal with failure semantics for pods/jobs; they can be grouped under a generic failure category."
+    },
+    {
+      "canonical": "extended-resource",
+      "aliases": [
+        "extended-resources"
+      ],
+      "reason": "Plural form merged into singular; both represent the same extended resource concept."
+    },
+    {
+      "canonical": "resource-slice",
+      "aliases": [
+        "resource-slices",
+        "resourceslice"
+      ],
+      "reason": "Standardize naming to singular hyphenated form; combines plural and concatenated variants."
+    },
+    {
+      "canonical": "device-plugin",
+      "aliases": [
+        "device-plugins"
+      ],
+      "reason": "Plural vs singular; device-plugin is the common term for the device plugin framework."
+    },
+    {
+      "canonical": "health-probe",
+      "aliases": [
+        "healthchecking",
+        "probes"
+      ],
+      "reason": "Synonyms for health checking mechanisms; consolidates generic health checking labels under the official \"health-probe\" term."
+    },
+    {
+      "canonical": "probe",
+      "aliases": [
+        "exec-probe",
+        "startup-probe"
+      ],
+      "reason": "Specific probe types are specializations of the generic probe concept; keep a base label for generic discussions."
+    },
+    {
+      "canonical": "capability",
+      "aliases": [
+        "capabilities"
+      ],
+      "reason": "Singular form preferred; both refer to the same concept of a capability."
+    }
+  ],
+  "mapping": {
+    "pods": "pod",
+    "feature-gates": "feature-gate",
+    "scheduler": "scheduling",
+    "controller-manager": "controller",
+    "monitoring": "observability",
+    "resource-allocation": "resource-management",
+    "topology-manager": "topology",
+    "customresources": "crd",
+    "proxy": "kube-proxy",
+    "cli": "kubectl",
+    "quota": "resource-quota",
+    "persistent-volume": "persistentvolume",
+    "taints": "taint",
+    "hpa": "horizontal-pod-autoscaler",
+    "golang": "go",
+    "image-pulling": "image-pull",
+    "rolling-upgrade": "rolling-update",
+    "fqdn": "hostname",
+    "node-labels": "labeling",
+    "traffic-routing": "load-balancing",
+    "probe": "healthz",
+    "headlamp": "ui",
+    "desktop": "ui",
+    "kubernetes-dashboard": "ui",
+    "infrastructure": "infra",
+    "endpoints": "endpoint",
+    "endpoint-slice": "endpoint",
+    "host-ip": "ip-allocation",
+    "static-ip": "ip-allocation",
+    "dynamic-ip": "ip-allocation",
+    "allocation": "ip-allocation",
+    "application-protocol": "protocol",
+    "app-protocol": "protocol",
+    "images": "image",
+    "base-image": "image",
+    "image-registry": "image",
+    "container-registry": "image",
+    "external-dns": "dns",
+    "geo-dns": "dns",
+    "http-redirector": "dns",
+    "mount": "volume",
+    "attach": "volume",
+    "detach": "volume",
+    "subpath": "volume",
+    "volumemode": "volume",
+    "volumeattributesclass": "volume",
+    "volume-snapshot": "volume",
+    "modifyvolume": "volume",
+    "volume-population": "volume",
+    "volume-group": "volume",
+    "ux": "user-experience",
+    "components": "component",
+    "extension": "extension-apis",
+    "secret-generator": "secret-management",
+    "credential-management": "secret-management",
+    "credential-provider": "secret-management",
+    "token-management": "secret-management",
+    "liveness-probe": "health-probes",
+    "readiness-probe": "health-probes",
+    "go-modules": "modules",
+    "custom-resources": "custom-resource",
+    "customresource": "custom-resource",
+    "parallel": "parallelism",
+    "egressselector": "egress-selector",
+    "failure-handling": "failure",
+    "failure-reason": "failure",
+    "podfailurepolicy": "failure",
+    "extended-resources": "extended-resource",
+    "resource-slices": "resource-slice",
+    "resourceslice": "resource-slice",
+    "device-plugins": "device-plugin",
+    "healthchecking": "health-probe",
+    "probes": "health-probe",
+    "exec-probe": "probe",
+    "startup-probe": "probe",
+    "capabilities": "capability"
+  }
+}

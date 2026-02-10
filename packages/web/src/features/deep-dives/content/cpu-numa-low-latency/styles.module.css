@@ -1,0 +1,397 @@
+/**
+ * CPU/NUMA Deep Dive Styles
+ *
+ * Shared styles for the CPU Affinity, NUMA Topology & Resource Management deep dive.
+ * Uses theme-aware CSS variables for light/dark mode support.
+ */
+
+/* =============================================================================
+   Section Styles
+   ============================================================================= */
+
+.section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-star);
+  margin: 2rem 0 1rem;
+}
+
+.sectionContent {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* =============================================================================
+   Typography
+   ============================================================================= */
+
+.paragraph {
+  margin: 0 0 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--color-star);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: rgba(99, 102, 241, 0.9);
+  font-weight: 500;
+}
+
+.strong {
+  color: var(--color-star);
+  font-weight: 600;
+}
+
+/* =============================================================================
+   Lists
+   ============================================================================= */
+
+.list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.list li::marker {
+  color: rgba(99, 102, 241, 0.7);
+}
+
+.definitionList {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.definitionList dt {
+  font-weight: 600;
+  color: var(--color-star);
+  margin-top: 1rem;
+}
+
+.definitionList dt:first-child {
+  margin-top: 0;
+}
+
+.definitionList dd {
+  margin: 0.25rem 0 0 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* =============================================================================
+   Cards and Boxes
+   ============================================================================= */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardContent {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featureBox {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.featureBoxTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(99, 102, 241, 0.9);
+  margin: 0 0 0.75rem;
+}
+
+/* =============================================================================
+   Grid Layouts
+   ============================================================================= */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gridTwo {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridThree {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .gridThree {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gridTwo,
+  .gridThree {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================================
+   Policy Cards
+   ============================================================================= */
+
+.policyCard {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.policyCard:hover {
+  background: var(--card-hover-bg);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.policyCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.policyName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-star);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.policyBadge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.policyBadgeDefault {
+  background: rgba(107, 114, 128, 0.2);
+  color: rgba(156, 163, 175, 0.9);
+}
+
+.policyBadgeRecommended {
+  background: rgba(16, 185, 129, 0.2);
+  color: rgba(16, 185, 129, 0.9);
+}
+
+.policyDescription {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.policyUseCase {
+  font-size: 0.85rem;
+  color: rgba(99, 102, 241, 0.8);
+  font-style: italic;
+}
+
+/* =============================================================================
+   Diagram Container
+   ============================================================================= */
+
+.diagramContainer {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagramCaption {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+/* =============================================================================
+   Architecture Diagram (SVG-based)
+   ============================================================================= */
+
+.architectureDiagram {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.architectureDiagram svg {
+  width: 100%;
+  height: auto;
+}
+
+/* =============================================================================
+   KEP and Feature Gate References
+   ============================================================================= */
+
+.kepReferences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.featureGateReferences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+/* =============================================================================
+   Code Examples
+   ============================================================================= */
+
+.codeExample {
+  margin: 1.5rem 0;
+}
+
+.codeExampleTitle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* =============================================================================
+   Comparison Table
+   ============================================================================= */
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+
+.comparisonTable th {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--color-star);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.comparisonTable td {
+  color: var(--text-secondary);
+}
+
+.comparisonTable tr:hover td {
+  background: var(--tab-hover-bg);
+}
+
+/* =============================================================================
+   Visualization Container
+   ============================================================================= */
+
+.visualizationContainer {
+  background: var(--card-bg);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 2rem 0;
+  min-height: 400px;
+}
+
+.visualizationTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* =============================================================================
+   Responsive Adjustments
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .card,
+  .featureBox {
+    padding: 1rem;
+  }
+
+  .comparisonTable {
+    font-size: 0.8rem;
+  }
+
+  .comparisonTable th,
+  .comparisonTable td {
+    padding: 0.5rem 0.75rem;
+  }
+}

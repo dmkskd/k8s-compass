@@ -1,0 +1,465 @@
+/* K8s API Explorer - Global Styles */
+/* Aesthetic: Deep space observatory meets technical documentation */
+
+:root {
+  /* ===== DARK THEME (default) ===== */
+  /* Color palette - cosmic depth */
+  --color-void: #030712;
+  --color-space: #0a0f1a;
+  --color-nebula: #111827;
+  --color-dust: #1f2937;
+  --color-star: #f8fafc;
+  --color-starlight: #94a3b8;
+  --color-dim: #64748b;
+  
+  /* Accent colors - API group spectrum */
+  --color-core: #3b82f6;
+  --color-apps: #10b981;
+  --color-batch: #f59e0b;
+  --color-networking: #8b5cf6;
+  --color-rbac: #ef4444;
+  --color-autoscaling: #06b6d4;
+  --color-policy: #ec4899;
+  --color-storage: #84cc16;
+  --color-scheduling: #f97316;
+  
+  /* Glow effects */
+  --glow-core: rgba(59, 130, 246, 0.5);
+  --glow-apps: rgba(16, 185, 129, 0.5);
+  --glow-generic: rgba(148, 163, 184, 0.3);
+  
+  /* Theme-specific colors */
+  --header-bg: rgba(10, 15, 26, 0.95);
+  --header-border: rgba(255, 255, 255, 0.08);
+  --tab-bg: rgba(0, 0, 0, 0.4);
+  --tab-text: rgba(255, 255, 255, 0.6);
+  --tab-text-hover: rgba(255, 255, 255, 0.9);
+  --tab-text-active: white;
+  --tab-active-bg: rgba(99, 102, 241, 0.25);
+  --tab-hover-bg: rgba(255, 255, 255, 0.05);
+  --subnav-bg: rgba(0, 0, 0, 0.3);
+  --subnav-border: rgba(255, 255, 255, 0.05);
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-bg: rgba(0, 0, 0, 0.4);
+  --panel-bg: rgba(17, 24, 39, 0.95);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(17, 24, 39, 0.6);
+  --card-hover-bg: rgba(17, 24, 39, 0.8);
+  --badge-bg: rgba(99, 102, 241, 0.15);
+  --badge-border: rgba(99, 102, 241, 0.3);
+  --badge-text: #a5b4fc;
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+  --text-primary: #f8fafc;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --divider: rgba(255, 255, 255, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --scrollbar-track: var(--color-space);
+  --scrollbar-thumb: var(--color-dust);
+  --scrollbar-thumb-hover: var(--color-dim);
+  --selection-bg: rgba(59, 130, 246, 0.3);
+  
+  /* Background effects visibility */
+  --cosmic-bg-opacity: 1;
+  --star-field-opacity: 0.6;
+  
+  /* SQL syntax highlighting colors */
+  --sql-keyword: #c792ea;
+  --sql-function: #82aaff;
+  --sql-string: #c3e88d;
+  --sql-number: #f78c6c;
+  --sql-comment: #546e7a;
+  --sql-operator: #89ddff;
+  
+  /* Chart colors */
+  --chart-bg: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  --chart-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --chart-legend-bg: rgba(15, 23, 42, 0.5);
+  --chart-legend-border: rgba(148, 163, 184, 0.2);
+  --chart-legend-text: #94a3b8;
+  --chart-legend-text-hover: #e2e8f0;
+  --chart-legend-value: #64748b;
+  --chart-button-bg: rgba(15, 23, 42, 0.6);
+  --chart-label-bg: rgba(15, 23, 42, 0.85);
+  --chart-grid-primary: #1e293b;
+  --chart-grid-secondary: #0f172a;
+  
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-cosmic: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Borders */
+  --border-subtle: 1px solid rgba(148, 163, 184, 0.1);
+  --border-visible: 1px solid rgba(148, 163, 184, 0.2);
+  
+  /* Shadows */
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15);
+  --shadow-panel: 0 4px 24px rgba(0, 0, 0, 0.4);
+  
+  /* Overlay label colors (for 3D constellation view) */
+  --overlay-label-color: #f8fafc;
+  --overlay-label-muted: rgba(255, 255, 255, 0.7);
+  --overlay-label-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== LIGHT THEME ===== */
+:root[data-theme="light"] {
+  /* Color palette - clean and bright */
+  --color-void: #f8fafc;
+  --color-space: #f1f5f9;
+  --color-nebula: #e2e8f0;
+  --color-dust: #cbd5e1;
+  --color-star: #0f172a;
+  --color-starlight: #475569;
+  --color-dim: #64748b;
+  
+  /* Accent colors - slightly deeper for contrast on light */
+  --color-core: #2563eb;
+  --color-apps: #059669;
+  --color-batch: #d97706;
+  --color-networking: #7c3aed;
+  --color-rbac: #dc2626;
+  --color-autoscaling: #0891b2;
+  --color-policy: #db2777;
+  --color-storage: #65a30d;
+  --color-scheduling: #ea580c;
+  
+  /* Glow effects - subtler on light */
+  --glow-core: rgba(37, 99, 235, 0.25);
+  --glow-apps: rgba(5, 150, 105, 0.25);
+  --glow-generic: rgba(71, 85, 105, 0.15);
+  
+  /* Theme-specific colors */
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-border: rgba(0, 0, 0, 0.08);
+  --tab-bg: rgba(0, 0, 0, 0.04);
+  --tab-text: rgba(0, 0, 0, 0.6);
+  --tab-text-hover: rgba(0, 0, 0, 0.85);
+  --tab-text-active: #1e293b;
+  --tab-active-bg: rgba(99, 102, 241, 0.12);
+  --tab-hover-bg: rgba(0, 0, 0, 0.04);
+  --subnav-bg: rgba(0, 0, 0, 0.02);
+  --subnav-border: rgba(0, 0, 0, 0.06);
+  --input-bg: white;
+  --input-border: rgba(0, 0, 0, 0.15);
+  --input-focus-bg: white;
+  --panel-bg: rgba(255, 255, 255, 0.98);
+  --panel-border: rgba(0, 0, 0, 0.1);
+  --card-bg: white;
+  --card-hover-bg: rgba(248, 250, 252, 1);
+  --badge-bg: rgba(99, 102, 241, 0.1);
+  --badge-border: rgba(99, 102, 241, 0.25);
+  --badge-text: #4f46e5;
+  --link-color: #2563eb;
+  --link-hover: #1d4ed8;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --text-secondary: #334155;
+  --divider: rgba(0, 0, 0, 0.08);
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+  --selection-bg: rgba(37, 99, 235, 0.2);
+  
+  /* Background effects visibility - hidden in light mode */
+  --cosmic-bg-opacity: 0;
+  --star-field-opacity: 0;
+  
+  /* SQL syntax highlighting colors - adjusted for light mode */
+  --sql-keyword: #7c3aed;
+  --sql-function: #2563eb;
+  --sql-string: #059669;
+  --sql-number: #ea580c;
+  --sql-comment: #64748b;
+  --sql-operator: #0891b2;
+  
+  /* Chart colors - light mode */
+  --chart-bg: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+  --chart-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --chart-legend-bg: rgba(255, 255, 255, 0.9);
+  --chart-legend-border: rgba(0, 0, 0, 0.1);
+  --chart-legend-text: #64748b;
+  --chart-legend-text-hover: #1e293b;
+  --chart-legend-value: #475569;
+  --chart-button-bg: rgba(255, 255, 255, 0.8);
+  --chart-label-bg: rgba(255, 255, 255, 0.95);
+  --chart-grid-primary: #cbd5e1;
+  --chart-grid-secondary: #e2e8f0;
+  
+  /* Borders - adjusted for light */
+  --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+  --border-visible: 1px solid rgba(0, 0, 0, 0.12);
+  
+  /* Shadows - softer for light mode */
+  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.08);
+  --shadow-panel: 0 4px 24px rgba(0, 0, 0, 0.08);
+  
+  /* Overlay label colors (for 3D constellation view) - dark text with white glow for light mode */
+  --overlay-label-color: #0f172a;
+  --overlay-label-muted: #334155;
+  --overlay-label-shadow: 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-void);
+  color: var(--color-star);
+  line-height: 1.6;
+  overflow: hidden;
+  min-height: 100vh;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Cosmic background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: var(--cosmic-bg-opacity);
+  transition: opacity var(--transition-base);
+}
+
+/* Star field effect - subtle */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.2), transparent);
+  background-size: 200px 200px;
+  animation: drift 120s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: var(--star-field-opacity);
+  transition: opacity var(--transition-base);
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Selection */
+::selection {
+  background: var(--selection-bg);
+  color: var(--color-star);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-core);
+  outline-offset: 2px;
+}
+
+/* Links */
+a {
+  color: var(--color-core);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-star);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Utility classes */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.serif {
+  font-family: var(--font-display);
+}
+
+.text-dim {
+  color: var(--color-dim);
+}
+
+.text-starlight {
+  color: var(--color-starlight);
+}
+
+/* Glass panel effect */
+.glass {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(20px);
+  border: var(--border-subtle);
+}
+
+/* Glow effect for interactive elements */
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* API group color utilities */
+.color-core { color: var(--color-core); }
+.color-apps { color: var(--color-apps); }
+.color-batch { color: var(--color-batch); }
+.color-networking { color: var(--color-networking); }
+.color-rbac { color: var(--color-rbac); }
+.color-autoscaling { color: var(--color-autoscaling); }
+.color-policy { color: var(--color-policy); }
+.color-storage { color: var(--color-storage); }
+.color-scheduling { color: var(--color-scheduling); }
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-base) ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease forwards;
+}
+
+/* Responsive breakpoints (mobile-first) */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Sunburst gentle oscillating rotation - counter-clockwise */
+@keyframes gentleSpin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-90deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Ensure portaled modals appear above Three.js canvas */
+[data-modal] {
+  z-index: 10000 !important;
+}

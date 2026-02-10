@@ -1,0 +1,15 @@
+{
+  "version": "1.26",
+  "codename": "Electrifying",
+  "description": "Kubernetes 1.26 'Electrifying' ⚡ sparks awareness about environmental sustainability in cloud computing. This release channels energy into 37 enhancements including Dynamic Resource Allocation (alpha) for GPUs and specialized hardware, signed release artifacts for supply chain security, and CEL-based admission policies. The theme reminds us that every container we run has an environmental footprint—making efficiency not just a performance goal, but an ecological one.",
+  "releaseDate": "2022-12-09",
+  "endOfLifeDate": "2024-02-28",
+  "summary": {
+    "total": 37,
+    "stable": 11,
+    "beta": 10,
+    "alpha": 16
+  },
+  "themes": ["Resource Management", "Security", "Windows", "API"],
+  "features": []
+}

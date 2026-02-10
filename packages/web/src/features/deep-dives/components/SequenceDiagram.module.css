@@ -1,0 +1,575 @@
+/**
+ * SequenceDiagram Styles
+ *
+ * Theme-aware styling for the animated sequence diagram component.
+ * Includes styles for:
+ * - Participant header boxes
+ * - Lifeline vertical dashed lines
+ * - Message arrows with labels
+ * - Animation highlight effects
+ * - Control button styles
+ * - Tooltip styles
+ */
+
+/* =============================================================================
+   Container
+   ============================================================================= */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  position: relative;
+}
+
+/* =============================================================================
+   Header
+   ============================================================================= */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =============================================================================
+   Controls
+   ============================================================================= */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controlButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--tab-hover-bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--color-star);
+}
+
+.controlButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.controlButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.controlButtonPrimary {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+}
+
+.controlButtonPrimary:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.35);
+  border-color: rgba(99, 102, 241, 0.6);
+  transform: scale(1.05);
+}
+
+/* Speed Controls */
+.speedLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.speedButtons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.speedButton {
+  padding: 0.375rem 0.625rem;
+  background: var(--tab-hover-bg);
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.speedButton:hover {
+  background: var(--badge-bg);
+  color: var(--text-secondary);
+}
+
+.speedButtonActive {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: var(--color-star);
+}
+
+/* Step Indicator */
+.stepIndicator {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* =============================================================================
+   Diagram Wrapper
+   ============================================================================= */
+
+.diagramWrapper {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1rem 0;
+}
+
+.diagram {
+  display: block;
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+/* =============================================================================
+   Participants
+   ============================================================================= */
+
+.participants {
+  /* Group container */
+}
+
+.participant {
+  transition: all 0.2s ease;
+}
+
+.participantBox {
+  fill: rgba(30, 30, 50, 0.9);
+  stroke: rgba(99, 102, 241, 0.4);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.participant:hover .participantBox {
+  fill: rgba(40, 40, 65, 0.95);
+  stroke: rgba(99, 102, 241, 0.6);
+}
+
+.participantActive .participantBox {
+  fill: rgba(99, 102, 241, 0.2);
+  stroke: rgba(99, 102, 241, 0.8);
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+.participantText {
+  fill: var(--color-star);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.participantActive .participantText {
+  fill: var(--color-star);
+}
+
+/* =============================================================================
+   Lifelines
+   ============================================================================= */
+
+.lifelines {
+  /* Group container */
+}
+
+.lifeline {
+  stroke: var(--divider);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  transition: all 0.2s ease;
+}
+
+.lifelineActive {
+  stroke: rgba(99, 102, 241, 0.5);
+  stroke-width: 2;
+}
+
+/* =============================================================================
+   Messages
+   ============================================================================= */
+
+.messages {
+  /* Group container */
+}
+
+.message {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.messagePath {
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.messageLabel {
+  fill: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  transition: all 0.2s ease;
+}
+
+/* Message States */
+.message:hover .messagePath {
+  stroke: var(--text-secondary);
+  stroke-width: 2;
+}
+
+.message:hover .messageLabel {
+  fill: var(--color-star);
+}
+
+/* Highlighted (current step) */
+.messageHighlighted .messagePath {
+  stroke: rgba(99, 102, 241, 0.9);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.5));
+}
+
+.messageHighlighted .messageLabel {
+  fill: var(--color-star);
+  font-weight: 600;
+}
+
+/* Past messages */
+.messagePast .messagePath {
+  stroke: rgba(16, 185, 129, 0.6);
+  stroke-width: 1.5;
+}
+
+.messagePast .messageLabel {
+  fill: rgba(16, 185, 129, 0.8);
+}
+
+/* Future messages */
+.messageFuture {
+  opacity: 0.4;
+}
+
+.messageFuture .messagePath {
+  stroke: var(--text-muted);
+  stroke-dasharray: 4 2;
+}
+
+.messageFuture .messageLabel {
+  fill: var(--text-muted);
+}
+
+/* =============================================================================
+   Arrowheads
+   ============================================================================= */
+
+.arrowhead {
+  fill: var(--text-muted);
+}
+
+.arrowheadActive {
+  fill: rgba(99, 102, 241, 0.9);
+}
+
+/* =============================================================================
+   Tooltip
+   ============================================================================= */
+
+.tooltip {
+  position: absolute;
+  z-index: 100;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 0.875rem;
+  background: var(--panel-bg);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  box-shadow: var(--shadow-panel);
+  pointer-events: none;
+  animation: tooltipFadeIn 0.15s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltipHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tooltipFrom,
+.tooltipTo {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(99, 102, 241, 0.9);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tooltipArrow {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tooltipLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-star);
+  margin-bottom: 0.375rem;
+}
+
+.tooltipDescription {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* =============================================================================
+   Current Message Panel
+   ============================================================================= */
+
+.currentMessage {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.currentMessageHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.currentMessageStep {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(99, 102, 241, 0.9);
+  padding: 0.25rem 0.5rem;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+}
+
+.currentMessageFlow {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.currentMessageLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin-bottom: 0.375rem;
+}
+
+.currentMessageDescription {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .controlsLeft {
+    order: 1;
+  }
+
+  .controlsRight {
+    order: 2;
+  }
+
+  .stepIndicator {
+    order: 3;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--divider);
+  }
+
+  .diagramWrapper {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  .controlButton {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .controlButtonPrimary {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .currentMessage {
+    padding: 0.875rem 1rem;
+  }
+
+  .currentMessageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+}
+
+/* =============================================================================
+   Print Styles
+   ============================================================================= */
+
+@media print {
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .title,
+  .currentMessageLabel {
+    color: #000;
+  }
+
+  .description,
+  .currentMessageDescription {
+    color: #666;
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .participantBox {
+    fill: #f5f5f5;
+    stroke: #666;
+  }
+
+  .participantText {
+    fill: #000;
+  }
+
+  .lifeline {
+    stroke: #999;
+  }
+
+  .messagePath {
+    stroke: #333;
+  }
+
+  .messageLabel {
+    fill: #333;
+  }
+
+  .messageFuture {
+    opacity: 1;
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  .currentMessage {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+}

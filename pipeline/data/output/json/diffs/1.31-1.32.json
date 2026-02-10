@@ -1,0 +1,616 @@
+{
+  "fromVersion": "1.31",
+  "toVersion": "1.32",
+  "summary": {
+    "kindsAdded": 2,
+    "kindsRemoved": 1,
+    "fieldsAdded": 82,
+    "fieldsRemoved": 15,
+    "fieldsModified": 0,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "MutatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "kind": "MutatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io"
+    }
+  ],
+  "kindsRemoved": [
+    {
+      "kind": "PodSchedulingContext",
+      "group": "resource.k8s.io"
+    }
+  ],
+  "fieldsAdded": [
+    {
+      "path": "template.spec.resources.requests",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resources",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resources.claims",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "template.spec.resources.claims[].request",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.resources.limits",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources.claims[].request",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources.claims",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources.limits",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "map"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.resources.requests",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "map"
+    },
+    {
+      "path": "spec.strategy",
+      "kind": "LeaseCandidate",
+      "group": "coordination.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].device",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].conditions",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.devices",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.devices[].pool",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].networkData",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.devices[].data",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.devices[].conditions[].type",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].conditions[].observedGeneration",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "status.devices[].conditions[].reason",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].networkData.hardwareAddress",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].networkData.ips",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.devices[].conditions[].message",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].conditions[].status",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.allocation.devices.results[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "status.devices[].driver",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].conditions[].lastTransitionTime",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.devices[].networkData.interfaceName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.securityContext.seLinuxChangePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.resources.claims[].request",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "deleteOptions.ignoreStoreReadErrorWithClusterBreakingPotential",
+      "kind": "Eviction",
+      "group": "policy",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources.requests",
+      "kind": "Job",
+      "group": "batch",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.securityContext.seLinuxChangePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.resources",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.resources.claims",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.resources.limits",
+      "kind": "Job",
+      "group": "batch",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "spec.preferredStrategies",
+      "kind": "LeaseCandidate",
+      "group": "coordination.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "status.allocation.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.controller",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.deallocationRequested",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchFields[].key",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchExpressions[].values",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchFields[].values",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchExpressions",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.suitableNodes.nodeSelectorTerms[].matchFields",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.suitableNodes",
+      "kind": "DeviceClass",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.spec.controller",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io",
+      "type": "string"
+    }
+  ],
+  "fieldsModified": [],
+  "fieldsDeprecated": []
+}

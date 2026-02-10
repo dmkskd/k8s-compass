@@ -1,0 +1,5 @@
+# Data integration hooks for deep dives
+# - useKepStatus.ts: Query KEP data
+# - useFeatureGate.ts: Query feature gate data
+# - useKubeletFlags.ts: Query component flags
+# - useDeepDiveData.ts: Combined data hook

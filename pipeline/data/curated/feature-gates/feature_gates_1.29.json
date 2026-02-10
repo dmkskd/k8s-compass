@@ -1,0 +1,3954 @@
+{
+  "version": "1.29",
+  "feature_gate_count": 159,
+  "feature_gates": [
+    {
+      "name": "AdmissionWebhookMatchConditions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable match conditions on mutating & validating admission webhooks.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AggregatedDiscoveryEndpoint",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable a single HTTP endpoint `/discovery/<version>` which supports native HTTP caching with ETags containing all APIResources known to the API server.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AllowServiceLBStatusOnNonLB",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables `.status.ingress.loadBalancer` to be set on Services of types other than `LoadBalancer`.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AnyVolumeDataSource",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable use of any custom resource as the `DataSource` of a .",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.18",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIListChunking",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the API clients to retrieve (`LIST` or `GET`) resources from API server in chunks.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.8",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.8"
+        },
+        {
+          "version": "1.9",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIPriorityAndFairness",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable managing request concurrency with prioritization and fairness at each server. (Renamed from `RequestManagement`)",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.18",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.19"
+        },
+        {
+          "version": "1.20",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIResponseCompression",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Compress the API responses for `LIST` or `GET` requests.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.7",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.15"
+        },
+        {
+          "version": "1.16",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APISelfSubjectReview",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Activate the `SelfSubjectReview` API which allows users to see the requesting subject's authentication information. See API access to authentication information for a client for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIServerIdentity",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Assign each API server an ID in a cluster, using a Lease.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "APIServerTracing",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Add support for distributed tracing in the API server. See Traces for Kubernetes System Components for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "AppArmor",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable use of AppArmor mandatory access control for Pods running on Linux nodes. See AppArmor Tutorial for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.4",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CloudControllerManagerWebhook",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable webhooks in cloud controller manager.",
+      "removed": false,
+      "components": [
+        "cloud-controller-manager",
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CloudDualStackNodeIPs",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables dual-stack `kubelet --node-ip` with external cloud providers. See Configure IPv4/IPv6 dual-stack for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ClusterTrustBundleProjection",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "`clusterTrustBundle` projected volume sources.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ClusterTrustBundle",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable ClusterTrustBundle objects and kubelet integration.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ComponentSLIs",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the `/metrics/slis` endpoint on Kubernetes components like kubelet, kube-scheduler, kube-proxy, kube-controller-manager, cloud-controller-manager allowing you to scrape health check metrics.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-proxy",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ConsistentHTTPGetHandlers",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Normalize HTTP get URL and Header passing for lifecycle handlers with probers.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ConsistentListFromCache",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow the API server to serve consistent lists from cache.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ContainerCheckpoint",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables the kubelet `checkpoint` API. See Kubelet Checkpoint API for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ContextualLogging",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "When you enable this feature gate, Kubernetes components that support contextual logging add extra detail to log output.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyAlphaOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "This allows fine-tuning of CPUManager policies, experimental, Alpha-quality options This feature gate guards *a group* of CPUManager options whose quality level is alpha. This feature gate will never graduate to beta or stable.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyBetaOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "This allows fine-tuning of CPUManager policies, experimental, Beta-quality options This feature gate guards *a group* of CPUManager options whose quality level is beta. This feature gate will never graduate to stable.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManagerPolicyOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow fine-tuning of CPUManager policies.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.22"
+        },
+        {
+          "version": "1.23",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CPUManager",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable container level CPU affinity support, see CPU Management Policies.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.8",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.9"
+        },
+        {
+          "version": "1.10",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CRDValidationRatcheting",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable updates to custom resources to contain violations of their OpenAPI schema if the offending portions of the resource update did not change. See Validation Ratcheting for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CronJobsScheduledAnnotation",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Set the scheduled job time as an on Jobs that were created on behalf of a CronJob.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CrossNamespaceVolumeDataSource",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable the usage of cross namespace volume data source to allow you to specify a source namespace in the `dataSourceRef` field of a PersistentVolumeClaim.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationAzureFile",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables shims and translation logic to route volume operations from the Azure-File in-tree plugin to AzureFile CSI plugin. Supports falling back to in-tree AzureFile plugin for mount operations to nodes that have the feature disabled or that do not have AzureFile CSI plugin installed and configured. Does not support falling back for provision operations, for those the CSI plugin must be installed and configured. Requires CSIMigration feature flag enabled.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.15",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.20"
+        },
+        {
+          "version": "1.21",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationPortworx",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables shims and translation logic to route volume operations from the Portworx in-tree plugin to Portworx CSI plugin. Requires Portworx CSI driver to be installed and configured in the cluster.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.24"
+        },
+        {
+          "version": "1.25",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIMigrationRBD",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables shims and translation logic to route volume operations from the RBD in-tree plugin to Ceph RBD CSI plugin. Requires CSIMigration and csiMigrationRBD feature flags enabled and Ceph CSI plugin installed and configured in the cluster. This flag has been deprecated in favor of the `InTreePluginRBDUnregister` feature flag which prevents the registration of in-tree RBD plugin.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSINodeExpandSecret",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable passing secret authentication data to a CSI driver for use during a `NodeExpandVolume` CSI operation.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CSIVolumeHealth",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable support for CSI volume health monitoring on node.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CustomCPUCFSQuotaPeriod",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable nodes to change `cpuCFSQuotaPeriod` in kubelet config.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.12",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "CustomResourceValidationExpressions",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable expression language validation in CRD which will validate customer resource based on validation rules written in the `x-kubernetes-validations` extension.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.24"
+        },
+        {
+          "version": "1.25",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DefaultHostNetworkHostPortsInPodTemplates",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "This feature gate controls the point at which a default value for `.spec.containers[*].ports[*].hostPort` is assigned, for Pods using `hostNetwork: true`. The default since Kubernetes v1.28 is to only set a default value in Pods. Enabling this means a default will be assigned even to the `.spec` of an embedded PodTemplate (for example, in a Deployment), which is the way that older releases of Kubernetes worked. You should migrate your code so that it does not rely on the legacy behavior.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DevicePluginCDIDevices",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable support to CDI device IDs in the Device Plugin API.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DisableCloudProviders",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Disables any functionality in `kube-apiserver`, `kube-controller-manager` and `kubelet` related to the `--cloud-provider` component flag.",
+      "removed": false,
+      "components": [
+        "cloud-controller-manager",
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DisableKubeletCloudCredentialProviders",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Disable the in-tree functionality in kubelet to authenticate to a cloud provider container registry for image pull credentials.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DisableNodeKubeProxyVersion",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Disable setting the `kubeProxyVersion` field of the Node.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DynamicProvisioningScheduling",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Extend the default scheduler to be aware of volume topology and handle PV provisioning. This feature was superseded by the `VolumeScheduling` feature in v1.12.",
+      "removed": true,
+      "components": [
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.11",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.11"
+        },
+        {
+          "version": "1.12",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "DynamicResourceAllocation",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables support for resources with custom parameters and a lifecycle that is independent of a Pod.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "EfficientWatchResumption",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows for storage-originated bookmark (progress notify) events to be delivered to the users. This is only applied to watch operations.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.20"
+        },
+        {
+          "version": "1.21",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ElasticIndexedJob",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables Indexed Jobs to be scaled up or down by mutating both `spec.completions` and `spec.parallelism` together such that `spec.completions == spec.parallelism`. See docs on elastic Indexed Jobs for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "EventedPLEG",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable support for the kubelet to receive container life cycle events from the via an extension to . (PLEG is an abbreviation for \u201cPod lifecycle event generator\u201d). For this feature to be useful, you also need to enable support for container lifecycle events in each container runtime running in your cluster. If the container runtime does not announce support for container lifecycle events then the kubelet automatically switches to the legacy generic PLEG mechanism, even if you have this featur...",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExecProbeTimeout",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Ensure kubelet respects exec probe timeouts. This feature gate exists in case any of your existing workloads depend on a now-corrected fault where Kubernetes ignored exec probe timeouts. See readiness probes.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExpandedDNSConfig",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable kubelet and kube-apiserver to allow more DNS search paths and longer list of DNS search paths. This feature requires container runtime support(Containerd: v1.5.6 or higher, CRI-O: v1.22 or higher). See Expanded DNS Configuration.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ExperimentalHostUserNamespaceDefaulting",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enabling the defaulting user namespace to host. This is for containers that are using other host namespaces, host mounts, or containers that are privileged or using specific non-namespaced capabilities (e.g. `MKNODE`, `SYS_MODULE` etc.). This should only be enabled if user namespace remapping is enabled in the Docker daemon.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.5",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "GracefulNodeShutdownBasedOnPodPriority",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the kubelet to check Pod priorities when shutting down a node gracefully.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "GracefulNodeShutdown",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables support for graceful shutdown in kubelet. During a system shutdown, kubelet will attempt to detect the shutdown event and gracefully terminate pods running on the node. See Graceful Node Shutdown for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.20"
+        },
+        {
+          "version": "1.21",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HonorPVReclaimPolicy",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Honor persistent volume reclaim policy when it is `Delete` irrespective of PV-PVC deletion ordering. For more details, check the PersistentVolume deletion protection finalizer documentation.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HPAContainerMetrics",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the `HorizontalPodAutoscaler` to scale based on metrics from individual containers in target pods.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "HPAScaleToZero",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables setting `minReplicas` to 0 for `HorizontalPodAutoscaler` resources when using custom or external metrics.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.16",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ImageMaximumGCAge",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables the kubelet configuration field `imageMaximumGCAge`, allowing an administrator to specify the age after which an image will be garbage collected.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InPlacePodVerticalScaling",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables in-place Pod vertical scaling.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAWSUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the aws-ebs in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAzureDiskUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the azuredisk in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginAzureFileUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the azurefile in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginGCEUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the gce-pd in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginOpenStackUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the OpenStack cinder in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginPortworxUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the Portworx in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginRBDUnregister",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the RBD in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "InTreePluginvSphereUnregister",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Stops registering the vSphere in-tree plugin in kubelet and volume controllers.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "IPTablesOwnershipCleanup",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "This causes kubelet to no longer create legacy iptables rules.",
+      "removed": false,
+      "components": [
+        "kube-proxy",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobBackoffLimitPerIndex",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows specifying the maximal number of pod retries per index in Indexed jobs.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobPodFailurePolicy",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow users to specify handling of pod failures based on container exit codes and pod conditions.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobPodReplacementPolicy",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows you to specify pod replacement for terminating pods in a Job",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "JobReadyPods",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables tracking the number of Pods that have a `Ready` condition. The count of `Ready` pods is recorded in the status of a Job status.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KMSv1",
+      "stage": "deprecated",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables KMS v1 API for encryption at rest. See Using a KMS Provider for data encryption for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "deprecated",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "deprecated",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KMSv2KDF",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables KMS v2 to generate single use data encryption keys. See Using a KMS Provider for data encryption for more details. If the `KMSv2` feature gate is not enabled in your cluster, the value of the `KMSv2KDF` feature gate has no effect.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KMSv2",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables KMS v2 API for encryption at rest. See Using a KMS Provider for data encryption for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeProxyDrainingTerminatingNodes",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Implement connection draining for terminating nodes for `externalTrafficPolicy: Cluster` services.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletCgroupDriverFromCRI",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable detection of the kubelet cgroup driver configuration option from the . You can use this feature gate on nodes with a kubelet that supports the feature gate and where there is a CRI container runtime that supports the `RuntimeConfig` CRI call. If both CRI and kubelet support this feature, the kubelet ignores the `cgroupDriver` configuration setting (or deprecated `--cgroup-driver` command line argument). If you enable this feature gate and the container runtime doesn't support it, the k...",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletInUserNamespace",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables support for running kubelet in a . See Running Kubernetes Node Components as a Non-root User.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResourcesDynamicResources",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Extend the kubelet's pod resources gRPC endpoint to to include resources allocated in `ResourceClaims` via `DynamicResourceAllocation` API. See resource allocation reporting for more details. with information about the allocatable resources, enabling clients to properly track the free compute resources on a node.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResourcesGetAllocatable",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the kubelet's pod resources `GetAllocatableResources` functionality. This API augments the resource allocation reporting",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.22"
+        },
+        {
+          "version": "1.23",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResourcesGet",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable the `Get` gRPC endpoint on kubelet's for Pod resources. This API augments the resource allocation reporting.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletPodResources",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the kubelet's pod resources gRPC endpoint. See Support Device Monitoring for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.13",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.14"
+        },
+        {
+          "version": "1.15",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletSeparateDiskGC",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable kubelet to garbage collect container images and containers even when those are on a separate filesystem.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "KubeletTracing",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Add support for distributed tracing in the kubelet. When enabled, kubelet CRI interface and authenticated http servers are instrumented to generate OpenTelemetry trace spans. See Traces for Kubernetes System Components for more details.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LegacyServiceAccountTokenCleanUp",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable cleaning up Secret-based service account tokens when they are not used in a specified time (default to be one year).",
+      "removed": false,
+      "components": [
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LegacyServiceAccountTokenTracking",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Track usage of Secret-based service account tokens.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LoadBalancerIPMode",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allows setting `ipMode` for Services where `type` is set to `LoadBalancer`. See Specifying IPMode of load balancer status for more information.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LocalStorageCapacityIsolationFSQuotaMonitoring",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "When `LocalStorageCapacityIsolation` is enabled for local ephemeral storage and the backing filesystem for emptyDir volumes supports project quotas and they are enabled, use project quotas to monitor emptyDir volume storage consumption rather than filesystem walk for better performance and accuracy.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.15",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LogarithmicScaleDown",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable semi-random selection of pods to evict on controller scaledown based on logarithmic bucketing of pod timestamps.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.21"
+        },
+        {
+          "version": "1.22",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LoggingAlphaOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow fine-tuning of experimental, alpha-quality logging options.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "LoggingBetaOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow fine-tuning of experimental, beta-quality logging options.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MatchLabelKeysInPodAffinity",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable the `matchLabelKeys` and `mismatchLabelKeys` field for pod (anti)affinity.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MatchLabelKeysInPodTopologySpread",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the `matchLabelKeys` field for Pod topology spread constraints.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MaxUnavailableStatefulSet",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables setting the `maxUnavailable` field for the rolling update strategy of a StatefulSet. The field specifies the maximum number of Pods that can be unavailable during the update.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MemoryManager",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows setting memory affinity for a container based on NUMA topology.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.21"
+        },
+        {
+          "version": "1.22",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MemoryQoS",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable memory protection and usage throttle on pod / container using cgroup v2 memory controller.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MinDomainsInPodTopologySpread",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable `minDomains` in Pod topology spread constraints.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.24"
+        },
+        {
+          "version": "1.25",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MinimizeIPTablesRestore",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables new performance improvement logics in the kube-proxy iptables mode.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "MultiCIDRServiceAllocator",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Track IP address allocations for Service cluster IPs using IPAddress objects.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NewVolumeManagerReconstruction",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables improved discovery of mounted volumes during kubelet startup. Since this code has been significantly refactored, we allow to opt-out in case kubelet gets stuck at the startup or is not unmounting volumes from terminated Pods. Note that this refactoring was behind `SELinuxMountReadWriteOncePod` alpha feature gate in Kubernetes 1.25. <!-- remove next 2 paragraphs when feature graduates to GA --> Before Kubernetes v1.25, the kubelet used different default behavior for discovering mounted...",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NFTablesProxyMode",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow running kube-proxy with in nftables mode.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeInclusionPolicyInPodTopologySpread",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable using `nodeAffinityPolicy` and `nodeTaintsPolicy` in Pod topology spread constraints when calculating pod topology spread skew.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeLogQuery",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables querying logs of node services using the `/logs` endpoint.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeOutOfServiceVolumeDetach",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "When a Node is marked out-of-service using the `node.kubernetes.io/out-of-service` taint, Pods on the node will be forcefully deleted if they can not tolerate this taint, and the volume detach operations for Pods terminating on the node will happen immediately. The deleted Pods can recover quickly on different nodes.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.24",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "NodeSwap",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable the kubelet to allocate swap memory for Kubernetes workloads on a node. Must be used with `KubeletConfiguration.failSwapOn` set to false. For more details, please see swap memory",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "OpenAPIEnums",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables populating \"enum\" fields of OpenAPI schemas in the spec returned from the API server.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PDBUnhealthyPodEvictionPolicy",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the `unhealthyPodEvictionPolicy` field of a `PodDisruptionBudget`. This specifies when unhealthy pods should be considered for eviction. Please see Unhealthy Pod Eviction Policy for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PersistentVolumeLastPhaseTransitionTime",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Adds a new field to PersistentVolume which holds a timestamp of when the volume last transitioned its phase.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodAndContainerStatsFromCRI",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Configure the kubelet to gather container and pod stats from the CRI container runtime rather than gathering them from cAdvisor. As of 1.26, this also includes gathering metrics from CRI and emitting them over `/metrics/cadvisor` (rather than having cAdvisor emit them directly).",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodDeletionCost",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the Pod Deletion Cost feature which allows users to influence ReplicaSet downscaling order.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.21"
+        },
+        {
+          "version": "1.22",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodDisruptionConditions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables support for appending a dedicated pod condition indicating that the pod is being deleted due to a disruption.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodHostIPs",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the `status.hostIPs` field for pods and the . The field lets you expose host IP addresses to workloads.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodIndexLabel",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the Job controller and StatefulSet controller to add the pod index as a label when creating new pods. See Job completion mode docs and StatefulSet pod index label docs for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodLifecycleSleepAction",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables the `sleep` action in Container lifecycle hooks.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodReadyToStartContainersCondition",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the kubelet to mark the PodReadyToStartContainers condition on pods. This feature gate was previously known as `PodHasNetworkCondition`, and the associated condition was named `PodHasNetwork`.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "PodSchedulingReadiness",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable setting `schedulingGates` field to control a Pod's scheduling readiness.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ProcMountType",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables control over the type proc mounts for containers by setting the `procMount` field of a SecurityContext.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.12",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ProxyTerminatingEndpoints",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the kube-proxy to handle terminating endpoints when `ExternalTrafficPolicy=Local`.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.25"
+        },
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "QOSReserved",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allows resource reservations at the QoS level preventing pods at lower QoS levels from bursting into resources requested at higher QoS levels (memory only for now).",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.11",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ReadWriteOncePod",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the usage of `ReadWriteOncePod` PersistentVolume access mode.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.22",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RecoverVolumeExpansionFailure",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables users to edit their PVCs to smaller sizes so as they can recover from previously issued volume expansion failures. See Recovering from Failure when Expanding Volumes for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RemainingItemCount",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow the API servers to show a count of remaining items in the response to a chunking list request.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.15",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.15"
+        },
+        {
+          "version": "1.16",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RemoveSelfLink",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Sets the `.metadata.selfLink` field to blank (empty string) for all objects and collections. This field has been deprecated since the Kubernetes v1.16 release. When this feature is enabled, the `.metadata.selfLink` field remains part of the Kubernetes API, but is always unset.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.16",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.19"
+        },
+        {
+          "version": "1.20",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RotateKubeletServerCertificate",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable the rotation of the server TLS certificate on the kubelet. See kubelet configuration for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.7",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.11"
+        },
+        {
+          "version": "1.12",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "RuntimeClassInImageCriApi",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables images to be pulled based on the runtime class of the pods that reference them.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SchedulerQueueingHints",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enables the scheduler's _queueing hints_ enhancement, which benefits to reduce the useless requeueing. The scheduler retries scheduling pods if something changes in the cluster that could make the pod scheduled. Queueing hints are internal signals that allow the scheduler to filter the changes in the cluster that are relevant to the unscheduled pod, based on previous scheduling attempts.",
+      "removed": false,
+      "components": [
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SecurityContextDeny",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "This gate signals that the `SecurityContextDeny` admission controller is deprecated.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SELinuxMountReadWriteOncePod",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Speeds up container startup by allowing kubelet to mount volumes for a Pod directly with the correct SELinux label instead of changing each file on the volumes recursively. The initial implementation focused on ReadWriteOncePod volumes.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.25",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SeparateTaintEvictionController",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables running `TaintEvictionController`, that performs Taint-based Evictions, in a controller separated from `NodeLifecycleController`. When this feature is enabled, users can optionally disable Taint-based Eviction setting the `--controllers=-taint-eviction-controller` flag on the `kube-controller-manager`.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServerSideApply",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the Sever Side Apply (SSA) feature on the API Server.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.14",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.15"
+        },
+        {
+          "version": "1.16",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.21"
+        },
+        {
+          "version": "1.22",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServerSideFieldValidation",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables server-side field validation. This means the validation of resource schema is performed at the API server side rather than the client side (for example, the `kubectl create` or `kubectl apply` command line).",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.24"
+        },
+        {
+          "version": "1.25",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServiceAccountTokenJTI",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Controls whether JTIs (UUIDs) are embedded into generated service account tokens, and whether these JTIs are recorded into the Kubernetes audit log for future requests made by these tokens.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServiceAccountTokenNodeBindingValidation",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Controls whether the apiserver will validate a Node reference in service account tokens.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServiceAccountTokenNodeBinding",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Controls whether the apiserver allows binding service account tokens to Node objects.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServiceAccountTokenPodNodeInfo",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Controls whether the apiserver embeds the node name and uid for the associated node when issuing service account tokens bound to Pod objects.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ServiceNodePortStaticSubrange",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables the use of different port allocation strategies for NodePort Services. For more details, see reserve NodePort ranges to avoid collisions.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SidecarContainers",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow setting the `restartPolicy` of an init container to `Always` so that the container becomes a sidecar container (restartable init containers). See Sidecar containers and restartPolicy for more details.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SizeMemoryBackedVolumes",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable kubelets to determine the size limit for memory-backed volumes (mainly `emptyDir` volumes).",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.21"
+        },
+        {
+          "version": "1.22",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "SkipReadOnlyValidationGCE",
+      "stage": "deprecated",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Skip validation for GCE, will enable in the next version.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "deprecated",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StableLoadBalancerNodeSet",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables less load balancer re-configurations by the service controller (KCCM) as an effect of changing node state.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StatefulSetAutoDeletePVC",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows the use of the optional `.spec.persistentVolumeClaimRetentionPolicy` field, providing control over the deletion of PVCs in a StatefulSet's lifecycle. See PersistentVolumeClaim retention for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.23",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StatefulSetStartOrdinal",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow configuration of the start ordinal in a StatefulSet. See Start ordinal for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.26"
+        },
+        {
+          "version": "1.27",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StorageVersionAPI",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable the storage version API.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.20",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StorageVersionHash",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow API servers to expose the storage version hash in the discovery.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.14",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.14"
+        },
+        {
+          "version": "1.15",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StructuredAuthenticationConfiguration",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable structured authentication configuration for the API server.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "StructuredAuthorizationConfiguration",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable structured authorization configuration, so that cluster administrators can specify more than one authorization webhook in the API server handler chain.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyAwareHints",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables topology aware routing based on topology hints in EndpointSlices. See Topology Aware Hints for more details.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.22"
+        },
+        {
+          "version": "1.23",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.23"
+        },
+        {
+          "version": "1.24",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyAlphaOptions",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow fine-tuning of topology manager policies, experimental, Alpha-quality options. This feature gate guards *a group* of topology manager options whose quality level is alpha. This feature gate will never graduate to beta or stable.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyBetaOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allow fine-tuning of topology manager policies, experimental, Beta-quality options. This feature gate guards *a group* of topology manager options whose quality level is beta. This feature gate will never graduate to stable.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TopologyManagerPolicyOptions",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable fine-tuning of topology manager policies.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "TranslateStreamCloseWebsocketRequests",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow WebSocket streaming of the remote command sub-protocol (`exec`, `cp`, `attach`) from clients requesting version 5 (v5) of the sub-protocol.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "UnauthenticatedHTTP2DOSMitigation",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables HTTP/2 Denial of Service (DoS) mitigations for unauthenticated clients. Kubernetes v1.28.0 through v1.28.2 do not include this feature gate.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.28"
+        },
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "UnknownVersionInteroperabilityProxy",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Proxy resource requests to the correct peer kube-apiserver when multiple kube-apiservers exist at varied versions. See Mixed version proxy for more information.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "UserNamespacesPodSecurityStandards",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable Pod Security Standards policies relaxation for pods that run with namespaces. You must set the value of this feature gate consistently across all nodes in your cluster, and you must also enable `UserNamespacesSupport` to use this feature.",
+      "removed": false,
+      "components": [
+        "kube-apiserver",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "UserNamespacesSupport",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable user namespace support for Pods.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.28",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ValidatingAdmissionPolicy",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable ValidatingAdmissionPolicy support for CEL validations be used in Admission Control.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.27"
+        },
+        {
+          "version": "1.28",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "VolumeAttributesClass",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable support for VolumeAttributesClasses. See Volume Attributes Classes for more information.",
+      "removed": false,
+      "components": [
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "VolumeCapacityPriority",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable support for prioritizing nodes in different topologies based on available PV capacity.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.21",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WatchBookmark",
+      "stage": "stable",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enable support for watch bookmark events.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.15",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.15"
+        },
+        {
+          "version": "1.16",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false,
+          "to_version": "1.16"
+        },
+        {
+          "version": "1.17",
+          "stage": "stable",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WatchList",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Enable support for streaming initial state of objects in watch requests.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.27",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WinDSR",
+      "stage": "alpha",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allows kube-proxy to create DSR loadbalancers for Windows.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.14",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WinOverlay",
+      "stage": "beta",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Allows kube-proxy to run in overlay mode for Windows.",
+      "removed": false,
+      "components": [
+        "kube-proxy"
+      ],
+      "version_history": [
+        {
+          "version": "1.14",
+          "stage": "alpha",
+          "default": false,
+          "lock_to_default": false,
+          "to_version": "1.19"
+        },
+        {
+          "version": "1.20",
+          "stage": "beta",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "WindowsHostNetwork",
+      "stage": "alpha",
+      "default": true,
+      "lock_to_default": false,
+      "description": "Enables support for joining Windows containers to a hosts' network namespace.",
+      "removed": false,
+      "components": [
+        "kube-controller-manager",
+        "kubelet"
+      ],
+      "version_history": [
+        {
+          "version": "1.26",
+          "stage": "alpha",
+          "default": true,
+          "lock_to_default": false
+        }
+      ]
+    },
+    {
+      "name": "ZeroLimitedNominalConcurrencyShares",
+      "stage": "beta",
+      "default": false,
+      "lock_to_default": false,
+      "description": "Allow Priority & Fairness in the API server to use a zero value for the `nominalConcurrencyShares` field of the `limited` section of a priority level.",
+      "removed": false,
+      "components": [
+        "kube-apiserver"
+      ],
+      "version_history": [
+        {
+          "version": "1.29",
+          "stage": "beta",
+          "default": false,
+          "lock_to_default": false
+        }
+      ]
+    }
+  ]
+}

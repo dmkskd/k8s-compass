@@ -1,0 +1,497 @@
+/**
+ * DecisionFlowchart Styles
+ *
+ * Theme-aware styling for the interactive decision flowchart component.
+ * Includes styles for:
+ * - Question nodes (diamond shape)
+ * - Answer nodes (rectangle)
+ * - Recommendation nodes (highlighted box)
+ * - Edges with labels
+ * - Path highlighting
+ * - Hover and selected states
+ */
+
+/* =============================================================================
+   Container
+   ============================================================================= */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+}
+
+/* =============================================================================
+   Header
+   ============================================================================= */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-star);
+  margin: 0;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =============================================================================
+   Controls
+   ============================================================================= */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resetButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  background: var(--tab-hover-bg);
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--color-star);
+}
+
+.resetButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* =============================================================================
+   Flowchart Wrapper
+   ============================================================================= */
+
+.flowchartWrapper {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1rem 0;
+}
+
+.flowchart {
+  display: block;
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+/* =============================================================================
+   Nodes - Base Styles
+   ============================================================================= */
+
+.node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.node:focus {
+  outline: none;
+}
+
+.node:focus .nodeBackground {
+  stroke: rgba(99, 102, 241, 0.8);
+  stroke-width: 2;
+}
+
+.nodeBackground {
+  fill: rgba(30, 30, 50, 0.9);
+  stroke: var(--divider);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.node:hover .nodeBackground {
+  fill: rgba(40, 40, 65, 0.95);
+  stroke: var(--text-muted);
+}
+
+.nodeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+}
+
+.nodeIcon {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(99, 102, 241, 0.9);
+  line-height: 1;
+}
+
+.nodeText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-star);
+  line-height: 1.3;
+}
+
+.nodeDescription {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* =============================================================================
+   Node Types
+   ============================================================================= */
+
+/* Question Node - Diamond */
+.nodeQuestion .nodeBackground {
+  fill: rgba(99, 102, 241, 0.15);
+  stroke: rgba(99, 102, 241, 0.4);
+}
+
+.nodeQuestion:hover .nodeBackground {
+  fill: rgba(99, 102, 241, 0.25);
+  stroke: rgba(99, 102, 241, 0.6);
+}
+
+/* Answer Node - Rectangle */
+.nodeAnswer .nodeBackground {
+  fill: rgba(16, 185, 129, 0.1);
+  stroke: rgba(16, 185, 129, 0.3);
+}
+
+.nodeAnswer:hover .nodeBackground {
+  fill: rgba(16, 185, 129, 0.2);
+  stroke: rgba(16, 185, 129, 0.5);
+}
+
+/* Recommendation Node - Highlighted */
+.nodeRecommendation .nodeBackground {
+  fill: rgba(245, 158, 11, 0.15);
+  stroke: rgba(245, 158, 11, 0.4);
+}
+
+.nodeRecommendation:hover .nodeBackground {
+  fill: rgba(245, 158, 11, 0.25);
+  stroke: rgba(245, 158, 11, 0.6);
+}
+
+/* =============================================================================
+   Node States
+   ============================================================================= */
+
+/* Selected State */
+.nodeSelected .nodeBackground {
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+.nodeQuestion.nodeSelected .nodeBackground {
+  stroke: rgba(99, 102, 241, 0.9);
+  filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.5));
+}
+
+.nodeAnswer.nodeSelected .nodeBackground {
+  stroke: rgba(16, 185, 129, 0.9);
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.5));
+}
+
+.nodeRecommendation.nodeSelected .nodeBackground {
+  stroke: rgba(245, 158, 11, 0.9);
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.5));
+}
+
+/* On Path State */
+.nodeOnPath .nodeBackground {
+  stroke-width: 2;
+}
+
+/* Dimmed State */
+.nodeDimmed {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.nodeDimmed .nodeBackground {
+  fill: rgba(30, 30, 50, 0.5);
+  stroke: var(--divider);
+}
+
+/* =============================================================================
+   Edges
+   ============================================================================= */
+
+.edges {
+  pointer-events: none;
+}
+
+.edge {
+  transition: all 0.2s ease;
+}
+
+.edgePath {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.edgeLabelBg {
+  fill: var(--panel-bg);
+  stroke: var(--divider);
+  stroke-width: 1;
+}
+
+.edgeLabel {
+  fill: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-anchor: middle;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Edge On Path */
+.edgeOnPath .edgePath {
+  stroke: rgba(99, 102, 241, 0.7);
+  stroke-width: 2;
+}
+
+.edgeOnPath .edgeLabelBg {
+  fill: rgba(99, 102, 241, 0.2);
+  stroke: rgba(99, 102, 241, 0.4);
+}
+
+.edgeOnPath .edgeLabel {
+  fill: var(--color-star);
+}
+
+/* Edge Dimmed */
+.edgeDimmed {
+  opacity: 0.2;
+}
+
+/* =============================================================================
+   Arrowheads
+   ============================================================================= */
+
+.arrowhead {
+  fill: var(--text-muted);
+}
+
+.arrowheadActive {
+  fill: rgba(99, 102, 241, 0.8);
+}
+
+/* =============================================================================
+   Recommendation Panel
+   ============================================================================= */
+
+.recommendationPanel {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommendationTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(245, 158, 11, 0.95);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recommendationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recommendationSectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Flag List */
+.flagList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.flagItem {
+  display: inline-block;
+  padding: 0.375rem 0.625rem;
+  background: #1e1e2e; /* Dark background for code */
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #86efac; /* Light green */
+}
+
+/* Tag Lists */
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.featureGateTag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 4px;
+  color: rgba(16, 185, 129, 0.9);
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.kepTag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 4px;
+  color: rgba(99, 102, 241, 0.9);
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Code Block */
+.codeBlock {
+  background: #1e1e2e; /* Dark background for code - consistent across themes */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #e0e0e8;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .flowchartWrapper {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  .recommendationPanel {
+    padding: 1rem;
+  }
+
+  .codeBlock {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+/* =============================================================================
+   Print Styles
+   ============================================================================= */
+
+@media print {
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .title,
+  .nodeText {
+    color: #000;
+  }
+
+  .description,
+  .hint {
+    color: #666;
+  }
+
+  .resetButton {
+    display: none;
+  }
+
+  .nodeBackground {
+    fill: #f5f5f5;
+    stroke: #999;
+  }
+
+  .edgePath {
+    stroke: #666;
+  }
+
+  .edgeLabel {
+    fill: #333;
+  }
+}

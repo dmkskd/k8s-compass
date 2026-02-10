@@ -1,0 +1,202 @@
+# Learn
+
+The Learn tab provides a curated content browser for Kubernetes learning resources, including interactive deep dives.
+
+## Overview
+
+**Main Component:** `LearnView.tsx`
+
+**Layout:**
+- Hero section with stats
+- Sidebar with filters (content type, source, topic labels)
+- Content grid with expandable cards
+- Deep dive cards with special rendering
+
+## Deep Dives
+
+Deep dives are interactive, in-depth technical content stored in the database with React components for rendering.
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    content_links.parquet                         │
+│  (all content including deep-dives with content_type='deep-dive')│
+│  URL format: app://deep-dive/{id}                                │
+│  Metadata in attrs JSON: status, estimatedReadTime, featureGates │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+              ┌───────────────┴───────────────┐
+              │                               │
+              ▼                               ▼
+    ┌─────────────────┐             ┌─────────────────┐
+    │ filteredDeepDives│             │ filteredContent │
+    │ (deep-dives only)│             │ (excludes deep- │
+    │       ↓          │             │  dives)         │
+    │  DeepDiveCard    │             │  Regular Card   │
+    └─────────────────┘             └─────────────────┘
+```
+
+### Data Sources
+
+1. **Database** (`content_links_deep_dives.json` → `content_links.parquet`)
+   - All metadata: title, description, labels, KEPs, author, status, read time
+   - Stored in `attrs` JSON column for deep-dive-specific fields
+
+2. **Code** (`DeepDiveView.tsx`)
+   - Component mapping: `DEEP_DIVE_COMPONENTS` maps IDs to lazy-loaded React components
+   - This is the only code that needs updating when adding a new deep dive
+
+### Adding a New Deep Dive
+
+1. Add metadata to `pipeline/data/curated/content/content_links_deep_dives.json`:
+```json
+{
+  "url": "app://deep-dive/my-new-deep-dive",
+  "title": "My New Deep Dive",
+  "type": "deep-dive",
+  "attrs": {
+    "deepDiveId": "my-new-deep-dive",
+    "status": "wip",
+    "estimatedReadTime": 30,
+    "relatedFeatureGates": ["SomeGate"]
+  },
+  "links": [{ "targetType": "kep", "targetId": "KEP-1234" }]
+}
+```
+
+2. Create component in `packages/web/src/features/deep-dives/content/my-new-deep-dive/`
+
+3. Add to component registry in `DeepDiveView.tsx`:
+```typescript
+const DEEP_DIVE_COMPONENTS = {
+  'my-new-deep-dive': lazy(() => import('./content/my-new-deep-dive').then(...)),
+}
+```
+
+4. Run `uv run k8s-pipeline export-parquet` to update the database
+
+## Data Loading
+
+All content is loaded in a **single DuckDB query** with aggregations:
+
+```typescript
+const sql = `
+  WITH content_releases AS (...),
+  content_keps AS (...)
+  SELECT DISTINCT
+    c.url, c.title, c.content_type, c.source, c.is_official,
+    c.published_date, c.author, c.summary, c.description, 
+    c.labels, c.attrs,  -- attrs contains deep-dive metadata
+    COALESCE(cr.releases, []) as linked_releases,
+    COALESCE(ck.keps, []) as linked_keps
+  FROM content_links c
+  LEFT JOIN content_releases cr ON c.url = cr.url
+  LEFT JOIN content_keps ck ON c.url = ck.url
+`
+```
+
+**Key Point:** All content (including deep dives) is loaded once, then filtered client-side.
+
+## Search Behavior
+
+Uses the global `searchQuery` from the store, filtered **client-side**:
+
+**Searchable fields:**
+- Title
+- Summary
+- Description
+- Labels
+- Linked KEP IDs
+- For deep dives: also feature gates
+
+## Filters
+
+### Content Type
+- All, Deep Dives, Blog Posts, Documentation, Videos, Sessions, Tutorials
+
+### Source
+- All Sources, Official K8s, Community
+
+### Topic Labels
+- Tag cloud with counts
+- Click to filter by single label
+- Shift+click to add/remove labels (multi-select)
+- Autocomplete search for labels
+
+### Sort Options
+- Newest (past content first, newest to oldest)
+- Oldest (past content first, oldest to newest)
+- Upcoming (future content first, then past)
+
+## Features
+
+- **Deep dive cards**: Special rendering with status badge (WIP/Published), read time
+- **Expandable cards**: Click card to show full description and linked items
+- **Label filtering**: Click labels on cards to filter
+- **KEP links**: Linked KEPs link to GitHub enhancements repo
+- **Release links**: Shows which releases content is related to
+
+## State Management
+
+```typescript
+// explorerStore.ts (URL-synced via learnUrlState)
+{
+  activeSection: 'learn',
+  searchQuery: '',
+  learnUrlState: {
+    contentType?: string,
+    sourceFilter?: string,
+    sort?: string,
+    labels?: string[],
+    expanded?: string,
+    deepDive?: string,      // Deep dive ID when viewing
+    deepDiveSection?: string // Section anchor
+  }
+}
+```
+
+## Data Tables Used
+
+| Table | Purpose | Generated By |
+|-------|---------|--------------|
+| `content_links` | All curated content with metadata | `add-content`, `fetch-sched`, `fetch-youtube` |
+| `keps` | KEP paths for GitHub links | `build-release` |
+
+## Content Link Schema
+
+```typescript
+interface ContentLink {
+  url: string
+  title: string
+  content_type: 'blog' | 'documentation' | 'video' | 'tutorial' | 'reference' | 'announcement' | 'deep-dive'
+  source: string
+  is_official: boolean
+  published_date?: string
+  author?: string
+  summary?: string
+  description?: string
+  labels: string[]
+  attrs?: string  // JSON with deep-dive-specific fields
+  // Aggregated in query:
+  linked_releases: string[]
+  linked_keps: string[]
+}
+
+// Deep dive attrs schema
+interface DeepDiveAttrs {
+  deepDiveId: string
+  status: 'draft' | 'wip' | 'review' | 'published'
+  estimatedReadTime: number
+  relatedFeatureGates: string[]
+}
+```
+
+## TODO / Known Issues
+
+1. **No pagination**: All content loaded at once (currently ~200 items, may need pagination if grows)
+2. **Label taxonomy**: Labels are free-form, could benefit from normalization
+3. **Content freshness**: No automatic content discovery, all manually curated
+4. **Video thumbnails**: Could show YouTube thumbnails for video content
+5. **Mobile**: Sidebar filters collapse needed for small screens

@@ -1,0 +1,50 @@
+# Environment variables (secrets)
+.env
+.env.local
+.env.*.local
+
+# Cache (hidden, not version controlled)
+.cache/
+
+# External repositories (cloned for data extraction)
+data/repos/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# uv
+.uv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+test_parquet/
+
+# Build
+dist/
+build/
+
+# Generated parquet files (output goes to packages/web/public/data/parquet/)
+*.parquet
+
+# SQL utility files
+*.duckdb

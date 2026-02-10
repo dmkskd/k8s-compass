@@ -1,0 +1,8 @@
+# Shared visualization components for deep dives
+# - KepStatusBadge.tsx: Live KEP status display
+# - FeatureGateCard.tsx: Feature gate info card
+# - KubeletFlagCard.tsx: Kubelet flag display
+# - DecisionFlowchart.tsx: Interactive flowchart
+# - SequenceDiagram.tsx: Animated sequence diagram
+# - CodeBlock.tsx: Syntax-highlighted code
+# - InfoCallout.tsx: Callout boxes (tip, warning, note)

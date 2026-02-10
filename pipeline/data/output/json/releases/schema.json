@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kubernetes Release Notes Schema",
+  "description": "Structured release notes derived from KEPs and official release announcements",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Minor version (e.g., '1.34', '1.35')"
+    },
+    "codename": {
+      "type": "string",
+      "description": "Release codename (e.g., 'Of Wind & Will')"
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer" },
+        "stable": { "type": "integer" },
+        "beta": { "type": "integer" },
+        "alpha": { "type": "integer" }
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Major themes of this release (e.g., 'DRA', 'Security', 'Observability')"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kep": {
+            "type": "string",
+            "description": "KEP number (e.g., 'KEP-4381')"
+          },
+          "kepPath": {
+            "type": "string",
+            "description": "Path to KEP document in enhancements repo (e.g., 'sig-node/1287-in-place-update-pod-resources')"
+          },
+          "title": { "type": "string" },
+          "stage": {
+            "type": "string",
+            "enum": ["alpha", "beta", "stable"]
+          },
+          "sig": {
+            "type": "string",
+            "description": "Primary owning SIG"
+          },
+          "category": {
+            "type": "string",
+            "description": "Functional category for grouping"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of what the feature does"
+          },
+          "impact": {
+            "type": "string",
+            "description": "Why this matters to users"
+          },
+          "featureGate": {
+            "type": "string",
+            "description": "Feature gate name if applicable"
+          },
+          "affectedKinds": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "API kinds affected (e.g., ['Pod', 'ResourceClaim'])"
+          },
+          "affectedFields": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Specific fields added/changed"
+          },
+          "history": {
+            "type": "object",
+            "description": "Version history for this feature",
+            "properties": {
+              "alpha": { "type": "string" },
+              "beta": { "type": "string" },
+              "stable": { "type": "string" }
+            }
+          }
+        },
+        "required": ["kep", "title", "stage", "sig", "category", "description"]
+      }
+    },
+    "deprecations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" },
+          "reason": { "type": "string" },
+          "replacement": { "type": "string" },
+          "removalTarget": { "type": "string" }
+        }
+      }
+    },
+    "removals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["official", "blog", "video", "tutorial"]
+          }
+        }
+      }
+    }
+  },
+  "required": ["version", "releaseDate", "summary", "features"]
+}

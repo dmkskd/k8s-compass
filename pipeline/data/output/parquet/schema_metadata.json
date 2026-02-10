@@ -1,0 +1,1441 @@
+{
+  "tables": {
+    "api_groups": {
+      "description": "API groups per version (core, apps, networking.k8s.io, etc).",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "e.g. \"apps\", \"core\"",
+          "pk": true
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "e.g. \"Apps\", \"Core\""
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Group description"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "Hex color for UI"
+        }
+      ]
+    },
+    "kinds": {
+      "description": "Kubernetes resource types (Pod, Deployment, etc).",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "group_name",
+          "type": "string",
+          "description": "API group",
+          "fk": "api_groups.name"
+        },
+        {
+          "name": "api_version",
+          "type": "string",
+          "description": "e.g. \"v1\", \"v1beta1\""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "e.g. \"Pod\", \"Deployment\"",
+          "pk": true
+        },
+        {
+          "name": "singular_name",
+          "type": "string",
+          "description": "Lowercase singular"
+        },
+        {
+          "name": "plural_name",
+          "type": "string",
+          "description": "Lowercase plural"
+        },
+        {
+          "name": "scope",
+          "type": "string",
+          "description": "\"Namespaced\" or \"Cluster\""
+        },
+        {
+          "name": "short_names",
+          "type": "list<item: string>",
+          "description": "kubectl shortcuts [\"po\", \"deploy\"]"
+        },
+        {
+          "name": "categories",
+          "type": "list<item: string>",
+          "description": "[\"all\"]"
+        },
+        {
+          "name": "schema_ref",
+          "type": "string",
+          "description": "Path to schema (legacy)"
+        },
+        {
+          "name": "field_count",
+          "type": "int64",
+          "description": "Total fields in schema"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Kind description"
+        },
+        {
+          "name": "docs_url",
+          "type": "string",
+          "description": "kubernetes.io docs link"
+        },
+        {
+          "name": "schema_json",
+          "type": "string",
+          "description": "Full OpenAPI schema as JSON"
+        }
+      ]
+    },
+    "kinds_relationships": {
+      "description": "Kind-to-Kind relationships in the K8s API (owns, selects, references, mounts, configures).",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "source_kind",
+          "type": "string",
+          "description": "Source Kind",
+          "fk": "kinds.name"
+        },
+        {
+          "name": "source_group",
+          "type": "string",
+          "description": "Source group",
+          "fk": "kinds.group_name"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "owns/selects/references/mounts/configures"
+        },
+        {
+          "name": "target_kind",
+          "type": "string",
+          "description": "Target Kind name"
+        },
+        {
+          "name": "target_group",
+          "type": "string",
+          "description": "Target group name"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Relationship description"
+        },
+        {
+          "name": "field_path",
+          "type": "string",
+          "description": "e.g. \"spec.template\""
+        }
+      ]
+    },
+    "api_diffs": {
+      "description": "API schema changes between consecutive K8s versions.",
+      "columns": [
+        {
+          "name": "from_version",
+          "type": "string",
+          "description": "Starting version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "to_version",
+          "type": "string",
+          "description": "Ending version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "change_type",
+          "type": "string",
+          "description": "kind_added/kind_removed/field_added/field_removed"
+        },
+        {
+          "name": "group_name",
+          "type": "string",
+          "description": "Affected group"
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "Affected Kind"
+        },
+        {
+          "name": "field_path",
+          "type": "string",
+          "description": "Affected field path (for field changes)"
+        },
+        {
+          "name": "old_value",
+          "type": "string",
+          "description": "Previous value (if applicable)"
+        },
+        {
+          "name": "new_value",
+          "type": "string",
+          "description": "New value (if applicable)"
+        }
+      ]
+    },
+    "releases": {
+      "description": "K8s release metadata including version info, codename, and feature counts.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "e.g. \"1.35\"",
+          "pk": true
+        },
+        {
+          "name": "release_date",
+          "type": "string",
+          "description": "ISO date"
+        },
+        {
+          "name": "is_latest",
+          "type": "bool",
+          "description": "True for newest version"
+        },
+        {
+          "name": "codename",
+          "type": "string",
+          "description": "e.g. \"Octarine\""
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Release description"
+        },
+        {
+          "name": "total_features",
+          "type": "int64",
+          "description": "Total feature count"
+        },
+        {
+          "name": "stable_features",
+          "type": "int64",
+          "description": "Stable feature count"
+        },
+        {
+          "name": "beta_features",
+          "type": "int64",
+          "description": "Beta feature count"
+        },
+        {
+          "name": "alpha_features",
+          "type": "int64",
+          "description": "Alpha feature count"
+        },
+        {
+          "name": "themes",
+          "type": "list<item: string>",
+          "description": "[\"DRA\", \"Security\"]"
+        }
+      ]
+    },
+    "keps": {
+      "description": "Master KEP table - one row per KEP (Kubernetes Enhancement Proposal).",
+      "columns": [
+        {
+          "name": "kep",
+          "type": "string",
+          "description": "e.g. \"KEP-1287\"",
+          "pk": true
+        },
+        {
+          "name": "kep_path",
+          "type": "string",
+          "description": "GitHub path (e.g. \"sig-node/1287-in-place-update-pod-resources\")"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "KEP title"
+        },
+        {
+          "name": "sig",
+          "type": "string",
+          "description": "Owning SIG (e.g. \"Node\", \"Apps\")"
+        },
+        {
+          "name": "feature_gate",
+          "type": "string",
+          "description": "Feature gate name (if any)"
+        },
+        {
+          "name": "labels",
+          "type": "list<item: string>",
+          "description": "Topic labels (e.g., [\"storage\", \"csi\", \"security\"])"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "KEP description/summary"
+        },
+        {
+          "name": "impact",
+          "type": "string",
+          "description": "How this feature affects users/operators"
+        },
+        {
+          "name": "affected_kinds",
+          "type": "list<item: string>",
+          "description": "Affected K8s Kinds"
+        },
+        {
+          "name": "affected_fields",
+          "type": "list<item: string>",
+          "description": "Affected API fields"
+        },
+        {
+          "name": "history_alpha",
+          "type": "string",
+          "description": "Version when alpha"
+        },
+        {
+          "name": "history_beta",
+          "type": "string",
+          "description": "Version when beta"
+        },
+        {
+          "name": "history_stable",
+          "type": "string",
+          "description": "Version when stable"
+        }
+      ]
+    },
+    "features": {
+      "description": "KEP graduations per release (join table between releases and keps).",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version (e.g. \"1.35\")",
+          "pk": true,
+          "fk": "releases.version"
+        },
+        {
+          "name": "kep",
+          "type": "string",
+          "description": "KEP identifier (e.g. \"KEP-1287\")",
+          "pk": true,
+          "fk": "keps.kep"
+        },
+        {
+          "name": "stage",
+          "type": "string",
+          "description": "alpha/beta/stable"
+        }
+      ]
+    },
+    "deprecations": {
+      "description": "Deprecation notices per release.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "item",
+          "type": "string",
+          "description": "Deprecated item"
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "Deprecation reason"
+        },
+        {
+          "name": "replacement",
+          "type": "string",
+          "description": "Suggested replacement"
+        },
+        {
+          "name": "removal_target",
+          "type": "string",
+          "description": "Target removal version"
+        }
+      ]
+    },
+    "release_changes": {
+      "description": "Raw changes from release-notes.json, grouped by kind.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "Change category (api-change, feature, bug, etc.)"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Change description"
+        },
+        {
+          "name": "pr_number",
+          "type": "int64",
+          "description": "Pull request number"
+        },
+        {
+          "name": "pr_url",
+          "type": "string",
+          "description": "Pull request URL"
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "description": "PR author"
+        },
+        {
+          "name": "sigs",
+          "type": "list<item: string>",
+          "description": "Related SIGs"
+        },
+        {
+          "name": "kep_links",
+          "type": "list<item: string>",
+          "description": "Related KEP links"
+        },
+        {
+          "name": "enrichment_problem",
+          "type": "string",
+          "description": "LLM: What was the problem"
+        },
+        {
+          "name": "enrichment_affected",
+          "type": "string",
+          "description": "LLM: Who was affected"
+        },
+        {
+          "name": "enrichment_fix",
+          "type": "string",
+          "description": "LLM: What the fix does"
+        },
+        {
+          "name": "enrichment_impact",
+          "type": "string",
+          "description": "LLM: Why it matters"
+        },
+        {
+          "name": "enrichment_category",
+          "type": "string",
+          "description": "LLM: bug-fix, performance, etc."
+        },
+        {
+          "name": "enrichment_severity",
+          "type": "string",
+          "description": "LLM: low/medium/high/critical"
+        },
+        {
+          "name": "enrichment_components",
+          "type": "list<item: string>",
+          "description": "LLM: Affected K8s components"
+        },
+        {
+          "name": "enrichment_labels",
+          "type": "list<item: string>",
+          "description": "LLM: Topic labels"
+        }
+      ]
+    },
+    "action_required": {
+      "description": "Critical upgrade notes from CHANGELOG that require immediate attention.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Upgrade note content"
+        },
+        {
+          "name": "pr_number",
+          "type": "int64",
+          "description": "Pull request number"
+        },
+        {
+          "name": "pr_url",
+          "type": "string",
+          "description": "Pull request URL"
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "description": "PR author"
+        },
+        {
+          "name": "sigs",
+          "type": "list<item: string>",
+          "description": "Related SIGs"
+        }
+      ]
+    },
+    "security_cves": {
+      "description": "Security vulnerabilities (CVEs) from CHANGELOG.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "cve",
+          "type": "string",
+          "description": "CVE identifier (e.g. CVE-2024-1234)"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "CVE title"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "CVE description"
+        },
+        {
+          "name": "affected_versions",
+          "type": "list<item: string>",
+          "description": "Affected K8s versions"
+        },
+        {
+          "name": "fixed_versions",
+          "type": "list<item: string>",
+          "description": "Fixed K8s versions"
+        },
+        {
+          "name": "affected_components",
+          "type": "list<item: string>",
+          "description": "Affected components"
+        },
+        {
+          "name": "patch_version",
+          "type": "string",
+          "description": "Patch version that fixed it"
+        }
+      ]
+    },
+    "patch_releases": {
+      "description": "Patch releases within a minor version from CHANGELOG.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version (e.g. 1.35)",
+          "fk": "releases.version"
+        },
+        {
+          "name": "patch_version",
+          "type": "string",
+          "description": "Full patch version (e.g. 1.35.1)",
+          "pk": true
+        },
+        {
+          "name": "changelog_since",
+          "type": "string",
+          "description": "Previous version"
+        },
+        {
+          "name": "security_fixes_count",
+          "type": "int64",
+          "description": "Number of security fixes"
+        },
+        {
+          "name": "changes_count",
+          "type": "int64",
+          "description": "Total number of changes"
+        }
+      ]
+    },
+    "patch_release_changes": {
+      "description": "Individual changes within patch releases.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s minor version (e.g. 1.35)",
+          "fk": "releases.version"
+        },
+        {
+          "name": "patch_version",
+          "type": "string",
+          "description": "Full patch version (e.g. v1.35.1)",
+          "fk": "patch_releases.patch_version"
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "Change category (feature, bugOrRegression, etc.)"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Change description"
+        },
+        {
+          "name": "pr_number",
+          "type": "int64",
+          "description": "Pull request number"
+        },
+        {
+          "name": "pr_url",
+          "type": "string",
+          "description": "Pull request URL"
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "description": "PR author"
+        },
+        {
+          "name": "sigs",
+          "type": "list<item: string>",
+          "description": "Related SIGs"
+        },
+        {
+          "name": "enrichment_problem",
+          "type": "string",
+          "description": "LLM: What was the problem"
+        },
+        {
+          "name": "enrichment_affected",
+          "type": "string",
+          "description": "LLM: Who was affected"
+        },
+        {
+          "name": "enrichment_fix",
+          "type": "string",
+          "description": "LLM: What the fix does"
+        },
+        {
+          "name": "enrichment_impact",
+          "type": "string",
+          "description": "LLM: Why it matters"
+        },
+        {
+          "name": "enrichment_category",
+          "type": "string",
+          "description": "LLM: bug-fix, performance, etc."
+        },
+        {
+          "name": "enrichment_severity",
+          "type": "string",
+          "description": "LLM: low/medium/high/critical"
+        },
+        {
+          "name": "enrichment_components",
+          "type": "list<item: string>",
+          "description": "LLM: Affected K8s components"
+        },
+        {
+          "name": "enrichment_labels",
+          "type": "list<item: string>",
+          "description": "LLM: Topic labels"
+        }
+      ]
+    },
+    "patch_security_fixes": {
+      "description": "Security fixes within patch releases.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s minor version (e.g. 1.35)",
+          "fk": "releases.version"
+        },
+        {
+          "name": "patch_version",
+          "type": "string",
+          "description": "Full patch version (e.g. v1.35.1)",
+          "fk": "patch_releases.patch_version"
+        },
+        {
+          "name": "cve",
+          "type": "string",
+          "description": "CVE identifier"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "CVE title"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "CVE description"
+        }
+      ]
+    },
+    "field_kep_links": {
+      "description": "Automatically inferred links between new fields and their originating KEPs.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version where field was added",
+          "fk": "releases.version"
+        },
+        {
+          "name": "field_path",
+          "type": "string",
+          "description": "Field path (e.g. \"spec.workloadRef\")"
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "Kind the field belongs to"
+        },
+        {
+          "name": "group_name",
+          "type": "string",
+          "description": "API group"
+        },
+        {
+          "name": "kep",
+          "type": "string",
+          "description": "KEP identifier (e.g. \"KEP-4671\")",
+          "fk": "keps.kep"
+        },
+        {
+          "name": "kep_title",
+          "type": "string",
+          "description": "KEP title"
+        },
+        {
+          "name": "kep_path",
+          "type": "string",
+          "description": "GitHub path to KEP"
+        },
+        {
+          "name": "confidence",
+          "type": "double",
+          "description": "Match confidence (0.0-1.0)"
+        },
+        {
+          "name": "match_reason",
+          "type": "string",
+          "description": "Why this match was made"
+        },
+        {
+          "name": "is_canonical",
+          "type": "bool",
+          "description": "True if original definition, false if inherited"
+        }
+      ]
+    },
+    "content_links": {
+      "description": "External content (blog posts, documentation, videos, etc.) linked to releases, KEPs, Kinds, and fields.",
+      "columns": [
+        {
+          "name": "url",
+          "type": "string",
+          "description": "Content URL"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Content title"
+        },
+        {
+          "name": "content_type",
+          "type": "string",
+          "description": "blog, documentation, video, tutorial, announcement, reference, deep-dive"
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Source domain (kubernetes.io, medium.com, youtube.com)"
+        },
+        {
+          "name": "is_official",
+          "type": "bool",
+          "description": "True if from official K8s sources"
+        },
+        {
+          "name": "published_date",
+          "type": "string",
+          "description": "ISO date when published (optional)"
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "description": "Author name (optional)"
+        },
+        {
+          "name": "summary",
+          "type": "string",
+          "description": "1-liner description of the content"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "2-3 sentence deeper explanation"
+        },
+        {
+          "name": "labels",
+          "type": "list<item: string>",
+          "description": "Topic labels for cross-referencing"
+        },
+        {
+          "name": "attrs",
+          "type": "string",
+          "description": "JSON blob for source-specific extras"
+        },
+        {
+          "name": "target_type",
+          "type": "string",
+          "description": "release, kep, kind, or field"
+        },
+        {
+          "name": "target_id",
+          "type": "string",
+          "description": "Version, KEP ID, Kind name, or field path"
+        },
+        {
+          "name": "target_group",
+          "type": "string",
+          "description": "For kind: API group. For field: \"Kind@group\" format"
+        },
+        {
+          "name": "target_version",
+          "type": "string",
+          "description": "K8s version context (optional)"
+        },
+        {
+          "name": "link_confidence",
+          "type": "double",
+          "description": "LLM confidence score for KEP links (0.0-1.0)"
+        },
+        {
+          "name": "link_reason",
+          "type": "string",
+          "description": "LLM explanation for why KEP was linked"
+        }
+      ]
+    },
+    "components": {
+      "description": "Kubernetes control plane and node components.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "e.g. \"kube-apiserver\", \"kubelet\"",
+          "pk": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "control-plane, node, addon, runtime"
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "e.g. \"API Server\", \"Kubelet\""
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Component description"
+        },
+        {
+          "name": "docs_url",
+          "type": "string",
+          "description": "Official documentation URL"
+        },
+        {
+          "name": "related_keps",
+          "type": "list<item: string>",
+          "description": "Related KEP identifiers"
+        },
+        {
+          "name": "controllers",
+          "type": "list<item: string>",
+          "description": "Sub-controllers (for controller-manager)"
+        }
+      ]
+    },
+    "component_flags": {
+      "description": "CLI flags and configuration options for K8s components.",
+      "columns": [
+        {
+          "name": "component_id",
+          "type": "string",
+          "description": "Component identifier",
+          "fk": "components.id"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Flag name (e.g. \"--cpu-manager-policy\")",
+          "pk": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "string, bool, int, duration"
+        },
+        {
+          "name": "default_value",
+          "type": "string",
+          "description": "Default value"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Flag description"
+        },
+        {
+          "name": "introduced_in",
+          "type": "string",
+          "description": "K8s version when introduced"
+        },
+        {
+          "name": "deprecated_in",
+          "type": "string",
+          "description": "K8s version when deprecated"
+        },
+        {
+          "name": "removed_in",
+          "type": "string",
+          "description": "K8s version when removed"
+        },
+        {
+          "name": "values",
+          "type": "list<item: string>",
+          "description": "Allowed values (for enums)"
+        },
+        {
+          "name": "related_keps",
+          "type": "list<item: string>",
+          "description": "Related KEP identifiers"
+        },
+        {
+          "name": "related_feature_gates",
+          "type": "list<item: string>",
+          "description": "Related feature gate names"
+        }
+      ]
+    },
+    "providers": {
+      "description": "Cloud provider metadata for Kubernetes distributions.",
+      "columns": [
+        {
+          "name": "provider_id",
+          "type": "string",
+          "description": "e.g. \"eks\", \"gke\", \"aks\", \"openshift\"",
+          "pk": true
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "e.g. \"Amazon EKS\""
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "Hex color for UI"
+        },
+        {
+          "name": "docs_url",
+          "type": "string",
+          "description": "Provider main documentation URL"
+        },
+        {
+          "name": "version_docs_url",
+          "type": "string",
+          "description": "URL explaining version lifecycle/support model"
+        },
+        {
+          "name": "versioning_scheme",
+          "type": "string",
+          "description": "\"k8s\" (direct) or \"custom\" (e.g., OpenShift 4.x)"
+        },
+        {
+          "name": "support_model",
+          "type": "string",
+          "description": "e.g. \"standard+extended\", \"standard-only\", \"lts\""
+        },
+        {
+          "name": "standard_support_months",
+          "type": "int64",
+          "description": "Months of standard support (e.g., 14 for EKS)"
+        },
+        {
+          "name": "extended_support_months",
+          "type": "int64",
+          "description": "Months of extended support (0 if none)"
+        }
+      ]
+    },
+    "provider_versions": {
+      "description": "K8s version support per cloud provider with release dates and support periods.",
+      "columns": [
+        {
+          "name": "provider_id",
+          "type": "string",
+          "description": "Provider identifier",
+          "fk": "providers.provider_id"
+        },
+        {
+          "name": "k8s_version",
+          "type": "string",
+          "description": "Normalized K8s version (e.g. \"1.34\")",
+          "fk": "releases.version"
+        },
+        {
+          "name": "provider_version",
+          "type": "string",
+          "description": "Provider-specific version (e.g. \"1.34\" or \"4.20\" for OpenShift)"
+        },
+        {
+          "name": "upstream_release_date",
+          "type": "string",
+          "description": "When upstream K8s released this version"
+        },
+        {
+          "name": "provider_release_date",
+          "type": "string",
+          "description": "When provider made this version available"
+        },
+        {
+          "name": "eol_standard_date",
+          "type": "string",
+          "description": "End of standard support"
+        },
+        {
+          "name": "eol_extended_date",
+          "type": "string",
+          "description": "End of extended support (if applicable)"
+        },
+        {
+          "name": "days_to_availability",
+          "type": "int64",
+          "description": "Days from upstream release to provider availability"
+        },
+        {
+          "name": "standard_support_days",
+          "type": "int64",
+          "description": "Days of standard support"
+        },
+        {
+          "name": "extended_support_days",
+          "type": "int64",
+          "description": "Days of extended support (0 if none)"
+        },
+        {
+          "name": "total_support_days",
+          "type": "int64",
+          "description": "Total days of support (standard + extended)"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "\"supported\", \"extended\", or \"eol\""
+        },
+        {
+          "name": "has_extended_support",
+          "type": "bool",
+          "description": "True if extended support is available for this version"
+        },
+        {
+          "name": "latest_patch",
+          "type": "string",
+          "description": "Latest patch version (e.g. \"1.34-eks-9\")"
+        },
+        {
+          "name": "latest_patch_date",
+          "type": "string",
+          "description": "Date of latest patch release"
+        }
+      ]
+    },
+    "kubectl_commands": {
+      "description": "kubectl commands per K8s version.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Command name (e.g. \"kubectl apply\")",
+          "pk": true
+        },
+        {
+          "name": "synopsis",
+          "type": "string",
+          "description": "Brief description of the command"
+        },
+        {
+          "name": "usage",
+          "type": "string",
+          "description": "Usage pattern"
+        },
+        {
+          "name": "subcommands",
+          "type": "list<item: string>",
+          "description": "List of subcommand names"
+        }
+      ]
+    },
+    "kubectl_options": {
+      "description": "kubectl command options/flags per K8s version.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "command",
+          "type": "string",
+          "description": "Parent command name",
+          "fk": "kubectl_commands.name"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Option name (e.g. \"--filename\")",
+          "pk": true
+        },
+        {
+          "name": "short",
+          "type": "string",
+          "description": "Short flag (e.g. \"-f\")"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "Option type (string, bool, int, etc.)"
+        },
+        {
+          "name": "default_value",
+          "type": "string",
+          "description": "Default value"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Option description"
+        }
+      ]
+    },
+    "kubectl_examples": {
+      "description": "kubectl command examples per K8s version.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "command",
+          "type": "string",
+          "description": "Parent command name",
+          "fk": "kubectl_commands.name"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Example description"
+        },
+        {
+          "name": "example",
+          "type": "string",
+          "description": "Example command"
+        }
+      ]
+    },
+    "feature_gates": {
+      "description": "Feature gates per K8s version with stage and default value.",
+      "columns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "K8s version",
+          "fk": "releases.version"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Feature gate name (e.g. DynamicResourceAllocation)",
+          "pk": true
+        },
+        {
+          "name": "stage",
+          "type": "string",
+          "description": "alpha, beta, stable, or deprecated"
+        },
+        {
+          "name": "default_value",
+          "type": "bool",
+          "description": "Default enabled/disabled at this version"
+        },
+        {
+          "name": "lock_to_default",
+          "type": "bool",
+          "description": "True if locked to default (cannot be changed)"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Feature gate description from docs"
+        },
+        {
+          "name": "kep",
+          "type": "string",
+          "description": "Linked KEP identifier (e.g. KEP-4381)",
+          "fk": "keps.kep"
+        },
+        {
+          "name": "kep_title",
+          "type": "string",
+          "description": "Linked KEP title"
+        },
+        {
+          "name": "kep_path",
+          "type": "string",
+          "description": "Linked KEP path in enhancements repo"
+        },
+        {
+          "name": "version_history_json",
+          "type": "string",
+          "description": "JSON array of version history entries"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "from": "api_groups",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kinds",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kinds",
+      "fromColumn": "group_name",
+      "to": "api_groups",
+      "toColumn": "name"
+    },
+    {
+      "from": "kinds_relationships",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kinds_relationships",
+      "fromColumn": "source_kind",
+      "to": "kinds",
+      "toColumn": "name"
+    },
+    {
+      "from": "kinds_relationships",
+      "fromColumn": "source_group",
+      "to": "kinds",
+      "toColumn": "group_name"
+    },
+    {
+      "from": "api_diffs",
+      "fromColumn": "from_version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "api_diffs",
+      "fromColumn": "to_version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "features",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "features",
+      "fromColumn": "kep",
+      "to": "keps",
+      "toColumn": "kep"
+    },
+    {
+      "from": "deprecations",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "release_changes",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "action_required",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "security_cves",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "patch_releases",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "patch_release_changes",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "patch_release_changes",
+      "fromColumn": "patch_version",
+      "to": "patch_releases",
+      "toColumn": "patch_version"
+    },
+    {
+      "from": "patch_security_fixes",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "patch_security_fixes",
+      "fromColumn": "patch_version",
+      "to": "patch_releases",
+      "toColumn": "patch_version"
+    },
+    {
+      "from": "field_kep_links",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "field_kep_links",
+      "fromColumn": "kep",
+      "to": "keps",
+      "toColumn": "kep"
+    },
+    {
+      "from": "component_flags",
+      "fromColumn": "component_id",
+      "to": "components",
+      "toColumn": "id"
+    },
+    {
+      "from": "provider_versions",
+      "fromColumn": "provider_id",
+      "to": "providers",
+      "toColumn": "provider_id"
+    },
+    {
+      "from": "provider_versions",
+      "fromColumn": "k8s_version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kubectl_commands",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kubectl_options",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kubectl_options",
+      "fromColumn": "command",
+      "to": "kubectl_commands",
+      "toColumn": "name"
+    },
+    {
+      "from": "kubectl_examples",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "kubectl_examples",
+      "fromColumn": "command",
+      "to": "kubectl_commands",
+      "toColumn": "name"
+    },
+    {
+      "from": "feature_gates",
+      "fromColumn": "version",
+      "to": "releases",
+      "toColumn": "version"
+    },
+    {
+      "from": "feature_gates",
+      "fromColumn": "kep",
+      "to": "keps",
+      "toColumn": "kep"
+    }
+  ]
+}

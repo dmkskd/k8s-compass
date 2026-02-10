@@ -1,0 +1,508 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* Main header - brand and tabs only */
+.header {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-6);
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--header-border);
+  gap: var(--space-6);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+/* Main Tabs (includes brand + API Explorer | Releases etc) */
+.mainTabs {
+  display: flex;
+  background: var(--tab-bg);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+  transition: background-color var(--transition-base);
+}
+
+.mainTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px 6px;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--tab-text);
+  background: transparent;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 42px;
+  width: 120px;
+  white-space: nowrap;
+}
+
+.mainTab:hover {
+  color: var(--tab-text-hover);
+  background: var(--tab-hover-bg);
+}
+
+.mainTab.active {
+  color: var(--tab-text-active);
+  background: var(--tab-active-bg);
+}
+
+.mainTab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: #6366f1;
+  border-radius: 1px;
+}
+
+/* Brand tab - special styling for helm + title */
+.brandTab {
+  flex-direction: row;
+  padding: 8px 16px 6px;
+  gap: 0;
+  width: 150px;
+}
+
+.brandTab .brandContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  color: var(--color-core);
+  filter: drop-shadow(0 0 8px var(--glow-core));
+  animation: logoSpin 60s linear infinite, logoPulse 5s ease-in-out infinite;
+  line-height: 1;
+}
+
+@keyframes logoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px var(--glow-core));
+    opacity: 1;
+  }
+  50% { 
+    filter: drop-shadow(0 0 12px var(--glow-core)) drop-shadow(0 0 18px rgba(99, 102, 241, 0.3));
+    opacity: 0.97;
+  }
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: inherit;
+  line-height: 1;
+}
+
+/* Icon-only tabs (like Home) */
+.mainTab.iconTab {
+  padding: 8px 14px;
+}
+
+.tabIcon {
+  font-size: 1.1rem;
+}
+
+/* Experimental badge on tabs */
+.experimentalBadge {
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(251, 191, 36, 0.2);
+  color: rgba(251, 191, 36, 0.9);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Alpha banner */
+.alphaBanner {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--tab-text-active);
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--tab-bg);
+  border: 1px solid var(--input-border);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: var(--shadow-glow);
+  animation: bannerGlow 3s ease-in-out infinite;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+@keyframes bannerGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 12px rgba(255, 255, 255, 0.15),
+      0 0 24px rgba(255, 255, 255, 0.08),
+      inset 0 0 8px rgba(255, 255, 255, 0.03);
+  }
+  50% {
+    box-shadow: 
+      0 0 16px rgba(255, 255, 255, 0.25),
+      0 0 32px rgba(255, 255, 255, 0.15),
+      inset 0 0 12px rgba(255, 255, 255, 0.05);
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Help button */
+.helpButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.helpButton:hover {
+  background: var(--tab-active-bg);
+  border-color: var(--color-core);
+  color: var(--color-core);
+  transform: scale(1.05);
+}
+
+/* Theme toggle button */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tab-bg);
+  border: 1px solid var(--input-border);
+  color: var(--tab-text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  background: var(--tab-hover-bg);
+  border-color: var(--color-batch);
+  color: var(--color-batch);
+  transform: scale(1.05);
+}
+
+/* GitHub link */
+.githubLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tab-bg);
+  border: 1px solid var(--input-border);
+  color: var(--tab-text);
+  transition: all 0.2s ease;
+}
+
+.githubLink:hover {
+  background: var(--tab-hover-bg);
+  border-color: var(--tab-text-hover);
+  color: var(--tab-text-active);
+  transform: scale(1.05);
+}
+
+/* Sub-navigation bar - always present, content varies */
+.subNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-6);
+  background: var(--subnav-bg);
+  border-bottom: 1px solid var(--subnav-border);
+  min-height: 48px;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.subNavLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.duckdbLogo {
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.duckdbLogoWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.duckdbLogoWrapper:hover .duckdbLogo {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(255, 241, 0, 0.6));
+}
+
+.duckdbTooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, rgba(180, 170, 0, 0.9), rgba(150, 130, 0, 0.9));
+  color: #1d1d1b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.duckdbTooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 9px;
+  border: 6px solid transparent;
+  border-bottom-color: rgba(180, 170, 0, 0.9);
+}
+
+.duckdbLogoWrapper:hover .duckdbTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.subNavHint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.subNavRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* View modes */
+.viewModes {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.viewMode {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.viewMode:hover:not(:disabled) {
+  background: var(--tab-hover-bg);
+  color: var(--text-secondary);
+}
+
+.viewMode.active {
+  background: var(--tab-active-bg);
+  color: var(--badge-text);
+}
+
+.viewMode:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.viewIcon {
+  font-size: 0.85rem;
+}
+
+.viewLabel {
+  font-weight: 500;
+}
+
+/* Search */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-dim);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 180px;
+  padding: 6px 12px;
+  padding-left: 32px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--color-star);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.searchInput::placeholder {
+  color: var(--color-dim);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-core);
+  background: var(--input-focus-bg);
+}
+
+.clearSearch {
+  position: absolute;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  color: var(--color-dim);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.clearSearch:hover {
+  background: var(--tab-hover-bg);
+  color: var(--color-star);
+}
+
+/* Version selectors */
+.versionSelector,
+.compareSelector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.versionLabel {
+  font-size: 0.7rem;
+  color: var(--color-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.versionSelect {
+  padding: 6px 28px 6px 10px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--color-star);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  transition: all var(--transition-fast);
+}
+
+.versionSelect:hover {
+  border-color: var(--tab-text-hover);
+}
+
+.versionSelect:focus {
+  outline: none;
+  border-color: var(--color-core);
+}
+
+@media (max-width: 1100px) {
+  .searchInput {
+    width: 140px;
+  }
+  
+  .viewLabel {
+    display: none;
+  }
+  
+  .alphaBanner {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: var(--space-2) var(--space-4);
+  }
+  
+  .subNav {
+    padding: var(--space-2) var(--space-4);
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .mainTab {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .search {
+    display: none;
+  }
+  
+  .compareSelector {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.32",
+  "codename": "Penelope",
+  "description": "Named for Penelope from The Odyssey, who wove for 10 years—each night removing parts of what she'd done during the day. Like her, each Kubernetes release adds new features and removes others, constantly improving. 'Penelope' marks the project's 10th anniversary, honoring all who've roamed the cloud-native seas. Custom resource field selectors and memory manager reach GA, while DRA structured parameters move to beta.",
+  "releaseDate": "2024-12-11",
+  "endOfLifeDate": "2026-02-28",
+  "summary": {
+    "total": 44,
+    "stable": 13,
+    "beta": 12,
+    "alpha": 19
+  },
+  "themes": ["Resource Management", "Storage", "Scheduling", "API"],
+  "features": []
+}

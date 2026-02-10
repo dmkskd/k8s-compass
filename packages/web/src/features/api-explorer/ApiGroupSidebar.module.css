@@ -1,0 +1,245 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100%;
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--divider);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideInLeft 0.3s ease;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section {
+  padding: var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--divider);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dim);
+  margin-bottom: var(--space-3);
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.groupItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 8px;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.groupItem:hover {
+  background: var(--tab-hover-bg);
+}
+
+.groupItem.active {
+  background: var(--tab-active-bg);
+}
+
+.groupItem.active .groupName {
+  color: var(--color-star);
+}
+
+.groupDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.groupName {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--color-starlight);
+  transition: color var(--transition-fast);
+}
+
+.groupCount {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-dim);
+  background: var(--subnav-bg);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.filterItem:hover {
+  background: var(--tab-hover-bg);
+}
+
+.checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-dim);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.checkbox:checked {
+  background: var(--color-core);
+  border-color: var(--color-core);
+}
+
+.checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: white;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-starlight);
+}
+
+.alphaBadge,
+.betaBadge,
+.deprecatedBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.alphaBadge {
+  background: rgba(249, 115, 22, 0.2);
+  color: var(--color-scheduling);
+}
+
+.betaBadge {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--color-autoscaling);
+}
+
+.deprecatedBadge {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--color-rbac);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.8rem;
+  color: var(--color-dim);
+}
+
+.legendLine {
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.legendLine[data-type="owns"] {
+  background: var(--color-apps);
+  box-shadow: 0 0 8px var(--color-apps);
+}
+
+.legendLine[data-type="selects"] {
+  background: var(--color-autoscaling);
+  box-shadow: 0 0 8px var(--color-autoscaling);
+}
+
+.legendLine[data-type="references"] {
+  background: var(--color-starlight);
+  opacity: 0.6;
+}
+
+.legendLine[data-type="mounts"] {
+  background: var(--color-networking);
+  box-shadow: 0 0 8px var(--color-networking);
+}
+
+.legendLine[data-type="configures"] {
+  background: var(--color-batch);
+  box-shadow: 0 0 8px var(--color-batch);
+}
+
+.footer {
+  margin-top: auto;
+  padding: var(--space-4);
+  border-top: 1px solid var(--divider);
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: var(--color-dim);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    height: 100%;
+  }
+}

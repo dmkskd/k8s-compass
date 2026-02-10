@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Gentle rotation animation for the sunburst - counter-clockwise */
+.container svg .sunburst-rotate {
+  animation: gentleSpin 180s linear infinite;
+}
+
+@keyframes gentleSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Pause animation on hover for better interaction */
+.container:hover svg .sunburst-rotate {
+  animation-play-state: paused;
+}
+
+.tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 100;
+  animation: fadeIn 0.1s ease;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tooltipName {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.tooltipType {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tooltipDetails {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--divider);
+  border-radius: 20px;
+  box-shadow: var(--shadow-panel);
+}
+
+.instructions p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}

@@ -1,0 +1,267 @@
+{
+  "categories": {
+    "pod-management": {
+      "description": "Enhancements related to pod lifecycle, scheduling, and management",
+      "related_terms": [
+        "pod",
+        "job",
+        "controller",
+        "scheduling",
+        "scheduler",
+        "statefulset",
+        "restart",
+        "terminating",
+        "creation"
+      ]
+    },
+    "api-evolution": {
+      "description": "Changes and improvements to Kubernetes APIs, including versioning and compatibility",
+      "related_terms": [
+        "api",
+        "openapi",
+        "spec",
+        "schema",
+        "crd",
+        "custom",
+        "config",
+        "apply",
+        "dynamic",
+        "semantics",
+        "conditions",
+        "enable"
+      ]
+    },
+    "node": {
+      "description": "Features affecting nodes, clusters, and kubelet behavior",
+      "related_terms": [
+        "node",
+        "cluster",
+        "kubelet",
+        "kube-apiserver",
+        "etcd",
+        "provider",
+        "cloud provider",
+        "capacity",
+        "environment",
+        "host",
+        "linux",
+        "windows",
+        "shutdown"
+      ]
+    },
+    "storage": {
+      "description": "Storage solutions, volume management, and CSI drivers",
+      "related_terms": [
+        "csi",
+        "volume",
+        "storage",
+        "pvc",
+        "csi driver",
+        "csi migration",
+        "driver",
+        "in-tree",
+        "data",
+        "block",
+        "migration",
+        "devices",
+        "device"
+      ]
+    },
+    "service": {
+      "description": "Service definitions, networking, and traffic management",
+      "related_terms": [
+        "service",
+        "endpoint",
+        "network",
+        "kube-proxy",
+        "load",
+        "traffic",
+        "dns",
+        "iptables",
+        "proxy",
+        "discovery",
+        "gateway",
+        "webhooks",
+        "admission"
+      ]
+    },
+    "resource": {
+      "description": "Resource management, quotas, and performance monitoring",
+      "related_terms": [
+        "resource",
+        "cpu",
+        "memory",
+        "metrics",
+        "performance",
+        "capacity",
+        "numa",
+        "logging",
+        "cache"
+      ]
+    },
+    "security": {
+      "description": "Authentication, authorization, and security enhancements",
+      "related_terms": [
+        "access",
+        "tokens",
+        "secrets",
+        "account",
+        "certificate",
+        "policies",
+        "gate",
+        "auth",
+        "admission",
+        "webhook",
+        "policy"
+      ]
+    },
+    "cli": {
+      "description": "Improvements to kubectl, kustomize, and other client tools",
+      "related_terms": [
+        "kubectl",
+        "kustomize",
+        "client",
+        "commands",
+        "apply"
+      ]
+    },
+    "scheduler": {
+      "description": "Scheduler improvements, topology-aware scheduling, and CPU management",
+      "related_terms": [
+        "scheduling",
+        "scheduler",
+        "topology",
+        "numa",
+        "affinity",
+        "cpu",
+        "cpu-manager",
+        "cpu-pinning",
+        "core",
+        "taints",
+        "tolerations",
+        "preemption",
+        "priority"
+      ]
+    },
+    "cloud": {
+      "description": "Cloud provider integrations and infrastructure management",
+      "related_terms": [
+        "cloud",
+        "cloud provider",
+        "aws",
+        "infrastructure"
+      ]
+    },
+    "container": {
+      "description": "Container runtime interfaces and implementations",
+      "related_terms": [
+        "container",
+        "cri",
+        "runtime",
+        "image"
+      ]
+    },
+    "application": {
+      "description": "Application deployment, scaling, and management features",
+      "related_terms": [
+        "application",
+        "deployment",
+        "jobs",
+        "statefulset",
+        "autoscaling",
+        "scaling"
+      ]
+    },
+    "configuration": {
+      "description": "Configuration management, secrets handling, and environment variables",
+      "related_terms": [
+        "configuration",
+        "config",
+        "secrets",
+        "account",
+        "environment",
+        "variables",
+        "configmaps"
+      ]
+    },
+    "monitoring": {
+      "description": "Observability features including monitoring and logging",
+      "related_terms": [
+        "metrics",
+        "logging",
+        "monitoring",
+        "events",
+        "instrumentation"
+      ]
+    },
+    "release": {
+      "description": "Features related to release processes and graduation stages",
+      "related_terms": [
+        "beta",
+        "alpha",
+        "graduate",
+        "releases",
+        "implementation",
+        "enhancement",
+        "features",
+        "deprecate",
+        "removal"
+      ]
+    },
+    "windows": {
+      "description": "Enhancements specifically for Windows node support",
+      "related_terms": [
+        "windows",
+        "host"
+      ]
+    },
+    "testing": {
+      "description": "Testing frameworks, reliability improvements, and stability enhancements",
+      "related_terms": [
+        "testing",
+        "reliability",
+        "stability",
+        "conditions",
+        "events",
+        "failure",
+        "resilience"
+      ]
+    },
+    "architecture": {
+      "description": "Fundamental architecture changes and design improvements",
+      "related_terms": [
+        "architecture",
+        "design",
+        "core",
+        "semantics",
+        "schema",
+        "principles",
+        "foundations"
+      ]
+    },
+    "events": {
+      "description": "Event handling and broader observability features",
+      "related_terms": [
+        "events",
+        "event",
+        "observability",
+        "monitoring",
+        "instrumentation",
+        "logging"
+      ]
+    },
+    "namespace": {
+      "description": "Namespace management and resource isolation features",
+      "related_terms": [
+        "namespace",
+        "isolation",
+        "multi-tenancy",
+        "access",
+        "security"
+      ]
+    }
+  },
+  "version": "2.0-refined",
+  "description": "Data-driven taxonomy built from 556 KEPs (refined)",
+  "source": "TF-IDF extraction + LLM refinement + LLM refinement"
+}

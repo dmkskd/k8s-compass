@@ -1,0 +1,125 @@
+/* Rotating Stat Card - 3-row vertical layout */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color, var(--divider)), transparent);
+  transition: opacity 0.3s;
+}
+
+.card.paused {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+/* Content - vertical 3-row layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  flex: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.content.active {
+  opacity: 1;
+}
+
+.content.exiting {
+  opacity: 0;
+}
+
+.content.entering {
+  opacity: 0;
+}
+
+.number {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--number-color, var(--text-primary));
+}
+
+.label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.sublabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Progress dots - vertical on right side */
+.dots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.4;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot:hover {
+  opacity: 0.6;
+}
+
+.activeDot {
+  background: var(--accent-color, #6366f1);
+  opacity: 1;
+  box-shadow: 0 0 6px var(--accent-color, #6366f1);
+}
+
+/* Theme colors - using darker shades that work on both light and dark backgrounds */
+.features { --accent-color: #6366f1; --number-color: #6366f1; }
+.stable { --accent-color: #10b981; --number-color: #059669; }
+.beta { --accent-color: #f59e0b; --number-color: #d97706; }
+.alpha { --accent-color: #8b5cf6; --number-color: #7c3aed; }
+.changes { --accent-color: #3b82f6; --number-color: #2563eb; }
+.bugs { --accent-color: #ef4444; --number-color: #dc2626; }
+.api { --accent-color: #ec4899; --number-color: #db2777; }
+.breaking { --accent-color: #dc2626; --number-color: #b91c1c; }
+.urgent { --accent-color: #ef4444; --number-color: #dc2626; }
+.security { --accent-color: #f59e0b; --number-color: #d97706; }
+.deprecations { --accent-color: #f97316; --number-color: #ea580c; }
+.other { --accent-color: #64748b; --number-color: #475569; }

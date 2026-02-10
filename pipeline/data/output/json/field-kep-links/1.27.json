@@ -1,0 +1,1286 @@
+{
+  "version": "1.27",
+  "summary": {
+    "totalFieldsAdded": 131,
+    "linkedFields": 103,
+    "unlinkedFields": 28,
+    "canonicalFields": 40
+  },
+  "links": [
+    {
+      "fieldPath": "status.containerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "webhooks[].matchConditions",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: AdmissionWebhookMatchConditions",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "webhooks[].matchConditions",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: AdmissionWebhookMatchConditions",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2227",
+      "kepTitle": "kubectl default container",
+      "kepPath": "sig-cli/2227-kubectl-default-container",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2227",
+      "kepTitle": "kubectl default container",
+      "kepPath": "sig-cli/2227-kubectl-default-container",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2227",
+      "kepTitle": "kubectl default container",
+      "kepPath": "sig-cli/2227-kubectl-default-container",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.auditAnnotations[].key",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.auditAnnotations[].valueExpression",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.matchConditions",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.matchConditions[].name",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.validationActions",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3805",
+      "kepTitle": "Kubectl Server-Side Apply by default",
+      "kepPath": "sig-cli/3805-ssa-default",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "webhooks[].matchConditions[].name",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "webhooks[].matchConditions[].name",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "status.conditions",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "kep": "KEP-3716",
+      "kepTitle": "Admission Webhook Match Conditions",
+      "kepPath": "sig-api-machinery/3716-admission-webhook-match-conditions",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'conditions' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'allocated' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'allocated' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'allocated' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3673",
+      "kepTitle": "Kubelet limit of Parallel Image Pulls",
+      "kepPath": "sig-node/3673-kubelet-parallel-image-pull-limit",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'limit' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.containers[].resizePolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].resizePolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2091",
+      "kepTitle": "Add support for AdminNetworkPolicy resources",
+      "kepPath": "sig-network/2091-admin-network-policy",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "webhooks[].matchConditions[].expression",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "webhooks[].matchConditions[].expression",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.resourceHandles",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.resourceHandles[].data",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.resourceHandles[].driverName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.resize",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.conditions[].type",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "spec.validations[].messageExpression",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.conditions[].lastTransitionTime",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "spec.matchConditions[].expression",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "spec.auditAnnotations",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.conditions[].observedGeneration",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.conditions[].status",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.conditions[].message",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.typeChecking.expressionWarnings[].warning",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.typeChecking.expressionWarnings[].fieldRef",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.typeChecking",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.conditions[].reason",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.observedGeneration",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "status.typeChecking.expressionWarnings",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].messageExpression",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io"
+    }
+  ]
+}

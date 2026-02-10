@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Release Stats Visualization Prototypes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: linear-gradient(180deg, #0a0a0f 0%, #0d0d15 50%, #12121a 100%);
+      color: white;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 { text-align: center; margin-bottom: 10px; color: #a5b4fc; }
+    .subtitle { text-align: center; color: rgba(255,255,255,0.5); margin-bottom: 30px; }
+    .prototypes { display: flex; flex-direction: column; gap: 40px; max-width: 1400px; margin: 0 auto; }
+    .prototype {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .prototype h2 {
+      font-size: 18px;
+      color: #c7d2fe;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .prototype-content {
+      height: 300px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    canvas { display: block; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Release Stats Visualization Prototypes</h1>
+  <p class="subtitle">K8s 1.33 - 64 Features, 287 Changes, 4 Urgent Notes, 2 CVEs, 8 Deprecations</p>
+  
+  <div class="prototypes">
+    <!-- Prototype 1: 3D Pillars -->
+    <div class="prototype">
+      <h2>🏛️ Option 1: 3D Glowing Pillars</h2>
+      <div class="prototype-content" id="pillars-container"></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background:#10b981"></div>Stable (18)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#f59e0b"></div>Beta (16)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#8b5cf6"></div>Alpha (24)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#3b82f6"></div>Bug Fixes (142)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ec4899"></div>API Changes (38)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ef4444"></div>Urgent (4)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#fbbf24"></div>Security (2)</div>
+      </div>
+    </div>
+
+    <!-- Prototype 2: Orbital -->
+    <div class="prototype">
+      <h2>🪐 Option 2: Orbital / Planet View</h2>
+      <div class="prototype-content" id="orbital-container"></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background:#6366f1"></div>Center = Release</div>
+        <div class="legend-item"><div class="legend-color" style="background:#10b981"></div>Features (inner orbit)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#3b82f6"></div>Changes (middle orbit)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ef4444"></div>Critical (outer orbit)</div>
+      </div>
+    </div>
+
+    <!-- Prototype 3: Constellation -->
+    <div class="prototype">
+      <h2>✨ Option 3: Constellation Clusters</h2>
+      <div class="prototype-content" id="constellation-container"></div>
+      <div class="legend">
+        <div class="legend-item">Each cluster = category, star count = items, brightness = importance</div>
+      </div>
+    </div>
+
+    <!-- Prototype 4: Radial Burst -->
+    <div class="prototype">
+      <h2>💫 Option 4: 3D Radial Burst</h2>
+      <div class="prototype-content" id="radial-container"></div>
+      <div class="legend">
+        <div class="legend-item">Segments sized by count, depth = subcategories</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample data
+    const data = {
+      features: { stable: 18, beta: 16, alpha: 24 },
+      changes: { features: 64, bugFixes: 142, apiChanges: 38, docs: 28, other: 15 },
+      urgent: 4,
+      security: 2,
+      deprecations: 8
+    };
+
+    const colors = {
+      stable: 0x10b981,
+      beta: 0xf59e0b,
+      alpha: 0x8b5cf6,
+      bugFixes: 0x3b82f6,
+      apiChanges: 0xec4899,
+      docs: 0x06b6d4,
+      other: 0x64748b,
+      urgent: 0xef4444,
+      security: 0xfbbf24,
+      deprecations: 0xf97316,
+      primary: 0x6366f1
+    };
+
+    // ============================================
+    // PROTOTYPE 1: 3D Glowing Pillars
+    // ============================================
+    function createPillars() {
+      const container = document.getElementById('pillars-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      camera.position.set(0, 8, 18);
+      camera.lookAt(0, 2, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      // Ambient light
+      scene.add(new THREE.AmbientLight(0x404040, 0.5));
+      
+      // Point lights for glow effect
+      const light1 = new THREE.PointLight(0x6366f1, 1, 50);
+      light1.position.set(5, 10, 5);
+      scene.add(light1);
+
+      const pillarsData = [
+        { label: 'Stable', value: 18, color: colors.stable, x: -6 },
+        { label: 'Beta', value: 16, color: colors.beta, x: -4 },
+        { label: 'Alpha', value: 24, color: colors.alpha, x: -2 },
+        { label: 'Bugs', value: 142, color: colors.bugFixes, x: 1 },
+        { label: 'API', value: 38, color: colors.apiChanges, x: 3 },
+        { label: 'Urgent', value: 4, color: colors.urgent, x: 5 },
+        { label: 'CVE', value: 2, color: colors.security, x: 7 },
+      ];
+
+      const maxVal = Math.max(...pillarsData.map(p => p.value));
+      const pillars = [];
+
+      pillarsData.forEach(p => {
+        const height = (p.value / maxVal) * 8 + 0.5;
+        const geometry = new THREE.CylinderGeometry(0.4, 0.5, height, 32);
+        const material = new THREE.MeshPhongMaterial({
+          color: p.color,
+          emissive: p.color,
+          emissiveIntensity: 0.3,
+          transparent: true,
+          opacity: 0.9
+        });
+        const pillar = new THREE.Mesh(geometry, material);
+        pillar.position.set(p.x, height / 2, 0);
+        scene.add(pillar);
+        pillars.push(pillar);
+
+        // Glow ring at base
+        const ringGeo = new THREE.RingGeometry(0.5, 0.8, 32);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: p.color,
+          transparent: true,
+          opacity: 0.4,
+          side: THREE.DoubleSide
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = -Math.PI / 2;
+        ring.position.set(p.x, 0.01, 0);
+        scene.add(ring);
+      });
+
+      // Grid floor
+      const gridHelper = new THREE.GridHelper(20, 20, 0x333366, 0x222244);
+      scene.add(gridHelper);
+
+      let angle = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        angle += 0.003;
+        camera.position.x = Math.sin(angle) * 18;
+        camera.position.z = Math.cos(angle) * 18;
+        camera.lookAt(0, 3, 0);
+        
+        pillars.forEach((p, i) => {
+          p.material.emissiveIntensity = 0.3 + Math.sin(Date.now() * 0.002 + i) * 0.1;
+        });
+        
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // ============================================
+    // PROTOTYPE 2: Orbital / Planet View
+    // ============================================
+    function createOrbital() {
+      const container = document.getElementById('orbital-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+      camera.position.set(0, 12, 20);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      scene.add(new THREE.AmbientLight(0x404040, 0.6));
+      const light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(0, 10, 10);
+      scene.add(light);
+
+      // Central release sphere
+      const centerGeo = new THREE.SphereGeometry(1.5, 32, 32);
+      const centerMat = new THREE.MeshPhongMaterial({
+        color: colors.primary,
+        emissive: colors.primary,
+        emissiveIntensity: 0.5
+      });
+      const center = new THREE.Mesh(centerGeo, centerMat);
+      scene.add(center);
+
+      // Glow around center
+      const glowGeo = new THREE.SphereGeometry(1.8, 32, 32);
+      const glowMat = new THREE.MeshBasicMaterial({
+        color: colors.primary,
+        transparent: true,
+        opacity: 0.2
+      });
+      const glow = new THREE.Mesh(glowGeo, glowMat);
+      scene.add(glow);
+
+      // Orbit rings
+      const orbits = [
+        { radius: 4, color: 0x10b981, opacity: 0.3 },
+        { radius: 7, color: 0x3b82f6, opacity: 0.2 },
+        { radius: 10, color: 0xef4444, opacity: 0.15 }
+      ];
+
+      orbits.forEach(o => {
+        const ringGeo = new THREE.RingGeometry(o.radius - 0.05, o.radius + 0.05, 64);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: o.color,
+          transparent: true,
+          opacity: o.opacity,
+          side: THREE.DoubleSide
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = -Math.PI / 2;
+        scene.add(ring);
+      });
+
+      // Orbiting spheres
+      const orbiters = [];
+      
+      // Inner orbit - Features
+      const featureData = [
+        { size: 0.5, color: colors.stable, angle: 0, speed: 0.008 },
+        { size: 0.45, color: colors.beta, angle: 2, speed: 0.008 },
+        { size: 0.55, color: colors.alpha, angle: 4, speed: 0.008 }
+      ];
+      featureData.forEach(f => {
+        const geo = new THREE.SphereGeometry(f.size, 16, 16);
+        const mat = new THREE.MeshPhongMaterial({ color: f.color, emissive: f.color, emissiveIntensity: 0.3 });
+        const sphere = new THREE.Mesh(geo, mat);
+        sphere.userData = { radius: 4, angle: f.angle, speed: f.speed };
+        scene.add(sphere);
+        orbiters.push(sphere);
+      });
+
+      // Middle orbit - Changes
+      const changeData = [
+        { size: 0.8, color: colors.bugFixes, angle: 0, speed: 0.005 },
+        { size: 0.4, color: colors.apiChanges, angle: 1.5, speed: 0.005 },
+        { size: 0.3, color: colors.docs, angle: 3, speed: 0.005 },
+        { size: 0.25, color: colors.other, angle: 4.5, speed: 0.005 }
+      ];
+      changeData.forEach(c => {
+        const geo = new THREE.SphereGeometry(c.size, 16, 16);
+        const mat = new THREE.MeshPhongMaterial({ color: c.color, emissive: c.color, emissiveIntensity: 0.2 });
+        const sphere = new THREE.Mesh(geo, mat);
+        sphere.userData = { radius: 7, angle: c.angle, speed: c.speed };
+        scene.add(sphere);
+        orbiters.push(sphere);
+      });
+
+      // Outer orbit - Critical
+      const criticalData = [
+        { size: 0.35, color: colors.urgent, angle: 0, speed: 0.003 },
+        { size: 0.25, color: colors.security, angle: 2, speed: 0.003 },
+        { size: 0.4, color: colors.deprecations, angle: 4, speed: 0.003 }
+      ];
+      criticalData.forEach(c => {
+        const geo = new THREE.SphereGeometry(c.size, 16, 16);
+        const mat = new THREE.MeshPhongMaterial({ color: c.color, emissive: c.color, emissiveIntensity: 0.4 });
+        const sphere = new THREE.Mesh(geo, mat);
+        sphere.userData = { radius: 10, angle: c.angle, speed: c.speed };
+        scene.add(sphere);
+        orbiters.push(sphere);
+      });
+
+      function animate() {
+        requestAnimationFrame(animate);
+        
+        center.rotation.y += 0.005;
+        glow.scale.setScalar(1 + Math.sin(Date.now() * 0.002) * 0.05);
+        
+        orbiters.forEach(o => {
+          o.userData.angle += o.userData.speed;
+          o.position.x = Math.cos(o.userData.angle) * o.userData.radius;
+          o.position.z = Math.sin(o.userData.angle) * o.userData.radius;
+        });
+        
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // ============================================
+    // PROTOTYPE 3: Constellation Clusters
+    // ============================================
+    function createConstellation() {
+      const container = document.getElementById('constellation-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+      camera.position.set(0, 5, 25);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      // Clusters configuration
+      const clusters = [
+        { name: 'Features', count: 58, color: colors.primary, x: -8, y: 2, z: 0 },
+        { name: 'Bug Fixes', count: 142, color: colors.bugFixes, x: -3, y: -1, z: 2 },
+        { name: 'API Changes', count: 38, color: colors.apiChanges, x: 3, y: 1, z: -1 },
+        { name: 'Urgent', count: 4, color: colors.urgent, x: 8, y: 3, z: 1 },
+        { name: 'Security', count: 2, color: colors.security, x: 6, y: -2, z: 0 },
+        { name: 'Deprecations', count: 8, color: colors.deprecations, x: -5, y: -3, z: -2 }
+      ];
+
+      const allStars = [];
+
+      clusters.forEach(cluster => {
+        // Create stars for this cluster
+        const starCount = Math.min(cluster.count, 50); // Cap visual stars
+        const spread = Math.sqrt(cluster.count) * 0.3;
+        
+        for (let i = 0; i < starCount; i++) {
+          const size = 0.05 + Math.random() * 0.1;
+          const geo = new THREE.SphereGeometry(size, 8, 8);
+          const mat = new THREE.MeshBasicMaterial({
+            color: cluster.color,
+            transparent: true,
+            opacity: 0.6 + Math.random() * 0.4
+          });
+          const star = new THREE.Mesh(geo, mat);
+          
+          // Position within cluster
+          star.position.set(
+            cluster.x + (Math.random() - 0.5) * spread * 2,
+            cluster.y + (Math.random() - 0.5) * spread * 2,
+            cluster.z + (Math.random() - 0.5) * spread * 2
+          );
+          star.userData = { 
+            baseOpacity: mat.opacity,
+            phase: Math.random() * Math.PI * 2
+          };
+          scene.add(star);
+          allStars.push(star);
+        }
+
+        // Cluster center glow
+        const glowGeo = new THREE.SphereGeometry(spread * 0.8, 16, 16);
+        const glowMat = new THREE.MeshBasicMaterial({
+          color: cluster.color,
+          transparent: true,
+          opacity: 0.1
+        });
+        const glow = new THREE.Mesh(glowGeo, glowMat);
+        glow.position.set(cluster.x, cluster.y, cluster.z);
+        scene.add(glow);
+
+        // Connection lines between nearby stars
+        const positions = [];
+        for (let i = 0; i < Math.min(starCount, 20); i++) {
+          for (let j = i + 1; j < Math.min(starCount, 20); j++) {
+            if (Math.random() > 0.7) {
+              positions.push(
+                cluster.x + (Math.random() - 0.5) * spread,
+                cluster.y + (Math.random() - 0.5) * spread,
+                cluster.z + (Math.random() - 0.5) * spread,
+                cluster.x + (Math.random() - 0.5) * spread,
+                cluster.y + (Math.random() - 0.5) * spread,
+                cluster.z + (Math.random() - 0.5) * spread
+              );
+            }
+          }
+        }
+        if (positions.length > 0) {
+          const lineGeo = new THREE.BufferGeometry();
+          lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+          const lineMat = new THREE.LineBasicMaterial({
+            color: cluster.color,
+            transparent: true,
+            opacity: 0.15
+          });
+          const lines = new THREE.LineSegments(lineGeo, lineMat);
+          scene.add(lines);
+        }
+      });
+
+      let time = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        time += 0.01;
+        
+        // Gentle camera movement
+        camera.position.x = Math.sin(time * 0.2) * 3;
+        camera.position.y = 5 + Math.sin(time * 0.3) * 2;
+        camera.lookAt(0, 0, 0);
+        
+        // Twinkle stars
+        allStars.forEach(star => {
+          const twinkle = Math.sin(time * 3 + star.userData.phase) * 0.3 + 0.7;
+          star.material.opacity = star.userData.baseOpacity * twinkle;
+        });
+        
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // ============================================
+    // PROTOTYPE 4: 3D Radial Burst
+    // ============================================
+    function createRadialBurst() {
+      const container = document.getElementById('radial-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+      camera.position.set(0, 15, 15);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      scene.add(new THREE.AmbientLight(0x404040, 0.5));
+      const light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(0, 20, 0);
+      scene.add(light);
+
+      // Data for radial segments
+      const segments = [
+        { label: 'Stable', value: 18, color: colors.stable },
+        { label: 'Beta', value: 16, color: colors.beta },
+        { label: 'Alpha', value: 24, color: colors.alpha },
+        { label: 'Bug Fixes', value: 142, color: colors.bugFixes },
+        { label: 'API Changes', value: 38, color: colors.apiChanges },
+        { label: 'Docs', value: 28, color: colors.docs },
+        { label: 'Urgent', value: 4, color: colors.urgent },
+        { label: 'Security', value: 2, color: colors.security },
+        { label: 'Deprecations', value: 8, color: colors.deprecations }
+      ];
+
+      const total = segments.reduce((sum, s) => sum + s.value, 0);
+      let currentAngle = 0;
+      const innerRadius = 2;
+      const outerRadius = 8;
+      const meshes = [];
+
+      segments.forEach((seg, i) => {
+        const angleSize = (seg.value / total) * Math.PI * 2;
+        const midAngle = currentAngle + angleSize / 2;
+        
+        // Create segment shape
+        const shape = new THREE.Shape();
+        const segments32 = Math.max(8, Math.floor(angleSize * 16));
+        
+        // Inner arc
+        for (let j = 0; j <= segments32; j++) {
+          const a = currentAngle + (j / segments32) * angleSize;
+          const x = Math.cos(a) * innerRadius;
+          const y = Math.sin(a) * innerRadius;
+          if (j === 0) shape.moveTo(x, y);
+          else shape.lineTo(x, y);
+        }
+        
+        // Outer arc (reverse)
+        for (let j = segments32; j >= 0; j--) {
+          const a = currentAngle + (j / segments32) * angleSize;
+          const x = Math.cos(a) * outerRadius;
+          const y = Math.sin(a) * outerRadius;
+          shape.lineTo(x, y);
+        }
+        shape.closePath();
+
+        // Extrude to 3D
+        const height = 0.5 + (seg.value / 142) * 2; // Height based on value
+        const extrudeSettings = { depth: height, bevelEnabled: false };
+        const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        
+        const material = new THREE.MeshPhongMaterial({
+          color: seg.color,
+          emissive: seg.color,
+          emissiveIntensity: 0.2,
+          transparent: true,
+          opacity: 0.85
+        });
+        
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.userData = { baseHeight: height, phase: i * 0.5 };
+        scene.add(mesh);
+        meshes.push(mesh);
+
+        currentAngle += angleSize;
+      });
+
+      // Center sphere
+      const centerGeo = new THREE.SphereGeometry(1.8, 32, 32);
+      const centerMat = new THREE.MeshPhongMaterial({
+        color: colors.primary,
+        emissive: colors.primary,
+        emissiveIntensity: 0.4
+      });
+      const center = new THREE.Mesh(centerGeo, centerMat);
+      center.position.y = 1;
+      scene.add(center);
+
+      let time = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        time += 0.01;
+        
+        // Rotate the whole thing slowly
+        scene.rotation.y += 0.003;
+        
+        // Pulse center
+        center.scale.setScalar(1 + Math.sin(time * 2) * 0.05);
+        
+        // Subtle segment animation
+        meshes.forEach((mesh, i) => {
+          mesh.material.emissiveIntensity = 0.2 + Math.sin(time * 2 + mesh.userData.phase) * 0.1;
+        });
+        
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // Initialize all prototypes
+    window.addEventListener('load', () => {
+      createPillars();
+      createOrbital();
+      createConstellation();
+      createRadialBurst();
+    });
+  </script>
+</body>
+</html>

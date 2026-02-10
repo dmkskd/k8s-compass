@@ -1,0 +1,2640 @@
+{
+  "version": "1.29",
+  "summary": {
+    "totalFieldsAdded": 271,
+    "linkedFields": 212,
+    "unlinkedFields": 59,
+    "canonicalFields": 58
+  },
+  "links": [
+    {
+      "fieldPath": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution[].podAffinityTerm.mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].matchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[].mismatchLabelKeys",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: MatchLabelKeysInPodAffinity",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeClaimTemplates[].spec.volumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeClaimTemplates[].status.modifyVolumeStatus",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeClaimTemplates[].status.modifyVolumeStatus.status",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.modifyVolumeStatus",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.modifyVolumeStatus.status",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.volumeAttributesClassName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.optional",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.signerName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.source.inlineVolumeSpec.volumeAttributesClassName",
+      "kind": "VolumeAttachment",
+      "group": "storage.k8s.io",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeAttributesClassName",
+      "kind": "PersistentVolume",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeClaimTemplates[].status.currentVolumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumeClaimTemplates[].status.modifyVolumeStatus.targetVolumeAttributesClassName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.currentVolumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.modifyVolumeStatus.targetVolumeAttributesClassName",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "kep": "KEP-3751",
+      "kepTitle": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "confidence": 0.8,
+      "matchReason": "strong text match (0.44); field name contains 'volume' from KEP title; field description matches KEP terms (3/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'cluster' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3257",
+      "kepTitle": "Cluster Trust Bundles",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.path",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-2485",
+      "kepTitle": "ReadWriteOncePod PersistentVolume AccessMode",
+      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode",
+      "confidence": 0.7,
+      "matchReason": "field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'match' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchLabels",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3633",
+      "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
+      "kepPath": "sig-scheduling/3633-matchlabelkeys-to-podaffinity",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'label' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.postStart.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.preStop.sleep",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3960",
+      "kepTitle": "Pod lifecycle sleep action",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'sleep' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "status.loadBalancer.ingress[].ipMode",
+      "kind": "Service",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].operator",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].key",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].clusterTrustBundle.labelSelector.matchExpressions[].values",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.preStop.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.postStart.sleep.seconds",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].optionalOldSelf",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io"
+    }
+  ]
+}

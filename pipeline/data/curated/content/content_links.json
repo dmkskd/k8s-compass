@@ -1,0 +1,4508 @@
+{
+  "content": [
+    {
+      "url": "https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/",
+      "title": "Kubernetes v1.34: Of Wind & Will (O' WaW)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-08-27",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.34 with 58 enhancements",
+      "description": "The 'Of Wind & Will' release brings DRA to GA, pod-level resources to beta, and volume expansion recovery to GA. Key features include decoupled taint manager, VolumeAttributesClass GA, and service account token integration for image pulls.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.34",
+        "dra",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2837"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1790"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3902"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3751"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4412"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4680"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5075"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1710"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2400"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2831"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3288"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3331"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3939"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3960"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4033"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4330"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4369"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4568"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4601"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4633"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4818"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5080"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5116"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-647"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3015"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3104"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4438"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/07/28/kubernetes-v1-34-sneak-peek/",
+      "title": "Kubernetes v1.34 Sneak Peek",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-07-28",
+      "author": "Release Team",
+      "summary": "Preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.34",
+      "description": "Covers upcoming features including DRA GA, pod-level resources beta, and volume expansion recovery. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.34",
+        "dra",
+        "pod-level-resources"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2837"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1790"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/",
+      "title": "Kubernetes v1.34: DRA has graduated to GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-01",
+      "summary": "Dynamic Resource Allocation reaches GA for managing specialized hardware like GPUs",
+      "description": "DRA provides a Kubernetes-native way to request, allocate, and share hardware resources across Pods. Introduces ResourceClaim, DeviceClass, ResourceClaimTemplate, and ResourceSlice APIs.",
+      "labels": [
+        "dra",
+        "gpu",
+        "hardware",
+        "resources",
+        "stable",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaim",
+          "targetGroup": "resource.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "DeviceClass",
+          "targetGroup": "resource.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/22/kubernetes-v1-34-pod-level-resources/",
+      "title": "Kubernetes v1.34: Pod Level Resources Graduated to Beta",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-22",
+      "summary": "Set resource requests and limits at the pod level instead of per-container",
+      "description": "Pod-level resource requests and limits allow administrators to set overarching boundaries for entire pods. Enabled by default in beta, supporting CPU, memory, and hugepages resources.",
+      "labels": [
+        "pod-level-resources",
+        "resources",
+        "cpu",
+        "memory",
+        "beta",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2837"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.resources",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/",
+      "title": "Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-19",
+      "summary": "Recover from failed volume expansion operations without manual intervention",
+      "description": "Volume expansion failure recovery reaches GA, allowing users to retry or rollback failed expansion operations. Improves storage reliability and reduces operational burden.",
+      "labels": [
+        "storage",
+        "volume-expansion",
+        "recovery",
+        "stable",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1790"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/15/kubernetes-v1-34-decoupled-taint-manager-is-now-stable/",
+      "title": "Kubernetes v1.34: Decoupled Taint Manager Is Now Stable",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-15",
+      "summary": "Taint-based eviction is now handled by a separate controller for better reliability",
+      "description": "The decoupled taint manager separates taint-based pod eviction from the node lifecycle controller. Improves scalability and reliability of node eviction handling.",
+      "labels": [
+        "taints",
+        "eviction",
+        "node",
+        "stable",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3902"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/",
+      "title": "Kubernetes v1.34: VolumeAttributesClass for Volume Modification GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-08",
+      "summary": "Modify volume attributes like IOPS and throughput without recreating volumes",
+      "description": "VolumeAttributesClass reaches GA, enabling dynamic modification of storage attributes. Users can change performance characteristics of existing volumes through the Kubernetes API.",
+      "labels": [
+        "storage",
+        "volume-attributes",
+        "iops",
+        "throughput",
+        "stable",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3751"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "VolumeAttributesClass",
+          "targetGroup": "storage.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolumeClaim",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/",
+      "title": "Kubernetes v1.34: Service Account Token Integration for Image Pulls Graduates to Beta",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-03",
+      "summary": "Use service account tokens to authenticate image pulls from registries",
+      "description": "Service account tokens can now be used for image pull authentication, reducing the need for separate image pull secrets. Improves security by using short-lived, automatically rotated tokens.",
+      "labels": [
+        "service-account",
+        "image-pull",
+        "authentication",
+        "security",
+        "beta",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4412"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ServiceAccount",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/",
+      "title": "Kubernetes v1.34: Pods Report DRA Resource Health",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-17",
+      "summary": "Pods can now report the health status of allocated DRA resources",
+      "description": "DRA resource health reporting allows pods to surface device health information. Enables better monitoring and automated recovery for workloads using specialized hardware.",
+      "labels": [
+        "dra",
+        "health",
+        "monitoring",
+        "gpu",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4680"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaim",
+          "targetGroup": "resource.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/18/kubernetes-v1-34-dra-consumable-capacity/",
+      "title": "Kubernetes v1.34: DRA Consumable Capacity",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-18",
+      "summary": "Track and report consumable capacity for DRA resources",
+      "description": "DRA consumable capacity feature enables tracking of available device capacity. Helps schedulers make better placement decisions for workloads requiring specialized hardware.",
+      "labels": [
+        "dra",
+        "capacity",
+        "scheduling",
+        "gpu",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5075"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ResourceSlice",
+          "targetGroup": "resource.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/16/kubernetes-v1-34-volume-group-snapshot-beta-2/",
+      "title": "Kubernetes v1.34: Moving Volume Group Snapshots to v1beta2",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-16",
+      "summary": "Volume Group Snapshots API advances to v1beta2 with improved stability",
+      "description": "Volume Group Snapshots enable atomic, crash-consistent snapshots of multiple volumes simultaneously. The v1beta2 API brings improved stability and additional features.",
+      "labels": [
+        "storage",
+        "snapshots",
+        "volume-group",
+        "beta",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "VolumeGroupSnapshot",
+          "targetGroup": "groupsnapshot.storage.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/09/11/kubernetes-v1-34-mutable-csi-node-allocatable-count/",
+      "title": "Kubernetes v1.34: Mutable CSINode Allocatable Count",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-09-11",
+      "summary": "CSINode.Spec.Drivers[*].Allocatable.Count field is now mutable, enabling dynamic updates to node storage capacity",
+      "description": "This feature allows CSI drivers to dynamically update the allocatable count for storage resources on a node. Previously, this field was immutable after initial registration, causing issues when storage capacity changed. Now drivers can report accurate capacity changes without node restarts.",
+      "labels": [
+        "storage",
+        "csi",
+        "csinode",
+        "beta",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4876"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "CSINode",
+          "targetGroup": "storage.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "CSIDriver",
+          "targetGroup": "storage.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://metalbear.co/blog/kubernetes-1-34/",
+      "title": "New Features We Find Exciting in the Kubernetes 1.34 Release",
+      "type": "blog",
+      "source": "metalbear.co",
+      "isOfficial": false,
+      "publishedDate": "2025-08-28",
+      "summary": "Developer-focused analysis of DRA GA and other exciting 1.34 features",
+      "description": "Covers how DRA with structured parameters lets Kubernetes manage specialized hardware devices directly. Explains how hardware drivers describe device capabilities in a standardized format.",
+      "labels": [
+        "dra",
+        "gpu",
+        "hardware",
+        "1.34",
+        "deep-dive"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        }
+      ]
+    },
+    {
+      "url": "https://www.devzero.io/blog/kubernetes-v1-34",
+      "title": "Top 5 Game-Changing Updates That Will Transform Your Container Strategy",
+      "type": "blog",
+      "source": "devzero.io",
+      "isOfficial": false,
+      "publishedDate": "2025-08-28",
+      "summary": "Analysis of the most impactful features in Kubernetes 1.34 for platform engineers",
+      "description": "Covers node swap support graduation, DRA GA, and other transformational changes. Discusses how these features address long-standing pain points for platform engineers and DevOps teams.",
+      "labels": [
+        "swap",
+        "dra",
+        "platform-engineering",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2400"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-34-release",
+      "title": "Kubernetes v1.34: What's New and Improved?",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2025-09-02",
+      "summary": "Comprehensive overview of 1.34 features including Job controller improvements",
+      "description": "Covers Job controller replacement pod timing, DRA framework, and other improvements. Explains how the new settings give control over when replacement Pods are created.",
+      "labels": [
+        "jobs",
+        "dra",
+        "1.34",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3939"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ]
+    },
+    {
+      "url": "https://atmosly.com/blog/kubernetes-134-whats-new-in-2025-top-features-upgrade-guide",
+      "title": "Kubernetes 1.34: What's New in 2025? Top Features & Upgrade Guide",
+      "type": "blog",
+      "source": "atmosly.com",
+      "isOfficial": false,
+      "publishedDate": "2025-10-22",
+      "summary": "Comprehensive upgrade guide with focus on AI/ML workloads and observability",
+      "description": "Positions 1.34 as one of the most significant updates with game-changing features for AI/ML workloads, observability, and performance optimization. Includes practical upgrade guidance.",
+      "labels": [
+        "ai",
+        "ml",
+        "observability",
+        "upgrade",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        }
+      ]
+    },
+    {
+      "url": "https://cloudsmith.com/blog/kubernetes-1-34-what-you-need-to-know",
+      "title": "Kubernetes 1.34 Release Notes \u2013 Features, Updates & Fixes",
+      "type": "blog",
+      "source": "cloudsmith.com",
+      "isOfficial": false,
+      "summary": "Release notes summary with focus on container restart rules",
+      "description": "Covers new container restart rules that declare container-specific logic for customizing restart behavior when containers exit or crash. Practical guidance for DevOps teams.",
+      "labels": [
+        "restart",
+        "containers",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4603"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/",
+      "title": "Kubernetes v1.33: Octarine (The Color of Magic)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-04-23",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.33 with 64 enhancements (18 stable, 20 beta, 24 alpha)",
+      "description": "The 'Octarine' release brings sidecar containers to GA, in-place pod resize to beta, and nftables kube-proxy to stable. Key features include forensic container checkpointing GA, Job success policy GA, and user namespaces beta enabled by default.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.33",
+        "sidecar",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2008"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3998"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4444"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4008"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3857"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3850"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4193"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1495"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2433"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3633"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4176"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2590"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2625"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2644"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3094"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3257"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5116"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/03/26/kubernetes-v1-33-upcoming-changes/",
+      "title": "Kubernetes v1.33 Sneak Peek",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-03-26",
+      "author": "Release Team",
+      "summary": "Preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.33",
+      "description": "Covers upcoming features including sidecar containers GA, in-place resize beta, and user namespaces enabled by default. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.33",
+        "sidecar",
+        "in-place-resize",
+        "user-namespaces"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/04/25/userns-enabled-by-default/",
+      "title": "Kubernetes v1.33: User Namespaces enabled by default!",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-04-25",
+      "summary": "User namespaces are now enabled by default in beta for improved container isolation",
+      "description": "User namespaces provide enhanced security by mapping container UIDs to unprivileged host UIDs. This prevents privilege escalation even if a container is compromised. Now enabled by default on nodes that support it.",
+      "labels": [
+        "security",
+        "user-namespaces",
+        "isolation",
+        "beta",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.hostUsers",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/05/09/kubernetes-v1-33-streaming-list-responses/",
+      "title": "Kubernetes v1.33: Streaming List responses",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-05-09",
+      "summary": "API server now streams LIST responses for improved memory efficiency",
+      "description": "Streaming JSON encoding for LIST responses reduces API server memory usage by encoding objects incrementally rather than buffering entire responses. Particularly beneficial for large clusters with many resources.",
+      "labels": [
+        "api-server",
+        "performance",
+        "memory",
+        "streaming",
+        "beta",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5116"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/05/14/kubernetes-v1-33-updates-to-container-lifecycle/",
+      "title": "Kubernetes v1.33: Updates to Container Lifecycle",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-05-14",
+      "summary": "New container lifecycle features including zero-value sleep and stop signals",
+      "description": "Covers updates to container lifecycle management including allowing zero value for PreStop hook sleep action and new container stop signals feature. Improves control over container shutdown behavior.",
+      "labels": [
+        "containers",
+        "lifecycle",
+        "prestop",
+        "signals",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4818"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4960"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/05/15/kubernetes-1-33-jobs-success-policy-goes-ga/",
+      "title": "Kubernetes 1.33: Job's SuccessPolicy Goes GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-05-15",
+      "summary": "Job success/completion policy graduates to stable for flexible job completion criteria",
+      "description": "SuccessPolicy allows defining custom criteria for when a Job is considered successful. Useful for indexed jobs where only specific indexes need to complete, or for early termination when leader pods succeed.",
+      "labels": [
+        "jobs",
+        "batch",
+        "success-policy",
+        "stable",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3998"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.successPolicy",
+          "targetGroup": "Job@batch"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/06/03/start-sidecar-first/",
+      "title": "Start Sidecar First: How To Avoid Snags",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-06-03",
+      "summary": "Best practices for using native sidecar containers in Kubernetes 1.33",
+      "description": "Practical guide to adopting native sidecar containers. Covers startup ordering, lifecycle management, and common pitfalls when migrating from traditional sidecar patterns.",
+      "labels": [
+        "sidecar",
+        "containers",
+        "best-practices",
+        "stable",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.initContainers[].restartPolicy",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/02/28/nftables-kube-proxy/",
+      "title": "NFTables mode for kube-proxy",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-02-28",
+      "summary": "nftables-based kube-proxy backend graduates to stable in 1.33",
+      "description": "The nftables backend for kube-proxy provides better performance and maintainability compared to iptables. Uses modern Linux kernel features for more efficient packet processing.",
+      "labels": [
+        "networking",
+        "kube-proxy",
+        "nftables",
+        "stable",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2025/04/kubernetes-octarine-release/",
+      "title": "Kubernetes 1.33 'Octarine' Released: Native Sidecars and In-Place Pod Resizing",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2025-04-29",
+      "summary": "InfoQ coverage of Kubernetes 1.33 highlighting sidecar containers GA and in-place resize beta",
+      "description": "Covers the 64 enhancements in Octarine release. Highlights sidecar containers reaching stable status and in-place pod resizing moving to beta for vertical scaling without pod recreation.",
+      "labels": [
+        "release",
+        "1.33",
+        "sidecar",
+        "in-place-resize"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-33-octarine",
+      "title": "Kubernetes v1.33 Octarine: What's New and Improved?",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2025-04-28",
+      "summary": "Comprehensive overview of 1.33 features with focus on sidecar containers and DRA",
+      "description": "Covers native sidecar containers implementation using init containers with restartPolicy: Always. Explains how sidecars start before main containers and continue running throughout pod lifecycle.",
+      "labels": [
+        "sidecar",
+        "dra",
+        "1.33",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        }
+      ]
+    },
+    {
+      "url": "https://www.nops.io/blog/whats-new-in-kubernetes-1-33-octarine-ai-ml-security-enhancements-more/",
+      "title": "What's New in Kubernetes 1.33 'Octarine': AI, ML, Security Enhancements & More",
+      "type": "blog",
+      "source": "nops.io",
+      "isOfficial": false,
+      "publishedDate": "2025-04-29",
+      "summary": "Analysis of 1.33 features with focus on AI/ML workloads and security",
+      "description": "Covers sidecar containers GA, in-place resize beta, DRA improvements, and security features like ClusterTrustBundles. Positions 1.33 as significant for AI/ML workload support.",
+      "labels": [
+        "ai",
+        "ml",
+        "security",
+        "sidecar",
+        "dra",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3257"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/",
+      "title": "Kubernetes v1.35: Timbernetes (The World Tree Release)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-17",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.35 with 60 enhancements (17 stable, 19 beta, 22 alpha)",
+      "description": "The World Tree release brings major features to GA including in-place pod resource updates, Job managedBy, and Pod generation tracking. Key beta features include pod certificates for workload identity, user namespaces, and OCI image volumes. New alpha features introduce gang scheduling and constrained impersonation.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.35",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4317"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5328"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3015"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4368"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5067"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4622"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4742"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4192"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4876"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5598"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-961"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3104"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5295"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4951"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2535"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5307"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5538"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3973"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5284"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4828"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4827"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5237"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5471"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5440"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5504"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5573"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5004"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4781"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/",
+      "title": "Kubernetes v1.35: Job ManagedBy for Jobs Goes GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-18",
+      "summary": "External job controllers can now manage Jobs natively using the managedBy field",
+      "description": "The Job API managedBy field allows external controllers like MultiKueue to handle Job status synchronization. This enables multi-cluster job dispatching where Jobs created in a management cluster are mirrored and executed in worker clusters.",
+      "labels": [
+        "jobs",
+        "batch",
+        "multikueue",
+        "multicluster",
+        "stable",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4368"
+        },
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.managedBy",
+          "targetGroup": "Job@batch"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/",
+      "title": "Pods",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Official documentation for Kubernetes Pods - the smallest deployable units",
+      "description": "Comprehensive guide to Pods including lifecycle, containers, init containers, sidecar containers, resource management, and scheduling. Covers pod templates, restart policies, and termination.",
+      "labels": [
+        "pod",
+        "workloads",
+        "containers",
+        "documentation"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+      "title": "Deployments",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Official documentation for Kubernetes Deployments",
+      "description": "Guide to Deployments for declarative updates to Pods and ReplicaSets. Covers rolling updates, rollbacks, scaling, and deployment strategies.",
+      "labels": [
+        "deployment",
+        "workloads",
+        "controllers",
+        "documentation",
+        "rolling-update"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Deployment",
+          "targetGroup": "apps"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
+      "title": "Resource Management for Pods and Containers",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "How to specify CPU and memory resources for containers",
+      "description": "Covers resource requests, limits, QoS classes, and how the scheduler uses resource information. Explains the difference between requests and limits, and how to configure resource quotas.",
+      "labels": [
+        "resources",
+        "cpu",
+        "memory",
+        "qos",
+        "scheduling",
+        "limits",
+        "requests"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.containers[].resources",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/tasks/configure-pod-container/resize-container-resources/",
+      "title": "Resize CPU and Memory Resources assigned to Containers",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "How to resize container resources without restarting pods using in-place updates",
+      "description": "Step-by-step guide to using in-place pod vertical scaling (KEP-1287). Shows how to modify CPU and memory resources on running containers and verify the resize was applied.",
+      "labels": [
+        "resources",
+        "resize",
+        "in-place",
+        "vertical-scaling",
+        "cpu",
+        "memory",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.containers[].resources",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/",
+      "title": "Pod Topology Spread Constraints",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "How to control pod distribution across topology domains",
+      "description": "Guide to spreading pods across failure domains like zones, regions, and nodes. Covers topologySpreadConstraints, whenUnsatisfiable policies, and integration with node affinity.",
+      "labels": [
+        "scheduling",
+        "topology",
+        "zones",
+        "spread",
+        "affinity"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.topologySpreadConstraints",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/",
+      "title": "Service Traffic Policy",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "How to configure traffic distribution for Services",
+      "description": "Explains internalTrafficPolicy and externalTrafficPolicy for Services. Covers PreferSameNode and PreferSameZone traffic distribution options for optimizing latency.",
+      "labels": [
+        "service",
+        "networking",
+        "traffic",
+        "routing",
+        "latency"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3015"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Service",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.trafficDistribution",
+          "targetGroup": "Service@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/security/pod-security-standards/",
+      "title": "Pod Security Standards",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Security profiles for pods: Privileged, Baseline, and Restricted",
+      "description": "Defines three security profiles for pods with increasing levels of restriction. Covers securityContext settings, capabilities, and how to enforce standards via admission control.",
+      "labels": [
+        "security",
+        "pod-security",
+        "admission",
+        "securitycontext"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.securityContext",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+      "title": "Dynamic Resource Allocation",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Request and share resources between pods and containers using DRA",
+      "description": "Guide to Dynamic Resource Allocation (DRA) for requesting specialized hardware like GPUs. Covers ResourceClaims, ResourceClaimTemplates, DeviceClasses, and how DRA differs from device plugins.",
+      "labels": [
+        "dra",
+        "resources",
+        "gpu",
+        "scheduling",
+        "hardware"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaim",
+          "targetGroup": "resource.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ResourceClaimTemplate",
+          "targetGroup": "resource.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "DeviceClass",
+          "targetGroup": "resource.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/",
+      "title": "Control Topology Management Policies on a node",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Configure topology manager for NUMA-aware resource allocation",
+      "description": "How to configure the topology manager to align CPU, memory, and device allocations on NUMA nodes. Covers policy options including the configurable max-allowable-numa-nodes setting.",
+      "labels": [
+        "topology",
+        "numa",
+        "cpu",
+        "memory",
+        "node"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4622"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/user-namespaces/",
+      "title": "User Namespaces",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Isolate container user and group IDs from the host",
+      "description": "How to use Linux user namespaces to map container root to unprivileged host users. Improves security by preventing privilege escalation even if a container is compromised.",
+      "labels": [
+        "security",
+        "user-namespaces",
+        "isolation",
+        "linux"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.hostUsers",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/storage/volumes/#image",
+      "title": "Image Volumes",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Mount OCI container images as read-only volumes",
+      "description": "How to use the image volume type to mount OCI artifacts directly into pods. Useful for separating data from application images without init containers.",
+      "labels": [
+        "storage",
+        "volumes",
+        "oci",
+        "images"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.volumes[].image",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/",
+      "title": "StatefulSets",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Manage stateful applications with stable network identities and storage",
+      "description": "Guide to StatefulSets for running stateful workloads. Covers ordered deployment, stable hostnames, persistent storage, and rolling updates with maxUnavailable.",
+      "labels": [
+        "statefulset",
+        "workloads",
+        "stateful",
+        "storage",
+        "controllers"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-961"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "StatefulSet",
+          "targetGroup": "apps"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.updateStrategy.rollingUpdate.maxUnavailable",
+          "targetGroup": "StatefulSet@apps"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/",
+      "title": "Sidecar Containers",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Run auxiliary containers alongside main application containers",
+      "description": "How to use init containers with restartPolicy: Always as sidecar containers. Covers lifecycle, startup ordering, and how sidecars continue running during pod termination.",
+      "labels": [
+        "sidecar",
+        "containers",
+        "init-containers",
+        "workloads"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4438"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.initContainers[].restartPolicy",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/",
+      "title": "Configure a Pod to Use a ConfigMap",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Store configuration data in ConfigMaps and use them in pods",
+      "description": "How to create ConfigMaps and consume them as environment variables, command arguments, or volume files. Covers immutable ConfigMaps and automatic updates.",
+      "labels": [
+        "configmap",
+        "configuration",
+        "environment",
+        "volumes"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "ConfigMap",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/policy/pod-security-admission/",
+      "title": "Pod Security Admission",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Enforce Pod Security Standards at the namespace level",
+      "description": "How to use the built-in admission controller to enforce pod security standards. Covers enforce, audit, and warn modes, and how to configure per-namespace policies.",
+      "labels": [
+        "security",
+        "admission",
+        "pod-security",
+        "namespace"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Namespace",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/",
+      "title": "Pod Priority and Preemption",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Schedule high-priority pods by preempting lower-priority ones",
+      "description": "How to use PriorityClasses to define pod priorities. Covers preemption behavior, non-preempting priority classes, and how priority affects scheduling order.",
+      "labels": [
+        "scheduling",
+        "priority",
+        "preemption"
+      ],
+      "links": [
+        {
+          "targetType": "kind",
+          "targetId": "PriorityClass",
+          "targetGroup": "scheduling.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.priorityClassName",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/",
+      "title": "Horizontal Pod Autoscaling",
+      "type": "documentation",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "summary": "Automatically scale workloads based on metrics",
+      "description": "How to configure HorizontalPodAutoscaler to scale deployments based on CPU, memory, or custom metrics. Covers scaling behavior, stabilization windows, and configurable tolerance.",
+      "labels": [
+        "autoscaling",
+        "hpa",
+        "scaling",
+        "metrics"
+      ],
+      "links": [
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4951"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "HorizontalPodAutoscaler",
+          "targetGroup": "autoscaling"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.behavior.scaleUp.tolerance",
+          "targetGroup": "HorizontalPodAutoscaler@autoscaling"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.behavior.scaleDown.tolerance",
+          "targetGroup": "HorizontalPodAutoscaler@autoscaling"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/15/ingress-nginx-retirement/",
+      "title": "Ingress NGINX Retirement Announcement",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-15",
+      "summary": "Ingress NGINX will be archived in March 2026 - migrate to Gateway API",
+      "description": "The Ingress NGINX controller is being retired due to maintainer shortage and technical debt. Best-effort maintenance until March 2026, then archived. Users should migrate to Gateway API.",
+      "labels": [
+        "ingress",
+        "nginx",
+        "deprecation",
+        "gateway-api",
+        "networking"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Ingress",
+          "targetGroup": "networking.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/10/containerd-v1-support-ending/",
+      "title": "Final Call for containerd v1.X Support",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-10",
+      "summary": "Kubernetes 1.35 is the last release supporting containerd 1.7 - upgrade to containerd 2.0",
+      "description": "SIG Node has designated v1.35 as the final release supporting containerd v1.X series. Before upgrading to the next Kubernetes version, switch to containerd 2.0 or later.",
+      "labels": [
+        "containerd",
+        "runtime",
+        "deprecation",
+        "upgrade"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4033"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/11/26/kubernetes-v1-35-sneak-peek/",
+      "title": "Kubernetes v1.35 Sneak Peek",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-11-26",
+      "author": "Release Team",
+      "summary": "Preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.35",
+      "description": "Covers cgroup v1 removal, ipvs mode deprecation, containerd 1.x EOL, and featured enhancements like node declared features. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.35",
+        "deprecation",
+        "cgroup",
+        "ipvs",
+        "containerd"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5573"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5495"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4033"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/",
+      "title": "Kubernetes 1.35: In-Place Pod Resize Graduates to Stable",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-19",
+      "summary": "In-Place Pod Resize (KEP-1287) reaches GA after 6+ years - resize CPU and memory without restarts",
+      "description": "The feature makes CPU and memory requests/limits mutable on running pods. Enables vertical autoscaling without disruption for stateful services, batch jobs, and latency-sensitive workloads. Future plans include VPA integration and workload preemption.",
+      "labels": [
+        "in-place-resize",
+        "vertical-scaling",
+        "resources",
+        "cpu",
+        "memory",
+        "stable",
+        "1.35",
+        "vpa"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.containers[].resources",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/",
+      "title": "Kubernetes v1.35: Introducing Workload Aware Scheduling",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2025-12-29",
+      "summary": "Native gang scheduling and opportunistic batching for AI/ML workloads",
+      "description": "Introduces the Workload API for defining scheduling requirements of multi-pod applications. Gang scheduling ensures all-or-nothing placement to prevent resource wastage and deadlocks. Opportunistic batching speeds up scheduling of identical pods automatically.",
+      "labels": [
+        "gang-scheduling",
+        "workload-api",
+        "scheduling",
+        "ai",
+        "ml",
+        "batch",
+        "alpha",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Workload",
+          "targetGroup": "scheduling.k8s.io"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.workloadRef",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/",
+      "title": "Kubernetes v1.35: New level of efficiency with in-place Pod restart",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-01-02",
+      "summary": "RestartAllContainers action enables efficient pod resets for AI/ML training jobs",
+      "description": "New alpha feature allows triggering full in-place pod restarts without rescheduling. Reduces recovery overhead from minutes to seconds for large-scale ML training. Preserves node assignment, IP addresses, and storage mounts while re-running init containers.",
+      "labels": [
+        "restart",
+        "containers",
+        "ai",
+        "ml",
+        "training",
+        "alpha",
+        "1.35",
+        "efficiency"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2025/12/kubernetes-1-35/",
+      "title": "Kubernetes 1.35 Released with In-Place Pod Resize and AI-Optimized Scheduling",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2025-12-31",
+      "summary": "InfoQ coverage of Kubernetes 1.35 highlighting in-place resize, gang scheduling, and HPA tolerance",
+      "description": "Covers the 60 enhancements in Timbernetes release. Highlights Java startup optimization use case for in-place resize, PodCertificateRequests beta, and the Ingress NGINX retirement announcement.",
+      "labels": [
+        "release",
+        "1.35",
+        "in-place-resize",
+        "gang-scheduling",
+        "hpa",
+        "java"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4951"
+        }
+      ]
+    },
+    {
+      "url": "https://scaleops.com/blog/kubernetes-1-35-release-overview/",
+      "title": "Kubernetes v1.35 Deep Dive: In-Place Resize GA, Gang Scheduling & the Cgroup v2 Cliff",
+      "type": "blog",
+      "source": "scaleops.com",
+      "isOfficial": false,
+      "publishedDate": "2025-12-17",
+      "summary": "Technical deep dive into 1.35 features with hands-on examples and migration guidance",
+      "description": "Positions Kubernetes as an OS kernel providing primitives. Covers in-place resize with kubectl examples, gang scheduling limitations, and the cgroup v1 removal mandate. Includes practical testing on v1.35.0-rc.1.",
+      "labels": [
+        "release",
+        "1.35",
+        "in-place-resize",
+        "gang-scheduling",
+        "cgroup",
+        "deep-dive"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5573"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sysdig.com/blog/kubernetes-1-35-whats-new",
+      "title": "Kubernetes 1.35 - New security features",
+      "type": "blog",
+      "source": "sysdig.com",
+      "isOfficial": false,
+      "publishedDate": "2025-12-17",
+      "summary": "Security-focused analysis of 17 security-related changes in Kubernetes 1.35",
+      "description": "Covers cgroup v1 removal, ensure secret pulled images (imagePullCredentialsVerificationPolicy), and SPDY to WebSockets transition. Includes migration guidance and security implications.",
+      "labels": [
+        "security",
+        "1.35",
+        "cgroup",
+        "image-pull",
+        "websockets",
+        "spdy"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5573"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2535"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4006"
+        }
+      ]
+    },
+    {
+      "url": "https://cloudnativenow.com/features/kubernetes-v1-35-arrived-right-on-workload-aware-schedule/",
+      "title": "Kubernetes v1.35 Arrived, Right On Workload-Aware Schedule",
+      "type": "blog",
+      "source": "cloudnativenow.com",
+      "isOfficial": false,
+      "publishedDate": "2026-01-12",
+      "summary": "Analysis of workload-aware scheduling and its impact on Kubernetes application management",
+      "description": "Explores how the new Workload API changes pod scheduling paradigms. Discusses the shift from individual pod scheduling to workload-level orchestration for modern applications.",
+      "labels": [
+        "workload-api",
+        "scheduling",
+        "1.35",
+        "gang-scheduling"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        }
+      ]
+    },
+    {
+      "url": "https://www.networkworld.com/article/4107891/kubernetes-1-35-enables-zero-downtime-resource-scaling-for-production-cloud-workloads.html",
+      "title": "Kubernetes 1.35 enables zero-downtime resource scaling for production cloud workloads",
+      "type": "blog",
+      "source": "networkworld.com",
+      "isOfficial": false,
+      "publishedDate": "2026-01-06",
+      "summary": "Enterprise perspective on in-place pod resize benefits for AI training and edge computing",
+      "description": "Covers how Timbernetes delivers in-place pod resource adjustments for production workloads. Highlights benefits for AI training workloads and edge computing deployments.",
+      "labels": [
+        "in-place-resize",
+        "ai",
+        "edge",
+        "enterprise",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.howardjohn.info/posts/pod-certs/",
+      "title": "Kubernetes v1.35 Pod Certificates won't help your service mesh",
+      "type": "blog",
+      "source": "howardjohn.info",
+      "isOfficial": false,
+      "publishedDate": "2025-12-22",
+      "author": "John Howard",
+      "summary": "Critical analysis of Pod Certificates feature from an Istio maintainer's perspective",
+      "description": "Explains why Pod Certificates (beta in 1.35) won't significantly impact service meshes like Istio. Covers how the feature works, its limitations for ambient mode, and why existing certificate distribution mechanisms are sufficient.",
+      "labels": [
+        "pod-certificates",
+        "service-mesh",
+        "istio",
+        "mtls",
+        "security",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5307"
+        }
+      ]
+    },
+    {
+      "url": "https://slickfinch.com/kubernetes-v1-35-preview-workload-aware-scheduling-could-be-a-game-changer/",
+      "title": "Kubernetes v1.35 Preview: Workload Aware Scheduling Could Be A Game Changer",
+      "type": "blog",
+      "source": "slickfinch.com",
+      "isOfficial": false,
+      "publishedDate": "2025-11-27",
+      "summary": "Preview of gang scheduling capabilities and their potential impact on AI/ML workloads",
+      "description": "Analyzes how native gang scheduling addresses resource wastage and deadlock scenarios in traditional pod-by-pod scheduling. Discusses implications for AI/ML and HPC workloads.",
+      "labels": [
+        "gang-scheduling",
+        "ai",
+        "ml",
+        "hpc",
+        "preview",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4671"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/11/kubernetes-v1-32-release/",
+      "title": "Kubernetes v1.32: Penelope",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-11",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.32 with 44 enhancements (13 stable, 12 beta, 19 alpha)",
+      "description": "The 'Penelope' release honors Kubernetes' 10th anniversary. Key features include custom resource field selectors GA, memory-backed volume sizing GA, and DRA structured parameters beta. Sidecar containers targeting GA in 1.33.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.32",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4358"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1967"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/11/08/kubernetes-1-32-upcoming-changes/",
+      "title": "Kubernetes v1.32 Sneak Peek",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-11-08",
+      "author": "Release Team",
+      "summary": "Preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.32",
+      "description": "Covers upcoming features including DRA structured parameters beta, memory manager GA, and volume group snapshots beta. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.32",
+        "dra",
+        "memory-manager"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/13/memory-manager-goes-ga/",
+      "title": "Kubernetes v1.32: Memory Manager Goes GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-13",
+      "summary": "NUMA-aware memory management graduates to stable for performance-sensitive workloads",
+      "description": "Memory Manager provides NUMA-aware memory allocation for guaranteed QoS pods. Works with CPU Manager and Topology Manager to optimize memory locality for latency-sensitive applications.",
+      "labels": [
+        "memory-manager",
+        "numa",
+        "performance",
+        "stable",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Node",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/16/cpumanager-strict-cpu-reservation/",
+      "title": "Kubernetes v1.32 Adds A New CPU Manager Static Policy Option For Strict CPU Reservation",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-16",
+      "summary": "New strict-cpu-reservation option prevents system daemons from using reserved CPUs",
+      "description": "The strict-cpu-reservation policy option ensures reserved CPUs are exclusively for system daemons, preventing guaranteed pods from using them. Improves isolation for latency-sensitive workloads.",
+      "labels": [
+        "cpu-manager",
+        "reservation",
+        "performance",
+        "alpha",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4742"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/12/queueinghint-brings-new-possibility-to-optimize-pod-scheduling/",
+      "title": "Kubernetes v1.32: QueueingHint Brings a New Possibility to Optimize Pod Scheduling",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-12",
+      "summary": "QueueingHint optimizes scheduler performance by reducing unnecessary scheduling attempts",
+      "description": "QueueingHint allows scheduler plugins to provide hints about when unschedulable pods should be retried. Reduces wasted scheduling cycles and improves cluster efficiency.",
+      "labels": [
+        "scheduling",
+        "performance",
+        "queueing-hint",
+        "beta",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4247"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/12/kubernetes-1-32-volume-group-snapshot-beta/",
+      "title": "Kubernetes 1.32: Moving Volume Group Snapshots to Beta",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-12",
+      "summary": "Volume Group Snapshots API advances to beta for crash-consistent multi-volume snapshots",
+      "description": "Volume Group Snapshots enable atomic, crash-consistent snapshots of multiple volumes simultaneously. Essential for applications with data spread across multiple PVCs that need consistent backup points.",
+      "labels": [
+        "storage",
+        "snapshots",
+        "volume-group",
+        "beta",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "VolumeGroupSnapshot",
+          "targetGroup": "groupsnapshot.storage.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/12/enhancing-kubernetes-api-server-efficiency-with-api-streaming/",
+      "title": "Enhancing Kubernetes API Server Efficiency with API Streaming",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-12-12",
+      "summary": "Watch list streaming reduces API server memory usage for large clusters",
+      "description": "API streaming enables incremental encoding of watch responses, reducing memory pressure on the API server. Particularly beneficial for large clusters with many resources being watched.",
+      "labels": [
+        "api-server",
+        "performance",
+        "streaming",
+        "watch",
+        "beta",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3157"
+        }
+      ]
+    },
+    {
+      "url": "https://www.kubermatic.com/blog/kubernetes-1-32-is-here/",
+      "title": "Kubernetes 1.32 is here!",
+      "type": "blog",
+      "source": "kubermatic.com",
+      "isOfficial": false,
+      "publishedDate": "2024-12-19",
+      "summary": "Kubermatic engineers share their key highlights from the 1.32 release",
+      "description": "Covers singleProcessOOMKill for granular OOM control, DRA structured parameters beta, and custom resource field selectors. Practical insights from engineers involved in the Kubernetes project.",
+      "labels": [
+        "oom",
+        "dra",
+        "field-selectors",
+        "1.32",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4358"
+        }
+      ]
+    },
+    {
+      "url": "https://www.loft.sh/blog/kubernetes-132",
+      "title": "Kubernetes 1.32: Key Features, Updates, and What You Need to Know",
+      "type": "blog",
+      "source": "loft.sh",
+      "isOfficial": false,
+      "publishedDate": "2024-12-18",
+      "summary": "Comprehensive overview of 1.32 with focus on resource management and security",
+      "description": "Covers the 44 enhancements including 13 graduating to stable, 12 beta, and 19 alpha features. Discusses DRA structured parameters, memory manager GA, and scheduling improvements.",
+      "labels": [
+        "dra",
+        "memory-manager",
+        "scheduling",
+        "1.32",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4381"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        }
+      ]
+    },
+    {
+      "url": "https://devtron.ai/blog/kubernetes-v1-32-whats-new/",
+      "title": "Kubernetes v1.32: Here's what you should know about!",
+      "type": "blog",
+      "source": "devtron.ai",
+      "isOfficial": false,
+      "publishedDate": "2024-12-12",
+      "summary": "Overview of auto-removing PVCs, pod lifecycle improvements, and OpenTelemetry tracing",
+      "description": "Covers key enhancements including automatic PVC removal, improved pod lifecycle management, resource allocation improvements, and graceful shutdown handling.",
+      "labels": [
+        "pvc",
+        "lifecycle",
+        "opentelemetry",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        }
+      ]
+    },
+    {
+      "url": "https://sysdig.com/blog/kubernetes-1-32-whats-new/",
+      "title": "Kubernetes 1.32 \u2013 What's new?",
+      "type": "blog",
+      "source": "sysdig.com",
+      "isOfficial": false,
+      "publishedDate": "2024-12-11",
+      "summary": "Security-focused analysis with emphasis on Windows node shutdown improvements",
+      "description": "Highlights pod termination improvements during Windows node shutdowns, addressing lifecycle events like pre-stop hooks. Covers security and observability enhancements.",
+      "labels": [
+        "windows",
+        "shutdown",
+        "lifecycle",
+        "security",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-32-penelope",
+      "title": "Kubernetes v1.32 Penelope: What's New and Improved?",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2024-12-31",
+      "summary": "Deep dive into custom resource field selectors and API efficiency improvements",
+      "description": "Explains how custom field selectors for CRDs enable precise querying and filtering. Covers the practical benefits for API efficiency and resource management.",
+      "labels": [
+        "field-selectors",
+        "crd",
+        "api",
+        "1.32",
+        "deep-dive"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4358"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/13/kubernetes-v1-31-release/",
+      "title": "Kubernetes v1.31: Elli",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-13",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.31 with 45 enhancements (11 stable, 22 beta, 12 alpha)",
+      "description": "The 'Elli' release brings AppArmor GA, persistent volume last phase transition time, and nftables kube-proxy beta. Key features include pod failure policy GA, consistent reads from cache beta, and kubeadm v1beta4.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.31",
+        "apparmor",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3762"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3329"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2681"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/15/consistent-read-from-cache-beta/",
+      "title": "Kubernetes v1.31: Consistent Reads from Cache",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-15",
+      "summary": "Consistent reads from cache graduates to beta for improved API server performance",
+      "description": "Enables serving consistent reads from the watch cache instead of etcd. Reduces etcd load and improves API server latency while maintaining strong consistency guarantees.",
+      "labels": [
+        "api-server",
+        "performance",
+        "cache",
+        "etcd",
+        "beta",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2340"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/19/kubernetes-1-31-pod-failure-policy-for-jobs-goes-ga/",
+      "title": "Kubernetes 1.31: Pod Failure Policy for Jobs Goes GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-19",
+      "summary": "Pod failure policy graduates to stable for fine-grained Job failure handling",
+      "description": "Pod failure policy allows Jobs to handle pod failures based on exit codes and conditions. Enables distinguishing between retriable and non-retriable failures for more efficient batch processing.",
+      "labels": [
+        "jobs",
+        "batch",
+        "failure-policy",
+        "stable",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3329"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.podFailurePolicy",
+          "targetGroup": "Job@batch"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/14/kubernetes-1-31-kubeadm-v1beta4/",
+      "title": "Kubernetes 1.31: kubeadm v1beta4",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-14",
+      "summary": "kubeadm configuration API advances to v1beta4 with improved flexibility",
+      "description": "The v1beta4 API introduces new configuration options for kubeadm including improved certificate management and cluster configuration. Deprecates v1beta3 with migration path provided.",
+      "labels": [
+        "kubeadm",
+        "configuration",
+        "cluster-lifecycle",
+        "beta",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2890"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/22/nested-cpumanager-distribute-cpus-across-numa/",
+      "title": "Kubernetes 1.31: Fine-grained SupplementalGroups control",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-22",
+      "summary": "New supplementalGroupsPolicy field for controlling group membership in containers",
+      "description": "Introduces supplementalGroupsPolicy to control how supplemental groups are applied to containers. Enables Merge or Strict policies for better security control over group memberships.",
+      "labels": [
+        "security",
+        "supplemental-groups",
+        "containers",
+        "alpha",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3619"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.securityContext.supplementalGroupsPolicy",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/21/nested-cpumanager-distribute-cpus-across-numa/",
+      "title": "Kubernetes 1.31: CPUManager distribute CPUs across NUMA nodes",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-21",
+      "summary": "New distribute-cpus-across-numa option for better CPU distribution on multi-NUMA systems",
+      "description": "The distribute-cpus-across-numa policy option spreads CPU allocations across NUMA nodes for workloads that benefit from memory bandwidth over locality. Useful for memory-intensive applications.",
+      "labels": [
+        "cpu-manager",
+        "numa",
+        "performance",
+        "alpha",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4265"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/16/kubectl-debug-custom-profile/",
+      "title": "Kubernetes 1.31: Custom Profiling in kubectl debug Graduates to Beta",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-16",
+      "summary": "Custom profiling for kubectl debug moves to beta with improved debugging capabilities",
+      "description": "Custom profiles allow defining specific container configurations for debugging sessions. Enables tailored debugging environments with custom security contexts and capabilities.",
+      "labels": [
+        "kubectl",
+        "debug",
+        "profiling",
+        "beta",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4292"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/20/nested-cgroup-driver-autoconfiguration/",
+      "title": "Kubernetes 1.31: Nested cgroup driver autoconfiguration",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-20",
+      "summary": "Kubelet automatically detects and configures the cgroup driver",
+      "description": "Kubelet can now automatically detect whether to use cgroupfs or systemd cgroup driver based on the container runtime configuration. Reduces misconfiguration issues.",
+      "labels": [
+        "kubelet",
+        "cgroup",
+        "configuration",
+        "beta",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4033"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/23/nested-spdy-to-websockets/",
+      "title": "Kubernetes 1.31: SPDY to WebSockets Migration",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-23",
+      "summary": "kubectl exec and port-forward transitioning from SPDY to WebSockets",
+      "description": "The transition from SPDY to WebSockets for streaming connections improves compatibility with modern proxies and load balancers. WebSockets provide better support in cloud environments.",
+      "labels": [
+        "networking",
+        "websockets",
+        "spdy",
+        "kubectl",
+        "beta",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4006"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/08/17/nested-oci-artifacts/",
+      "title": "Kubernetes 1.31: OCI Artifacts as Volume Source",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-08-17",
+      "summary": "Mount OCI artifacts directly as volumes in pods (alpha)",
+      "description": "New image volume type allows mounting OCI artifacts as read-only volumes. Enables separating data from application images without using init containers.",
+      "labels": [
+        "storage",
+        "volumes",
+        "oci",
+        "images",
+        "alpha",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.volumes[].image",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://www.loft.sh/blog/kubernetes-v1-31-release",
+      "title": "Kubernetes 1.31: Key Features, Updates, and What You Need to Know",
+      "type": "blog",
+      "source": "loft.sh",
+      "isOfficial": false,
+      "publishedDate": "2024-08-14",
+      "summary": "Comprehensive overview of 1.31 with focus on AppArmor GA and nftables beta",
+      "description": "Covers the 45 enhancements including AppArmor graduating to stable, nftables kube-proxy beta, and pod failure policy GA. Practical guidance for cluster administrators.",
+      "labels": [
+        "apparmor",
+        "nftables",
+        "failure-policy",
+        "1.31",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3329"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-31",
+      "title": "Kubernetes v1.31 Elli: What's New and Improved?",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2024-08-20",
+      "summary": "Deep dive into resource management and scheduling improvements in 1.31",
+      "description": "Covers AppArmor GA, persistent volume phase transition tracking, and scheduling enhancements. Explains practical implications for production clusters.",
+      "labels": [
+        "apparmor",
+        "pv",
+        "scheduling",
+        "1.31",
+        "deep-dive"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3762"
+        }
+      ]
+    },
+    {
+      "url": "https://sysdig.com/blog/whats-new-kubernetes-1-31/",
+      "title": "What's new in Kubernetes 1.31?",
+      "type": "blog",
+      "source": "sysdig.com",
+      "isOfficial": false,
+      "publishedDate": "2024-08-13",
+      "summary": "Security-focused analysis of AppArmor GA and other security enhancements",
+      "description": "Highlights AppArmor graduating to stable after 8 years, enabling mandatory access control for containers. Covers security context improvements and pod failure policy.",
+      "labels": [
+        "security",
+        "apparmor",
+        "1.31",
+        "overview"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        }
+      ]
+    },
+    {
+      "url": "https://devtron.ai/blog/kubernetes-1-31-whats-new/",
+      "title": "Kubernetes 1.31: What's New?",
+      "type": "blog",
+      "source": "devtron.ai",
+      "isOfficial": false,
+      "publishedDate": "2024-08-15",
+      "summary": "Overview of key features including AppArmor, nftables, and OCI artifacts",
+      "description": "Covers the major enhancements in Elli release with focus on security and networking improvements. Includes practical examples and migration guidance.",
+      "labels": [
+        "apparmor",
+        "nftables",
+        "oci",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2024/09/kubernetes-elli-released/",
+      "title": "Kubernetes 1.31 'Elli' Released with AppArmor Support and Improved Ingress Connectivity",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2024-09-03",
+      "summary": "InfoQ coverage of Kubernetes 1.31 highlighting AppArmor GA and ingress improvements",
+      "description": "Covers the 45 enhancements in Elli release. Highlights AppArmor reaching stable status after 8 years and improved ingress connectivity options.",
+      "labels": [
+        "release",
+        "1.31",
+        "apparmor",
+        "ingress"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        }
+      ]
+    },
+    {
+      "url": "https://cloudfleet.ai/blog/cncf/2024-08-kubernetes-1-31-release/",
+      "title": "Kubernetes 1.31 Release: What's New in Elli",
+      "type": "blog",
+      "source": "cloudfleet.ai",
+      "isOfficial": false,
+      "publishedDate": "2024-08-14",
+      "summary": "Analysis of 1.31 features with focus on cloud-native workloads",
+      "description": "Covers AppArmor GA, nftables kube-proxy, and OCI artifacts. Discusses implications for cloud-native application deployment and security.",
+      "labels": [
+        "cloud-native",
+        "apparmor",
+        "nftables",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-24"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/04/17/kubernetes-v1-30-release/",
+      "title": "Kubernetes v1.30: Uwubernetes",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-04-17",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.30 with 45 enhancements",
+      "description": "The 'Uwubernetes' release brings robust defaults for security, contextual logging GA, and container resource-based HPA. Key features include recursive read-only mounts, job completion policy, and fast recursive SELinux label change.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.30",
+        "security",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2400"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3329"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1610"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3221"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/04/23/recursive-read-only-mounts/",
+      "title": "Kubernetes 1.30: Read-only volume mounts can be finally literally read-only",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-04-23",
+      "summary": "Recursive read-only mounts ensure all submounts are also read-only",
+      "description": "The recursiveReadOnly field ensures that when a volume is mounted read-only, all submounts within it are also read-only. Prevents accidental writes to nested mounts.",
+      "labels": [
+        "storage",
+        "volumes",
+        "security",
+        "beta",
+        "1.30"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3857"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.containers[].volumeMounts[].recursiveReadOnly",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/04/24/validating-admission-policy-ga/",
+      "title": "Kubernetes 1.30: Validating Admission Policy Is Generally Available",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-04-24",
+      "summary": "CEL-based validating admission policies graduate to stable",
+      "description": "Validating admission policies using Common Expression Language (CEL) are now GA. Provides a declarative, in-process alternative to admission webhooks for policy enforcement.",
+      "labels": [
+        "admission",
+        "cel",
+        "validation",
+        "security",
+        "stable",
+        "1.30"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3488"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ValidatingAdmissionPolicy",
+          "targetGroup": "admissionregistration.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/03/12/kubernetes-1-30-upcoming-changes/",
+      "title": "A Peek at Kubernetes v1.30",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2024-03-12",
+      "author": "Release Team",
+      "summary": "Preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.30",
+      "description": "Covers upcoming features including robust defaults for security, contextual logging, and container resource-based HPA. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.30",
+        "security"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2024/06/kubernetes-1-30/",
+      "title": "Kubernetes 1.30 Released with Contextual Logging, Improved Performance, and Security",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2024-06-22",
+      "summary": "InfoQ coverage of Kubernetes 1.30 highlighting contextual logging and security improvements",
+      "description": "Covers the 45 enhancements in Uwubernetes release. Highlights contextual logging GA, recursive read-only mounts, and job completion policy.",
+      "labels": [
+        "release",
+        "1.30",
+        "logging",
+        "security"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3329"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-30",
+      "title": "Kubernetes v1.30: What's New and Improved?",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2024-07-28",
+      "summary": "Comprehensive overview of 1.30 features including HPA improvements",
+      "description": "Covers container resource-based HPA, recursive read-only mounts, and security improvements. Explains how the new HPA settings give control over scaling based on individual container metrics.",
+      "labels": [
+        "hpa",
+        "autoscaling",
+        "security",
+        "1.30"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1610"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/12/13/kubernetes-v1-29-release/",
+      "title": "Kubernetes v1.29: Mandala",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-12-13",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.29 with 49 enhancements",
+      "description": "The 'Mandala' release brings ReadWriteOncePod to GA, KMS v2 improvements, and node lifecycle improvements. Key features include load balancer IP mode, nftables kube-proxy alpha, and improved Windows support.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.29",
+        "storage",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2485"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3453"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/11/16/kubernetes-1-29-upcoming-changes/",
+      "title": "Kubernetes Removals, Deprecations, and Major Changes in Kubernetes 1.29",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-11-16",
+      "summary": "Preview of deprecations and removals in Kubernetes 1.29",
+      "description": "Covers upcoming changes including removal of in-tree cloud provider integrations and deprecated API versions. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.29",
+        "deprecation"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/12/18/kubernetes-1-29-volume-attributes-class-alpha/",
+      "title": "Kubernetes 1.29: VolumeAttributesClass for Volume Modification",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-12-18",
+      "summary": "VolumeAttributesClass introduced for modifying volume attributes like IOPS",
+      "description": "VolumeAttributesClass allows modifying volume attributes (IOPS, throughput) without recreating volumes. Enables dynamic performance tuning for storage workloads.",
+      "labels": [
+        "storage",
+        "volume-attributes",
+        "iops",
+        "alpha",
+        "1.29"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3751"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "VolumeAttributesClass",
+          "targetGroup": "storage.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2024/01/kubernetes-1-29/",
+      "title": "Kubernetes 1.29 Released with ReadWriteOncePod GA and KMS v2 Improvements",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2024-01-08",
+      "summary": "InfoQ coverage of Kubernetes 1.29 highlighting storage and security improvements",
+      "description": "Covers the 49 enhancements in Mandala release. Highlights ReadWriteOncePod reaching stable status and KMS v2 improvements for encryption at rest.",
+      "labels": [
+        "release",
+        "1.29",
+        "storage",
+        "security",
+        "kms"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2485"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3453"
+        }
+      ]
+    },
+    {
+      "url": "https://kodekloud.com/blog/mandala-kubernetes-1-29-release-highlights/",
+      "title": "Kubernetes 1.29 Release Highlights",
+      "type": "blog",
+      "source": "kodekloud.com",
+      "isOfficial": false,
+      "publishedDate": "2024-01-28",
+      "summary": "Comprehensive overview of 1.29 features with practical examples",
+      "description": "Covers ReadWriteOncePod GA, KMS v2, and nftables kube-proxy alpha. Includes practical examples and migration guidance for cluster administrators.",
+      "labels": [
+        "storage",
+        "kms",
+        "nftables",
+        "1.29"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2485"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3866"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/08/15/kubernetes-v1-28-release/",
+      "title": "Kubernetes v1.28: Planternetes",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-08-15",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.28 with 45 enhancements",
+      "description": "The 'Planternetes' release brings sidecar containers alpha, mixed version proxy, and improved job handling. Key features include CDI injection, recovery from non-graceful node shutdown, and extended supported skew.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.28",
+        "sidecar",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4020"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2268"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/07/18/kubernetes-1-28-upcoming-changes/",
+      "title": "Kubernetes Removals and Major Changes In 1.28",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-07-18",
+      "summary": "Preview of deprecations and removals in Kubernetes 1.28",
+      "description": "Covers upcoming changes including extended supported skew from n-2 to n-3, and removal of legacy cloud provider integrations. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.28",
+        "deprecation"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/10/24/plants-process-and-parties-the-kubernetes-1.28-release-interview/",
+      "title": "Plants, Process and Parties: The Kubernetes 1.28 Release Interview",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-10-24",
+      "summary": "Interview with the 1.28 release team about the Planternetes release",
+      "description": "Behind-the-scenes look at the 1.28 release process. Discusses the plant theme, release team coordination, and community involvement in the release cycle.",
+      "labels": [
+        "release",
+        "interview",
+        "community",
+        "1.28"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2023/09/kubernetes-1-28/",
+      "title": "Kubernetes 1.28 Released with New Repositories and Fixes for Privilege Escalation in Windows",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2023-09-24",
+      "summary": "InfoQ coverage of Kubernetes 1.28 highlighting sidecar containers and security fixes",
+      "description": "Covers the 45 enhancements in Planternetes release. Highlights sidecar container support alpha and Windows security improvements.",
+      "labels": [
+        "release",
+        "1.28",
+        "sidecar",
+        "windows",
+        "security"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mirantis.com/blog/what-s-new-in-kubernetes-1-28-sidecar-containers-and-fewer-disruptions",
+      "title": "What's New in Kubernetes 1.28: Sidecars and Disruption Management",
+      "type": "blog",
+      "source": "mirantis.com",
+      "isOfficial": false,
+      "publishedDate": "2023-08-22",
+      "summary": "Analysis of sidecar containers and disruption management improvements",
+      "description": "Covers native sidecar container support and improvements to pod disruption handling. Explains how sidecars improve service mesh and logging patterns.",
+      "labels": [
+        "sidecar",
+        "disruption",
+        "service-mesh",
+        "1.28"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-753"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/04/11/kubernetes-v1-27-release/",
+      "title": "Kubernetes v1.27: Chill Vibes",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-04-11",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.27 with 60 enhancements",
+      "description": "The 'Chill Vibes' release brings in-place pod resize alpha, seccomp default GA, and pod scheduling readiness. Key features include freeze on k8s.gcr.io, multiple service CIDRs, and parallel image pulls.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.27",
+        "in-place-resize",
+        "seccomp",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2413"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3521"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/03/17/upcoming-changes-in-kubernetes-v1-27/",
+      "title": "Kubernetes Removals and Major Changes In v1.27",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-03-17",
+      "summary": "Preview of deprecations and removals in Kubernetes 1.27",
+      "description": "Covers the freeze on k8s.gcr.io registry and migration to registry.k8s.io. Helps cluster admins prepare for the upgrade with migration guidance.",
+      "labels": [
+        "release",
+        "preview",
+        "1.27",
+        "registry",
+        "migration"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/04/24/openapi-v3-field-validation-ga/",
+      "title": "Kubernetes 1.27: Server Side Field Validation and OpenAPI V3 move to GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-04-24",
+      "summary": "Server-side field validation and OpenAPI v3 graduate to stable",
+      "description": "Server-side field validation catches unknown and duplicate fields in API requests. OpenAPI v3 provides richer schema information for better tooling and validation.",
+      "labels": [
+        "api",
+        "validation",
+        "openapi",
+        "stable",
+        "1.27"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2885"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/05/08/kubernetes-1-27-volume-group-snapshot-alpha/",
+      "title": "Kubernetes 1.27: Introducing An API For Volume Group Snapshots",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-05-08",
+      "summary": "Volume Group Snapshots API introduced for crash-consistent multi-volume backups",
+      "description": "Volume Group Snapshots enable taking atomic, crash-consistent snapshots of multiple volumes simultaneously. Essential for applications with data spread across multiple PVCs.",
+      "labels": [
+        "storage",
+        "snapshots",
+        "volume-group",
+        "alpha",
+        "1.27"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3476"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2023/04/20/read-write-once-pod-access-mode-beta/",
+      "title": "Kubernetes 1.27: Single Pod Access Mode for PersistentVolumes Graduates to Beta",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2023-04-20",
+      "summary": "ReadWriteOncePod access mode graduates to beta for exclusive pod access",
+      "description": "ReadWriteOncePod ensures a PersistentVolume can only be mounted by a single pod. Provides stronger guarantees than ReadWriteOnce for applications requiring exclusive access.",
+      "labels": [
+        "storage",
+        "pv",
+        "access-mode",
+        "beta",
+        "1.27"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2485"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "PersistentVolume",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2023/05/kubernetes-1-27/",
+      "title": "Kubernetes 1.27 Released with Freeze on Legacy Image Registry and In-Place Update of Pod Resources",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2023-05-08",
+      "summary": "InfoQ coverage of Kubernetes 1.27 highlighting registry changes and in-place resize",
+      "description": "Covers the 60 enhancements in Chill Vibes release. Highlights the freeze on k8s.gcr.io and in-place pod resource update alpha.",
+      "labels": [
+        "release",
+        "1.27",
+        "registry",
+        "in-place-resize"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mirantis.com/blog/what-s-new-in-kubernetes-1-27",
+      "title": "What's New in Kubernetes 1.27: Key Enhancements and Updates",
+      "type": "blog",
+      "source": "mirantis.com",
+      "isOfficial": false,
+      "publishedDate": "2023-04-18",
+      "summary": "Analysis of key features including seccomp default and pod scheduling readiness",
+      "description": "Covers seccomp default GA, pod scheduling readiness, and in-place resize alpha. Explains how these features improve security and scheduling flexibility.",
+      "labels": [
+        "seccomp",
+        "scheduling",
+        "in-place-resize",
+        "1.27"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2413"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3521"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1287"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/12/09/kubernetes-v1-26-release/",
+      "title": "Kubernetes v1.26: Electrifying",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-12-09",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.26 with 37 enhancements",
+      "description": "The 'Electrifying' release brings dynamic resource allocation alpha, improved Windows support, and signed release artifacts. Key features include CEL admission policies, job tracking improvements, and auth API improvements.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.26",
+        "dra",
+        "windows",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3063"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3488"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3136"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/12/26/pod-scheduling-readiness-alpha/",
+      "title": "Kubernetes 1.26: Pod Scheduling Readiness",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-12-26",
+      "summary": "Scheduling gates allow pods to wait for external conditions before scheduling",
+      "description": "Pod scheduling readiness introduces scheduling gates that tell the scheduler when a pod is ready to be considered. Reduces wasted scheduling cycles for pods waiting on external events like quota approval.",
+      "labels": [
+        "scheduling",
+        "scheduling-gates",
+        "alpha",
+        "1.26"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3521"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.schedulingGates",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/12/20/validating-admission-policies-alpha/",
+      "title": "Kubernetes 1.26: Introducing Validating Admission Policies",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-12-20",
+      "summary": "CEL-based admission policies as a declarative alternative to webhooks",
+      "description": "Validating admission policies use Common Expression Language (CEL) to declare validation rules directly in Kubernetes resources. Avoids the complexity of deploying and maintaining admission webhooks.",
+      "labels": [
+        "admission",
+        "cel",
+        "validation",
+        "security",
+        "alpha",
+        "1.26"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3488"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "ValidatingAdmissionPolicy",
+          "targetGroup": "admissionregistration.k8s.io"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/12/02/seccomp-notifier/",
+      "title": "Finding suspicious syscalls with the seccomp notifier",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-12-02",
+      "summary": "Use seccomp notifier to discover which syscalls your containers need",
+      "description": "The seccomp notifier feature helps identify which system calls containers are making. Useful for building custom seccomp profiles by observing actual container behavior.",
+      "labels": [
+        "security",
+        "seccomp",
+        "syscalls",
+        "profiling",
+        "1.26"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2022/12/kubernetes-1-26/",
+      "title": "Kubernetes 1.26 Released with Image Registry Changes, Enhanced Resource Allocation, and Metrics",
+      "type": "blog",
+      "source": "infoq.com",
+      "isOfficial": false,
+      "publishedDate": "2022-12-30",
+      "summary": "InfoQ coverage of Kubernetes 1.26 highlighting DRA and registry changes",
+      "description": "Covers the 37 enhancements in Electrifying release. Highlights dynamic resource allocation alpha and the transition to registry.k8s.io.",
+      "labels": [
+        "release",
+        "1.26",
+        "dra",
+        "registry"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3063"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.kubesimplify.com/kubernetes-126",
+      "title": "Kubernetes 1.26: The Electrifying Release Setup",
+      "type": "blog",
+      "source": "kubesimplify.com",
+      "isOfficial": false,
+      "publishedDate": "2022-12-13",
+      "summary": "Community analysis of 1.26 features with focus on sustainability",
+      "description": "Covers the theme of energy awareness and sustainability in Kubernetes. Explains DRA alpha, Windows improvements, and signed artifacts.",
+      "labels": [
+        "dra",
+        "windows",
+        "sustainability",
+        "1.26"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3063"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/08/23/kubernetes-v1-25-release/",
+      "title": "Kubernetes v1.25: Combiner",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-08-23",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.25 with 40 enhancements",
+      "description": "The 'Combiner' release removes PodSecurityPolicy, brings ephemeral containers to GA, and introduces cgroups v2 support. Key features include user namespaces alpha, CSI migration GA, and network policy status.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.25",
+        "psp-removal",
+        "ephemeral-containers",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-277"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2254"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/08/31/cgroupv2-ga-1-25/",
+      "title": "Kubernetes 1.25: cgroup v2 graduates to GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-08-31",
+      "summary": "cgroup v2 support graduates to stable for improved resource management",
+      "description": "cgroup v2 provides a unified hierarchy for resource management with improved memory management, eBPF support, and rootless containers. Enables better resource isolation and monitoring.",
+      "labels": [
+        "cgroups",
+        "resource-management",
+        "stable",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2254"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/08/29/csi-inline-volumes-ga/",
+      "title": "Kubernetes 1.25: CSI Inline Volumes have graduated to GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-08-29",
+      "summary": "CSI inline volumes graduate to stable for ephemeral storage from third-party providers",
+      "description": "CSI inline volumes allow ephemeral storage to be provided by CSI drivers directly in pod specs. Similar to configMap and secret volumes but backed by third-party storage providers.",
+      "labels": [
+        "storage",
+        "csi",
+        "ephemeral",
+        "stable",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/09/19/local-storage-capacity-isolation-ga/",
+      "title": "Kubernetes 1.25: Local Storage Capacity Isolation Reaches GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-09-19",
+      "summary": "Local ephemeral storage capacity isolation graduates to stable",
+      "description": "Local storage capacity isolation allows managing ephemeral storage like CPU and memory. Pods can request and limit local storage, and kubelet can evict pods exceeding their limits.",
+      "labels": [
+        "storage",
+        "ephemeral-storage",
+        "resource-management",
+        "stable",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.containers[].resources.limits.ephemeral-storage",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/09/14/pod-has-network-condition/",
+      "title": "Kubernetes 1.25: PodHasNetwork Condition for Pods",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-09-14",
+      "summary": "New PodHasNetwork condition indicates when pod networking is configured",
+      "description": "The PodHasNetwork condition in pod status indicates when the pod sandbox has been created and networking configured. Helps with debugging network setup issues.",
+      "labels": [
+        "networking",
+        "pod-conditions",
+        "alpha",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "status.conditions",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/09/26/storage-in-tree-to-csi-migration-status-update-1.25/",
+      "title": "Kubernetes 1.25: In-Tree to CSI Volume Migration Status Update",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-09-26",
+      "summary": "Status update on migrating in-tree volume plugins to CSI drivers",
+      "description": "Covers the progress of migrating built-in volume plugins to CSI. GCE PD, AWS EBS, and Azure Disk migrations are GA. Explains the migration process and timeline.",
+      "labels": [
+        "storage",
+        "csi",
+        "migration",
+        "stable",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2022/08/04/upcoming-changes-in-kubernetes-1-25/",
+      "title": "Kubernetes Removals and Major Changes In 1.25",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2022-08-04",
+      "author": "Release Team",
+      "summary": "Preview of deprecations and removals in Kubernetes 1.25",
+      "description": "Covers the removal of PodSecurityPolicy and migration to Pod Security Admission. Helps cluster admins prepare for the upgrade with migration guidance.",
+      "labels": [
+        "release",
+        "preview",
+        "1.25",
+        "psp-removal",
+        "migration"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sysdig.com/blog/kubernetes-1-25-whats-new/",
+      "title": "Kubernetes 1.25 \u2013 What's new?",
+      "type": "blog",
+      "source": "sysdig.com",
+      "isOfficial": false,
+      "publishedDate": "2022-08-24",
+      "summary": "Security-focused analysis of PSP removal and ephemeral containers GA",
+      "description": "Covers PodSecurityPolicy removal and migration to Pod Security Admission. Explains ephemeral containers GA and cgroups v2 support.",
+      "labels": [
+        "security",
+        "psp",
+        "ephemeral-containers",
+        "cgroups",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-277"
+        }
+      ]
+    },
+    {
+      "url": "https://www.armosec.io/blog/kubernetes-version-1-25/",
+      "title": "Kubernetes Version 1.25: Everything You Should Know",
+      "type": "blog",
+      "source": "armosec.io",
+      "isOfficial": false,
+      "publishedDate": "2022-08-25",
+      "summary": "Comprehensive overview of 1.25 features with security focus",
+      "description": "Covers PSP removal, ephemeral containers GA, and CRD validation with CEL. Includes practical migration guidance for security teams.",
+      "labels": [
+        "security",
+        "psp",
+        "cel",
+        "crd",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/k8s-v1.35.png",
+      "title": "Kubernetes v1.35 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.35"],
+      "links": [{"targetType": "release", "targetId": "1.35"}]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/k8s-v1.34.png",
+      "title": "Kubernetes v1.34 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.34"],
+      "links": [{"targetType": "release", "targetId": "1.34"}]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/k8s-1.33.png",
+      "title": "Kubernetes v1.33 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.33"],
+      "links": [{"targetType": "release", "targetId": "1.33"}]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2024/12/11/kubernetes-v1-32-release/k8s-1.32.png",
+      "title": "Kubernetes v1.32 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.32"],
+      "links": [{"targetType": "release", "targetId": "1.32"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2024-08-13-kubernetes-1.31-release/k8s-1.31.png",
+      "title": "Kubernetes v1.31 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.31"],
+      "links": [{"targetType": "release", "targetId": "1.31"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2024-04-17-kubernetes-1.30-release/k8s-1.30.png",
+      "title": "Kubernetes v1.30 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.30"],
+      "links": [{"targetType": "release", "targetId": "1.30"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2023-12-13-kubernetes-1.29-release/k8s-1.29.png",
+      "title": "Kubernetes v1.29 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.29"],
+      "links": [{"targetType": "release", "targetId": "1.29"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2023-08-15-kubernetes-1.28-blog/kubernetes-1.28.png",
+      "title": "Kubernetes v1.28 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.28"],
+      "links": [{"targetType": "release", "targetId": "1.28"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2023-04-11-kubernetes-1.27-blog/kubernetes-1.27.png",
+      "title": "Kubernetes v1.27 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.27"],
+      "links": [{"targetType": "release", "targetId": "1.27"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2022-12-08-kubernetes-1.26-release/kubernetes-1.26.png",
+      "title": "Kubernetes v1.26 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.26"],
+      "links": [{"targetType": "release", "targetId": "1.26"}]
+    },
+    {
+      "url": "https://kubernetes.io/images/blog/2022-08-23-kubernetes-1.25-release/kubernetes-1.25.png",
+      "title": "Kubernetes v1.25 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": ["artwork", "1.25"],
+      "links": [{"targetType": "release", "targetId": "1.25"}]
+    },
+    {
+      "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-1-intro-and-topics-discussed/",
+      "title": "Out-of-memory (OOM) in Kubernetes – Part 1: Intro and topics discussed",
+      "type": "blog",
+      "source": "mihai-albert.com",
+      "isOfficial": false,
+      "publishedDate": "2022-02-13",
+      "author": "Mihai Albert",
+      "summary": "Introduction to OOM in Kubernetes with a roadmap for the series",
+      "description": "Clear mental model of how out-of-memory situations occur in Kubernetes. Sets up the foundation for understanding OOM killer behavior, memory metrics, and pod evictions in subsequent parts.",
+      "labels": ["memory", "oom", "deep-dive", "must-read"],
+      "links": []
+    },
+    {
+      "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-2-the-oom-killer-and-application-runtime-implications/",
+      "title": "Out-of-memory (OOM) in Kubernetes – Part 2: The OOM killer and application runtime implications",
+      "type": "blog",
+      "source": "mihai-albert.com",
+      "isOfficial": false,
+      "publishedDate": "2022-02-13",
+      "author": "Mihai Albert",
+      "summary": "Deep dive into Linux OOM killer behavior and how it interacts with Kubernetes",
+      "description": "Explains the difference between Kubernetes and Linux OOM behavior, why kubelet can't always react in time, and how cgroups memory limits trigger the OOM killer. Essential reading for debugging memory issues.",
+      "labels": ["memory", "oom", "cgroups", "linux", "kubelet", "deep-dive", "must-read"],
+      "links": []
+    },
+    {
+      "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-3-memory-metrics-sources-and-tools-to-collect-them/",
+      "title": "Out-of-memory (OOM) in Kubernetes – Part 3: Memory metrics sources and tools to collect them",
+      "type": "blog",
+      "source": "mihai-albert.com",
+      "isOfficial": false,
+      "publishedDate": "2022-02-13",
+      "author": "Mihai Albert",
+      "summary": "Understanding Kubernetes memory metrics and how to collect them",
+      "description": "Comprehensive guide to memory metrics in Kubernetes - what they mean, where they come from, and which tools to use for collection. Essential for understanding what's happening during OOM incidents.",
+      "labels": ["memory", "metrics", "observability", "monitoring", "deep-dive", "must-read"],
+      "links": []
+    },
+    {
+      "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-4-pod-evictions-oom-scenarios-and-flows-leading-to-them/",
+      "title": "Out-of-memory (OOM) in Kubernetes – Part 4: Pod evictions, OOM scenarios and flows leading to them",
+      "type": "blog",
+      "source": "mihai-albert.com",
+      "isOfficial": false,
+      "publishedDate": "2022-02-13",
+      "author": "Mihai Albert",
+      "summary": "How pods get evicted under memory pressure and the scenarios that lead to OOM",
+      "description": "Connects OOM theory to practice by explaining how pods actually get evicted under memory pressure. Covers kubelet eviction behavior, different OOM scenarios, and the flows that lead to them.",
+      "labels": ["memory", "oom", "eviction", "kubelet", "deep-dive", "must-read"],
+      "links": []
+    },
+    {
+      "url": "https://isovalent.com/blog/post/demystifying-cni/",
+      "title": "Demystifying the CNI by Writing One From Scratch",
+      "type": "blog",
+      "source": "isovalent.com",
+      "isOfficial": false,
+      "summary": "Implementation-first explanation of how CNI plugins work",
+      "description": "Learn how CNI works by building one from scratch. Covers the CNI spec, plugin lifecycle, and how Kubernetes uses CNI to configure pod networking. Excellent for understanding what CNI really does under the hood.",
+      "labels": ["cni", "networking", "deep-dive"],
+      "links": []
+    },
+    {
+      "url": "https://www.redhat.com/en/blog/persistent-volume-support-peer-pods-technical-deep-dive",
+      "title": "Persistent volume support with peer-pods – technical deep dive",
+      "type": "blog",
+      "source": "redhat.com",
+      "isOfficial": false,
+      "summary": "Technical deep dive into CSI sidecars and volume attach/publish flow",
+      "description": "Very practical and detailed explanation of real CSI control-plane plumbing. Covers CSI sidecars, the attach/publish flow, and VolumeAttachment resources in the context of peer-pods.",
+      "labels": ["csi", "storage", "deep-dive"],
+      "links": []
+    },
+    {
+      "url": "https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/",
+      "title": "Container Storage Interface (CSI) for Kubernetes Goes GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2019-01-15",
+      "summary": "Canonical explanation of CSI architecture from the upstream Kubernetes blog",
+      "description": "Official announcement of CSI reaching GA. Explains why CSI exists, its architecture, and the lifecycle of storage operations. The authoritative reference for understanding CSI in Kubernetes.",
+      "labels": ["csi", "storage", "stable"],
+      "links": []
+    },
+    {
+      "url": "https://www.awelm.com/posts/kube-scheduler",
+      "title": "A Deeper Dive of kube-scheduler",
+      "type": "blog",
+      "source": "awelm.com",
+      "isOfficial": false,
+      "summary": "Clear mental model of how the Kubernetes scheduler works under the hood",
+      "description": "Accurate explanation of the scheduler pipeline, filtering and scoring concepts, and common misconceptions. Great for understanding how scheduling decisions are made in Kubernetes.",
+      "labels": ["scheduling", "deep-dive"],
+      "links": []
+    },
+    {
+      "url": "https://blog.esc.sh/kubernetes-containers-linux-processes/",
+      "title": "How Kubernetes Runs Containers: Linux processes, namespaces, and the pause container",
+      "type": "blog",
+      "source": "blog.esc.sh",
+      "isOfficial": false,
+      "summary": "Grounded explanation of the Linux process model behind Kubernetes containers",
+      "description": "Explains how containers are really just Linux processes with namespaces. Covers the process tree, the pause container's role, and how the container runtime manages processes. Great for debugging runtime behavior.",
+      "labels": ["containerd", "runtime", "linux", "deep-dive"],
+      "links": []
+    },
+    {
+      "url": "https://nsddd.top/posts/deep-dive-into-the-components-of-kubernetes-cni-csi-cri/",
+      "title": "Deep Dive into the components of Kubernetes CNI, CSI, CRI",
+      "type": "blog",
+      "source": "nsddd.top",
+      "isOfficial": false,
+      "summary": "Connects the three major Kubernetes plugin interfaces into one coherent story",
+      "description": "Comprehensive overview of CNI (networking), CSI (storage), and CRI (container runtime) interfaces. Explains how these components interact and their role in the Kubernetes architecture.",
+      "labels": ["cni", "csi", "runtime", "networking", "storage", "deep-dive"],
+      "links": []
+    },
+    {
+      "url": "https://k8s.af/",
+      "title": "Kubernetes Failure Stories",
+      "type": "reference",
+      "source": "k8s.af",
+      "isOfficial": false,
+      "summary": "Curated collection of real-world Kubernetes failure stories and post-mortems",
+      "description": "Community-maintained repository of public failure stories from companies running Kubernetes in production. Learn from others' mistakes - covers networking issues, resource limits, DNS failures, etcd problems, and more. Invaluable for understanding what can go wrong at scale.",
+      "labels": ["failure-stories", "post-mortem", "community", "best-practices", "networking", "storage", "etcd", "performance", "observability"],
+      "links": []
+    },
+    {
+      "url": "https://github.blog/engineering/debugging-network-stalls-on-kubernetes/",
+      "title": "Debugging network stalls on Kubernetes",
+      "type": "blog",
+      "source": "github.blog",
+      "isOfficial": false,
+      "publishedDate": "2019-11-21",
+      "author": "GitHub Engineering",
+      "summary": "How GitHub debugged sporadic 100ms+ latency spikes on their Kubernetes clusters",
+      "description": "A masterclass in network debugging. GitHub traces mysterious latency spikes from application layer down to kernel conntrack table lock contention. Covers TCP handshake analysis, IPIP overlay networking, NAT, iptables, and kernel tracing with ftrace. Essential reading for anyone running Kubernetes at scale.",
+      "labels": ["networking", "latency", "performance", "kube-proxy", "iptables", "linux", "deep-dive", "must-read"],
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.25",
+  "codename": "Combiner",
+  "description": "Kubernetes 1.25 'Combiner' 🤝 celebrates the combined force of contributors working together. This release unites 40 enhancements including the historic removal of PodSecurityPolicy (replaced by Pod Security Admission), ephemeral containers graduating to GA for live debugging, and cgroups v2 support for modern resource management. User namespaces enter alpha, CSI migration reaches GA, and network policy gains status reporting. Together, we build stronger.",
+  "releaseDate": "2022-08-23",
+  "endOfLifeDate": "2023-10-28",
+  "summary": {
+    "total": 40,
+    "stable": 13,
+    "beta": 10,
+    "alpha": 15
+  },
+  "themes": ["Security", "Debugging", "Storage", "Resource Management"],
+  "features": []
+}
