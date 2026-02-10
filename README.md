@@ -32,10 +32,17 @@ Run `just` to see all available commands.
 ## Quick Start
 
 ```bash
-# Install dependencies
+# 1. Clone the repo
+git clone https://github.com/your-org/k8s-compass.git
+cd k8s-compass
+
+# 2. Install frontend dependencies
 bun install
 
-# Start development server
+# 3. Generate parquet data (converts pipeline JSON → parquet for the UI)
+just k8s-pipeline export parquet
+
+# 4. Start the dev server
 just web dev
 ```
 
