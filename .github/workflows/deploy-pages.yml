@@ -26,6 +26,13 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Export parquet data
+        run: uv run k8s-pipeline export parquet
+        working-directory: pipeline
+
       - name: Install dependencies
         run: bun install
         working-directory: packages/web
