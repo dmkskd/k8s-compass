@@ -2,6 +2,8 @@
 
 A visual documentation system for Kubernetes APIs with release notes, KEP integration, and curated learning content.
 
+[video](https://github.com/user-attachments/assets/e1c95d37-e6a2-4b72-8c04-716efd8476a6)
+
 ## Features
 
 - **API Explorer**: Visualize K8s API structure
