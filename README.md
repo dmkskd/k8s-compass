@@ -2,7 +2,7 @@
 
 A visual documentation system for Kubernetes APIs with release notes, KEP integration, and curated learning content.
 
-[video](https://github.com/user-attachments/assets/e1c95d37-e6a2-4b72-8c04-716efd8476a6)
+[video](https://github.com/user-attachments/assets/972c0459-7a26-4c23-ba2e-336f7fc2f05c)
 
 ## Features
 
