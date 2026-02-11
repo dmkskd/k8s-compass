@@ -2,6 +2,8 @@
 
 A visual documentation system for Kubernetes APIs with release notes, KEP integration, and curated learning content.
 
+[https://dmkskd.github.io/k8s-compass/](https://dmkskd.github.io/k8s-compass/)
+
 [video](https://github.com/user-attachments/assets/972c0459-7a26-4c23-ba2e-336f7fc2f05c)
 
 ## Features
