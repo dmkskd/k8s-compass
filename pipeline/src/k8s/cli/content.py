@@ -134,6 +134,8 @@ def fetch_sched_cmd(
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview without saving"),
     max_sessions: int | None = typer.Option(None, "--max", "-n", help="Limit sessions"),
     no_enrich: bool = typer.Option(False, "--no-enrich", help="Skip LLM enrichment"),
+    force: bool = typer.Option(False, "--force", "-f", help="Re-import existing sessions"),
+    concurrency: int = typer.Option(10, "--concurrency", "-c", help="Concurrent LLM requests"),
 ):
     """Import conference sessions from Sched.com."""
     try:
@@ -154,6 +156,8 @@ def fetch_sched_cmd(
             dry_run=dry_run,
             max_sessions=max_sessions,
             enrich=not no_enrich,
+            force=force,
+            concurrency=concurrency,
         )
 
         if result:
@@ -210,22 +214,23 @@ def fetch_youtube_cmd(
         raise typer.Exit(1)
 
 
-@app.command("re-enrich")
-def re_enrich_cmd(
+@app.command("enrich")
+def enrich_cmd(
     conference: str = typer.Argument(..., help="Conference ID (e.g., kubecon-na-2024)"),
     max_sessions: int | None = typer.Option(None, "--max", "-n", help="Limit sessions"),
-    force: bool = typer.Option(False, "--force", "-f", help="Re-enrich all sessions"),
+    force: bool = typer.Option(False, "--force", "-f", help="Re-enrich already enriched sessions"),
+    concurrency: int = typer.Option(10, "--concurrency", "-c", help="Concurrent LLM requests"),
 ):
-    """Re-enrich existing sessions to fix labels."""
+    """Enrich conference sessions with LLM (labels, summary, links)."""
     try:
         from ..transform.content.sched_fetcher import re_enrich_sessions
 
-        result = re_enrich_sessions(conference, max_sessions=max_sessions, force=force)
+        result = re_enrich_sessions(conference, max_sessions=max_sessions, force=force, concurrency=concurrency)
 
         if result:
-            console.print(f"\n[green]✓[/green] Re-enriched {len(result)} sessions")
+            console.print(f"\n[green]✓[/green] Enriched {result} sessions")
         else:
-            console.print("[yellow]No sessions re-enriched[/yellow]")
+            console.print("[yellow]No sessions enriched[/yellow]")
 
     except Exception as e:
         console.print(f"[red]Error: {e}[/red]")

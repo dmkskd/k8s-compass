@@ -10,14 +10,14 @@
 
 # Active provider (change this to switch)
 # Options: bedrock, anthropic, openai, gemini, ollama
-provider: bedrock
+provider: ollama
 
 # Ollama configuration (local models)
 # Requires: ollama running locally (ollama serve)
 # Install: https://ollama.ai
 ollama:
   host: http://localhost:11434
-  model_id: gpt-oss:20b
+  model_id: gpt-oss:120b
   # How long to keep model loaded in memory
   keep_alive: 5m
   # Lower temperature = more deterministic/predictable output (0.0-1.0)
@@ -39,7 +39,7 @@ ollama:
 #   - openai.gpt-oss-120b-1:0
 #   - google.gemma-3-27b-it
 # Anthropic models (require approval):
-#   - us.anthropic.claude-sonnet-4-20250514-v1:0
+#   - us.anthropic.claude-sonnet-4-6-v1:0
 bedrock:
   model_id: openai.gpt-oss-120b-1:0
   max_tokens: 4096
@@ -48,7 +48,7 @@ bedrock:
 # Anthropic API configuration
 # Requires: ANTHROPIC_API_KEY environment variable
 anthropic:
-  model_id: claude-sonnet-4-20250514
+  model_id: claude-sonnet-4-6
   max_tokens: 4096
 
 # OpenAI API configuration

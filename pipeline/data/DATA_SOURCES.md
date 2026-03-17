@@ -1763,19 +1763,25 @@ Sched.com iCal Export
 
 ```bash
 # List available conferences
-uv run k8s-pipeline fetch-sched --list
+uv run k8s-pipeline content fetch-sched --list
 
 # Import all sessions from a conference
-uv run k8s-pipeline fetch-sched kubecon-na-2024
+uv run k8s-pipeline content fetch-sched kubecon-na-2024
 
 # Preview without saving
-uv run k8s-pipeline fetch-sched kubecon-na-2024 --dry-run
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --dry-run
 
 # Limit number of sessions
-uv run k8s-pipeline fetch-sched kubecon-na-2024 --max 50
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --max 50
 
 # Skip LLM enrichment (faster)
-uv run k8s-pipeline fetch-sched kubecon-na-2024 --no-enrich
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --no-enrich
+
+# Re-import existing sessions (e.g., descriptions changed)
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --force
+
+# Re-enrich existing sessions with LLM
+uv run k8s-pipeline content enrich kubecon-na-2024 --force
 ```
 
 ### Output Files

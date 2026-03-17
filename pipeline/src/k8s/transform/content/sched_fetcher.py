@@ -1025,21 +1025,21 @@ class EnrichedSession(BaseModel):
     """Structured output for session enrichment."""
 
     summary: str = Field(
-        description="1-2 sentence summary of what this session covers and why it matters"
+        description="1-2 sentence summary of what this session covers and why it matters to Kubernetes users/operators. Be detailed and specific, not generic."
     )
     labels: list[str] = Field(
-        description="3-6 lowercase topic labels for categorization (e.g., dra, scheduling, networking, gpu, security)"
+        description="4-8 lowercase topic labels for categorization and discovery. Be thorough - include SIG labels (only if about K8s development), technology names, concepts, and session type labels."
     )
     session_type: str = Field(
         description="Session type: keynote, deep-dive, tutorial, lightning-talk, panel, case-study, workshop, maintainer-track, or general"
     )
-    kep_references: list[str] = Field(
-        default_factory=list,
-        description="KEP numbers mentioned or relevant (e.g., KEP-1287, KEP-4381)"
+    kep_references: list[str] | None = Field(
+        default=None,
+        description="KEP numbers mentioned or relevant (e.g., KEP-1287, KEP-4381). Use empty list if none."
     )
-    affected_kinds: list[str] = Field(
-        default_factory=list,
-        description="Kubernetes resource types discussed (e.g., Pod, Deployment, ResourceClaim)"
+    affected_kinds: list[str] | None = Field(
+        default=None,
+        description="Kubernetes resource types discussed (e.g., Pod, Deployment, ResourceClaim). Use empty list if none."
     )
 
 
@@ -1176,7 +1176,10 @@ def enrich_sessions_batch(
         agent = create_agent(
             provider_name,  # type: ignore
             provider_config,
-            "You are a Kubernetes expert analyzing conference session content.",
+            "You are a Kubernetes expert analyzing conference session content. "
+            "When providing structured output, be thorough and detailed: write comprehensive summaries "
+            "(not just rephrasing the title), and include ALL relevant topic labels (aim for 5-8). "
+            "Your labels and summaries help users discover and understand content.",
             model_id,
         )
 
@@ -1237,7 +1240,7 @@ def session_to_content_entry(
     # Use enrichment data if available, otherwise fall back to rule-based extraction
     if enrichment:
         labels = list(enrichment.labels)
-        keps = validate_kep_references(list(enrichment.kep_references))
+        keps = validate_kep_references(list(enrichment.kep_references or []))
         session_type = enrichment.session_type
         summary = enrichment.summary
     else:
@@ -1363,6 +1366,7 @@ def import_sched_sessions(
     provider: ProviderType | None = None,
     model_id: str | None = None,
     concurrency: int = 10,
+    force: bool = False,
 ) -> int:
     """
     Import sessions from a Sched.com conference into a conference-specific content file.
@@ -1379,6 +1383,7 @@ def import_sched_sessions(
         provider: LLM provider override
         model_id: Model ID override
         concurrency: Number of concurrent LLM requests
+        force: If True, re-import existing sessions (update in place)
 
     Returns:
         Number of sessions imported
@@ -1408,13 +1413,19 @@ def import_sched_sessions(
         sched_url = s.session_url.replace("http://", "https://")
         return sched_url not in existing_urls and sched_url not in existing_sched_urls
 
-    new_sessions = [s for s in sessions if is_new_session(s)]
+    if force:
+        new_sessions = [s for s in sessions if s.session_url]
+        existing_count = len([s for s in new_sessions if not is_new_session(s)])
+        log(f"  Force mode: re-importing all {len(new_sessions)} sessions ({existing_count} existing)")
+    else:
+        new_sessions = [s for s in sessions if is_new_session(s)]
 
     if not new_sessions:
         log(f"  All {len(sessions)} sessions already exist")
         return 0
 
-    log(f"  {len(new_sessions)} new sessions to import (skipping {len(sessions) - len(new_sessions)} existing)")
+    if not force:
+        log(f"  {len(new_sessions)} new sessions to import (skipping {len(sessions) - len(new_sessions)} existing)")
 
     # Scrape YouTube/slides URLs and experience level from Sched pages
     if scrape_media and not dry_run:
@@ -1468,14 +1479,28 @@ def import_sched_sessions(
             enrichment=enrichment,
         )
 
-        # Skip if URL is empty or already exists
+        # Skip if URL is empty
         if not entry["url"]:
             continue
-        if entry["url"] in existing_urls or entry["url"] in existing_youtube:
+        # Skip if already exists (unless force)
+        if not force and (entry["url"] in existing_urls or entry["url"] in existing_youtube):
             continue
 
         if not dry_run:
-            conf_data.setdefault("content", []).append(entry)
+            if force:
+                # Replace existing entry in-place if found
+                replaced = False
+                sched_url = (session.session_url or "").replace("http://", "https://")
+                content_list = conf_data.setdefault("content", [])
+                for i, existing in enumerate(content_list):
+                    if existing.get("url") == sched_url or existing.get("schedUrl") == sched_url:
+                        content_list[i] = entry
+                        replaced = True
+                        break
+                if not replaced:
+                    content_list.append(entry)
+            else:
+                conf_data.setdefault("content", []).append(entry)
             existing_urls.add(entry["url"])
 
         added += 1
@@ -1493,7 +1518,8 @@ def import_sched_sessions(
         save_content(conf_data, conf_file)
 
     enriched_count = len(enrichments)
-    log(f"\nImported {added} sessions:")
+    verb = "Imported/updated" if force else "Imported"
+    log(f"\n{verb} {added} sessions:")
     log(f"  - {videos} with YouTube videos")
     log(f"  - {slides} with slides PDFs")
     log(f"  - {enriched_count} enriched with LLM")
@@ -1636,6 +1662,134 @@ def review_labels_batch(
     log(f"[USAGE] {usage_tracker.format_total()}")
 
     return results
+
+
+def re_enrich_sessions(
+    conference_id: str,
+    max_sessions: int | None = None,
+    force: bool = False,
+    dry_run: bool = False,
+    provider: ProviderType | None = None,
+    model_id: str | None = None,
+    concurrency: int = 10,
+) -> int:
+    """
+    Re-enrich existing sessions with LLM to update labels, summary, and links.
+
+    Converts existing content entries back to SchedSession objects and runs them
+    through the enrichment pipeline, then updates entries in-place.
+
+    Args:
+        conference_id: Conference identifier
+        max_sessions: Maximum sessions to process
+        force: If True, re-enrich all sessions; otherwise only unenriched ones
+        dry_run: If True, don't save changes
+        provider: LLM provider override
+        model_id: Model ID override
+        concurrency: Number of concurrent LLM requests
+
+    Returns:
+        Number of sessions updated
+    """
+    config = SCHED_CONFERENCES[conference_id]
+    conf_file = get_content_file_for_conference(conference_id)
+    conf_data = load_content(conf_file)
+
+    entries = conf_data.get("content", [])
+    if not entries:
+        log(f"  No sessions found for {conference_id}")
+        return 0
+
+    # Select entries to re-enrich
+    if force:
+        to_enrich = entries
+    else:
+        # Only enrich entries that lack a summary (proxy for "not enriched")
+        to_enrich = [e for e in entries if not e.get("summary")]
+
+    if max_sessions:
+        to_enrich = to_enrich[:max_sessions]
+
+    if not to_enrich:
+        log(f"  All {len(entries)} sessions already enriched (use --force to re-enrich)")
+        return 0
+
+    log(f"  {len(to_enrich)} sessions to enrich (of {len(entries)} total)")
+
+    # Convert content entries back to SchedSession objects for the enrichment pipeline
+    sessions: list[SchedSession] = []
+    entry_by_session_id: dict[str, dict[str, Any]] = {}
+    for entry in to_enrich:
+        session_id = entry.get("url", "").split("/")[-1] or entry.get("url", "")
+        session = SchedSession(
+            session_id=session_id,
+            title=entry.get("title", ""),
+            speakers=entry.get("author", "").split(", ") if entry.get("author") else [],
+            description=entry.get("description"),
+            session_url=entry.get("schedUrl") or entry.get("url"),
+        )
+        sessions.append(session)
+        entry_by_session_id[session_id] = entry
+
+    # Run enrichment
+    enrichments = enrich_sessions_batch(
+        sessions,
+        config["name"],
+        provider=provider,
+        model_id=model_id,
+        concurrency=concurrency,
+    )
+
+    # Apply enrichments back to existing entries
+    updated = 0
+    for session in sessions:
+        enrichment = enrichments.get(session.session_id)
+        if not enrichment:
+            continue
+
+        entry = entry_by_session_id[session.session_id]
+
+        # Rebuild labels: keep conference/type labels, replace enriched ones
+        old_labels = set(entry.get("labels", []))
+        # Preserve structural labels (conference, type)
+        structural = {l for l in old_labels if l.startswith("kubecon") or l == conference_id}
+        new_labels = set(enrichment.labels) | structural
+        if enrichment.session_type:
+            new_labels.add(enrichment.session_type)
+
+        # Rebuild links from enrichment
+        links: list[dict[str, Any]] = []
+        # Keep non-KEP links (e.g., kind links will be rebuilt)
+        keps = validate_kep_references(list(enrichment.kep_references or []))
+        for kep in keps:
+            links.append({"targetType": "kep", "targetId": kep})
+        if enrichment.affected_kinds:
+            for kind in enrichment.affected_kinds:
+                group = "core"
+                if kind in ("Deployment", "StatefulSet", "DaemonSet", "ReplicaSet"):
+                    group = "apps"
+                elif kind in ("Ingress", "NetworkPolicy"):
+                    group = "networking.k8s.io"
+                elif kind in ("ResourceClaim", "ResourceClass", "DeviceClass"):
+                    group = "resource.k8s.io"
+                elif kind in ("Job", "CronJob"):
+                    group = "batch"
+                links.append({"targetType": "kind", "targetId": kind, "targetGroup": group})
+
+        if not dry_run:
+            entry["labels"] = list(new_labels)
+            entry["links"] = links
+            if enrichment.summary:
+                entry["summary"] = enrichment.summary
+
+        updated += 1
+        log(f"  ✓ {entry.get('title', '')[:55]}...")
+
+    if not dry_run and updated > 0:
+        save_content(conf_data, conf_file)
+        log(f"\n[OK] Updated {updated} sessions in {conf_file}")
+
+    return updated
 
 
 def re_enrich_conference_labels(

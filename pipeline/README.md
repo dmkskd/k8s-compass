@@ -95,6 +95,8 @@ uv run k8s-pipeline component gates 1.35        # Extract feature gates
 # Content
 uv run k8s-pipeline content fetch-sched --list  # List conferences
 uv run k8s-pipeline content fetch-sched kubecon-na-2024  # Import sessions
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --force  # Re-import existing
+uv run k8s-pipeline content enrich kubecon-na-2024 --force  # Re-enrich with LLM
 uv run k8s-pipeline content list                # List all content
 
 # Export
@@ -152,7 +154,7 @@ ollama:
 | `cli/kep.py` | KEP commands (build, enrich, link) |
 | `cli/openapi.py` | OpenAPI commands (fetch, diff, info) |
 | `cli/component.py` | Component commands (flags, kubectl, gates) |
-| `cli/content.py` | Content commands (add, list, fetch-sched) |
+| `cli/content.py` | Content commands (add, list, fetch-sched, enrich) |
 | `cli/repo.py` | Repository commands (sync, list, checkout) |
 | `cli/export.py` | Export commands (parquet, docs, benchmark) |
 | `cli/util.py` | Utility commands (versions, clear-cache) |
