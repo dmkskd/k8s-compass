@@ -60,8 +60,8 @@
       "total_support_days": 789,
       "status": "supported",
       "has_extended_support": true,
-      "latest_patch": "1.35-eks-3",
-      "latest_patch_date": "2026-01-27"
+      "latest_patch": "1.35-eks-9",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -77,8 +77,8 @@
       "total_support_days": 787,
       "status": "supported",
       "has_extended_support": true,
-      "latest_patch": "1.34-eks-13",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.34-eks-19",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -94,8 +94,8 @@
       "total_support_days": 792,
       "status": "supported",
       "has_extended_support": true,
-      "latest_patch": "1.33-eks-27",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.33-eks-33",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -109,10 +109,10 @@
       "standard_support_days": 422,
       "extended_support_days": 365,
       "total_support_days": 787,
-      "status": "supported",
+      "status": "eol",
       "has_extended_support": true,
-      "latest_patch": "1.32-eks-34",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.32-eks-40",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -128,8 +128,8 @@
       "total_support_days": 791,
       "status": "eol",
       "has_extended_support": true,
-      "latest_patch": "1.31-eks-50",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.31-eks-56",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -145,8 +145,8 @@
       "total_support_days": 791,
       "status": "eol",
       "has_extended_support": true,
-      "latest_patch": "1.30-eks-58",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.30-eks-64",
+      "latest_patch_date": "2026-04-03"
     },
     {
       "provider_id": "eks",
@@ -162,8 +162,8 @@
       "total_support_days": 790,
       "status": "eol",
       "has_extended_support": true,
-      "latest_patch": "1.29-eks-61",
-      "latest_patch_date": "2026-01-28"
+      "latest_patch": "1.29-eks-66",
+      "latest_patch_date": "2026-03-18"
     },
     {
       "provider_id": "eks",
@@ -366,8 +366,8 @@
       "total_support_days": 424,
       "status": "supported",
       "has_extended_support": false,
-      "latest_patch": "1.35.2-gke.1269000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.35.3-gke.1737000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -383,8 +383,8 @@
       "total_support_days": 366,
       "status": "supported",
       "has_extended_support": false,
-      "latest_patch": "1.34.5-gke.1076000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.34.7-gke.1055000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -400,8 +400,8 @@
       "total_support_days": 426,
       "status": "supported",
       "has_extended_support": false,
-      "latest_patch": "1.33.9-gke.1060000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.33.11-gke.1074000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -415,10 +415,10 @@
       "standard_support_days": 424,
       "extended_support_days": 0,
       "total_support_days": 424,
-      "status": "supported",
+      "status": "eol",
       "has_extended_support": false,
-      "latest_patch": "1.32.13-gke.1059000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.32.13-gke.1407000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -434,8 +434,8 @@
       "total_support_days": 448,
       "status": "eol",
       "has_extended_support": false,
-      "latest_patch": "1.31.14-gke.1576000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.31.14-gke.1823000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -451,8 +451,8 @@
       "total_support_days": 426,
       "status": "eol",
       "has_extended_support": false,
-      "latest_patch": "1.30.14-gke.2192000",
-      "latest_patch_date": "2026-03-12"
+      "latest_patch": "1.30.14-gke.2415000",
+      "latest_patch_date": "2026-04-29"
     },
     {
       "provider_id": "gke",
@@ -677,16 +677,33 @@
     },
     {
       "provider_id": "aks",
+      "k8s_version": "1.35",
+      "provider_version": "1.35",
+      "upstream_release_date": "2025-12-17",
+      "provider_release_date": "2026-03-05",
+      "eol_standard_date": "2027-03-31",
+      "eol_extended_date": "2028-03-31",
+      "days_to_availability": 78,
+      "standard_support_days": 391,
+      "extended_support_days": 366,
+      "total_support_days": 757,
+      "status": "supported",
+      "has_extended_support": true,
+      "latest_patch": "",
+      "latest_patch_date": null
+    },
+    {
+      "provider_id": "aks",
       "k8s_version": "1.34",
       "provider_version": "1.34",
       "upstream_release_date": "2025-08-27",
-      "provider_release_date": "2025-12-12",
+      "provider_release_date": "2026-01-04",
       "eol_standard_date": "2026-11-30",
       "eol_extended_date": "2027-11-30",
-      "days_to_availability": 107,
-      "standard_support_days": 353,
+      "days_to_availability": 130,
+      "standard_support_days": 330,
       "extended_support_days": 365,
-      "total_support_days": 718,
+      "total_support_days": 695,
       "status": "supported",
       "has_extended_support": true,
       "latest_patch": "",
@@ -721,7 +738,7 @@
       "standard_support_days": 359,
       "extended_support_days": 365,
       "total_support_days": 724,
-      "status": "supported",
+      "status": "eol",
       "has_extended_support": true,
       "latest_patch": "",
       "latest_patch_date": null
@@ -976,7 +993,7 @@
       "standard_support_days": 547,
       "extended_support_days": 0,
       "total_support_days": 547,
-      "status": "supported",
+      "status": "eol",
       "has_extended_support": false,
       "latest_patch": "4.17.43",
       "latest_patch_date": "2025-11-05"
