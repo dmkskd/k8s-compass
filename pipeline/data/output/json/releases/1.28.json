@@ -1,14 +1,14 @@
 {
   "version": "1.28",
   "codename": "Planternetes",
-  "description": "Kubernetes 1.28 'Planternetes' brings 45 enhancements with native sidecar container support entering alpha. Mixed version proxy improves upgrade flexibility, and recovery from non-graceful node shutdown reaches stable. Key features include CDI injection, extended supported skew (n-3), and job tracking improvements.",
+  "description": "Kubernetes 1.28 'Planternetes' \ud83c\udf31 cultivates 45 enhancements with the care of a master gardener. Like tending a thriving garden, this release nurtures native sidecar containers (alpha), extends the supported version skew to n-3 for more flexible upgrades, and brings non-graceful node shutdown recovery to stable bloom. The community planted seeds of innovation across CDI injection, job tracking, and mixed version proxy\u2014each feature carefully grown to harmonious maturity.",
   "releaseDate": "2023-08-15",
   "endOfLifeDate": "2024-10-28",
   "summary": {
-    "total": 39,
-    "stable": 15,
-    "beta": 8,
-    "alpha": 16
+    "total": 55,
+    "stable": 19,
+    "beta": 13,
+    "alpha": 23
   },
   "themes": [
     "Workloads",
@@ -24,21 +24,7 @@
       "author": "kerthcet",
       "sigs": [
         "Scheduling"
-      ],
-      "enrichment": {
-        "title": "scheduler_scheduler_goroutines metric removed",
-        "summary": "The metric `scheduler_scheduler_goroutines` has been removed; users should switch to `scheduler_goroutines`.",
-        "action": "Update all monitoring, alerting, and dashboard queries to reference `scheduler_goroutines` instead of the removed `scheduler_scheduler_goroutines` metric.",
-        "severity": "low",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "deployments"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "CephFS volume plugin (`kubernetes.io/cephfs`) has been deprecated in this release and will be removed in a subsequent release. The alternative is to use the CephFS CSI driver (https://github.com/ceph/ceph-csi/) in your Kubernetes cluster.",
@@ -47,21 +33,7 @@
       "author": "humblec",
       "sigs": [
         "Storage"
-      ],
-      "enrichment": {
-        "title": "CephFS volume plugin deprecated",
-        "summary": "The built\u2011in CephFS volume plugin (kubernetes.io/cephfs) is deprecated and will be removed in a future release; users should migrate to the CephFS CSI driver.",
-        "action": "Replace all CephFS PersistentVolume and PersistentVolumeClaim definitions that use the `kubernetes.io/cephfs` driver with the CephFS CSI driver (`csi.cephfs.csi.ceph.com`). Update any storage classes, volume mounts, and test that pods can mount the new CSI volumes.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Deprecated support for CSI migration of `Ceph RBD volumes`. Users who were relying on Kubernetes' ability\nto migrate to an out-of-tree storage driver should complete that migration before the support for it is removed.",
@@ -70,21 +42,7 @@
       "author": "carlory",
       "sigs": [
         "Storage"
-      ],
-      "enrichment": {
-        "title": "Ceph RBD CSI migration support deprecated",
-        "summary": "Support for automatic CSI migration of Ceph RBD volumes is deprecated and will be removed; users must finish migrating to the external Ceph RBD CSI driver now.",
-        "action": "Identify all workloads using the in\u2011tree Ceph RBD volume plugin and manually migrate their PersistentVolumes, PersistentVolumeClaims, and StorageClasses to the Ceph RBD CSI driver before the migration support is removed.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Action required for the custom scheduler plugin developers. \nHere's the breaking change in `EnqueueExtension` in the scheduling framework. \nThe `EventsToRegister` in `EnqueueExtension` changed the return value from `ClusterEvent` to `ClusterEventWithHint`. `ClusterEventWithHint` allows each plugin to filter out more useless events via the callback function named `QueueingHintFn`.\nWhen the scheduling queue receives a cluster event, before moving each Pod from unschedulable pod pool to activeQ/backoffQ, it will call QueueingHintFn of plugins that rejected each Pod in the previous scheduling cycle.\nDepending on the value returned from QueueingHintFn, the scheduling queue changes how it queues each Pod:\n- if more than one QueueingHintFn returns QueueImmediately, it queues Pod to activeQ.\n- If no QueueingHintFn returns QueueImmediately and more than one plugin returns QueueAfterBackoff, it queues Pod to backoffQ if Pod is backing off, or to activeQ if Pod's backoff has already finished.\n- If all QueueingHintFn return QueueSkip, it puts this pod back to the unschedulable pod pool\n\nHaving appropriate QueueingHintFn contributes to reducing useless retries and thus improves the overall scheduler's performance.\n\n**How can I migrate?**\n\nFor backward compatibility, nil `QueueingHintFn` is treated as always returning QueueAfterBackoff. \nSo, if you want to just keep the existing behavior, you can register `ClusterEventWithHint` with no `QueueingHintFn` in it. \nBut, registering appropriate `QueueingHintFn` is, of course, better from a scheduling performance perspective.",
@@ -96,20 +54,7 @@
         "Storage",
         "Node",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "EnqueueExtension return type changed",
-        "summary": "The `EnqueueExtension` method now returns `ClusterEventWithHint` instead of `ClusterEvent`; plugins must update to register this type and optionally implement `QueueingHintFn` for better queue handling.",
-        "action": "Modify custom scheduler plugins to use the new `ClusterEventWithHint` return type in `EnqueueExtension`. For backward compatibility you may pass a nil `QueueingHintFn` (behaves as `QueueAfterBackoff`), but implementing an appropriate `QueueingHintFn` is recommended to improve scheduling performance.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "RBD volume plugin (`kubernetes.io/rbd`) has been deprecated in this release\nand will be removed in a subsequent release. Alternative is to use RBD CSI driver\n(https://github.com/ceph/ceph-csi/) in your Kubernetes Cluster.",
@@ -118,21 +63,7 @@
       "author": "humblec",
       "sigs": [
         "Storage"
-      ],
-      "enrichment": {
-        "title": "RBD volume plugin deprecated",
-        "summary": "The in\u2011tree RBD volume plugin (`kubernetes.io/rbd`) is deprecated and will be removed in a future release; users should switch to the RBD CSI driver.",
-        "action": "Update all PersistentVolumes, PersistentVolumeClaims, and StorageClasses that use the `kubernetes.io/rbd` driver to use the RBD CSI driver (`rbd.csi.ceph.com`). Verify that pods can mount the new CSI volumes before the in\u2011tree plugin is removed.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "securityInformation": [
@@ -284,6 +215,42 @@
       }
     },
     {
+      "kep": "KEP-1981",
+      "kepPath": "sig-windows/1981-windows-privileged-container-support",
+      "title": "Windows Privileged Container Support",
+      "stage": "stable",
+      "sig": "Windows",
+      "category": "Platform",
+      "description": "",
+      "impact": null,
+      "featureGate": "WindowsHostProcessContainers",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.23",
+        "stable": "1.26"
+      }
+    },
+    {
+      "kep": "KEP-2133",
+      "kepPath": "sig-node/2133-kubelet-credential-providers",
+      "title": "Kubelet Credential Providers",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "KubeletCredentialProviders",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.20",
+        "beta": "1.24",
+        "stable": "1.26"
+      }
+    },
+    {
       "kep": "KEP-2238",
       "kepPath": "sig-node/2238-liveness-probe-grace-period",
       "title": "Liveness Probe Grace Period",
@@ -317,6 +284,25 @@
         "alpha": "1.24",
         "beta": "1.26",
         "stable": "1.28"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-2307",
+      "kepPath": "sig-apps/2307-job-tracking-without-lingering-pods",
+      "title": "Job tracking without lingering Pods",
+      "stage": "stable",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "JobTrackingWithFinalizers",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.23",
+        "stable": "1.26"
       }
     },
     {
@@ -493,7 +479,8 @@
       "affectedFields": [],
       "history": {
         "stable": "1.28"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-606",
@@ -511,6 +498,44 @@
         "alpha": "1.13",
         "beta": "1.15",
         "stable": "1.28"
+      }
+    },
+    {
+      "kep": "KEP-785",
+      "kepPath": "sig-scheduling/785-scheduler-component-config-api",
+      "title": "Scheduler Component Config API",
+      "stage": "stable",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": null,
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "beta": "1.19",
+        "stable": "1.25"
+      }
+    },
+    {
+      "kep": "KEP-1040",
+      "kepPath": "sig-api-machinery/1040-priority-and-fairness",
+      "title": "Priority and Fairness for API Server Requests",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "APIPriorityAndFairness",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.18",
+        "beta": "1.20",
+        "stable": "1.29",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -552,6 +577,85 @@
       }
     },
     {
+      "kep": "KEP-2799",
+      "kepPath": "sig-auth/2799-reduction-of-secret-based-service-account-token",
+      "title": "Reduction of Secret-based Service Account Tokens",
+      "stage": "beta",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "LegacyServiceAccountTokenNoAutoGeneration",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "beta": "1.24",
+        "stable": "1.30",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2876",
+      "kepPath": "sig-api-machinery/2876-crd-validation-expression-language",
+      "title": "CRD Validation Expression Language",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "CustomResourceValidationExpressions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.25",
+        "stable": "1.29",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2923",
+      "kepPath": "sig-storage/2923-csi-migration-ceph-rbd",
+      "title": "In-tree Storage Plugin to CSI Migration - Ceph RBD",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "CSIMigrationRbd",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.27"
+      }
+    },
+    {
+      "kep": "KEP-3329",
+      "kepPath": "sig-apps/3329-retriable-and-non-retriable-failures",
+      "title": "Retriable and non-retriable Pod failures for Jobs",
+      "stage": "beta",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodDisruptionConditions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.26",
+        "stable": "1.31",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-3488",
       "kepPath": "sig-api-machinery/3488-cel-admission-control",
       "title": "CEL for Admission Control",
@@ -570,7 +674,8 @@
         "verified": [
           "stable"
         ]
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3545",
@@ -676,6 +781,28 @@
       }
     },
     {
+      "kep": "KEP-127",
+      "kepPath": "sig-node/127-user-namespaces",
+      "title": "Support User Namespaces",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "UserNamespacesSupport",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-1731",
       "kepPath": "sig-release/1731-publishing-packages",
       "title": "Publishing Kubernetes packages on community infrastructure",
@@ -689,6 +816,28 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.28"
+      }
+    },
+    {
+      "kep": "KEP-1790",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "title": "Recover from volume expansion failure",
+      "stage": "alpha",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "RecoverVolumeExpansionFailure",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.32",
+        "stable": "1.34",
+        "verified": [
+          "beta",
+          "stable"
+        ]
       }
     },
     {
@@ -706,6 +855,28 @@
       "history": {
         "alpha": "1.28",
         "beta": "1.31",
+        "stable": "1.34",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2400",
+      "kepPath": "sig-node/2400-node-swap",
+      "title": "Node system swap support",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "NodeSwap",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.30",
         "stable": "1.34",
         "verified": [
           "beta",
@@ -736,6 +907,58 @@
       }
     },
     {
+      "kep": "KEP-2943",
+      "kepPath": "sig-network/2943-networkpolicy-status",
+      "title": "Network Policy status subresource",
+      "stage": "alpha",
+      "sig": "Network",
+      "category": "Networking",
+      "description": "",
+      "impact": null,
+      "featureGate": "NetworkPolicyStatus",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24"
+      }
+    },
+    {
+      "kep": "KEP-3063",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "title": "dynamic resource allocation",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicResourceAllocation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26"
+      }
+    },
+    {
+      "kep": "KEP-3077",
+      "kepPath": "sig-instrumentation/3077-contextual-logging",
+      "title": "Contextual logging",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "ContextualLogging",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.30",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
       "kep": "KEP-3085",
       "kepPath": "sig-node/3085-pod-conditions-for-starting-completition-of-sandbox-creation",
       "title": "Pod networking ready condition",
@@ -752,6 +975,28 @@
         "beta": "1.29",
         "verified": [
           "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3705",
+      "kepPath": "sig-network/3705-cloud-node-ips",
+      "title": "Cloud Dual-Stack --node-ip Handling",
+      "stage": "alpha",
+      "sig": "Network",
+      "category": "Networking",
+      "description": "",
+      "impact": null,
+      "featureGate": "CloudDualStackNodeIPs",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.27",
+        "beta": "1.29",
+        "stable": "1.30",
+        "verified": [
+          "beta",
+          "stable"
         ]
       }
     },
@@ -948,8 +1193,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1101,30 +1348,6 @@
               "kind/bug",
               "priority/backlog",
               "sig/cli",
-              "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "// we want to leverage the behavior of the endpoint /auth\ntype TestServer struct {\n\thttpServer   *httptest.Server\n\ttokenHandler *MockTokenHandler\n\tjwksHandler  *MockJWKsHandler\n\n        /* Create handler interface in file test/utils/oidc/handlers.go\n        generate its mock implementation and inject it into the server */\n        authHandler  *MockAuthHandler\n\n\tTearDownFn   func()\n}\n\n// Create handler's getter to be able to have access and adjust handler in a calling code\nfunc (ts *TestServer) AuthHandler() *MockAuthHandler {\n\treturn ts.authHandler\n}\n\nfunc BuildAndRunTestServer(t *testing.T, caPath, caKeyPath string) *TestServer {    \n...  \n        // Change auth HTTP handler\n\tmux.HandleFunc(authWebPath, func(writer http.ResponseWriter, request *http.Request) {  \n\t\tresult, err := oidcServer.authHandler.Authenticate()\n\t\tif err != nil {\n\t\t\thttp.Error(writer, err.Error(), http.StatusBadRequest)\n\n\t\t\treturn\n\t\t}\n\n\t\twriter.Header().Add(\"Content-Type\", \"application/json\")\n\t\twriter.WriteHeader(http.StatusOK)\n\n\t\terr = json.NewEncoder(writer).Encode(result)\n\t\trequire.NoError(t, err)\n\n\t\treturn \n\t})  \n...",
-        "prNumber": 115122,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/115122",
-        "author": "r-erema",
-        "sigs": [
-          "Auth",
-          "Testing"
-        ],
-        "relatedIssues": [
-          110782
-        ],
-        "issueContext": [
-          {
-            "number": 110782,
-            "title": "Missing test coverage for OIDC code",
-            "body": "/sig auth\r\n\r\nxref #108794\r\n\r\n---\r\n\r\nI have been thinking about this change and the associated code, especially in regards to the on-going [quality discussion](https://groups.google.com/a/kubernetes.io/g/dev/c/6F3h0Z1QzVg/m/43tdYs_lAAAJ).\r\n\r\nWhile I think this change is at least partially a move in the right direction, I believe further refactors are required to actually make this code understandable and maintainable (and correct in all configurations).\r\n\r\nThus before making changes to this code, I would like to see the following integration test coverage:\r\n\r\n- Build a mock OIDC test server with the JWKs, well-known, and token endpoints\r\n- Run a test API server\r\n- Configure it to use a the mock OIDC test server (process local)\r\n- Configure the client(s) based on the specific test scenario\r\n- Make calls to the CSR API _and_ the token review API (with and without correct audience) and assert the user info is correct\r\n\r\nSome scenarios that come to mind (this is not meant to be a complete list, and I suspect some will fail on the existing code):\r\n\r\n1. ID token not expired\r\n2. ID token expired\r\n3. Refresh token does not change\r\n4. Refresh token does change\r\n5. Other aspects of the config change (i.e. client secret, CA data, etc)\r\n6. Auth config persister does not actually persist\r\n7. Refresh flow does not return ID token\r\n8. ID token expires early due to JWK rotation\r\n9. Distributed claim fetching for group data\r\n10. ...\r\n\r\nThe above will likely need multiple permutations, in particular I would like to see both kubeconfig files as input (maybe even the same file concurrently across different round trippers) and `rest.Config` as inputs (with every weird config a code integrator could come up with).\r\n\r\nIn an ideal world we would have e2e tests in a similar vain as the above against an OIDC provider like Dex or Keycloak or UAA, but we can leave that off for now.\r\n\r\nThe API server OIDC support and the client-go OIDC support are two halves of the same feature, and both sides h",
-            "labels": [
-              "sig/auth",
               "triage/accepted"
             ]
           }
@@ -1936,16 +2159,6 @@
         ]
       },
       {
-        "description": "2023-04-29T04:50:47.850779535Z stderr F panic: runtime error: invalid memory address or nil pointer dereference\n2023-04-29T04:50:47.850808505Z stderr F [signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1c659b0]\n2023-04-29T04:50:47.850814857Z stderr F \n2023-04-29T04:50:47.850821558Z stderr F goroutine 132 [running]:\n2023-04-29T04:50:47.850828198Z stderr F k8s.io/kubernetes/cmd/kube-proxy/app.(*ProxyServer).Run(0xc00084ecb0)\n2023-04-29T04:50:47.850835219Z stderr F \tcmd/kube-proxy/app/server.go:767 +0x1130\n2023-04-29T04:50:47.850841683Z stderr F k8s.io/kubernetes/cmd/kube-proxy/app.(*Options).runLoop.func1()\n2023-04-29T04:50:47.850847097Z stderr F \tcmd/kube-proxy/app/server.go:326 +0x2b\n2023-04-29T04:50:47.850852342Z stderr F created by k8s.io/kubernetes/cmd/kube-proxy/app.(*Options).runLoop\n2023-04-29T04:50:47.850858125Z stderr F \tcmd/kube-proxy/app/server.go:325 +0x70",
-        "prNumber": 117690,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117690",
-        "author": "pacoxu",
-        "sigs": [
-          "Network",
-          "Scalability"
-        ]
-      },
-      {
         "description": "Pods which set `hostNetwork: true` and declare ports, get the `hostPort` field set automatically. Previously this would happen in the PodTemplate of a Deployment, DaemonSet or other workload API.  Now `hostPort` will only be set when an actual Pod is being created.  If this presents a problem, setting the feature gate \"DefaultHostNetworkHostPortsInPodTemplates\" to true will revert this behavior. Please file a kubernetes bug if you need to do this.",
         "prNumber": 117696,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/117696",
@@ -2004,37 +2217,6 @@
           "Storage"
         ],
         "userFacingChange": "Fixes a 1.27 regression by reverting NewVolumeManagerReconstruction and SELinuxMountReadWriteOncePod feature gates to disabled by default to resolve a regression of volume reconstruction on kubelet/node restart"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117791,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117791",
-        "author": "nnmin-aws",
-        "sigs": [
-          "Api Machinery",
-          "Cluster Lifecycle",
-          "Auth",
-          "Testing"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->",
-        "relatedIssues": [
-          117790
-        ],
-        "issueContext": [
-          {
-            "number": 117790,
-            "title": "all cluster CA certificates created when a cluster is created have an empty Serial number",
-            "body": "### What happened?\r\n\r\nHi I am from Amazon EKS. our customer recently sent a query to us that they found all cluster CA certificates created when an EKS cluster is created have an empty Serial number. \r\n\r\nAfter investigation, I found the serial number is actually set to 0 by https://github.com/kubernetes/client-go/blob/master/util/cert/cert.go#L61 through kubeadm init phase certs.\r\n\r\n\r\n### What did you expect to happen?\r\n\r\nA valid non-zero SerialNumber on the certificate\r\n\r\n### How can we reproduce it (as minimally and precisely as possible)?\r\n\r\nkubeadm init phase certs all\r\n\r\n### Anything else we need to know?\r\n\r\n_No response_\r\n\r\n### Kubernetes version\r\n\r\n<details>\r\n\r\n```console\r\n$ kubectl version\r\n1.24\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Cloud provider\r\n\r\n<details>\r\naws\r\n</details>\r\n\r\n\r\n### OS version\r\n\r\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\n# paste output here\r\n$ uname -a\r\n# paste output here\r\n\r\n# On Windows:\r\nC:\\> wmic os get Caption, Version, BuildNumber, OSArchitecture\r\n# paste output here\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Install tools\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n\r\n### Container runtime (CRI) and version (if applicable)\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n\r\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\r\n\r\n<details>\r\n\r\n</details>\r\n",
-            "labels": [
-              "kind/bug",
-              "sig/api-machinery",
-              "sig/cluster-lifecycle",
-              "sig/auth",
-              "area/kubeadm",
-              "triage/accepted"
-            ]
-          }
-        ]
       },
       {
         "description": "Fixed kubelet startup getting stuck with `NewVolumeManagerReconstruction` feature enabled and a CSI volume present in /var/lib/kubelet/pods.",
@@ -2099,16 +2281,6 @@
         "sigs": [
           "Api Machinery"
         ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117879,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117879",
-        "author": "kkkkun",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "Fixed issue where there was no response or error from kubectl rollout status when there were no resources of specified kind.",
@@ -2297,16 +2469,6 @@
           "Cloud Provider"
         ],
         "userFacingChange": "Reduces CPU and memory consumption of kube-apiserver if OpenAPI V2 is not accessed by any client. Also improves performance of the apiserver on installation of many CRDs."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 118235,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/118235",
-        "author": "kkkkun",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "`kubeadm`: will now throw warnings instead of errors for deprecated feature gates.",
@@ -2874,16 +3036,6 @@
         ]
       },
       {
-        "description": "The short names `fs` and `plc` were introduced for the resources `flowschemas` and `prioritylevelconfigurations`, respectively.",
-        "prNumber": 116208,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/116208",
-        "author": "kkkkun",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "original release note (dropped with revert in https://github.com/kubernetes/kubernetes/pull/117993)\r\n```\r\n The short names fs and plc were introduced for the resources flowschemas and prioritylevelconfigurations, respectively\r\n```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->\r\n```docs\r\n\r\n```"
-      },
-      {
         "description": "kubelet: security of dynamic resource allocation was enhanced by limiting node access to those objects that are needed on the node.",
         "prNumber": 116254,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/116254",
@@ -3134,20 +3286,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "Allows users to specify Kubelet `PodAndContainerStatsFromCRI` feature gate that will get Windows pod and container stats only from CRI.",
-        "prNumber": 116968,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/116968",
-        "author": "mansikulkarni96",
-        "sigs": [
-          "Node",
-          "Windows"
-        ],
-        "userFacingChange": "Allows users to specify Kubelet PodAndContainerStatsFromCRI featuregate that will get Windows pod and container stats only from CRI.",
-        "kepLinks": [
-          "KEP-2371"
         ]
       },
       {
@@ -4753,16 +4891,6 @@
     ],
     "other": [
       {
-        "description": "NONE",
-        "prNumber": 113969,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/113969",
-        "author": "Octopusjust",
-        "sigs": [
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
         "description": "The feature gates `DisableAcceleratorUsageMetrics` and `PodSecurity` that graduated to GA and were unconditionally enabled have been removed in v1.28.",
         "prNumber": 114068,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/114068",
@@ -4773,25 +4901,6 @@
           "Node",
           "Api Machinery"
         ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 114746,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/114746",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Network"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 114875,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/114875",
-        "author": "prrajput1199",
-        "sigs": [
-          "Architecture"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "Enabled the `node-local` kubelet podresources API endpoint on windows, alongside unix.",
@@ -4866,16 +4975,6 @@
         "userFacingChange": "Remove withdrawn feature NetworkPolicyStatus"
       },
       {
-        "description": "NONE",
-        "prNumber": 116104,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/116104",
-        "author": "aroradaman",
-        "sigs": [
-          "Network"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
         "description": "`kube-apiserver`: Improved memory use when performing `GetList` on the cache.",
         "prNumber": 116327,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/116327",
@@ -4884,16 +4983,6 @@
           "Api Machinery"
         ],
         "userFacingChange": "Kube-apiserver: Improved memory use when performing GetList on the cache."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 116374,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/116374",
-        "author": "sxllwx",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "When retrieving event resources, the `reportingController` and `reportingInstance` fields in the event will contain values.",
@@ -5188,44 +5277,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 117275,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117275",
-        "author": "akhilerm",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cloud Provider"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117330,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117330",
-        "author": "akhilerm",
-        "sigs": [
-          "Node"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117350,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117350",
-        "author": "mohitsharma-in",
-        "sigs": [
-          "Node",
-          "Api Machinery",
-          "Auth",
-          "Cli",
-          "Instrumentation",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
         "description": "The names of ResourceClaims generated from ResourceClaimTemplate are now generated. The base name is still `<pod>-<claim name>`, but a random suffix will avoid name collisions.",
         "prNumber": 117351,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/117351",
@@ -5257,85 +5308,6 @@
             ]
           }
         ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117352,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117352",
-        "author": "mohitsharma-in",
-        "sigs": [
-          "Network",
-          "Storage",
-          "Node",
-          "Api Machinery",
-          "Cluster Lifecycle",
-          "Auth",
-          "Cli",
-          "Instrumentation",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117386,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117386",
-        "author": "aroradaman",
-        "sigs": [
-          "Network",
-          "Windows"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "go version go1.20.1\ngoos: darwin\ngoarch: arm64\npkg: k8s.io/kubernetes/pkg/scheduler/util\n\nbefore:\n\nBenchmark10kPods-8   \t   67680\t     16837 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   69393\t     16928 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   68298\t     16942 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   70198\t     16125 ns/op\t       0 B/op\t       0 allocs/op\n\nBenchmark100kPods-8   \t    2661\t    444173 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2674\t    446439 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2715\t    454089 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2665\t    440868 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2646\t    452669 ns/op\t       0 B/op\t       0 allocs/op\n\nafter:\n\nBenchmark10kPods-8   \t   80383\t     14392 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   81895\t     14073 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   78211\t     14602 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark10kPods-8   \t   76614\t     15110 ns/op\t       0 B/op\t       0 allocs/op\n\nBenchmark100kPods-8   \t    2736\t    409138 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2932\t    414789 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2908\t    403114 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2925\t    394417 ns/op\t       0 B/op\t       0 allocs/op\nBenchmark100kPods-8   \t    2958\t    410171 ns/op\t       0 B/op\t       0 allocs/op",
-        "prNumber": 117390,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117390",
-        "author": "lowang-bh",
-        "sigs": [
-          "Scheduling"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117391,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117391",
-        "author": "cuishuang",
-        "sigs": [
-          "Api Machinery",
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117399,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117399",
-        "author": "mohitsharma-in",
-        "sigs": [
-          "Node",
-          "Api Machinery",
-          "Auth",
-          "Cli",
-          "Instrumentation",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 117408,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117408",
-        "author": "cenkalti",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "Updated `cri-tools` to `v1.27.0`.",
@@ -5468,16 +5440,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 117784,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117784",
-        "author": "dims",
-        "sigs": [
-          "Testing"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
         "description": "Revised the comment about the feature-gate level for `PodFailurePolicy` from alpha to beta.",
         "prNumber": 117802,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/117802",
@@ -5524,17 +5486,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 117913,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/117913",
-        "author": "aroradaman",
-        "sigs": [
-          "Network",
-          "Testing"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
-      },
-      {
         "description": "Updated etcd image to `3.5.9-0`.",
         "prNumber": 117999,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/117999",
@@ -5543,16 +5494,6 @@
           "Api Machinery"
         ],
         "userFacingChange": "Update etcd image to 3.5.9-0"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 118000,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/118000",
-        "author": "aroradaman",
-        "sigs": [
-          "Network"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "The feature gate `CSIStorageCapacity` have been removed and must no longer be referenced in `--feature-gates` flags.",
@@ -5636,16 +5577,6 @@
           "Architecture",
           "Cloud Provider"
         ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 118229,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/118229",
-        "author": "aroradaman",
-        "sigs": [
-          "Network"
-        ],
-        "userFacingChange": "```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->"
       },
       {
         "description": "Removed the deprecated `azureFile` in-tree storage plugin.",
@@ -5903,15 +5834,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "Bumped kube-dns to `v1.22.23`.",
-        "prNumber": 119033,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/119033",
-        "author": "ty-dc",
-        "sigs": [
-          "Cloud Provider"
         ]
       },
       {

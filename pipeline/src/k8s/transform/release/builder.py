@@ -75,57 +75,49 @@ def load_curated_features(version: str) -> dict[str, Any] | None:
         return json.load(f)
 
 
+_CURATED_OVERLAY_FIELDS = (
+    "description",
+    "impact",
+    "affectedKinds",
+    "affectedFields",
+    "category",
+    "featureGate",
+    "isHighlight",
+    "stage",
+)
+
+
 def merge_features(
     extracted: list[dict[str, Any]], curated: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
-    """
-    Merge extracted KEP features with curated features.
+    """Apply curated overlay on top of extracted features.
 
-    Curated data takes precedence for fields like description, impact, affectedKinds.
-    Extracted data provides the base (kep, title, stage, sig, history).
+    Curated annotates, it does NOT invent: a curated entry whose KEP is not
+    present in `extracted` is dropped (those features have no anchor in
+    kep.yaml or upstream PR signals and would be phantoms).
     """
-    # Index curated by KEP number
     curated_by_kep = {f["kep"]: f for f in curated}
-
     merged = []
-    seen_keps = set()
 
-    # Start with extracted features, merge in curated data
     for feat in extracted:
         kep = feat["kep"]
-        seen_keps.add(kep)
-
         if kep in curated_by_kep:
-            # Merge: curated fields override extracted
             curated_feat = curated_by_kep[kep]
-            merged_feat = {**feat}  # Start with extracted
-
-            # Override with curated data if present and non-empty
-            for key in ["description", "impact", "affectedKinds", "affectedFields",
-                        "category", "featureGate", "isHighlight"]:
-                if curated_feat.get(key):
+            merged_feat = {**feat}
+            for key in _CURATED_OVERLAY_FIELDS:
+                if curated_feat.get(key) is not None:
                     merged_feat[key] = curated_feat[key]
-
-            # Merge history (curated may have more accurate dates)
             if curated_feat.get("history"):
                 merged_feat["history"] = {
                     **feat.get("history", {}),
                     **curated_feat["history"],
                 }
-
             merged.append(merged_feat)
         else:
             merged.append(feat)
 
-    # Add curated features not in extracted (manual additions)
-    for kep, feat in curated_by_kep.items():
-        if kep not in seen_keps:
-            merged.append(feat)
-
-    # Sort by stage (stable first) then KEP number
     stage_order = {"stable": 0, "beta": 1, "alpha": 2}
     merged.sort(key=lambda f: (stage_order.get(f.get("stage", ""), 3), f.get("kep", "")))
-
     return merged
 
 
@@ -156,6 +148,8 @@ def transform_release_notes_to_changes(
 
     for _pr_id, entry in raw_notes.items():
         if not isinstance(entry, dict):
+            continue
+        if entry.get("do_not_publish"):
             continue
 
         raw_kinds = entry.get("kinds", ["other"])

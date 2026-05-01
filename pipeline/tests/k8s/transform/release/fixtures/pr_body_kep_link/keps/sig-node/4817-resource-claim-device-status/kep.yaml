@@ -1,0 +1,18 @@
+title: Resource Claim Status With Possible Standardized Network Interface Data
+kep-number: 4817
+authors:
+  - "@LionelJouin"
+owning-sig: sig-node
+status: implementable
+stage: stable
+latest-milestone: "v1.36"
+milestone:
+  alpha: "v1.32"
+  beta: "v1.33"
+  stable: "v1.36"
+feature-gates:
+  - name: DRAResourceClaimDeviceStatus
+    components:
+      - kubelet
+      - kube-scheduler
+disable-supported: true

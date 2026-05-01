@@ -1,0 +1,17 @@
+title: Support User Namespaces
+kep-number: 127
+authors:
+  - "@rata"
+owning-sig: sig-node
+status: implementable
+stage: stable
+latest-milestone: "v1.36"
+milestone:
+  alpha: "v1.25"
+  beta: "v1.30"
+  stable: "v1.36"
+feature-gates:
+  - name: UserNamespacesSupport
+    components:
+      - kubelet
+disable-supported: true

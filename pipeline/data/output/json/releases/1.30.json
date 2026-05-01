@@ -1,14 +1,14 @@
 {
   "version": "1.30",
   "codename": "Uwubernetes",
-  "description": "Kubernetes 1.30 'Uwubernetes' brings 45 enhancements with a focus on security and observability. Contextual logging graduates to GA, container resource-based HPA reaches stable, and robust defaults improve security posture. Key features include recursive read-only mounts, job completion policy, and user namespaces beta.",
+  "description": "The cutest release to date! 'Uwubernetes' (a portmanteau of 'kubernetes' and 'UwU') celebrates the joy contributors bring from their outside lives. For the people who built it, for the people who release it, and for the furries who keep all of our clusters online. Pod scheduling readiness graduates to stable, volume manager reconstruction improves robustness, and min domains in PodTopologySpread reaches GA.",
   "releaseDate": "2024-04-17",
   "endOfLifeDate": "2025-06-28",
   "summary": {
-    "total": 45,
-    "stable": 18,
-    "beta": 15,
-    "alpha": 12
+    "total": 63,
+    "stable": 22,
+    "beta": 18,
+    "alpha": 23
   },
   "themes": [
     "Security",
@@ -83,6 +83,24 @@
   ],
   "features": [
     {
+      "kep": "KEP-1164",
+      "kepPath": "sig-api-machinery/1164-remove-selflink",
+      "title": "Deprecate and remove SelfLink",
+      "stage": "stable",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "RemoveSelfLink",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.16",
+        "beta": "1.20",
+        "stable": "1.24"
+      }
+    },
+    {
       "kep": "KEP-1441",
       "kepPath": "sig-cli/1441-kubectl-debug",
       "title": "kubectl debug",
@@ -116,6 +134,24 @@
         "alpha": "1.20",
         "beta": "1.27",
         "stable": "1.30"
+      }
+    },
+    {
+      "kep": "KEP-1885",
+      "kepPath": "sig-storage/1885-csi-migration-azurefile",
+      "title": "In-tree Storage Plugin to CSI Migration - Azurefile",
+      "stage": "stable",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "CSIMigrationAzureFile",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.15",
+        "beta": "1.21",
+        "stable": "1.26"
       }
     },
     {
@@ -187,7 +223,8 @@
         "alpha": "1.24",
         "beta": "1.25",
         "stable": "1.30"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3141",
@@ -205,6 +242,43 @@
         "alpha": "1.24",
         "beta": "1.27",
         "stable": "1.30"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-3325",
+      "kepPath": "sig-auth/3325-self-subject-attributes-review-api",
+      "title": "Review attibutes of a current user",
+      "stage": "stable",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "APISelfSubjectReview",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26",
+        "beta": "1.27",
+        "stable": "1.28"
+      }
+    },
+    {
+      "kep": "KEP-3333",
+      "kepPath": "sig-storage/3333-retroactive-default-storage-class",
+      "title": "Retroactive default StorageClass assignment",
+      "stage": "stable",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "RetroactiveDefaultStorageClass",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.26",
+        "stable": "1.28"
       }
     },
     {
@@ -258,7 +332,8 @@
         "alpha": "1.26",
         "beta": "1.28",
         "stable": "1.30"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3521",
@@ -276,7 +351,8 @@
         "alpha": "1.26",
         "beta": "1.27",
         "stable": "1.30"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3638",
@@ -348,7 +424,8 @@
         "alpha": "1.26",
         "beta": "1.27",
         "stable": "1.30"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3838",
@@ -399,6 +476,27 @@
       "affectedFields": [],
       "history": {
         "stable": "1.30"
+      }
+    },
+    {
+      "kep": "KEP-1710",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "title": "Skip SELinux relabeling of volumes",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "SELinuxMountReadWriteOncePod",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.27",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -457,7 +555,11 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.27",
-        "beta": "1.30"
+        "beta": "1.30",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -476,6 +578,27 @@
         "alpha": "1.20",
         "beta": "1.30",
         "stable": "TBD"
+      }
+    },
+    {
+      "kep": "KEP-24",
+      "kepPath": "sig-node/24-apparmor",
+      "title": "Add AppArmor Support",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "AppArmor",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.4",
+        "beta": "1.4",
+        "stable": "1.31",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -705,6 +828,151 @@
       }
     },
     {
+      "kep": "KEP-753",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "title": "Sidecar Containers",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "SidecarContainers",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.29",
+        "stable": "1.33",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-127",
+      "kepPath": "sig-node/127-user-namespaces",
+      "title": "Support User Namespaces",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "UserNamespacesSupport",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-1287",
+      "kepPath": "sig-node/1287-in-place-update-pod-resources",
+      "title": "In-place Update of Pod Resources",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "InPlacePodVerticalScaling",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.27",
+        "beta": "1.33",
+        "stable": "1.35",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2644",
+      "kepPath": "sig-storage/2644-honor-pv-reclaim-policy",
+      "title": "Honor Persistent Volume Reclaim Policy",
+      "stage": "alpha",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "HonorPVReclaimPolicy",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.31",
+        "stable": "1.33",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3063",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "title": "dynamic resource allocation",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicResourceAllocation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26"
+      }
+    },
+    {
+      "kep": "KEP-3157",
+      "kepPath": "sig-api-machinery/3157-watch-list",
+      "title": "Allow informers for getting a stream of data instead of chunking",
+      "stage": "alpha",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "WatchList",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.27",
+        "beta": "1.32",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3751",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "title": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "stage": "alpha",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "VolumeAttributesClass",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.34",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-3857",
       "kepPath": "sig-node/3857-rro-mounts",
       "title": "Recursive read-only mounts",
@@ -720,6 +988,50 @@
         "alpha": "1.30",
         "beta": "1.31",
         "stable": "1.33",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3866",
+      "kepPath": "sig-network/3866-nftables-proxy",
+      "title": "Add an nftables-based kube-proxy backend",
+      "stage": "alpha",
+      "sig": "Network",
+      "category": "Networking",
+      "description": "",
+      "impact": null,
+      "featureGate": "NFTablesProxyMode",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.33",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3983",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "title": "Add support for a kubelet drop-in configuration directory",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": null,
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.31",
+        "stable": "1.35",
         "verified": [
           "beta",
           "stable"
@@ -745,6 +1057,30 @@
         "verified": [
           "beta",
           "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4006",
+      "kepPath": "sig-api-machinery/4006-transition-spdy-to-websockets",
+      "title": "Transition from SPDY to Websockets",
+      "stage": "alpha",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "KUBECTL_REMOTE_COMMAND_WEBSOCKETS",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -785,12 +1121,56 @@
       "history": {
         "alpha": "1.30",
         "beta": "1.35",
-        "stable": "1.36",
+        "stable": "1.37",
         "tentative": [
           "stable"
         ],
         "verified": [
           "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4247",
+      "kepPath": "sig-scheduling/4247-queueinghint",
+      "title": "Per-plugin callback functions for efficient requeueing in the scheduling queue",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "SchedulerQueueingHints",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26",
+        "beta": "1.32",
+        "stable": "1.34",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4265",
+      "kepPath": "sig-node/4265-proc-mount",
+      "title": "Add ProcMount option",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ProcMountType",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.12",
+        "beta": "1.33",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1051,49 +1431,6 @@
               "kind/feature",
               "help wanted",
               "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Added consistent vanity import to files and provided tooling for verifying and updating them.",
-        "prNumber": 120642,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/120642",
-        "author": "jcchavezs",
-        "sigs": [
-          "Network",
-          "Scalability",
-          "Scheduling",
-          "Storage",
-          "Node",
-          "Api Machinery",
-          "Autoscaling",
-          "Auth",
-          "Apps",
-          "Windows",
-          "Cli",
-          "Instrumentation",
-          "Testing",
-          "Release",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "relatedIssues": [
-          120641
-        ],
-        "issueContext": [
-          {
-            "number": 120641,
-            "title": "Automate vanity imports update and verify",
-            "body": "### What would you like to be added?\r\n\r\nVanity imports to all packages, for example\r\n\r\n```\r\npackage validatingwebhookconfiguration\r\n```\r\ninto\r\n```\r\npackage validatingwebhookconfiguration // import \"k8s.io/kubernetes/pkg/registry/admissionregistration/validatingwebhookconfiguration\"\r\n```\r\n\r\n**IMPORTANT:** Kubernetes repository already uses vanity imports, we just need to provide a check so new code includes it and provide a tool for users to regenerate vanity imports.\r\n\r\n### Why is this needed?\r\n\r\nFollowing https://github.com/kubernetes/kubernetes/issues/68231, vanity imports improves code navegability for a codebase with many packages as otherwise you need to figure out what the package is, the vanity URL and probably handtype the import path.",
-            "labels": [
-              "priority/awaiting-more-evidence",
-              "kind/feature",
-              "sig/testing",
-              "sig/architecture",
-              "lifecycle/stale",
-              "area/code-organization",
-              "needs-triage"
             ]
           }
         ]
@@ -2385,15 +2722,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "\"Fixed error handling in `EnsureAdminClusterRoleBindingImpl`.\"\n",
-        "prNumber": 122893,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/122893",
-        "author": "danwinship",
-        "sigs": [
-          "Cluster Lifecycle"
         ]
       },
       {
@@ -4228,15 +4556,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "```",
-        "prNumber": 121413,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/121413",
-        "author": "humblec",
-        "sigs": [
-          "Cloud Provider"
         ]
       },
       {

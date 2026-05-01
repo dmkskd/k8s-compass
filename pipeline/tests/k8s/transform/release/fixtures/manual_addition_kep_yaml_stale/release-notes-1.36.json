@@ -1,0 +1,14 @@
+{
+  "300001": {
+    "text": "Memory QoS feature gate enables tiered cgroup v2 memory protection.",
+    "pr_number": 300001,
+    "kinds": ["feature"],
+    "sigs": ["node"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/2570"
+      }
+    ]
+  }
+}

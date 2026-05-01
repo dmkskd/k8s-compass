@@ -6,10 +6,10 @@
       "codename": "Haru",
       "releaseDate": "2026-04-22",
       "summary": {
-        "total": 71,
-        "stable": 21,
-        "beta": 24,
-        "alpha": 26
+        "total": 92,
+        "stable": 27,
+        "beta": 31,
+        "alpha": 34
       }
     },
     {
@@ -17,10 +17,10 @@
       "codename": "Timbernetes (The World Tree Release)",
       "releaseDate": "2025-12-17",
       "summary": {
-        "total": 58,
-        "stable": 19,
-        "beta": 22,
-        "alpha": 17
+        "total": 69,
+        "stable": 22,
+        "beta": 26,
+        "alpha": 21
       }
     },
     {
@@ -28,10 +28,10 @@
       "codename": "Of Wind & Will (O' WaW)",
       "releaseDate": "2025-08-27",
       "summary": {
-        "total": 59,
-        "stable": 27,
-        "beta": 18,
-        "alpha": 14
+        "total": 69,
+        "stable": 31,
+        "beta": 20,
+        "alpha": 18
       }
     },
     {
@@ -39,10 +39,10 @@
       "codename": "Octarine: The Color of Magic",
       "releaseDate": "2025-04-23",
       "summary": {
-        "total": 58,
-        "stable": 18,
-        "beta": 16,
-        "alpha": 24
+        "total": 74,
+        "stable": 20,
+        "beta": 24,
+        "alpha": 30
       }
     },
     {
@@ -50,10 +50,10 @@
       "codename": "Penelope",
       "releaseDate": "2024-12-11",
       "summary": {
-        "total": 42,
-        "stable": 13,
-        "beta": 11,
-        "alpha": 18
+        "total": 52,
+        "stable": 14,
+        "beta": 16,
+        "alpha": 22
       }
     },
     {
@@ -61,10 +61,10 @@
       "codename": "Elli",
       "releaseDate": "2024-08-13",
       "summary": {
-        "total": 41,
-        "stable": 11,
-        "beta": 21,
-        "alpha": 9
+        "total": 55,
+        "stable": 12,
+        "beta": 26,
+        "alpha": 17
       }
     },
     {
@@ -72,10 +72,10 @@
       "codename": "Uwubernetes",
       "releaseDate": "2024-04-17",
       "summary": {
-        "total": 45,
-        "stable": 18,
-        "beta": 15,
-        "alpha": 12
+        "total": 63,
+        "stable": 22,
+        "beta": 18,
+        "alpha": 23
       }
     },
     {
@@ -83,10 +83,10 @@
       "codename": "Mandala",
       "releaseDate": "2023-12-13",
       "summary": {
-        "total": 39,
-        "stable": 12,
-        "beta": 12,
-        "alpha": 15
+        "total": 54,
+        "stable": 16,
+        "beta": 15,
+        "alpha": 23
       }
     },
     {
@@ -94,10 +94,10 @@
       "codename": "Planternetes",
       "releaseDate": "2023-08-15",
       "summary": {
-        "total": 39,
-        "stable": 15,
-        "beta": 8,
-        "alpha": 16
+        "total": 55,
+        "stable": 19,
+        "beta": 13,
+        "alpha": 23
       }
     },
     {
@@ -105,10 +105,10 @@
       "codename": "Chill Vibes",
       "releaseDate": "2023-04-11",
       "summary": {
-        "total": 65,
-        "stable": 18,
-        "beta": 29,
-        "alpha": 18
+        "total": 80,
+        "stable": 22,
+        "beta": 35,
+        "alpha": 23
       }
     },
     {
@@ -116,10 +116,10 @@
       "codename": "Electrifying",
       "releaseDate": "2022-12-09",
       "summary": {
-        "total": 47,
-        "stable": 16,
-        "beta": 12,
-        "alpha": 19
+        "total": 56,
+        "stable": 18,
+        "beta": 16,
+        "alpha": 22
       }
     },
     {
@@ -127,10 +127,10 @@
       "codename": "Combiner",
       "releaseDate": "2022-08-23",
       "summary": {
-        "total": 41,
-        "stable": 15,
-        "beta": 12,
-        "alpha": 14
+        "total": 46,
+        "stable": 16,
+        "beta": 13,
+        "alpha": 17
       }
     }
   ]

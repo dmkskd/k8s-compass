@@ -1,14 +1,14 @@
 {
   "version": "1.26",
   "codename": "Electrifying",
-  "description": "Kubernetes 1.26 'Electrifying' brings 37 enhancements with dynamic resource allocation entering alpha for GPU and specialized hardware. Signed release artifacts improve supply chain security, and Windows support continues to improve. Key features include CEL admission policies, job tracking improvements, and auth API enhancements.",
+  "description": "Kubernetes 1.26 'Electrifying' \u26a1 sparks awareness about environmental sustainability in cloud computing. This release channels energy into 37 enhancements including Dynamic Resource Allocation (alpha) for GPUs and specialized hardware, signed release artifacts for supply chain security, and CEL-based admission policies. The theme reminds us that every container we run has an environmental footprint\u2014making efficiency not just a performance goal, but an ecological one.",
   "releaseDate": "2022-12-09",
   "endOfLifeDate": "2024-02-28",
   "summary": {
-    "total": 47,
-    "stable": 16,
-    "beta": 12,
-    "alpha": 19
+    "total": 56,
+    "stable": 18,
+    "beta": 16,
+    "alpha": 22
   },
   "themes": [
     "Resource Management",
@@ -24,27 +24,7 @@
       "author": "liggitt",
       "sigs": [
         "Api Machinery"
-      ],
-      "enrichment": {
-        "title": "Removal of Deprecated Beta APIs in v1.26",
-        "summary": "Beta APIs slated for removal in v1.26 are no longer served, causing any usage of those APIs to fail.",
-        "action": "Update manifests and controllers to replace all deprecated beta API versions with their supported stable (GA) equivalents before upgrading to v1.26.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "deployments",
-          "statefulsets",
-          "daemonsets",
-          "jobs",
-          "cronjobs",
-          "services",
-          "ingresses"
-        ],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "securityInformation": [
@@ -191,7 +171,8 @@
         "alpha": "1.18",
         "beta": "1.19",
         "stable": "1.26"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-1672",
@@ -227,6 +208,25 @@
         "alpha": "1.15",
         "beta": "1.21",
         "stable": "1.26"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-19",
+      "kepPath": "sig-apps/19-Graduate-CronJob-to-Stable",
+      "title": "CronJobs (previously ScheduledJobs)",
+      "stage": "stable",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "CronJobControllerV2",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.4",
+        "beta": "1.8",
+        "stable": "1.21"
       }
     },
     {
@@ -281,6 +281,25 @@
         "alpha": "1.20",
         "beta": "1.24",
         "stable": "1.26"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-2214",
+      "kepPath": "sig-apps/2214-indexed-job",
+      "title": "Indexed Job",
+      "stage": "stable",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "IndexedJob",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.22",
+        "stable": "1.24"
       }
     },
     {
@@ -317,7 +336,8 @@
         "alpha": "1.22",
         "beta": "1.23",
         "stable": "1.26"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-2572",
@@ -407,7 +427,8 @@
         "alpha": "1.8",
         "beta": "1.10",
         "stable": "1.26"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3573",
@@ -425,6 +446,27 @@
         "alpha": "1.8",
         "beta": "1.10",
         "stable": "1.26"
+      }
+    },
+    {
+      "kep": "KEP-1040",
+      "kepPath": "sig-api-machinery/1040-priority-and-fairness",
+      "title": "Priority and Fairness for API Server Requests",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "APIPriorityAndFairness",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.18",
+        "beta": "1.20",
+        "stable": "1.29",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -508,6 +550,27 @@
       }
     },
     {
+      "kep": "KEP-2433",
+      "kepPath": "sig-network/2433-topology-aware-hints",
+      "title": "Topology Aware Hints",
+      "stage": "beta",
+      "sig": "Network",
+      "category": "Networking",
+      "description": "",
+      "impact": null,
+      "featureGate": "TopologyAwareHints",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.23",
+        "stable": "1.33",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-2438",
       "kepPath": "sig-network/2438-dual-stack-apiserver",
       "title": "Dual Stack API Server",
@@ -550,6 +613,26 @@
       }
     },
     {
+      "kep": "KEP-2799",
+      "kepPath": "sig-auth/2799-reduction-of-secret-based-service-account-token",
+      "title": "Reduction of Secret-based Service Account Tokens",
+      "stage": "beta",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "LegacyServiceAccountTokenNoAutoGeneration",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "beta": "1.24",
+        "stable": "1.30",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-2804",
       "kepPath": "sig-apps/2804-consolidate-workload-controllers-status",
       "title": "Consolidate Workload controllers life cycle status",
@@ -568,6 +651,24 @@
         "verified": [
           "stable"
         ]
+      }
+    },
+    {
+      "kep": "KEP-281",
+      "kepPath": "sig-node/281-dynamic-kubelet-configuration",
+      "title": "Dynamic Kubelet Configuration",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicKubeletConfig",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.8",
+        "beta": "1.11",
+        "stable": "never"
       }
     },
     {
@@ -672,6 +773,28 @@
       }
     },
     {
+      "kep": "KEP-1710",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "title": "Skip SELinux relabeling of volumes",
+      "stage": "alpha",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "SELinuxMountReadWriteOncePod",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.27",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-2149",
       "kepPath": "sig-multicluster/2149-clusterid",
       "title": "ClusterID for ClusterSet Identification",
@@ -759,6 +882,28 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.26",
+        "beta": "1.27",
+        "stable": "1.29",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3299",
+      "kepPath": "sig-auth/3299-kms-v2-improvements",
+      "title": "KMS v2 Improvements",
+      "stage": "alpha",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "KMSv2",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
         "beta": "1.27",
         "stable": "1.29",
         "verified": [
@@ -1056,6 +1201,28 @@
       "history": {
         "alpha": "1.26",
         "beta": "1.32",
+        "stable": "1.34",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-647",
+      "kepPath": "sig-instrumentation/647-apiserver-tracing",
+      "title": "APIServer Tracing",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "APIServerTracing",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.27",
         "stable": "1.34",
         "verified": [
           "beta",
@@ -4569,16 +4736,6 @@
           "Cli"
         ],
         "userFacingChange": "Added a `--prune-allowlist` flag that can be used with `kubectl apply --prune`. This flag replaces and functions the same as the `--prune-whitelist` flag, which has been deprecated."
-      },
-      {
-        "description": "STEP: expect not showing any WARNING message 10/19/22 21:20:25.015\nOct 19 21:20:25.015: INFO: Running '/home/prow/go/src/k8s.io/kubernetes/_output/bin/kubectl --server=https://[::1]:34867 --kubeconfig=/root/.kube/kind-test-config --namespace=kubectl-6045 alpha events --types=WARNING --for=pod/e2e-test-httpd-pod'\nOct 19 21:20:25.114: INFO: stderr: \"\"\nOct 19 21:20:25.114: INFO: stdout: \"LAST SEEN           TYPE      REASON        OBJECT                   MESSAGE\\n27s (x2 over 29s)   Warning   FailedMount   Pod/e2e-test-httpd-pod   MountVolume.SetUp failed for volume \\\"kube-api-access-9gvsx\\\" : failed to sync configmap cache: timed out waiting for the condition\\n\"\nOct 19 21:20:25.114: FAIL: unexpected WARNING event fired",
-        "prNumber": 113198,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/113198",
-        "author": "pacoxu",
-        "sigs": [
-          "Cli",
-          "Testing"
-        ]
       },
       {
         "description": "The `e2e.test` binary no longer emits JSON structs to document progress.",

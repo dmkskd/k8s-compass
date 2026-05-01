@@ -1,0 +1,16 @@
+title: Bad KEP with malformed date
+kep-number: 9999
+authors:
+  - "@nobody"
+owning-sig: sig-test
+status: implementable
+stage: alpha
+latest-milestone: "v1.35"
+milestone:
+  alpha: "v1.35"
+creation-date: 2025-13-01
+feature-gates:
+  - name: BadFeature
+    components:
+      - kubelet
+disable-supported: true

@@ -1,14 +1,14 @@
 {
   "version": "1.33",
   "codename": "Octarine: The Color of Magic",
-  "description": "Inspired by Terry Pratchett's Discworld series, the 'Octarine' release brings 64 enhancements including sidecar containers graduating to GA, in-place pod resource resize moving to beta, and nftables kube-proxy reaching stable. Key features include forensic container checkpointing GA, Job success policy GA, user namespaces enabled by default, and Traffic Distribution for Services going stable.",
+  "description": "Inspired by Terry Pratchett's Discworld, 'Octarine' is the mythical eighth color visible only to wizards, witches, cats\u2014and those who've stared at iptables rules too long. A swamp dragon perches atop the Unseen University gazing at 64 stars (one for each KEP). Sidecar containers graduate to GA, in-place resize moves to beta, and as Pratchett wrote: 'It's still magic even if you know how it's done.'",
   "releaseDate": "2025-04-23",
   "endOfLifeDate": null,
   "summary": {
-    "total": 58,
-    "stable": 18,
-    "beta": 16,
-    "alpha": 24
+    "total": 74,
+    "stable": 20,
+    "beta": 24,
+    "alpha": 30
   },
   "themes": [
     "Workloads",
@@ -31,19 +31,7 @@
         "Network",
         "Release",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "MultiCIDRServiceAllocator stable, ServiceCIDR API added",
-        "summary": "MultiCIDRServiceAllocator graduates to stable and DisableAllocatorDualWrite to beta, introducing the ServiceCIDR API for managing cluster Service CIDRs.",
-        "action": "Kubernetes distributions must update their management of Service CIDR to handle the new ServiceCIDR API, optionally adding validation admission policies to prevent overlapping CIDRs or to enforce a single ServiceCIDR per cluster.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "Renamed `UpdatePodTolerations` action type to `UpdatePodToleration`.\nAction required for custom plugin developers to update their code to follow the rename.",
@@ -53,20 +41,7 @@
       "sigs": [
         "Scheduling",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Rename UpdatePodTolerations to UpdatePodToleration",
-        "summary": "The scheduler action type `UpdatePodTolerations` has been renamed to `UpdatePodToleration`.",
-        "action": "Custom scheduler plugin developers must update their code to use the new `UpdatePodToleration` action type name.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "[Action Required] CSI drivers that calls `IsLikelyNotMountPoint` should not assume false means that the path is a mount point. \nEach CSI driver needs to make sure correct usage of return value of `IsLikelyNotMountPoint` \nbecause if the file is an irregular file but not a mount point is acceptable",
@@ -76,20 +51,7 @@
       "sigs": [
         "Storage",
         "Windows"
-      ],
-      "enrichment": {
-        "title": "CSI drivers must handle IsLikelyNotMountPoint correctly",
-        "summary": "CSI drivers must not assume a false return from `IsLikelyNotMountPoint` indicates the path is a mount point; they must correctly interpret the return value.",
-        "action": "Update CSI driver implementations to handle both true and false returns from `IsLikelyNotMountPoint` without assuming false means the path is a mount point, ensuring correct handling of irregular files.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Fixed the behavior of the `KUBE_PROXY_NFTABLES_SKIP_KERNEL_VERSION_CHECK` environment variable in the nftables proxier. The kernel version check is now skipped only when this variable is explicitly set to a non-empty value. To skip the check, set the `KUBE_PROXY_NFTABLES_SKIP_KERNEL_VERSION_CHECK` environment variable.",
@@ -98,20 +60,7 @@
       "author": "ryota-sakamoto",
       "sigs": [
         "Network"
-      ],
-      "enrichment": {
-        "title": "KUBE_PROXY_NFTABLES_SKIP_KERNEL_VERSION_CHECK behavior fixed",
-        "summary": "The nftables kube-proxy now only skips the kernel version check when `KUBE_PROXY_NFTABLES_SKIP_KERNEL_VERSION_CHECK` is set to a non\u2011empty value.",
-        "action": "If you need to bypass the kernel version check for the nftables proxier, set the `KUBE_PROXY_NFTABLES_SKIP_KERNEL_VERSION_CHECK` environment variable to a non\u2011empty value in the kube-proxy configuration.",
-        "severity": "low",
-        "affectedComponents": [
-          "kube-proxy"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "Added the ability to reduce both the initial delay and the maximum delay accrued between container restarts for a node for containers in `CrashLoopBackOff` across the cluster to the recommended values of `1s` initial delay and `60s` maximum delay. To set this for a node, turn on the feature gate `ReduceDefaultCrashLoopBackOffDecay`. If you are also using the feature gate `KubeletCrashLoopBackOffMax` with a configured per-node `CrashLoopBackOff.MaxContainerRestartPeriod`, the effective kubelet configuration will follow the conflict resolution policy described further in the documentation [here](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#reduced-container-restart-delay).",
@@ -121,20 +70,7 @@
       "sigs": [
         "Node",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "ReduceDefaultCrashLoopBackOffDecay lowers restart delays",
-        "summary": "Introduces a feature gate `ReduceDefaultCrashLoopBackOffDecay` that lowers the initial delay to 1\u202fs and the maximum delay to 60\u202fs for containers in CrashLoopBackOff, with conflict handling when used alongside `KubeletCrashLoopBackOffMax`.",
-        "action": "Enable the `ReduceDefaultCrashLoopBackOffDecay` feature gate on nodes to apply the reduced CrashLoopBackOff delays, and review the conflict resolution policy if also using `KubeletCrashLoopBackOffMax`.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": false
-      }
+      ]
     }
   ],
   "securityInformation": [
@@ -226,6 +162,24 @@
         "alpha": "1.25",
         "beta": "1.30",
         "stable": "1.33"
+      }
+    },
+    {
+      "kep": "KEP-2395",
+      "kepPath": "sig-cloud-provider/2395-removing-in-tree-cloud-providers",
+      "title": "Removing In-Tree Cloud Providers",
+      "stage": "stable",
+      "sig": "Cloud Provider",
+      "category": "Cloud",
+      "description": "",
+      "impact": null,
+      "featureGate": "DisableCloudProviders",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.29",
+        "stable": "1.31"
       }
     },
     {
@@ -463,6 +417,24 @@
       }
     },
     {
+      "kep": "KEP-4193",
+      "kepPath": "sig-auth/4193-bound-service-account-token-improvements",
+      "title": "bound service account token improvements",
+      "stage": "stable",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "ServiceAccountTokenJTI",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.30",
+        "stable": "1.32"
+      }
+    },
+    {
       "kep": "KEP-4444",
       "kepPath": "sig-network/4444-service-traffic-distribution",
       "title": "Traffic Distribution for Services",
@@ -496,7 +468,8 @@
         "alpha": "1.28",
         "beta": "1.29",
         "stable": "1.33"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-1287",
@@ -517,6 +490,49 @@
         "verified": [
           "stable"
         ]
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-1710",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "title": "Skip SELinux relabeling of volumes",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "SELinuxMountReadWriteOncePod",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.27",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2400",
+      "kepPath": "sig-node/2400-node-swap",
+      "title": "Node system swap support",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "NodeSwap",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.30",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -533,7 +549,11 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.32",
-        "beta": "1.33"
+        "beta": "1.33",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -617,6 +637,48 @@
       }
     },
     {
+      "kep": "KEP-3751",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "title": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "VolumeAttributesClass",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3939",
+      "kepPath": "sig-apps/3939-allow-replacement-when-fully-terminated",
+      "title": "Allow Replacement of Pods in a Job when fully terminating",
+      "stage": "beta",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "JobPodReplacementPolicy",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.29",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4265",
       "kepPath": "sig-node/4265-proc-mount",
       "title": "Add ProcMount option",
@@ -630,7 +692,70 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.12",
+        "beta": "1.33",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4330",
+      "kepPath": "sig-architecture/4330-compatibility-versions",
+      "title": "Compatibility Versions",
+      "stage": "beta",
+      "sig": "Architecture",
+      "category": "Architecture",
+      "description": "",
+      "impact": null,
+      "featureGate": "CompatibilityVersions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.32",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4355",
+      "kepPath": "sig-api-machinery/4355-coordinated-leader-election",
+      "title": "Coordinated Leader Election",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "CoordinatedLeaderElection",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
         "beta": "1.33"
+      }
+    },
+    {
+      "kep": "KEP-4381",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "title": "DRA Structured Parameters",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicResourceAllocation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.30",
+        "beta": "1.32",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -690,7 +815,7 @@
       "history": {
         "alpha": "1.32",
         "beta": "1.33",
-        "stable": "1.35",
+        "stable": "1.36",
         "verified": [
           "stable"
         ]
@@ -748,7 +873,31 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.33",
-        "beta": "1.33"
+        "beta": "1.33",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5080",
+      "kepPath": "sig-api-machinery/5080-ordered-namespace-deletion",
+      "title": "Ordered Namespace Deletion",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "OrderedNamespaceDeletion",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "beta": "1.30",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -806,6 +955,28 @@
       "affectedFields": [],
       "history": {
         "beta": "1.33"
+      }
+    },
+    {
+      "kep": "KEP-127",
+      "kepPath": "sig-node/127-user-namespaces",
+      "title": "Support User Namespaces",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "UserNamespacesSupport",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
       }
     },
     {
@@ -888,7 +1059,8 @@
         "verified": [
           "beta"
         ]
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3314",
@@ -899,11 +1071,31 @@
       "category": "Storage",
       "description": "",
       "impact": null,
-      "featureGate": null,
+      "featureGate": "None",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.33"
+        "alpha": "1.33",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3503",
+      "kepPath": "sig-windows/3503-host-network-support-for-windows-pods",
+      "title": "Host Network Support for Windows Pods",
+      "stage": "alpha",
+      "sig": "Windows",
+      "category": "Platform",
+      "description": "",
+      "impact": null,
+      "featureGate": "WindowsHostNetwork",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26"
       }
     },
     {
@@ -919,7 +1111,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.33"
+        "alpha": "1.33",
+        "beta": "1.35",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -955,8 +1151,10 @@
       "history": {
         "alpha": "1.33",
         "beta": "1.34",
+        "stable": "1.36",
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1003,6 +1201,44 @@
       }
     },
     {
+      "kep": "KEP-4603",
+      "kepPath": "sig-node/4603-tune-crashloopbackoff",
+      "title": "Tune Crashloop Backoff",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ReduceDefaultCrashLoopBackoffDecay",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32"
+      }
+    },
+    {
+      "kep": "KEP-4639",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "title": "OCI images as VolumeSource",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ImageVolume",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4742",
       "kepPath": "sig-node/4742-node-topology-downward-api",
       "title": "Node Topologies via Downward API",
@@ -1035,7 +1271,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.33"
+        "alpha": "1.33",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1053,6 +1293,56 @@
       "history": {
         "alpha": "1.33",
         "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4827",
+      "kepPath": "sig-instrumentation/4827-component-statusz",
+      "title": "Component Statusz",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "ComponentStatusz",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4828",
+      "kepPath": "sig-instrumentation/4828-component-flagz",
+      "title": "Component Flagz",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "ComponentFlagz",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
         "verified": [
           "beta"
         ]
@@ -1075,8 +1365,10 @@
         "beta": "1.36",
         "stable": "1.38",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1096,11 +1388,9 @@
         "alpha": "1.33",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1177,11 +1467,9 @@
         "alpha": "1.33",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1198,7 +1486,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.33"
+        "alpha": "1.33",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1214,7 +1506,15 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.33"
+        "alpha": "1.33",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1272,8 +1572,10 @@
         "beta": "1.36",
         "stable": "1.39",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     }
@@ -1306,30 +1608,6 @@
               "priority/important-soon",
               "sig/network",
               "lifecycle/frozen"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "No",
-        "prNumber": 127375,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/127375",
-        "author": "omerap12",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "relatedIssues": [
-          126311
-        ],
-        "issueContext": [
-          {
-            "number": 126311,
-            "title": "Prevent `celReservedSymbols` from accidentally adding value in escaping format",
-            "body": "### What would you like to be added?\r\n\r\n`celReservedSymbols` is currently hard coded in https://github.com/kubernetes/kubernetes/blob/ad805387e26a4e76ab53505d5eb552686368180b/staging/src/k8s.io/apiserver/pkg/cel/escaping.go#L25-L34 and the list is from https://github.com/google/cel-spec/blob/master/doc/langdef.md#syntax\r\nWe don't expect any new value silently got in here but just in case :)\r\n\r\nSuggestion from @liggitt : https://github.com/kubernetes/kubernetes/pull/126188#discussion_r1688649672\r\n\r\n### Why is this needed?\r\n\r\nPrevent from new value mess with existing escaping",
-            "labels": [
-              "sig/api-machinery",
-              "kind/feature",
-              "triage/accepted"
             ]
           }
         ]
@@ -1568,17 +1846,6 @@
           "Api Machinery",
           "Apps",
           "Auth"
-        ]
-      },
-      {
-        "description": "...\n+ /home/prow/go/src/k8s.io/kubernetes/_output/bin/ginkgo --nodes=25 --poll-progress-after=60m --poll-progress-interval=5m --source-root=/home/prow/go/src/k8s.io/kubernetes/cluster/.. --timeout=24h --silence-skips --force-newlines --no-color /home/prow/go/src/k8s.io/kubernetes/_output/bin/e2e.test -- --kubeconfig=/root/.kube/kind-test-config --host=https://127.0.0.1:43881 --provider=skeleton --gce-project= --gce-zone= --gce-region= --gce-multizone=false --gke-cluster= --kube-master= --cluster-tag= --cloud-config-file= --repo-root=/home/prow/go/src/k8s.io/kubernetes/cluster/.. --node-instance-group= --prefix=e2e --network=e2e --node-tag= --master-tag= --docker-config-file= --dns-domain=cluster.local --prepull-images=false --report-complete-ginkgo --report-complete-junit --provider=skeleton --num-nodes=2 --ginkgo.focus=. '--ginkgo.skip=\\[Serial\\]|\\[Slow\\]|\\[Disruptive\\]|\\[Flaky\\]|\\[Feature:.+\\]|PodSecurityPolicy|LoadBalancer|load.balancer|Simple.pod.should.support.exec.through.an.HTTP.proxy|subPath.should.support.existing|NFS|nfs|inline.execution.and.attach|should.be.rejected.when.no.endpoints.exist' --ginkgo.label-filter= --report-dir=/logs/artifacts --disable-log-dump=true\nRunning Suite: Kubernetes e2e suite - /home/prow/go/src/k8s.io/kubernetes/_output/bin\n=====================================================================================\nRandom Seed: 1737026902 - will randomize all specs\n\nWill run 2025 of 6644 specs\nRunning in parallel across 25 processes\n\u2022\n...\n\u2022\n{\"component\":\"entrypoint\",\"file\":\"sigs.k8s.io/prow/pkg/entrypoint/run.go:169\",\"func\":\"sigs.k8s.io/prow/pkg/entrypoint.Options.ExecuteProcess\",\"level\":\"error\",\"msg\":\"Process did not finish before 1h0m0s timeout\",\"severity\":\"error\",\"time\":\"2025-01-16T12:17:50Z\"}\nwrapper.sh] [EARLY EXIT] Interrupted, entering handler ...\n...\n+ signal_handler\n+ [ -n 69647 ]\n+ kill -TERM 69647\n+ cleanup\n+ [ false = true ]\n+ [ true = true ]\n+ kind export logs /logs/artifacts\n...\nwrapper.sh] [EARLY EXIT] Completed handler ...\n  ------------------------------\n  Progress Report for Ginkgo Process #2\n  Automatically polling progress:\n    [sig-cli] Kubectl client Kubectl cluster-info dump should check if cluster-info dump succeeds (Spec Runtime: 1h0m0.082s)\n      k8s.io/kubernetes/test/e2e/kubectl/kubectl.go:1376\n      In [It] (Node Runtime: 1h0m0s)\n        k8s.io/kubernetes/test/e2e/kubectl/kubectl.go:1376\n\n      Begin Captured GinkgoWriter Output >>\n        I0116 11:29:39.530877 69841 util.go:502] >>> kubeConfig: /root/.kube/kind-test-config\n      << End Captured GinkgoWriter Output\n\n      Spec Goroutine\n      goroutine 7161 [select]\n        github.com/onsi/gomega/internal.(*AsyncAssertion).match(0xc002b1a700, {0x53308c8, 0xc000c48ed0}, 0x1, {0x0, 0x0, 0x0})\n          github.com/onsi/gomega@v1.35.1/internal/async_assertion.go:546\n        github.com/onsi/gomega/internal.(*AsyncAssertion).Should(0xc002b1a700, {0x53308c8, 0xc000c48ed0}, {0x0, 0x0, 0x0})\n          github.com/onsi/gomega@v1.35.1/internal/async_assertion.go:145\n      > k8s.io/kubernetes/test/e2e/kubectl.init.func5.19.1({0x7f29e05fbe50?, 0xc002b104e0})\n          k8s.io/kubernetes/test/e2e/kubectl/kubectl.go:1380\n        github.com/onsi/ginkgo/v2/internal.extractBodyFunction.func2({0x5357590?, 0xc002b104e0?})\n          github.com/onsi/ginkgo/v2@v2.21.0/internal/node.go:465\n        github.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()\n          github.com/onsi/ginkgo/v2@v2.21.0/internal/suite.go:894\n        github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 6404\n          github.com/onsi/ginkgo/v2@v2.21.0/internal/suite.go:881\n\n      Begin Additional Progress Reports >>\n        fake error to block test\n      << End Additional Progress Reports\n  ------------------------------\n{\"component\":\"entrypoint\",\"file\":\"sigs.k8s.io/prow/pkg/entrypoint/run.go:267\",\"func\":\"sigs.k8s.io/prow/pkg/entrypoint.gracefullyTerminate\",\"level\":\"error\",\"msg\":\"Process did not exit before 15m0s grace period\",\"severity\":\"error\",\"time\":\"2025-01-16T12:32:50Z\"}\n{\"component\":\"entrypoint\",\"error\":\"os: process already finished\",\"file\":\"sigs.k8s.io/prow/pkg/entrypoint/run.go:269\",\"func\":\"sigs.k8s.io/prow/pkg/entrypoint.gracefullyTerminate\",\"level\":\"error\",\"msg\":\"Could not kill process after grace period\",\"severity\":\"error\",\"time\":\"2025-01-16T12:32:50Z\"}",
-        "prNumber": 129545,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/129545",
-        "author": "pohly",
-        "sigs": [
-          "Cli",
-          "Node",
-          "Testing"
         ]
       },
       {
@@ -1842,15 +2109,6 @@
           "KEP-5152"
         ],
         "userFacingChange": "The Service trafficDistribution field, including the PreferClose option, has graduated\r\nto GA. Services that do not have the field configured will continue to operate\r\nwith their existing behavior. Refer to the documentation\r\nhttps://kubernetes.io/docs/concepts/services-networking/service/#traffic-distribution\r\nfor more details."
-      },
-      {
-        "description": "[root@raji-x86-workspace1 kubernetes]#  make quick-release KUBE_CROSS_VERSION=v1.32.0-go1.23.6-bullseye.0\n+++ [0313 08:15:47] Verifying Prerequisites....\n+++ [0313 08:15:48] Building Docker image kube-build:build-c08a296a0e-5-v1.33.0-go1.24.0-bullseye.0\n+++ [0313 08:17:39] Creating data container kube-build-data-c08a296a0e-5-v1.33.0-go1.24.0-bullseye.0\n+++ [0313 08:17:39] Syncing sources to container\n+++ [0313 08:17:57] Running build command...\ngo: downloading go1.24.0 (linux/amd64)\n+++ [0313 08:18:35] Building go targets for linux/amd64\n    k8s.io/apiextensions-apiserver (static)\n    k8s.io/component-base/logs/kube-log-runner (static)\n    k8s.io/kube-aggregator (static)\n    k8s.io/kubernetes/cluster/gce/gci/mounter (static)\n    k8s.io/kubernetes/cmd/kube-apiserver (static)\n    k8s.io/kubernetes/cmd/kube-controller-manager (static)\n    k8s.io/kubernetes/cmd/kube-proxy (static)\n    k8s.io/kubernetes/cmd/kube-scheduler (static)\n    k8s.io/kubernetes/cmd/kubeadm (static)\n    k8s.io/kubernetes/cmd/kubelet (non-static)\n+++ [0313 08:22:08] Building go targets for linux/amd64\n    k8s.io/component-base/logs/kube-log-runner (static)\n    k8s.io/kubernetes/cmd/kube-proxy (static)\n    k8s.io/kubernetes/cmd/kubeadm (static)\n    k8s.io/kubernetes/cmd/kubelet (non-static)\n+++ [0313 08:22:41] Building go targets for linux/amd64\n    k8s.io/kubernetes/cmd/kubectl (static)\n    k8s.io/kubernetes/cmd/kubectl-convert (static)\n+++ [0313 08:23:06] Building go targets for linux/amd64\n    github.com/onsi/ginkgo/v2/ginkgo (non-static)\n    k8s.io/kubernetes/test/conformance/image/go-runner (non-static)\n    k8s.io/kubernetes/test/e2e/e2e.test (test)\n\n[root@raji-x86-workspace1 kubernetes]#",
-        "prNumber": 130870,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130870",
-        "author": "Rajalakshmi-Girish",
-        "sigs": [
-          "Release"
-        ]
       },
       {
         "description": "e2e framework: `framework.WithFeatureGate` `[Alpha]`, `[Beta]` and `[Feature:OffByDefault]` tags are now set 1:1 with `Alpha`,  `Beta`, `Feature:OffByDefault` Ginkgo labels, replacing`Feature:Alpha` and `Feature:Beta` labels. `BetaOffByDefault` is also added as a Ginkgo label only for off-by-default beta features",
@@ -2948,16 +3206,6 @@
         "userFacingChange": "The response from kube-apiserver /flagz endpoint would respond correctly with parsed flags value when the feature-gate ComponentFlagz is enabled"
       },
       {
-        "description": "No",
-        "prNumber": 130329,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130329",
-        "author": "zylxjtu",
-        "sigs": [
-          "Testing",
-          "Windows"
-        ]
-      },
-      {
         "description": "Fixed an issue where kubelet would unmount volumes of running pods upon restart if the referenced PVC was being deleted by the user.",
         "prNumber": 130335,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/130335",
@@ -3120,30 +3368,6 @@
               "sig/node",
               "priority/important-longterm",
               "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Fixed a test failure in `TestSetVolumeOwnershipOwner` for `fsGroup=3000` and\nsymlink cases in `volume_linux_test.go`. The tests were failing due to invalid\nownership verification and the issue has been resolved by adjusting file\npermission change handling, ensuring correct behavior when run as root.",
-        "prNumber": 130616,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130616",
-        "author": "gnufied",
-        "sigs": [
-          "Storage"
-        ],
-        "relatedIssues": [
-          130607
-        ],
-        "issueContext": [
-          {
-            "number": 130607,
-            "title": "[Failing Test] pkg/volume/volume_linux_test.go",
-            "body": "### Which jobs are failing?\n\nNONE\n\n### Which tests are failing?\n\n- TestSetVolumeOwnershipOwner/*fsGroup=3000\n- TestSetVolumeOwnershipOwner/symlink\n\n### Since when has it been failing?\n\nSince PR #130398 \n\n### Testgrid link\n\n_No response_\n\n### Reason for failure (if possible)\n\n-  volume_linux_test.go:592: for *fsGroup=3000 error verifying permissions with: invalid owner on /tmp/volume_linux_ownership3055383160/file.txt\n- volume_linux_test.go:592: for symlink error verifying permissions with: invalid owner on /tmp/volume_linux_ownership3642780172/file_link.txt\n\n### Anything else we need to know?\n\nTwo test cases started to fail after PR #130398, not sure if this [line](https://github.com/kubernetes/kubernetes/pull/130398#discussion_r1982400934) is the one causes the issue or not. We may need to revert or fix the test to work regardless of which user runs the test.\n\nError:\n```\n{Failed  === RUN   TestSetVolumeOwnershipOwner/*fsGroup=3000\n    volume_linux_test.go:592: for *fsGroup=3000 error verifying permissions with: invalid owner on /tmp/volume_linux_ownership3055383160/file.txt\n--- FAIL: TestSetVolumeOwnershipOwner/*fsGroup=3000 (0.60s)\n\n=== RUN   TestSetVolumeOwnershipOwner/symlink\n    volume_linux_test.go:592: for symlink error verifying permissions with: invalid owner on /tmp/volume_linux_ownership3642780172/file_link.txt\n--- FAIL: TestSetVolumeOwnershipOwner/symlink (0.90s)\n\n=== RUN   TestSetVolumeOwnershipOwner\n--- FAIL: TestSetVolumeOwnershipOwner (1.51s)\n}\n```\n\n### Relevant SIG(s)\n\n/sig",
-            "labels": [
-              "kind/failing-test",
-              "needs-sig",
-              "needs-triage"
             ]
           }
         ]
@@ -5037,15 +5261,6 @@
         "userFacingChange": "Add ListFromCacheSnapshot feature gate that allows apiserver to serve LISTs with exact RV and continuations from cache"
       },
       {
-        "description": "NONE",
-        "prNumber": 130424,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130424",
-        "author": "ahrtr",
-        "sigs": [
-          "Etcd"
-        ]
-      },
-      {
         "description": "Added a mechanism that calculates a digest of etcd and the watch cache every 5 minutes and exposes it as the `apiserver_storage_digest` metric.",
         "prNumber": 130475,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/130475",
@@ -5240,15 +5455,6 @@
           "https://github.com/kubernetes/enhancements/issues/4818"
         ],
         "userFacingChange": "PodLifecycleSleepAction is now turned on by default allowing users to create containers with sleep lifecycle action with a duration of zero seconds"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 130651,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130651",
-        "author": "ahrtr",
-        "sigs": [
-          "Etcd"
-        ]
       },
       {
         "description": "Added Pressure Stall Information (PSI) metrics to node metrics.",

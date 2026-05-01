@@ -1,0 +1,17 @@
+title: Skip SELinux relabeling of volumes
+kep-number: 1710
+authors:
+  - "@jsafrane"
+owning-sig: sig-storage
+status: implementable
+stage: stable
+latest-milestone: "v1.36"
+milestone:
+  alpha: "v1.24"
+  beta: "v1.27"
+  stable: "v1.36"
+feature-gates:
+  - name: SELinuxMountReadWriteOncePod
+    components:
+      - kubelet
+disable-supported: true

@@ -1,0 +1,10 @@
+{
+  "version": "1.34",
+  "features": [
+    {
+      "kep": "KEP-1710",
+      "stage": "stable",
+      "isHighlight": true
+    }
+  ]
+}

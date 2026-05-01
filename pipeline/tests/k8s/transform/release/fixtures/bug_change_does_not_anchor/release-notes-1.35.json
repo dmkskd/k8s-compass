@@ -1,0 +1,8 @@
+{
+  "133425": {
+    "text": "Fixed SELinux warning controller not emitting events on some SELinux label conflicts.",
+    "pr_number": 133425,
+    "kinds": ["bug"],
+    "sigs": ["apps", "storage", "testing"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "600001": {
+    "text": "DRA Extended Resource graduates to beta.",
+    "pr_number": 600001,
+    "kinds": ["feature"],
+    "sigs": ["scheduling"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/5004"
+      }
+    ]
+  }
+}

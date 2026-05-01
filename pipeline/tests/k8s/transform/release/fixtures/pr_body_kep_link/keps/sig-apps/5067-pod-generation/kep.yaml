@@ -1,0 +1,18 @@
+title: Pod Generation
+kep-number: 5067
+authors:
+  - "@natasha41575"
+owning-sig: sig-apps
+status: implementable
+stage: stable
+latest-milestone: "v1.35"
+milestone:
+  alpha: "v1.33"
+  beta: "v1.34"
+  stable: "v1.35"
+feature-gates:
+  - name: PodObservedGenerationTracking
+    components:
+      - kube-apiserver
+      - kube-controller-manager
+disable-supported: true

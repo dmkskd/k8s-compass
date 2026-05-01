@@ -5,10 +5,10 @@
   "releaseDate": "2026-04-22",
   "endOfLifeDate": "2027-06-22",
   "summary": {
-    "total": 71,
-    "stable": 21,
-    "beta": 24,
-    "alpha": 26
+    "total": 92,
+    "stable": 27,
+    "beta": 31,
+    "alpha": 34
   },
   "themes": [
     "Security",
@@ -30,22 +30,7 @@
         "Node",
         "Scheduling",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Granular RBAC required for DRA ResourceClaim updates",
-        "summary": "Enabling DRAResourceClaimGranularStatusAuthorization requires new granular RBAC rules for DRA drivers and controllers to update ResourceClaim statuses.",
-        "action": "Grant DRA drivers and controllers update/patch permissions on resourceclaims/binding, and grant DRA drivers associated-node:update or arbitrary-node:update (or patch equivalents) on resourceclaims/driver restricted to their specific resourceNames when the DRAResourceClaimGranularStatusAuthorization feature gate is enabled.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler",
-          "kube-controller-manager",
-          "DRA drivers"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Added support for running PreBind plugins in parallel in the scheduler framework to improve binding latency.\nACTION REQUIRED: Plugins can opt-in to parallel execution by returning `AllowParallel: true` from the `PreBindPreFlight` method. PreBind plugin implementations need to be updated to return `PreBindPreFlightResult` from the `PreBindPreFlight` method; returning nil retains the existing sequential behavior.",
@@ -57,20 +42,7 @@
         "Scheduling",
         "Storage",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Parallel PreBind Plugin Execution in Scheduler",
-        "summary": "Scheduler now supports parallel execution of PreBind plugins; plugins must opt\u2011in via AllowParallel flag.",
-        "action": "Update PreBind plugin implementations to return a PreBindPreFlightResult from the PreBindPreFlight method and set AllowParallel: true to enable parallel execution; otherwise return nil to keep sequential behavior.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED:\nkube-controller-manager: Renamed metric `volume_operation_total_errors` to `volume_operation_errors_total`. If you are using custom monitoring dashboards or alerting rules based on the `volume_operation_total_errors` metric, update them to use the new `volume_operation_errors_total` metric.",
@@ -82,18 +54,7 @@
         "Instrumentation",
         "Storage",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Rename volume_operation_total_errors metric",
-        "summary": "The kube-controller-manager metric `volume_operation_total_errors` has been renamed to `volume_operation_errors_total`; monitoring configurations must be updated accordingly.",
-        "action": "Update any custom monitoring dashboards and alerting rules to replace the metric name `volume_operation_total_errors` with `volume_operation_errors_total`.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED: Removed the integrated support for flex-volumes in kubeadm. Users were advised to migrate away from flex-volumes as recommended by SIG Storage since `v1.22`. If `kubeadm` users wish to continue using the feature, they need a custom image for the KCM that is not based on distroless, pass the KCM flag `--flex-volume-plugin-dir`, and mount the directory `/usr/libexec/kubernetes/kubelet-plugins/volume/exec` in the KCM static pod using `kubeadm`'s `extraVolumes` mechanism before upgrading to `v1.36`. Previously, `kubeadm` automatically did the mounting if the user passed the flag.",
@@ -102,21 +63,7 @@
       "author": "neolit123",
       "sigs": [
         "Cluster Lifecycle"
-      ],
-      "enrichment": {
-        "title": "Removal of kubeadm flex\u2011volume support in v1.36",
-        "summary": "kubeadm no longer provides built\u2011in flex\u2011volume support; users must migrate or manually configure KCM with extraVolumes before upgrading to v1.36.",
-        "action": "Migrate away from flex-volumes or, if you must continue using them, build a custom kube-controller-manager image (non\u2011distroless), pass the flag --flex-volume-plugin-dir to KCM, and mount /usr/libexec/kubernetes/kubelet-plugins/volume/exec via kubeadm extraVolumes before upgrading to v1.36.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubeadm",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "kube-controller-manager static pod"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED: Renamed metric `etcd_bookmark_counts` to `etcd_bookmark_total`. If you are using custom monitoring dashboards or alerting rules based on the `etcd_bookmark_counts` metric, update them to use the new `etcd_bookmark_total` metric.",
@@ -128,18 +75,7 @@
         "Etcd",
         "Instrumentation",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Rename etcd_bookmark_counts to etcd_bookmark_total",
-        "summary": "The metric `etcd_bookmark_counts` has been renamed to `etcd_bookmark_total`; monitoring configurations must be updated accordingly.",
-        "action": "Update any custom monitoring dashboards and alerting rules to replace the `etcd_bookmark_counts` metric with `etcd_bookmark_total`.",
-        "severity": "high",
-        "affectedComponents": [
-          "etcd"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "features": [
@@ -163,6 +99,24 @@
       "isHighlight": true
     },
     {
+      "kep": "KEP-1441",
+      "kepPath": "sig-cli/1441-kubectl-debug",
+      "title": "kubectl debug",
+      "stage": "stable",
+      "sig": "Cli",
+      "category": "CLI",
+      "description": "",
+      "impact": null,
+      "featureGate": null,
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.18",
+        "beta": "1.20",
+        "stable": "1.30"
+      }
+    },
+    {
       "kep": "KEP-1710",
       "kepPath": "sig-storage/1710-selinux-relabeling",
       "title": "Skip SELinux relabeling of volumes",
@@ -178,8 +132,25 @@
         "alpha": "1.24",
         "beta": "1.27",
         "stable": "1.36"
-      },
-      "isHighlight": true
+      }
+    },
+    {
+      "kep": "KEP-1904",
+      "kepPath": "sig-api-machinery/1904-efficient-watch-resumption",
+      "title": "Efficient watch resumption after kube-apiserver reboot",
+      "stage": "stable",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "EfficientWatchResumption",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.20",
+        "beta": "1.21",
+        "stable": "1.24"
+      }
     },
     {
       "kep": "KEP-2258",
@@ -197,6 +168,24 @@
         "alpha": "1.27",
         "beta": "1.30",
         "stable": "1.36"
+      }
+    },
+    {
+      "kep": "KEP-2589",
+      "kepPath": "sig-storage/2589-csi-migration-portworx",
+      "title": "In-tree Storage Plugin to CSI Migration - Portworx",
+      "stage": "stable",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "CSIMigrationPortworx",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.25",
+        "stable": "1.33"
       }
     },
     {
@@ -273,6 +262,24 @@
       }
     },
     {
+      "kep": "KEP-3751",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "title": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "stage": "stable",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "VolumeAttributesClass",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.34"
+      }
+    },
+    {
       "kep": "KEP-3962",
       "kepPath": "sig-api-machinery/3962-mutating-admission-policies",
       "title": "Mutating Admission Policies",
@@ -290,6 +297,24 @@
         "stable": "1.36"
       },
       "isHighlight": true
+    },
+    {
+      "kep": "KEP-4033",
+      "kepPath": "sig-node/4033-group-driver-detection-over-cri",
+      "title": "Discover cgroup driver from CRI",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "KubeletCgroupDriverFromCRI",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.31",
+        "stable": "1.34"
+      }
     },
     {
       "kep": "KEP-4205",
@@ -507,6 +532,22 @@
       }
     },
     {
+      "kep": "KEP-5589",
+      "kepPath": "sig-api-machinery/5589-gogo-dependency",
+      "title": "Remove gogo protobuf dependency",
+      "stage": "stable",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": null,
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "stable": "1.35"
+      }
+    },
+    {
       "kep": "KEP-740",
       "kepPath": "sig-auth/740-service-account-external-signing",
       "title": "Support external signing of service account tokens",
@@ -539,6 +580,40 @@
       "history": {
         "alpha": "1.29",
         "beta": "1.36"
+      }
+    },
+    {
+      "kep": "KEP-2535",
+      "kepPath": "sig-node/2535-ensure-secret-pulled-images",
+      "title": "Ensure Secret Pulled Images",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "KubeletEnsureSecretPulledImages",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.35"
+      }
+    },
+    {
+      "kep": "KEP-3104",
+      "kepPath": "sig-cli/3104-introduce-kuberc",
+      "title": "Introduce kuberc",
+      "stage": "beta",
+      "sig": "Cli",
+      "category": "CLI",
+      "description": "",
+      "impact": null,
+      "featureGate": "KUBECTL_KUBERC",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.34"
       }
     },
     {
@@ -576,6 +651,27 @@
       }
     },
     {
+      "kep": "KEP-4006",
+      "kepPath": "sig-api-machinery/4006-transition-spdy-to-websockets",
+      "title": "Transition from SPDY to Websockets",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "KUBECTL_REMOTE_COMMAND_WEBSOCKETS",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4020",
       "kepPath": "sig-api-machinery/4020-unknown-version-interoperability-proxy",
       "title": "Unknown Version Interoperability Proxy",
@@ -594,6 +690,44 @@
         "tentative": [
           "stable"
         ]
+      }
+    },
+    {
+      "kep": "KEP-4192",
+      "kepPath": "sig-api-machinery/4192-svm-in-tree",
+      "title": "Move Storage Version Migrator in-tree",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "StorageVersionMigrator",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.30",
+        "beta": "1.35",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4317",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "title": "Pod Certificates",
+      "stage": "beta",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodCertificateRequest",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.34",
+        "beta": "1.35"
       }
     },
     {
@@ -675,6 +809,23 @@
         "tentative": [
           "stable"
         ]
+      }
+    },
+    {
+      "kep": "KEP-4832",
+      "kepPath": "sig-scheduling/4832-async-preemption",
+      "title": "Asynchronous Preemption",
+      "stage": "beta",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "SchedulerAsyncPreemption",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32",
+        "beta": "1.33"
       }
     },
     {
@@ -792,6 +943,27 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.33",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5075",
+      "kepPath": "sig-scheduling/5075-dra-consumable-capacity",
+      "title": "DRA Consumable Capacity",
+      "stage": "beta",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRAConsumableCapacity",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.34",
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
@@ -997,6 +1169,41 @@
       }
     },
     {
+      "kep": "KEP-2021",
+      "kepPath": "sig-autoscaling/2021-scale-from-zero",
+      "title": "HPA supports scaling to/from zero pods for object/external metrics",
+      "stage": "alpha",
+      "sig": "Autoscaling",
+      "category": "Scaling",
+      "description": "",
+      "impact": null,
+      "featureGate": "HPAScaleToZero",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.16",
+        "beta": "x.y",
+        "stable": "x.y"
+      }
+    },
+    {
+      "kep": "KEP-2570",
+      "kepPath": "sig-node/2570-memory-qos",
+      "title": "Memory QoS",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "MemoryQoS",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.27"
+      },
+      "isHighlight": true
+    },
+    {
       "kep": "KEP-3541",
       "kepPath": "sig-apps/3541-add-recreate-strategy-to-statefulset",
       "title": "Add Recreate Update Strategy to StatefulSet",
@@ -1035,6 +1242,38 @@
       }
     },
     {
+      "kep": "KEP-4222",
+      "kepPath": "sig-api-machinery/4222-cbor-serializer",
+      "title": "CBOR Serializer",
+      "stage": "alpha",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "CBORSerializer",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32"
+      }
+    },
+    {
+      "kep": "KEP-4346",
+      "kepPath": "sig-api-machinery/4346-informer-metrics",
+      "title": "Add Informer Metrics",
+      "stage": "alpha",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "InformerMetrics",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.30"
+      }
+    },
+    {
       "kep": "KEP-4563",
       "kepPath": "sig-node/4563-eviction-request-api",
       "title": "EvictionRequest API",
@@ -1048,6 +1287,72 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.36"
+      }
+    },
+    {
+      "kep": "KEP-4671",
+      "kepPath": "sig-scheduling/4671-gang-scheduling",
+      "title": "Gang Scheduling",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "GenericWorkload",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.35",
+        "beta": "1.37",
+        "stable": "1.38",
+        "tentative": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5030",
+      "kepPath": "sig-autoscaling/5030-attach-limit-autoscaler",
+      "title": "Integrate CSI Volume attach limits with cluster autoscaler",
+      "stage": "alpha",
+      "sig": "Autoscaling",
+      "category": "Scaling",
+      "description": "",
+      "impact": null,
+      "featureGate": "VolumeLimitScaling",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.35",
+        "beta": "1.37",
+        "stable": "1.38",
+        "tentative": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5237",
+      "kepPath": "sig-cloud-provider/5237-watch-based-route-controller-reconciliation",
+      "title": "Watch-based route controller reconciliation",
+      "stage": "alpha",
+      "sig": "Cloud Provider",
+      "category": "Cloud",
+      "description": "",
+      "impact": null,
+      "featureGate": "CloudControllerManagerWatchBasedRoutesReconciliation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.35",
+        "beta": "1.37",
+        "stable": "1.38",
+        "tentative": [
+          "beta",
+          "stable"
+        ]
       }
     },
     {
@@ -1236,6 +1541,22 @@
           "beta",
           "stable"
         ]
+      }
+    },
+    {
+      "kep": "KEP-5607",
+      "kepPath": "sig-node/5607-hostnetwork-userns",
+      "title": "Allow HostNetwork Pods to Use User Namespaces",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "UserNamespacesHostNetworkSupport",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.35"
       }
     },
     {
@@ -2190,16 +2511,6 @@
         "userFacingChange": "Changed the behavior of default scheduler preemption plugin when preempting pods that are in \"WaitOnPermit\" phase. They are now moved to the scheduler backoff queue instead of being marked as unschedulable."
       },
       {
-        "description": "\"NONE\"",
-        "prNumber": 135729,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135729",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Node",
-          "Testing"
-        ]
-      },
-      {
         "description": "Fixed `event_handling_duration_seconds`, `preemption_goroutines_duration_seconds`, `run_podsandbox_duration_seconds`, and `store_schedule_results_duration_seconds` metrics incorrectly recording near-zero latency values instead of actual durations, caused by premature evaluation of `SinceInSeconds(startTime)` in a deferred call.",
         "prNumber": 135749,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/135749",
@@ -2858,19 +3169,6 @@
         ]
       },
       {
-        "description": "Improved `DRA scheduling` performance by splitting ResourceSlice entries into shared and onNode categories, reducing Filter stage latency by ~50% in large clusters.",
-        "prNumber": 136588,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136588",
-        "author": "abel-von",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Node",
-          "Scheduling"
-        ]
-      },
-      {
         "description": "Fixed a bug where `kubectl plugin list` failed to detect overshadowed plugins on Windows.",
         "prNumber": 136689,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/136689",
@@ -2913,34 +3211,6 @@
           "Testing"
         ],
         "userFacingChange": "Remove `GuaranteedQoSPodCPUResize` from node declared features."
-      },
-      {
-        "description": "kube-proxy: Fixed nftables mode to work on systems with `nft` `v1.1.3`.",
-        "prNumber": 136796,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136796",
-        "author": "kairosci",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Network"
-        ],
-        "userFacingChange": "Fixes kube-proxy's nftables mode to work on systems with nft 1.1.3.",
-        "relatedIssues": [
-          136786
-        ],
-        "issueContext": [
-          {
-            "number": 136786,
-            "title": "kube-proxy fails to sync in nftables mode when newer nftables sets exist",
-            "body": "### What happened?\n\nkube-proxy crashes repeatedly, causing the container network to not function.\n```\nE0205 20:24:21.385767       1 proxier.go:1217] \"Failed to list existing sets\" err=\"failed to run nft: signal: segmentation fault (core dumped)\" ipFamily=\"IPv4\"\nE0205 20:24:22.721950       1 proxier.go:1788] \"nftables sync failed\" err=\"signal: segmentation fault (core dumped)\" ipFamily=\"IPv4\"\nI0205 20:24:22.723136       1 proxier.go:1143] \"Sync failed\" ipFamily=\"IPv4\" retryingTime=\"30s\"\nE0205 20:24:23.698591       1 proxier.go:1217] \"Failed to list existing sets\" err=\"failed to run nft: signal: segmentation fault (core dumped)\" ipFamily=\"IPv6\"\nE0205 20:24:24.761438       1 proxier.go:1788] \"nftables sync failed\" err=\"signal: segmentation fault (core dumped)\" ipFamily=\"IPv6\"\nI0205 20:24:24.761928       1 proxier.go:1143] \"Sync failed\" ipFamily=\"IPv6\" retryingTime=\"30s\"\n```\n\n### What did you expect to happen?\n\nkube-proxy should correctly setup nftables rules.\n\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nRun a container in the host namespace with a newer version of nftables (1.1.3+), for example Fedora 43. Add a nft set in the container:\n```\nnft add table test_table\nnft add set test_table test_set '{ type ifname; elements = { \"test\" } }'\n```\n\nThen delete the kube-proxy pod on the host, and example the logs on the new pod.\n\n\n### Anything else we need to know?\n\nkube-proxy in nftables mode crashes repeatedly on hosts where newer versions of nftables (eg 1.1.3) have created sets in the same network namespace.\n\nI found a fix for the crash in newer nftables here (it appears to be related to udata being present on newer nft sets):\nhttps://git.netfilter.org/nftables/commit/?id=be737a1986bfee0ddea4bee7863dca0123a2bcbc\n\nIt's probably a good idea to build kube-proxy with a patched version of nftables to avoid the crash, but not use anything newer than nftables 1.1.1 as it could then potentially break other unpatched nftables in CNIs etc.\n\n\n### Kubernete",
-            "labels": [
-              "kind/bug",
-              "sig/network",
-              "area/kube-proxy",
-              "triage/accepted"
-            ]
-          }
-        ]
       },
       {
         "description": "Fixed a data race in the `PopulateRefs` function in `k8s.io/apiserver/pkg/cel/openapi/resolver` where concurrent goroutines could simultaneously modify shared pointer fields from a shallow-copied schema struct.",
@@ -3166,15 +3436,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 137139,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137139",
-        "author": "Argh4k",
-        "sigs": [
-          "Scheduling"
-        ]
-      },
-      {
         "description": "Fixed a bug where, after a `kubelet` restart, regular containers in a Pod with a sidecar (initContainer with `restartPolicy`: Always) and a `startupProbe` failed to restart after crashing. Affected Pods remained stuck with `RestartCount: 0` indefinitely.",
         "prNumber": 137146,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/137146",
@@ -3238,16 +3499,6 @@
             ]
           }
         ]
-      },
-      {
-        "description": "Reverted PR #136796. The kube-proxy nftables fix was re-implemented in PR #137501.",
-        "prNumber": 137169,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137169",
-        "author": "danwinship",
-        "sigs": [
-          "Network"
-        ],
-        "userFacingChange": "(reverts #136796, so ignore the release note from there...)"
       },
       {
         "description": "Fixed kubeadm to skip appending the client URL of etcd learner members to `c.Endpoints`, since learners do not serve client traffic.",
@@ -3717,31 +3968,6 @@
           "Testing"
         ],
         "userFacingChange": "Update the version of the pause image to 3.10.2. Track all pause image version dependencies under the 'registry.k8s.io/pause' item in build/dependencies.yaml."
-      },
-      {
-        "description": "Fixed a kubelet device manager bug where topology hint computation enumerated O(2^n) NUMA node combinations using all machine NUMA nodes. On systems with many NUMA nodes that carry no devices (e.g. NVIDIA GB200 with 36 NUMA nodes), this caused kubelet to stall indefinitely during pod admission. The device manager now restricts iteration to NUMA nodes that actually host devices for the requested resource, reducing the search space to O(2^k) where k is typically 1\u20132.",
-        "prNumber": 138244,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/138244",
-        "author": "fanzhangio",
-        "sigs": [
-          "Node"
-        ],
-        "relatedIssues": [
-          135541
-        ],
-        "issueContext": [
-          {
-            "number": 135541,
-            "title": "kubelet TopologyManager Stalls on Large NUMA Systems (e.g. Nvidia GB200 Compute Tray with 34 NUMA nodes)",
-            "body": "### What happened?\n\nWhen scheduling a pod (e.g. KubeVirt virt-launcher pod) that requests a PCI device on a very large NUMA system, kubelet\u2019s TopologyManager never finishes computing topology hints and the pod is effectively stuck in admission:\n\n- The pod is scheduled to the node.\n- kubelet never reaches the device Allocate call for the requested resource.\n- From a higher-level consumer (KubeVirt in our case), the virt-launcher pod stays in Pending and the VM remains in Starting with Ready = False.\n- kubelet is responsive, but many goroutines are stuck in topology hint generation.\n\nIn our environment this manifests as:\n\n- KubeVirt VM with a hostDevice (GPU, InfiniBand or NVMe) never transitions to Running, even though the node has the capacity and the device is free.\n- Disabling TopologyManager or constraining the NUMA fan-out immediately lets the VM start\n\n### What did you expect to happen?\n\nkubelet should compute topology hints in bounded time, even on systems with many NUMA nodes (in a case GB200 with 34 NUMA nodes where only 2 NUMA nodes have CPUs, the rest are for HBM/NVLink), and call device-plugin Allocate so that pods/VMs using PCI host devices can start.\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\n## High-level repro:\n1. Use a host with a large NUMA topology  \n    Example: Nvidia GB200-class system with 34 NUMA nodes visible to the OS.\n \n2. Run Kubernetes with kubelet configured roughly as follows:\n```yaml\nkubeReserved:\n  cpu: \"2\"\n  memory: 4Gi\n  ephemeral-storage: 20Gi\nsystemReserved:\n  cpu: \"2\"\n  memory: 8Gi\n  ephemeral-storage: 20Gi\ntopologyManagerPolicy: best-effort\ntopologyManagerScope: pod\ntopologyManagerPolicyOptions:\n  prefer-closest-numa-nodes: \"true\"\n  max-allowable-numa-nodes: \"34\"\ncpuManagerPolicy: static\nreservedSystemCPUs: \"0-3,72-75\"\ncpuManagerPolicyOptions:\n  distribute-cpus-across-numa: \"false\"\n```\n3. Deploy a device plugin that:\n- Advertises a PCI resource (e.g. GPU, InfiniBand or NVMe) as a kubelet device resou",
-            "labels": [
-              "kind/bug",
-              "sig/node",
-              "priority/important-longterm",
-              "triage/accepted"
-            ]
-          }
-        ]
       },
       {
         "description": "Fixed running of DRA e2e tests in air-gapped clusters or with test images in private registries.",
@@ -4282,33 +4508,6 @@
         ]
       },
       {
-        "description": "\"NONE\"",
-        "prNumber": 136568,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136568",
-        "author": "sairameshv",
-        "sigs": [
-          "Testing"
-        ],
-        "relatedIssues": [
-          134048
-        ],
-        "issueContext": [
-          {
-            "number": 134048,
-            "title": "DRA Extended Resource Rollout/Upgrade/Rollback",
-            "body": "### What would you like to be added?\n\nhttps://github.com/kubernetes/enhancements/blob/ae9096a5d4eac14d604d6dd56fa77230d5f49a05/keps/sig-scheduling/5004-dra-extended-resource/README.md#rollout-upgrade-and-rollback-planning\n\n### Why is this needed?\n\nDRA extended resources Beta promotion",
-            "labels": [
-              "kind/feature",
-              "needs-triage",
-              "wg/device-management"
-            ]
-          }
-        ],
-        "kepLinks": [
-          "KEP-5751"
-        ]
-      },
-      {
         "description": "CustomResourceDefinition (CRD) validation now strictly enforces ranges for numeric formats (`int32`, `int64`, `float`, `double`) when specified in the schema. Existing objects with out-of-range values are preserved via validation ratcheting.",
         "prNumber": 136582,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/136582",
@@ -4645,16 +4844,6 @@
           "Testing"
         ],
         "userFacingChange": "When `kubectl exec` or `kubectl logs` are run with a specified container name, and no container with that name is found, `kubectl` now lists the names of containers that would be valid to specify."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 136980,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136980",
-        "author": "Argh4k",
-        "sigs": [
-          "Scheduling",
-          "Testing"
-        ]
       },
       {
         "description": "Kubernetes is now built with Go `v1.25.7`.",
@@ -5158,798 +5347,6 @@
         "userFacingChange": "Kubernetes is now built using Go 1.26.2"
       }
     ],
-    "other": [
-      {
-        "description": "\"NONE\"",
-        "prNumber": 131846,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/131846",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Node"
-        ]
-      },
-      {
-        "description": "Changed deprecated `sets.String` with `sets.Set[string]` in apiserver admission subsystem. This is a **breaking change** for consumers of the `NewLifecycle` function.",
-        "prNumber": 134044,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134044",
-        "author": "mcallzbl",
-        "sigs": [
-          "Api Machinery",
-          "Auth"
-        ],
-        "userFacingChange": "Replace deprecated sets.String with sets.Set[string] in apiserver admission subsystem. This is a breaking change for consumers of the NewLifecycle function."
-      },
-      {
-        "description": "Reduced get PV request from KCM pv-controller for CSI volumes.",
-        "prNumber": 134290,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134290",
-        "author": "huww98",
-        "sigs": [
-          "Apps",
-          "Storage"
-        ]
-      },
-      {
-        "description": "Updated kube-dns to `v1.26.7`.",
-        "prNumber": 134394,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134394",
-        "author": "toredash",
-        "sigs": [
-          "Cloud Provider"
-        ],
-        "userFacingChange": "bump kube dns to v1.26.7"
-      },
-      {
-        "description": "NONE",
-        "prNumber": 134830,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134830",
-        "author": "MatteoFari",
-        "sigs": [
-          "Api Machinery"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 134852,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134852",
-        "author": "MatteoFari",
-        "sigs": [
-          "Architecture"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 134867,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134867",
-        "author": "ShaanveerS",
-        "sigs": [
-          "Architecture"
-        ]
-      },
-      {
-        "description": "Removed event listing behavior when describing a deleted Pod from file using `kubectl describe -f`, ensuring consistent NotFound error handling across all resource types.",
-        "prNumber": 135281,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135281",
-        "author": "scaliby",
-        "sigs": [
-          "Cli"
-        ],
-        "userFacingChange": "Remove event listing behavior when describing a removed pod from file."
-      },
-      {
-        "description": "Enabled YAML support for `/statusz` and `/flagz` endpoints.",
-        "prNumber": 135309,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135309",
-        "author": "richabanker",
-        "sigs": [
-          "Api Machinery",
-          "Instrumentation",
-          "Testing"
-        ],
-        "userFacingChange": "Enables YAML support for statusz and flagz.",
-        "kepLinks": [
-          "KEP-4827",
-          "KEP-4828"
-        ]
-      },
-      {
-        "description": "Removed the in-tree Portworx volume plugin, completing the migration to CSI.\nRemoved the GA `CSIMigrationPortworx` feature gate (locked since `v1.33`) and alpha `InTreePluginPortworxUnregister` feature gate, with all operations now redirected to CSI.",
-        "prNumber": 135322,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135322",
-        "author": "carlory",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Node",
-          "Scalability",
-          "Scheduling",
-          "Storage",
-          "Testing"
-        ],
-        "userFacingChange": "- Removed the generally available feature gate `CSIMigrationPortworx`, which was locked and enabled since 1.33.\r\n- Removed alpha feature gate `InTreePluginPortworxUnregister`\r\n- Removed Portworx volume plugin from in-tree plugins because all operations are redirected to CSI.",
-        "kepLinks": [
-          "KEP-2589"
-        ]
-      },
-      {
-        "description": "Updated etcd client library to `v3.6.6`.",
-        "prNumber": 135331,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135331",
-        "author": "yashsingh74",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cloud Provider",
-          "Etcd",
-          "Node",
-          "Scheduling"
-        ],
-        "userFacingChange": "Updates the etcd client library to v3.6.6"
-      },
-      {
-        "description": "Removed the generally available feature gate `HonorPVReclaimPolicy`, which was locked and enabled since `v1.33`.",
-        "prNumber": 135335,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135335",
-        "author": "carlory",
-        "sigs": [
-          "Apps",
-          "Storage"
-        ],
-        "userFacingChange": "Removed the generally available feature gate `HonorPVReclaimPolicy`, which was locked and enabled since 1.33.",
-        "kepLinks": [
-          "KEP-2644"
-        ]
-      },
-      {
-        "description": "Fixed DRA device taint eviction controller to avoid confusing intermediate status messages by delaying status updates after pod eviction until the informer cache is updated.",
-        "prNumber": 135611,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135611",
-        "author": "Karthik-K-N",
-        "sigs": [
-          "Apps",
-          "Scheduling"
-        ],
-        "userFacingChange": "DRA device taint eviction: the controller might have reported \"1 pod needs to be evicted in 1 namespace. 1 pod evicted since starting the controller.\" when only a single pod is involved, depending on timing (pod evicted, informer cache not updated yet). It would eventually arrive at the correct \"1 pod evicted since starting the controller.\", but now it tries harder to avoid the confusing intermediate state by delaying the status update after eviction."
-      },
-      {
-        "description": "Updated `cri-tools` to `v1.35.0`.",
-        "prNumber": 135694,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135694",
-        "author": "saschagrunert",
-        "sigs": [
-          "Cloud Provider",
-          "Node"
-        ],
-        "userFacingChange": "Updated cri-tools to v1.35.0."
-      },
-      {
-        "description": "Kubeadm: Removed usage of the deprecated `etcd` flags `--experimental-initial-corrupt-check` and `--experimental-watch-progress-notify-interval` if the `etcd` version is < `v3.6.0`. In this version of kubeadm, `etcd` < `v3.6.0` is no longer supported in terms of the Kubernetes / `etcd` version mapping. These deprecated flags have been replaced by `--feature-gates=InitialCorruptCheck=true` and `--watch-progress-notify-interval`.",
-        "prNumber": 135701,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135701",
-        "author": "neolit123",
-        "sigs": [
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "kubeadm: removed usage of the deprecated flags '--experimental-initial-corrupt-check' and '--experimental-watch-progress-notify-interval' if the etcd version is < 3.6.0. In this version of kubeadm, etcd < 3.6.0 is no longer supported in terms of the k8s / etcd version mapping. These deprecated flags have been replaced by '--feature-gates=InitialCorruptCheck=true' and '--watch-progress-notify-interval'."
-      },
-      {
-        "description": "Kubelet: Fixed admission to correctly handle DRA-backed extended resources, allowing Pods to be admitted even when these resources are not present in the node's allocatable capacity.",
-        "prNumber": 135725,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135725",
-        "author": "bart0sh",
-        "sigs": [
-          "Node",
-          "Scheduling",
-          "Testing"
-        ],
-        "userFacingChange": "DRA: Fixed Kubelet admission to correctly handle DRA-backed extended resources, allowing pods to be admitted even when these resources are not present in the node's allocatable capacity."
-      },
-      {
-        "description": "Kubeadm: Removed the `ControlPlaneKubeletLocalMode` feature gate, which graduated to GA in `v1.35` and was locked to enabled.",
-        "prNumber": 135773,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135773",
-        "author": "neolit123",
-        "sigs": [
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "kubeadm: removed the kubeadm specific feature gate ControlPlaneKubeletLocalMode which became GA in 1.35 and was locked to enabled."
-      },
-      {
-        "description": "Kubeadm: Removed the cleanup of the `--pod-infra-container-image` kubelet flag from `/var/lib/kubelet/kubeadm-flags.env` on upgrade. This cleanup was necessary when upgrading to `v1.35`.",
-        "prNumber": 135807,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135807",
-        "author": "carlory",
-        "sigs": [
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "kubeadm: removed the cleanup of the \"--pod-infra-container-image\" kubelet flag from the \"/var/lib/kubelet/kubeadm-flags.env\" on upgrade. This cleanup was necessary when upgrading to 1.35."
-      },
-      {
-        "description": "Deprecated the `SeparateCacheWatchRPC` feature gate. It is now locked to its default value (false) and can no longer be overridden. The feature gate will be removed in a future release.",
-        "prNumber": 135808,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135808",
-        "author": "tico88612",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "The deprecated SeparateCacheWatchRPC feature gate is now locked to its default value (false) and can no longer be overridden. The feature gate will be removed in a future release."
-      },
-      {
-        "description": "For Pod resizes requested on nodes where the resize request exceeds the node's allocatable capacity or the node is running an OS that does not support resize, the request fails in admission rather than being marked as Infeasible in the Pod status later.",
-        "prNumber": 136043,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136043",
-        "author": "natasha41575",
-        "sigs": [
-          "Api Machinery",
-          "Node",
-          "Release",
-          "Scheduling",
-          "Storage",
-          "Testing"
-        ],
-        "userFacingChange": "For pod resizes requested on nodes where the resize request exceeds the node's allocatable capacity or the node is running an OS that does not support resize, the request will now fail in admission rather than be marked as Infeasible in the pod status later."
-      },
-      {
-        "description": "Added missing tests for client-go metrics.",
-        "prNumber": 136052,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136052",
-        "author": "sreeram-venkitesh",
-        "sigs": [
-          "Architecture",
-          "Instrumentation"
-        ]
-      },
-      {
-        "description": "Removed the `WatchFromStorageWithoutResourceVersion` feature gate in `v1.36`.",
-        "prNumber": 136066,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136066",
-        "author": "serathius",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "Remove WatchFromStorageWithoutResourceVersion feature gate"
-      },
-      {
-        "description": "Added `audit-id` to the \"Starting watch\" log line.",
-        "prNumber": 136084,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136084",
-        "author": "richabanker",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "Adds audit-id to 'Starting watch' log line"
-      },
-      {
-        "description": "Added explicit logging when `WatchList` requests complete their initial listing phase.",
-        "prNumber": 136085,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136085",
-        "author": "richabanker",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "Adds explicit logging when WatchList requests complete their initial listing phase."
-      },
-      {
-        "description": "Client-go: Fake client-go (i.e., anything using `k8s.io/client-go/testing`) now supports separate List+Watch calls with checking of `ResourceVersion` in the Watch call. This closes a race condition where creating an object directly after an informer cache has synced (List call completed) and before the Watch call completed would cause that object to not be sent to the informer. A visible side-effect of adding that support is that List metadata contains a `ResourceVersion` (starting at 1 for the empty set, incremented by one for each add/update) and that Watch may return objects where it previously did not.\nNote that this List+Watch is not to be confused with the `ListWatch` feature, which uses a single call. That feature is still not supported by fake client-go.",
-        "prNumber": 136143,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136143",
-        "author": "pohly",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Cli"
-        ],
-        "userFacingChange": "client-go: fake client-go (i.e. anything using k8s.io/client-go/testing) now supports separate List+Watch calls  with checking of ResourceVersion in the Watch call. This closes a race condition where creating an object directly after an informer cache has synced (= List call completed) and before the Watch call completed would cause that object to not be sent to the informer. A visible side-effect of adding that support is that List meta data contains a ResourceVersion (starting at \"1\" for the empty set, incremented by one  for each add/update) and that Watch may return objects where it previously didn't.\r\n\r\nNote that this List+Watch is not to be confused with the ListWatch feature, which uses a single call. That feature is still not supported by fake client-go."
-      },
-      {
-        "description": "Promoted HPA metrics `reconciliations_total`, `reconciliation_duration_seconds`, `metric_computation_total`, and `metric_computation_duration_seconds` to beta.",
-        "prNumber": 136178,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136178",
-        "author": "omerap12",
-        "sigs": [
-          "Apps",
-          "Autoscaling",
-          "Instrumentation"
-        ],
-        "userFacingChange": "promote HPA metrics: reconciliations_total,reconciliation_duration_seconds,metric_computation_total,metric_computation_duration_seconds to beta",
-        "relatedIssues": [
-          136135
-        ],
-        "issueContext": [
-          {
-            "number": 136135,
-            "title": "Promote old HPA alpha metrics to Beta",
-            "body": "### What would you like to be added?\n\nThe HPA currently exposes several metrics that are still marked as alpha, even though they have met the [requirements for promotion to beta](https://github.com/kubernetes/community/blob/9de615daee15bdee370a825dc0ef150eac189700/contributors/devel/sig-instrumentation/metric-instrumentation.md#graduating-to-beta). Given their maturity and longevity, I believe the following metrics should be promoted to beta:\n\n- `reconciliations_total` (introduced in #116010)\n- `reconciliation_duration_seconds` (introduced in #116010)\n- `metric_computation_total` (introduced in #116326)\n- `metric_computation_duration_seconds` (introduced in #116326)\n\nAll of the metrics listed above have sufficient test coverage and have existed for a long time without significant issues, satisfying the criteria for promotion to beta.\n\n### Why is this needed?\n\nRef: #135726\n\n/assign\n/cc @adrianmoisey @richabanker @dgrisonnet",
-            "labels": [
-              "sig/autoscaling",
-              "kind/feature",
-              "sig/instrumentation",
-              "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "#### Does this PR introduce a user-facing change?",
-        "prNumber": 136292,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136292",
-        "author": "atombrella",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Cluster Lifecycle",
-          "Network",
-          "Node",
-          "Scalability",
-          "Scheduling",
-          "Storage",
-          "Testing",
-          "Windows"
-        ]
-      },
-      {
-        "description": "Renamed `PodGroupInfo` to `PodGroupState`, which may break custom scheduler plugins that use `Handle.WorkloadManager`.",
-        "prNumber": 136344,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136344",
-        "author": "brejman",
-        "sigs": [
-          "Scheduling"
-        ],
-        "kepLinks": [
-          "https://github.com/kubernetes/enhancements/pull/5733/changes#diff-7ae886ce193e1c72e6a0673ded84f5552891a2b813918acd8cd5e5a3b6748c06R285",
-          "KEP-5732",
-          "KEP-4671"
-        ],
-        "userFacingChange": "Renamed PodGroupInfo to PodGroupState, which can break custom scheduler plugins that use Handle.WorkloadManager"
-      },
-      {
-        "description": "Updated etcd client library to `v3.6.7`.",
-        "prNumber": 136407,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136407",
-        "author": "ivanvc",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cloud Provider",
-          "Node",
-          "Scheduling"
-        ],
-        "userFacingChange": "Updates the etcd client library to v3.6.7"
-      },
-      {
-        "description": "ACTION REQUIRED: Removed the integrated support for flex-volumes in kubeadm. Users were advised to migrate away from flex-volumes as recommended by SIG Storage since `v1.22`. If `kubeadm` users wish to continue using the feature, they need a custom image for the KCM that is not based on distroless, pass the KCM flag `--flex-volume-plugin-dir`, and mount the directory `/usr/libexec/kubernetes/kubelet-plugins/volume/exec` in the KCM static pod using `kubeadm`'s `extraVolumes` mechanism before upgrading to `v1.36`. Previously, `kubeadm` automatically did the mounting if the user passed the flag.",
-        "prNumber": 136423,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136423",
-        "author": "neolit123",
-        "sigs": [
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "ACTION REQUIRED: kubeadm: removed the integrated support for flex-volumes in kubeadm. Users were advised to migrate away from flex-volumes as recommended by SIG Storage, since 1.22. If kubeadm users wish to continue using the feature, they would need a custom image for the KCM that is not based on distroless, pass the KCM flag `--flex-volume-plugin-dir` and mount the directory `/usr/libexec/kubernetes/kubelet-plugins/volume/exec` in the KCM static pod using kubeadm's `extraVolumes` mechanism before upgrading to 1.36. Up until now, kubeadm automatically did the mounting if the user passed the flag."
-      },
-      {
-        "description": "Client-go: Fixed an issue where Reflector could get confused about the resource version it should use to restart a watch while receiving synthetic ADDED events at the beginning of a watch from `resourceVersion` 0 or empty string (`\"\"`).",
-        "prNumber": 136583,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136583",
-        "author": "michaelasp",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "client-go: Reflector no longer gets confused about the resource version it should use to restart a watch while receiving synthetic ADDED events at the beginning of a watch from resourceVersion \"0\" or \"\"."
-      },
-      {
-        "description": "Fixed a bug where pod lifecycle hooks could run for their full duration when pods are terminated.",
-        "prNumber": 136598,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136598",
-        "author": "dgrisonnet",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cloud Provider",
-          "Node",
-          "Scheduling"
-        ],
-        "userFacingChange": "Fix a bug where pod lifecycle hooks could run for their full duration when pods are terminated.",
-        "relatedIssues": [
-          135825
-        ],
-        "issueContext": [
-          {
-            "number": 135825,
-            "title": "Kubelet SyncTerminatedPod times out after 30s due to race with cleanupOrphanedPodCgroups",
-            "body": "### What happened?\n\nIn this [OpenShift CI run](https://prow.ci.openshift.org/view/gs/test-platform-results/logs/periodic-ci-openshift-multiarch-master-nightly-4.21-ocp-e2e-ovn-remote-s2s-libvirt-ppc64le/1999572809340162048), the upstream `[sig-node] Lifecycle sleep action zero value when create a pod with lifecycle hook using sleep action with a duration of zero seconds prestop hook using sleep action with zero duration` test failed because SyncTerminatedPod timed out. The kubelet logs shows:\n\n```\nDec 12 21:19:08.719197 compute-1 kubenswrapper[7200]: E1212 21:19:08.719175    7200 pod_workers.go:1324] \"Error syncing pod, skipping\" err=\"failed to delete cgroup paths for [kubepods besteffort poda4418b44-5c5a-4bd5-b7b3-42860ff00483] : unable to destroy cgroup paths for cgroup [kubepods besteffort poda4418b44-5c5a-4bd5-b7b3-42860ff00483] : Timed out while waiting for systemd to remove kubepods-besteffort-poda4418b44_5c5a_4bd5_b7b3_42860ff00483.slice\" pod=\"e2e-pod-lifecycle-sleep-action-allow-zero-761/pod-with-prestop-sleep-hook-zero-duration\" podUID=\"a4418b44-5c5a-4bd5-b7b3-42860ff00483\"\n```\n\nThe systemd journal reveals that the slice was actually removed successfully ~30 seconds before the kubelet timeout:\n\n```\nDec 12 21:18:39.127974 compute-1 systemd[1]: Removed slice libcontainer container kubepods-besteffort-poda4418b44_5c5a_4bd5_b7b3_42860ff00483.slice.\n```\n\nThis shows that systemd completed the slice removal at 21:18:39, but kubelet still timed out at 21:19:08 (exactly ~30 seconds later). The timeout occurred because the kubelet goroutine that initiated the removal never received the D-Bus completion signal.\n\n### What did you expect to happen?\n\nPod deletion should complete promptly after containers terminate, without a 30-second timeout.\n\n### How can we reproduce it? (as minimally and precisely as possible)\n\n1. Create a cluster with cgroupsPerQOS enabled (default)\n2. Run a workload that creates and deletes many pods rapidly\n3. Observe that some pods take 30+ second",
-            "labels": [
-              "kind/bug",
-              "area/kubelet",
-              "sig/node",
-              "priority/important-longterm",
-              "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Promoted `InOrderInformers` to GA via the usage of `RealFIFO`. This means that `DeltaFIFO` will gradually be deprecated in favor of `RealFIFO` in internal implementations.",
-        "prNumber": 136601,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136601",
-        "author": "michaelasp",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "Set InOrderInformers to GA via the usage of RealFIFO, this means that DeltaFIFO will gradually be deprecated in favor of RealFIFO in internal implementations."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 136622,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136622",
-        "author": "guettli",
-        "sigs": [
-          "Scheduling",
-          "Testing"
-        ]
-      },
-      {
-        "description": "Locked the `DisableNodeKubeProxyVersion` feature gate to enabled by default.",
-        "prNumber": 136673,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136673",
-        "author": "HirazawaUi",
-        "sigs": [
-          "Cli",
-          "Network"
-        ],
-        "kepLinks": [
-          "https://github.com/kubernetes/enhancements/issues/4004"
-        ],
-        "userFacingChange": "Lock the `DisableNodeKubeProxyVersion` feature gate to be enabled by default."
-      },
-      {
-        "description": "Updated kustomize dependency to `v5.8.1`.",
-        "prNumber": 136892,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136892",
-        "author": "koba1t",
-        "sigs": [
-          "Architecture",
-          "Cli"
-        ],
-        "userFacingChange": "Upgrades functionality of `kubectl kustomize` as described at https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.8.1"
-      },
-      {
-        "description": "Promoted `SELinuxChangePolicy` and `SELinuxMountReadWriteOncePod` to GA; they are enabled unconditionally.",
-        "prNumber": 136912,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136912",
-        "author": "dfajmon",
-        "sigs": [
-          "Apps",
-          "Storage",
-          "Testing"
-        ],
-        "kepLinks": [
-          "https://github.com/kubernetes/enhancements/pull/5783"
-        ],
-        "userFacingChange": "Promote `SELinuxChangePolicy` & `SELinuxMountReadWriteOncePod` to GA; it is now enabled unconditionally."
-      },
-      {
-        "description": "None.",
-        "prNumber": 137017,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137017",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery"
-        ]
-      },
-      {
-        "description": "Added group, version, and resource labels to the existing alpha metric `apiserver_rerouted_request_total`.",
-        "prNumber": 137063,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137063",
-        "author": "richabanker",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "apiserver_rerouted_request_total metric will expose labels for group, version and resource.",
-        "kepLinks": [
-          "KEP-4020"
-        ]
-      },
-      {
-        "description": "Removed the temporary build-tagged `ProtoMessage()` marker method implementations from Kubernetes REST API types in `k8s.io/api`, which had incorrectly identified them as standard `v1` proto messages. Protobuf serialization of Kubernetes API types should use [k8s.io/apimachinery/pkg/runtime/serializer/protobuf](https://pkg.go.dev/k8s.io/apimachinery/pkg/runtime/serializer/protobuf).",
-        "prNumber": 137084,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137084",
-        "author": "liggitt",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Architecture",
-          "Auth",
-          "Node",
-          "Scheduling",
-          "Storage"
-        ],
-        "userFacingChange": "k8s.io/api: REST API types no longer implement marker `ProtoMessage()` methods, identifying them as standard v1 proto messages. Protobuf serialization of Kubernetes API types should use [k8s.io/apimachinery/pkg/runtime/serializer/protobuf](https://pkg.go.dev/k8s.io/apimachinery/pkg/runtime/serializer/protobuf). See [KEP-5589](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/5589-gogo-dependency) for more details.",
-        "kepLinks": [
-          "KEP-5589"
-        ]
-      },
-      {
-        "description": "Updated etcd images to `v3.6.8`.",
-        "prNumber": 137107,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137107",
-        "author": "joshjms",
-        "sigs": [
-          "Api Machinery",
-          "Cloud Provider",
-          "Cluster Lifecycle",
-          "Etcd",
-          "Testing"
-        ],
-        "userFacingChange": "Update etcd images to v3.6.8"
-      },
-      {
-        "description": "Fixed a few log calls that did not properly format their parameters.",
-        "prNumber": 137108,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137108",
-        "author": "pohly",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Cluster Lifecycle",
-          "Network",
-          "Node",
-          "Scheduling",
-          "Testing"
-        ],
-        "userFacingChange": "A few log calls which did not properly format their parameters were fixed."
-      },
-      {
-        "description": "For performance reasons, `kubectl describe` defaults to showing related events only when describing a single object. Passing `--show-events` explicitly when describing multiple objects or fuzzy matching on prefix still shows related events if desired.",
-        "prNumber": 137145,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137145",
-        "author": "mark-liu",
-        "sigs": [
-          "Cli"
-        ],
-        "userFacingChange": "For performance reasons, `kubectl describe` now defaults to showing related events only when describing a single object. Passing `--show-events` explicitly when describing multiple objects or fuzzy matching on prefix will still show related events if desired."
-      },
-      {
-        "description": "The `GetPCIeRootAttributeByPCIBusID` helper accepts a `fs.ReadLinkFS` optional argument to be filesystem-independent.",
-        "prNumber": 137220,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137220",
-        "author": "ffromani",
-        "sigs": [
-          "Node"
-        ],
-        "userFacingChange": "The GetPCIeRootAttributeByPCIBusID helper now accepts a `fs.ReadLinkFS` optional argument to be filesystem-independenent"
-      },
-      {
-        "description": "Updated etcd client library to `v3.6.8`.",
-        "prNumber": 137225,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137225",
-        "author": "joshjms",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cloud Provider",
-          "Cluster Lifecycle",
-          "Etcd",
-          "Node",
-          "Scheduling",
-          "Testing"
-        ],
-        "userFacingChange": "Updates the etcd client library to v3.6.8"
-      },
-      {
-        "description": "The cri-api client accepts a context instead of a logger on initialization.",
-        "prNumber": 137248,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137248",
-        "author": "SergeyKanzhelev",
-        "sigs": [
-          "Cluster Lifecycle",
-          "Node",
-          "Testing"
-        ],
-        "userFacingChange": "The cri-api client is now accepts a context and do not accept logger on iniitalization."
-      },
-      {
-        "description": "Removed misleading `SuggestFor` entries from `kubectl wait` so that it is no longer suggested when users type `kubectl list` or `kubectl ps`.",
-        "prNumber": 137266,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137266",
-        "author": "kfess",
-        "sigs": [
-          "Cli",
-          "Testing"
-        ]
-      },
-      {
-        "description": "Renamed `AllowlistEntry.Name` to `AllowlistEntry.Command` in the credential plugin allowlist.",
-        "prNumber": 137272,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137272",
-        "author": "pmengelbert",
-        "sigs": [
-          "Api Machinery",
-          "Auth",
-          "Cli",
-          "Testing"
-        ],
-        "kepLinks": [
-          "https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/3104-introduce-kuberc/)"
-        ],
-        "userFacingChange": "Rename `AllowlistEntry.Name` to `AllowlistEntry.Command` in the credential plugin allowlist"
-      },
-      {
-        "description": "Reverted graduation of `maxLength` property.",
-        "prNumber": 137274,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137274",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery"
-        ]
-      },
-      {
-        "description": "Introduced new staging modules `k8s.io/streaming` and `k8s.io/cri-streaming` for Kubernetes streaming transport and CRI streaming server code. `k8s.io/apimachinery/pkg/util/httpstream` (including `spdy` and `wsstream`) remains available as a deprecated compatibility wrapper backed by `k8s.io/streaming`. The extracted SPDY roundtripper preserves CIDR matching in `NO_PROXY`/`no_proxy`.",
-        "prNumber": 137298,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137298",
-        "author": "dims",
-        "sigs": [
-          "Api Machinery",
-          "Architecture",
-          "Auth",
-          "Cli",
-          "Cloud Provider",
-          "Cluster Lifecycle",
-          "Instrumentation",
-          "Network",
-          "Node",
-          "Release",
-          "Scheduling",
-          "Storage",
-          "Testing"
-        ],
-        "userFacingChange": "Introduces new staging modules `k8s.io/streaming` and `k8s.io/cri-streaming` for Kubernetes streaming transport and CRI streaming server code.\n\n`k8s.io/apimachinery/pkg/util/httpstream` (including `spdy` and `wsstream`) remains available as a deprecated compatibility wrapper backed by `k8s.io/streaming`.\n\nThe extracted SPDY roundtripper preserves CIDR matching in `NO_PROXY`/`no_proxy`."
-      },
-      {
-        "description": "Direct access to the `Raw` field of `metav1.FieldsV1` is deprecated. Code that constructs or reads `FieldsV1` should migrate to the new `NewFieldsV1(string)`, `GetRawBytes()`, `GetRawString()`, and `SetRawBytes()` accessor methods.",
-        "prNumber": 137304,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137304",
-        "author": "aaron-prindle",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Testing"
-        ]
-      },
-      {
-        "description": "Removed the dead `--bounding-dirs` flag and `BoundingDirs` field from deepcopy-gen.",
-        "prNumber": 137348,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137348",
-        "author": "Jefftree",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "userFacingChange": "Removes the dead `--bounding-dirs` flag and `BoundingDirs` field from deepcopy-gen."
-      },
-      {
-        "description": "Removed `v1alpha1` `WebhookAdmissionConfiguration`. It was deprecated in `v1.17` in favor of `apiserver.config.k8s.io/v1`.",
-        "prNumber": 137379,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137379",
-        "author": "aramase",
-        "sigs": [
-          "Api Machinery",
-          "Testing"
-        ],
-        "userFacingChange": "`v1alpha1` WebhookAdmissionConfiguration has been removed. It was deprecated in v1.17 in favor of `apiserver.config.k8s.io/v1`."
-      },
-      {
-        "description": "Promoted `SnapshotMetadataService` to `v1beta1`. Removed support for the `v1alpha1` version.",
-        "prNumber": 137564,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137564",
-        "author": "iPraveenParihar",
-        "sigs": [
-          "Storage",
-          "Testing"
-        ],
-        "userFacingChange": "`SnapshotMetadataService` is now available in v1beta1 version. The support for the v1alpha1 version have been removed."
-      },
-      {
-        "description": "Improved stability by sorting containers by create time and ID in `kubeGenericRuntimeManager.GetPods()` and `GetPod()`.",
-        "prNumber": 137566,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137566",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Node"
-        ],
-        "userFacingChange": "Improve stability by sorting containers by create time and ID in kubeGenericRuntimeManager.GetPods() and GetPod()",
-        "relatedIssues": [
-          137557
-        ],
-        "issueContext": [
-          {
-            "number": 137557,
-            "title": "[Flaking Test] k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime",
-            "body": "### Which jobs are flaking?\n\n[sig-release-master-blocking#ci-kubernetes-unit](https://testgrid.k8s.io/sig-release-master-blocking#ci-kubernetes-unit&exclude-non-failed-tests=)\n\n### Which tests are flaking?\n\n[k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime](http://k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime) [Prow](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-unit/2030668517929390080), [Triage](https://storage.googleapis.com/k8s-triage/index.html?job=ci-kubernetes-unit$&test=k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime),\n\n### Since when has it been flaking?\n\nlast failure on Sun, 08 Mar 2026 22:42:03 UTC\n\n### Testgrid link\n\nhttps://testgrid.k8s.io/sig-release-master-blocking#ci-kubernetes-unit&exclude-non-failed-tests=\n\n### Reason for failure (if possible)\n\n```\nFailed\n=== RUN   TestGetPods\n    kuberuntime_manager_test.go:534: \n        \tError Trace:\t/home/prow/go/src/k8s.io/kubernetes/pkg/kubelet/kuberuntime/kuberuntime_manager_test.go:534\n        \tError:      \tNot equal: \n        \t            \texpected: &container.Pod{ID:\"12345678\", Name:\"foo\", Namespace:\"new\", CreatedAt:0x1, Containers:[]*container.Container{(*container.Container)(0xc000b5f540), (*container.Container)(0xc000b5f680)}, Sandboxes:[]*container.Container{(*container.Container)(0xc000b5f720)}}\n        \t            \tactual  : &container.Pod{ID:\"12345678\", Name:\"foo\", Namespace:\"new\", CreatedAt:0x1, Containers:[]*container.Container{(*container.Container)(0xc000b5fe00), (*container.Container)(0xc000c06000)}, Sandboxes:[]*container.Container{(*container.Container)(0xc000b5fc20)}}\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -6,2 +6,17 @@\n        \t            \t  Containers: ([]*container.Container) (len=2) {\n        \t            \t+  (*container.Container)({\n        \t            \t+   ID: (container.ContainerID) {\n        \t            \t+    Type: (string) (len=11) \"fake",
-            "labels": [
-              "sig/node",
-              "kind/flake",
-              "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Reverted the addition of the `image_id` field to the CRI API `PullImageResponse` message.",
-        "prNumber": 137574,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137574",
-        "author": "SergeyKanzhelev",
-        "sigs": [
-          "Node"
-        ],
-        "userFacingChange": "REVERT: CRI API: A new field is added to the PullImageResponse message - `image_id`. This field serves as a unique identifier for the image on the node as returned by the container runtimes."
-      },
-      {
-        "description": "Updated CoreDNS to `v1.14.2`.",
-        "prNumber": 137605,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137605",
-        "author": "pacoxu",
-        "sigs": [
-          "Cloud Provider",
-          "Cluster Lifecycle"
-        ],
-        "userFacingChange": "Bump coredns to 1.14.2"
-      },
-      {
-        "description": "Truncated the watch cache RV metric to 15 digits to ensure precision.",
-        "prNumber": 137615,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137615",
-        "author": "michaelasp",
-        "sigs": [
-          "Api Machinery",
-          "Instrumentation"
-        ],
-        "userFacingChange": "Truncates the watch cache RV metric to 15 digits to ensure precision"
-      },
-      {
-        "description": "The \"Failed to update lease optimistically\" log message may not be shown to users anymore, depending on the log level they have set.",
-        "prNumber": 137753,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137753",
-        "author": "adamkasztenny",
-        "sigs": [
-          "Api Machinery"
-        ]
-      },
-      {
-        "description": "Removed the cri-client helper method `NewLogOptions`; `LogOptions` must be constructed directly. This eliminates the unwanted dependency from cri-client to apimachinery.",
-        "prNumber": 137827,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137827",
-        "author": "SergeyKanzhelev",
-        "sigs": [
-          "Node",
-          "Release"
-        ],
-        "userFacingChange": "cri-client helper method NewLogOptions was removed and LogOptions must be constructed directly. This eliminates the unwanted depdendency from cri-client to apimachinery."
-      },
-      {
-        "description": "The `PLEGOnDemandRelist` feature flag is kept at beta level, but switched off by default.",
-        "prNumber": 137909,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137909",
-        "author": "dims",
-        "sigs": [
-          "Node"
-        ],
-        "userFacingChange": "PLEGOnDemandRelist feature flag is kept a Beta level, but switched off by default."
-      },
-      {
-        "description": "Kubernetes is now built using Go `v1.26.2`.",
-        "prNumber": 138261,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/138261",
-        "author": "dims",
-        "sigs": [
-          "Architecture",
-          "Testing"
-        ],
-        "userFacingChange": "Golang version has been updated to 1.26.2"
-      }
-    ],
     "documentation": [
       {
         "description": "Added `ARCH` column in the `kubectl get node -o wide` output.",
@@ -6245,18 +5642,6 @@
           "KEP-5328"
         ],
         "userFacingChange": "Promote `NodeDeclaredFeatures` to beta."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 136081,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136081",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "kepLinks": [
-          "KEP-5073"
-        ]
       },
       {
         "description": "Promoted the `watch_list_duration_seconds` metric from ALPHA to BETA.",
@@ -6773,23 +6158,6 @@
         "userFacingChange": "Add --tls-curve-preferences flag for configuring TLS key exchange mechanism"
       },
       {
-        "description": "NONE",
-        "prNumber": 137120,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137120",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Network",
-          "Node",
-          "Storage"
-        ],
-        "kepLinks": [
-          "KEP-5073"
-        ]
-      },
-      {
         "description": "DRA `DeviceTaintRules`: the `TimeAdded` field of the taint is now automatically updated when changing the effect.",
         "prNumber": 137167,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/137167",
@@ -7228,6 +6596,705 @@
         "kepLinks": [
           "KEP-5541"
         ]
+      }
+    ],
+    "other": [
+      {
+        "description": "Changed deprecated `sets.String` with `sets.Set[string]` in apiserver admission subsystem. This is a **breaking change** for consumers of the `NewLifecycle` function.",
+        "prNumber": 134044,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134044",
+        "author": "mcallzbl",
+        "sigs": [
+          "Api Machinery",
+          "Auth"
+        ],
+        "userFacingChange": "Replace deprecated sets.String with sets.Set[string] in apiserver admission subsystem. This is a breaking change for consumers of the NewLifecycle function."
+      },
+      {
+        "description": "Reduced get PV request from KCM pv-controller for CSI volumes.",
+        "prNumber": 134290,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/134290",
+        "author": "huww98",
+        "sigs": [
+          "Apps",
+          "Storage"
+        ]
+      },
+      {
+        "description": "Removed event listing behavior when describing a deleted Pod from file using `kubectl describe -f`, ensuring consistent NotFound error handling across all resource types.",
+        "prNumber": 135281,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135281",
+        "author": "scaliby",
+        "sigs": [
+          "Cli"
+        ],
+        "userFacingChange": "Remove event listing behavior when describing a removed pod from file."
+      },
+      {
+        "description": "Enabled YAML support for `/statusz` and `/flagz` endpoints.",
+        "prNumber": 135309,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135309",
+        "author": "richabanker",
+        "sigs": [
+          "Api Machinery",
+          "Instrumentation",
+          "Testing"
+        ],
+        "userFacingChange": "Enables YAML support for statusz and flagz.",
+        "kepLinks": [
+          "KEP-4827",
+          "KEP-4828"
+        ]
+      },
+      {
+        "description": "Removed the in-tree Portworx volume plugin, completing the migration to CSI.\nRemoved the GA `CSIMigrationPortworx` feature gate (locked since `v1.33`) and alpha `InTreePluginPortworxUnregister` feature gate, with all operations now redirected to CSI.",
+        "prNumber": 135322,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135322",
+        "author": "carlory",
+        "sigs": [
+          "Api Machinery",
+          "Apps",
+          "Auth",
+          "Node",
+          "Scalability",
+          "Scheduling",
+          "Storage",
+          "Testing"
+        ],
+        "userFacingChange": "- Removed the generally available feature gate `CSIMigrationPortworx`, which was locked and enabled since 1.33.\r\n- Removed alpha feature gate `InTreePluginPortworxUnregister`\r\n- Removed Portworx volume plugin from in-tree plugins because all operations are redirected to CSI.",
+        "kepLinks": [
+          "KEP-2589"
+        ]
+      },
+      {
+        "description": "Updated etcd client library to `v3.6.6`.",
+        "prNumber": 135331,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135331",
+        "author": "yashsingh74",
+        "sigs": [
+          "Api Machinery",
+          "Auth",
+          "Cloud Provider",
+          "Etcd",
+          "Node",
+          "Scheduling"
+        ],
+        "userFacingChange": "Updates the etcd client library to v3.6.6"
+      },
+      {
+        "description": "Removed the generally available feature gate `HonorPVReclaimPolicy`, which was locked and enabled since `v1.33`.",
+        "prNumber": 135335,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135335",
+        "author": "carlory",
+        "sigs": [
+          "Apps",
+          "Storage"
+        ],
+        "userFacingChange": "Removed the generally available feature gate `HonorPVReclaimPolicy`, which was locked and enabled since 1.33.",
+        "kepLinks": [
+          "KEP-2644"
+        ]
+      },
+      {
+        "description": "Fixed DRA device taint eviction controller to avoid confusing intermediate status messages by delaying status updates after pod eviction until the informer cache is updated.",
+        "prNumber": 135611,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135611",
+        "author": "Karthik-K-N",
+        "sigs": [
+          "Apps",
+          "Scheduling"
+        ],
+        "userFacingChange": "DRA device taint eviction: the controller might have reported \"1 pod needs to be evicted in 1 namespace. 1 pod evicted since starting the controller.\" when only a single pod is involved, depending on timing (pod evicted, informer cache not updated yet). It would eventually arrive at the correct \"1 pod evicted since starting the controller.\", but now it tries harder to avoid the confusing intermediate state by delaying the status update after eviction."
+      },
+      {
+        "description": "Updated `cri-tools` to `v1.35.0`.",
+        "prNumber": 135694,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135694",
+        "author": "saschagrunert",
+        "sigs": [
+          "Cloud Provider",
+          "Node"
+        ],
+        "userFacingChange": "Updated cri-tools to v1.35.0."
+      },
+      {
+        "description": "Kubeadm: Removed usage of the deprecated `etcd` flags `--experimental-initial-corrupt-check` and `--experimental-watch-progress-notify-interval` if the `etcd` version is < `v3.6.0`. In this version of kubeadm, `etcd` < `v3.6.0` is no longer supported in terms of the Kubernetes / `etcd` version mapping. These deprecated flags have been replaced by `--feature-gates=InitialCorruptCheck=true` and `--watch-progress-notify-interval`.",
+        "prNumber": 135701,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135701",
+        "author": "neolit123",
+        "sigs": [
+          "Cluster Lifecycle"
+        ],
+        "userFacingChange": "kubeadm: removed usage of the deprecated flags '--experimental-initial-corrupt-check' and '--experimental-watch-progress-notify-interval' if the etcd version is < 3.6.0. In this version of kubeadm, etcd < 3.6.0 is no longer supported in terms of the k8s / etcd version mapping. These deprecated flags have been replaced by '--feature-gates=InitialCorruptCheck=true' and '--watch-progress-notify-interval'."
+      },
+      {
+        "description": "Kubelet: Fixed admission to correctly handle DRA-backed extended resources, allowing Pods to be admitted even when these resources are not present in the node's allocatable capacity.",
+        "prNumber": 135725,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135725",
+        "author": "bart0sh",
+        "sigs": [
+          "Node",
+          "Scheduling",
+          "Testing"
+        ],
+        "userFacingChange": "DRA: Fixed Kubelet admission to correctly handle DRA-backed extended resources, allowing pods to be admitted even when these resources are not present in the node's allocatable capacity."
+      },
+      {
+        "description": "Kubeadm: Removed the `ControlPlaneKubeletLocalMode` feature gate, which graduated to GA in `v1.35` and was locked to enabled.",
+        "prNumber": 135773,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135773",
+        "author": "neolit123",
+        "sigs": [
+          "Cluster Lifecycle"
+        ],
+        "userFacingChange": "kubeadm: removed the kubeadm specific feature gate ControlPlaneKubeletLocalMode which became GA in 1.35 and was locked to enabled."
+      },
+      {
+        "description": "Kubeadm: Removed the cleanup of the `--pod-infra-container-image` kubelet flag from `/var/lib/kubelet/kubeadm-flags.env` on upgrade. This cleanup was necessary when upgrading to `v1.35`.",
+        "prNumber": 135807,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135807",
+        "author": "carlory",
+        "sigs": [
+          "Cluster Lifecycle"
+        ],
+        "userFacingChange": "kubeadm: removed the cleanup of the \"--pod-infra-container-image\" kubelet flag from the \"/var/lib/kubelet/kubeadm-flags.env\" on upgrade. This cleanup was necessary when upgrading to 1.35."
+      },
+      {
+        "description": "Deprecated the `SeparateCacheWatchRPC` feature gate. It is now locked to its default value (false) and can no longer be overridden. The feature gate will be removed in a future release.",
+        "prNumber": 135808,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135808",
+        "author": "tico88612",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "The deprecated SeparateCacheWatchRPC feature gate is now locked to its default value (false) and can no longer be overridden. The feature gate will be removed in a future release."
+      },
+      {
+        "description": "For Pod resizes requested on nodes where the resize request exceeds the node's allocatable capacity or the node is running an OS that does not support resize, the request fails in admission rather than being marked as Infeasible in the Pod status later.",
+        "prNumber": 136043,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136043",
+        "author": "natasha41575",
+        "sigs": [
+          "Api Machinery",
+          "Node",
+          "Release",
+          "Scheduling",
+          "Storage",
+          "Testing"
+        ],
+        "userFacingChange": "For pod resizes requested on nodes where the resize request exceeds the node's allocatable capacity or the node is running an OS that does not support resize, the request will now fail in admission rather than be marked as Infeasible in the pod status later."
+      },
+      {
+        "description": "Added missing tests for client-go metrics.",
+        "prNumber": 136052,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136052",
+        "author": "sreeram-venkitesh",
+        "sigs": [
+          "Architecture",
+          "Instrumentation"
+        ]
+      },
+      {
+        "description": "Removed the `WatchFromStorageWithoutResourceVersion` feature gate in `v1.36`.",
+        "prNumber": 136066,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136066",
+        "author": "serathius",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "Remove WatchFromStorageWithoutResourceVersion feature gate"
+      },
+      {
+        "description": "Added `audit-id` to the \"Starting watch\" log line.",
+        "prNumber": 136084,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136084",
+        "author": "richabanker",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "Adds audit-id to 'Starting watch' log line"
+      },
+      {
+        "description": "Added explicit logging when `WatchList` requests complete their initial listing phase.",
+        "prNumber": 136085,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136085",
+        "author": "richabanker",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "Adds explicit logging when WatchList requests complete their initial listing phase."
+      },
+      {
+        "description": "Client-go: Fake client-go (i.e., anything using `k8s.io/client-go/testing`) now supports separate List+Watch calls with checking of `ResourceVersion` in the Watch call. This closes a race condition where creating an object directly after an informer cache has synced (List call completed) and before the Watch call completed would cause that object to not be sent to the informer. A visible side-effect of adding that support is that List metadata contains a `ResourceVersion` (starting at 1 for the empty set, incremented by one for each add/update) and that Watch may return objects where it previously did not.\nNote that this List+Watch is not to be confused with the `ListWatch` feature, which uses a single call. That feature is still not supported by fake client-go.",
+        "prNumber": 136143,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136143",
+        "author": "pohly",
+        "sigs": [
+          "Api Machinery",
+          "Apps",
+          "Auth",
+          "Cli"
+        ],
+        "userFacingChange": "client-go: fake client-go (i.e. anything using k8s.io/client-go/testing) now supports separate List+Watch calls  with checking of ResourceVersion in the Watch call. This closes a race condition where creating an object directly after an informer cache has synced (= List call completed) and before the Watch call completed would cause that object to not be sent to the informer. A visible side-effect of adding that support is that List meta data contains a ResourceVersion (starting at \"1\" for the empty set, incremented by one  for each add/update) and that Watch may return objects where it previously didn't.\r\n\r\nNote that this List+Watch is not to be confused with the ListWatch feature, which uses a single call. That feature is still not supported by fake client-go."
+      },
+      {
+        "description": "Promoted HPA metrics `reconciliations_total`, `reconciliation_duration_seconds`, `metric_computation_total`, and `metric_computation_duration_seconds` to beta.",
+        "prNumber": 136178,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136178",
+        "author": "omerap12",
+        "sigs": [
+          "Apps",
+          "Autoscaling",
+          "Instrumentation"
+        ],
+        "userFacingChange": "promote HPA metrics: reconciliations_total,reconciliation_duration_seconds,metric_computation_total,metric_computation_duration_seconds to beta",
+        "relatedIssues": [
+          136135
+        ],
+        "issueContext": [
+          {
+            "number": 136135,
+            "title": "Promote old HPA alpha metrics to Beta",
+            "body": "### What would you like to be added?\n\nThe HPA currently exposes several metrics that are still marked as alpha, even though they have met the [requirements for promotion to beta](https://github.com/kubernetes/community/blob/9de615daee15bdee370a825dc0ef150eac189700/contributors/devel/sig-instrumentation/metric-instrumentation.md#graduating-to-beta). Given their maturity and longevity, I believe the following metrics should be promoted to beta:\n\n- `reconciliations_total` (introduced in #116010)\n- `reconciliation_duration_seconds` (introduced in #116010)\n- `metric_computation_total` (introduced in #116326)\n- `metric_computation_duration_seconds` (introduced in #116326)\n\nAll of the metrics listed above have sufficient test coverage and have existed for a long time without significant issues, satisfying the criteria for promotion to beta.\n\n### Why is this needed?\n\nRef: #135726\n\n/assign\n/cc @adrianmoisey @richabanker @dgrisonnet",
+            "labels": [
+              "sig/autoscaling",
+              "kind/feature",
+              "sig/instrumentation",
+              "triage/accepted"
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Renamed `PodGroupInfo` to `PodGroupState`, which may break custom scheduler plugins that use `Handle.WorkloadManager`.",
+        "prNumber": 136344,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136344",
+        "author": "brejman",
+        "sigs": [
+          "Scheduling"
+        ],
+        "kepLinks": [
+          "https://github.com/kubernetes/enhancements/pull/5733/changes#diff-7ae886ce193e1c72e6a0673ded84f5552891a2b813918acd8cd5e5a3b6748c06R285",
+          "KEP-5732",
+          "KEP-4671"
+        ],
+        "userFacingChange": "Renamed PodGroupInfo to PodGroupState, which can break custom scheduler plugins that use Handle.WorkloadManager"
+      },
+      {
+        "description": "Updated etcd client library to `v3.6.7`.",
+        "prNumber": 136407,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136407",
+        "author": "ivanvc",
+        "sigs": [
+          "Api Machinery",
+          "Auth",
+          "Cloud Provider",
+          "Node",
+          "Scheduling"
+        ],
+        "userFacingChange": "Updates the etcd client library to v3.6.7"
+      },
+      {
+        "description": "ACTION REQUIRED: Removed the integrated support for flex-volumes in kubeadm. Users were advised to migrate away from flex-volumes as recommended by SIG Storage since `v1.22`. If `kubeadm` users wish to continue using the feature, they need a custom image for the KCM that is not based on distroless, pass the KCM flag `--flex-volume-plugin-dir`, and mount the directory `/usr/libexec/kubernetes/kubelet-plugins/volume/exec` in the KCM static pod using `kubeadm`'s `extraVolumes` mechanism before upgrading to `v1.36`. Previously, `kubeadm` automatically did the mounting if the user passed the flag.",
+        "prNumber": 136423,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136423",
+        "author": "neolit123",
+        "sigs": [
+          "Cluster Lifecycle"
+        ],
+        "userFacingChange": "ACTION REQUIRED: kubeadm: removed the integrated support for flex-volumes in kubeadm. Users were advised to migrate away from flex-volumes as recommended by SIG Storage, since 1.22. If kubeadm users wish to continue using the feature, they would need a custom image for the KCM that is not based on distroless, pass the KCM flag `--flex-volume-plugin-dir` and mount the directory `/usr/libexec/kubernetes/kubelet-plugins/volume/exec` in the KCM static pod using kubeadm's `extraVolumes` mechanism before upgrading to 1.36. Up until now, kubeadm automatically did the mounting if the user passed the flag."
+      },
+      {
+        "description": "Client-go: Fixed an issue where Reflector could get confused about the resource version it should use to restart a watch while receiving synthetic ADDED events at the beginning of a watch from `resourceVersion` 0 or empty string (`\"\"`).",
+        "prNumber": 136583,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136583",
+        "author": "michaelasp",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "client-go: Reflector no longer gets confused about the resource version it should use to restart a watch while receiving synthetic ADDED events at the beginning of a watch from resourceVersion \"0\" or \"\"."
+      },
+      {
+        "description": "Fixed a bug where pod lifecycle hooks could run for their full duration when pods are terminated.",
+        "prNumber": 136598,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136598",
+        "author": "dgrisonnet",
+        "sigs": [
+          "Api Machinery",
+          "Auth",
+          "Cloud Provider",
+          "Node",
+          "Scheduling"
+        ],
+        "userFacingChange": "Fix a bug where pod lifecycle hooks could run for their full duration when pods are terminated.",
+        "relatedIssues": [
+          135825
+        ],
+        "issueContext": [
+          {
+            "number": 135825,
+            "title": "Kubelet SyncTerminatedPod times out after 30s due to race with cleanupOrphanedPodCgroups",
+            "body": "### What happened?\n\nIn this [OpenShift CI run](https://prow.ci.openshift.org/view/gs/test-platform-results/logs/periodic-ci-openshift-multiarch-master-nightly-4.21-ocp-e2e-ovn-remote-s2s-libvirt-ppc64le/1999572809340162048), the upstream `[sig-node] Lifecycle sleep action zero value when create a pod with lifecycle hook using sleep action with a duration of zero seconds prestop hook using sleep action with zero duration` test failed because SyncTerminatedPod timed out. The kubelet logs shows:\n\n```\nDec 12 21:19:08.719197 compute-1 kubenswrapper[7200]: E1212 21:19:08.719175    7200 pod_workers.go:1324] \"Error syncing pod, skipping\" err=\"failed to delete cgroup paths for [kubepods besteffort poda4418b44-5c5a-4bd5-b7b3-42860ff00483] : unable to destroy cgroup paths for cgroup [kubepods besteffort poda4418b44-5c5a-4bd5-b7b3-42860ff00483] : Timed out while waiting for systemd to remove kubepods-besteffort-poda4418b44_5c5a_4bd5_b7b3_42860ff00483.slice\" pod=\"e2e-pod-lifecycle-sleep-action-allow-zero-761/pod-with-prestop-sleep-hook-zero-duration\" podUID=\"a4418b44-5c5a-4bd5-b7b3-42860ff00483\"\n```\n\nThe systemd journal reveals that the slice was actually removed successfully ~30 seconds before the kubelet timeout:\n\n```\nDec 12 21:18:39.127974 compute-1 systemd[1]: Removed slice libcontainer container kubepods-besteffort-poda4418b44_5c5a_4bd5_b7b3_42860ff00483.slice.\n```\n\nThis shows that systemd completed the slice removal at 21:18:39, but kubelet still timed out at 21:19:08 (exactly ~30 seconds later). The timeout occurred because the kubelet goroutine that initiated the removal never received the D-Bus completion signal.\n\n### What did you expect to happen?\n\nPod deletion should complete promptly after containers terminate, without a 30-second timeout.\n\n### How can we reproduce it? (as minimally and precisely as possible)\n\n1. Create a cluster with cgroupsPerQOS enabled (default)\n2. Run a workload that creates and deletes many pods rapidly\n3. Observe that some pods take 30+ second",
+            "labels": [
+              "kind/bug",
+              "area/kubelet",
+              "sig/node",
+              "priority/important-longterm",
+              "triage/accepted"
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Promoted `InOrderInformers` to GA via the usage of `RealFIFO`. This means that `DeltaFIFO` will gradually be deprecated in favor of `RealFIFO` in internal implementations.",
+        "prNumber": 136601,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136601",
+        "author": "michaelasp",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "Set InOrderInformers to GA via the usage of RealFIFO, this means that DeltaFIFO will gradually be deprecated in favor of RealFIFO in internal implementations."
+      },
+      {
+        "description": "Locked the `DisableNodeKubeProxyVersion` feature gate to enabled by default.",
+        "prNumber": 136673,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136673",
+        "author": "HirazawaUi",
+        "sigs": [
+          "Cli",
+          "Network"
+        ],
+        "kepLinks": [
+          "https://github.com/kubernetes/enhancements/issues/4004"
+        ],
+        "userFacingChange": "Lock the `DisableNodeKubeProxyVersion` feature gate to be enabled by default."
+      },
+      {
+        "description": "Updated kustomize dependency to `v5.8.1`.",
+        "prNumber": 136892,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136892",
+        "author": "koba1t",
+        "sigs": [
+          "Architecture",
+          "Cli"
+        ],
+        "userFacingChange": "Upgrades functionality of `kubectl kustomize` as described at https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.8.1"
+      },
+      {
+        "description": "Promoted `SELinuxChangePolicy` and `SELinuxMountReadWriteOncePod` to GA; they are enabled unconditionally.",
+        "prNumber": 136912,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/136912",
+        "author": "dfajmon",
+        "sigs": [
+          "Apps",
+          "Storage",
+          "Testing"
+        ],
+        "kepLinks": [
+          "https://github.com/kubernetes/enhancements/pull/5783"
+        ],
+        "userFacingChange": "Promote `SELinuxChangePolicy` & `SELinuxMountReadWriteOncePod` to GA; it is now enabled unconditionally."
+      },
+      {
+        "description": "Added group, version, and resource labels to the existing alpha metric `apiserver_rerouted_request_total`.",
+        "prNumber": 137063,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137063",
+        "author": "richabanker",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "apiserver_rerouted_request_total metric will expose labels for group, version and resource.",
+        "kepLinks": [
+          "KEP-4020"
+        ]
+      },
+      {
+        "description": "Removed the temporary build-tagged `ProtoMessage()` marker method implementations from Kubernetes REST API types in `k8s.io/api`, which had incorrectly identified them as standard `v1` proto messages. Protobuf serialization of Kubernetes API types should use [k8s.io/apimachinery/pkg/runtime/serializer/protobuf](https://pkg.go.dev/k8s.io/apimachinery/pkg/runtime/serializer/protobuf).",
+        "prNumber": 137084,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137084",
+        "author": "liggitt",
+        "sigs": [
+          "Api Machinery",
+          "Apps",
+          "Architecture",
+          "Auth",
+          "Node",
+          "Scheduling",
+          "Storage"
+        ],
+        "userFacingChange": "k8s.io/api: REST API types no longer implement marker `ProtoMessage()` methods, identifying them as standard v1 proto messages. Protobuf serialization of Kubernetes API types should use [k8s.io/apimachinery/pkg/runtime/serializer/protobuf](https://pkg.go.dev/k8s.io/apimachinery/pkg/runtime/serializer/protobuf). See [KEP-5589](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/5589-gogo-dependency) for more details.",
+        "kepLinks": [
+          "KEP-5589"
+        ]
+      },
+      {
+        "description": "Updated etcd images to `v3.6.8`.",
+        "prNumber": 137107,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137107",
+        "author": "joshjms",
+        "sigs": [
+          "Api Machinery",
+          "Cloud Provider",
+          "Cluster Lifecycle",
+          "Etcd",
+          "Testing"
+        ],
+        "userFacingChange": "Update etcd images to v3.6.8"
+      },
+      {
+        "description": "Fixed a few log calls that did not properly format their parameters.",
+        "prNumber": 137108,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137108",
+        "author": "pohly",
+        "sigs": [
+          "Api Machinery",
+          "Apps",
+          "Auth",
+          "Cluster Lifecycle",
+          "Network",
+          "Node",
+          "Scheduling",
+          "Testing"
+        ],
+        "userFacingChange": "A few log calls which did not properly format their parameters were fixed."
+      },
+      {
+        "description": "For performance reasons, `kubectl describe` defaults to showing related events only when describing a single object. Passing `--show-events` explicitly when describing multiple objects or fuzzy matching on prefix still shows related events if desired.",
+        "prNumber": 137145,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137145",
+        "author": "mark-liu",
+        "sigs": [
+          "Cli"
+        ],
+        "userFacingChange": "For performance reasons, `kubectl describe` now defaults to showing related events only when describing a single object. Passing `--show-events` explicitly when describing multiple objects or fuzzy matching on prefix will still show related events if desired."
+      },
+      {
+        "description": "The `GetPCIeRootAttributeByPCIBusID` helper accepts a `fs.ReadLinkFS` optional argument to be filesystem-independent.",
+        "prNumber": 137220,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137220",
+        "author": "ffromani",
+        "sigs": [
+          "Node"
+        ],
+        "userFacingChange": "The GetPCIeRootAttributeByPCIBusID helper now accepts a `fs.ReadLinkFS` optional argument to be filesystem-independenent"
+      },
+      {
+        "description": "Updated etcd client library to `v3.6.8`.",
+        "prNumber": 137225,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137225",
+        "author": "joshjms",
+        "sigs": [
+          "Api Machinery",
+          "Auth",
+          "Cloud Provider",
+          "Cluster Lifecycle",
+          "Etcd",
+          "Node",
+          "Scheduling",
+          "Testing"
+        ],
+        "userFacingChange": "Updates the etcd client library to v3.6.8"
+      },
+      {
+        "description": "The cri-api client accepts a context instead of a logger on initialization.",
+        "prNumber": 137248,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137248",
+        "author": "SergeyKanzhelev",
+        "sigs": [
+          "Cluster Lifecycle",
+          "Node",
+          "Testing"
+        ],
+        "userFacingChange": "The cri-api client is now accepts a context and do not accept logger on iniitalization."
+      },
+      {
+        "description": "Removed misleading `SuggestFor` entries from `kubectl wait` so that it is no longer suggested when users type `kubectl list` or `kubectl ps`.",
+        "prNumber": 137266,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137266",
+        "author": "kfess",
+        "sigs": [
+          "Cli",
+          "Testing"
+        ]
+      },
+      {
+        "description": "Renamed `AllowlistEntry.Name` to `AllowlistEntry.Command` in the credential plugin allowlist.",
+        "prNumber": 137272,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137272",
+        "author": "pmengelbert",
+        "sigs": [
+          "Api Machinery",
+          "Auth",
+          "Cli",
+          "Testing"
+        ],
+        "kepLinks": [
+          "https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/3104-introduce-kuberc/)"
+        ],
+        "userFacingChange": "Rename `AllowlistEntry.Name` to `AllowlistEntry.Command` in the credential plugin allowlist"
+      },
+      {
+        "description": "Introduced new staging modules `k8s.io/streaming` and `k8s.io/cri-streaming` for Kubernetes streaming transport and CRI streaming server code. `k8s.io/apimachinery/pkg/util/httpstream` (including `spdy` and `wsstream`) remains available as a deprecated compatibility wrapper backed by `k8s.io/streaming`. The extracted SPDY roundtripper preserves CIDR matching in `NO_PROXY`/`no_proxy`.",
+        "prNumber": 137298,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137298",
+        "author": "dims",
+        "sigs": [
+          "Api Machinery",
+          "Architecture",
+          "Auth",
+          "Cli",
+          "Cloud Provider",
+          "Cluster Lifecycle",
+          "Instrumentation",
+          "Network",
+          "Node",
+          "Release",
+          "Scheduling",
+          "Storage",
+          "Testing"
+        ],
+        "userFacingChange": "Introduces new staging modules `k8s.io/streaming` and `k8s.io/cri-streaming` for Kubernetes streaming transport and CRI streaming server code.\n\n`k8s.io/apimachinery/pkg/util/httpstream` (including `spdy` and `wsstream`) remains available as a deprecated compatibility wrapper backed by `k8s.io/streaming`.\n\nThe extracted SPDY roundtripper preserves CIDR matching in `NO_PROXY`/`no_proxy`."
+      },
+      {
+        "description": "Direct access to the `Raw` field of `metav1.FieldsV1` is deprecated. Code that constructs or reads `FieldsV1` should migrate to the new `NewFieldsV1(string)`, `GetRawBytes()`, `GetRawString()`, and `SetRawBytes()` accessor methods.",
+        "prNumber": 137304,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137304",
+        "author": "aaron-prindle",
+        "sigs": [
+          "Api Machinery",
+          "Apps",
+          "Testing"
+        ]
+      },
+      {
+        "description": "Removed the dead `--bounding-dirs` flag and `BoundingDirs` field from deepcopy-gen.",
+        "prNumber": 137348,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137348",
+        "author": "Jefftree",
+        "sigs": [
+          "Api Machinery"
+        ],
+        "userFacingChange": "Removes the dead `--bounding-dirs` flag and `BoundingDirs` field from deepcopy-gen."
+      },
+      {
+        "description": "Removed `v1alpha1` `WebhookAdmissionConfiguration`. It was deprecated in `v1.17` in favor of `apiserver.config.k8s.io/v1`.",
+        "prNumber": 137379,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137379",
+        "author": "aramase",
+        "sigs": [
+          "Api Machinery",
+          "Testing"
+        ],
+        "userFacingChange": "`v1alpha1` WebhookAdmissionConfiguration has been removed. It was deprecated in v1.17 in favor of `apiserver.config.k8s.io/v1`."
+      },
+      {
+        "description": "Promoted `SnapshotMetadataService` to `v1beta1`. Removed support for the `v1alpha1` version.",
+        "prNumber": 137564,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137564",
+        "author": "iPraveenParihar",
+        "sigs": [
+          "Storage",
+          "Testing"
+        ],
+        "userFacingChange": "`SnapshotMetadataService` is now available in v1beta1 version. The support for the v1alpha1 version have been removed."
+      },
+      {
+        "description": "Improved stability by sorting containers by create time and ID in `kubeGenericRuntimeManager.GetPods()` and `GetPod()`.",
+        "prNumber": 137566,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137566",
+        "author": "yangjunmyfm192085",
+        "sigs": [
+          "Node"
+        ],
+        "userFacingChange": "Improve stability by sorting containers by create time and ID in kubeGenericRuntimeManager.GetPods() and GetPod()",
+        "relatedIssues": [
+          137557
+        ],
+        "issueContext": [
+          {
+            "number": 137557,
+            "title": "[Flaking Test] k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime",
+            "body": "### Which jobs are flaking?\n\n[sig-release-master-blocking#ci-kubernetes-unit](https://testgrid.k8s.io/sig-release-master-blocking#ci-kubernetes-unit&exclude-non-failed-tests=)\n\n### Which tests are flaking?\n\n[k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime](http://k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime) [Prow](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-unit/2030668517929390080), [Triage](https://storage.googleapis.com/k8s-triage/index.html?job=ci-kubernetes-unit$&test=k8s.io/kubernetes/pkg/kubelet/kuberuntime.kuberuntime),\n\n### Since when has it been flaking?\n\nlast failure on Sun, 08 Mar 2026 22:42:03 UTC\n\n### Testgrid link\n\nhttps://testgrid.k8s.io/sig-release-master-blocking#ci-kubernetes-unit&exclude-non-failed-tests=\n\n### Reason for failure (if possible)\n\n```\nFailed\n=== RUN   TestGetPods\n    kuberuntime_manager_test.go:534: \n        \tError Trace:\t/home/prow/go/src/k8s.io/kubernetes/pkg/kubelet/kuberuntime/kuberuntime_manager_test.go:534\n        \tError:      \tNot equal: \n        \t            \texpected: &container.Pod{ID:\"12345678\", Name:\"foo\", Namespace:\"new\", CreatedAt:0x1, Containers:[]*container.Container{(*container.Container)(0xc000b5f540), (*container.Container)(0xc000b5f680)}, Sandboxes:[]*container.Container{(*container.Container)(0xc000b5f720)}}\n        \t            \tactual  : &container.Pod{ID:\"12345678\", Name:\"foo\", Namespace:\"new\", CreatedAt:0x1, Containers:[]*container.Container{(*container.Container)(0xc000b5fe00), (*container.Container)(0xc000c06000)}, Sandboxes:[]*container.Container{(*container.Container)(0xc000b5fc20)}}\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -6,2 +6,17 @@\n        \t            \t  Containers: ([]*container.Container) (len=2) {\n        \t            \t+  (*container.Container)({\n        \t            \t+   ID: (container.ContainerID) {\n        \t            \t+    Type: (string) (len=11) \"fake",
+            "labels": [
+              "sig/node",
+              "kind/flake",
+              "triage/accepted"
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Reverted the addition of the `image_id` field to the CRI API `PullImageResponse` message.",
+        "prNumber": 137574,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137574",
+        "author": "SergeyKanzhelev",
+        "sigs": [
+          "Node"
+        ],
+        "userFacingChange": "REVERT: CRI API: A new field is added to the PullImageResponse message - `image_id`. This field serves as a unique identifier for the image on the node as returned by the container runtimes."
+      },
+      {
+        "description": "Updated CoreDNS to `v1.14.2`.",
+        "prNumber": 137605,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137605",
+        "author": "pacoxu",
+        "sigs": [
+          "Cloud Provider",
+          "Cluster Lifecycle"
+        ],
+        "userFacingChange": "Bump coredns to 1.14.2"
+      },
+      {
+        "description": "Truncated the watch cache RV metric to 15 digits to ensure precision.",
+        "prNumber": 137615,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137615",
+        "author": "michaelasp",
+        "sigs": [
+          "Api Machinery",
+          "Instrumentation"
+        ],
+        "userFacingChange": "Truncates the watch cache RV metric to 15 digits to ensure precision"
+      },
+      {
+        "description": "The \"Failed to update lease optimistically\" log message may not be shown to users anymore, depending on the log level they have set.",
+        "prNumber": 137753,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137753",
+        "author": "adamkasztenny",
+        "sigs": [
+          "Api Machinery"
+        ]
+      },
+      {
+        "description": "Removed the cri-client helper method `NewLogOptions`; `LogOptions` must be constructed directly. This eliminates the unwanted dependency from cri-client to apimachinery.",
+        "prNumber": 137827,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137827",
+        "author": "SergeyKanzhelev",
+        "sigs": [
+          "Node",
+          "Release"
+        ],
+        "userFacingChange": "cri-client helper method NewLogOptions was removed and LogOptions must be constructed directly. This eliminates the unwanted depdendency from cri-client to apimachinery."
+      },
+      {
+        "description": "The `PLEGOnDemandRelist` feature flag is kept at beta level, but switched off by default.",
+        "prNumber": 137909,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/137909",
+        "author": "dims",
+        "sigs": [
+          "Node"
+        ],
+        "userFacingChange": "PLEGOnDemandRelist feature flag is kept a Beta level, but switched off by default."
+      },
+      {
+        "description": "Kubernetes is now built using Go `v1.26.2`.",
+        "prNumber": 138261,
+        "prUrl": "https://github.com/kubernetes/kubernetes/pull/138261",
+        "author": "dims",
+        "sigs": [
+          "Architecture",
+          "Testing"
+        ],
+        "userFacingChange": "Golang version has been updated to 1.26.2"
       }
     ],
     "failingTest": [

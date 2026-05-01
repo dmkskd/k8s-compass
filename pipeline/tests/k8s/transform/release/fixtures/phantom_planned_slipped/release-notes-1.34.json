@@ -1,0 +1,20 @@
+{
+  "100001": {
+    "text": "Some unrelated 1.34 change.",
+    "pr_number": 100001,
+    "kinds": ["feature"],
+    "sigs": ["node"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/9999"
+      }
+    ]
+  },
+  "100002": {
+    "text": "Another 1.34 change with no KEP link.",
+    "pr_number": 100002,
+    "kinds": ["bug"],
+    "sigs": ["storage"]
+  }
+}

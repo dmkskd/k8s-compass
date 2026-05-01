@@ -1,14 +1,14 @@
 {
   "version": "1.34",
   "codename": "Of Wind & Will (O' WaW)",
-  "description": "The 'Of Wind & Will' release brings 58 enhancements including Dynamic Resource Allocation (DRA) graduating to GA for managing specialized hardware like GPUs, pod-level resources moving to beta, and volume expansion recovery reaching GA. Key themes include improved resource management with VolumeAttributesClass GA, enhanced security with service account tokens for image pulls, and better node management with the decoupled taint manager going stable.",
+  "description": "A release powered by the wind around us and the will within us. 'Of Wind & Will' honors the sailors who adjust sails and keep Kubernetes sailing strong\u2014no matter which way the wind blows. DRA graduates to GA for GPU and specialized hardware, KYAML introduces a safer YAML dialect, and service account tokens now authenticate image pulls. Oh, and you wonder why bears? Keep wondering!",
   "releaseDate": "2025-08-27",
   "endOfLifeDate": null,
   "summary": {
-    "total": 59,
-    "stable": 27,
-    "beta": 18,
-    "alpha": 14
+    "total": 69,
+    "stable": 31,
+    "beta": 20,
+    "alpha": 18
   },
   "themes": [
     "Resource Management",
@@ -26,18 +26,7 @@
         "Cloud Provider",
         "Node",
         "Scalability"
-      ],
-      "enrichment": {
-        "title": "kubelet removes deprecated --cloud-config flag",
-        "summary": "The kubelet binary no longer accepts the deprecated `--cloud-config` command\u2011line flag.",
-        "action": "Edit node startup scripts, systemd units, or kubelet config to remove `--cloud-config` and, if needed, configure cloud provider settings via the kubelet configuration file or appropriate component.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "The Scheduling Framework exposed `NodeInfos` to the PreFilter plugins. The PreFilter plugins now accepted the `NodeInfo` list from the arguments.",
@@ -49,18 +38,7 @@
         "Scheduling",
         "Storage",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "PreFilter plugins receive NodeInfo list",
-        "summary": "The scheduler\u2019s Scheduling Framework now passes a list of NodeInfo objects to PreFilter plugins, and those plugins must accept this new argument.",
-        "action": "Update any custom PreFilter plugins to accept and process the `NodeInfo` list argument; adjust plugin registration if required.",
-        "severity": "low",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Removed \"endpoint-controller\" and \"workload-leader-election\" FlowSchemas from the default APF configuration.\n\nmigrate the lock type used in the leader election in your workloads from configmapsleases/endpointsleases to leases.",
@@ -73,23 +51,7 @@
         "Network",
         "Scalability",
         "Scheduling"
-      ],
-      "enrichment": {
-        "title": "Remove FlowSchemas, migrate leader election to leases",
-        "summary": "The default APF configuration no longer includes the \"endpoint-controller\" and \"workload-leader-election\" FlowSchemas, and leader election in workloads must switch from ConfigMap/Endpoint leases to Lease objects.",
-        "action": "Update any workloads or controllers that rely on the removed FlowSchemas to use appropriate priority and fairness settings, and change their leader election configuration to use the \"leases\" lock type instead of ConfigMaps or Endpoints.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "controllers",
-          "operators",
-          "custom workloads using leader election"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Static pods that reference API objects were denied admission by the kubelet so that static pods would not be silently running even after the mirror pod creation failed.",
@@ -100,20 +62,7 @@
         "Auth",
         "Node",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "kubelet blocks static pods on mirror pod failure",
-        "summary": "The kubelet now rejects admission of static pods that reference API objects when the corresponding mirror pod cannot be created, preventing them from running silently.",
-        "action": "Review static pod manifests that depend on API objects; ensure they can create mirror pods or modify them to avoid API object references, and be prepared for static pods to fail admission after an upgrade.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods (static pods)"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "For metrics `apiserver_cache_list_fetched_objects_total`, `apiserver_cache_list_returned_objects_total`, `apiserver_cache_list_total` replace `resource_prefix` label with API `group` and `resource` labels.\nFor metrics `etcd_request_duration_seconds`, `etcd_requests_total` and `etcd_request_errors_total` replace `type` label with API `resource` and `group` label.\nFor metric `apiserver_selfrequest_total` add a API `group` label.\nFor metrics `apiserver_watch_events_sizes` and `apiserver_watch_events_total` replace API `kind` label with `resource` label.\nFor metrics `apiserver_request_body_size_bytes`, `apiserver_storage_events_received_total`, `apiserver_storage_list_evaluated_objects_total`, `apiserver_storage_list_fetched_objects_total`, `apiserver_storage_list_returned_objects_total`, `apiserver_storage_list_total`, `apiserver_watch_cache_events_dispatched_total`, `apiserver_watch_cache_events_received_total`, `apiserver_watch_cache_initializations_total`, `apiserver_watch_cache_resource_version`, `watch_cache_capacity`, `apiserver_init_events_total`, `apiserver_terminated_watchers_total`, `watch_cache_capacity_increase_total`, `watch_cache_capacity_decrease_total`, `apiserver_watch_cache_read_wait_seconds`, `apiserver_watch_cache_consistent_read_total`, `apiserver_storage_consistency_checks_total`, `etcd_bookmark_counts`, `storage_decode_errors_total` extract the API group from `resource` label and put it in new `group` label.",
@@ -125,19 +74,7 @@
         "Etcd",
         "Instrumentation",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Metric label schema changes for apiserver & etcd",
-        "summary": "Several apiserver and etcd metrics have been updated to replace or add labels \u2013 e.g., `resource_prefix` is replaced by `group` and `resource`, `type` is replaced by `resource` and `group`, and a new `group` label is added to many metrics \u2013 requiring updates to monitoring queries and alerts.",
-        "action": "Modify dashboards, Prometheus alerts, and any custom tooling that scrapes these metrics to use the new `group` and `resource` labels (and the new `resource` label where `type` was used) instead of the removed or renamed labels.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kube-apiserver",
-          "etcd"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "`AppArmor` profiles specified in the Pod or container `SecurityContext` were no longer copied to deprecated `AppArmor` annotations (prefix `container.apparmor.security.beta.kubernetes.io/`). Anything that inspected the deprecated annotations must be migrated to use the `SecurityContext` fields instead.",
@@ -146,22 +83,7 @@
       "author": "tallclair",
       "sigs": [
         "Node"
-      ],
-      "enrichment": {
-        "title": "AppArmor profiles move to SecurityContext",
-        "summary": "AppArmor profiles set in a Pod or container\u2019s SecurityContext are no longer mirrored to the old `container.apparmor.security.beta.kubernetes.io/` annotations, so tools must read the SecurityContext directly.",
-        "action": "Update any scripts, controllers, or monitoring that read the deprecated AppArmor annotations to instead retrieve the profile from the Pod/Container SecurityContext fields.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "containers"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "DRA API: resource.k8s.io/v1alpha3 now only contains DeviceTaintRule. All other types got removed because they became obsolete when introducing the v1beta1 API in 1.32.\nbefore updating a cluster where resourceclaims, resourceclaimtemplates, deviceclasses, or resourceslices might have been stored using Kubernetes < 1.32, delete all of those resources before updating and recreate them as needed while running Kubernetes >= 1.32.",
@@ -173,43 +95,10 @@
         "Node",
         "Scheduling",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "DRA v1alpha3 limited to DeviceTaintRule; purge old resources",
-        "summary": "In the DRA API, `resource.k8s.io/v1alpha3` now only includes `DeviceTaintRule`; all other types (ResourceClaim, ResourceClaimTemplate, DeviceClass, ResourceSlice) were removed after v1beta1 introduction, requiring deletion of any existing instances before upgrading to \u22651.32.",
-        "action": "List and delete any existing ResourceClaims, ResourceClaimTemplates, DeviceClasses, or ResourceSlices in clusters running <1.32, then upgrade the control plane, and recreate those resources as needed on Kubernetes\u202f\u22651.32.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods using device resources",
-          "custom controllers"
-        ],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "features": [
-    {
-      "kep": "KEP-1710",
-      "kepPath": "sig-storage/1710-selinux-relabeling",
-      "title": "Skip SELinux relabeling of volumes",
-      "stage": "stable",
-      "sig": "Storage",
-      "category": "Storage",
-      "description": "",
-      "impact": null,
-      "featureGate": "SELinuxMountReadWriteOncePod",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.24",
-        "beta": "1.27",
-        "stable": "1.34"
-      }
-    },
     {
       "kep": "KEP-1790",
       "kepPath": "sig-storage/1790-recover-resize-failure",
@@ -244,6 +133,42 @@
         "alpha": "1.28",
         "beta": "1.31",
         "stable": "1.34"
+      }
+    },
+    {
+      "kep": "KEP-2395",
+      "kepPath": "sig-cloud-provider/2395-removing-in-tree-cloud-providers",
+      "title": "Removing In-Tree Cloud Providers",
+      "stage": "stable",
+      "sig": "Cloud Provider",
+      "category": "Cloud",
+      "description": "",
+      "impact": null,
+      "featureGate": "DisableCloudProviders",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.29",
+        "stable": "1.31"
+      }
+    },
+    {
+      "kep": "KEP-24",
+      "kepPath": "sig-node/24-apparmor",
+      "title": "Add AppArmor Support",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "AppArmor",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.4",
+        "beta": "1.4",
+        "stable": "1.31"
       }
     },
     {
@@ -283,6 +208,24 @@
       }
     },
     {
+      "kep": "KEP-3221",
+      "kepPath": "sig-auth/3221-structured-authorization-configuration",
+      "title": "Structured Authorization Configuration",
+      "stage": "stable",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "StructuredAuthorizationConfig",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.30",
+        "stable": "1.32"
+      }
+    },
+    {
       "kep": "KEP-3288",
       "kepPath": "sig-node/3288-separate-stdout-from-stderr",
       "title": "Split Stdout and Stderr Log Stream of Container",
@@ -298,6 +241,42 @@
         "alpha": "1.32",
         "beta": "1.33",
         "stable": "1.34"
+      }
+    },
+    {
+      "kep": "KEP-3299",
+      "kepPath": "sig-auth/3299-kms-v2-improvements",
+      "title": "KMS v2 Improvements",
+      "stage": "stable",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "KMSv2",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.27",
+        "stable": "1.29"
+      }
+    },
+    {
+      "kep": "KEP-3329",
+      "kepPath": "sig-apps/3329-retriable-and-non-retriable-failures",
+      "title": "Retriable and non-retriable Pod failures for Jobs",
+      "stage": "stable",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodDisruptionConditions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.26",
+        "stable": "1.31"
       }
     },
     {
@@ -369,7 +348,8 @@
         "alpha": "1.28",
         "beta": "1.29",
         "stable": "1.34"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3960",
@@ -477,7 +457,8 @@
         "alpha": "1.30",
         "beta": "1.32",
         "stable": "1.34"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-4427",
@@ -685,7 +666,8 @@
       "history": {
         "alpha": "1.33",
         "beta": "1.34"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3015",
@@ -723,6 +705,28 @@
       "history": {
         "alpha": "1.33",
         "beta": "1.34"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-3243",
+      "kepPath": "sig-scheduling/3243-respect-pod-topology-spread-after-rolling-upgrades",
+      "title": "Respect PodTopologySpread after rolling upgrades",
+      "stage": "beta",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "MatchLabelKeysInPodTopologySpread",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.27",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -741,7 +745,7 @@
         "alpha": "1.27",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -762,7 +766,7 @@
         "alpha": "1.32",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -781,7 +785,11 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.33",
-        "beta": "1.34"
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -837,7 +845,7 @@
       "history": {
         "alpha": "1.31",
         "beta": "1.34",
-        "stable": "1.35",
+        "stable": "1.36",
         "verified": [
           "stable"
         ]
@@ -852,14 +860,14 @@
       "category": "Workloads",
       "description": "",
       "impact": null,
-      "featureGate": "CPUManagerPolicyBetaOptions",
+      "featureGate": "CPUManagerPolicyOptions",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
         "alpha": "1.32",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -895,7 +903,11 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.33",
-        "beta": "1.34"
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -914,7 +926,7 @@
         "alpha": "1.33",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -952,7 +964,7 @@
         "alpha": "1.33",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -973,6 +985,27 @@
         "alpha": "1.33",
         "beta": "1.34",
         "stable": "1.35",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5073",
+      "kepPath": "sig-api-machinery/5073-declarative-validation-with-validation-gen",
+      "title": "Declarative Validation",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "DeclarativeValidation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.33",
+        "stable": "1.36",
         "verified": [
           "stable"
         ]
@@ -1008,7 +1041,53 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.32",
-        "beta": "1.34"
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-127",
+      "kepPath": "sig-node/127-user-namespaces",
+      "title": "Support User Namespaces",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "UserNamespacesSupport",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.25",
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-2535",
+      "kepPath": "sig-node/2535-ensure-secret-pulled-images",
+      "title": "Ensure Secret Pulled Images",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "KubeletEnsureSecretPulledImages",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.35",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1072,6 +1151,50 @@
       }
     },
     {
+      "kep": "KEP-4680",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "title": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ResourceHealthStatus",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4742",
+      "kepPath": "sig-node/4742-node-topology-downward-api",
+      "title": "Node Topologies via Downward API",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodTopologyLabelAdmission",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.35",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4762",
       "kepPath": "sig-network/4762-allow-arbitrary-fqdn-as-pod-hostname",
       "title": "Allows setting arbitrary FQDN as the pod's hostname",
@@ -1127,8 +1250,8 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.34",
-        "beta": "1.35",
-        "stable": "1.36",
+        "beta": "1.36",
+        "stable": "1.37",
         "tentative": [
           "stable"
         ],
@@ -1154,8 +1277,34 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5075",
+      "kepPath": "sig-scheduling/5075-dra-consumable-capacity",
+      "title": "DRA Consumable Capacity",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRAConsumableCapacity",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.34",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1175,11 +1324,9 @@
         "alpha": "1.34",
         "beta": "1.35",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1243,11 +1390,9 @@
         "alpha": "1.34",
         "beta": "1.35",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1268,8 +1413,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1283,22 +1430,6 @@
       "description": "",
       "impact": null,
       "featureGate": null,
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.34"
-      }
-    },
-    {
-      "kep": "KEP-5394",
-      "kepPath": "sig-node/5394-psi-node-conditions",
-      "title": "PSI based Node Conditions",
-      "stage": "alpha",
-      "sig": "Node",
-      "category": "Workloads",
-      "description": "",
-      "impact": null,
-      "featureGate": "PSINodeCondition",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
@@ -1507,16 +1638,6 @@
         "kepLinks": [
           "KEP-961"
         ]
-      },
-      {
-        "description": "export LANGUAGE=fr_FR",
-        "prNumber": 130987,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130987",
-        "author": "arthurbdiniz",
-        "sigs": [
-          "Cli"
-        ],
-        "userFacingChange": "NONE\r\n\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->\r\n```docs\r\n\r\n```"
       },
       {
         "description": "[cloud-provider] Respected the `exclude-from-external-load-balancers=false` label.",
@@ -3405,16 +3526,6 @@
         "userFacingChange": "DRA kubelet: logging now uses `driverName` like the rest of the Kubernetes components, instead of `pluginName`."
       },
       {
-        "description": "crane digest gcr.io/k8s-staging-e2e-test-images/agnhost:2.56",
-        "prNumber": 132117,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/132117",
-        "author": "yashsingh74",
-        "sigs": [
-          "Network",
-          "Testing"
-        ]
-      },
-      {
         "description": "Removed support for API streaming from the metadata client\u2019s `List() method`.",
         "prNumber": 132149,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/132149",
@@ -3601,15 +3712,6 @@
         ]
       },
       {
-        "description": "Increased test coverage for kubelet package to 92.3%.",
-        "prNumber": 132484,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/132484",
-        "author": "ylink-lfs",
-        "sigs": [
-          "Node"
-        ]
-      },
-      {
         "description": "Simplied validation error message for invalid fields by removing redundant field name.",
         "prNumber": 132513,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/132513",
@@ -3791,15 +3893,6 @@
           "Api Machinery"
         ],
         "userFacingChange": "Replaced deprecated package 'k8s.io/utils/pointer' with 'k8s.io/utils/ptr' for apiextensions apiservers validation tests."
-      },
-      {
-        "description": "NO",
-        "prNumber": 132730,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/132730",
-        "author": "onasser1",
-        "sigs": [
-          "Scheduling"
-        ]
       },
       {
         "description": "Replaced deprecated package `k8s.io/utils/pointer` with `k8s.io/utils/ptr` for pod-security-admission tests.",
@@ -5544,15 +5637,6 @@
         "userFacingChange": "kubelet now reports a hash of the credential provider configuration via the `kubelet_credential_provider_config_info` metric. The hash is exposed in the `hash` label."
       },
       {
-        "description": "Eliminated work when creating Services or understanding port purposes, especially for external resources deployed via Helm charts.",
-        "prNumber": 133018,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133018",
-        "author": "rushmash91",
-        "sigs": [
-          "Cli"
-        ]
-      },
-      {
         "description": "If `PreBindPreFlight` returned `Skip`, the scheduler didn't run the plugin at `PreBind`.\nIf any `PreBindPreFlight` returned `Success`, the scheduler put NominatedNodeName to the pod \nso that other components (such as the cluster autoscaler) could notice the pod was going to be bound to the node.",
         "prNumber": 133021,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/133021",
@@ -6505,34 +6589,6 @@
             "labels": [
               "sig/api-machinery",
               "kind/feature",
-              "triage/accepted"
-            ]
-          }
-        ]
-      }
-    ],
-    "failingTest": [
-      {
-        "description": "~/go/src/k8s.io/kubernetes/test/integration/apiserver/tracing$ go test ./... -race\nok  \tk8s.io/kubernetes/test/integration/apiserver/tracing\t68.825s",
-        "prNumber": 132336,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/132336",
-        "author": "dashpole",
-        "sigs": [
-          "Api Machinery",
-          "Testing"
-        ],
-        "relatedIssues": [
-          132050
-        ],
-        "issueContext": [
-          {
-            "number": 132050,
-            "title": "k8s.io/kubernetes/test/integration/apiserver/tracing: TestAPIServerTracing DATA RACE",
-            "body": "### What happened?\n\n```\nk8s.io/kubernetes/test/integration/apiserver: tracing\n...\n=== RUN   TestAPIServerTracing\n...\nWARNING: DATA RACE\nWrite at 0x00c0038ccdb0 by goroutine 13734:\n  k8s.io/kubernetes/test/integration/apiserver/tracing.TestAPIServerTracing.func1()\n      /home/prow/go/src/k8s.io/kubernetes/test/integration/apiserver/tracing/tracing_test.go:339 +0x84\n  runtime.deferreturn()\n      /usr/local/go/src/runtime/panic.go:610 +0x5d\n  k8s.io/apiserver/pkg/endpoints.(*APIGroupVersion).InstallREST()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/groupversion.go:114 +0x245\n  k8s.io/apiserver/pkg/server.(*GenericAPIServer).installAPIResources()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/server/genericapiserver.go:792 +0x504\n  k8s.io/apiserver/pkg/server.(*GenericAPIServer).InstallAPIGroups()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/server/genericapiserver.go:887 +0x4e9\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s.io/apiserver/pkg/endpoints.(*APIInstaller).Install()\n      /home/prow/go/src/k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/installer.go:208 +0x3ad\n  k8s",
-            "labels": [
-              "kind/bug",
-              "sig/api-machinery",
-              "sig/instrumentation",
               "triage/accepted"
             ]
           }

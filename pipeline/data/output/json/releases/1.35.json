@@ -1,14 +1,14 @@
 {
   "version": "1.35",
   "codename": "Timbernetes (The World Tree Release)",
-  "description": "Kubernetes 1.35 'Timbernetes' brings 58 enhancements with in-place pod resource resize graduating to stable, gang scheduling arriving in alpha for AI/ML workloads, and pod certificates for workload identity moving to beta. Key themes include improved resource management, enhanced security with user namespaces, and better observability with pod generation tracking.",
+  "description": "Like the World Tree Yggdrasil binding many realms, Kubernetes 1.35 'Timbernetes' grows ring by ring through community care. In-place pod resource resize graduates to GA for nondisruptive vertical scaling, gang scheduling arrives in alpha for AI/ML workloads, and pod certificates simplify zero-trust architectures. Three squirrels guard the tree: reviewers with LGTM scrolls, release crews with axes, and triagers with lanterns.",
   "releaseDate": "2025-12-17",
   "endOfLifeDate": "2027-02-17",
   "summary": {
-    "total": 58,
-    "stable": 19,
-    "beta": 22,
-    "alpha": 17
+    "total": 69,
+    "stable": 22,
+    "beta": 26,
+    "alpha": 21
   },
   "themes": [
     "Resource Management",
@@ -27,22 +27,7 @@
         "Architecture",
         "Cluster Lifecycle",
         "Node"
-      ],
-      "enrichment": {
-        "title": "Explicit Feature Gate Dependency Validation",
-        "summary": "Feature gate dependencies are now validated at startup, preventing a feature from being enabled if it depends on a disabled feature. Consequently, using AllAlpha=true requires also enabling any disabled-by-default beta dependencies via AllBeta=true or explicit enumeration.",
-        "action": "Review and update feature gate configurations: enable required disabled-by-default beta features (via AllBeta=true or by listing each dependent feature) before enabling alpha features, especially when using AllAlpha=true.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kube-controller-manager",
-          "kube-scheduler",
-          "kubelet",
-          "kube-proxy"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED:\n\nRemoved the `--pod-infra-container-image` flag from `kubelet` command line. For `non-kubeadm` clusters, users must manually remove this flag from their `kubelet` configuration to prevent startup failures before upgrading `kubelet`. For `kubeadm` clusters, if users pass extra arguments to the `kubelet` like `--pod-infra-container-image`, it will be written to the `kubelet` env file during the `init` phase. `kubeadm` does not remove it during the `init` or `join` phase, so users must manually remove it from `extraArgs` in the `kubelet` configuration file.",
@@ -51,18 +36,7 @@
       "author": "carlory",
       "sigs": [
         "Node"
-      ],
-      "enrichment": {
-        "title": "Removed --pod-infra-container-image flag from kubelet",
-        "summary": "The --pod-infra-container-image flag has been removed from the kubelet command line. Users must delete this flag from kubelet configurations (manual removal for non\u2011kubeadm clusters and from extraArgs in the kubelet config for kubeadm clusters) to avoid startup failures before upgrading kubelet.",
-        "action": "Remove the --pod-infra-container-image flag from all kubelet configurations: for non\u2011kubeadm clusters edit the kubelet config directly; for kubeadm clusters delete it from the extraArgs section of the kubelet config file generated during init/join.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED: `failCgroupV1` will be set to true from 1.35. \nThis means that nodes will not start on a cgroup v1 by default. This puts cgroup v1 into a deprecated state.",
@@ -71,18 +45,7 @@
       "author": "kannon92",
       "sigs": [
         "Node"
-      ],
-      "enrichment": {
-        "title": "failCgroupV1 enabled by default, cgroup v1 deprecated",
-        "summary": "Starting with v1.35, the failCgroupV1 feature gate defaults to true, preventing nodes from starting with cgroup v1 and effectively deprecating cgroup v1 usage.",
-        "action": "Verify that all nodes run with cgroup v2 or explicitly set failCgroupV1 to false if cgroup v1 is required; update node and kubelet configurations accordingly before upgrading.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED:\n\nvendor: Updated `k8s.io/system-validators` to `v1.12.1`. The cgroups validator now throws an error instead of a warning if cgroups v1 is detected on the host and the provided KubeletVersion is `v1.35` or newer.\n\nkubeadm: Started using `k8s.io/system-validators` `v1.12.1` in `kubeadm` `v1.35`. During `kubeadm init`, `kubeadm join`, and `kubeadm upgrade`, the SystemVerification preflight check throws an error if cgroups v1 is detected and the detected `kubelet` version is `v1.35` or newer. For older versions of `kubelet`, a preflight warning is displayed.\n\nTo allow cgroups v1 with `kubeadm` and `kubelet` version `v1.35` or newer, you must:\n- Ignore the error from the SystemVerification preflight check by `kubeadm`.\n- Edit the `kube-system/kubelet-config` ConfigMap and add the `failCgroupV1: false` field before upgrading.",
@@ -92,19 +55,7 @@
       "sigs": [
         "Cluster Lifecycle",
         "Node"
-      ],
-      "enrichment": {
-        "title": "cgroup v1 validation now fails for kubelet v1.35+",
-        "summary": "The system\u2011validators library now treats cgroup v1 as an error (instead of a warning) when the host runs cgroup v1 and the kubelet version is v1.35 or newer. kubeadm\u2019s SystemVerification preflight will fail in this case.",
-        "action": "During upgrade, either bypass the SystemVerification preflight error (e.g., using --ignore-preflight-errors) and modify the kube-system/kubelet-config ConfigMap to set failCgroupV1:false before upgrading, ensuring kubelet can run with cgroup v1 if needed.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubeadm",
-          "kubelet"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Added the `StorageVersionMigration` `v1beta1` API and removed the `v1alpha1` API.\n\nACTION REQUIRED: The `v1alpha1` API is no longer supported. Users must remove any `v1alpha1` resources before upgrading.",
@@ -117,18 +68,7 @@
         "Auth",
         "Etcd",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Removal of StorageVersionMigration v1alpha1 API",
-        "summary": "The StorageVersionMigration v1alpha1 API has been removed and replaced by the v1beta1 version; the old v1alpha1 API is no longer supported.",
-        "action": "Identify and delete all existing StorageVersionMigration v1alpha1 resources (or migrate them to v1beta1) before performing the upgrade.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "features": [
@@ -152,6 +92,23 @@
         "alpha": "1.27",
         "beta": "1.33",
         "stable": "1.35"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-1972",
+      "kepPath": "sig-node/1972-kubelet-exec-probe-timeouts",
+      "title": "Kubelet Exec Probe Timeouts",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ExecProbeTimeouts",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "stable": "1.24"
       }
     },
     {
@@ -179,19 +136,33 @@
       "stage": "stable",
       "sig": "Network",
       "category": "Networking",
-      "description": "Services can prefer endpoints on local node, with PreferSameZone replacing PreferClose",
-      "impact": "Reduced latency, explicit control over traffic routing",
+      "description": "",
+      "impact": null,
       "featureGate": "PreferSameTrafficDistribution",
-      "affectedKinds": [
-        "Service"
-      ],
-      "affectedFields": [
-        "spec.trafficDistribution"
-      ],
+      "affectedKinds": [],
+      "affectedFields": [],
       "history": {
-        "alpha": "1.31",
-        "beta": "1.33",
+        "alpha": "1.33",
+        "beta": "1.34",
         "stable": "1.35"
+      }
+    },
+    {
+      "kep": "KEP-3331",
+      "kepPath": "sig-auth/3331-structured-authentication-configuration",
+      "title": "Structured authentication config",
+      "stage": "stable",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "StructuredAuthenticationConfiguration",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.30",
+        "stable": "1.34"
       }
     },
     {
@@ -249,6 +220,24 @@
       }
     },
     {
+      "kep": "KEP-4033",
+      "kepPath": "sig-node/4033-group-driver-detection-over-cri",
+      "title": "Discover cgroup driver from CRI",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "KubeletCgroupDriverFromCRI",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.31",
+        "stable": "1.34"
+      }
+    },
+    {
       "kep": "KEP-4210",
       "kepPath": "sig-node/4210-max-image-gc-age",
       "title": "ImageMaximumGCAge in Kubelet",
@@ -285,25 +274,57 @@
       }
     },
     {
+      "kep": "KEP-4330",
+      "kepPath": "sig-architecture/4330-compatibility-versions",
+      "title": "Compatibility Versions",
+      "stage": "stable",
+      "sig": "Architecture",
+      "category": "Architecture",
+      "description": "",
+      "impact": null,
+      "featureGate": "CompatibilityVersions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.32",
+        "stable": "1.34"
+      }
+    },
+    {
       "kep": "KEP-4368",
       "kepPath": "sig-apps/4368-support-managed-by-for-batch-jobs",
       "title": "Job API managed-by label",
       "stage": "stable",
       "sig": "Apps",
       "category": "Workloads",
-      "description": "Jobs can delegate status sync to external controllers via managedBy field",
-      "impact": "Enables MultiKueue and other multi-cluster job dispatching systems",
+      "description": "",
+      "impact": null,
       "featureGate": "JobManagedBy",
-      "affectedKinds": [
-        "Job"
-      ],
-      "affectedFields": [
-        "spec.managedBy"
-      ],
+      "affectedKinds": [],
+      "affectedFields": [],
       "history": {
-        "alpha": "1.32",
-        "beta": "1.34",
+        "alpha": "1.30",
+        "beta": "1.32",
         "stable": "1.35"
+      }
+    },
+    {
+      "kep": "KEP-4381",
+      "kepPath": "sig-node/4381-dra-structured-parameters",
+      "title": "DRA Structured Parameters",
+      "stage": "stable",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicResourceAllocation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.30",
+        "beta": "1.32",
+        "stable": "1.34"
       }
     },
     {
@@ -360,62 +381,17 @@
       }
     },
     {
-      "kep": "KEP-4639",
-      "kepPath": "sig-node/4639-oci-volume-source",
-      "title": "OCI images as VolumeSource",
-      "stage": "stable",
-      "sig": "Node",
-      "category": "Storage",
-      "description": "Mount OCI container images as read-only volumes in Pods",
-      "impact": "Separate data from app images, no init containers needed",
-      "featureGate": "ImageVolume",
-      "affectedKinds": [
-        "Pod"
-      ],
-      "affectedFields": [
-        "spec.volumes[].image"
-      ],
-      "history": {
-        "alpha": "1.31",
-        "beta": "1.33",
-        "stable": "1.35"
-      }
-    },
-    {
-      "kep": "KEP-4817",
-      "kepPath": "sig-node/4817-resource-claim-device-status",
-      "title": "Resource Claim Status With Possible Standardized Network Interface Data",
-      "stage": "stable",
-      "sig": "Node",
-      "category": "Workloads",
-      "description": "",
-      "impact": null,
-      "featureGate": "DRAResourceClaimDeviceStatus",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.32",
-        "beta": "1.33",
-        "stable": "1.35"
-      }
-    },
-    {
       "kep": "KEP-5067",
       "kepPath": "sig-node/5067-pod-generation",
       "title": "Pod Generation",
       "stage": "stable",
       "sig": "Node",
-      "category": "API",
-      "description": "Pods now have metadata.generation and status.observedGeneration fields",
-      "impact": "Reliable way to verify kubelet processed Pod spec changes",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
       "featureGate": "PodObservedGenerationTracking",
-      "affectedKinds": [
-        "Pod"
-      ],
-      "affectedFields": [
-        "metadata.generation",
-        "status.observedGeneration"
-      ],
+      "affectedKinds": [],
+      "affectedFields": [],
       "history": {
         "alpha": "1.33",
         "beta": "1.34",
@@ -496,53 +472,19 @@
       "title": "Support User Namespaces",
       "stage": "beta",
       "sig": "Node",
-      "category": "Security",
-      "description": "Pods run with isolated UID/GID mappings, root inside maps to unprivileged on host",
-      "impact": "Reduced privilege escalation risk, safer container root",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
       "featureGate": "UserNamespacesSupport",
-      "affectedKinds": [
-        "Pod"
-      ],
-      "affectedFields": [
-        "spec.hostUsers"
-      ],
+      "affectedKinds": [],
+      "affectedFields": [],
       "history": {
         "alpha": "1.25",
-        "beta": "1.30"
-      }
-    },
-    {
-      "kep": "KEP-2033",
-      "kepPath": "sig-node/2033-kubelet-in-userns-aka-rootless",
-      "title": "Rootless mode",
-      "stage": "beta",
-      "sig": "Node",
-      "category": "Workloads",
-      "description": "",
-      "impact": null,
-      "featureGate": "KubeletInUserNamespace",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.22",
-        "beta": "1.35"
-      }
-    },
-    {
-      "kep": "KEP-2371",
-      "kepPath": "sig-node/2371-cri-pod-container-stats",
-      "title": "cAdvisor-less, CRI-full Container and Pod Stats",
-      "stage": "beta",
-      "sig": "Node",
-      "category": "Workloads",
-      "description": "",
-      "impact": null,
-      "featureGate": "PodAndContainerStatsFromCRI",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.29",
-        "beta": "1.35"
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -560,6 +502,40 @@
       "history": {
         "alpha": "1.33",
         "beta": "1.35"
+      }
+    },
+    {
+      "kep": "KEP-2837",
+      "kepPath": "sig-node/2837-pod-level-resource-spec",
+      "title": "Pod Level Resource Specifications",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodLevelResources",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.34"
+      }
+    },
+    {
+      "kep": "KEP-3104",
+      "kepPath": "sig-cli/3104-introduce-kuberc",
+      "title": "Introduce kuberc",
+      "stage": "beta",
+      "sig": "Cli",
+      "category": "CLI",
+      "description": "",
+      "impact": null,
+      "featureGate": "KUBECTL_KUBERC",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.34"
       }
     },
     {
@@ -584,6 +560,44 @@
       }
     },
     {
+      "kep": "KEP-3973",
+      "kepPath": "sig-apps/3973-consider-terminating-pods-deployment",
+      "title": "Consider Terminating Pods in Deployments",
+      "stage": "beta",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DeploymentReplicaSetTerminatingReplicas",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.35"
+      }
+    },
+    {
+      "kep": "KEP-4006",
+      "kepPath": "sig-api-machinery/4006-transition-spdy-to-websockets",
+      "title": "Transition from SPDY to Websockets",
+      "stage": "beta",
+      "sig": "Api Machinery",
+      "category": "API",
+      "description": "",
+      "impact": null,
+      "featureGate": "KUBECTL_REMOTE_COMMAND_WEBSOCKETS",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4192",
       "kepPath": "sig-api-machinery/4192-svm-in-tree",
       "title": "Move Storage Version Migrator in-tree",
@@ -598,7 +612,7 @@
       "history": {
         "alpha": "1.30",
         "beta": "1.35",
-        "stable": "1.36",
+        "stable": "1.37",
         "tentative": [
           "stable"
         ]
@@ -622,25 +636,26 @@
       "history": {
         "alpha": "1.34",
         "beta": "1.35"
-      }
+      },
+      "isHighlight": true
     },
     {
-      "kep": "KEP-4680",
-      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
-      "title": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kep": "KEP-4639",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "title": "OCI images as VolumeSource",
       "stage": "beta",
       "sig": "Node",
       "category": "Workloads",
       "description": "",
       "impact": null,
-      "featureGate": "ResourceHealthStatus",
+      "featureGate": "ImageVolume",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
         "alpha": "1.31",
-        "beta": "1.35",
-        "stable": "1.37",
-        "tentative": [
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
           "stable"
         ]
       }
@@ -684,6 +699,48 @@
       }
     },
     {
+      "kep": "KEP-4816",
+      "kepPath": "sig-scheduling/4816-dra-prioritized-list",
+      "title": "DRA Prioritized List",
+      "stage": "beta",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRAPrioritizedList",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4876",
+      "kepPath": "sig-storage/4876-mutable-csinode-allocatable",
+      "title": "Mutable CSINode Allocatable Property",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "MutableCSINodeAllocatableCount",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4951",
       "kepPath": "sig-autoscaling/4951-configurable-hpa-tolerance",
       "title": "Configurable tolerance for HPA",
@@ -702,22 +759,22 @@
       }
     },
     {
-      "kep": "KEP-5004",
-      "kepPath": "sig-scheduling/5004-dra-extended-resource",
-      "title": "DRA Extended Resource",
+      "kep": "KEP-5073",
+      "kepPath": "sig-api-machinery/5073-declarative-validation-with-validation-gen",
+      "title": "Declarative Validation",
       "stage": "beta",
-      "sig": "Scheduling",
-      "category": "Scheduling",
+      "sig": "Api Machinery",
+      "category": "API",
       "description": "",
       "impact": null,
-      "featureGate": "DRAExtendedResource",
+      "featureGate": "DeclarativeValidation",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.34",
-        "beta": "1.35",
+        "alpha": "1.33",
+        "beta": "1.33",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -738,7 +795,7 @@
         "alpha": "1.34",
         "beta": "1.35",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -797,7 +854,7 @@
         "alpha": "1.34",
         "beta": "1.35",
         "stable": "1.36",
-        "tentative": [
+        "verified": [
           "stable"
         ]
       }
@@ -835,7 +892,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "beta": "1.35"
+        "beta": "1.35",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -880,12 +941,12 @@
       "category": "Scheduling",
       "description": "",
       "impact": null,
-      "featureGate": "SchedulerOpportunisticBatching",
+      "featureGate": "OpportunisticBatching",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
         "beta": "1.35",
-        "stable": "1.36",
+        "stable": "1.37",
         "tentative": [
           "stable"
         ]
@@ -898,15 +959,11 @@
       "stage": "beta",
       "sig": "Apps",
       "category": "Workloads",
-      "description": "StatefulSets can update multiple pods simultaneously during rolling updates",
-      "impact": "Faster updates for stateful apps that tolerate multiple pods down",
+      "description": "",
+      "impact": null,
       "featureGate": "MaxUnavailableStatefulSet",
-      "affectedKinds": [
-        "StatefulSet"
-      ],
-      "affectedFields": [
-        "spec.updateStrategy.rollingUpdate.maxUnavailable"
-      ],
+      "affectedKinds": [],
+      "affectedFields": [],
       "history": {
         "alpha": "1.24",
         "beta": "1.35",
@@ -914,24 +971,26 @@
       }
     },
     {
-      "kep": "KEP-4188",
-      "kepPath": "sig-node/4188-kubelet-pod-readiness-api",
-      "title": "New kubelet gRPC API with endpoint returning local pods information",
+      "kep": "KEP-4020",
+      "kepPath": "sig-api-machinery/4020-unknown-version-interoperability-proxy",
+      "title": "Unknown Version Interoperability Proxy",
       "stage": "alpha",
-      "sig": "Node",
-      "category": "Workloads",
+      "sig": "Api Machinery",
+      "category": "API",
       "description": "",
       "impact": null,
-      "featureGate": "PodInfoAPI",
+      "featureGate": "UnknownVersionInteroperabilityProxy",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.35",
+        "alpha": "1.28",
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -952,11 +1011,104 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.35",
-        "beta": "1.36",
+        "beta": "1.37",
         "stable": "1.38",
         "tentative": [
           "beta",
           "stable"
+        ]
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-4680",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "title": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ResourceHealthStatus",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4815",
+      "kepPath": "sig-scheduling/4815-dra-partitionable-devices",
+      "title": "DRA Partitionable Devices",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRAPartitionableDevices",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4827",
+      "kepPath": "sig-instrumentation/4827-component-statusz",
+      "title": "Component Statusz",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "ComponentStatusz",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-4828",
+      "kepPath": "sig-instrumentation/4828-component-flagz",
+      "title": "Component Flagz",
+      "stage": "alpha",
+      "sig": "Instrumentation",
+      "category": "Observability",
+      "description": "",
+      "impact": null,
+      "featureGate": "ComponentFlagz",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.32",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -977,8 +1129,58 @@
         "beta": "1.36",
         "stable": "1.38",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5004",
+      "kepPath": "sig-scheduling/5004-dra-extended-resource",
+      "title": "DRA Extended Resource",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRAExtendedResource",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.34",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5007",
+      "kepPath": "sig-scheduling/5007-device-attach-before-pod-scheduled",
+      "title": "DRA Device Binding Conditions",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRADeviceBindingConditions",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.34",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -996,11 +1198,35 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.35",
-        "beta": "1.36",
-        "stable": "1.37",
+        "beta": "1.37",
+        "stable": "1.38",
         "tentative": [
           "beta",
           "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-5055",
+      "kepPath": "sig-scheduling/5055-dra-device-taints-and-tolerations",
+      "title": "DRA: device taints and tolerations",
+      "stage": "alpha",
+      "sig": "Scheduling",
+      "category": "Scheduling",
+      "description": "",
+      "impact": null,
+      "featureGate": "DRADeviceTaints",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.33",
+        "beta": "1.36",
+        "stable": "1.37",
+        "tentative": [
+          "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1018,8 +1244,8 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.35",
-        "beta": "1.36",
-        "stable": "1.37",
+        "beta": "1.37",
+        "stable": "1.38",
         "tentative": [
           "beta",
           "stable"
@@ -1043,8 +1269,10 @@
         "beta": "1.36",
         "stable": "1.38",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1065,8 +1293,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1076,34 +1306,18 @@
       "title": "Node Declared Features",
       "stage": "alpha",
       "sig": "Node",
-      "category": "Scheduling",
-      "description": "Nodes declare supported features via status.declaredFeatures for compatibility checks",
-      "impact": "Prevents scheduling pods to incompatible older nodes during upgrades",
-      "featureGate": "NodeDeclaredFeatures",
-      "affectedKinds": [
-        "Node"
-      ],
-      "affectedFields": [
-        "status.declaredFeatures"
-      ],
-      "history": {
-        "alpha": "1.35"
-      }
-    },
-    {
-      "kep": "KEP-5366",
-      "kepPath": "sig-api-machinery/5366-graceful-leader-transition",
-      "title": "Graceful Leader Transition",
-      "stage": "alpha",
-      "sig": "Api Machinery",
-      "category": "API",
+      "category": "Workloads",
       "description": "",
       "impact": null,
-      "featureGate": "GracefulLeaderTransition",
+      "featureGate": "NodeDeclaredFeatures",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.35"
+        "alpha": "1.35",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1123,8 +1337,10 @@
         "beta": "1.36",
         "stable": "1.38",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1141,7 +1357,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.35"
+        "alpha": "1.35",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -1161,8 +1381,10 @@
         "beta": "1.36",
         "stable": "1.39",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1183,28 +1405,6 @@
       }
     },
     {
-      "kep": "KEP-5526",
-      "kepPath": "sig-node/5526-pod-level-resource-managers",
-      "title": "Pod-Level Resource Managers",
-      "stage": "alpha",
-      "sig": "Node",
-      "category": "Workloads",
-      "description": "",
-      "impact": null,
-      "featureGate": "PodLevelResources",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.35",
-        "beta": "1.36",
-        "stable": "1.38",
-        "tentative": [
-          "beta",
-          "stable"
-        ]
-      }
-    },
-    {
       "kep": "KEP-5532",
       "kepPath": "sig-node/5532-restart-all-containers-on-container-exits",
       "title": "Restart All Containers on Container Exits",
@@ -1221,8 +1421,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1236,22 +1438,6 @@
       "description": "",
       "impact": null,
       "featureGate": "UserNamespacesHostNetworkSupport",
-      "affectedKinds": [],
-      "affectedFields": [],
-      "history": {
-        "alpha": "1.35"
-      }
-    },
-    {
-      "kep": "KEP-5647",
-      "kepPath": "sig-api-machinery/5647-stale-controller-handling",
-      "title": "Stale Controller Handling",
-      "stage": "alpha",
-      "sig": "Api Machinery",
-      "category": "API",
-      "description": "",
-      "impact": null,
-      "featureGate": "StaleControllerConsistency",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
@@ -1338,15 +1524,6 @@
           "Cluster Lifecycle"
         ],
         "userFacingChange": "Upgrade CoreDNS to v1.12.3"
-      },
-      {
-        "description": "Increased the coverage to 89.8%.",
-        "prNumber": 132607,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/132607",
-        "author": "ylink-lfs",
-        "sigs": [
-          "Node"
-        ]
       },
       {
         "description": "Added `WithOrigin` within `apis/core/validation` with adjusted tests.",
@@ -1496,32 +1673,6 @@
           "Testing"
         ],
         "userFacingChange": "fix formatting of assorted go API deprecations for godoc / pkgsite and enable a linter to help catch mis-formatted deprecations"
-      },
-      {
-        "description": "Fixed `nfacct` test cases on s390x.",
-        "prNumber": 133603,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133603",
-        "author": "saisindhuri91",
-        "sigs": [
-          "Network"
-        ],
-        "userFacingChange": "```release-note\r\nNO\r\n```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->\r\n```docs\r\n\r\n```",
-        "relatedIssues": [
-          130343
-        ],
-        "issueContext": [
-          {
-            "number": 130343,
-            "title": "Proposal to Fix nfacct Tests on s390x by Generating Custom Test Data",
-            "body": "I am working on fixing the nfacct tests for s390x architecture. The issue arises due to the difference in endianness, where the test data is currently structured for little-endian systems, causing failures on s390x (big-endian).\nTo address this, I propose generating custom test data specifically for s390x by converting little-endian data to big-endian format. This approach ensures the test cases properly validate behavior on big-endian systems.\n\nCurrently, I have a sample patch that fixes two test cases:\n**valid_with_padding**\n**valid_without_padding**\n\n[nafcct-s390x.patch.txt](https://github.com/user-attachments/files/18907895/nafcct-s390x.patch.txt)\n\nHowever, many other tests require a similar fix. Before proceeding with a broader solution, I would like to gather feedback from the Kubernetes community regarding this approach.\n\nIs modifying test data per architecture an acceptable approach, or is there a preferred way to handle endianness differences in tests?\nShould we introduce a general mechanism for handling such cases, or is it better to patch individual tests as needed?\nAre there any existing best practices in the Kubernetes project for handling similar cross-architecture test issues?\n\nI appreciate any input from the community on this matter. Once we agree on an approach, I can extend the fix to other failing tests.\n\nThanks!",
-            "labels": [
-              "sig/testing",
-              "sig/release",
-              "lifecycle/rotten",
-              "needs-triage"
-            ]
-          }
-        ]
       },
       {
         "description": "Updated cri-tools to v1.34.0.",
@@ -1997,16 +2148,6 @@
         "userFacingChange": "The DRA device taints and toleration feature now has a separate feature gate, DRADeviceTaintRules, which controls whether support for DeviceTaintRules is enabled. It is possible to disable that and keep DRADeviceTaints enabled, in which case tainting by DRA drivers through ResourceSlices continues to work."
       },
       {
-        "description": "Reduced event spam during volume operation errors in the Portworx in-tree driver.",
-        "prNumber": 135081,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/135081",
-        "author": "gohilankit",
-        "sigs": [
-          "Storage"
-        ],
-        "userFacingChange": "```\r\nReduce event spam during volume operation errors in Portworx in-tree driver\r\n```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->\r\n```docs\r\n\r\n```"
-      },
-      {
         "description": "Dropped support for `networking/v1beta1` `Ingress` in `kubectl`.",
         "prNumber": 135108,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/135108",
@@ -2055,32 +2196,6 @@
         "userFacingChange": "Pod can have multiple volumes reference the same PVC"
       },
       {
-        "description": "Fixed `replicaCount` calculation exceeding max `int32`.",
-        "prNumber": 126979,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/126979",
-        "author": "omerap12",
-        "sigs": [
-          "Apps",
-          "Autoscaling"
-        ],
-        "userFacingChange": "```release-note\r\nNo\r\n```\r\n\r\n#### Additional documentation e.g., KEPs (Kubernetes Enhancement Proposals), usage docs, etc.:\r\n\r\n<!--\r\nThis section can be blank if this pull request does not require a release note.\r\n\r\nWhen adding links which point to resources within git repositories, like\r\nKEPs or supporting documentation, please reference a specific commit and avoid\r\nlinking directly to the master branch. This ensures that links reference a\r\nspecific point in time, rather than a document that may change over time.\r\n\r\nSee here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files\r\n\r\nPlease use the following format for linking documentation:\r\n- [KEP]: <link>\r\n- [Usage]: <link>\r\n- [Other doc]: <link>\r\n-->\r\n```docs\r\nNo\r\n```",
-        "relatedIssues": [
-          126892
-        ],
-        "issueContext": [
-          {
-            "number": 126892,
-            "title": "Int overflow in hpa causing incorrect replica count",
-            "body": "### What happened?\n\nThe setup:\r\nI am using keda with the prometheus scaler. The query I am using, returns the lag in the message queue i am using, and the threshold is set to `0.1`.\r\n\r\nWhat happened:\r\nThe lag was increasing for a long time, and the replica count reached the max setting as expected. Everything was running fine for some time. When the lag value reached `214,748,364` hpa decided to reduce the replicas from the max limit to `1`.\r\n\r\nWhat I think is the problem:\r\nWhen the lag passes `214,748,364`, the calculation [here](https://github.com/kubernetes/kubernetes/blob/7b80cdb66a390f225d23cd612950144e3a39d1ae/pkg/controller/podautoscaler/replica_calculator.go#L278) divides by the threshold `0.1` and it passes the max int32 value. causing hpa to scale to the minimum value, 1.\r\nIt also seems like a lot of other places in this file cast a 64 bit float to a 32 bit int. Should there maybe be a check everywhere this is done?\n\n### What did you expect to happen?\n\nI expected the replica count to stay at the max value. Or alternatively, get an error that we have reached the max value for an external metric value\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nUse an external metric, and set it above `214,748,364` with a threshold of `0.1`.\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\n# paste output here\r\n```\r\n1.29\r\n</details>\r\n\n\n### Cloud provider\n\n<details>\r\naws eks\r\n</details>\r\n\n\n### OS version\n\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\n# paste output here\r\n$ uname -a\r\n# paste output here\r\n\r\n# On Windows:\r\nC:\\> wmic os get Caption, Version, BuildNumber, OSArchitecture\r\n# paste output here\r\n```\r\n\r\n</details>\r\n\n\n### Install tools\n\n<details>\r\n\r\n</details>\r\n\n\n### Container runtime (CRI) and version (if applicable)\n\n<details>\r\n\r\n</details>\r\n\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n<details>\r\n\r\n</details>\r\n",
-            "labels": [
-              "kind/bug",
-              "sig/autoscaling",
-              "needs-triage"
-            ]
-          }
-        ]
-      },
-      {
         "description": "kube-apiserver: Made sure that when `--requestheader-client-ca-file` and `--client-ca-file` contain overlapping certificates, `--requestheader-allowed-names` must be specified so that regular client certificates cannot set authenticating proxy headers for arbitrary users.",
         "prNumber": 131411,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/131411",
@@ -2103,6 +2218,7 @@
               "priority/backlog",
               "sig/auth",
               "help wanted",
+              "wg/security-audit",
               "sig/security",
               "needs-triage"
             ]
@@ -2487,16 +2603,6 @@
             ]
           }
         ]
-      },
-      {
-        "description": "Changed `kubectl exec` syntax to require `--` before the command. The form `kubectl exec [POD] [COMMAND]` is no longer supported; use `kubectl exec [POD] -- [COMMAND]` instead.",
-        "prNumber": 133841,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133841",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Testing"
-        ],
-        "userFacingChange": "\"NONE\""
       },
       {
         "description": "Upgraded the `PodObservedGenerationTracking` feature to beta in `v1.34` and removed the alpha version description from the OpenAPI specification.",
@@ -3575,32 +3681,6 @@
         "userFacingChange": "kube-apiserver: JWT authenticator now report the following metrics:\r\n- apiserver_authentication_jwt_authenticator_jwks_fetch_last_timestamp_seconds\r\n- apiserver_authentication_jwt_authenticator_jwks_fetch_last_key_set_info\r\n\r\nwhen StructuredAuthenticationConfiguration feature is enabled."
       },
       {
-        "description": "Updated sandbox ordering to use by attempt count or creation time.",
-        "prNumber": 130551,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/130551",
-        "author": "yylt",
-        "sigs": [
-          "Node"
-        ],
-        "relatedIssues": [
-          126514
-        ],
-        "issueContext": [
-          {
-            "number": 126514,
-            "title": "You have to remove that sandbox to be able to reuse that name.",
-            "body": "### What happened?\r\n\r\nWhen power is turned off and restarted, `kubelet `reports an error when starting etcd and apiserver:\r\nAug 02 10:01:03 openEuler kubelet[1024]: E0802 10:01:03.693078    1024 remote_runtime.go:193] \"RunPodSandbox from runtime service failed\" err=\"rpc error: code = Unknown desc = Conflict. The name \\\"k8s_POD_etcd-openeuler_kube-system_ae0fcba533f9b951c6983487becf13f9_0\\\" is already in use by sandbox 30ed179087f03d03fef197363103427e48242829f815488bb774313db02c41a4. You have to remove that sandbox to be able to reuse that name.\"\r\nAug 02 10:01:03 openEuler kubelet[1024]: E0802 10:01:03.693228    1024 kuberuntime_sandbox.go:72] \"Failed to create sandbox for pod\" err=\"rpc error: code = Unknown desc = Conflict. The name \\\"k8s_POD_etcd-openeuler_kube-system_ae0fcba533f9b951c6983487becf13f9_0\\\" is already in use by sandbox 30ed179087f03d03fef197363103427e48242829f815488bb774313db02c41a4. You have to remove that sandbox to be able to reuse that name.\" pod=\"kube-system/etcd-openeuler\"\r\nAug 02 10:01:03 openEuler kubelet[1024]: E0802 10:01:03.693276    1024 kuberuntime_manager.go:1166] \"CreatePodSandbox for pod failed\" err=\"rpc error: code = Unknown desc = Conflict. The name \\\"k8s_POD_etcd-openeuler_kube-system_ae0fcba533f9b951c6983487becf13f9_0\\\" is already in use by sandbox 30ed179087f03d03fef197363103427e48242829f815488bb774313db02c41a4. You have to remove that sandbox to be able to reuse that name.\" pod=\"kube-system/etcd-openeuler\"\r\nAug 02 10:01:03 openEuler kubelet[1024]: E0802 10:01:03.693400    1024 pod_workers.go:1298] \"Error syncing pod, skipping\" err=\"failed to \\\"CreatePodSandbox\\\" for \\\"etcd-openeuler_kube-system(ae0fcba533f9b951c6983487becf13f9)\\\" with CreatePodSandboxError: \\\"Failed to create sandbox for pod \\\\\\\"etcd-openeuler_kube-system(ae0fcba533f9b951c6983487becf13f9)\\\\\\\": rpc error: code = Unknown desc = Conflict. The name \\\\\\\"k8s_POD_etcd-openeuler_kube-system_ae0fcba533f9b951c6983487becf13f9_0\\\\\\\" is already in use by sandbox 30ed179087f03",
-            "labels": [
-              "kind/bug",
-              "sig/node",
-              "lifecycle/rotten",
-              "triage/needs-information",
-              "needs-triage"
-            ]
-          }
-        ]
-      },
-      {
         "description": "Added metrics for the `MaxUnavailable` feature in `StatefulSet`.",
         "prNumber": 130951,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/130951",
@@ -3814,32 +3894,6 @@
         ]
       },
       {
-        "description": "Added `kubelet` stress test for pod cleanup when rejection due to `VolumeAttachmentLimitExceeded`.",
-        "prNumber": 133357,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133357",
-        "author": "torredil",
-        "sigs": [
-          "Node",
-          "Storage"
-        ],
-        "userFacingChange": "NONE.",
-        "relatedIssues": [
-          133188
-        ],
-        "issueContext": [
-          {
-            "number": 133188,
-            "title": "Add Kubelet stress test for rejecting pods when the attachment limit is exceeded",
-            "body": "This issue tracks adding a new stress test to Kubelet behavior introduced by [MutableCSINodeAllocatableCount](https://github.com/kubernetes/kubernetes/pull/132933) (rejecting pods when the CSI attachment limit is exceeded).\n\nWe'll mark this as a requirement for graduating the feature to default on in Beta.\n\nSee https://github.com/kubernetes/kubernetes/pull/132933#discussion_r2229353038 for context.\n\nRelated enhancement: https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/4876-mutable-csinode-allocatable",
-            "labels": [
-              "sig/storage",
-              "sig/node",
-              "needs-triage"
-            ]
-          }
-        ]
-      },
-      {
         "description": "Introduced end-to-end tests to verify component invariant metrics across the entire test suite.",
         "prNumber": 133394,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/133394",
@@ -3895,42 +3949,6 @@
               "wg/device-management"
             ]
           }
-        ]
-      },
-      {
-        "description": "Added `k8s-short-name` and `k8s-long-name` format validation tags to enforce DNS label and DNS subdomain compliance.",
-        "prNumber": 133894,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133894",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "kepLinks": [
-          "KEP-5073"
-        ]
-      },
-      {
-        "description": "Changed `WaitForNamedCacheSync` to `WaitForNamedCacheSyncWithContext`.",
-        "prNumber": 133904,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133904",
-        "author": "aditigupta96",
-        "sigs": [
-          "Api Machinery",
-          "Apps",
-          "Auth",
-          "Network"
-        ]
-      },
-      {
-        "description": "Added support for validating UUID format.",
-        "prNumber": 133948,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/133948",
-        "author": "lalitc375",
-        "sigs": [
-          "Api Machinery"
-        ],
-        "kepLinks": [
-          "KEP-5073"
         ]
       },
       {
@@ -5350,60 +5368,21 @@
       "reason": "cgroup v2 is the modern standard",
       "replacement": "Upgrade nodes to cgroup v2",
       "removalTarget": "1.35",
-      "deprecatedIn": "1.31",
-      "enrichment": {
-        "summary": "Support for cgroup v1 is being deprecated in favor of the modern cgroup v2 standard.",
-        "impact": "Node operators must transition nodes to cgroup v2; workloads running on nodes using cgroup v1 may experience failures if the transition is not completed before the deprecation takes effect.",
-        "migrationSteps": [
-          "Verify that the underlying operating system and kernel support cgroup v2.",
-          "Update node configuration (e.g., kubelet config) to use cgroupDriver: \"systemd\" and set the appropriate cgroup version settings.",
-          "Reboot nodes to enable cgroup v2, ensuring that the kubelet starts with the cgroupv2 flag or appropriate configuration.",
-          "Validate that all workloads operate correctly under cgroup v2 using monitoring and testing.",
-          "Remove any legacy cgroup v1 configuration or flags from node and kubelet settings."
-        ],
-        "urgency": "plan-now",
-        "affectedAPIs": []
-      }
+      "deprecatedIn": "1.31"
     },
     {
       "item": "ipvs mode in kube-proxy",
       "reason": "Maintenance burden and technical debt",
       "replacement": "nftables mode",
       "removalTarget": "future",
-      "deprecatedIn": "1.35",
-      "enrichment": {
-        "summary": "The ipvs mode in kube\u2011proxy is being deprecated due to maintenance burden and technical debt, and will be replaced by the nftables mode.",
-        "impact": "Clusters that currently run kube\u2011proxy in ipvs mode must transition to nftables mode; failure to do so may result in kube\u2011proxy failing to start or degraded service routing when ipvs support is removed.",
-        "migrationSteps": [
-          "Update the kube-proxy configuration (ConfigMap or command\u2011line flags) to set mode: \"nftables\" instead of \"ipvs\".",
-          "Ensure the kernel modules required for nftables are loaded and that the underlying OS supports nftables.",
-          "Remove any ipvs\u2011specific settings or modules from the nodes.",
-          "Redeploy or restart kube\u2011proxy to apply the new configuration.",
-          "Validate network routing and service load\u2011balancing behavior after the switch."
-        ],
-        "urgency": "plan-now",
-        "affectedAPIs": []
-      }
+      "deprecatedIn": "1.35"
     },
     {
       "item": "containerd 1.x support",
       "reason": "EOL alignment with containerd 1.7",
       "replacement": "containerd 2.0+",
       "removalTarget": "1.36",
-      "deprecatedIn": "1.35",
-      "enrichment": {
-        "summary": "Support for containerd 1.x is being deprecated to align with the end\u2011of\u2011life of containerd\u202f1.7; users should move to containerd\u202f2.0+.",
-        "impact": "Node operators must upgrade the container runtime; clusters still using containerd\u202f1.x may face node startup failures or lack of support once the deprecation takes effect, potentially impacting all workloads running on those nodes.",
-        "migrationSteps": [
-          "Plan and schedule an upgrade of the container runtime on all nodes to containerd\u202f2.0 or later.",
-          "Update the kubelet CRI configuration (or systemd service) to point to the new containerd binary and socket path if changed.",
-          "Verify that the new containerd version is compatible with your Kubernetes version and any runtime extensions.",
-          "Perform a rolling upgrade of nodes, monitoring pod health and logs for any compatibility issues.",
-          "Remove legacy containerd\u202f1.x binaries and configuration after successful migration."
-        ],
-        "urgency": "plan-now",
-        "affectedAPIs": []
-      }
+      "deprecatedIn": "1.35"
     }
   ],
   "removals": [

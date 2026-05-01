@@ -1,0 +1,15 @@
+title: Memory QoS
+kep-number: 2570
+authors:
+  - "@xiaoxubeii"
+owning-sig: sig-node
+status: implementable
+stage: alpha
+latest-milestone: "v1.27"
+milestone:
+  alpha: "v1.27"
+feature-gates:
+  - name: MemoryQoS
+    components:
+      - kubelet
+disable-supported: true

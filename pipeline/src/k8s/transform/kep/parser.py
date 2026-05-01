@@ -50,6 +50,7 @@ features = extract_features_for_version("1.33")
 ```
 """
 
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -57,11 +58,27 @@ from typing import Any
 
 import yaml
 
-from ...core.config import K8S_VERSIONS, OUTPUT_DIR, REPOS_DIR
+from ...core.config import CACHE_DIR, K8S_VERSIONS, OUTPUT_DIR, REPOS_DIR
+
+
+class _StringDateSafeLoader(yaml.SafeLoader):
+    """A SafeLoader that keeps timestamp-like strings as strings.
+
+    Prevents the yaml date parser from raising on invalid kep.yaml dates
+    (e.g. `creation-date: 2023-14-05` — month out of range). We never read
+    those date fields anyway.
+    """
+
+
+_StringDateSafeLoader.add_constructor(
+    "tag:yaml.org,2002:timestamp",
+    yaml.constructor.SafeConstructor.construct_yaml_str,
+)
 
 ENHANCEMENTS_REPO = REPOS_DIR / "enhancements"
 KEPS_DIR = ENHANCEMENTS_REPO / "keps"
 RELEASES_DIR = OUTPUT_DIR / "releases"
+PR_CACHE_DIR = CACHE_DIR / "github" / "prs"
 
 # Cache for loaded release features
 _release_features_cache: dict[str, set[str]] = {}
@@ -185,11 +202,15 @@ def is_template_title(title: str) -> bool:
     return any(indicator in title_lower for indicator in template_indicators)
 
 
-def parse_kep_yaml(kep_path: Path) -> KepMetadata | None:
-    """Parse a kep.yaml file and extract metadata."""
+def parse_kep_yaml(kep_path: Path, keps_root: Path | None = None) -> KepMetadata | None:
+    """Parse a kep.yaml file and extract metadata.
+
+    `keps_root` overrides KEPS_DIR for computing the relative kep_path. Useful
+    for tests that supply fixture kep.yaml files outside the real repo.
+    """
     try:
         with open(kep_path) as f:
-            data = yaml.safe_load(f)
+            data = yaml.load(f, Loader=_StringDateSafeLoader)
 
         if not data or not isinstance(data, dict):
             return None
@@ -221,7 +242,8 @@ def parse_kep_yaml(kep_path: Path) -> KepMetadata | None:
         # Build kep_path from file location
         # e.g., /path/to/keps/sig-node/753-sidecar-containers/kep.yaml
         # -> sig-node/753-sidecar-containers
-        rel_path = kep_path.parent.relative_to(KEPS_DIR)
+        root = keps_root or KEPS_DIR
+        rel_path = kep_path.parent.relative_to(root)
         kep_path_str = str(rel_path)
 
         return KepMetadata(
@@ -388,34 +410,161 @@ def kep_to_feature(kep: KepMetadata, stage: str, target_version: str | None = No
     )
 
 
-def extract_features_for_version(version: str) -> list[Feature]:
-    """
-    Extract all features that graduated in a specific K8s version.
+def _extract_keps_from_release_notes(release_notes_path: Path) -> set[str]:
+    """KEPs referenced via the structured `documentation: [{type: KEP, ...}]`
+    field in upstream release-notes.json. Skips do_not_publish entries."""
+    if not release_notes_path.exists():
+        return set()
+    with open(release_notes_path) as f:
+        notes = json.load(f)
+    keps: set[str] = set()
+    for entry in notes.values():
+        if not isinstance(entry, dict) or entry.get("do_not_publish"):
+            continue
+        for doc in entry.get("documentation", []) or []:
+            if not isinstance(doc, dict) or doc.get("type") != "KEP":
+                continue
+            last = doc.get("url", "").rstrip("/").split("/")[-1]
+            if last.isdigit():
+                keps.add(f"KEP-{last}")
+    return keps
 
-    Scans kep.yaml files and finds KEPs where any milestone matches the version.
+
+# Only PRs of these kinds can anchor a KEP via the body-mention signal.
+# Bug fixes / cleanups / tests that mention a KEP in their body are not
+# "feature work" — they shouldn't make the KEP show up as a release feature.
+_FEATURE_PR_KINDS = {"feature", "api-change", "deprecation"}
+
+
+def _extract_keps_from_pr_cache(release_notes_path: Path, pr_cache_dir: Path) -> set[str]:
+    """KEPs found in PR bodies (via `parsed.related_keps` in cached PR JSON).
+
+    Only PRs whose upstream `kinds` include feature/api-change/deprecation
+    are considered. A bug-fix PR mentioning a KEP doesn't anchor a feature.
     """
+    if not release_notes_path.exists() or not pr_cache_dir.exists():
+        return set()
+    with open(release_notes_path) as f:
+        notes = json.load(f)
+    keps: set[str] = set()
+    for entry in notes.values():
+        if not isinstance(entry, dict) or entry.get("do_not_publish"):
+            continue
+        kinds = {k.lower() for k in entry.get("kinds", []) if isinstance(k, str)}
+        if not (kinds & _FEATURE_PR_KINDS):
+            continue
+        pr_num = entry.get("pr_number")
+        if not pr_num:
+            continue
+        cache_file = pr_cache_dir / f"{pr_num}.json"
+        if not cache_file.exists():
+            continue
+        try:
+            with open(cache_file) as f:
+                pr = json.load(f)
+        except Exception:
+            continue
+        for kep in pr.get("parsed", {}).get("related_keps", []) or []:
+            if isinstance(kep, str) and kep.startswith("KEP-"):
+                keps.add(kep)
+    return keps
+
+
+def _version_tuple(v: str) -> tuple[int, ...] | None:
+    """Parse '1.34' -> (1, 34). Returns None for non-numeric strings (e.g. '1.x')."""
+    try:
+        return tuple(int(p) for p in v.split("."))
+    except (ValueError, AttributeError):
+        return None
+
+
+def _carry_forward_stage(meta: KepMetadata, version: str) -> str | None:
+    """Pick the most recent earlier milestone stage at or before `version`."""
+    candidates: list[tuple[str, str]] = []
+    if meta.milestone_alpha:
+        candidates.append(("alpha", meta.milestone_alpha))
+    if meta.milestone_beta:
+        candidates.append(("beta", meta.milestone_beta))
+    if meta.milestone_stable:
+        candidates.append(("stable", meta.milestone_stable))
+
+    # Filter to milestones at or before `version`, dropping malformed entries.
+    target = _version_tuple(version)
+    if target is None:
+        return None
+    eligible: list[tuple[str, str, tuple[int, ...]]] = []
+    for stage, milestone in candidates:
+        m = _version_tuple(milestone)
+        if m is None:
+            continue
+        if m <= target:
+            eligible.append((stage, milestone, m))
+    if not eligible:
+        return None
+
+    stage_order = {"alpha": 0, "beta": 1, "stable": 2}
+    # Latest version wins; tie-break by stage order (stable > beta > alpha).
+    eligible.sort(key=lambda x: (x[2], stage_order[x[0]]), reverse=True)
+    return eligible[0][0]
+
+
+def extract_features_for_version(version: str) -> list[Feature]:
+    """Extract features for a specific K8s version.
+
+    A KEP is in version X if any of:
+    - its kep.yaml has a milestone equal to X, OR
+    - upstream release-notes for X has a PR with a structured KEP doc link, OR
+    - any PR's body (cached, parsed `related_keps`) references the KEP.
+
+    Stage:
+    - If kep.yaml has a milestone explicitly for X, use that.
+    - Else carry forward the most recent earlier milestone stage.
+    """
+    from ...input.upstream_stager import get_release_notes_path
+
     log(f"\n[KEP] Extracting features for Kubernetes {version}")
 
     all_keps = scan_all_keps()
+    keps_by_id = {f"KEP-{k.kep_number}": k for k in all_keps}
     log(f"  [OK] Found {len(all_keps)} KEPs in enhancements repo")
 
-    features = []
-    by_stage = {"alpha": 0, "beta": 0, "stable": 0}
+    release_notes_path = get_release_notes_path(version)
+    upstream_keps = _extract_keps_from_release_notes(release_notes_path)
+    pr_body_keps = _extract_keps_from_pr_cache(release_notes_path, PR_CACHE_DIR)
 
-    for kep in all_keps:
-        stage = get_stage_for_version(kep, version)
-        if stage:
-            feature = kep_to_feature(kep, stage, target_version=version)
-            features.append(feature)
-            by_stage[stage] += 1
+    yaml_keps_in_version: set[str] = set()
+    for kep_id, meta in keps_by_id.items():
+        if version in (meta.milestone_alpha, meta.milestone_beta, meta.milestone_stable):
+            yaml_keps_in_version.add(kep_id)
+
+    external_signal = (upstream_keps | pr_body_keps) & set(keps_by_id)
+    in_version = yaml_keps_in_version | external_signal
+
+    features: list[Feature] = []
+    by_stage = {"alpha": 0, "beta": 0, "stable": 0}
+    for kep_id in sorted(in_version):
+        meta = keps_by_id[kep_id]
+        if version == meta.milestone_stable:
+            stage = "stable"
+        elif version == meta.milestone_beta:
+            stage = "beta"
+        elif version == meta.milestone_alpha:
+            stage = "alpha"
+        else:
+            stage = _carry_forward_stage(meta, version)
+            if stage is None:
+                continue
+        feature = kep_to_feature(meta, stage, target_version=version)
+        features.append(feature)
+        by_stage[stage] += 1
 
     log(f"  [OK] Found {len(features)} features for {version}")
     log(f"       Alpha: {by_stage['alpha']}, Beta: {by_stage['beta']}, Stable: {by_stage['stable']}")
+    if external_signal - yaml_keps_in_version:
+        log(f"       (anchored only by upstream/PR signal: {len(external_signal - yaml_keps_in_version)})")
 
-    # Sort by stage (stable first) then by KEP number
     stage_order = {"stable": 0, "beta": 1, "alpha": 2}
     features.sort(key=lambda f: (stage_order.get(f.stage, 3), f.kep))
-
     return features
 
 

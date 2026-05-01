@@ -1,0 +1,14 @@
+{
+  "500001": {
+    "text": "User Namespaces graduates to GA.",
+    "pr_number": 500001,
+    "kinds": ["feature"],
+    "sigs": ["node"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/127"
+      }
+    ]
+  }
+}

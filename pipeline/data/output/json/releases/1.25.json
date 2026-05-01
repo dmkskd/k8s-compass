@@ -1,14 +1,14 @@
 {
   "version": "1.25",
   "codename": "Combiner",
-  "description": "Kubernetes 1.25 'Combiner' brings 40 enhancements with the removal of PodSecurityPolicy in favor of Pod Security Admission. Ephemeral containers graduate to GA for debugging, and cgroups v2 support improves resource management. Key features include user namespaces alpha, CSI migration GA, and network policy status.",
+  "description": "Kubernetes 1.25 'Combiner' \ud83e\udd1d celebrates the combined force of contributors working together. This release unites 40 enhancements including the historic removal of PodSecurityPolicy (replaced by Pod Security Admission), ephemeral containers graduating to GA for live debugging, and cgroups v2 support for modern resource management. User namespaces enter alpha, CSI migration reaches GA, and network policy gains status reporting. Together, we build stronger.",
   "releaseDate": "2022-08-23",
   "endOfLifeDate": "2023-10-28",
   "summary": {
-    "total": 41,
-    "stable": 15,
-    "beta": 12,
-    "alpha": 14
+    "total": 46,
+    "stable": 16,
+    "beta": 13,
+    "alpha": 17
   },
   "themes": [
     "Security",
@@ -24,20 +24,7 @@
       "author": "ialidzhikov",
       "sigs": [
         "Auth"
-      ],
-      "enrichment": {
-        "title": "Remove --service-account-api-audiences flag",
-        "summary": "The API server's deprecated `--service-account-api-audiences` flag has been removed; replace it with `--api-audiences`.",
-        "action": "Update the API server startup configuration (e.g., static pod manifest or kubeadm config) to replace `--service-account-api-audiences` with `--api-audiences`.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Deprecated beta APIs scheduled for removal in 1.25 are no longer served. See https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-25 for more information.",
@@ -48,18 +35,7 @@
         "Api Machinery",
         "Instrumentation",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Removal of deprecated beta APIs in v1.25",
-        "summary": "All beta APIs deprecated for removal in Kubernetes 1.25 are no longer served, causing calls to those versions to fail.",
-        "action": "Identify any manifests, controllers, or custom code that reference beta APIs scheduled for removal in v1.25 and update them to the corresponding stable (GA) API versions.",
-        "severity": "critical",
-        "affectedComponents": [
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "End-to-end testing has been migrated from Ginkgo v1 to v2.\n\nWhen running test/e2e via the Ginkgo CLI, the v2 CLI must be used and `-timeout=24h` (or some other, suitable value) must be passed because the default timeout was reduced from 24h to 1h. When running it via `go test`, the corresponding `-args` parameter is `-ginkgo.timeout=24h`. To build the CLI in the Kubernetes repo, use `make all WHAT=github.com/onsi/ginkgo/v2/ginkgo`.\nGinkgo V2 doesn't accept go test's `-parallel` flags to parallelize Ginkgo specs, please switch to use `ginkgo -p` or `ginkgo -procs=N` instead.",
@@ -83,16 +59,7 @@
         "Release",
         "Architecture",
         "Cloud Provider"
-      ],
-      "enrichment": {
-        "title": "Migrate e2e tests to Ginkgo v2",
-        "summary": "End\u2011to\u2011end testing has moved from Ginkgo v1 to v2, requiring the new CLI, explicit timeout flags, and updated parallel execution flags.",
-        "action": "Run e2e tests with the Ginkgo v2 binary (e.g., `make all WHAT=github.com/onsi/ginkgo/v2/ginkgo`), specify a suitable timeout such as `-timeout=24h` (or `-ginkgo.timeout=24h` with `go test`), and replace `-parallel` flags with `-p` or `-procs=N`.",
-        "severity": "medium",
-        "affectedComponents": [],
-        "affectedWorkloads": [],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Support for the alpha seccomp annotations `seccomp.security.alpha.kubernetes.io/pod` and `container.seccomp.security.alpha.kubernetes.io`, deprecated since v1.19, was partially removed. Kubelets no longer support the annotations, use of the annotations in static pods is no longer supported, and the seccomp annotations are no longer auto-populated when pods with seccomp fields are created. Auto-population of the seccomp fields from the annotations is planned to be removed in 1.27. Pods  should use the corresponding pod or container `securityContext.seccompProfile` field instead.",
@@ -104,21 +71,7 @@
         "Auth",
         "Apps",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Removal of alpha seccomp annotations",
-        "summary": "Alpha seccomp annotations (`seccomp.security.alpha.kubernetes.io/pod` and `container.seccomp.security.alpha.kubernetes.io`) are partially removed; kubelets no longer honor them and they are not auto\u2011populated. Use `securityContext.seccompProfile` instead.",
-        "action": "Delete any `seccomp.security.alpha.kubernetes.io/*` annotations from pod and static\u2011pod manifests and set the desired seccomp profile via the `securityContext.seccompProfile` field on pods/containers. Update tooling that relies on auto\u2011population of seccomp fields from these annotations.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "static pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "There is a new OCI image registry (`registry.k8s.io`) that can be used to pull Kubernetes images. The old registry (`k8s.gcr.io`) will continue to be supported for the foreseeable future, but the new name should perform better because it frontends equivalent mirrors in other clouds.  Please point your clusters to the new registry going forward. \\n\\nAdmission/Policy integrations that have an allowlist of registries need to include `registry.k8s.io` alongside `k8s.gcr.io`.\\nAir-gapped environments and image garbage-collection configurations will need to update to pre-pull and preserve required images under `registry.k8s.io` as well as `k8s.gcr.io`.",
@@ -139,20 +92,7 @@
         "Architecture",
         "Cloud Provider",
         "K8S Infra"
-      ],
-      "enrichment": {
-        "title": "Introduce registry.k8s.io for Kubernetes images",
-        "summary": "A new OCI image registry `registry.k8s.io` is now available; clusters should start pulling Kubernetes images from it and update any registry allowlists or air\u2011gap pre\u2011pull configurations.",
-        "action": "Configure your cluster and tooling to pull Kubernetes images from `registry.k8s.io` (in addition to `k8s.gcr.io`), add `registry.k8s.io` to any admission or policy registry allowlists, and update air\u2011gapped or garbage\u2011collection settings to include this registry.",
-        "severity": "medium",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "No action required; No API/CLI changed; Add new Windows Image Support",
@@ -162,16 +102,7 @@
       "sigs": [
         "Windows",
         "Cloud Provider"
-      ],
-      "enrichment": {
-        "title": "Add new Windows image support",
-        "summary": "A new Windows image support has been added without any API or CLI changes; no user action is needed.",
-        "action": "No action required.",
-        "severity": "low",
-        "affectedComponents": [],
-        "affectedWorkloads": [],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "Encrypted data with DEK using AES-GCM instead of AES-CBC for kms data encryption. No user action required. Reads with AES-GCM and AES-CBC will continue to be allowed.",
@@ -182,18 +113,7 @@
         "Api Machinery",
         "Auth",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "KMS DEK encryption switched to AES\u2011GCM",
-        "summary": "KMS data encryption now encrypts DEKs using AES\u2011GCM instead of AES\u2011CBC, while still accepting reads of both AES\u2011GCM and AES\u2011CBC encrypted data.",
-        "action": "No user action required.",
-        "severity": "low",
-        "affectedComponents": [
-          "kube-apiserver"
-        ],
-        "affectedWorkloads": [],
-        "breakingChange": false
-      }
+      ]
     },
     {
       "description": "vSphere releases less than 7.0u2 are not supported for in-tree vSphere volume  as of Kubernetes v1.25. Please consider upgrading vSphere (both ESXi and vCenter)  to 7.0u2 or above.",
@@ -202,21 +122,7 @@
       "author": "divyenpatel",
       "sigs": [
         "Cloud Provider"
-      ],
-      "enrichment": {
-        "title": "vSphere <7.0u2 no longer supported for in\u2011tree volumes",
-        "summary": "In\u2011tree vSphere volume support is dropped for vSphere releases older than 7.0u2 starting with Kubernetes 1.25; clusters must run vSphere 7.0u2 or newer.",
-        "action": "Upgrade your ESXi and vCenter installations to vSphere 7.0u2 or later before upgrading to Kubernetes 1.25, or migrate to the CSI driver for vSphere volumes.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "cloud-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "The intree volume plugin flocker support was completely removed from Kubernetes.",
@@ -228,21 +134,7 @@
         "Storage",
         "Node",
         "Api Machinery"
-      ],
-      "enrichment": {
-        "title": "Removal of in\u2011tree flocker volume plugin",
-        "summary": "The in\u2011tree flocker volume plugin has been completely removed from Kubernetes; any flocker volumes will no longer work.",
-        "action": "Stop using the flocker in\u2011tree volume plugin and migrate workloads to a supported CSI driver or alternative storage solution before upgrading.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "The intree volume plugin quobyte support has been completely removed from Kubernetes.",
@@ -254,21 +146,7 @@
         "Storage",
         "Node",
         "Api Machinery"
-      ],
-      "enrichment": {
-        "title": "Removal of in\u2011tree Quobyte volume plugin",
-        "summary": "The in\u2011tree Quobyte volume plugin has been completely removed from Kubernetes; Quobyte volumes will no longer function.",
-        "action": "Stop using the Quobyte in\u2011tree volume plugin and migrate any workloads to a supported CSI driver or alternative storage solution before upgrading.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "The intree volume plugin storageos support has been completely removed from Kubernetes.",
@@ -280,21 +158,7 @@
         "Storage",
         "Node",
         "Api Machinery"
-      ],
-      "enrichment": {
-        "title": "Removal of in\u2011tree StorageOS volume plugin",
-        "summary": "The in\u2011tree StorageOS volume plugin has been completely removed from Kubernetes; any StorageOS volumes will stop working.",
-        "action": "Cease using the StorageOS in\u2011tree volume plugin and migrate affected workloads to the StorageOS CSI driver or another supported storage solution before upgrading.",
-        "severity": "high",
-        "affectedComponents": [
-          "kubelet",
-          "kube-controller-manager"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     }
   ],
   "securityInformation": [
@@ -546,6 +410,25 @@
         "alpha": "1.18",
         "beta": "1.22",
         "stable": "1.25"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-2436",
+      "kepPath": "sig-cloud-provider/2436-controller-manager-leader-migration",
+      "title": "Controller Manager Leader Migration",
+      "stage": "stable",
+      "sig": "Cloud Provider",
+      "category": "Cloud",
+      "description": "",
+      "impact": null,
+      "featureGate": "ControllerManagerLeaderMigration",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.22",
+        "stable": "1.24"
       }
     },
     {
@@ -564,7 +447,8 @@
         "alpha": "1.22",
         "beta": "1.23",
         "stable": "1.25"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-2599",
@@ -600,7 +484,8 @@
         "alpha": "1.16",
         "beta": "1.23",
         "stable": "1.25"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-2802",
@@ -670,7 +555,8 @@
         "alpha": "1.8",
         "beta": "1.10",
         "stable": "1.25"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-596",
@@ -768,6 +654,27 @@
       }
     },
     {
+      "kep": "KEP-2238",
+      "kepPath": "sig-node/2238-liveness-probe-grace-period",
+      "title": "Liveness Probe Grace Period",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ProbeTerminationGracePeriod",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.21",
+        "beta": "1.22",
+        "stable": "1.28",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-2413",
       "kepPath": "sig-node/2413-seccomp-by-default",
       "title": "Seccomp by default",
@@ -786,7 +693,8 @@
         "verified": [
           "stable"
         ]
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-2578",
@@ -974,6 +882,26 @@
       }
     },
     {
+      "kep": "KEP-1029",
+      "kepPath": "sig-node/1029-ephemeral-storage-quotas",
+      "title": "Quotas for Ephemeral Storage",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "LocalStorageCapacityIsolationFSQuotaMonitoring",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.15",
+        "beta": "1.31",
+        "verified": [
+          "beta"
+        ]
+      }
+    },
+    {
       "kep": "KEP-127",
       "kepPath": "sig-node/127-user-namespaces",
       "title": "Support User Namespaces",
@@ -988,8 +916,32 @@
       "history": {
         "alpha": "1.25",
         "beta": "1.35",
+        "stable": "1.36",
         "verified": [
-          "beta"
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-1440",
+      "kepPath": "sig-cli/1440-kubectl-events",
+      "title": "Kubectl events",
+      "stage": "alpha",
+      "sig": "Cli",
+      "category": "CLI",
+      "description": "",
+      "impact": null,
+      "featureGate": null,
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.23",
+        "beta": "1.26",
+        "stable": "1.28",
+        "verified": [
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1178,11 +1130,9 @@
         "alpha": "1.25",
         "beta": "1.27",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -1271,6 +1221,27 @@
         "verified": [
           "beta",
           "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-961",
+      "kepPath": "sig-apps/961-maxunavailable-for-statefulset",
+      "title": "Implement maxUnavailable for StatefulSets",
+      "stage": "alpha",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "MaxUnavailableStatefulSet",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.35",
+        "stable": "TBD",
+        "verified": [
+          "beta"
         ]
       }
     }
@@ -1450,32 +1421,6 @@
               "kind/bug",
               "sig/storage",
               "lifecycle/frozen"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "None",
-        "prNumber": 109101,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/109101",
-        "author": "Shubham82",
-        "sigs": [
-          "Cli"
-        ],
-        "relatedIssues": [
-          108604
-        ],
-        "issueContext": [
-          {
-            "number": 108604,
-            "title": "kubectl create role command cannot recognize resource rs.extensions",
-            "body": "### What happened?\n\ncreate clusterrole command with resource value `rs.extensions` not work.\r\nI got this example command from the help note.\r\n\r\n```\r\n#kubectl create clusterrole -h\r\nCreate a cluster role.\r\n\r\nExamples:\r\n  # Create a cluster role named \"pod-reader\" that allows user to perform \"get\", \"watch\" and \"list\" on pods\r\n  kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods\r\n\r\n  # Create a cluster role named \"pod-reader\" with ResourceName specified\r\n  kubectl create clusterrole pod-reader --verb=get --resource=pods --resource-name=readablepod\r\n--resource-name=anotherpod\r\n\r\n  # Create a cluster role named \"foo\" with API Group specified\r\n  kubectl create clusterrole foo --verb=get,list,watch --resource=rs.extensions\r\n.....\r\n```\r\n\r\nBut got error with the example command.\r\n\r\n```\r\n#  kubectl create clusterrole foo --verb=get,list,watch --resource=rs.extensions\r\nthe server doesn't have a resource type \"rs\" in group \"extensions\"\r\n#\r\n```\r\n\n\n### What did you expect to happen?\n\nI think it should work like `rs/extensions`\r\n\r\n```\r\n# kubectl create clusterrole foo --verb=get,list,watch --resource=rs/extensions\r\nclusterrole.rbac.authorization.k8s.io/foo created\r\n#\r\n```\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nyes.\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\nClient Version: version.Info{Major:\"1\", Minor:\"23\", GitVersion:\"v1.23.4\", GitCommit:\"e6c093d87ea4cbb530a7b2ae91e54c0842d8308a\", GitTreeState:\"clean\", BuildDate:\"2022-02-16T12:38:05Z\", GoVersion:\"go1.17.7\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\nServer Version: version.Info{Major:\"1\", Minor:\"23\", GitVersion:\"v1.23.4\", GitCommit:\"e6c093d87ea4cbb530a7b2ae91e54c0842d8308a\", GitTreeState:\"clean\", BuildDate:\"2022-02-16T12:32:02Z\", GoVersion:\"go1.17.7\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\n```\r\n\r\n</details>\r\n\n\n### Cloud provider\n\n<details>\r\nno cloud env, just vm\r\n</details>\r\n\n\n### OS version\n\n<deta",
-            "labels": [
-              "kind/bug",
-              "kind/documentation",
-              "sig/auth",
-              "sig/cli",
-              "triage/accepted"
             ]
           }
         ]
@@ -1816,15 +1761,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 109809,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/109809",
-        "author": "areller",
-        "sigs": [
-          "Apps"
         ]
       },
       {
@@ -2806,31 +2742,6 @@
         "userFacingChange": "Modify the signing/approving controller to tolerate either set of usages for kubelet client and serving certificates without key encipherment"
       },
       {
-        "description": "\"NONE\"",
-        "prNumber": 111141,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111141",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Node",
-          "Instrumentation"
-        ],
-        "relatedIssues": [
-          111136
-        ],
-        "issueContext": [
-          {
-            "number": 111136,
-            "title": "kubelet panic when accessing metrics/resource endpoint",
-            "body": "### What happened?\n\nkubelet panic when accessing metrics/resource endpoint\r\n\r\nkubelet log\r\n```\r\npanic: runtime error: invalid memory address or nil pointer dereference\r\n[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x20de3cf]\r\n\r\ngoroutine 1055 [running]:\r\nk8s.io/kubernetes/pkg/kubelet/metrics/collectors.(*resourceMetricsCollector).collectContainerCPUMetrics(0xc000df87c0, 0xc000f34ae0, 0xc0008f3340, 0x1b, 0xc000e80334, 0xb, 0xc0008f3360, 0x20, 0x1ce2f6d0, 0xeda4efe4f, ...)\r\n        /go/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/pkg/kubelet/metrics/collectors/resource_metrics.go:178 +0xcf\r\nk8s.io/kubernetes/pkg/kubelet/metrics/collectors.(*resourceMetricsCollector).CollectWithStability(0xc000df87c0, 0xc000f34ae0)\r\n        /go/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/pkg/kubelet/metrics/collectors/resource_metrics.go:136 +0x318\r\nk8s.io/kubernetes/vendor/k8s.io/component-base/metrics.(*BaseStableCollector).Collect.func1(0xc000df87c0, 0xc000f34ae0)\r\n        /go/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/vendor/k8s.io/component-base/metrics/collector.go:83 +0x3e\r\ncreated by k8s.io/kubernetes/vendor/k8s.io/component-base/metrics.(*BaseStableCollector).Collect\r\n        /go/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/vendor/k8s.io/component-base/metrics/collector.go:82 +0x6b\r\n\r\n```\n\n### What did you expect to happen?\n\nkubelet works fine\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\n access metrics/resource endpoint of kubelet\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\n# paste output here\r\n kubectl version\r\nClient Version: version.Info{Major:\"1\", Minor:\"22\", GitVersion:\"v1.22.3\", GitCommit:\"......\", GitTreeState:\"archive\", BuildDate:\".....\", GoVersion:\"go1.16.9\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\nServer Version: version.Info{Major:\"1\", Minor:\"22\", GitVersion:\"v1.",
-            "labels": [
-              "kind/bug",
-              "sig/node",
-              "needs-triage"
-            ]
-          }
-        ]
-      },
-      {
         "description": "Fixed the GCE firewall update when the destination IPs are changing so that firewalls reflect the IP updates of the LBs.",
         "prNumber": 111186,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/111186",
@@ -2897,15 +2808,6 @@
         "sigs": [
           "Api Machinery",
           "Auth"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 111486,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111486",
-        "author": "peizhouyu",
-        "sigs": [
-          "Cli"
         ]
       },
       {
@@ -3754,30 +3656,6 @@
         "kepLinks": [
           "KEP-1990",
           "KEP-2008"
-        ]
-      },
-      {
-        "description": "No",
-        "prNumber": 105126,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/105126",
-        "author": "sallyom",
-        "sigs": [
-          "Scheduling",
-          "Storage",
-          "Node",
-          "Api Machinery",
-          "Cluster Lifecycle",
-          "Apps",
-          "Cli",
-          "Instrumentation",
-          "Testing",
-          "Release",
-          "Architecture",
-          "Cloud Provider"
-        ],
-        "kepLinks": [
-          "KEP-2831",
-          "KEP-2832"
         ]
       },
       {
@@ -4651,33 +4529,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 110372,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/110372",
-        "author": "lokichoggio",
-        "sigs": [
-          "Scheduling"
-        ]
-      },
-      {
-        "description": "No",
-        "prNumber": 110394,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/110394",
-        "author": "Abirdcfly",
-        "sigs": [
-          "Cli"
-        ]
-      },
-      {
-        "description": "\"NONE\"",
-        "prNumber": 110506,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/110506",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Node"
-        ]
-      },
-      {
         "description": "Kubelet: Silenced flag output on errors.",
         "prNumber": 110728,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/110728",
@@ -4789,25 +4640,6 @@
         "userFacingChange": "The command line flag `enable-taint-manager` for kube-controller-manager is deprecated and will be removed in 1.26.\r\nThe feature that it supports, taint based eviction, is enabled by default and will continue to be implicitly enabled when the flag is removed."
       },
       {
-        "description": "\"NONE\"",
-        "prNumber": 111418,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111418",
-        "author": "muyangren2",
-        "sigs": [
-          "Node"
-        ]
-      },
-      {
-        "description": "\"NONE\"",
-        "prNumber": 111419,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111419",
-        "author": "muyangren2",
-        "sigs": [
-          "Instrumentation",
-          "Architecture"
-        ]
-      },
-      {
         "description": "Added e2e test flag to specify which volume drivers should be installed. This  deprecated the ENABLE_STORAGE_GCE_PD_DRIVER environment variable.",
         "prNumber": 111481,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/111481",
@@ -4828,24 +4660,6 @@
         ]
       },
       {
-        "description": "\"NONE\"",
-        "prNumber": 111492,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111492",
-        "author": "muyangren2",
-        "sigs": [
-          "Cluster Lifecycle"
-        ]
-      },
-      {
-        "description": "\"NONE\"",
-        "prNumber": 111502,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111502",
-        "author": "muyangren2",
-        "sigs": [
-          "Cluster Lifecycle"
-        ]
-      },
-      {
         "description": "The kube-scheduler ComponentConfig v1beta2 is deprecated in v1.25.",
         "prNumber": 111547,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/111547",
@@ -4855,15 +4669,6 @@
         ],
         "kepLinks": [
           "https://github.com/kubernetes/enhancements/issues/785"
-        ]
-      },
-      {
-        "description": "\"NONE\"",
-        "prNumber": 111596,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111596",
-        "author": "muyangren2",
-        "sigs": [
-          "Cluster Lifecycle"
         ]
       },
       {
@@ -4904,64 +4709,9 @@
           "Api Machinery"
         ],
         "userFacingChange": "action required: intree volume plugin storageos support is been completely removed from Kubernetes."
-      },
-      {
-        "description": "\"NONE",
-        "prNumber": 111623,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/111623",
-        "author": "muyangren2",
-        "sigs": [
-          "Cluster Lifecycle"
-        ]
-      },
-      {
-        "description": "\"NONE\"",
-        "prNumber": 99685,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/99685",
-        "author": "yangjunmyfm192085",
-        "sigs": [
-          "Storage",
-          "Node",
-          "Cli",
-          "Testing"
-        ]
       }
     ],
     "documentation": [
-      {
-        "description": "NONE",
-        "prNumber": 108654,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/108654",
-        "author": "Shubham82",
-        "sigs": [
-          "Cli"
-        ],
-        "relatedIssues": [
-          108608
-        ],
-        "issueContext": [
-          {
-            "number": 108608,
-            "title": "kubectl create help implies a list of service accounts can be references in a clusterrolebinding",
-            "body": "### What happened?\n\nI'm not sure whether this is the documentation being unclear, or a bug with kubectl itself but I suspect the former.\r\n\r\nGiven this help page\r\n```bash\r\n$ kubectl create clusterrolebinding --help\r\nCreate a cluster role binding for a particular cluster role.\r\n# Omitted for brevity\r\n      --serviceaccount=[]: Service accounts to bind to the clusterrole, in the format <namespace>:<name>\r\n```\r\nI expected to be able to use\r\n```bash\r\n$ kubectl create clusterrolebinding pipelineSAs --clusterrole=view --serviceaccount=[\"ns1:pipeline\", \"ns2:pipeline\"]\r\n```\r\nInstead I got the following error\r\n```bash\r\n$ kubectl create clusterrolebinding pipelinesas --clusterrole=view --serviceaccount=[\"ns1:pipeline\", \"ns2:pipeline\"]\r\nerror: exactly one NAME is required, got 2\r\nSee 'kubectl create clusterrolebinding -h' for help and examples\r\n```\n\n### What did you expect to happen?\n\nTo get the same output as defining the flag twice\r\n\r\naka\r\n```bash\r\n$ kubectl create clusterrolebinding pipelinesas --clusterrole=view --serviceaccount=ns1:pipeline --serviceaccount=ns2:pipeline\r\nclusterrolebinding.rbac.authorization.k8s.io/pipelinesas created\r\n```\r\nand\r\n\r\n```bash\r\n$ kubectl create clusterrolebinding pipelineSAs --clusterrole=view --serviceaccount=[\"ns1:pipeline\", \"ns2:pipeline\"]\r\nclusterrolebinding.rbac.authorization.k8s.io/pipelinesas created\r\n```\r\nshould give the same output, or the help page shouldn't list `[]` as the parameter type for --serviceaccount\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\n```bash\r\nkubectl create ns ns1 \r\nkubectl create ns ns2\r\nkubectl --namespace ns1 create sa pipeline\r\nkubectl --namespace ns2 create sa pipeline\r\nkubectl create clusterrolebinding pipelineSAs --clusterrole=view --serviceaccount=[\"ns1:pipeline\", \"ns2:pipeline\"]\r\n```\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\nClient Version: version.Info{Major:\"1\", Minor:\"23\", GitVersion:\"v1.23.1\", GitCommit:\"86ec240af8cb",
-            "labels": [
-              "kind/documentation",
-              "sig/cli",
-              "triage/accepted"
-            ]
-          }
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 110183,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/110183",
-        "author": "lokichoggio",
-        "sigs": [
-          "Autoscaling",
-          "Apps"
-        ]
-      },
       {
         "description": "Optimization of kubectl Chinese translation",
         "prNumber": 110538,
@@ -4995,15 +4745,6 @@
               "triage/accepted"
             ]
           }
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 110756,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/110756",
-        "author": "lokichoggio",
-        "sigs": [
-          "Network"
         ]
       },
       {

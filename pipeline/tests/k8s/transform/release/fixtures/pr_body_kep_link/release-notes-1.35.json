@@ -1,0 +1,20 @@
+{
+  "134948": {
+    "text": "Promoted PodObservedGenerationTracking to GA.",
+    "pr_number": 134948,
+    "kinds": ["feature"],
+    "sigs": ["api-machinery", "apps"]
+  },
+  "134905": {
+    "text": "Defaults to 10 minutes when DRADeviceBindingConditions and DRAResourceClaimDeviceStatus are both enabled.",
+    "pr_number": 134905,
+    "kinds": ["feature"],
+    "sigs": ["node", "scheduling"]
+  },
+  "100100": {
+    "text": "An unrelated change with no KEP link anywhere.",
+    "pr_number": 100100,
+    "kinds": ["bug"],
+    "sigs": ["node"]
+  }
+}

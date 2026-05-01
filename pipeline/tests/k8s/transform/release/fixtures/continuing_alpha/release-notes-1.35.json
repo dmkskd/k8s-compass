@@ -1,0 +1,26 @@
+{
+  "134210": {
+    "text": "Updated ResourceQuota to count device class requests within a ResourceClaim as two additional quotas when the DRAExtendedResource feature is enabled.",
+    "pr_number": 134210,
+    "kinds": ["api-change"],
+    "sigs": ["api-machinery", "scheduling"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/5004"
+      }
+    ]
+  },
+  "134523": {
+    "text": "Added scheduler_resourceclaim_creates_total metric for DRAExtendedResource.",
+    "pr_number": 134523,
+    "kinds": ["feature"],
+    "sigs": ["scheduling"],
+    "documentation": [
+      {
+        "type": "KEP",
+        "url": "https://github.com/kubernetes/enhancements/issues/5004"
+      }
+    ]
+  }
+}

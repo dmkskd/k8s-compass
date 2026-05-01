@@ -1,14 +1,14 @@
 {
   "version": "1.32",
   "codename": "Penelope",
-  "description": "Kubernetes 1.32 'Penelope' celebrates the project's 10th anniversary with 44 enhancements. Key features include custom resource field selectors GA, memory manager GA for NUMA-aware allocation, and DRA structured parameters beta. This release also brings volume group snapshots to beta and improves scheduler performance with QueueingHint.",
+  "description": "Named for Penelope from The Odyssey, who wove for 10 years\u2014each night removing parts of what she'd done during the day. Like her, each Kubernetes release adds new features and removes others, constantly improving. 'Penelope' marks the project's 10th anniversary, honoring all who've roamed the cloud-native seas. Custom resource field selectors and memory manager reach GA, while DRA structured parameters move to beta.",
   "releaseDate": "2024-12-11",
   "endOfLifeDate": "2026-02-28",
   "summary": {
-    "total": 42,
-    "stable": 13,
-    "beta": 11,
-    "alpha": 18
+    "total": 52,
+    "stable": 14,
+    "beta": 16,
+    "alpha": 22
   },
   "themes": [
     "Resource Management",
@@ -26,22 +26,7 @@
         "Scheduling",
         "Storage",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Removal of Volume Limit Plugins from kube-scheduler",
-        "summary": "kube-scheduler removed AzureDiskLimits, CinderLimits, EBSLimits, and GCEPDLimits plugins; scheduler now uses CSI driver limits via CSINode.",
-        "action": "Remove AzureDiskLimits, CinderLimits, EBSLimits, and GCEPDLimits plugins from the scheduler config if they are explicitly enabled.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler",
-          "kubelet",
-          "CSI drivers"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Changed NodeToStatusMap from a map to a struct and exposed methods to access its entries. Added absentNodesStatus, which indicates the status of nodes absent in the map. \n\nFor developers of out-of-tree PostFilter plugins, ensure to update the usage of NodeToStatusMap. Additionally, NodeToStatusMap is planned to be renamed to NodeToStatusReader in the future.",
@@ -52,20 +37,7 @@
         "Node",
         "Scheduling",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "NodeToStatusMap changed to struct with new fields",
-        "summary": "NodeToStatusMap was changed from a map to a struct with new accessor methods and an absentNodesStatus field, requiring updates for out-of-tree PostFilter plugins.",
-        "action": "Update all usages of NodeToStatusMap in out-of-tree PostFilter plugins to use the new struct API and handle absentNodesStatus; note the future rename to NodeToStatusReader.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "ACTION REQUIRED for custom scheduler plugin developers:\n`PodEligibleToPreemptOthers` in the `preemption` interface gets `ctx` in the parameters.\nPlease change your plugins' implementation accordingly.",
@@ -74,20 +46,7 @@
       "author": "googs1025",
       "sigs": [
         "Scheduling"
-      ],
-      "enrichment": {
-        "title": "PodEligibleToPreemptOthers method adds ctx parameter",
-        "summary": "The preemption interface's PodEligibleToPreemptOthers method now includes a ctx parameter, requiring plugin updates.",
-        "action": "Modify custom scheduler plugins to implement PodEligibleToPreemptOthers with the new ctx parameter in its signature.",
-        "severity": "high",
-        "affectedComponents": [
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Fixed the bug of `InPlacePodVerticalScaling` state un-marshalling. State stored in `/var/lib/kubelet/pod_status_manager_state` now can always be read back after kubelet restart. Since the checkpoint format was changed to fix the issue, if you are using the feature `InPlacePodVerticalScaling`, please clean up the state file `/var/lib/kubelet/pod_status_manager_state` when upgrading the kubelet as failure to do it will lead to incompatible state formats and kubelet's failure to start.",
@@ -96,20 +55,7 @@
       "author": "yunwang0911",
       "sigs": [
         "Node"
-      ],
-      "enrichment": {
-        "title": "Clean pod_status_manager_state after kubelet upgrade",
-        "summary": "Fixed InPlacePodVerticalScaling state unmarshalling; checkpoint format changed, requiring removal of old state file to prevent kubelet start failures.",
-        "action": "After upgrading kubelet, delete /var/lib/kubelet/pod_status_manager_state if using InPlacePodVerticalScaling to avoid incompatible state format errors.",
-        "severity": "critical",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Removed all support for _classic_ dynamic resource allocation (DRA). The `DRAControlPlaneController` feature gate, formerly alpha, is no longer available. Kubernetes now only uses the _structured parameters_ model (also alpha) for allocating dynamic resources to Pods.\n\nIf and only if classic DRA was enabled in a cluster, remove all workloads (pods, app deployments, etc.) which depend on classic DRA and make sure that all PodSchedulingContext resources are gone before upgrading. PodSchedulingContext resources cannot be removed through the apiserver after an upgrade and workloads would not work properly.",
@@ -124,24 +70,7 @@
         "Node",
         "Scheduling",
         "Testing"
-      ],
-      "enrichment": {
-        "title": "Removal of classic DRA support; clean up workloads",
-        "summary": "Support for classic Dynamic Resource Allocation (DRA) and the DRAControlPlaneController feature gate have been removed; only structured parameters model remains.",
-        "action": "If classic DRA was enabled, delete all workloads that depend on it and ensure all PodSchedulingContext resources are removed before upgrading, as they cannot be deleted post-upgrade.",
-        "severity": "critical",
-        "affectedComponents": [
-          "kube-apiserver",
-          "kube-scheduler"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "deployments",
-          "statefulsets",
-          "daemonsets"
-        ],
-        "breakingChange": true
-      }
+      ]
     },
     {
       "description": "Added the ability to change the maximum backoff delay accrued between container restarts for a node for containers in `CrashLoopBackOff`. To set this for a node, turn on the feature gate `KubeletCrashLoopBackoffMax` and set the `CrashLoopBackOff.MaxContainerRestartPeriod ` field between `\"1s\"` and `\"300s\"` in your [kubelet config file](https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/).",
@@ -151,21 +80,7 @@
       "sigs": [
         "Api Machinery",
         "Node"
-      ],
-      "enrichment": {
-        "title": "Configurable CrashLoopBackOff max backoff",
-        "summary": "Introduced configurable max backoff delay for CrashLoopBackOff containers via KubeletCrashLoopBackoffMax feature gate and CrashLoopBackOff.MaxContainerRestartPeriod setting.",
-        "action": "Enable the KubeletCrashLoopBackoffMax feature gate and set CrashLoopBackOff.MaxContainerRestartPeriod (1s\u2011300s) in the kubelet config file to adjust the maximum restart backoff for CrashLoopBackOff containers.",
-        "severity": "low",
-        "affectedComponents": [
-          "kubelet"
-        ],
-        "affectedWorkloads": [
-          "pods",
-          "containers"
-        ],
-        "breakingChange": false
-      }
+      ]
     }
   ],
   "securityInformation": [
@@ -280,7 +195,8 @@
         "alpha": "1.23",
         "beta": "1.27",
         "stable": "1.32"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-1860",
@@ -316,6 +232,25 @@
         "alpha": "1.20",
         "beta": "1.22",
         "stable": "1.32"
+      },
+      "isHighlight": true
+    },
+    {
+      "kep": "KEP-2307",
+      "kepPath": "sig-apps/2307-job-tracking-without-lingering-pods",
+      "title": "Job tracking without lingering Pods",
+      "stage": "stable",
+      "sig": "Apps",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "JobTrackingWithFinalizers",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.22",
+        "beta": "1.23",
+        "stable": "1.26"
       }
     },
     {
@@ -334,7 +269,8 @@
         "alpha": "1.29",
         "beta": "1.30",
         "stable": "1.32"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-3545",
@@ -422,7 +358,8 @@
         "alpha": "1.29",
         "beta": "1.30",
         "stable": "1.32"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-4292",
@@ -458,7 +395,8 @@
         "alpha": "1.30",
         "beta": "1.31",
         "stable": "1.32"
-      }
+      },
+      "isHighlight": true
     },
     {
       "kep": "KEP-4420",
@@ -476,6 +414,27 @@
         "alpha": "1.30",
         "beta": "1.31",
         "stable": "1.32"
+      }
+    },
+    {
+      "kep": "KEP-1710",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "title": "Skip SELinux relabeling of volumes",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "SELinuxMountReadWriteOncePod",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.24",
+        "beta": "1.27",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -517,6 +476,27 @@
       }
     },
     {
+      "kep": "KEP-3331",
+      "kepPath": "sig-auth/3331-structured-authentication-configuration",
+      "title": "Structured authentication config",
+      "stage": "beta",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "StructuredAuthenticationConfiguration",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.30",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-3476",
       "kepPath": "sig-storage/3476-volume-group-snapshot",
       "title": "Volume Group Snapshot",
@@ -530,7 +510,11 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.27",
-        "beta": "1.32"
+        "beta": "1.32",
+        "stable": "1.36",
+        "verified": [
+          "stable"
+        ]
       }
     },
     {
@@ -549,6 +533,48 @@
         "alpha": "1.27",
         "beta": "1.32",
         "stable": "1.35",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3751",
+      "kepPath": "sig-storage/3751-volume-attributes-class",
+      "title": "Kubernetes VolumeAttributesClass and ModifyVolume",
+      "stage": "beta",
+      "sig": "Storage",
+      "category": "Storage",
+      "description": "",
+      "impact": null,
+      "featureGate": "VolumeAttributesClass",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.31",
+        "stable": "1.34",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3960",
+      "kepPath": "sig-node/3960-pod-lifecycle-sleep-action",
+      "title": "Pod lifecycle sleep action",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "PodLifecycleSleepAction",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
+        "beta": "1.30",
+        "stable": "1.34",
         "verified": [
           "stable"
         ]
@@ -702,6 +728,49 @@
       }
     },
     {
+      "kep": "KEP-753",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "title": "Sidecar Containers",
+      "stage": "beta",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "SidecarContainers",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.28",
+        "beta": "1.29",
+        "stable": "1.33",
+        "verified": [
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-1287",
+      "kepPath": "sig-node/1287-in-place-update-pod-resources",
+      "title": "In-place Update of Pod Resources",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "InPlacePodVerticalScaling",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.27",
+        "beta": "1.33",
+        "stable": "1.35",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-2862",
       "kepPath": "sig-node/2862-fine-grained-kubelet-authz",
       "title": "Fine grained Kubelet API authorization",
@@ -715,6 +784,44 @@
       "affectedFields": [],
       "history": {
         "alpha": "1.32",
+        "beta": "1.33",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
+      "kep": "KEP-3063",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "title": "dynamic resource allocation",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "DynamicResourceAllocation",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.26"
+      }
+    },
+    {
+      "kep": "KEP-3257",
+      "kepPath": "sig-auth/3257-cluster-trust-bundles",
+      "title": "Cluster Trust Bundles",
+      "stage": "alpha",
+      "sig": "Auth",
+      "category": "Security",
+      "description": "",
+      "impact": null,
+      "featureGate": "ClusterTrustBundle",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.29",
         "beta": "1.33",
         "verified": [
           "beta"
@@ -756,7 +863,11 @@
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
-        "alpha": "1.32"
+        "alpha": "1.32",
+        "beta": "1.36",
+        "verified": [
+          "beta"
+        ]
       }
     },
     {
@@ -775,11 +886,9 @@
         "alpha": "1.32",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -860,6 +969,28 @@
       }
     },
     {
+      "kep": "KEP-4639",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "title": "OCI images as VolumeSource",
+      "stage": "alpha",
+      "sig": "Node",
+      "category": "Workloads",
+      "description": "",
+      "impact": null,
+      "featureGate": "ImageVolume",
+      "affectedKinds": [],
+      "affectedFields": [],
+      "history": {
+        "alpha": "1.31",
+        "beta": "1.34",
+        "stable": "1.36",
+        "verified": [
+          "beta",
+          "stable"
+        ]
+      }
+    },
+    {
       "kep": "KEP-4800",
       "kepPath": "sig-node/4800-cpumanager-split-uncorecache",
       "title": "Split UnCoreCache Toplogy Awareness in CPU Manager",
@@ -868,18 +999,16 @@
       "category": "Workloads",
       "description": "",
       "impact": null,
-      "featureGate": "CPUManagerPolicyBetaOptions",
+      "featureGate": "CPUManagerPolicyOptions",
       "affectedKinds": [],
       "affectedFields": [],
       "history": {
         "alpha": "1.32",
         "beta": "1.34",
         "stable": "1.36",
-        "tentative": [
-          "stable"
-        ],
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     },
@@ -918,7 +1047,7 @@
       "history": {
         "alpha": "1.32",
         "beta": "1.33",
-        "stable": "1.35",
+        "stable": "1.36",
         "verified": [
           "beta",
           "stable"
@@ -964,8 +1093,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -986,8 +1117,10 @@
         "beta": "1.36",
         "stable": "1.37",
         "tentative": [
-          "beta",
           "stable"
+        ],
+        "verified": [
+          "beta"
         ]
       }
     },
@@ -1062,8 +1195,10 @@
       "history": {
         "alpha": "1.32",
         "beta": "1.34",
+        "stable": "1.36",
         "verified": [
-          "beta"
+          "beta",
+          "stable"
         ]
       }
     }
@@ -1192,15 +1327,6 @@
         ]
       },
       {
-        "description": "Events:\n  Type     Reason                  Age                    From                Message\n  ----     ------                  ----                   ----                -------\n  Normal   EnsuringLoadBalancer    6m7s (x268 over 22h)   service-controller  Ensuring load balancer",
-        "prNumber": 124747,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/124747",
-        "author": "l-technicore",
-        "sigs": [
-          "Api Machinery"
-        ]
-      },
-      {
         "description": "Fixed a bug where restartable and non-restartable init containers were not accounted for in the message and annotations of the eviction event.",
         "prNumber": 124947,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/124947",
@@ -1295,42 +1421,6 @@
           "Storage"
         ],
         "userFacingChange": "Fix a bug when the hostname label of a node does not match the node name, pods bound to a PV with nodeAffinity using the hostname may be scheduled to the wrong node or experience scheduling failures."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 125757,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/125757",
-        "author": "esotsal",
-        "sigs": [
-          "Node"
-        ],
-        "relatedIssues": [
-          125843,
-          119838
-        ],
-        "issueContext": [
-          {
-            "number": 125843,
-            "title": "[FG:InPlacePodVerticalScaling] Backoff problem when quickly reverting resize patch",
-            "body": "### What happened?\n\nWhile working on #125202 , issue with backoff was discovered resulting to slow reconcile when quickly reverting resize patch. This can be reproduced please check https://github.com/kubernetes/kubernetes/issues/125205#issuecomment-2203184854 ,  https://github.com/kubernetes/kubernetes/issues/125205#issuecomment-2143527472.\r\n\r\nBackoff issue does not happen on v1.30 or older please check https://github.com/kubernetes/kubernetes/issues/125205#issuecomment-2203224319\n\n### What did you expect to happen?\n\nAfter patching forwards and patching backwards a pod which has a container whose `resizePolicy` is `RestartContainer`and a container whose `restartPolicy`is `RestartContainer` , pod should reach its initial state without any backoff delay introduced.\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\n<details>\r\n\r\n```console\r\nfor l in `seq 301 310`; do kubectl patch pod resize-pod --patch \"{\\\"spec\\\":{\\\"containers\\\":[{\\\"name\\\":\\\"c2\\\", \\\"resources\\\":{\\\"limits\\\":{\\\"memory\\\":\\\"${l}Mi\\\"}}}]}}\"; sleep 3; done\r\n\r\n$ kubectl get pod resize-pod -w\r\nNAME         READY   STATUS    RESTARTS   AGE\r\nresize-pod   3/3     Running   0          14s\r\nresize-pod   3/3     Running   0          21s\r\nresize-pod   3/3     Running   1 (1s ago)   22s\r\nresize-pod   3/3     Running   1 (3s ago)   24s\r\nresize-pod   3/3     Running   2 (2s ago)   26s\r\nresize-pod   3/3     Running   2 (3s ago)   27s\r\nresize-pod   2/3     CrashLoopBackOff   2 (1s ago)   29s\r\nresize-pod   2/3     CrashLoopBackOff   2 (2s ago)   30s\r\nresize-pod   2/3     CrashLoopBackOff   2 (5s ago)   33s\r\nresize-pod   2/3     CrashLoopBackOff   2 (6s ago)   34s\r\nresize-pod   2/3     CrashLoopBackOff   2 (8s ago)   36s\r\nresize-pod   2/3     CrashLoopBackOff   2 (11s ago)   39s\r\nresize-pod   3/3     Running            3 (13s ago)   41s\r\n```\r\n</details>\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\nClient Version: v1.31.0-alpha.",
-            "labels": [
-              "kind/bug",
-              "sig/node",
-              "priority/important-longterm",
-              "triage/accepted"
-            ]
-          },
-          {
-            "number": 119838,
-            "title": "[FG:InPlacePodVerticalScaling] Container resize policy feature introduced in v1.27 doesn't interrupt CrashLoopBackOff",
-            "body": "### What happened?\r\n\r\nHi, does someone know how to \u201cbreak\u201d the CrashLoopBackOff container status? I don\u2019t want to wait all the backoff time nor delete the whole pod. I\u2019m using the new features of restarting the container after resizing introduced in Kubernetes v1.27, but it seems that after I resize the container using the Python client, it still waits for the back-off time to finish before trying to run the container again.\r\n\r\nDeployment info:\r\n\r\n```spec:\r\n      containers:\r\n        - name: ...\r\n          image: systemautoscaler/prime-numbers:dev\r\n          imagePullPolicy: Always\r\n          ports:\r\n            - containerPort: ...\r\n          resizePolicy:\r\n            - resourceName: cpu\r\n              restartPolicy: RestartContainer\r\n            - resourceName: memory\r\n              restartPolicy: RestartContainer\r\n```\r\n\r\n### What did you expect to happen?\r\n\r\nNo matter the state of the container, when I resize it, it should be restarted, even if waiting for Back Off.\r\n\r\n### How can we reproduce it (as minimally and precisely as possible)?\r\n\r\n1. Create a deployment with the spec field as specified above.\r\n2. Scale down container resources to 1m CPU and to 1Mi memory (both limits and requests) using the Kubernetes API e.g. `kubernetes.client.CoreV1Api().patch_namespaced_pod(name=pod_name, namespace=namespace, body=new_pod_data)`\r\n3. Wait till the container is in CrashLoopBackOff and then try to scale up the container resources with enough CPU and memory to run successfully.\r\n\r\n### Anything else we need to know?\r\n\r\n_No response_\r\n\r\n### Kubernetes version\r\n\r\n<details>\r\n\r\n```console\r\n$ kubectl version\r\nWARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.\r\nClient Version: version.Info{Major:\"1\", Minor:\"27\", GitVersion:\"v1.27.4\", GitCommit:\"fa3d7990104d7c1f16943a67f11b154b71f6a132\", GitTreeState:\"clean\", BuildDate:\"2023-07-19T12:20:54Z\", GoVersion:\"go1.20.6\", C",
-            "labels": [
-              "sig/node",
-              "kind/feature",
-              "needs-triage"
-            ]
-          }
-        ]
       },
       {
         "description": "Fixed a bug in the garbage collector controller that could block indefinitely due to a cache sync failure. This fix allows the garbage collector to eventually continue garbage collecting other resources if a given resource cannot be listed or watched. Any objects in the unsynced resource type with owner references having `blockOwnerDeletion: true` will not be known to the garbage collector. The use of `blockOwnerDeletion` has always been best-effort and prone to race conditions during startup and object creation. With this fix, it continues to be best-effort for resources that cannot be synced by the garbage collector controller.",
@@ -2986,15 +3076,6 @@
         ]
       },
       {
-        "description": "NONE",
-        "prNumber": 125186,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/125186",
-        "author": "liyuerich",
-        "sigs": [
-          "Auth"
-        ]
-      },
-      {
         "description": "Removed support for the kubelet `--runonce` mode.\nIf you specify the kubelet command line flag `--runonce`, this is an error.\nSetting `runOnce` in a kubelet configuration file is also an error, and specifying any\nvalue for that configuration option is now deprecated.",
         "prNumber": 126336,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/126336",
@@ -3101,15 +3182,6 @@
         "prNumber": 126596,
         "prUrl": "https://github.com/kubernetes/kubernetes/pull/126596",
         "author": "saschagrunert",
-        "sigs": [
-          "Cluster Lifecycle"
-        ]
-      },
-      {
-        "description": "NONE",
-        "prNumber": 126610,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/126610",
-        "author": "liyuerich",
         "sigs": [
           "Cluster Lifecycle"
         ]
@@ -3916,18 +3988,6 @@
           "https://github.com/kubernetes/enhancements/issues/4381"
         ],
         "userFacingChange": "DRA: DRA driver authors should update their DRA drivers to use the v1beta1 gRPC API. The older alpha API still works, but might get removed eventually."
-      },
-      {
-        "description": "NONE",
-        "prNumber": 128676,
-        "prUrl": "https://github.com/kubernetes/kubernetes/pull/128676",
-        "author": "vivzbansal",
-        "sigs": [
-          "Node"
-        ],
-        "kepLinks": [
-          "https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/1287-in-place-update-pod-resources"
-        ]
       },
       {
         "description": "Revised error handling for port forwards to Pods. Added stream resets preventing port-forward from blockage.",
