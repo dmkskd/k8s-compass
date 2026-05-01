@@ -1,0 +1,75 @@
+{
+  "version": "1.36",
+  "codename": "Haru",
+  "description": "Inspired by Hokusai's 'Thirty-six Views of Mount Fuji', Kubernetes 1.36 'Haru' brings 70 enhancements. User namespaces and MutatingAdmissionPolicy graduate to GA for stronger security defaults, fine-grained kubelet API authorization reaches GA for least-privilege RBAC, and SELinux volume labeling goes GA for constant-time mounts. Memory QoS arrives in alpha with tiered cgroup v2 protection across QoS classes.",
+  "releaseDate": "2026-04-22",
+  "endOfLifeDate": "2027-06-22",
+  "themes": [
+    "Security",
+    "Resource Management",
+    "Scheduling",
+    "Admission Control"
+  ],
+  "features": [
+    {
+      "kep": "KEP-127",
+      "title": "Support User Namespaces",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/127-user-namespaces"
+    },
+    {
+      "kep": "KEP-2862",
+      "title": "Fine grained Kubelet API authorization",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/2862-fine-grained-kubelet-authz"
+    },
+    {
+      "kep": "KEP-3962",
+      "title": "Mutating Admission Policies",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Api Machinery",
+      "kepPath": "sig-api-machinery/3962-mutating-admission-policies"
+    },
+    {
+      "kep": "KEP-2570",
+      "title": "Memory QoS",
+      "stage": "alpha",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/2570-memory-qos"
+    },
+    {
+      "kep": "KEP-4680",
+      "title": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status"
+    }
+  ],
+  "deprecations": [],
+  "removals": [],
+  "references": [
+    {
+      "title": "Kubernetes v1.36: Haru",
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+      "source": "kubernetes.io",
+      "type": "official"
+    },
+    {
+      "title": "CHANGELOG-1.36.md",
+      "url": "https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.36.md",
+      "source": "GitHub",
+      "type": "changelog"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 106,
+    "contributors": 491
+  }
+}

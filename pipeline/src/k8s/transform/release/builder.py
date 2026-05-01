@@ -2,7 +2,7 @@
 Build release JSON files from staged upstream data.
 
 Combines:
-1. release-notes.json from cdn.dl.k8s.io (changesByKind)
+1. release-notes.json from dl.k8s.io (changesByKind)
 2. Parsed CHANGELOG data (actionRequired, patchReleases, securityInformation)
 3. KEP features extracted from enhancements repo (kep.yaml milestone data)
 4. Curated features from existing v2 JSON (if available, merged with extracted)
@@ -102,7 +102,7 @@ def merge_features(
 
             # Override with curated data if present and non-empty
             for key in ["description", "impact", "affectedKinds", "affectedFields",
-                        "category", "featureGate"]:
+                        "category", "featureGate", "isHighlight"]:
                 if curated_feat.get(key):
                     merged_feat[key] = curated_feat[key]
 

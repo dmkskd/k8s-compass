@@ -39,7 +39,7 @@ from ..llm_utils import (
 )
 
 # Path to pre-computed KEP metadata
-KEP_METADATA_PATH = PIPELINE_ROOT / "data" / "curated" / "kep_metadata.json"
+KEP_METADATA_PATH = PIPELINE_ROOT / "data" / "curated" / "keps" / "kep_metadata.json"
 
 # Cache for loaded metadata
 _kep_metadata_cache: dict[str, Any] | None = None
@@ -157,8 +157,15 @@ Extract from the README above:
    - If this is a kubelet config option (not a Pod/resource API field), return empty list
 
 5. **labels**: Topic labels for cross-referencing and discovery. Extract 2-5 lowercase labels that describe what this KEP is about.
-   - Examples: numa, cpu-manager, memory-manager, topology, scheduling, networking, storage, security, autoscaling, dra, device-plugin, cgroups, windows, observability, api-machinery
-   - Be specific: prefer "cpu-isolation" over just "cpu", prefer "traffic-distribution" over just "networking"
+   - IMPORTANT: Use labels from this canonical list whenever applicable:
+     security, scheduling, storage, networking, pod, api, node, kubelet, csi, observability,
+     feature-gate, cri, kubectl, service, apiserver, configuration, crd, cloud-provider,
+     controller, metrics, authentication, performance, volume, validation, autoscaling,
+     resource-management, admission, topology, policy, job, kube-proxy, windows, numa,
+     cgroups, cpu-manager, dra, dns, deprecation, openapi, statefulset, webhook,
+     selinux, apparmor, memory-manager, device-plugin, api-machinery
+   - Only invent a new label if nothing in the list above fits
+   - Be specific: prefer "cpu-manager" over just "cpu", prefer "traffic-distribution" over just "networking"
    - Include technology-specific terms when relevant (e.g., numa, cgroups, selinux, apparmor)
 
 6. **suggested_category**: The current category is "{feature.category}" (auto-assigned from SIG).

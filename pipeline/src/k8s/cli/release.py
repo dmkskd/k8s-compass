@@ -415,7 +415,7 @@ def stage(
 ):
     """Stage upstream release data for processing.
 
-    Downloads release-notes.json from cdn.dl.k8s.io and
+    Downloads release-notes.json from dl.k8s.io and
     CHANGELOG-X.YY.md from the kubernetes repo.
     """
     if all_versions or version is None:
@@ -558,17 +558,12 @@ def enrich_changes_cmd(
             )
 
         if results:
-            for _change_kind, changes in results.items():
-                for change in changes:
-                    if enrichment := change.get("enrichment"):
-                        console.print("\n[bold]Sample enriched change:[/bold]")
-                        console.print(f"  PR: #{change.get('prNumber', '?')}")
-                        console.print(f"  [cyan]Problem:[/cyan] {enrichment['problem'][:100]}...")
-                        console.print(f"  [cyan]Fix:[/cyan] {enrichment['fix'][:100]}...")
-                        break
-                else:
-                    continue
-                break
+            key = next(iter(results))
+            enrichment = results[key]
+            console.print("\n[bold]Sample enriched change:[/bold]")
+            console.print(f"  PR: #{key}")
+            console.print(f"  [cyan]Problem:[/cyan] {enrichment['problem'][:100]}...")
+            console.print(f"  [cyan]Fix:[/cyan] {enrichment['fix'][:100]}...")
 
     except ImportError as e:
         console.print(f"[red]Error: {e}[/red]")

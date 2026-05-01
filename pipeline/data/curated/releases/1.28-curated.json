@@ -1,15 +1,47 @@
 {
   "version": "1.28",
   "codename": "Planternetes",
-  "description": "Kubernetes 1.28 'Planternetes' 🌱 cultivates 45 enhancements with the care of a master gardener. Like tending a thriving garden, this release nurtures native sidecar containers (alpha), extends the supported version skew to n-3 for more flexible upgrades, and brings non-graceful node shutdown recovery to stable bloom. The community planted seeds of innovation across CDI injection, job tracking, and mixed version proxy—each feature carefully grown to harmonious maturity.",
+  "description": "Kubernetes 1.28 'Planternetes' \ud83c\udf31 cultivates 45 enhancements with the care of a master gardener. Like tending a thriving garden, this release nurtures native sidecar containers (alpha), extends the supported version skew to n-3 for more flexible upgrades, and brings non-graceful node shutdown recovery to stable bloom. The community planted seeds of innovation across CDI injection, job tracking, and mixed version proxy\u2014each feature carefully grown to harmonious maturity.",
   "releaseDate": "2023-08-15",
   "endOfLifeDate": "2024-10-28",
-  "summary": {
-    "total": 45,
-    "stable": 12,
-    "beta": 14,
-    "alpha": 19
-  },
-  "themes": ["Workloads", "Upgrades", "Jobs", "Node"],
-  "features": []
+  "themes": [
+    "Workloads",
+    "Upgrades",
+    "Jobs",
+    "Node"
+  ],
+  "features": [
+    {
+      "kep": "KEP-2268",
+      "title": "non graceful shutdown",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Storage",
+      "kepPath": "sig-storage/2268-non-graceful-shutdown"
+    },
+    {
+      "kep": "KEP-3935",
+      "title": "Support Oldest Node And Newest Control Plane",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Architecture",
+      "kepPath": "sig-architecture/3935-oldest-node-newest-control-plane"
+    },
+    {
+      "kep": "KEP-3488",
+      "title": "CEL for Admission Control",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Api Machinery",
+      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+    },
+    {
+      "kep": "KEP-3488",
+      "title": "CEL for Admission Control",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Api Machinery",
+      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+    }
+  ]
 }

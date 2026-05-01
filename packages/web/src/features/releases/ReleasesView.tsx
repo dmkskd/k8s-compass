@@ -1622,14 +1622,15 @@ function ReleaseSummary({ release }: { release: ReleaseNotes }) {
 
 // Release Highlights Component - Shows featured KEPs
 function ReleaseHighlights({ release }: { release: ReleaseNotes }) {
-  // Get highlighted features - stable features are typically the highlights
   const highlightedFeatures = useMemo(() => {
-    // Prioritize stable features, then beta features with high impact
+    // Prefer curated highlights
+    const curated = release.features.filter((f: ReleaseFeature) => f.isHighlight)
+    if (curated.length > 0) return curated.slice(0, 6)
+
+    // Fallback: heuristic when no highlights are curated
     const stableFeatures = release.features.filter((f: ReleaseFeature) => f.stage === 'stable').slice(0, 3)
     const betaFeatures = release.features.filter((f: ReleaseFeature) => f.stage === 'beta' && f.impact).slice(0, 2)
     const alphaFeatures = release.features.filter((f: ReleaseFeature) => f.stage === 'alpha' && f.impact).slice(0, 1)
-    
-    // Combine and limit to 5
     return [...stableFeatures, ...betaFeatures, ...alphaFeatures].slice(0, 5)
   }, [release.features])
 

@@ -4,28 +4,12 @@
   "description": "Like the World Tree Yggdrasil binding many realms, Kubernetes 1.35 'Timbernetes' grows ring by ring through community care. In-place pod resource resize graduates to GA for nondisruptive vertical scaling, gang scheduling arrives in alpha for AI/ML workloads, and pod certificates simplify zero-trust architectures. Three squirrels guard the tree: reviewers with LGTM scrolls, release crews with axes, and triagers with lanterns.",
   "releaseDate": "2025-12-17",
   "endOfLifeDate": "2027-02-17",
-  "summary": {
-    "total": 60,
-    "stable": 17,
-    "beta": 19,
-    "alpha": 22
-  },
-  "themes": ["Resource Management", "Security", "Observability", "Scheduling"],
-  "urgentUpgradeNotes": [
-    {
-      "title": "cgroup v1 support removed",
-      "description": "Kubelet will fail to start on nodes without cgroup v2. This has been deprecated since 1.31.",
-      "action": "Ensure all nodes are running with cgroup v2 before upgrading to 1.35",
-      "affectedComponents": ["kubelet"]
-    },
-    {
-      "title": "containerd 1.x support deprecated",
-      "description": "containerd 1.7 reaches EOL. Support will be removed in 1.36.",
-      "action": "Plan upgrade to containerd 2.0+ before 1.36",
-      "affectedComponents": ["kubelet", "container-runtime"]
-    }
+  "themes": [
+    "Resource Management",
+    "Security",
+    "Observability",
+    "Scheduling"
   ],
-  "knownIssues": [],
   "features": [
     {
       "kep": "KEP-1287",
@@ -37,10 +21,21 @@
       "description": "Allows adjusting CPU and memory resources without restarting Pods or Containers",
       "impact": "Smoother vertical scaling, less disruption for stateful/batch workloads",
       "isHighlight": true,
-      "affectedKinds": ["Pod"],
-      "affectedFields": ["spec.containers[].resources"],
-      "affectedComponents": ["kubelet", "kube-apiserver"],
-      "history": { "alpha": "1.27", "beta": "1.33", "stable": "1.35" }
+      "affectedKinds": [
+        "Pod"
+      ],
+      "affectedFields": [
+        "spec.containers[].resources"
+      ],
+      "affectedComponents": [
+        "kubelet",
+        "kube-apiserver"
+      ],
+      "history": {
+        "alpha": "1.27",
+        "beta": "1.33",
+        "stable": "1.35"
+      }
     },
     {
       "kep": "KEP-4671",
@@ -53,9 +48,16 @@
       "impact": "Prevents partial scheduling deadlocks for AI/ML training jobs",
       "isHighlight": true,
       "featureGate": "GangScheduling",
-      "affectedKinds": ["Workload", "PodGroup"],
-      "affectedComponents": ["kube-scheduler"],
-      "history": { "alpha": "1.35" }
+      "affectedKinds": [
+        "Workload",
+        "PodGroup"
+      ],
+      "affectedComponents": [
+        "kube-scheduler"
+      ],
+      "history": {
+        "alpha": "1.35"
+      }
     },
     {
       "kep": "KEP-4317",
@@ -68,133 +70,18 @@
       "impact": "Simplifies mTLS and zero-trust architectures without external controllers",
       "isHighlight": true,
       "featureGate": "PodCertificates",
-      "affectedKinds": ["Pod", "PodCertificateRequest"],
-      "affectedComponents": ["kube-apiserver", "kubelet"],
-      "history": { "alpha": "1.34", "beta": "1.35" }
-    },
-    {
-      "kep": "KEP-5328",
-      "title": "Node Declared Features Before Scheduling",
-      "stage": "alpha",
-      "sig": "Node",
-      "category": "Scheduling",
-      "description": "Nodes declare supported features via status.declaredFeatures for compatibility checks",
-      "impact": "Prevents scheduling pods to incompatible older nodes during upgrades",
-      "isHighlight": false,
-      "featureGate": "NodeDeclaredFeatures",
-      "affectedKinds": ["Node"],
-      "affectedFields": ["status.declaredFeatures"],
-      "affectedComponents": ["kubelet", "kube-scheduler"],
-      "history": { "alpha": "1.35" }
-    },
-    {
-      "kep": "KEP-3015",
-      "title": "PreferSameNode Traffic Distribution",
-      "stage": "stable",
-      "sig": "Network",
-      "category": "Networking",
-      "description": "Services can prefer endpoints on local node, with PreferSameZone replacing PreferClose",
-      "impact": "Reduced latency, explicit control over traffic routing",
-      "isHighlight": false,
-      "affectedKinds": ["Service"],
-      "affectedFields": ["spec.trafficDistribution"],
-      "affectedComponents": ["kube-proxy"],
-      "history": { "alpha": "1.31", "beta": "1.33", "stable": "1.35" }
-    },
-    {
-      "kep": "KEP-4368",
-      "title": "Job API Managed-by Mechanism",
-      "stage": "stable",
-      "sig": "Apps",
-      "category": "Workloads",
-      "description": "Jobs can delegate status sync to external controllers via managedBy field",
-      "impact": "Enables MultiKueue and other multi-cluster job dispatching systems",
-      "isHighlight": false,
-      "affectedKinds": ["Job"],
-      "affectedFields": ["spec.managedBy"],
-      "affectedComponents": ["kube-controller-manager"],
-      "history": { "alpha": "1.32", "beta": "1.34", "stable": "1.35" }
-    },
-    {
-      "kep": "KEP-5067",
-      "title": "Pod Generation Tracking",
-      "stage": "stable",
-      "sig": "Node",
-      "category": "API",
-      "description": "Pods now have metadata.generation and status.observedGeneration fields",
-      "impact": "Reliable way to verify kubelet processed Pod spec changes",
-      "isHighlight": false,
-      "affectedKinds": ["Pod"],
-      "affectedFields": ["metadata.generation", "status.observedGeneration"],
-      "affectedComponents": ["kube-apiserver", "kubelet"],
-      "history": { "alpha": "1.33", "beta": "1.34", "stable": "1.35" }
-    },
-    {
-      "kep": "KEP-961",
-      "title": "maxUnavailable for StatefulSets",
-      "stage": "beta",
-      "sig": "Apps",
-      "category": "Workloads",
-      "description": "StatefulSets can update multiple pods simultaneously during rolling updates",
-      "impact": "Faster updates for stateful apps that tolerate multiple pods down",
-      "isHighlight": false,
-      "affectedKinds": ["StatefulSet"],
-      "affectedFields": ["spec.updateStrategy.rollingUpdate.maxUnavailable"],
-      "affectedComponents": ["kube-controller-manager"],
-      "history": { "alpha": "1.24", "beta": "1.35" }
-    },
-    {
-      "kep": "KEP-127",
-      "title": "User Namespaces in Pods",
-      "stage": "beta",
-      "sig": "Node",
-      "category": "Security",
-      "description": "Pods run with isolated UID/GID mappings, root inside maps to unprivileged on host",
-      "impact": "Reduced privilege escalation risk, safer container root",
-      "isHighlight": false,
-      "featureGate": "UserNamespacesSupport",
-      "affectedKinds": ["Pod"],
-      "affectedFields": ["spec.hostUsers"],
-      "affectedComponents": ["kubelet"],
-      "history": { "alpha": "1.25", "beta": "1.30" }
-    },
-    {
-      "kep": "KEP-4639",
-      "title": "OCI Images as Volume Source",
-      "stage": "beta",
-      "sig": "Node",
-      "category": "Storage",
-      "description": "Mount OCI container images as read-only volumes in Pods",
-      "impact": "Separate data from app images, no init containers needed",
-      "isHighlight": false,
-      "affectedKinds": ["Pod"],
-      "affectedFields": ["spec.volumes[].image"],
-      "affectedComponents": ["kubelet"],
-      "history": { "alpha": "1.31", "beta": "1.33" }
-    }
-  ],
-  "bugFixes": [
-    {
-      "title": "Fixed scheduler crash when using pod topology spread with empty selector",
-      "sig": "Scheduling",
-      "component": "kube-scheduler",
-      "severity": "high",
-      "prNumber": 128456
-    },
-    {
-      "title": "Fixed kubelet memory leak when using projected volumes",
-      "sig": "Node",
-      "component": "kubelet",
-      "severity": "medium",
-      "prNumber": 128123
-    },
-    {
-      "title": "Fixed kube-proxy not updating endpoints after Service port change",
-      "sig": "Network",
-      "component": "kube-proxy",
-      "severity": "medium",
-      "prNumber": 127890,
-      "affectedKinds": ["Service", "Endpoints"]
+      "affectedKinds": [
+        "Pod",
+        "PodCertificateRequest"
+      ],
+      "affectedComponents": [
+        "kube-apiserver",
+        "kubelet"
+      ],
+      "history": {
+        "alpha": "1.34",
+        "beta": "1.35"
+      }
     }
   ],
   "deprecations": [
@@ -227,32 +114,6 @@
       "deprecatedIn": "1.31"
     }
   ],
-  "apiChanges": [
-    {
-      "type": "added",
-      "kind": "Workload",
-      "group": "scheduling.k8s.io",
-      "apiVersion": "v1alpha1",
-      "description": "New Workload API for gang scheduling",
-      "fields": ["spec.podGroups", "status.scheduledGroups"]
-    },
-    {
-      "type": "added",
-      "kind": "PodGroup",
-      "group": "scheduling.k8s.io",
-      "apiVersion": "v1alpha1",
-      "description": "Defines a group of pods that must be scheduled together"
-    },
-    {
-      "type": "modified",
-      "kind": "Pod",
-      "group": "core",
-      "apiVersion": "v1",
-      "description": "Added generation tracking fields",
-      "fields": ["metadata.generation", "status.observedGeneration"]
-    }
-  ],
-  "patchReleases": [],
   "references": [
     {
       "title": "Kubernetes v1.35: Timbernetes (The World Tree Release)",
@@ -274,12 +135,7 @@
     }
   ],
   "projectVelocity": {
-    "commits": 1847,
-    "contributors": 412,
-    "companies": 89,
-    "prsCreated": 2156,
-    "prsMerged": 1923,
-    "issuesCreated": 876,
-    "issuesClosed": 812
+    "companies": 85,
+    "contributors": 419
   }
 }

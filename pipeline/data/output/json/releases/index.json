@@ -1,6 +1,17 @@
 {
-  "latestVersion": "1.35",
+  "latestVersion": "1.36",
   "releases": [
+    {
+      "version": "1.36",
+      "codename": "Haru",
+      "releaseDate": "2026-04-22",
+      "summary": {
+        "total": 71,
+        "stable": 21,
+        "beta": 24,
+        "alpha": 26
+      }
+    },
     {
       "version": "1.35",
       "codename": "Timbernetes (The World Tree Release)",

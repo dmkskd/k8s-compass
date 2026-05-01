@@ -9,7 +9,7 @@
   "links": [
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector",
-      "kind": "SubjectAccessReview",
+      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4601",
       "kepTitle": "Authorize with Selectors",
@@ -31,7 +31,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector",
-      "kind": "SelfSubjectAccessReview",
+      "kind": "SubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4601",
       "kepTitle": "Authorize with Selectors",
@@ -42,7 +42,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector",
-      "kind": "SubjectAccessReview",
+      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4601",
       "kepTitle": "Authorize with Selectors",
@@ -64,7 +64,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector",
-      "kind": "SelfSubjectAccessReview",
+      "kind": "SubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4601",
       "kepTitle": "Authorize with Selectors",
@@ -119,19 +119,8 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3983",
-      "kepTitle": "Add support for a kubelet drop-in configuration directory",
-      "kepPath": "sig-node/3983-drop-in-configuration",
-      "confidence": 0.8,
-      "matchReason": "field description matches KEP terms (3/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3983",
       "kepTitle": "Add support for a kubelet drop-in configuration directory",
       "kepPath": "sig-node/3983-drop-in-configuration",
@@ -152,8 +141,8 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-3983",
       "kepTitle": "Add support for a kubelet drop-in configuration directory",
       "kepPath": "sig-node/3983-drop-in-configuration",
@@ -174,8 +163,19 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3983",
+      "kepTitle": "Add support for a kubelet drop-in configuration directory",
+      "kepPath": "sig-node/3983-drop-in-configuration",
+      "confidence": 0.8,
+      "matchReason": "field description matches KEP terms (3/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image",
+      "kind": "StatefulSet",
+      "group": "apps",
       "kep": "KEP-3983",
       "kepTitle": "Add support for a kubelet drop-in configuration directory",
       "kepPath": "sig-node/3983-drop-in-configuration",
@@ -207,7 +207,7 @@
     },
     {
       "fieldPath": "spec.devices",
-      "kind": "ResourceClaim",
+      "kind": "ResourceSlice",
       "group": "resource.k8s.io",
       "kep": "KEP-4009",
       "kepTitle": "Add CDI devices to device plugin API",
@@ -218,7 +218,7 @@
     },
     {
       "fieldPath": "spec.devices",
-      "kind": "ResourceSlice",
+      "kind": "ResourceClaim",
       "group": "resource.k8s.io",
       "kep": "KEP-4009",
       "kepTitle": "Add CDI devices to device plugin API",
@@ -515,19 +515,8 @@
     },
     {
       "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3619",
-      "kepTitle": "Fine grained SupplementalGroups control",
-      "kepPath": "sig-node/3619-supplemental-groups-policy",
-      "confidence": 0.7,
-      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3619",
       "kepTitle": "Fine grained SupplementalGroups control",
       "kepPath": "sig-node/3619-supplemental-groups-policy",
@@ -548,8 +537,8 @@
     },
     {
       "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-3619",
       "kepTitle": "Fine grained SupplementalGroups control",
       "kepPath": "sig-node/3619-supplemental-groups-policy",
@@ -570,8 +559,19 @@
     },
     {
       "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3619",
+      "kepTitle": "Fine grained SupplementalGroups control",
+      "kepPath": "sig-node/3619-supplemental-groups-policy",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'supplemental' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.supplementalGroupsPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
       "kep": "KEP-3619",
       "kepTitle": "Fine grained SupplementalGroups control",
       "kepPath": "sig-node/3619-supplemental-groups-policy",
@@ -647,7 +647,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector.requirements",
-      "kind": "SubjectAccessReview",
+      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-3633",
       "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
@@ -669,7 +669,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector.requirements",
-      "kind": "SelfSubjectAccessReview",
+      "kind": "SubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-3633",
       "kepTitle": "Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity",
@@ -889,7 +889,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].values",
-      "kind": "SubjectAccessReview",
+      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4622",
       "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
@@ -911,7 +911,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].values",
-      "kind": "SelfSubjectAccessReview",
+      "kind": "SubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4622",
       "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
@@ -922,7 +922,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].values",
-      "kind": "SubjectAccessReview",
+      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4622",
       "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
@@ -944,7 +944,7 @@
     },
     {
       "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].values",
-      "kind": "SelfSubjectAccessReview",
+      "kind": "SubjectAccessReview",
       "group": "authorization.k8s.io",
       "kep": "KEP-4622",
       "kepTitle": "New TopologyManager Policy which configure the value of maxAllowableNUMANodes",
@@ -1010,19 +1010,8 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-4460",
-      "kepTitle": "Enable per-request Read/Write Deadline",
-      "kepPath": "sig-api-machinery/4460-per-request-deadline",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'request' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1043,8 +1032,8 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1065,30 +1054,30 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
-      "kind": "Job",
-      "group": "batch",
-      "kep": "KEP-4460",
-      "kepTitle": "Enable per-request Read/Write Deadline",
-      "kepPath": "sig-api-machinery/4460-per-request-deadline",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'request' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-4460",
-      "kepTitle": "Enable per-request Read/Write Deadline",
-      "kepPath": "sig-api-machinery/4460-per-request-deadline",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'request' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
       "kind": "DaemonSet",
       "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1109,8 +1098,8 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1131,30 +1120,30 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
-      "kind": "Job",
-      "group": "batch",
-      "kep": "KEP-4460",
-      "kepTitle": "Enable per-request Read/Write Deadline",
-      "kepPath": "sig-api-machinery/4460-per-request-deadline",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'request' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-4460",
-      "kepTitle": "Enable per-request Read/Write Deadline",
-      "kepPath": "sig-api-machinery/4460-per-request-deadline",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'request' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
       "kind": "DaemonSet",
       "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1175,8 +1164,8 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1197,8 +1186,19 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4460",
+      "kepTitle": "Enable per-request Read/Write Deadline",
+      "kepPath": "sig-api-machinery/4460-per-request-deadline",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'request' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].request",
+      "kind": "StatefulSet",
+      "group": "apps",
       "kep": "KEP-4460",
       "kepTitle": "Enable per-request Read/Write Deadline",
       "kepPath": "sig-api-machinery/4460-per-request-deadline",
@@ -1208,19 +1208,8 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-4639",
-      "kepTitle": "OCI images as VolumeSource",
-      "kepPath": "sig-node/4639-oci-volume-source",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'source' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-4639",
       "kepTitle": "OCI images as VolumeSource",
       "kepPath": "sig-node/4639-oci-volume-source",
@@ -1241,8 +1230,8 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-4639",
       "kepTitle": "OCI images as VolumeSource",
       "kepPath": "sig-node/4639-oci-volume-source",
@@ -1263,30 +1252,30 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
-      "kind": "Job",
-      "group": "batch",
-      "kep": "KEP-4639",
-      "kepTitle": "OCI images as VolumeSource",
-      "kepPath": "sig-node/4639-oci-volume-source",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'source' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-4639",
-      "kepTitle": "OCI images as VolumeSource",
-      "kepPath": "sig-node/4639-oci-volume-source",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'source' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
       "kind": "DaemonSet",
       "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-4639",
       "kepTitle": "OCI images as VolumeSource",
       "kepPath": "sig-node/4639-oci-volume-source",
@@ -1307,8 +1296,8 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-4639",
       "kepTitle": "OCI images as VolumeSource",
       "kepPath": "sig-node/4639-oci-volume-source",
@@ -1329,8 +1318,19 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].resourceClaimTemplateName",
+      "kind": "StatefulSet",
+      "group": "apps",
       "kep": "KEP-4639",
       "kepTitle": "OCI images as VolumeSource",
       "kepPath": "sig-node/4639-oci-volume-source",
@@ -1340,19 +1340,8 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3017",
-      "kepTitle": "Pod Healthy Policy for PDB",
-      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'policy' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3017",
       "kepTitle": "Pod Healthy Policy for PDB",
       "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
@@ -1373,8 +1362,8 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "kep": "KEP-3017",
       "kepTitle": "Pod Healthy Policy for PDB",
       "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
@@ -1395,8 +1384,19 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3017",
+      "kepTitle": "Pod Healthy Policy for PDB",
+      "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.pullPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
       "kep": "KEP-3017",
       "kepTitle": "Pod Healthy Policy for PDB",
       "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
@@ -1704,137 +1704,12 @@
   ],
   "unlinkedFields": [
     {
-      "fieldPath": "template.spec.volumes[].image.reference",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
       "fieldPath": "spec.jobTemplate.spec.template.spec.volumes[].image.reference",
       "kind": "CronJob",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.strategy",
-      "kind": "Lease",
-      "group": "coordination.k8s.io"
-    },
-    {
-      "fieldPath": "spec.preferredHolder",
-      "kind": "Lease",
-      "group": "coordination.k8s.io"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].selectors[].cel",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.config",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.config[].opaque.parameters",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].key",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.config[].opaque",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.devices.results[].pool",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.devices.config[].opaque",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.devices.config[].opaque.parameters",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.nodeSelector",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].name",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].count",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].adminAccess",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.nodeSelector.nodeSelectorTerms",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].basic.capacity",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.allNodes",
+      "fieldPath": "spec.pool",
       "kind": "ResourceSlice",
       "group": "resource.k8s.io"
     },
@@ -1844,17 +1719,7 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.devices[].basic",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.pool",
+      "fieldPath": "spec.pool.generation",
       "kind": "ResourceSlice",
       "group": "resource.k8s.io"
     },
@@ -1869,12 +1734,37 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.pool.generation",
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
       "kind": "ResourceSlice",
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].basic",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.allNodes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].basic.capacity",
       "kind": "ResourceSlice",
       "group": "resource.k8s.io"
     },
@@ -1884,47 +1774,62 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "status.features",
-      "kind": "Node",
-      "group": "core"
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
     },
     {
-      "fieldPath": "status.runtimeHandlers[].features.userNamespaces",
-      "kind": "Node",
-      "group": "core"
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
     },
     {
-      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].name",
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SelfSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.preferredHolder",
+      "kind": "Lease",
+      "group": "coordination.k8s.io"
+    },
+    {
+      "fieldPath": "spec.strategy",
+      "kind": "Lease",
+      "group": "coordination.k8s.io"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].name",
       "kind": "Pod",
       "group": "core"
     },
     {
-      "fieldPath": "status.ephemeralContainerStatuses[].user",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.gid",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].user.linux",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.containerStatuses[].user",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.initContainerStatuses[].user",
+      "fieldPath": "status.initContainerStatuses[].user.linux.gid",
       "kind": "Pod",
       "group": "core"
     },
@@ -1934,12 +1839,52 @@
       "group": "core"
     },
     {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.gid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
       "fieldPath": "status.containerStatuses[].user.linux.uid",
       "kind": "Pod",
       "group": "core"
     },
     {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
       "fieldPath": "status.initContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].user",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.uid",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].user",
       "kind": "Pod",
       "group": "core"
     },
@@ -1954,69 +1899,24 @@
       "group": "core"
     },
     {
-      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
       "fieldPath": "spec.volumes[].image.reference",
       "kind": "Pod",
       "group": "core"
     },
     {
-      "fieldPath": "status.ephemeralContainerStatuses[].user.linux.uid",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.initContainerStatuses[].user.linux.gid",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
-      "kind": "SubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
       "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "StatefulSet",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "ReplicaSet",
-      "group": "apps"
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "LocalSubjectAccessReview",
+      "group": "authorization.k8s.io"
     },
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
@@ -2024,12 +1924,12 @@
       "group": "authorization.k8s.io"
     },
     {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
       "kind": "LocalSubjectAccessReview",
       "group": "authorization.k8s.io"
     },
     {
-      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
       "kind": "LocalSubjectAccessReview",
       "group": "authorization.k8s.io"
     },
@@ -2041,60 +1941,15 @@
     {
       "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
       "kind": "LocalSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
-      "kind": "LocalSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
-      "kind": "LocalSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].image.reference",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
-      "kind": "SelfSubjectAccessReview",
-      "group": "authorization.k8s.io"
-    },
-    {
-      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
-      "kind": "SelfSubjectAccessReview",
       "group": "authorization.k8s.io"
     },
     {
       "fieldPath": "spec.spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].name",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -2109,12 +1964,7 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].name",
-      "kind": "ResourceClaimTemplate",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.spec.devices.config",
+      "fieldPath": "spec.spec.devices.requests[].adminAccess",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -2124,9 +1974,159 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].adminAccess",
+      "fieldPath": "spec.spec.devices.config",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.config",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].opaque.parameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].adminAccess",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.config[].opaque",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].pool",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "template.spec.volumes[].image.reference",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.rawSelector",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].key",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.labelSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.resourceAttributes.fieldSelector.requirements[].operator",
+      "kind": "SubjectAccessReview",
+      "group": "authorization.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "status.features",
+      "kind": "Node",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.runtimeHandlers[].features.userNamespaces",
+      "kind": "Node",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].image.reference",
+      "kind": "StatefulSet",
+      "group": "apps"
     }
   ]
 }

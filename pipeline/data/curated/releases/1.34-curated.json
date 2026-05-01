@@ -1,8 +1,58 @@
 {
   "version": "1.34",
   "codename": "Of Wind & Will (O' WaW)",
-  "description": "A release powered by the wind around us and the will within us. 'Of Wind & Will' honors the sailors who adjust sails and keep Kubernetes sailing strong—no matter which way the wind blows. DRA graduates to GA for GPU and specialized hardware, KYAML introduces a safer YAML dialect, and service account tokens now authenticate image pulls. Oh, and you wonder why bears? Keep wondering!",
+  "description": "A release powered by the wind around us and the will within us. 'Of Wind & Will' honors the sailors who adjust sails and keep Kubernetes sailing strong\u2014no matter which way the wind blows. DRA graduates to GA for GPU and specialized hardware, KYAML introduces a safer YAML dialect, and service account tokens now authenticate image pulls. Oh, and you wonder why bears? Keep wondering!",
   "releaseDate": "2025-08-27",
-  "themes": ["Resource Management", "Storage", "Security", "Node"],
-  "features": []
+  "themes": [
+    "Resource Management",
+    "Storage",
+    "Security",
+    "Node"
+  ],
+  "features": [
+    {
+      "kep": "KEP-4381",
+      "title": "DRA Structured Parameters",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/4381-dra-structured-parameters"
+    },
+    {
+      "kep": "KEP-3939",
+      "title": "Allow Replacement of Pods in a Job when fully terminating",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Apps",
+      "kepPath": "sig-apps/3939-allow-replacement-when-fully-terminated"
+    },
+    {
+      "kep": "KEP-1710",
+      "title": "Skip SELinux relabeling of volumes",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Storage",
+      "kepPath": "sig-storage/1710-selinux-relabeling"
+    },
+    {
+      "kep": "KEP-2837",
+      "title": "Pod Level Resource Specifications",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/2837-pod-level-resource-spec"
+    },
+    {
+      "kep": "KEP-3104",
+      "title": "Introduce kuberc",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Cli",
+      "kepPath": "sig-cli/3104-introduce-kuberc"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 106,
+    "contributors": 491
+  }
 }

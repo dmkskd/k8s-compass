@@ -13,40 +13,10 @@
   "kindsRemoved": [],
   "fieldsAdded": [
     {
-      "path": "template.spec.initContainers[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].restartPolicy",
+      "path": "spec.jobTemplate.spec.backoffLimitPerIndex",
       "kind": "CronJob",
       "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.podReplacementPolicy",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.containers[].restartPolicy",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
+      "type": "integer"
     },
     {
       "path": "spec.jobTemplate.spec.maxFailedIndexes",
@@ -61,111 +31,75 @@
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.backoffLimitPerIndex",
+      "path": "spec.jobTemplate.spec.template.spec.containers[].restartPolicy",
       "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.podReplacementPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "status.storageVersions[].servedVersions",
+      "kind": "StorageVersion",
+      "group": "internal.apiserver.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.podReplacementPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "status.terminating",
+      "kind": "Job",
       "group": "batch",
       "type": "integer"
     },
     {
-      "path": "spec.paramRef.selector.matchExpressions[].key",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.paramRef.selector",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "object"
-    },
-    {
-      "path": "spec.paramRef.selector.matchExpressions[].values",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "array"
-    },
-    {
-      "path": "spec.paramRef.selector.matchExpressions",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "array"
-    },
-    {
-      "path": "spec.paramRef.selector.matchLabels",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "map"
-    },
-    {
-      "path": "spec.paramRef.parameterNotFoundAction",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.paramRef.selector.matchExpressions[].operator",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
       "path": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
+      "kind": "Job",
+      "group": "batch",
       "type": "string"
     },
     {
       "path": "spec.template.spec.containers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
+      "kind": "Job",
+      "group": "batch",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "path": "spec.maxFailedIndexes",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "status.failedIndexes",
+      "kind": "Job",
+      "group": "batch",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.exempt.lendablePercent",
-      "kind": "PriorityLevelConfiguration",
-      "group": "flowcontrol.apiserver.k8s.io",
+      "path": "spec.backoffLimitPerIndex",
+      "kind": "Job",
+      "group": "batch",
       "type": "integer"
     },
     {
@@ -175,27 +109,33 @@
       "type": "object"
     },
     {
+      "path": "spec.exempt.lendablePercent",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io",
+      "type": "integer"
+    },
+    {
       "path": "spec.exempt.nominalConcurrencyShares",
       "kind": "PriorityLevelConfiguration",
       "group": "flowcontrol.apiserver.k8s.io",
       "type": "integer"
     },
     {
-      "path": "status.lastPhaseTransitionTime",
-      "kind": "PersistentVolume",
-      "group": "core",
+      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
       "type": "string"
     },
     {
-      "path": "status.allocatedResourceStatuses",
-      "kind": "PersistentVolumeClaim",
-      "group": "core",
-      "type": "map"
+      "path": "spec.template.spec.initContainers[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
     },
     {
-      "path": "spec.containers[].restartPolicy",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.containers[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
       "type": "string"
     },
     {
@@ -203,12 +143,6 @@
       "kind": "Pod",
       "group": "core",
       "type": "array"
-    },
-    {
-      "path": "status.hostIPs[].ip",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
     },
     {
       "path": "spec.ephemeralContainers[].restartPolicy",
@@ -223,7 +157,13 @@
       "type": "string"
     },
     {
-      "path": "spec.initContainers[].restartPolicy",
+      "path": "status.hostIPs",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.hostIPs[].ip",
       "kind": "Pod",
       "group": "core",
       "type": "string"
@@ -235,16 +175,112 @@
       "type": "string"
     },
     {
-      "path": "status.hostIPs",
+      "path": "spec.initContainers[].restartPolicy",
       "kind": "Pod",
       "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.lastPhaseTransitionTime",
+      "kind": "PersistentVolume",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.paramRef.selector.matchLabels",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.paramRef.selector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.paramRef.parameterNotFoundAction",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.paramRef.selector.matchExpressions[].key",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.paramRef.selector",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.paramRef.selector.matchExpressions",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
       "type": "array"
     },
     {
-      "path": "spec.variables",
-      "kind": "ValidatingAdmissionPolicy",
+      "path": "spec.paramRef.selector.matchExpressions[].values",
+      "kind": "ValidatingAdmissionPolicyBinding",
       "group": "admissionregistration.k8s.io",
       "type": "array"
+    },
+    {
+      "path": "status.allocatedResourceStatuses",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.variables[].expression",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
     },
     {
       "path": "spec.variables[].name",
@@ -253,9 +289,21 @@
       "type": "string"
     },
     {
-      "path": "spec.variables[].expression",
+      "path": "spec.variables",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].reason",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].fieldPath",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
       "type": "string"
     },
     {
@@ -278,12 +326,24 @@
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "StatefulSet",
+      "kind": "DaemonSet",
       "group": "apps",
       "type": "string"
     },
     {
       "path": "spec.template.spec.initContainers[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
       "kind": "StatefulSet",
       "group": "apps",
       "type": "string"
@@ -295,84 +355,24 @@
       "type": "map"
     },
     {
-      "path": "spec.template.spec.containers[].restartPolicy",
+      "path": "spec.template.spec.initContainers[].restartPolicy",
       "kind": "StatefulSet",
       "group": "apps",
       "type": "string"
     },
     {
-      "path": "status.storageVersions[].servedVersions",
-      "kind": "StorageVersion",
-      "group": "internal.apiserver.k8s.io",
-      "type": "array"
-    },
-    {
-      "path": "spec.maxFailedIndexes",
-      "kind": "Job",
-      "group": "batch",
-      "type": "integer"
-    },
-    {
-      "path": "status.terminating",
-      "kind": "Job",
-      "group": "batch",
-      "type": "integer"
-    },
-    {
-      "path": "status.failedIndexes",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
       "path": "spec.template.spec.containers[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.podReplacementPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.backoffLimitPerIndex",
-      "kind": "Job",
-      "group": "batch",
-      "type": "integer"
-    },
-    {
-      "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].fieldPath",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].reason",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io",
+      "kind": "StatefulSet",
+      "group": "apps",
       "type": "string"
     }
   ],
   "fieldsRemoved": [
     {
-      "path": "status.resizeStatus",
-      "kind": "PersistentVolumeClaim",
-      "group": "core",
-      "type": "string"
+      "path": "status",
+      "kind": "NetworkPolicy",
+      "group": "networking.k8s.io",
+      "type": "object"
     },
     {
       "path": "status.conditions[].status",
@@ -387,13 +387,13 @@
       "type": "array"
     },
     {
-      "path": "status.conditions[].type",
+      "path": "status.conditions[].message",
       "kind": "NetworkPolicy",
       "group": "networking.k8s.io",
       "type": "string"
     },
     {
-      "path": "status.conditions[].lastTransitionTime",
+      "path": "status.conditions[].type",
       "kind": "NetworkPolicy",
       "group": "networking.k8s.io",
       "type": "string"
@@ -411,15 +411,15 @@
       "type": "string"
     },
     {
-      "path": "status",
+      "path": "status.conditions[].lastTransitionTime",
       "kind": "NetworkPolicy",
       "group": "networking.k8s.io",
-      "type": "object"
+      "type": "string"
     },
     {
-      "path": "status.conditions[].message",
-      "kind": "NetworkPolicy",
-      "group": "networking.k8s.io",
+      "path": "status.resizeStatus",
+      "kind": "PersistentVolumeClaim",
+      "group": "core",
       "type": "string"
     },
     {
@@ -441,27 +441,6 @@
       "removed": []
     },
     {
-      "path": "spec.paramRef.name",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io",
-      "change": "enum",
-      "added": [
-        "selector",
-        "name"
-      ],
-      "removed": []
-    },
-    {
-      "path": "action",
-      "kind": "Event",
-      "group": "core",
-      "change": "enum",
-      "added": [
-        "FailIndex"
-      ],
-      "removed": []
-    },
-    {
       "path": "spec.podFailurePolicy.rules[].action",
       "kind": "Job",
       "group": "batch",
@@ -472,9 +451,30 @@
       "removed": []
     },
     {
+      "path": "spec.paramRef.name",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io",
+      "change": "enum",
+      "added": [
+        "name",
+        "selector"
+      ],
+      "removed": []
+    },
+    {
       "path": "action",
       "kind": "Event",
       "group": "events.k8s.io",
+      "change": "enum",
+      "added": [
+        "FailIndex"
+      ],
+      "removed": []
+    },
+    {
+      "path": "action",
+      "kind": "Event",
+      "group": "core",
       "change": "enum",
       "added": [
         "FailIndex"

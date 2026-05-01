@@ -130,19 +130,8 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].resources.claims",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
       "kepPath": "sig-node/3063-dynamic-resource-allocation",
@@ -163,7 +152,29 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
@@ -184,31 +195,9 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.containers[].resources.claims",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
       "kind": "Job",
       "group": "batch",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
-      "kind": "DaemonSet",
-      "group": "apps",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
       "kepPath": "sig-node/3063-dynamic-resource-allocation",
@@ -229,39 +218,6 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
-      "kind": "Job",
-      "group": "batch",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-3063",
@@ -272,29 +228,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
       "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3063",
@@ -305,7 +239,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims",
       "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-3063",
@@ -327,29 +272,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims",
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
       "kind": "Deployment",
       "group": "apps",
       "kep": "KEP-3063",
@@ -360,7 +283,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims",
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
       "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3063",
@@ -371,7 +305,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims",
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims",
       "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-3063",
@@ -393,20 +338,64 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.schedulingGates",
+      "fieldPath": "spec.template.spec.resourceClaims",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims",
       "kind": "ReplicationController",
       "group": "core",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
       "confidence": 0.95,
-      "matchReason": "feature gate match: PodSchedulingReadiness",
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
       "isCanonical": false
     },
     {
       "fieldPath": "spec.template.spec.schedulingGates",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
       "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
@@ -427,7 +416,29 @@
     },
     {
       "fieldPath": "spec.template.spec.schedulingGates",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: PodSchedulingReadiness",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGates",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: PodSchedulingReadiness",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGates",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
@@ -448,31 +459,9 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.schedulingGates",
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
       "kind": "Job",
       "group": "batch",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: PodSchedulingReadiness",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
-      "kind": "DaemonSet",
-      "group": "apps",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
       "kepPath": "sig-node/3063-dynamic-resource-allocation",
@@ -493,7 +482,29 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3063",
+      "kepTitle": "dynamic resource allocation",
+      "kepPath": "sig-node/3063-dynamic-resource-allocation",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: DynamicResourceAllocation",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
@@ -506,17 +517,6 @@
       "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-3063",
-      "kepTitle": "dynamic resource allocation",
-      "kepPath": "sig-node/3063-dynamic-resource-allocation",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: DynamicResourceAllocation",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-3063",
       "kepTitle": "dynamic resource allocation",
       "kepPath": "sig-node/3063-dynamic-resource-allocation",
@@ -620,7 +620,7 @@
       "kepTitle": "Pod Healthy Policy for PDB",
       "kepPath": "sig-apps/3017-pod-healthy-policy-for-pdb",
       "confidence": 0.9,
-      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/2)",
+      "matchReason": "field name contains 'healthy' from KEP title; field description matches KEP terms (2/2)",
       "isCanonical": true
     },
     {
@@ -691,19 +691,8 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].name",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-1965",
-      "kepTitle": "kube-apiserver identity",
-      "kepPath": "sig-api-machinery/1965-kube-apiserver-identity",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'ident', KEP about 'identity'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].name",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-1965",
       "kepTitle": "kube-apiserver identity",
       "kepPath": "sig-api-machinery/1965-kube-apiserver-identity",
@@ -724,7 +713,29 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-1965",
+      "kepTitle": "kube-apiserver identity",
+      "kepPath": "sig-api-machinery/1965-kube-apiserver-identity",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'ident', KEP about 'identity'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].name",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-1965",
+      "kepTitle": "kube-apiserver identity",
+      "kepPath": "sig-api-machinery/1965-kube-apiserver-identity",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'ident', KEP about 'identity'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].name",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-1965",
       "kepTitle": "kube-apiserver identity",
@@ -745,31 +756,9 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims[].name",
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
       "kind": "Job",
       "group": "batch",
-      "kep": "KEP-1965",
-      "kepTitle": "kube-apiserver identity",
-      "kepPath": "sig-api-machinery/1965-kube-apiserver-identity",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'ident', KEP about 'identity'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
-      "kind": "DaemonSet",
-      "group": "apps",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
       "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
@@ -790,7 +779,29 @@
     },
     {
       "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
@@ -811,31 +822,9 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimTemplateName",
+      "fieldPath": "spec.template.spec.schedulingGates[].name",
       "kind": "Job",
       "group": "batch",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.schedulingGates[].name",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.schedulingGates[].name",
-      "kind": "DaemonSet",
-      "group": "apps",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
       "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
@@ -856,7 +845,29 @@
     },
     {
       "fieldPath": "spec.template.spec.schedulingGates[].name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGates[].name",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3521",
+      "kepTitle": "Pod Scheduling Readiness",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGates[].name",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
@@ -869,17 +880,6 @@
       "fieldPath": "spec.template.spec.schedulingGates[].name",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-3521",
-      "kepTitle": "Pod Scheduling Readiness",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.schedulingGates[].name",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-3521",
       "kepTitle": "Pod Scheduling Readiness",
       "kepPath": "sig-scheduling/3521-pod-scheduling-readiness",
@@ -933,19 +933,8 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3294",
-      "kepTitle": "Provision volumes from cross-namespace snapshots",
-      "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
-      "confidence": 0.66,
-      "matchReason": "field name contains 'namespace' from KEP title; field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3294",
       "kepTitle": "Provision volumes from cross-namespace snapshots",
       "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
@@ -966,7 +955,29 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3294",
+      "kepTitle": "Provision volumes from cross-namespace snapshots",
+      "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'namespace' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3294",
+      "kepTitle": "Provision volumes from cross-namespace snapshots",
+      "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
+      "confidence": 0.66,
+      "matchReason": "field name contains 'namespace' from KEP title; field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3294",
       "kepTitle": "Provision volumes from cross-namespace snapshots",
@@ -979,17 +990,6 @@
       "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-3294",
-      "kepTitle": "Provision volumes from cross-namespace snapshots",
-      "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
-      "confidence": 0.66,
-      "matchReason": "field name contains 'namespace' from KEP title; field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.dataSourceRef.namespace",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-3294",
       "kepTitle": "Provision volumes from cross-namespace snapshots",
       "kepPath": "sig-storage/3294-provision-volumes-from-cross-namespace-snapshots",
@@ -1033,34 +1033,19 @@
   ],
   "unlinkedFields": [
     {
-      "fieldPath": "template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "PodTemplate",
-      "group": "core"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
-      "fieldPath": "template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "PodTemplate",
-      "group": "core"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
-      "fieldPath": "template.spec.containers[].resources.claims[].name",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].resources.claims[].name",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.resourceClaims[].source",
-      "kind": "PodTemplate",
-      "group": "core"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].resources.claims[].name",
@@ -1073,102 +1058,32 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "CronJob",
+      "fieldPath": "spec.template.spec.resourceClaims[].source",
+      "kind": "Job",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "CronJob",
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "Job",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "CronJob",
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "Job",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.resourceClaims[].source",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "ReplicationController",
-      "group": "core"
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.limited.nominalConcurrencyShares",
-      "kind": "PriorityLevelConfiguration",
-      "group": "flowcontrol.apiserver.k8s.io"
-    },
-    {
-      "fieldPath": "spec.limited.lendablePercent",
       "kind": "PriorityLevelConfiguration",
       "group": "flowcontrol.apiserver.k8s.io"
     },
@@ -1178,12 +1093,17 @@
       "group": "flowcontrol.apiserver.k8s.io"
     },
     {
-      "fieldPath": "spec.resources.claims[].name",
-      "kind": "PersistentVolumeClaim",
-      "group": "core"
+      "fieldPath": "spec.limited.lendablePercent",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io"
     },
     {
       "fieldPath": "spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.resourceClaims[].source",
       "kind": "Pod",
       "group": "core"
     },
@@ -1208,8 +1128,88 @@
       "group": "core"
     },
     {
-      "fieldPath": "spec.resourceClaims[].source",
-      "kind": "Pod",
+      "fieldPath": "spec.template.spec.resourceClaims[].source",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.resources.claims[].name",
+      "kind": "PersistentVolumeClaim",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.resourceClaims[].source",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.volumes[].ephemeral.volumeClaimTemplate.spec.resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].resources.claims[].name",
+      "kind": "PodTemplate",
       "group": "core"
     },
     {
@@ -1228,13 +1228,58 @@
       "group": "apps"
     },
     {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
       "kind": "ReplicaSet",
       "group": "apps"
     },
     {
+      "fieldPath": "spec.template.spec.resourceClaims[].source",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
       "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.ordinals.start",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.ordinals",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
+      "kind": "StatefulSet",
       "group": "apps"
     },
     {
@@ -1248,27 +1293,7 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.ordinals.start",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
       "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.ordinals",
       "kind": "StatefulSet",
       "group": "apps"
     },
@@ -1276,31 +1301,6 @@
       "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
       "kind": "StatefulSet",
       "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].resources.claims[].name",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].resources.claims[].name",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].resources.claims[].name",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.resourceClaims[].source.resourceClaimName",
-      "kind": "Job",
-      "group": "batch"
     }
   ]
 }

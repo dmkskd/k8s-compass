@@ -1,15 +1,51 @@
 {
   "version": "1.31",
   "codename": "Elli",
-  "description": "Meet Elli—a cute, joyful dog with a heart of gold and a sailor's cap, celebrating the wonderful spirit of Kubernetes contributors. The first release after the project's 10th anniversary, 'Elli' honors the enthusiasm and pride of new and old contributors alike. AppArmor support finally graduates to GA after 8 years, nftables kube-proxy moves to beta, and OCI artifacts can now be mounted as volumes.",
+  "description": "Meet Elli\u2014a cute, joyful dog with a heart of gold and a sailor's cap, celebrating the wonderful spirit of Kubernetes contributors. The first release after the project's 10th anniversary, 'Elli' honors the enthusiasm and pride of new and old contributors alike. AppArmor support finally graduates to GA after 8 years, nftables kube-proxy moves to beta, and OCI artifacts can now be mounted as volumes.",
   "releaseDate": "2024-08-13",
   "endOfLifeDate": "2025-10-28",
-  "summary": {
-    "total": 45,
-    "stable": 11,
-    "beta": 22,
-    "alpha": 12
-  },
-  "themes": ["Security", "Networking", "Storage", "Observability"],
-  "features": []
+  "themes": [
+    "Security",
+    "Networking",
+    "Storage",
+    "Observability"
+  ],
+  "features": [
+    {
+      "kep": "KEP-24",
+      "title": "Add AppArmor Support",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/24-apparmor"
+    },
+    {
+      "kep": "KEP-3836",
+      "title": "Kube-proxy improved ingress connectivity reliability",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Network",
+      "kepPath": "sig-network/3836-kube-proxy-improved-ingress-connectivity-reliability"
+    },
+    {
+      "kep": "KEP-3762",
+      "title": "PersistentVolume last phase transition time",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Storage",
+      "kepPath": "sig-storage/3762-persistent-volume-last-phase-transition-time"
+    },
+    {
+      "kep": "KEP-3866",
+      "title": "Add an nftables-based kube-proxy backend",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Network",
+      "kepPath": "sig-network/3866-nftables-proxy"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 113,
+    "contributors": 528
+  }
 }

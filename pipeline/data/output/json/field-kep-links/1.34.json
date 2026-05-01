@@ -42,29 +42,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-3721",
-      "kepTitle": "Support for env files.",
-      "kepPath": "sig-node/3721-support-for-env-files",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: EnvFiles",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-3721",
-      "kepTitle": "Support for env files.",
-      "kepPath": "sig-node/3721-support-for-env-files",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: EnvFiles",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -86,6 +64,17 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3721",
+      "kepTitle": "Support for env files.",
+      "kepPath": "sig-node/3721-support-for-env-files",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: EnvFiles",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-3721",
@@ -97,7 +86,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -107,7 +96,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.key",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3721",
@@ -119,18 +108,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-3721",
-      "kepTitle": "Support for env files.",
-      "kepPath": "sig-node/3721-support-for-env-files",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: EnvFiles",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -152,6 +130,17 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3721",
+      "kepTitle": "Support for env files.",
+      "kepPath": "sig-node/3721-support-for-env-files",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: EnvFiles",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-3721",
@@ -163,7 +152,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -173,7 +162,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.key",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3721",
@@ -185,18 +174,7 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-3721",
-      "kepTitle": "Support for env files.",
-      "kepPath": "sig-node/3721-support-for-env-files",
-      "confidence": 0.95,
-      "matchReason": "feature gate match: EnvFiles",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -218,6 +196,17 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3721",
+      "kepTitle": "Support for env files.",
+      "kepPath": "sig-node/3721-support-for-env-files",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: EnvFiles",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-3721",
@@ -229,7 +218,18 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3721",
+      "kepTitle": "Support for env files.",
+      "kepPath": "sig-node/3721-support-for-env-files",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: EnvFiles",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.key",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3721",
       "kepTitle": "Support for env files.",
@@ -279,7 +279,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -290,7 +290,7 @@
       "kepTitle": "DRA Device Binding Conditions",
       "kepPath": "sig-scheduling/5007-device-attach-before-pod-scheduled",
       "confidence": 0.9,
-      "matchReason": "field name contains 'binding' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'conditions' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -301,7 +301,7 @@
       "kepTitle": "DRA Device Binding Conditions",
       "kepPath": "sig-scheduling/5007-device-attach-before-pod-scheduled",
       "confidence": 0.9,
-      "matchReason": "field name contains 'binding' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'conditions' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -323,7 +323,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -334,7 +334,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
@@ -345,62 +345,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
-      "kind": "Job",
-      "group": "batch",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
@@ -411,62 +356,62 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
       "kind": "Job",
       "group": "batch",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
@@ -477,7 +422,62 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": false
     },
     {
@@ -499,7 +499,7 @@
       "kepTitle": "DRA Device Binding Conditions",
       "kepPath": "sig-scheduling/5007-device-attach-before-pod-scheduled",
       "confidence": 0.9,
-      "matchReason": "field name contains 'binding' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'conditions' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -510,7 +510,7 @@
       "kepTitle": "DRA Device Binding Conditions",
       "kepPath": "sig-scheduling/5007-device-attach-before-pod-scheduled",
       "confidence": 0.9,
-      "matchReason": "field name contains 'binding' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'conditions' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -521,7 +521,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -532,7 +532,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.9,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (3/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (3/3)",
       "isCanonical": true
     },
     {
@@ -548,29 +548,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -592,6 +570,17 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4317",
@@ -603,7 +592,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -613,7 +602,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4317",
@@ -625,18 +614,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -658,6 +636,17 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4317",
@@ -669,7 +658,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -679,7 +668,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.certificateChainPath",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4317",
@@ -691,18 +680,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -724,6 +702,17 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4317",
@@ -735,7 +724,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -745,7 +734,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.credentialBundlePath",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4317",
@@ -757,18 +746,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -790,6 +768,17 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4317",
@@ -801,7 +790,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -811,7 +800,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyPath",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4317",
@@ -823,18 +812,7 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4317",
-      "kepTitle": "Pod Certificates",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "confidence": 0.82,
-      "matchReason": "field mentions 'cert', KEP about 'certificate'",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -856,6 +834,17 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4317",
@@ -867,7 +856,18 @@
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4317",
+      "kepTitle": "Pod Certificates",
+      "kepPath": "sig-auth/4317-pod-certificates",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.maxExpirationSeconds",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4317",
       "kepTitle": "Pod Certificates",
@@ -1005,7 +1005,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": true
     },
     {
@@ -1049,7 +1049,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
@@ -1076,29 +1076,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1120,6 +1098,17 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-5307",
@@ -1131,7 +1120,18 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].action",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1142,35 +1142,13 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
-      "kind": "DaemonSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
@@ -1181,7 +1159,18 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
@@ -1192,45 +1181,34 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": false
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1252,6 +1230,17 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-5307",
@@ -1263,7 +1252,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1273,7 +1262,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].action",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-5307",
@@ -1285,18 +1274,7 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-5307",
-      "kepTitle": "Container Restart Policy",
-      "kepPath": "sig-node/5307-container-restart-policy",
-      "confidence": 0.77,
-      "matchReason": "field description matches KEP terms (2/3)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1318,6 +1296,17 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-5307",
@@ -1329,7 +1318,18 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-5307",
+      "kepTitle": "Container Restart Policy",
+      "kepPath": "sig-node/5307-container-restart-policy",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].action",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-5307",
       "kepTitle": "Container Restart Policy",
@@ -1357,7 +1357,7 @@
       "kepTitle": "Container Restart Policy",
       "kepPath": "sig-node/5307-container-restart-policy",
       "confidence": 0.77,
-      "matchReason": "field name contains 'restart' from KEP title; field description matches KEP terms (2/3)",
+      "matchReason": "field name contains 'policy' from KEP title; field description matches KEP terms (2/3)",
       "isCanonical": true
     },
     {
@@ -1494,29 +1494,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-4818",
-      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
-      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
-      "confidence": 0.7,
-      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4818",
-      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
-      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
-      "confidence": 0.7,
-      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1538,6 +1516,17 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4818",
@@ -1549,7 +1538,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1559,7 +1548,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.values",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4818",
@@ -1571,18 +1560,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4818",
-      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
-      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
-      "confidence": 0.7,
-      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1604,6 +1582,17 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4818",
@@ -1615,7 +1604,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1625,7 +1614,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.values",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4818",
@@ -1637,18 +1626,7 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4818",
-      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
-      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
-      "confidence": 0.7,
-      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1670,6 +1648,17 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4818",
@@ -1681,7 +1670,18 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4818",
+      "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
+      "kepPath": "sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'value' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.values",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4818",
       "kepTitle": "Allow zero value for Sleep Action of PreStop Hook",
@@ -1769,29 +1769,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-4369",
-      "kepTitle": "Allow special characters environment variable",
-      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
-      "confidence": 0.66,
-      "matchReason": "field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4369",
-      "kepTitle": "Allow special characters environment variable",
-      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
-      "confidence": 0.66,
-      "matchReason": "field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -1813,6 +1791,17 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4369",
+      "kepTitle": "Allow special characters environment variable",
+      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4369",
@@ -1824,7 +1813,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -1834,7 +1823,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.optional",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4369",
@@ -1846,18 +1835,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4369",
-      "kepTitle": "Allow special characters environment variable",
-      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
-      "confidence": 0.66,
-      "matchReason": "field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -1879,6 +1857,17 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4369",
+      "kepTitle": "Allow special characters environment variable",
+      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4369",
@@ -1890,7 +1879,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -1900,7 +1889,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.optional",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4369",
@@ -1912,18 +1901,7 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4369",
-      "kepTitle": "Allow special characters environment variable",
-      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
-      "confidence": 0.66,
-      "matchReason": "field description matches KEP terms (2/5)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -1945,6 +1923,17 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4369",
+      "kepTitle": "Allow special characters environment variable",
+      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4369",
@@ -1956,7 +1945,18 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4369",
+      "kepTitle": "Allow special characters environment variable",
+      "kepPath": "sig-node/4369-allow-special-characters-environment-variable",
+      "confidence": 0.66,
+      "matchReason": "field description matches KEP terms (2/5)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.optional",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4369",
       "kepTitle": "Allow special characters environment variable",
@@ -2077,29 +2077,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-1790",
-      "kepTitle": "Recover from volume expansion failure",
-      "kepPath": "sig-storage/1790-recover-resize-failure",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'volume' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-1790",
-      "kepTitle": "Recover from volume expansion failure",
-      "kepPath": "sig-storage/1790-recover-resize-failure",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'volume' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2121,6 +2099,17 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-1790",
+      "kepTitle": "Recover from volume expansion failure",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volume' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-1790",
@@ -2132,7 +2121,7 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2142,7 +2131,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.volumeName",
       "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-1790",
@@ -2154,18 +2143,7 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-1790",
-      "kepTitle": "Recover from volume expansion failure",
-      "kepPath": "sig-storage/1790-recover-resize-failure",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'volume' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2187,6 +2165,17 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-1790",
+      "kepTitle": "Recover from volume expansion failure",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volume' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-1790",
@@ -2198,7 +2187,18 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-1790",
+      "kepTitle": "Recover from volume expansion failure",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volume' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.volumeName",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2209,29 +2209,7 @@
     },
     {
       "fieldPath": "spec.template.spec.hostnameOverride",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-4762",
-      "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
-      "kepPath": "sig-network/4762-allow-arbitrary-fqdn-as-pod-hostname",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'hostname' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.hostnameOverride",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-4762",
-      "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
-      "kepPath": "sig-network/4762-allow-arbitrary-fqdn-as-pod-hostname",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'hostname' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.hostnameOverride",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-4762",
       "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
@@ -2253,6 +2231,17 @@
     },
     {
       "fieldPath": "spec.template.spec.hostnameOverride",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-4762",
+      "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
+      "kepPath": "sig-network/4762-allow-arbitrary-fqdn-as-pod-hostname",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'hostname' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.hostnameOverride",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-4762",
@@ -2264,7 +2253,18 @@
     },
     {
       "fieldPath": "spec.template.spec.hostnameOverride",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-4762",
+      "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
+      "kepPath": "sig-network/4762-allow-arbitrary-fqdn-as-pod-hostname",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'hostname' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.hostnameOverride",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-4762",
       "kepTitle": "Allows setting arbitrary FQDN as the pod's hostname",
@@ -2275,29 +2275,7 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-1790",
-      "kepTitle": "Recover from volume expansion failure",
-      "kepPath": "sig-storage/1790-recover-resize-failure",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'volume' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-1790",
-      "kepTitle": "Recover from volume expansion failure",
-      "kepPath": "sig-storage/1790-recover-resize-failure",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'volume' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2319,6 +2297,17 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-1790",
+      "kepTitle": "Recover from volume expansion failure",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volume' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-1790",
@@ -2330,7 +2319,18 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
-      "kind": "ReplicaSet",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-1790",
+      "kepTitle": "Recover from volume expansion failure",
+      "kepPath": "sig-storage/1790-recover-resize-failure",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volume' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.volumeName",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-1790",
       "kepTitle": "Recover from volume expansion failure",
@@ -2430,87 +2430,172 @@
   ],
   "unlinkedFields": [
     {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "DaemonSet",
-      "group": "apps"
+      "fieldPath": "spec.devices.constraints[].distinctAttribute",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "DaemonSet",
-      "group": "apps"
+      "fieldPath": "spec.devices.requests[].firstAvailable[].capacity",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "DaemonSet",
-      "group": "apps"
+      "fieldPath": "spec.devices.requests[].exactly.capacity",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.devices[].shareID",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].shareID",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].podCertificate.signerName",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "PodTemplate",
+      "group": "core"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "DaemonSet",
+      "kind": "ReplicaSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "DaemonSet",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicaSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "DaemonSet",
+      "kind": "ReplicaSet",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "CronJob",
-      "group": "batch"
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicaSet",
+      "group": "apps"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "CronJob",
-      "group": "batch"
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "ReplicaSet",
+      "group": "apps"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
       "kind": "CronJob",
       "group": "batch"
     },
@@ -2520,12 +2605,7 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
       "kind": "CronJob",
       "group": "batch"
     },
@@ -2535,7 +2615,7 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
       "kind": "CronJob",
       "group": "batch"
     },
@@ -2545,77 +2625,107 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].restartPolicyRules[].exitCodes",
       "kind": "Pod",
       "group": "core"
     },
@@ -2630,6 +2740,41 @@
       "group": "core"
     },
     {
+      "fieldPath": "spec.volumes[].projected.sources[].podCertificate.signerName",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.extendedResourceClaimStatus.requestMappings",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
       "fieldPath": "spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
       "kind": "Pod",
       "group": "core"
@@ -2640,74 +2785,149 @@
       "group": "core"
     },
     {
-      "fieldPath": "spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
       "fieldPath": "spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
       "kind": "Pod",
       "group": "core"
     },
     {
-      "fieldPath": "spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.extendedResourceClaimStatus.requestMappings",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "StatefulSet",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "StatefulSet",
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "StatefulSet",
+      "kind": "Deployment",
       "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "ReplicationController",
+      "group": "core"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
@@ -2715,37 +2935,7 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
       "kind": "StatefulSet",
       "group": "apps"
     },
@@ -2755,7 +2945,42 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
       "kind": "StatefulSet",
       "group": "apps"
     },
@@ -2766,168 +2991,13 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "Job",
-      "group": "batch"
+      "kind": "StatefulSet",
+      "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].capacity",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.devices[].shareID",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.constraints[].distinctAttribute",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.devices.results[].shareID",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].exactly.capacity",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
+      "kind": "StatefulSet",
+      "group": "apps"
     },
     {
       "fieldPath": "spec.spec.devices.constraints[].distinctAttribute",
@@ -2945,143 +3015,73 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes.operator",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicyRules[].exitCodes",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicyRules[].exitCodes.operator",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].env[].valueFrom.fileKeyRef",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.signerName",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].env[].valueFrom.fileKeyRef.path",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.volumes[].projected.sources[].podCertificate.keyType",
+      "kind": "DaemonSet",
       "group": "apps"
     }
   ]

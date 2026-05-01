@@ -328,6 +328,7 @@ export interface ReleaseFeature {
   description: string;
   impact?: string;
   featureGate?: string;
+  isHighlight?: boolean;
   affectedKinds?: string[];
   affectedFields?: string[];
   history: {

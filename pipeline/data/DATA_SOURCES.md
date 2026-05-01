@@ -682,7 +682,7 @@ To add a new data source:
 
 | Source | URL Pattern | Data Type | Best For |
 |--------|-------------|-----------|----------|
-| **release-notes.json** ⭐ | `cdn.dl.k8s.io/release/vX.YY.Z/release-notes.json` | JSON | Per-PR changes with SIG/kind metadata |
+| **release-notes.json** ⭐ | `dl.k8s.io/release/vX.YY.Z/release-notes.json` | JSON | Per-PR changes with SIG/kind metadata |
 | **CHANGELOG.md** | `github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-X.YY.md` | Markdown | Patch releases, CVEs, urgent notes |
 | **Release Blog** | `kubernetes.io/blog/YYYY/MM/DD/kubernetes-X-YY-release-announcement/` | HTML | Codename, themes, highlights, velocity |
 | **KEPs** | `github.com/kubernetes/enhancements/tree/master/keps/sig-*/XXXX-*` | YAML+MD | Feature history, gates, design |
@@ -878,9 +878,9 @@ This keeps the main repository small while allowing local access to large upstre
 
 ---
 
-## 13. Official Release Notes JSON (cdn.dl.k8s.io) ⭐ PRIMARY SOURCE
+## 13. Official Release Notes JSON (dl.k8s.io) ⭐ PRIMARY SOURCE
 
-**Source:** `https://cdn.dl.k8s.io/release/vX.YY.Z/release-notes.json`
+**Source:** `https://dl.k8s.io/release/vX.YY.Z/release-notes.json`
 
 **Category:** Primary Source (machine-readable, official)
 
@@ -908,17 +908,17 @@ Pull Request                    Kubernetes Release Toolbox              Consumer
 └─────────────┘
 ```
 
-**Key insight:** The JSON at `cdn.dl.k8s.io` and the CHANGELOG markdown are generated from the **same source data** (PR release-note blocks + labels). The JSON is the structured version; the CHANGELOG is the human-readable version.
+**Key insight:** The JSON at `dl.k8s.io` and the CHANGELOG markdown are generated from the **same source data** (PR release-note blocks + labels). The JSON is the structured version; the CHANGELOG is the human-readable version.
 
 ### URL Pattern
 
 ```
-https://cdn.dl.k8s.io/release/v{major}.{minor}.{patch}/release-notes.json
+https://dl.k8s.io/release/v{major}.{minor}.{patch}/release-notes.json
 ```
 
 **Examples:**
-- `https://cdn.dl.k8s.io/release/v1.35.0/release-notes.json`
-- `https://cdn.dl.k8s.io/release/v1.34.0/release-notes.json`
+- `https://dl.k8s.io/release/v1.35.0/release-notes.json`
+- `https://dl.k8s.io/release/v1.34.0/release-notes.json`
 
 ### JSON Structure
 
@@ -997,12 +997,12 @@ The JSON is keyed by PR number (not an array):
 
 | Version | Status | URL |
 |---------|--------|-----|
-| v1.35.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.35.0/release-notes.json` |
-| v1.34.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.34.0/release-notes.json` |
-| v1.33.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.33.0/release-notes.json` |
-| v1.30.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.30.0/release-notes.json` |
-| v1.25.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.25.0/release-notes.json` |
-| v1.20.0 | ✅ Available | `cdn.dl.k8s.io/release/v1.20.0/release-notes.json` |
+| v1.35.0 | ✅ Available | `dl.k8s.io/release/v1.35.0/release-notes.json` |
+| v1.34.0 | ✅ Available | `dl.k8s.io/release/v1.34.0/release-notes.json` |
+| v1.33.0 | ✅ Available | `dl.k8s.io/release/v1.33.0/release-notes.json` |
+| v1.30.0 | ✅ Available | `dl.k8s.io/release/v1.30.0/release-notes.json` |
+| v1.25.0 | ✅ Available | `dl.k8s.io/release/v1.25.0/release-notes.json` |
+| v1.20.0 | ✅ Available | `dl.k8s.io/release/v1.20.0/release-notes.json` |
 | v1.19.0 | ❌ Not available | 404 |
 | v1.18.0 | ❌ Not available | 404 |
 | v1.15.0 | ❌ Not available | 404 |
@@ -1030,12 +1030,12 @@ Description of the change that will appear in release notes.
 import requests
 
 def fetch_release_notes_json(version: str) -> dict:
-    """Fetch official release-notes.json from cdn.dl.k8s.io"""
+    """Fetch official release-notes.json from dl.k8s.io"""
     # Ensure version format is X.YY.Z (add .0 if needed)
     if version.count('.') == 1:
         version = f"{version}.0"
     
-    url = f"https://cdn.dl.k8s.io/release/v{version}/release-notes.json"
+    url = f"https://dl.k8s.io/release/v{version}/release-notes.json"
     response = requests.get(url)
     response.raise_for_status()
     return response.json()

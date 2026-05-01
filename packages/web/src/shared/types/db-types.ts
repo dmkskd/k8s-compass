@@ -4,7 +4,7 @@
  * DO NOT EDIT MANUALLY - regenerate with:
  *   uv run k8s-pipeline export types
  * 
- * Generated: 2026-02-03T11:28:32.058715
+ * Generated: 2026-04-30T22:53:02.648983
  * Source: pipeline/src/k8s/output/parquet/schemas.py
  */
 
@@ -217,6 +217,8 @@ export interface FeaturesRow {
   kep?: string;
   /** alpha/beta/stable */
   stage?: string;
+  /** True if curated as a release highlight */
+  is_highlight?: boolean;
 }
 
 /**

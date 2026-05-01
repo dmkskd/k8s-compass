@@ -60,8 +60,8 @@ function buildCurrentUrlState(state: ExplorerStore): UrlState {
       break
     case 'releases':
       urlState.releases = {
-        version: state.selectedRelease,
         ...state.releasesUrlState,
+        version: state.selectedRelease,
       }
       break
     case 'learn':
@@ -190,7 +190,8 @@ export const useExplorerStore = create<ExplorerStore>((set, get) => ({
   setReleasesViewMode: (mode) => set({ releasesViewMode: mode }),
   
   setSelectedRelease: (version) => set((state) => {
-    const newState = { selectedRelease: version }
+    const releasesUrlState = { ...state.releasesUrlState, version }
+    const newState = { selectedRelease: version, releasesUrlState }
     const fullState = { ...state, ...newState } as ExplorerStore
     updateUrlHash(buildCurrentUrlState(fullState))
     return newState

@@ -1,15 +1,59 @@
 {
   "version": "1.32",
   "codename": "Penelope",
-  "description": "Named for Penelope from The Odyssey, who wove for 10 years—each night removing parts of what she'd done during the day. Like her, each Kubernetes release adds new features and removes others, constantly improving. 'Penelope' marks the project's 10th anniversary, honoring all who've roamed the cloud-native seas. Custom resource field selectors and memory manager reach GA, while DRA structured parameters move to beta.",
+  "description": "Named for Penelope from The Odyssey, who wove for 10 years\u2014each night removing parts of what she'd done during the day. Like her, each Kubernetes release adds new features and removes others, constantly improving. 'Penelope' marks the project's 10th anniversary, honoring all who've roamed the cloud-native seas. Custom resource field selectors and memory manager reach GA, while DRA structured parameters move to beta.",
   "releaseDate": "2024-12-11",
   "endOfLifeDate": "2026-02-28",
-  "summary": {
-    "total": 44,
-    "stable": 13,
-    "beta": 12,
-    "alpha": 19
-  },
-  "themes": ["Resource Management", "Storage", "Scheduling", "API"],
-  "features": []
+  "themes": [
+    "Resource Management",
+    "Storage",
+    "Scheduling",
+    "API"
+  ],
+  "features": [
+    {
+      "kep": "KEP-4358",
+      "title": "Custom Resource Field Selectors",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Api Machinery",
+      "kepPath": "sig-api-machinery/4358-custom-resource-field-selectors"
+    },
+    {
+      "kep": "KEP-1967",
+      "title": "Size memory backed volumes",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/1967-size-memory-backed-volumes"
+    },
+    {
+      "kep": "KEP-4193",
+      "title": "bound service account token improvements",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Auth",
+      "kepPath": "sig-auth/4193-bound-service-account-token-improvements"
+    },
+    {
+      "kep": "KEP-3221",
+      "title": "Structured Authorization Configuration",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Auth",
+      "kepPath": "sig-auth/3221-structured-authorization-configuration"
+    },
+    {
+      "kep": "KEP-1847",
+      "title": "Auto delete PVCs created by StatefulSet",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Apps",
+      "kepPath": "sig-apps/1847-autoremove-statefulset-pvcs"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 125,
+    "contributors": 559
+  }
 }

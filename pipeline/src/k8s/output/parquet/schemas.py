@@ -135,6 +135,7 @@ FEATURES_SCHEMA = pa.schema([
     _field("version", pa.string(), 'K8s version (e.g. "1.35")', pk=True, fk="releases.version"),
     _field("kep", pa.string(), 'KEP identifier (e.g. "KEP-1287")', pk=True, fk="keps.kep"),
     _field("stage", pa.string(), "alpha/beta/stable"),
+    _field("is_highlight", pa.bool_(), "True if curated as a release highlight"),
 ], metadata={"description": "KEP graduations per release (join table between releases and keps)."})
 
 DEPRECATIONS_SCHEMA = pa.schema([

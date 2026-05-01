@@ -1,0 +1,600 @@
+{
+  "version": "1.36",
+  "summary": {
+    "totalFieldsAdded": 55,
+    "linkedFields": 52,
+    "unlinkedFields": 3,
+    "canonicalFields": 38
+  },
+  "links": [
+    {
+      "fieldPath": "metadata.shardInfo",
+      "kind": "Status",
+      "group": "core",
+      "kep": "KEP-5866",
+      "kepTitle": "Server-side Sharded List and Watch",
+      "kepPath": "sig-api-machinery/5866-server-side-sharded-list-and-watch",
+      "confidence": 0.95,
+      "matchReason": "feature gate match: ShardedListAndWatch",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.devices[].nodeAllocatableResourceMappings",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].disruptionMode",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5710",
+      "kepTitle": "Workload-aware preemption",
+      "kepPath": "sig-scheduling/5710-workload-aware-preemption",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].priority",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5710",
+      "kepTitle": "Workload-aware preemption",
+      "kepPath": "sig-scheduling/5710-workload-aware-preemption",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].priorityClassName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5710",
+      "kepTitle": "Workload-aware preemption",
+      "kepPath": "sig-scheduling/5710-workload-aware-preemption",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingConstraints",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'scheduling' from KEP title; field description matches KEP terms (4/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'image' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'image' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'image' from KEP title; field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.nodeAllocatableResourceClaimStatuses",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3695",
+      "kepTitle": "Extend the PodResources API to include resources allocated by DRA",
+      "kepPath": "sig-node/3695-pod-resources-for-dra",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (3/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.schedulingGroup",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5547",
+      "kepTitle": "Integrate Workload APIs with Job Controller",
+      "kepPath": "sig-apps/5547-integrate-workload-with-job",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'workload', KEP about 'workload api'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].name",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5547",
+      "kepTitle": "Integrate Workload APIs with Job Controller",
+      "kepPath": "sig-apps/5547-integrate-workload-with-job",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'workload', KEP about 'workload api'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].resourceClaims",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5547",
+      "kepTitle": "Integrate Workload APIs with Job Controller",
+      "kepPath": "sig-apps/5547-integrate-workload-with-job",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'workload', KEP about 'workload api'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingPolicy",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingPolicy.basic",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingPolicy.gang",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingPolicy.gang.minCount",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.preventPodSchedulingIfMissing",
+      "kind": "CSIDriver",
+      "group": "storage.k8s.io",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field description matches KEP terms (2/4); field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.schedulingGroup",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.stubPKCS10Request",
+      "kind": "PodCertificateRequest",
+      "group": "certificates.k8s.io",
+      "kep": "KEP-4872",
+      "kepTitle": "Harden Kubelet Serving Certificate Validation in Kube-API server",
+      "kepPath": "sig-auth/4872-harden-kubelet-cert-validation",
+      "confidence": 0.82,
+      "matchReason": "field description matches KEP terms (3/6); field mentions 'cert', KEP about 'certificate'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "template.spec.schedulingGroup",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-5732",
+      "kepTitle": "Topology-aware workload scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "confidence": 0.82,
+      "matchReason": "field name contains 'scheduling' from KEP title; field mentions 'schedul', KEP about 'scheduling'",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4680",
+      "kepTitle": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
+      "kepPath": "sig-node/4680-add-resource-health-to-pod-status",
+      "confidence": 0.77,
+      "matchReason": "field description matches KEP terms (2/3)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.nodeAllocatableResourceClaimStatuses[].containers",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5532",
+      "kepTitle": "Restart All Containers on Container Exits",
+      "kepPath": "sig-node/5532-restart-all-containers-on-container-exits",
+      "confidence": 0.7,
+      "matchReason": "field name contains 'containers' from KEP title; field description matches KEP terms (2/4)",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "CronJob",
+      "group": "batch",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].resourceClaims[].resourceClaimName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].resourceClaims[].resourceClaimTemplateName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingConstraints.topology",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "kep": "KEP-3243",
+      "kepTitle": "Respect PodTopologySpread after rolling upgrades",
+      "kepPath": "sig-scheduling/3243-respect-pod-topology-spread-after-rolling-upgrades",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'topology' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.schedulingGroup.podGroupName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "Job",
+      "group": "batch",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "status.containerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-1710",
+      "kepTitle": "Skip SELinux relabeling of volumes",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volumes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.containerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'image' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-1710",
+      "kepTitle": "Skip SELinux relabeling of volumes",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volumes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'image' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-1710",
+      "kepTitle": "Skip SELinux relabeling of volumes",
+      "kepPath": "sig-storage/1710-selinux-relabeling",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'volumes' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-5365",
+      "kepTitle": "ImageVolume with an image digest",
+      "kepPath": "sig-node/5365-ImageVolume-with-image-digest",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'image' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.nodeAllocatableResourceClaimStatuses[].resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "status.nodeAllocatableResourceClaimStatuses[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "kep": "KEP-4639",
+      "kepTitle": "OCI images as VolumeSource",
+      "kepPath": "sig-node/4639-oci-volume-source",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'source' from KEP title",
+      "isCanonical": true
+    },
+    {
+      "fieldPath": "template.spec.schedulingGroup.podGroupName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "kep": "KEP-3476",
+      "kepTitle": "Volume Group Snapshot",
+      "kepPath": "sig-storage/3476-volume-group-snapshot",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'group' from KEP title",
+      "isCanonical": true
+    }
+  ],
+  "unlinkedFields": [
+    {
+      "fieldPath": "metadata.shardInfo.selector",
+      "kind": "Status",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].schedulingConstraints.topology[].key",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io"
+    },
+    {
+      "fieldPath": "spec.podGroupTemplates[].resourceClaims[].name",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io"
+    }
+  ]
+}

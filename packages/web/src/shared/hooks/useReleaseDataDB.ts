@@ -22,6 +22,7 @@ interface FeatureWithKepRow {
   kep_path?: string
   title?: string
   stage?: string
+  is_highlight?: boolean
   sig?: string
   category?: string  // SQL alias
   labels?: string[]
@@ -87,7 +88,7 @@ export function useReleaseNotesDB(version: string | undefined) {
             WHERE version = '${version}'
           `),
           executeQuery<FeatureWithKepRow>(`
-            SELECT f.kep, k.kep_path, k.title, f.stage, k.sig, '' as category, k.labels, k.description,
+            SELECT f.kep, k.kep_path, k.title, f.stage, f.is_highlight, k.sig, '' as category, k.labels, k.description,
                    k.impact, k.feature_gate, k.affected_kinds, k.affected_fields,
                    k.history_alpha, k.history_beta, k.history_stable,
                    ARRAY[]::VARCHAR[] as history_tentative, ARRAY[]::VARCHAR[] as history_verified
@@ -216,6 +217,7 @@ export function useReleaseNotesDB(version: string | undefined) {
             description: f.description!,
             impact: f.impact ?? undefined,
             featureGate: f.feature_gate ?? undefined,
+            isHighlight: f.is_highlight ?? undefined,
             affectedKinds: f.affected_kinds ?? [],
             affectedFields: f.affected_fields ?? [],
             history: {
@@ -339,7 +341,7 @@ export function useAllReleasesDB() {
             ORDER BY version DESC
           `),
           executeQuery<FeatureWithKepRow>(`
-            SELECT f.version, f.kep, k.kep_path, k.title, f.stage, k.sig, '' as category,
+            SELECT f.version, f.kep, k.kep_path, k.title, f.stage, f.is_highlight, k.sig, '' as category,
                    k.description, k.impact, k.feature_gate, k.affected_kinds,
                    k.affected_fields, k.history_alpha, k.history_beta, k.history_stable,
                    ARRAY[]::VARCHAR[] as history_tentative, ARRAY[]::VARCHAR[] as history_verified
@@ -390,6 +392,7 @@ export function useAllReleasesDB() {
             description: f.description!,
             impact: f.impact ?? undefined,
             featureGate: f.feature_gate ?? undefined,
+            isHighlight: f.is_highlight ?? undefined,
             affectedKinds: f.affected_kinds ?? [],
             affectedFields: f.affected_fields ?? [],
             history: {

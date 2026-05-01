@@ -194,21 +194,31 @@ def pull_repo(repo_name: str) -> bool:
         console.print(f"[red]Fetch failed: {output}[/red]")
         return False
 
-    # Then pull current branch
+    # Check if we're on a detached HEAD (e.g. checked out at a tag)
+    on_branch, ref_output = run_git(["symbolic-ref", "--short", "HEAD"], cwd=repo_path)
+
+    if not on_branch:
+        # Detached HEAD — fetch is enough, don't pull or reset
+        describe_ok, describe = run_git(["describe", "--tags", "--always"], cwd=repo_path)
+        ref_label = describe.strip() if describe_ok else "unknown"
+        ensure_full_checkout(repo_path)
+        console.print(f"[green]✓ Updated {repo_name}[/green]")
+        console.print(f"  [dim]Detached HEAD at {ref_label} (fetch only)[/dim]")
+        return True
+
+    # On a branch — pull
     success, output = run_git(["pull", "--ff-only"], cwd=repo_path, timeout=300)
 
     if not success:
-        # Try reset if pull fails (e.g., local changes)
-        console.print("  [dim]Pull failed, trying reset...[/dim]")
+        console.print(f"  [yellow]Pull failed: {output.strip()}[/yellow]")
 
-        # Get default branch
         repo_config = REPOS.get(repo_name, {})
         branch = repo_config.get("default_branch", "master")
 
-        success, _ = run_git(["reset", "--hard", f"origin/{branch}"], cwd=repo_path)
+        console.print(f"  [dim]Resetting to origin/{branch}...[/dim]")
+        success, output = run_git(["reset", "--hard", f"origin/{branch}"], cwd=repo_path)
 
     if success:
-        # Ensure full checkout (no sparse) on every pull
         ensure_full_checkout(repo_path)
         console.print(f"[green]✓ Updated {repo_name}[/green]")
     else:

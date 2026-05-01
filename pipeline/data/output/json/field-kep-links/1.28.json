@@ -86,19 +86,8 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-753",
-      "kepTitle": "Sidecar Containers",
-      "kepPath": "sig-node/753-sidecar-containers",
-      "confidence": 0.9,
-      "matchReason": "field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-753",
       "kepTitle": "Sidecar Containers",
       "kepPath": "sig-node/753-sidecar-containers",
@@ -119,7 +108,29 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-753",
+      "kepTitle": "Sidecar Containers",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicy",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-753",
+      "kepTitle": "Sidecar Containers",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].restartPolicy",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-753",
       "kepTitle": "Sidecar Containers",
@@ -140,31 +151,9 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.containers[].restartPolicy",
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
       "kind": "Job",
       "group": "batch",
-      "kep": "KEP-753",
-      "kepTitle": "Sidecar Containers",
-      "kepPath": "sig-node/753-sidecar-containers",
-      "confidence": 0.9,
-      "matchReason": "field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-753",
-      "kepTitle": "Sidecar Containers",
-      "kepPath": "sig-node/753-sidecar-containers",
-      "confidence": 0.9,
-      "matchReason": "field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
       "kep": "KEP-753",
       "kepTitle": "Sidecar Containers",
       "kepPath": "sig-node/753-sidecar-containers",
@@ -185,7 +174,29 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-753",
+      "kepTitle": "Sidecar Containers",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-753",
+      "kepTitle": "Sidecar Containers",
+      "kepPath": "sig-node/753-sidecar-containers",
+      "confidence": 0.9,
+      "matchReason": "field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-753",
       "kepTitle": "Sidecar Containers",
@@ -198,17 +209,6 @@
       "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-753",
-      "kepTitle": "Sidecar Containers",
-      "kepPath": "sig-node/753-sidecar-containers",
-      "confidence": 0.9,
-      "matchReason": "field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-753",
       "kepTitle": "Sidecar Containers",
       "kepPath": "sig-node/753-sidecar-containers",
@@ -257,7 +257,7 @@
       "kepTitle": "Backoff Limits Per Index For Indexed Jobs",
       "kepPath": "sig-apps/3850-backoff-limits-per-index-for-indexed-jobs",
       "confidence": 0.8,
-      "matchReason": "field name contains 'backoff' from KEP title; field description matches KEP terms (3/4)",
+      "matchReason": "field name contains 'index' from KEP title; field description matches KEP terms (3/4)",
       "isCanonical": true
     },
     {
@@ -268,7 +268,7 @@
       "kepTitle": "Backoff Limits Per Index For Indexed Jobs",
       "kepPath": "sig-apps/3850-backoff-limits-per-index-for-indexed-jobs",
       "confidence": 0.8,
-      "matchReason": "field name contains 'backoff' from KEP title; field description matches KEP terms (3/4)",
+      "matchReason": "field name contains 'index' from KEP title; field description matches KEP terms (3/4)",
       "isCanonical": true
     },
     {
@@ -383,19 +383,8 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3327",
-      "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
-      "kepPath": "sig-node/3327-align-by-socket",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'policy' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3327",
       "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
       "kepPath": "sig-node/3327-align-by-socket",
@@ -416,7 +405,29 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3327",
+      "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
+      "kepPath": "sig-node/3327-align-by-socket",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3327",
+      "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
+      "kepPath": "sig-node/3327-align-by-socket",
+      "confidence": 0.5,
+      "matchReason": "field name contains 'policy' from KEP title",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3327",
       "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
@@ -429,17 +440,6 @@
       "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-3327",
-      "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
-      "kepPath": "sig-node/3327-align-by-socket",
-      "confidence": 0.5,
-      "matchReason": "field name contains 'policy' from KEP title",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-3327",
       "kepTitle": "CPUManager policy option to align CPUs by Socket instead of by NUMA node",
       "kepPath": "sig-node/3327-align-by-socket",
@@ -472,6 +472,56 @@
   ],
   "unlinkedFields": [
     {
+      "fieldPath": "spec.exempt",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io"
+    },
+    {
+      "fieldPath": "spec.exempt.lendablePercent",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io"
+    },
+    {
+      "fieldPath": "spec.exempt.nominalConcurrencyShares",
+      "kind": "PriorityLevelConfiguration",
+      "group": "flowcontrol.apiserver.k8s.io"
+    },
+    {
+      "fieldPath": "status.resourceClaimStatuses",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.resourceClaimStatuses[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.hostIPs",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.hostIPs[].ip",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.resourceClaimStatuses[].resourceClaimName",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.paramRef.selector.matchExpressions[].operator",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
+      "fieldPath": "spec.paramRef.parameterNotFoundAction",
+      "kind": "ValidatingAdmissionPolicyBinding",
+      "group": "admissionregistration.k8s.io"
+    },
+    {
       "fieldPath": "spec.paramRef.selector.matchExpressions[].key",
       "kind": "ValidatingAdmissionPolicyBinding",
       "group": "admissionregistration.k8s.io"
@@ -487,54 +537,9 @@
       "group": "admissionregistration.k8s.io"
     },
     {
-      "fieldPath": "spec.paramRef.parameterNotFoundAction",
-      "kind": "ValidatingAdmissionPolicyBinding",
+      "fieldPath": "spec.variables[].expression",
+      "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io"
-    },
-    {
-      "fieldPath": "spec.paramRef.selector.matchExpressions[].operator",
-      "kind": "ValidatingAdmissionPolicyBinding",
-      "group": "admissionregistration.k8s.io"
-    },
-    {
-      "fieldPath": "spec.exempt.lendablePercent",
-      "kind": "PriorityLevelConfiguration",
-      "group": "flowcontrol.apiserver.k8s.io"
-    },
-    {
-      "fieldPath": "spec.exempt",
-      "kind": "PriorityLevelConfiguration",
-      "group": "flowcontrol.apiserver.k8s.io"
-    },
-    {
-      "fieldPath": "spec.exempt.nominalConcurrencyShares",
-      "kind": "PriorityLevelConfiguration",
-      "group": "flowcontrol.apiserver.k8s.io"
-    },
-    {
-      "fieldPath": "status.resourceClaimStatuses",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.hostIPs[].ip",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.resourceClaimStatuses[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.resourceClaimStatuses[].resourceClaimName",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.hostIPs",
-      "kind": "Pod",
-      "group": "core"
     },
     {
       "fieldPath": "spec.variables[].name",
@@ -542,17 +547,12 @@
       "group": "admissionregistration.k8s.io"
     },
     {
-      "fieldPath": "spec.variables[].expression",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io"
-    },
-    {
-      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].fieldPath",
+      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].reason",
       "kind": "CustomResourceDefinition",
       "group": "apiextensions.k8s.io"
     },
     {
-      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].reason",
+      "fieldPath": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].fieldPath",
       "kind": "CustomResourceDefinition",
       "group": "apiextensions.k8s.io"
     }

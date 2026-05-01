@@ -1,6 +1,518 @@
 {
   "content": [
     {
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/",
+      "title": "Kubernetes v1.36: Haru",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-22",
+      "author": "Release Team",
+      "summary": "Official release announcement for Kubernetes 1.36 with 70 enhancements (18 stable, 25 beta, 25 alpha)",
+      "description": "The 'Haru' release, themed after Hokusai's Thirty-six Views of Mount Fuji, highlights fine-grained kubelet API authorization (GA), user namespaces (GA), MutatingAdmissionPolicy (GA), SELinux volume labeling (GA), OCI VolumeSource (GA), resource health status (beta), and workload-aware scheduling improvements.",
+      "labels": [
+        "release",
+        "announcement",
+        "1.36",
+        "stable",
+        "beta",
+        "alpha"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3962"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1710"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-4639"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/",
+      "title": "Kubernetes v1.36 Sneak Peek",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-03-30",
+      "author": "Release Team",
+      "summary": "Pre-release preview of deprecations, removals, and featured enhancements coming in Kubernetes 1.36",
+      "description": "Covers Ingress NGINX retirement, removal of gitRepo volume driver, deprecation of spec.externalIPs, SELinux volume labeling going GA, and other upgrade-impacting changes. Helps cluster admins prepare for the upgrade.",
+      "labels": [
+        "release",
+        "preview",
+        "1.36",
+        "deprecation",
+        "ingress-nginx",
+        "gitrepo",
+        "selinux"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/22/breaking-changes-in-selinux-volume-labeling/",
+      "title": "SELinux Volume Label Changes goes GA (and likely implications in v1.37)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-22",
+      "author": "Jan Safranek, Swathi Rao",
+      "summary": "SELinux volume mounting goes GA using mount -o context for constant-time mounting instead of recursive relabeling",
+      "description": "Explains the SELinuxMount feature gate graduating to GA, using mount -o context=<label> for efficient volume labeling. Warns about upcoming v1.37 default enablement and potential breaking changes for workloads relying on recursive relabeling behavior.",
+      "labels": [
+        "selinux",
+        "storage",
+        "volumes",
+        "security",
+        "stable",
+        "1.36",
+        "breaking-changes"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-1710"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/23/kubernetes-v1-36-userns-ga/",
+      "title": "Kubernetes v1.36: User Namespaces in Kubernetes are finally GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-23",
+      "author": "Rodrigo Campos Catelin, Giuseppe Scrivano",
+      "summary": "User Namespaces reaches GA, enabling rootless container isolation using ID-mapped mounts",
+      "description": "User Namespaces provide rootless container isolation by mapping container UIDs/GIDs to unprivileged host IDs using ID-mapped mounts (Linux 5.12+). Set hostUsers: false in Pod spec for zero host privileges even as container root. Namespaced capabilities ensure container root has no host-level power.",
+      "labels": [
+        "security",
+        "user-namespaces",
+        "isolation",
+        "rootless",
+        "stable",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Pod",
+          "targetGroup": "core"
+        },
+        {
+          "targetType": "field",
+          "targetId": "spec.hostUsers",
+          "targetGroup": "Pod@core"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/24/kubernetes-v1-36-fine-grained-kubelet-authorization-ga/",
+      "title": "Kubernetes v1.36: Fine-Grained Kubelet API Authorization Graduates to GA",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-24",
+      "author": "Vinayak Goyal",
+      "summary": "KEP-2862 reaches GA, mapping specific kubelet API paths to dedicated RBAC subresources instead of the broad nodes/proxy",
+      "description": "Maps kubelet API paths to dedicated RBAC subresources (nodes/stats, nodes/metrics, nodes/log) replacing the overly broad nodes/proxy permission. Includes backward-compatible dual authorization checks for smooth migration. Essential for least-privilege RBAC in production clusters.",
+      "labels": [
+        "security",
+        "rbac",
+        "kubelet",
+        "authorization",
+        "stable",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/27/kubernetes-v1-36-mutable-pod-resources-for-suspended-jobs/",
+      "title": "Kubernetes v1.36: Mutable Pod Resources for Suspended Jobs (beta)",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-27",
+      "author": "Kevin Hannon",
+      "summary": "Modify container resource requests/limits in suspended Job pod templates, now beta and enabled by default",
+      "description": "Queue controllers like Kueue can now adapt CPU, memory, and GPU allocation for suspended Jobs based on cluster capacity. The MutablePodResourcesForSuspendedJobs feature gate is enabled by default in beta, enabling dynamic resource adaptation for batch workloads.",
+      "labels": [
+        "jobs",
+        "batch",
+        "kueue",
+        "resources",
+        "beta",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kind",
+          "targetId": "Job",
+          "targetGroup": "batch"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/28/kubernetes-v1-36-staleness-mitigation-for-controllers/",
+      "title": "Kubernetes v1.36: Staleness Mitigation and Observability for Controllers",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-28",
+      "author": "Michael Aspinwall",
+      "summary": "Atomic FIFO processing and staleness mitigation now enabled by default in core controllers",
+      "description": "New client-go enhancements including Atomic FIFO processing and LastStoreSyncResourceVersion. Staleness mitigation is now enabled by default in DaemonSet, StatefulSet, ReplicaSet, and Job controllers, deferring action when cache is stale to prevent incorrect reconciliation.",
+      "labels": [
+        "controllers",
+        "client-go",
+        "consistency",
+        "informers",
+        "beta",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/04/29/kubernetes-v1-36-memory-qos-tiered-protection/",
+      "title": "Kubernetes v1.36: Tiered Memory Protection with Memory QoS",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-04-29",
+      "author": "Qi Wang, Sohan Kunkerkar",
+      "summary": "Alpha feature using cgroup v2 memory controller for tiered memory protection across QoS classes",
+      "description": "Uses cgroup v2 memory controller to provide tiered memory protection: Guaranteed pods get hard protection (memory.min), Burstable pods get soft protection (memory.low), and BestEffort pods are fully reclaimable. Includes new observability metrics for memory pressure monitoring.",
+      "labels": [
+        "memory",
+        "qos",
+        "cgroup",
+        "resources",
+        "alpha",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://kubernetes.io/blog/2026/02/26/ccm-new-metric-route-sync-total/",
+      "title": "Kubernetes v1.36: New Metric for Route Sync in the Cloud Controller Manager",
+      "type": "blog",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "publishedDate": "2026-02-26",
+      "author": "Lukas Metzner",
+      "summary": "New alpha counter metric route_controller_route_sync_total for validating watch-based routes reconciliation",
+      "description": "Introduces the route_controller_route_sync_total counter metric in the CCM route controller, enabling operators to validate the watch-based routes reconciliation feature gate introduced in v1.35. Helps monitor cloud provider route sync operations.",
+      "labels": [
+        "cloud-controller-manager",
+        "metrics",
+        "observability",
+        "alpha",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-5237"
+        }
+      ]
+    },
+    {
+      "url": "https://palark.com/blog/kubernetes-1-36-release-features/",
+      "title": "Kubernetes 1.36: Deep dive into new alpha features",
+      "type": "blog",
+      "source": "palark.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-08",
+      "author": "Kirill Kononovich",
+      "summary": "Deep dive into 20 new alpha features across workload performance, API scalability, and resource efficiency",
+      "description": "Covers workload-aware preemption for AI/ML, DRA structured parameters, topology-conscious scheduling, manifest-based admission policies, PVC last-used timestamps, HPA scale-to-zero, and Prometheus native histograms.",
+      "labels": [
+        "alpha",
+        "dra",
+        "scheduling",
+        "ai",
+        "ml",
+        "hpa",
+        "deep-dive",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://www.perfectscale.io/blog/kubernetes-v1-36-sneak-peek",
+      "title": "Kubernetes 1.36 Release: New Features, Beta & Stable Changes",
+      "type": "blog",
+      "source": "perfectscale.io",
+      "isOfficial": false,
+      "publishedDate": "2026-04-14",
+      "author": "Tania Duggal",
+      "summary": "Comprehensive overview of ~80 tracked enhancements across stable, beta, and alpha stages",
+      "description": "Covers 6 stable features (user namespaces, MutatingAdmissionPolicy, OCI VolumeSource, external SA token signing, KubeletPodResources API, SELinux labeling), beta highlights (HPA scale-to-zero, DRA partitionable devices), and alpha features (workload-aware preemption, PVC last-used, HPA external metrics fallback). Notes IPVS mode deprecation.",
+      "labels": [
+        "overview",
+        "hpa",
+        "dra",
+        "user-namespaces",
+        "ipvs",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sysdig.com/blog/kubernetes-1-36-new-security-features",
+      "title": "Kubernetes 1.36 - New security features",
+      "type": "blog",
+      "source": "sysdig.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-15",
+      "author": "Victor Jimenez Cerrada",
+      "summary": "Examines 22 security-relevant changes including certificates, CIDR validation, and admission control",
+      "description": "Covers PKCS10 request alignment for certificates, StrictIPCIDRValidation, manifest-based admission control, DRA network interface data, user namespaces in host-networked pods, fine-grained kubelet authz GA, MutatingAdmissionPolicy GA, OCI VolumeSource GA. Discusses breaking changes including externalIPs deprecation, gitRepo removal, and SPDY replacement by WebSockets.",
+      "labels": [
+        "security",
+        "certificates",
+        "admission",
+        "rbac",
+        "breaking-changes",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-2862"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-127"
+        }
+      ]
+    },
+    {
+      "url": "https://metalbear.com/blog/kubernetes-1-36/",
+      "title": "New Features We Find Exciting in the Kubernetes 1.36 Release",
+      "type": "blog",
+      "source": "metalbear.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-23",
+      "author": "Arsh Sharma",
+      "summary": "Highlights MutatingAdmissionPolicies GA, User Namespaces GA, and DRA improvements",
+      "description": "Focuses on MutatingAdmissionPolicies GA replacing webhooks with in-process CEL-based mutation, User Namespaces GA, DRA improvements (prioritized device alternatives, device taints/tolerations), Constrained Impersonation (beta), ResourcePoolStatusRequest (alpha), and PVC unusedSince timestamp.",
+      "labels": [
+        "admission",
+        "dra",
+        "user-namespaces",
+        "impersonation",
+        "deep-dive",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3962"
+        }
+      ]
+    },
+    {
+      "url": "https://medium.com/@gokulsrinivas.b/kubernetes-v1-36-less-about-new-features-more-about-what-works-9c01f929f21d",
+      "title": "Kubernetes v1.36 Release: What Actually Changes for Production, Enterprise, and Platform Engineers",
+      "type": "blog",
+      "source": "medium.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-11",
+      "author": "Gokul Srinivas",
+      "summary": "Operations-focused analysis positioning 1.36 as reducing friction rather than adding power",
+      "description": "Covers Ingress-NGINX retirement, HPA scale-to-zero, MutatingAdmissionPolicy GA, suspended job modifications, user namespaces, DRA, OCI artifact volumes, and deprecations from a production operations perspective.",
+      "labels": [
+        "operations",
+        "platform-engineering",
+        "hpa",
+        "deprecation",
+        "overview",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://blogs.vmware.com/cloud-foundation/2026/04/29/kubernetes-1-36-what-actually-changed-for-enterprise-platforms/",
+      "title": "Kubernetes 1.36: What Actually Changed for Enterprise Platforms",
+      "type": "blog",
+      "source": "blogs.vmware.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-29",
+      "author": "Natalie Fisher",
+      "summary": "Enterprise-focused analysis identifying AI infrastructure, security hardening, and release velocity trends",
+      "description": "Identifies three major trends: AI infrastructure focus (DRA, Structured Parameters for GPU/accelerator management), security hardening (removal of legacy AppArmor annotations, User Namespaces GA, safer defaults), and release velocity challenges. Argues Kubernetes now requires platform engineering approaches with governance structures.",
+      "labels": [
+        "enterprise",
+        "ai",
+        "dra",
+        "security",
+        "platform-engineering",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.stackademic.com/kubernetes-1-36-haru-9a1b4927fe0f",
+      "title": "Kubernetes 1.36 Haru: MutatingAdmissionPolicy GA and 7 Other Massive Changes",
+      "type": "blog",
+      "source": "stackademic.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-22",
+      "summary": "Overview focusing on MutatingAdmissionPolicy GA replacing webhooks plus 7 other major changes",
+      "description": "Substantive overview highlighting MutatingAdmissionPolicy GA as the biggest shift, replacing webhook-based mutation with in-process CEL expressions. Covers 7 other major changes in the release.",
+      "labels": [
+        "admission",
+        "webhooks",
+        "overview",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        },
+        {
+          "targetType": "kep",
+          "targetId": "KEP-3962"
+        }
+      ]
+    },
+    {
+      "url": "https://cloudsmith.com/blog/kubernetes-1-36-what-you-need-to-know",
+      "title": "Kubernetes 1.36 -- What you need to know",
+      "type": "blog",
+      "source": "cloudsmith.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-22",
+      "summary": "General overview of what operators need to know for the v1.36 release",
+      "description": "Operational guidance for the v1.36 release covering key features, deprecations, and upgrade considerations for cluster administrators.",
+      "labels": [
+        "operations",
+        "upgrade",
+        "overview",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
+      "url": "https://www.webpronews.com/kubernetes-1-36-haru-soaring-toward-ai-workloads-and-ironclad-stability/",
+      "title": "Kubernetes 1.36 Haru: Soaring Toward AI Workloads and Ironclad Stability",
+      "type": "blog",
+      "source": "webpronews.com",
+      "isOfficial": false,
+      "publishedDate": "2026-04-22",
+      "summary": "Coverage of v1.36 with emphasis on AI/ML workload support and stability improvements",
+      "description": "Highlights the release's focus on AI and machine learning workload optimization alongside platform stability improvements for production environments.",
+      "labels": [
+        "ai",
+        "ml",
+        "stability",
+        "overview",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
       "url": "https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/",
       "title": "Kubernetes v1.34: Of Wind & Will (O' WaW)",
       "type": "blog",
@@ -4263,13 +4775,38 @@
       ]
     },
     {
+      "url": "https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/k8s-v1.36.png",
+      "title": "Kubernetes v1.36 Release Artwork",
+      "type": "artwork",
+      "source": "kubernetes.io",
+      "isOfficial": true,
+      "labels": [
+        "artwork",
+        "1.36"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.36"
+        }
+      ]
+    },
+    {
       "url": "https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/k8s-v1.35.png",
       "title": "Kubernetes v1.35 Release Artwork",
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.35"],
-      "links": [{"targetType": "release", "targetId": "1.35"}]
+      "labels": [
+        "artwork",
+        "1.35"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.35"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/k8s-v1.34.png",
@@ -4277,8 +4814,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.34"],
-      "links": [{"targetType": "release", "targetId": "1.34"}]
+      "labels": [
+        "artwork",
+        "1.34"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.34"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/k8s-1.33.png",
@@ -4286,8 +4831,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.33"],
-      "links": [{"targetType": "release", "targetId": "1.33"}]
+      "labels": [
+        "artwork",
+        "1.33"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.33"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/blog/2024/12/11/kubernetes-v1-32-release/k8s-1.32.png",
@@ -4295,8 +4848,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.32"],
-      "links": [{"targetType": "release", "targetId": "1.32"}]
+      "labels": [
+        "artwork",
+        "1.32"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.32"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2024-08-13-kubernetes-1.31-release/k8s-1.31.png",
@@ -4304,8 +4865,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.31"],
-      "links": [{"targetType": "release", "targetId": "1.31"}]
+      "labels": [
+        "artwork",
+        "1.31"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.31"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2024-04-17-kubernetes-1.30-release/k8s-1.30.png",
@@ -4313,8 +4882,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.30"],
-      "links": [{"targetType": "release", "targetId": "1.30"}]
+      "labels": [
+        "artwork",
+        "1.30"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.30"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2023-12-13-kubernetes-1.29-release/k8s-1.29.png",
@@ -4322,8 +4899,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.29"],
-      "links": [{"targetType": "release", "targetId": "1.29"}]
+      "labels": [
+        "artwork",
+        "1.29"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.29"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2023-08-15-kubernetes-1.28-blog/kubernetes-1.28.png",
@@ -4331,8 +4916,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.28"],
-      "links": [{"targetType": "release", "targetId": "1.28"}]
+      "labels": [
+        "artwork",
+        "1.28"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.28"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2023-04-11-kubernetes-1.27-blog/kubernetes-1.27.png",
@@ -4340,8 +4933,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.27"],
-      "links": [{"targetType": "release", "targetId": "1.27"}]
+      "labels": [
+        "artwork",
+        "1.27"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.27"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2022-12-08-kubernetes-1.26-release/kubernetes-1.26.png",
@@ -4349,8 +4950,16 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.26"],
-      "links": [{"targetType": "release", "targetId": "1.26"}]
+      "labels": [
+        "artwork",
+        "1.26"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.26"
+        }
+      ]
     },
     {
       "url": "https://kubernetes.io/images/blog/2022-08-23-kubernetes-1.25-release/kubernetes-1.25.png",
@@ -4358,12 +4967,20 @@
       "type": "artwork",
       "source": "kubernetes.io",
       "isOfficial": true,
-      "labels": ["artwork", "1.25"],
-      "links": [{"targetType": "release", "targetId": "1.25"}]
+      "labels": [
+        "artwork",
+        "1.25"
+      ],
+      "links": [
+        {
+          "targetType": "release",
+          "targetId": "1.25"
+        }
+      ]
     },
     {
       "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-1-intro-and-topics-discussed/",
-      "title": "Out-of-memory (OOM) in Kubernetes – Part 1: Intro and topics discussed",
+      "title": "Out-of-memory (OOM) in Kubernetes \u2013 Part 1: Intro and topics discussed",
       "type": "blog",
       "source": "mihai-albert.com",
       "isOfficial": false,
@@ -4371,12 +4988,17 @@
       "author": "Mihai Albert",
       "summary": "Introduction to OOM in Kubernetes with a roadmap for the series",
       "description": "Clear mental model of how out-of-memory situations occur in Kubernetes. Sets up the foundation for understanding OOM killer behavior, memory metrics, and pod evictions in subsequent parts.",
-      "labels": ["memory", "oom", "deep-dive", "must-read"],
+      "labels": [
+        "memory",
+        "oom",
+        "deep-dive",
+        "must-read"
+      ],
       "links": []
     },
     {
       "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-2-the-oom-killer-and-application-runtime-implications/",
-      "title": "Out-of-memory (OOM) in Kubernetes – Part 2: The OOM killer and application runtime implications",
+      "title": "Out-of-memory (OOM) in Kubernetes \u2013 Part 2: The OOM killer and application runtime implications",
       "type": "blog",
       "source": "mihai-albert.com",
       "isOfficial": false,
@@ -4384,12 +5006,20 @@
       "author": "Mihai Albert",
       "summary": "Deep dive into Linux OOM killer behavior and how it interacts with Kubernetes",
       "description": "Explains the difference between Kubernetes and Linux OOM behavior, why kubelet can't always react in time, and how cgroups memory limits trigger the OOM killer. Essential reading for debugging memory issues.",
-      "labels": ["memory", "oom", "cgroups", "linux", "kubelet", "deep-dive", "must-read"],
+      "labels": [
+        "memory",
+        "oom",
+        "cgroups",
+        "linux",
+        "kubelet",
+        "deep-dive",
+        "must-read"
+      ],
       "links": []
     },
     {
       "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-3-memory-metrics-sources-and-tools-to-collect-them/",
-      "title": "Out-of-memory (OOM) in Kubernetes – Part 3: Memory metrics sources and tools to collect them",
+      "title": "Out-of-memory (OOM) in Kubernetes \u2013 Part 3: Memory metrics sources and tools to collect them",
       "type": "blog",
       "source": "mihai-albert.com",
       "isOfficial": false,
@@ -4397,12 +5027,19 @@
       "author": "Mihai Albert",
       "summary": "Understanding Kubernetes memory metrics and how to collect them",
       "description": "Comprehensive guide to memory metrics in Kubernetes - what they mean, where they come from, and which tools to use for collection. Essential for understanding what's happening during OOM incidents.",
-      "labels": ["memory", "metrics", "observability", "monitoring", "deep-dive", "must-read"],
+      "labels": [
+        "memory",
+        "metrics",
+        "observability",
+        "monitoring",
+        "deep-dive",
+        "must-read"
+      ],
       "links": []
     },
     {
       "url": "https://mihai-albert.com/2022/02/13/out-of-memory-oom-in-kubernetes-part-4-pod-evictions-oom-scenarios-and-flows-leading-to-them/",
-      "title": "Out-of-memory (OOM) in Kubernetes – Part 4: Pod evictions, OOM scenarios and flows leading to them",
+      "title": "Out-of-memory (OOM) in Kubernetes \u2013 Part 4: Pod evictions, OOM scenarios and flows leading to them",
       "type": "blog",
       "source": "mihai-albert.com",
       "isOfficial": false,
@@ -4410,7 +5047,14 @@
       "author": "Mihai Albert",
       "summary": "How pods get evicted under memory pressure and the scenarios that lead to OOM",
       "description": "Connects OOM theory to practice by explaining how pods actually get evicted under memory pressure. Covers kubelet eviction behavior, different OOM scenarios, and the flows that lead to them.",
-      "labels": ["memory", "oom", "eviction", "kubelet", "deep-dive", "must-read"],
+      "labels": [
+        "memory",
+        "oom",
+        "eviction",
+        "kubelet",
+        "deep-dive",
+        "must-read"
+      ],
       "links": []
     },
     {
@@ -4421,18 +5065,26 @@
       "isOfficial": false,
       "summary": "Implementation-first explanation of how CNI plugins work",
       "description": "Learn how CNI works by building one from scratch. Covers the CNI spec, plugin lifecycle, and how Kubernetes uses CNI to configure pod networking. Excellent for understanding what CNI really does under the hood.",
-      "labels": ["cni", "networking", "deep-dive"],
+      "labels": [
+        "cni",
+        "networking",
+        "deep-dive"
+      ],
       "links": []
     },
     {
       "url": "https://www.redhat.com/en/blog/persistent-volume-support-peer-pods-technical-deep-dive",
-      "title": "Persistent volume support with peer-pods – technical deep dive",
+      "title": "Persistent volume support with peer-pods \u2013 technical deep dive",
       "type": "blog",
       "source": "redhat.com",
       "isOfficial": false,
       "summary": "Technical deep dive into CSI sidecars and volume attach/publish flow",
       "description": "Very practical and detailed explanation of real CSI control-plane plumbing. Covers CSI sidecars, the attach/publish flow, and VolumeAttachment resources in the context of peer-pods.",
-      "labels": ["csi", "storage", "deep-dive"],
+      "labels": [
+        "csi",
+        "storage",
+        "deep-dive"
+      ],
       "links": []
     },
     {
@@ -4444,7 +5096,11 @@
       "publishedDate": "2019-01-15",
       "summary": "Canonical explanation of CSI architecture from the upstream Kubernetes blog",
       "description": "Official announcement of CSI reaching GA. Explains why CSI exists, its architecture, and the lifecycle of storage operations. The authoritative reference for understanding CSI in Kubernetes.",
-      "labels": ["csi", "storage", "stable"],
+      "labels": [
+        "csi",
+        "storage",
+        "stable"
+      ],
       "links": []
     },
     {
@@ -4455,7 +5111,10 @@
       "isOfficial": false,
       "summary": "Clear mental model of how the Kubernetes scheduler works under the hood",
       "description": "Accurate explanation of the scheduler pipeline, filtering and scoring concepts, and common misconceptions. Great for understanding how scheduling decisions are made in Kubernetes.",
-      "labels": ["scheduling", "deep-dive"],
+      "labels": [
+        "scheduling",
+        "deep-dive"
+      ],
       "links": []
     },
     {
@@ -4466,7 +5125,12 @@
       "isOfficial": false,
       "summary": "Grounded explanation of the Linux process model behind Kubernetes containers",
       "description": "Explains how containers are really just Linux processes with namespaces. Covers the process tree, the pause container's role, and how the container runtime manages processes. Great for debugging runtime behavior.",
-      "labels": ["containerd", "runtime", "linux", "deep-dive"],
+      "labels": [
+        "containerd",
+        "runtime",
+        "linux",
+        "deep-dive"
+      ],
       "links": []
     },
     {
@@ -4477,7 +5141,14 @@
       "isOfficial": false,
       "summary": "Connects the three major Kubernetes plugin interfaces into one coherent story",
       "description": "Comprehensive overview of CNI (networking), CSI (storage), and CRI (container runtime) interfaces. Explains how these components interact and their role in the Kubernetes architecture.",
-      "labels": ["cni", "csi", "runtime", "networking", "storage", "deep-dive"],
+      "labels": [
+        "cni",
+        "csi",
+        "runtime",
+        "networking",
+        "storage",
+        "deep-dive"
+      ],
       "links": []
     },
     {
@@ -4488,7 +5159,17 @@
       "isOfficial": false,
       "summary": "Curated collection of real-world Kubernetes failure stories and post-mortems",
       "description": "Community-maintained repository of public failure stories from companies running Kubernetes in production. Learn from others' mistakes - covers networking issues, resource limits, DNS failures, etcd problems, and more. Invaluable for understanding what can go wrong at scale.",
-      "labels": ["failure-stories", "post-mortem", "community", "best-practices", "networking", "storage", "etcd", "performance", "observability"],
+      "labels": [
+        "failure-stories",
+        "post-mortem",
+        "community",
+        "best-practices",
+        "networking",
+        "storage",
+        "etcd",
+        "performance",
+        "observability"
+      ],
       "links": []
     },
     {
@@ -4501,7 +5182,16 @@
       "author": "GitHub Engineering",
       "summary": "How GitHub debugged sporadic 100ms+ latency spikes on their Kubernetes clusters",
       "description": "A masterclass in network debugging. GitHub traces mysterious latency spikes from application layer down to kernel conntrack table lock contention. Covers TCP handshake analysis, IPIP overlay networking, NAT, iptables, and kernel tracing with ftrace. Essential reading for anyone running Kubernetes at scale.",
-      "labels": ["networking", "latency", "performance", "kube-proxy", "iptables", "linux", "deep-dive", "must-read"],
+      "labels": [
+        "networking",
+        "latency",
+        "performance",
+        "kube-proxy",
+        "iptables",
+        "linux",
+        "deep-dive",
+        "must-read"
+      ],
       "links": []
     }
   ]

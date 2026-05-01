@@ -16,6 +16,7 @@ from pathlib import Path
 
 # Kubernetes versions to fetch (configurable)
 K8S_VERSIONS = [
+    "1.36",
     "1.35",
     "1.34",
     "1.33",

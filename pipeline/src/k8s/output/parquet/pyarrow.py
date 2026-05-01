@@ -13,6 +13,56 @@ from .schemas import SCHEMAS
 
 console = Console()
 
+LABEL_NORMALIZATION_PATH = PIPELINE_DATA_DIR / "curated" / "keps" / "label_normalization_map.json"
+CURATED_RELEASES_DIR = PIPELINE_DATA_DIR / "curated" / "releases"
+_label_map: dict[str, str] | None = None
+_highlight_keps: dict[tuple[str, str], bool] | None = None
+
+
+def _get_label_map() -> dict[str, str]:
+    """Load label normalization mapping (cached)."""
+    global _label_map
+    if _label_map is None:
+        if LABEL_NORMALIZATION_PATH.exists():
+            with open(LABEL_NORMALIZATION_PATH) as f:
+                data = json.load(f)
+            _label_map = data.get("mapping", {})
+        else:
+            _label_map = {}
+    return _label_map
+
+
+def _normalize_labels(labels: list[str]) -> list[str]:
+    """Apply label normalization map, deduplicating."""
+    mapping = _get_label_map()
+    seen = set()
+    result = []
+    for label in labels:
+        normalized = mapping.get(label, label)
+        if normalized not in seen:
+            result.append(normalized)
+            seen.add(normalized)
+    return result
+
+
+def _get_highlight_keps() -> dict[tuple[str, str], bool]:
+    """Load highlight KEPs from curated release files. Returns {(version, kep): True}."""
+    global _highlight_keps
+    if _highlight_keps is not None:
+        return _highlight_keps
+    _highlight_keps = {}
+    for curated_file in CURATED_RELEASES_DIR.glob("*-curated.json"):
+        try:
+            with open(curated_file) as f:
+                curated = json.load(f)
+            version = curated.get("version", "")
+            for feat in curated.get("features", []):
+                if feat.get("isHighlight"):
+                    _highlight_keps[(version, feat["kep"])] = True
+        except Exception:
+            pass
+    return _highlight_keps
+
 
 def _export_schema_metadata(parquet_dir: Path) -> int:
     """Export schema metadata as JSON for the frontend Analytics view.
@@ -346,6 +396,31 @@ def _export_diffs(k8s_dir: Path, parquet_dir: Path) -> int:
     )
 
 
+def _load_enriched_changes(releases_dir: Path, version: str) -> dict[str, dict]:
+    """Load enriched changes from {version}-changes-enriched.json if it exists.
+
+    Returns a dict mapping change key (prNumber as string) to enrichment data.
+    """
+    enriched_file = releases_dir / f"{version}-changes-enriched.json"
+    if not enriched_file.exists():
+        return {}
+    try:
+        with open(enriched_file) as f:
+            return json.load(f)
+    except Exception as e:
+        console.print(f"  [yellow]Warning: Failed to load {enriched_file}: {e}[/yellow]")
+        return {}
+
+
+def _change_key(entry: dict) -> str:
+    """Get the lookup key for a change entry."""
+    if pr := entry.get("prNumber"):
+        return str(pr)
+    import hashlib
+    desc = entry.get("description", "")
+    return f"desc:{hashlib.sha256(desc.encode()).hexdigest()[:16]}"
+
+
 def _load_enriched_features(releases_dir: Path, version: str) -> dict[str, dict]:
     """Load enriched features from {version}-enriched.json if it exists.
 
@@ -427,6 +502,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
         "version": [],
         "kep": [],
         "stage": [],
+        "is_highlight": [],
     }
     # Track which KEPs we've seen (to avoid duplicates in keps table)
     seen_keps: dict[str, dict] = {}
@@ -560,18 +636,20 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
             # Merge enriched data if available
             enriched = enriched_features.get(kep, {})
 
-            # Add to features table (version, kep, stage)
+            # Add to features table (version, kep, stage, is_highlight)
             features_data["version"].append(version)
             features_data["kep"].append(kep)
             features_data["stage"].append(feature["stage"])
+            highlight_keps = _get_highlight_keps()
+            features_data["is_highlight"].append(highlight_keps.get((version, kep), False))
 
             # Track KEP data (keep latest/best version)
             if kep not in seen_keps:
                 seen_keps[kep] = {
                     "kep": kep,
                     "kep_path": feature.get("kepPath"),
-                    "title": feature["title"],
-                    "sig": feature["sig"],
+                    "title": feature.get("title", ""),
+                    "sig": feature.get("sig", ""),
                     "feature_gate": feature.get("featureGate"),
                     "labels": enriched.get("labels") or feature.get("labels", []),
                     "description": enriched.get("description") or feature.get("description"),
@@ -609,6 +687,10 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
             deprecations_data["replacement"].append(dep.get("replacement"))
             deprecations_data["removal_target"].append(dep.get("removalTarget"))
 
+        enriched_changes = _load_enriched_changes(releases_dir, version)
+        if enriched_changes:
+            console.print(f"  [dim]Merging {len(enriched_changes)} enriched changes for {version}[/dim]")
+
         for kind, entries in release.get("changesByKind", {}).items():
             if not entries:
                 continue
@@ -621,8 +703,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
                 changes_data["author"].append(entry.get("author"))
                 changes_data["sigs"].append(entry.get("sigs", []))
                 changes_data["kep_links"].append(entry.get("kepLinks", []))
-                # Enrichment fields (from change_enricher)
-                enrichment = entry.get("enrichment", {})
+                enrichment = enriched_changes.get(_change_key(entry), {}) or entry.get("enrichment", {})
                 changes_data["enrichment_problem"].append(enrichment.get("problem"))
                 changes_data["enrichment_affected"].append(enrichment.get("affected"))
                 changes_data["enrichment_fix"].append(enrichment.get("fix"))
@@ -630,7 +711,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
                 changes_data["enrichment_category"].append(enrichment.get("category"))
                 changes_data["enrichment_severity"].append(enrichment.get("severity"))
                 changes_data["enrichment_components"].append(enrichment.get("affectedComponents", []))
-                changes_data["enrichment_labels"].append(enrichment.get("labels", []))
+                changes_data["enrichment_labels"].append(_normalize_labels(enrichment.get("labels", [])))
 
         for note in release.get("actionRequired", []):
             urgent_notes_data["version"].append(version)
@@ -672,8 +753,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
                     patch_changes_data["pr_url"].append(entry.get("prUrl"))
                     patch_changes_data["author"].append(entry.get("author"))
                     patch_changes_data["sigs"].append(entry.get("sigs", []))
-                    # Enrichment fields
-                    enrichment = entry.get("enrichment", {})
+                    enrichment = enriched_changes.get(_change_key(entry), {}) or entry.get("enrichment", {})
                     patch_changes_data["enrichment_problem"].append(enrichment.get("problem"))
                     patch_changes_data["enrichment_affected"].append(enrichment.get("affected"))
                     patch_changes_data["enrichment_fix"].append(enrichment.get("fix"))
@@ -681,7 +761,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
                     patch_changes_data["enrichment_category"].append(enrichment.get("category"))
                     patch_changes_data["enrichment_severity"].append(enrichment.get("severity"))
                     patch_changes_data["enrichment_components"].append(enrichment.get("affectedComponents", []))
-                    patch_changes_data["enrichment_labels"].append(enrichment.get("labels", []))
+                    patch_changes_data["enrichment_labels"].append(_normalize_labels(enrichment.get("labels", [])))
 
             # Export patch security fixes
             for fix in patch.get("securityFixes", []):
@@ -718,7 +798,7 @@ def _export_releases(releases_dir: Path, parquet_dir: Path) -> int:
         keps_data["title"].append(kep_info["title"])
         keps_data["sig"].append(kep_info["sig"])
         keps_data["feature_gate"].append(kep_info["feature_gate"])
-        keps_data["labels"].append(kep_info["labels"])
+        keps_data["labels"].append(_normalize_labels(kep_info["labels"]))
         keps_data["description"].append(kep_info["description"])
         keps_data["impact"].append(kep_info.get("impact"))
         keps_data["affected_kinds"].append(kep_info["affected_kinds"])

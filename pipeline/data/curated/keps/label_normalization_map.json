@@ -346,6 +346,15 @@
         "capabilities"
       ],
       "reason": "Singular form preferred; both refer to the same concept of a capability."
+    },
+    {
+      "canonical": "dra",
+      "aliases": [
+        "dynamic-resource-allocation",
+        "resource-claim",
+        "resource-claims"
+      ],
+      "reason": "DRA is the established abbreviation for Dynamic Resource Allocation; consolidate all variants."
     }
   ],
   "mapping": {
@@ -424,6 +433,9 @@
     "probes": "health-probe",
     "exec-probe": "probe",
     "startup-probe": "probe",
-    "capabilities": "capability"
+    "capabilities": "capability",
+    "dynamic-resource-allocation": "dra",
+    "resource-claim": "dra",
+    "resource-claims": "dra"
   }
 }

@@ -98,7 +98,7 @@ Use `--skip-sync` to skip pulling repos (if already up to date).""",
         help_text="""Download release data from upstream sources.
 
 **Downloads:**
-- `release-notes.json` from cdn.dl.k8s.io
+- `release-notes.json` from dl.k8s.io
 - `CHANGELOG-X.YY.md` from kubernetes repo
 
 Use `--all` to stage all configured versions.""",

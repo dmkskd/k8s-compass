@@ -614,7 +614,7 @@
     },
     {
       "fieldPath": "status.terminatingReplicas",
-      "kind": "Deployment",
+      "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3973",
       "kepTitle": "Consider Terminating Pods in Deployments",
@@ -625,7 +625,7 @@
     },
     {
       "fieldPath": "status.terminatingReplicas",
-      "kind": "ReplicaSet",
+      "kind": "Deployment",
       "group": "apps",
       "kep": "KEP-3973",
       "kepTitle": "Consider Terminating Pods in Deployments",
@@ -637,18 +637,103 @@
   ],
   "unlinkedFields": [
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "DaemonSet",
-      "group": "apps"
+      "fieldPath": "spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "DaemonSet",
+      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "status.allocation.devices.results[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].count",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly.selectors",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].exactly",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "DaemonSet",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicaSet",
       "group": "apps"
     },
     {
@@ -667,27 +752,107 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "spec.devices[].consumesCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters[].counters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeName",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].consumesCounters[].counterSet",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].consumesCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters[].name",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].key",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].effect",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].taints[].timeAdded",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.sharedCounters",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.devices[].attributes",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "Job",
+      "group": "batch"
     },
     {
-      "fieldPath": "status.nodeInfo.swap",
-      "kind": "Node",
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "endpoints[].hints.forNodes[].name",
+      "kind": "EndpointSlice",
+      "group": "discovery.k8s.io"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "Pod",
       "group": "core"
     },
     {
-      "fieldPath": "status.ephemeralContainerStatuses[].stopSignal",
+      "fieldPath": "spec.containers[].lifecycle.stopSignal",
       "kind": "Pod",
       "group": "core"
     },
@@ -702,12 +867,7 @@
       "group": "core"
     },
     {
-      "fieldPath": "spec.containers[].lifecycle.stopSignal",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.ephemeralContainers[].lifecycle.stopSignal",
+      "fieldPath": "status.ephemeralContainerStatuses[].stopSignal",
       "kind": "Pod",
       "group": "core"
     },
@@ -718,121 +878,66 @@
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "StatefulSet",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "StatefulSet",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "Job",
-      "group": "batch"
+      "kind": "ReplicationController",
+      "group": "core"
     },
     {
       "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "template.spec.containers[].lifecycle.stopSignal",
-      "kind": "PodTemplate",
+      "kind": "ReplicationController",
       "group": "core"
     },
     {
-      "fieldPath": "template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "PodTemplate",
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "ReplicationController",
       "group": "core"
     },
     {
-      "fieldPath": "template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "PodTemplate",
-      "group": "core"
+      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
     },
     {
-      "fieldPath": "spec.devices.requests[].exactly.selectors",
-      "kind": "ResourceClaim",
+      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel",
+      "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].name",
-      "kind": "ResourceClaim",
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable",
+      "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.devices.requests[].firstAvailable",
-      "kind": "ResourceClaim",
+      "fieldPath": "spec.spec.devices.requests[].exactly.count",
+      "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.devices.requests[].exactly.tolerations[].operator",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].tolerations[].operator",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel.expression",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors[].cel.expression",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].count",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].exactly.selectors[].cel",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].exactly.count",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "status.allocation.devices.results[].tolerations[].operator",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].exactly",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices.requests[].firstAvailable[].selectors",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.spec.devices.requests[].exactly",
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].name",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -847,22 +952,7 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].exactly.selectors[].cel",
-      "kind": "ResourceClaimTemplate",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].selectors[].cel",
-      "kind": "ResourceClaimTemplate",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].operator",
-      "kind": "ResourceClaimTemplate",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].count",
+      "fieldPath": "spec.spec.devices.requests[].exactly",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -872,7 +962,12 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].firstAvailable",
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].tolerations[].operator",
+      "kind": "ResourceClaimTemplate",
+      "group": "resource.k8s.io"
+    },
+    {
+      "fieldPath": "spec.spec.devices.requests[].exactly.selectors[].cel",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -882,7 +977,7 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].name",
+      "fieldPath": "spec.spec.devices.requests[].firstAvailable[].count",
       "kind": "ResourceClaimTemplate",
       "group": "resource.k8s.io"
     },
@@ -892,119 +987,24 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "spec.spec.devices.requests[].exactly.count",
-      "kind": "ResourceClaimTemplate",
-      "group": "resource.k8s.io"
-    },
-    {
       "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].operator",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.sharedCounters",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].key",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].attributes",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchFields[].key",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].consumesCounters",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].nodeSelector.nodeSelectorTerms[].matchExpressions[].operator",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.sharedCounters[].counters",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].consumesCounters[].counterSet",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].taints[].timeAdded",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].taints[].key",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].consumesCounters[].counters",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].taints[].effect",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.devices[].nodeName",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.sharedCounters[].name",
-      "kind": "ResourceSlice",
-      "group": "resource.k8s.io"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].lifecycle.stopSignal",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.containers[].lifecycle.stopSignal",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
-      "fieldPath": "endpoints[].hints.forNodes[].name",
-      "kind": "EndpointSlice",
-      "group": "discovery.k8s.io"
+      "fieldPath": "spec.template.spec.initContainers[].lifecycle.stopSignal",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "status.nodeInfo.swap",
+      "kind": "Node",
+      "group": "core"
     }
   ]
 }

@@ -1,0 +1,611 @@
+{
+  "fromVersion": "1.35",
+  "toVersion": "1.36",
+  "summary": {
+    "kindsAdded": 2,
+    "kindsRemoved": 0,
+    "fieldsAdded": 55,
+    "fieldsRemoved": 42,
+    "fieldsModified": 0,
+    "fieldsDeprecated": 0
+  },
+  "kindsAdded": [
+    {
+      "kind": "PodGroup",
+      "group": "scheduling.k8s.io"
+    },
+    {
+      "kind": "ResourcePoolStatusRequest",
+      "group": "resource.k8s.io"
+    }
+  ],
+  "kindsRemoved": [],
+  "fieldsAdded": [
+    {
+      "path": "spec.stubPKCS10Request",
+      "kind": "PodCertificateRequest",
+      "group": "certificates.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.schedulingGroup",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.schedulingGroup.podGroupName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.schedulingGroup",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.devices[].nodeAllocatableResourceMappings",
+      "kind": "ResourceSlice",
+      "group": "resource.k8s.io",
+      "type": "map"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "status.nodeAllocatableResourceClaimStatuses[].resourceClaimName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.nodeAllocatableResourceClaimStatuses",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.schedulingGroup.podGroupName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.nodeAllocatableResourceClaimStatuses[].containers",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResourcesStatus[].resources[].message",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].volumeStatus.image.imageRef",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.nodeAllocatableResourceClaimStatuses[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].volumeStatus.image",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.schedulingGroup",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].volumeStatus",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "metadata.shardInfo",
+      "kind": "Status",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "metadata.shardInfo.selector",
+      "kind": "Status",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroupTemplates[].name",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].resourceClaims[].resourceClaimTemplateName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].resourceClaims",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.podGroupTemplates[].resourceClaims[].resourceClaimName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].priorityClassName",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingConstraints.topology[].key",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingPolicy.gang.minCount",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingConstraints.topology",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingPolicy",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroupTemplates[].priority",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingPolicy.gang",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroupTemplates[].resourceClaims[].name",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingConstraints",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroupTemplates[].schedulingPolicy.basic",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroupTemplates[].disruptionMode",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroupTemplates",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.preventPodSchedulingIfMissing",
+      "kind": "CSIDriver",
+      "group": "storage.k8s.io",
+      "type": "boolean"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup.podGroupName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.schedulingGroup",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    }
+  ],
+  "fieldsRemoved": [
+    {
+      "path": "template.spec.workloadRef",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.workloadRef.name",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.workloadRef.podGroup",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.workloadRef.name",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.workloadRef.podGroup",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.workloadRef",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.workloadRef.podGroup",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.workloadRef",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.workloadRef.podGroupReplicaKey",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.workloadRef.name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroups[].policy.gang",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroups[].policy.basic",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroups[].policy",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.podGroups[].policy.gang.minCount",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "integer"
+    },
+    {
+      "path": "spec.podGroups[].name",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.podGroups",
+      "kind": "Workload",
+      "group": "scheduling.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroupReplicaKey",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.name",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.workloadRef.podGroup",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    }
+  ],
+  "fieldsModified": [],
+  "fieldsDeprecated": []
+}

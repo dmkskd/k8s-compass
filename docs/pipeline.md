@@ -12,7 +12,7 @@ Python pipeline using `uv` for package management. Fetches Kubernetes data from 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                            UPSTREAM SOURCES                                  │
 ├─────────────────────┬─────────────────────┬─────────────────┬───────────────┤
-│ cdn.dl.k8s.io       │ kubernetes/CHANGELOG│ kubernetes/     │ kubernetes/   │
+│ dl.k8s.io       │ kubernetes/CHANGELOG│ kubernetes/     │ kubernetes/   │
 │ release-notes.json  │ CHANGELOG-X.YY.md   │ enhancements    │ api/openapi   │
 └─────────┬───────────┴──────────┬──────────┴────────┬────────┴───────┬───────┘
           │                      │                   │                │
@@ -202,7 +202,7 @@ For `openapi diff` and `kep link`, `--all` processes consecutive version pairs (
 **Output:** `pipeline/data/upstream/k8s/releases/`
 
 Downloads raw data from upstream sources:
-- `release-notes/{version}.0.json` - Raw PR/change data from cdn.dl.k8s.io
+- `release-notes/{version}.0.json` - Raw PR/change data from dl.k8s.io
 - `changelogs/CHANGELOG-{version}.md` - From kubernetes/CHANGELOG repo
 
 This is a pure download step - no transformation.
@@ -410,7 +410,7 @@ pipeline/src/k8s/
 │   ├── kep.py                # KEP commands (build, enrich, link)
 │   ├── openapi.py            # OpenAPI commands (fetch, diff, info)
 │   ├── component.py          # Component commands (flags, kubectl, gates)
-│   ├── content.py            # Content commands (add, list, fetch-sched)
+│   ├── content.py            # Content commands (add, list, fetch-sched, enrich)
 │   ├── repo.py               # Repository commands (sync, list, checkout)
 │   ├── export.py             # Export commands (parquet, docs, types, all, benchmark)
 │   └── util.py               # Utility commands (versions, clear-cache)
@@ -496,7 +496,7 @@ from k8s.transform.kep import Feature
 ## Upstream Data Sources
 
 ### Release Notes JSON
-- URL: `cdn.dl.k8s.io/release/vX.YY.Z/release-notes.json`
+- URL: `dl.k8s.io/release/vX.YY.Z/release-notes.json`
 - Contains: Raw changes by kind, KEP links, PR info
 - Staged to: `pipeline/data/upstream/k8s/releases/release-notes/`
 
@@ -770,6 +770,12 @@ uv run k8s-pipeline content fetch-sched kubecon-na-2024 --dry-run
 
 # Limit number of sessions
 uv run k8s-pipeline content fetch-sched kubecon-na-2024 --max 50
+
+# Re-import existing sessions (e.g., descriptions changed)
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 --force
+
+# Control LLM concurrency (default: 10)
+uv run k8s-pipeline content fetch-sched kubecon-na-2024 -c 2
 ```
 
 This extracts:
@@ -824,10 +830,13 @@ uv run k8s-pipeline content link-keps kubecon-na-2024
 # 1. Import sessions with basic enrichment
 uv run k8s-pipeline content fetch-sched kubecon-na-2024
 
-# 2. (Optional) Deep KEP linking for better associations
+# 2. (Optional) Re-enrich existing sessions with LLM
+uv run k8s-pipeline content enrich kubecon-na-2024 --force
+
+# 3. (Optional) Deep KEP linking for better associations
 uv run k8s-pipeline content link-keps kubecon-na-2024
 
-# 3. Export to Parquet
+# 4. Export to Parquet
 uv run k8s-pipeline export parquet
 ```
 

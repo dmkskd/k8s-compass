@@ -11,11 +11,11 @@
   },
   "kindsAdded": [
     {
-      "kind": "ResourceClaimParameters",
+      "kind": "ResourceSlice",
       "group": "resource.k8s.io"
     },
     {
-      "kind": "ResourceSlice",
+      "kind": "ResourceClaimParameters",
       "group": "resource.k8s.io"
     },
     {
@@ -30,121 +30,25 @@
   "kindsRemoved": [],
   "fieldsAdded": [
     {
-      "path": "template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
       "path": "spec.jobTemplate.spec.successPolicy.rules",
       "kind": "CronJob",
       "group": "batch",
       "type": "array"
     },
     {
-      "path": "spec.jobTemplate.spec.successPolicy.rules[].succeededCount",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "integer"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "path": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
@@ -156,25 +60,7 @@
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "object"
-    },
-    {
       "path": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.managedBy",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
@@ -186,7 +72,31 @@
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "path": "spec.jobTemplate.spec.managedBy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.successPolicy.rules[].succeededIndexes",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
@@ -198,19 +108,7 @@
       "type": "object"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "object"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
@@ -222,20 +120,152 @@
       "type": "object"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile",
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
       "kind": "CronJob",
       "group": "batch",
       "type": "object"
     },
     {
-      "path": "spec.jobTemplate.spec.successPolicy.rules[].succeededIndexes",
+      "path": "spec.jobTemplate.spec.successPolicy.rules[].succeededCount",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile.type",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile.type",
+      "path": "spec.jobTemplate.spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
       "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.successPolicy.rules[].succeededCount",
+      "kind": "Job",
+      "group": "batch",
+      "type": "integer"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.successPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.successPolicy.rules",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.managedBy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.successPolicy.rules[].succeededIndexes",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
       "group": "batch",
       "type": "string"
     },
@@ -246,184 +276,40 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "object"
-    },
-    {
       "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
+      "kind": "Deployment",
       "group": "apps",
       "type": "string"
     },
     {
       "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
+      "kind": "Deployment",
       "group": "apps",
       "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
+      "kind": "Deployment",
       "group": "apps",
       "type": "object"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "Deployment",
       "group": "apps",
-      "type": "string"
+      "type": "object"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Deployment",
       "group": "apps",
-      "type": "string"
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "object"
     },
     {
       "path": "spec.template.spec.securityContext.appArmorProfile.type",
@@ -438,19 +324,19 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
       "kind": "Deployment",
       "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "Deployment",
       "group": "apps",
       "type": "string"
@@ -462,16 +348,16 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "Deployment",
       "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "Deployment",
       "group": "apps",
-      "type": "object"
+      "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
@@ -480,45 +366,273 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "object"
+      "path": "status.containerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "boolean"
     },
     {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps",
+      "path": "status.initContainerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Deployment",
-      "group": "apps",
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "boolean"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "object"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps",
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "string"
     },
     {
-      "path": "status.allocation.resourceHandles[].structuredData.results[].namedResources.name",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io",
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicationController",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "string"
     },
     {
@@ -526,6 +640,12 @@
       "kind": "ResourceClaim",
       "group": "resource.k8s.io",
       "type": "object"
+    },
+    {
+      "path": "status.allocation.resourceHandles[].structuredData.results[].namedResources.name",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "string"
     },
     {
       "path": "status.allocation.resourceHandles[].structuredData.vendorClassParameters",
@@ -546,12 +666,6 @@
       "type": "string"
     },
     {
-      "path": "status.allocation.resourceHandles[].structuredData.results[].vendorRequestParameters",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io",
-      "type": "object"
-    },
-    {
       "path": "status.allocation.resourceHandles[].structuredData",
       "kind": "ResourceClaim",
       "group": "resource.k8s.io",
@@ -564,208 +678,148 @@
       "type": "object"
     },
     {
-      "path": "status.runtimeHandlers[].features",
-      "kind": "Node",
+      "path": "status.allocation.resourceHandles[].structuredData.results[].vendorRequestParameters",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "object"
     },
     {
-      "path": "status.runtimeHandlers",
-      "kind": "Node",
+      "path": "template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
       "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.versions[].selectableFields",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
       "type": "array"
     },
     {
-      "path": "status.runtimeHandlers[].features.recursiveReadOnlyMounts",
-      "kind": "Node",
-      "group": "core",
-      "type": "boolean"
-    },
-    {
-      "path": "status.runtimeHandlers[].name",
-      "kind": "Node",
-      "group": "core",
+      "path": "spec.versions[].selectableFields[].jsonPath",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "string"
     },
     {
-      "path": "status.containerStatuses[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.containerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "object"
     },
     {
-      "path": "status.initContainerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "boolean"
-    },
-    {
-      "path": "spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.containers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "object"
     },
     {
-      "path": "status.ephemeralContainerStatuses[].volumeMounts",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "status.containerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "boolean"
-    },
-    {
-      "path": "spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.containerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].volumeMounts",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "spec.securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "object"
     },
     {
-      "path": "status.ephemeralContainerStatuses[].volumeMounts[].recursiveReadOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.containerStatuses[].volumeMounts",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core",
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps",
       "type": "object"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core",
-      "type": "boolean"
-    },
-    {
-      "path": "spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
     },
     {
       "path": "spec.template.spec.securityContext.appArmorProfile.type",
@@ -780,19 +834,19 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
       "kind": "ReplicaSet",
       "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "ReplicaSet",
       "group": "apps",
       "type": "string"
@@ -804,146 +858,20 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
       "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "ReplicaSet",
       "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
       "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "object"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
+      "kind": "ReplicaSet",
       "group": "apps",
       "type": "string"
     },
@@ -954,136 +882,208 @@
       "type": "boolean"
     },
     {
-      "path": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch",
+      "path": "status.runtimeHandlers[].features",
+      "kind": "Node",
+      "group": "core",
       "type": "object"
     },
     {
-      "path": "spec.successPolicy.rules[].succeededIndexes",
-      "kind": "Job",
-      "group": "batch",
+      "path": "status.runtimeHandlers[].name",
+      "kind": "Node",
+      "group": "core",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
+      "path": "status.runtimeHandlers[].features.recursiveReadOnlyMounts",
+      "kind": "Node",
+      "group": "core",
+      "type": "boolean"
     },
     {
-      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.managedBy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.successPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "object"
-    },
-    {
-      "path": "spec.successPolicy.rules[].succeededCount",
-      "kind": "Job",
-      "group": "batch",
-      "type": "integer"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "object"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch",
-      "type": "object"
+      "path": "status.runtimeHandlers",
+      "kind": "Node",
+      "group": "core",
+      "type": "array"
     },
     {
       "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
       "type": "string"
     },
     {
       "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps",
       "type": "string"
     },
     {
       "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "DaemonSet",
+      "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.successPolicy.rules",
-      "kind": "Job",
-      "group": "batch",
-      "type": "array"
+      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch",
+      "kind": "StatefulSet",
+      "group": "apps",
       "type": "object"
     },
     {
-      "path": "spec.versions[].selectableFields[].jsonPath",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io",
+      "path": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps",
       "type": "string"
     },
     {
-      "path": "spec.versions[].selectableFields",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io",
-      "type": "array"
+      "path": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
     }
   ],
   "fieldsRemoved": [],

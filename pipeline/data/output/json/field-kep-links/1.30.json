@@ -119,61 +119,6 @@
     },
     {
       "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Deployment",
-      "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
       "kind": "Job",
       "group": "batch",
       "kep": "KEP-3857",
@@ -184,29 +129,7 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "ReplicationController",
-      "group": "core",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
       "kind": "Deployment",
       "group": "apps",
       "kep": "KEP-3857",
@@ -217,7 +140,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
       "kind": "ReplicaSet",
       "group": "apps",
       "kep": "KEP-3857",
@@ -228,7 +162,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].volumeMounts[].recursiveReadOnly",
       "kind": "StatefulSet",
       "group": "apps",
       "kep": "KEP-3857",
@@ -250,7 +195,18 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Deployment",
+      "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "ReplicationController",
       "group": "core",
       "kep": "KEP-3857",
@@ -261,9 +217,42 @@
       "isCanonical": false
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "DaemonSet",
       "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "Job",
+      "group": "batch",
       "kep": "KEP-3857",
       "kepTitle": "Recursive read-only mounts",
       "kepPath": "sig-node/3857-rro-mounts",
@@ -284,7 +273,29 @@
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "ReplicationController",
+      "group": "core",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "ReplicaSet",
+      "group": "apps",
+      "kep": "KEP-3857",
+      "kepTitle": "Recursive read-only mounts",
+      "kepPath": "sig-node/3857-rro-mounts",
+      "confidence": 0.9,
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
+      "isCanonical": false
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
+      "kind": "DaemonSet",
       "group": "apps",
       "kep": "KEP-3857",
       "kepTitle": "Recursive read-only mounts",
@@ -297,17 +308,6 @@
       "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
       "kind": "StatefulSet",
       "group": "apps",
-      "kep": "KEP-3857",
-      "kepTitle": "Recursive read-only mounts",
-      "kepPath": "sig-node/3857-rro-mounts",
-      "confidence": 0.9,
-      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
-      "isCanonical": false
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].volumeMounts[].recursiveReadOnly",
-      "kind": "Job",
-      "group": "batch",
       "kep": "KEP-3857",
       "kepTitle": "Recursive read-only mounts",
       "kepPath": "sig-node/3857-rro-mounts",
@@ -356,7 +356,7 @@
       "kepTitle": "Recursive read-only mounts",
       "kepPath": "sig-node/3857-rro-mounts",
       "confidence": 0.9,
-      "matchReason": "field name contains 'mounts' from KEP title; field description matches KEP terms (2/2)",
+      "matchReason": "field name contains 'recursive' from KEP title; field description matches KEP terms (2/2)",
       "isCanonical": true
     },
     {
@@ -367,7 +367,7 @@
       "kepTitle": "DRA Structured Parameters",
       "kepPath": "sig-node/4381-dra-structured-parameters",
       "confidence": 0.9,
-      "matchReason": "field name contains 'parameters' from KEP title; field description matches KEP terms (2/2)",
+      "matchReason": "field name contains 'structured' from KEP title; field description matches KEP terms (2/2)",
       "isCanonical": true
     },
     {
@@ -516,102 +516,7 @@
   ],
   "unlinkedFields": [
     {
-      "fieldPath": "template.spec.securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "PodTemplate",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.successPolicy.rules[].succeededCount",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "CronJob",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile",
       "kind": "CronJob",
       "group": "batch"
     },
@@ -621,17 +526,22 @@
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "CronJob",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.type",
       "kind": "CronJob",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile",
+      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "CronJob",
       "group": "batch"
     },
@@ -641,128 +551,133 @@
       "group": "batch"
     },
     {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.jobTemplate.spec.successPolicy.rules[].succeededCount",
+      "kind": "CronJob",
+      "group": "batch"
+    },
+    {
       "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile.type",
       "kind": "CronJob",
       "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core"
+      "fieldPath": "spec.jobTemplate.spec.template.spec.securityContext.appArmorProfile",
+      "kind": "CronJob",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core"
+      "kind": "Job",
+      "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicationController",
-      "group": "core"
+      "fieldPath": "spec.successPolicy.rules[].succeededCount",
+      "kind": "Job",
+      "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicationController",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core"
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicationController",
-      "group": "core"
+      "kind": "Job",
+      "group": "batch"
     },
     {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "DaemonSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
-      "group": "apps"
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch"
     },
     {
       "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "DaemonSet",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.successPolicy.rules[].succeededIndexes",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Job",
+      "group": "batch"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "DaemonSet",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "DaemonSet",
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "Deployment",
       "group": "apps"
     },
     {
@@ -776,7 +691,12 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "Deployment",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
       "kind": "Deployment",
       "group": "apps"
     },
@@ -791,39 +711,174 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps"
-    },
-    {
       "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "Deployment",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "status.containerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps"
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].readOnly",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.containers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.initContainerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].mountPath",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "status.containerStatuses[].volumeMounts[].name",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "Pod",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Deployment",
-      "group": "apps"
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicationController",
+      "group": "core"
     },
     {
       "fieldPath": "status.allocation.resourceHandles[].structuredData.results[].namedResources.name",
@@ -846,12 +901,137 @@
       "group": "resource.k8s.io"
     },
     {
-      "fieldPath": "status.runtimeHandlers[].features",
-      "kind": "Node",
+      "fieldPath": "template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
       "group": "core"
     },
     {
-      "fieldPath": "status.runtimeHandlers",
+      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "PodTemplate",
+      "group": "core"
+    },
+    {
+      "fieldPath": "spec.versions[].selectableFields",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io"
+    },
+    {
+      "fieldPath": "spec.versions[].selectableFields[].jsonPath",
+      "kind": "CustomResourceDefinition",
+      "group": "apiextensions.k8s.io"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "ReplicaSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "status.runtimeHandlers[].features",
       "kind": "Node",
       "group": "core"
     },
@@ -861,168 +1041,93 @@
       "group": "core"
     },
     {
-      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
+      "fieldPath": "status.runtimeHandlers",
+      "kind": "Node",
       "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.containerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.initContainerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.initContainerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.containerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.containerStatuses[].volumeMounts[].name",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.securityContext.appArmorProfile.type",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.initContainerStatuses[].volumeMounts[].mountPath",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.securityContext.appArmorProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "status.ephemeralContainerStatuses[].volumeMounts[].readOnly",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Pod",
-      "group": "core"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
-      "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
       "group": "apps"
     },
     {
       "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "ReplicaSet",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
+      "kind": "DaemonSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "kind": "StatefulSet",
       "group": "apps"
     },
     {
@@ -1036,7 +1141,12 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
+      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
+      "kind": "StatefulSet",
+      "group": "apps"
+    },
+    {
+      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
       "kind": "StatefulSet",
       "group": "apps"
     },
@@ -1051,119 +1161,9 @@
       "group": "apps"
     },
     {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
       "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
       "kind": "StatefulSet",
       "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "StatefulSet",
-      "group": "apps"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.successPolicy.rules[].succeededIndexes",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.successPolicy.rules[].succeededCount",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.localhostProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.initContainers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.containers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile.type",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.template.spec.ephemeralContainers[].securityContext.appArmorProfile",
-      "kind": "Job",
-      "group": "batch"
-    },
-    {
-      "fieldPath": "spec.versions[].selectableFields[].jsonPath",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io"
-    },
-    {
-      "fieldPath": "spec.versions[].selectableFields",
-      "kind": "CustomResourceDefinition",
-      "group": "apiextensions.k8s.io"
     }
   ]
 }

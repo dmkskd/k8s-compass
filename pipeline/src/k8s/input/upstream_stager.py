@@ -2,7 +2,7 @@
 Stage upstream Kubernetes release data for processing.
 
 This module handles fetching and staging raw upstream data:
-1. release-notes.json from cdn.dl.k8s.io
+1. release-notes.json from dl.k8s.io
 2. CHANGELOG files from local kubernetes repo clone
 
 All staged data goes to pipeline/data/upstream/k8s/releases/ and is committed to git.
@@ -26,7 +26,7 @@ CHANGELOGS_DIR = UPSTREAM_DIR / "changelogs"
 K8S_REPO = REPOS_DIR / "kubernetes"
 
 # URL pattern for official release notes JSON
-RELEASE_NOTES_URL = "https://cdn.dl.k8s.io/release/v{version}/release-notes.json"
+RELEASE_NOTES_URL = "https://dl.k8s.io/release/v{version}/release-notes.json"
 
 
 def log(msg: str) -> None:
@@ -68,7 +68,7 @@ def is_changelog_staged(version: str) -> bool:
 
 def fetch_release_notes(version: str, force: bool = False) -> dict[str, Any] | None:
     """
-    Fetch release-notes.json from cdn.dl.k8s.io and stage it.
+    Fetch release-notes.json from dl.k8s.io and stage it.
 
     Args:
         version: K8s version like "1.35" or "1.35.0"
@@ -194,7 +194,7 @@ def stage_release(version: str, force: bool = False) -> dict[str, Any]:
     }
 
     # Stage release-notes.json
-    log("\n[1/2] Release notes from cdn.dl.k8s.io...")
+    log("\n[1/2] Release notes from dl.k8s.io...")
     release_notes = fetch_release_notes(version, force=force)
     if release_notes:
         result["release_notes"] = {

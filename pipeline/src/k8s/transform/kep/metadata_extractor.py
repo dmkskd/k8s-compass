@@ -98,24 +98,28 @@ Extract:
 1. **summary**: 2-3 sentence summary of what this KEP does and why it matters to Kubernetes users/operators.
 
 2. **labels**: 3-6 lowercase topic labels for categorization and discovery.
-   - Be specific: prefer "cpu-manager" over "cpu", "traffic-distribution" over "networking"
-   - Include technology terms: numa, cgroups, ebpf, csi, cri, selinux, apparmor
+   - IMPORTANT: Use labels from this canonical list whenever applicable:
+     security, scheduling, storage, networking, pod, api, node, kubelet, csi, observability,
+     feature-gate, cri, kubectl, service, apiserver, configuration, crd, cloud-provider,
+     controller, metrics, authentication, performance, volume, validation, autoscaling,
+     resource-management, admission, topology, policy, job, kube-proxy, windows, numa,
+     cgroups, cpu-manager, dra, dns, deprecation, openapi, statefulset, webhook,
+     selinux, apparmor, memory-manager, device-plugin, api-machinery, ebpf
+   - Only invent a new label if nothing in the list above fits
+   - Be specific: prefer "cpu-manager" over "cpu", "dra" over "dynamic-resource-allocation"
    - Include resource types if central: pod, deployment, service, job, statefulset
 
    IMPORTANT - Use precise labels for core Kubernetes components:
-   - `scheduler` - ONLY for KEPs that directly modify kube-scheduler behavior, scheduling algorithms, or scheduler plugins
-   - `pod-placement` - for node selection, affinity, tolerations, topology spread constraints
+   - `scheduling` - ONLY for KEPs that directly modify kube-scheduler behavior, scheduling algorithms, or scheduler plugins
    - `kubelet` - for kubelet-specific changes (not general node features)
-   - `api-server` - ONLY for kube-apiserver specific changes
-   - `controller-manager` - ONLY for kube-controller-manager changes
+   - `apiserver` - ONLY for kube-apiserver specific changes
+   - `controller` - ONLY for kube-controller-manager changes
 
-   DO NOT use `scheduler` or `scheduling` for:
+   DO NOT use `scheduling` for:
    - Kubelet/node resource management (use `node`, `resource-management`, `cgroups` instead)
    - API cleanup or protobuf changes (use `api`, `api-machinery` instead)
-   - CLI tools like kubectl (use `cli`, `kubectl` instead)
+   - CLI tools like kubectl (use `kubectl` instead)
    - General infrastructure changes that don't directly affect the scheduler
-
-   Other feature areas: autoscaling, storage, networking, security, observability, workloads
 
 3. **affected_kinds**: Kubernetes resource types that have NEW or MODIFIED API fields.
    - Only include Kinds where the API schema changes

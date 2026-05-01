@@ -1,8 +1,42 @@
 {
   "version": "1.33",
   "codename": "Octarine: The Color of Magic",
-  "description": "Inspired by Terry Pratchett's Discworld, 'Octarine' is the mythical eighth color visible only to wizards, witches, cats—and those who've stared at iptables rules too long. A swamp dragon perches atop the Unseen University gazing at 64 stars (one for each KEP). Sidecar containers graduate to GA, in-place resize moves to beta, and as Pratchett wrote: 'It's still magic even if you know how it's done.'",
+  "description": "Inspired by Terry Pratchett's Discworld, 'Octarine' is the mythical eighth color visible only to wizards, witches, cats\u2014and those who've stared at iptables rules too long. A swamp dragon perches atop the Unseen University gazing at 64 stars (one for each KEP). Sidecar containers graduate to GA, in-place resize moves to beta, and as Pratchett wrote: 'It's still magic even if you know how it's done.'",
   "releaseDate": "2025-04-23",
-  "themes": ["Workloads", "Networking", "Security", "Scheduling"],
-  "features": []
+  "themes": [
+    "Workloads",
+    "Networking",
+    "Security",
+    "Scheduling"
+  ],
+  "features": [
+    {
+      "kep": "KEP-753",
+      "title": "Sidecar Containers",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/753-sidecar-containers"
+    },
+    {
+      "kep": "KEP-1287",
+      "title": "In-place Update of Pod Resources",
+      "stage": "beta",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/1287-in-place-update-pod-resources"
+    },
+    {
+      "kep": "KEP-3104",
+      "title": "Introduce kuberc",
+      "stage": "alpha",
+      "isHighlight": true,
+      "sig": "Cli",
+      "kepPath": "sig-cli/3104-introduce-kuberc"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 121,
+    "contributors": 570
+  }
 }

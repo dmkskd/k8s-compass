@@ -1,15 +1,55 @@
 {
   "version": "1.27",
   "codename": "Chill Vibes",
-  "description": "Kubernetes 1.27 'Chill Vibes' 😎 lives up to its name—the first release in Kubernetes history with zero exception requests. This remarkably smooth release delivers 60 enhancements including in-place pod resource updates (alpha), seccomp defaults graduating to GA, and pod scheduling readiness gates. The calm energy extends to the historic freeze on k8s.gcr.io as the project transitions to registry.k8s.io. Sometimes the best releases are the ones that just... flow.",
+  "description": "Kubernetes 1.27 'Chill Vibes' \ud83d\ude0e lives up to its name\u2014the first release in Kubernetes history with zero exception requests. This remarkably smooth release delivers 60 enhancements including in-place pod resource updates (alpha), seccomp defaults graduating to GA, and pod scheduling readiness gates. The calm energy extends to the historic freeze on k8s.gcr.io as the project transitions to registry.k8s.io. Sometimes the best releases are the ones that just... flow.",
   "releaseDate": "2023-04-11",
   "endOfLifeDate": "2024-06-28",
-  "summary": {
-    "total": 60,
-    "stable": 13,
-    "beta": 29,
-    "alpha": 18
-  },
-  "themes": ["Security", "Scheduling", "Registry", "Resource Management"],
-  "features": []
+  "themes": [
+    "Security",
+    "Scheduling",
+    "Registry",
+    "Resource Management"
+  ],
+  "features": [
+    {
+      "kep": "KEP-3720",
+      "title": "Freezing `k8s.gcr.io` image registry",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Release",
+      "kepPath": "sig-release/3720-freezing-k8s-gcr-io"
+    },
+    {
+      "kep": "KEP-2413",
+      "title": "Seccomp by default",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/2413-seccomp-by-default"
+    },
+    {
+      "kep": "KEP-2926",
+      "title": "Mutable Node Scheduling Directives for Jobs",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Scheduling",
+      "kepPath": "sig-scheduling/2926-job-mutable-scheduling-directives"
+    },
+    {
+      "kep": "KEP-2053",
+      "title": "Downward API HugePages",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/2053-downward-api-hugepages"
+    },
+    {
+      "kep": "KEP-693",
+      "title": "Node Topology Manager",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Node",
+      "kepPath": "sig-node/693-topology-manager"
+    }
+  ]
 }

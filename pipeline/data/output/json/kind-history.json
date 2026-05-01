@@ -1,79 +1,85 @@
 {
-  "networking.k8s.io/ClusterCIDR": {
-    "removedIn": "1.29"
-  },
-  "resource.k8s.io/ResourceClassParameters": {
-    "introducedIn": "1.30",
-    "removedIn": "1.31"
-  },
-  "authentication.k8s.io/SelfSubjectReview": {
-    "introducedIn": "1.26"
-  },
-  "resource.k8s.io/PodSchedulingContext": {
-    "introducedIn": "1.27",
-    "removedIn": "1.32"
-  },
-  "admissionregistration.k8s.io/MutatingAdmissionPolicy": {
-    "introducedIn": "1.32"
-  },
-  "coordination.k8s.io/LeaseCandidate": {
-    "introducedIn": "1.31"
+  "resource.k8s.io/DeviceTaintRule": {
+    "introducedIn": "1.33"
   },
   "networking.k8s.io/ServiceCIDR": {
     "introducedIn": "1.29"
   },
-  "networking.k8s.io/IPAddress": {
-    "introducedIn": "1.27"
+  "networking.k8s.io/ClusterCIDR": {
+    "removedIn": "1.29"
+  },
+  "scheduling.k8s.io/PodGroup": {
+    "introducedIn": "1.36"
   },
   "certificates.k8s.io/ClusterTrustBundle": {
     "introducedIn": "1.27"
+  },
+  "certificates.k8s.io/PodCertificateRequest": {
+    "introducedIn": "1.34"
+  },
+  "resource.k8s.io/ResourceClaim": {
+    "introducedIn": "1.26"
+  },
+  "resource.k8s.io/DeviceClass": {
+    "introducedIn": "1.31"
+  },
+  "resource.k8s.io/ResourceSlice": {
+    "introducedIn": "1.30"
+  },
+  "resource.k8s.io/ResourcePoolStatusRequest": {
+    "introducedIn": "1.36"
   },
   "resource.k8s.io/ResourceClaimParameters": {
     "introducedIn": "1.30",
     "removedIn": "1.31"
   },
-  "resource.k8s.io/ResourceClaim": {
-    "introducedIn": "1.26"
+  "coordination.k8s.io/LeaseCandidate": {
+    "introducedIn": "1.31"
+  },
+  "admissionregistration.k8s.io/MutatingAdmissionPolicy": {
+    "introducedIn": "1.32"
   },
   "storagemigration.k8s.io/StorageVersionMigration": {
     "introducedIn": "1.30"
   },
-  "admissionregistration.k8s.io/MutatingAdmissionPolicyBinding": {
-    "introducedIn": "1.32"
-  },
-  "resource.k8s.io/ResourceClaimTemplate": {
+  "admissionregistration.k8s.io/ValidatingAdmissionPolicyBinding": {
     "introducedIn": "1.26"
   },
-  "certificates.k8s.io/PodCertificateRequest": {
-    "introducedIn": "1.34"
+  "storage.k8s.io/VolumeAttributesClass": {
+    "introducedIn": "1.29"
   },
-  "resource.k8s.io/PodScheduling": {
-    "introducedIn": "1.26",
-    "removedIn": "1.27"
-  },
-  "admissionregistration.k8s.io/ValidatingAdmissionPolicyBinding": {
+  "resource.k8s.io/ResourceClaimTemplate": {
     "introducedIn": "1.26"
   },
   "scheduling.k8s.io/Workload": {
     "introducedIn": "1.35"
   },
-  "resource.k8s.io/DeviceTaintRule": {
-    "introducedIn": "1.33"
-  },
-  "storage.k8s.io/VolumeAttributesClass": {
-    "introducedIn": "1.29"
-  },
-  "resource.k8s.io/ResourceSlice": {
-    "introducedIn": "1.30"
-  },
-  "admissionregistration.k8s.io/ValidatingAdmissionPolicy": {
-    "introducedIn": "1.26"
+  "resource.k8s.io/PodSchedulingContext": {
+    "introducedIn": "1.27",
+    "removedIn": "1.32"
   },
   "resource.k8s.io/ResourceClass": {
     "introducedIn": "1.26",
     "removedIn": "1.31"
   },
-  "resource.k8s.io/DeviceClass": {
-    "introducedIn": "1.31"
+  "networking.k8s.io/IPAddress": {
+    "introducedIn": "1.27"
+  },
+  "resource.k8s.io/PodScheduling": {
+    "introducedIn": "1.26",
+    "removedIn": "1.27"
+  },
+  "authentication.k8s.io/SelfSubjectReview": {
+    "introducedIn": "1.26"
+  },
+  "admissionregistration.k8s.io/MutatingAdmissionPolicyBinding": {
+    "introducedIn": "1.32"
+  },
+  "admissionregistration.k8s.io/ValidatingAdmissionPolicy": {
+    "introducedIn": "1.26"
+  },
+  "resource.k8s.io/ResourceClassParameters": {
+    "introducedIn": "1.30",
+    "removedIn": "1.31"
   }
 }

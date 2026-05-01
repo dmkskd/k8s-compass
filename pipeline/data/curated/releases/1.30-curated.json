@@ -1,15 +1,59 @@
 {
   "version": "1.30",
   "codename": "Uwubernetes",
-  "description": "The cutest release to date! 'Uwubernetes' (a portmanteau of 'kubernetes' and 'UwU') celebrates the joy contributors bring from their outside lives. For the people who built it, for the people who release it, and for the furries who keep all of our clusters online. Pod scheduling readiness graduates to stable, volume manager reconstruction improves robustness, and min domains in PodTopologySpread reaches GA. UwU ♥️",
+  "description": "The cutest release to date! 'Uwubernetes' (a portmanteau of 'kubernetes' and 'UwU') celebrates the joy contributors bring from their outside lives. For the people who built it, for the people who release it, and for the furries who keep all of our clusters online. Pod scheduling readiness graduates to stable, volume manager reconstruction improves robustness, and min domains in PodTopologySpread reaches GA.",
   "releaseDate": "2024-04-17",
   "endOfLifeDate": "2025-06-28",
-  "summary": {
-    "total": 45,
-    "stable": 17,
-    "beta": 18,
-    "alpha": 10
-  },
-  "themes": ["Security", "Observability", "Autoscaling", "Storage"],
-  "features": []
+  "themes": [
+    "Security",
+    "Observability",
+    "Autoscaling",
+    "Storage"
+  ],
+  "features": [
+    {
+      "kep": "KEP-3521",
+      "title": "Pod Scheduling Readiness",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Scheduling",
+      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness"
+    },
+    {
+      "kep": "KEP-3488",
+      "title": "CEL for Admission Control",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Api Machinery",
+      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+    },
+    {
+      "kep": "KEP-3022",
+      "title": "Tuning the number of domains in PodTopologySpread",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Scheduling",
+      "kepPath": "sig-scheduling/3022-min-domains-in-pod-topology-spread"
+    },
+    {
+      "kep": "KEP-3756",
+      "title": "Robust VolumeManager reconstruction after kubelet restart",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Storage",
+      "kepPath": "sig-storage/3756-volume-reconstruction"
+    },
+    {
+      "kep": "KEP-3141",
+      "title": "Prevent unauthorised volume mode conversion",
+      "stage": "stable",
+      "isHighlight": true,
+      "sig": "Storage",
+      "kepPath": "sig-storage/3141-prevent-volume-mode-conversion"
+    }
+  ],
+  "projectVelocity": {
+    "companies": 863,
+    "contributors": 1391
+  }
 }

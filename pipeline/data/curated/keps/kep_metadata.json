@@ -5069,11 +5069,10 @@
       "featureGate": "DRAAdminAccess",
       "summary": "The KEP introduces a privileged admin mode for Dynamic Resource Allocation (DRA) by adding an optional `adminAccess` flag to DeviceRequests in ResourceClaim and ResourceClaimTemplate objects. This enables cluster administrators to access devices already in use for monitoring or troubleshooting, while restricting the capability to namespaces labeled for admin access and guarded by the DRAAdminAccess feature gate.",
       "labels": [
-        "dynamic-resource-allocation",
+        "dra",
         "admin-access",
         "scheduling",
-        "security",
-        "resource-claims"
+        "security"
       ],
       "affectedKinds": [
         "ResourceClaim",
@@ -10643,11 +10642,10 @@
       "featureGate": "DynamicResourceAllocation",
       "summary": "This KEP introduces a new API for Dynamic Resource Allocation (DRA) with structured parameters, enabling pods to request specialized hardware devices such as GPUs, FPGAs, or network\u2011attached accelerators. It adds support for device sharing, partial allocation, optional allocation, and custom configuration parameters, allowing vendors to publish device information via ResourceSlice objects and the scheduler to allocate them via ResourceClaims.",
       "labels": [
-        "dynamic-resource-allocation",
+        "dra",
         "scheduling",
         "autoscaling",
-        "device",
-        "resource-claim"
+        "device"
       ],
       "affectedKinds": [
         "ResourceSlice",
@@ -11125,7 +11123,7 @@
       "labels": [
         "pod-lifecycle",
         "health-probe",
-        "probe",
+        "healthz",
         "kubelet"
       ],
       "affectedKinds": [
@@ -11298,7 +11296,7 @@
       "featureGate": "ExecProbeTimeouts",
       "summary": "This KEP introduces the ExecProbeTimeouts feature gate to make kubelet respect the timeout values specified for exec probes, treating timeouts as probe failures. It allows clusters to enable proper timeout handling while preserving existing behavior via a configurable gate.",
       "labels": [
-        "probe",
+        "healthz",
         "kubelet",
         "feature-gate",
         "node",
@@ -12763,7 +12761,7 @@
       "featureGate": "DynamicResourceAllocation",
       "summary": "The KEP proposes a Dynamic Resource Allocation (DRA) control plane controller that enables opaque, driver\u2011managed allocation of ResourceClaims via a PodSchedulingContext object, allowing arbitrary parameters, network\u2011attached resources, and custom matching policies. It extends the ResourceClaim, ResourceClaimStatus, and DeviceClass APIs with new fields and introduces the PodSchedulingContext kind to coordinate allocation between the scheduler and DRA drivers.",
       "labels": [
-        "dynamic-resource-allocation",
+        "dra",
         "scheduling",
         "resource-driver",
         "device-class",
@@ -12870,7 +12868,7 @@
       "summary": "This KEP extends the kubelet's PodResources gRPC API to expose resources allocated by Dynamic Resource Allocation (DRA). It adds a new `dynamic_resources` field to each container's resource description and introduces a `Get` RPC to retrieve resources for a specific pod, enabling node monitoring agents to observe DRA\u2011allocated resources.",
       "labels": [
         "podresources",
-        "dynamic-resource-allocation",
+        "dra",
         "observability",
         "grpc",
         "cdi"
@@ -13099,7 +13097,7 @@
         "scheduling",
         "autoscaling",
         "preemption",
-        "resource-claim"
+        "dra"
       ],
       "affectedKinds": [
         "Pod"
@@ -13865,7 +13863,7 @@
         "scheduling",
         "pod",
         "observability",
-        "dynamic-resource-allocation",
+        "dra",
         "gang-scheduling"
       ],
       "affectedKinds": [
@@ -14406,7 +14404,649 @@
         "gitops",
         "progressive\u2011rollout"
       ]
+    },
+    "KEP-5679": {
+      "title": "Fallback for HPA on failure to retrieve metrics",
+      "sig": "sig-autoscaling",
+      "kepPath": "sig-autoscaling/5679-external-metric-fallback",
+      "featureGate": "HPAExternalMetricFallback",
+      "summary": "This KEP adds an optional fallback configuration to the ExternalMetricSource used by the Horizontal Pod Autoscaler, allowing a static replica count to be applied when external metric retrieval fails for a configurable duration. The feature improves reliability of autoscaling workloads that depend on out\u2011of\u2011cluster metrics by preventing stalls during provider outages.",
+      "labels": [
+        "autoscaling",
+        "external-metrics",
+        "horizontal-pod-autoscaler",
+        "fallback",
+        "controller"
+      ],
+      "affectedKinds": [
+        "HorizontalPodAutoscaler"
+      ],
+      "affectedFields": [
+        "spec.metrics[].external.fallback",
+        "spec.metrics[].external.fallback.failureDurationSeconds",
+        "spec.metrics[].external.fallback.replicas"
+      ],
+      "keyConcepts": [
+        "autoscaling",
+        "external-metrics",
+        "horizontal-pod-autoscaler",
+        "controller-manager"
+      ]
+    },
+    "KEP-5882": {
+      "title": "Deployment Pod Replacement Policy",
+      "sig": "sig-apps",
+      "kepPath": "sig-apps/5882-deployment-pod-replacement-policy",
+      "featureGate": "DeploymentPodReplacementPolicy",
+      "summary": "This KEP introduces a new .spec.podReplacementPolicy field to Deployments, allowing users to control whether new pods are created only after terminating pods have fully terminated or immediately after termination starts. The feature provides consistent behavior across rollout strategies and scaling operations, helping to manage resource usage and scheduling predictability.",
+      "labels": [
+        "deployment",
+        "pod-replacement",
+        "scaling",
+        "controller"
+      ],
+      "affectedKinds": [
+        "Deployment"
+      ],
+      "affectedFields": [
+        "spec.podReplacementPolicy"
+      ],
+      "keyConcepts": [
+        "pod lifecycle",
+        "terminationGracePeriodSeconds",
+        "rolling update strategy",
+        "recreate strategy",
+        "scaling",
+        "controller-manager"
+      ]
+    },
+    "KEP-5966": {
+      "title": "etcd RangeStream",
+      "sig": "sig-etcd",
+      "kepPath": "sig-etcd/5966-etcd-range-stream",
+      "featureGate": null,
+      "summary": "This KEP introduces a new server\u2011streaming etcd RPC called RangeStream that returns Range results in incremental chunks, reducing server\u2011side memory spikes and eliminating redundant count computation during client\u2011side pagination. By integrating the RPC into the kube\u2011apiserver (via a feature gate) and the watch cache, large list operations can be processed more efficiently, improving performance and scalability of Kubernetes control plane components.",
+      "labels": [
+        "storage",
+        "api-server",
+        "performance",
+        "streaming",
+        "etcd"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "etcd",
+        "gRPC",
+        "protobuf",
+        "MVCC",
+        "server\u2011streaming",
+        "watch\u2011cache"
+      ]
+    },
+    "KEP-5793": {
+      "title": "Manifest Based Admission Control Config",
+      "sig": "sig-api-machinery",
+      "kepPath": "sig-api-machinery/5793-manifest-based-admission-control-config",
+      "featureGate": "ManifestBasedAdmissionControlConfig",
+      "summary": "This KEP introduces manifest\u2011based admission control configuration, allowing kube\u2011apiserver to load admission webhook and policy objects from disk at startup and watch them for dynamic updates. By moving critical admission policies out of the Kubernetes API, it guarantees enforcement before the API server processes requests, prevents bypass through the API, and provides a bootstrapping security mechanism.",
+      "labels": [
+        "api-server",
+        "security",
+        "admission",
+        "policy",
+        "configuration"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "admission-webhook",
+        "validatingadmissionpolicy",
+        "mutatingadmissionpolicy",
+        "cel",
+        "manifest-files",
+        "file-watching",
+        "dynamic-reloading",
+        "metrics",
+        "audit-annotations"
+      ]
+    },
+    "KEP-5541": {
+      "title": "Report Last Used Time On a PVC",
+      "sig": "sig-storage",
+      "kepPath": "sig-storage/5541-pvc-last-used-time-status-field",
+      "featureGate": "PersistentVolumeClaimUnusedSinceTime",
+      "summary": "This KEP adds an optional `UnusedSince` timestamp field to the `PersistentVolumeClaimStatus` to record when a PVC last transitioned to not being used by any Pod. The field is populated by the PVC protection controller when the last referencing Pod terminates, allowing administrators to identify and clean up stale PVCs. The feature is behind the `PersistentVolumeClaimUnusedSinceTime` feature gate.",
+      "labels": [
+        "storage",
+        "persistentvolumeclaim",
+        "controller",
+        "feature-gate"
+      ],
+      "affectedKinds": [
+        "PersistentVolumeClaim"
+      ],
+      "affectedFields": [
+        "status.unusedSince"
+      ],
+      "keyConcepts": [
+        "storage",
+        "persistentvolumeclaim",
+        "controller-manager",
+        "feature-gate"
+      ]
+    },
+    "KEP-5681": {
+      "title": "Conditional Authorization",
+      "sig": "sig-auth",
+      "kepPath": "sig-auth/5681-conditional-authorization",
+      "featureGate": "ConditionalAuthorization",
+      "summary": "Conditional Authorization extends the Kubernetes authorizer to return a set of conditions that must be satisfied by resource data (labels, fields) before a request can be allowed. It adds condition support to SubjectAccessReview APIs and introduces a new AuthorizationConditionsReview API, enabling fine\u2011grained, policy\u2011driven access control that spans authorization and admission while preserving backward compatibility.",
+      "labels": [
+        "authorization",
+        "admission",
+        "api-server",
+        "security",
+        "policy"
+      ],
+      "affectedKinds": [
+        "SubjectAccessReview",
+        "SelfSubjectAccessReview",
+        "AuthorizationConditionsReview"
+      ],
+      "affectedFields": [
+        "status.conditions",
+        "status.conditionSet",
+        "spec.conditions",
+        "spec.conditionSet"
+      ],
+      "keyConcepts": [
+        "authorization",
+        "admission",
+        "conditions",
+        "CEL",
+        "webhook",
+        "RBAC"
+      ]
+    },
+    "KEP-5866": {
+      "title": "Server-side Sharded List and Watch",
+      "sig": "sig-api-machinery",
+      "kepPath": "sig-api-machinery/5866-server-side-sharded-list-and-watch",
+      "featureGate": "ShardedListAndWatch",
+      "summary": "The KEP adds server\u2011side sharded LIST and WATCH support to the kube\u2011apiserver, letting clients specify a shard range so the API server filters events at the source. This reduces network traffic and client CPU/memory usage, enabling efficient horizontal scaling of controllers such as kube\u2011state\u2011metrics.",
+      "labels": [
+        "api-server",
+        "watch",
+        "list",
+        "sharding",
+        "controller"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [
+        "meta/v1.ListOptions.shardSelector"
+      ],
+      "keyConcepts": [
+        "sharding",
+        "consistent hashing",
+        "CEL",
+        "watch",
+        "list"
+      ]
+    },
+    "KEP-4563": {
+      "title": "EvictionRequest API",
+      "sig": "sig-node",
+      "kepPath": "sig-node/4563-eviction-request-api",
+      "featureGate": "EvictionRequestAPI",
+      "summary": "The EvictionRequest API introduces a declarative resource that enables cooperative pod termination, allowing applications and controllers to coordinate evictions before falling back to the existing eviction mechanism. This improves safety, observability, and flexibility for node draining, descheduling, and autoscaling scenarios, addressing limitations of current Eviction API and PodDisruptionBudgets.",
+      "labels": [
+        "eviction",
+        "pod-disruption",
+        "node-draining",
+        "workloads",
+        "api"
+      ],
+      "affectedKinds": [
+        "EvictionRequest",
+        "Pod"
+      ],
+      "affectedFields": [
+        "spec.targetRef",
+        "spec.interceptors",
+        "spec.gracePeriodSeconds",
+        "spec.timeoutSeconds",
+        "spec.policy",
+        "status.phase",
+        "status.conditions",
+        "status.completionTimestamp"
+      ],
+      "keyConcepts": [
+        "eviction",
+        "pod disruption budgets",
+        "node draining",
+        "controller",
+        "interceptor"
+      ]
+    },
+    "KEP-5707": {
+      "title": "Deprecate Service.spec.externalIPs",
+      "sig": "sig-network",
+      "kepPath": "sig-network/5707-deprecate-service-externalips",
+      "featureGate": "AllowServiceExternalIPs",
+      "summary": "This KEP deprecates the Service.spec.externalIPs field and removes its implementation in kube-proxy, introducing a feature gate (AllowServiceExternalIPs) to disable the functionality. The change improves cluster security by preventing unprivileged users from claiming arbitrary external IPs and encourages migration to safer alternatives like LoadBalancer services, Ingress, or Gateway API.",
+      "labels": [
+        "networking",
+        "service",
+        "security",
+        "api"
+      ],
+      "affectedKinds": [
+        "Service"
+      ],
+      "affectedFields": [],
+      "keyConcepts": [
+        "kube-proxy",
+        "feature-gate",
+        "admission-controller",
+        "Service"
+      ]
+    },
+    "KEP-5758": {
+      "title": "Per-container ulimits configuration",
+      "sig": "sig-node",
+      "kepPath": "sig-node/5758-per-container-ulimits-configuration",
+      "featureGate": "ContainerUlimits",
+      "summary": "This KEP introduces a `ulimits` field in the Container SecurityContext, enabling per\u2011container POSIX resource limit configuration such as nofile, nproc, and memlock. The change propagates through the CRI to container runtimes, integrates with node\u2011declared feature detection, and is gated by the Privileged level of the Pod Security Standards.",
+      "labels": [
+        "security",
+        "cri",
+        "kubelet",
+        "pod",
+        "resource-management"
+      ],
+      "affectedKinds": [
+        "Pod"
+      ],
+      "affectedFields": [
+        "spec.containers[].securityContext.ulimits"
+      ],
+      "keyConcepts": [
+        "ulimits",
+        "posix resource limits",
+        "cri",
+        "oci",
+        "kubelet",
+        "pod security admission"
+      ]
+    },
+    "KEP-5677": {
+      "title": "DRA Resource Availability Visibility",
+      "sig": "sig-node",
+      "kepPath": "sig-node/5677-dra-resource-availability-visibility",
+      "featureGate": "DRAResourcePoolStatus",
+      "summary": "The KEP introduces a new ResourcePoolStatusRequest API that lets users query the available capacity of device resource pools in a DRA-enabled cluster. By following the CSR pattern, the request is processed once by a controller in kube-controller-manager, populating status with per\u2011pool totals, allocations, and availability, thereby improving debugging, capacity planning, and cross\u2011namespace visibility.",
+      "labels": [
+        "resource-management",
+        "dra",
+        "controller",
+        "api",
+        "visibility"
+      ],
+      "affectedKinds": [
+        "ResourcePoolStatusRequest"
+      ],
+      "affectedFields": [
+        "spec.driver",
+        "spec.poolName",
+        "status.observationTime",
+        "status.pools[].driver",
+        "status.pools[].poolName",
+        "status.pools[].nodeName",
+        "status.pools[].totalDevices",
+        "status.pools[].allocatedDevices",
+        "status.pools[].availableDevices",
+        "status.conditions[].type",
+        "status.conditions[].status",
+        "status.conditions[].reason",
+        "status.conditions[].lastTransitionTime"
+      ],
+      "keyConcepts": [
+        "dynamic-resource-allocation",
+        "resource-slice",
+        "resource-claim",
+        "certificate-signing-request pattern",
+        "rbac",
+        "controller-manager"
+      ]
+    },
+    "KEP-5808": {
+      "title": "Native Histogram Support for Kubernetes Metrics",
+      "sig": "sig-instrumentation",
+      "kepPath": "sig-instrumentation/5808-native-histogram-support",
+      "featureGate": "NativeHistograms",
+      "summary": "This KEP adds support for Prometheus Native Histograms to Kubernetes component metrics via a new feature gate, allowing components to expose both classic and native histogram formats simultaneously. The change reduces storage overhead and improves query performance while maintaining backward compatibility, enabling a gradual migration for users.",
+      "labels": [
+        "observability",
+        "metrics",
+        "prometheus",
+        "native-histograms"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "prometheus",
+        "native-histograms",
+        "protobuf",
+        "openmetrics",
+        "feature-gates"
+      ]
+    },
+    "KEP-5304": {
+      "title": "DRA Device Attributes Downward API",
+      "sig": "sig-node",
+      "kepPath": "sig-node/5304-dra-attributes-downward-api",
+      "featureGate": "NA",
+      "summary": "The KEP adds a framework\u2011assisted way for Dynamic Resource Allocation (DRA) drivers to expose device attributes to containers via CDI\u2011mounted JSON files. Drivers populate a Metadata field in PrepareResult, and the kubelet plugin writes per\u2011request metadata files that are bind\u2011mounted into the pod, enabling workloads (e.g., KubeVirt, SR\u2011IOV) to discover device details without custom controllers or Downward API changes.",
+      "labels": [
+        "dra",
+        "device-metadata",
+        "kubelet",
+        "cdi",
+        "workloads"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "dynamic-resource-allocation",
+        "container-device-interface",
+        "kubelet",
+        "device-plugin",
+        "json",
+        "cdi",
+        "node-resource-interface",
+        "resourceclaim",
+        "resourceslice",
+        "metadata"
+      ]
+    },
+    "KEP-5547": {
+      "title": "Integrate Workload APIs with Job Controller",
+      "sig": "sig-apps",
+      "kepPath": "sig-apps/5547-integrate-workload-with-job",
+      "featureGate": "WorkloadWithJob",
+      "summary": "This KEP adds native integration between the Job controller and the Workload/PodGroup gang scheduling APIs. The Job controller will automatically create Workload and PodGroup objects for eligible parallel Jobs, enabling gang scheduling semantics without requiring external controllers.",
+      "labels": [
+        "job",
+        "gang-scheduling",
+        "pod-group",
+        "controller"
+      ],
+      "affectedKinds": [
+        "Workload",
+        "PodGroup"
+      ],
+      "affectedFields": [],
+      "keyConcepts": [
+        "gang scheduling",
+        "Workload API",
+        "PodGroup",
+        "Job controller",
+        "indexed jobs",
+        "schedulingGroup"
+      ]
+    },
+    "KEP-3541": {
+      "title": "Add Recreate Update Strategy to StatefulSet",
+      "sig": "sig-apps",
+      "kepPath": "sig-apps/3541-add-recreate-strategy-to-statefulset",
+      "featureGate": "StatefulSetRecreateStrategy",
+      "summary": "This KEP introduces a new Recreate update strategy for StatefulSets, allowing all pods to be deleted and recreated during an update, similar to Deployments' Recreate strategy. It provides a predictable way to recover from stuck pods without manual intervention, benefiting workloads that can tolerate downtime such as CI/CD pipelines and stateless applications using StatefulSets.",
+      "labels": [
+        "statefulset",
+        "workloads",
+        "update-strategy",
+        "controller"
+      ],
+      "affectedKinds": [
+        "StatefulSet"
+      ],
+      "affectedFields": [],
+      "keyConcepts": [
+        "StatefulSet",
+        "Recreate update strategy",
+        "controller-manager",
+        "podManagementPolicy"
+      ]
+    },
+    "KEP-5729": {
+      "title": "DRA: ResourceClaim Support for Workloads",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5729-resourceclaim-support-for-workloads",
+      "featureGate": "WorkloadPodGroupResourceClaimTemplate",
+      "summary": "This KEP extends the Workload and PodGroup APIs to allow ResourceClaims and ResourceClaimTemplates to be associated with these higher\u2011level workload objects. By reserving a ResourceClaim for an entire PodGroup, it enables sharing DRA resources across many Pods, overcoming the 256\u2011entry limit and simplifying claim lifecycle management for large AI/ML workloads.",
+      "labels": [
+        "workloads",
+        "resource-management",
+        "pod-placement",
+        "dra"
+      ],
+      "affectedKinds": [
+        "Workload",
+        "PodGroup",
+        "Pod"
+      ],
+      "affectedFields": [
+        "spec.resourceClaims (Workload)",
+        "spec.resourceClaimTemplates (PodGroup)"
+      ],
+      "keyConcepts": [
+        "Dynamic Resource Allocation (DRA)",
+        "ResourceClaim",
+        "ResourceClaimTemplate",
+        "PodGroup",
+        "Workload API",
+        "topology"
+      ]
+    },
+    "KEP-5732": {
+      "title": "Topology-aware workload scheduling",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5732-topology-aware-workload-scheduling",
+      "featureGate": "TopologyAwareWorkloadScheduling",
+      "summary": "This KEP extends the Kubernetes Workload API with scheduling constraints that allow a PodGroup to specify topology and DRA requirements, enabling the kube-scheduler to place multi\u2011pod workloads within specific topological domains or shared DRA resources. By introducing Placement concepts and new scheduler framework plugin interfaces, it provides a native, high\u2011fidelity mechanism for topology\u2011aware workload scheduling.",
+      "labels": [
+        "scheduling",
+        "pod-placement",
+        "topology-aware",
+        "dra",
+        "workload-api"
+      ],
+      "affectedKinds": [
+        "PodGroup"
+      ],
+      "affectedFields": [
+        "spec.schedulingConstraints",
+        "spec.schedulingConstraints.topologyConstraints",
+        "spec.schedulingConstraints.topologyConstraints[].level"
+      ],
+      "keyConcepts": [
+        "topology-aware scheduling",
+        "Dynamic Resource Allocation (DRA)",
+        "Workload API",
+        "Placement concept",
+        "Scheduling Framework plugins"
+      ]
+    },
+    "KEP-5832": {
+      "title": "Decouple PodGroup API",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5832-decouple-podgroup-api",
+      "featureGate": "GenericWorkload",
+      "summary": "This KEP decouples the PodGroup API from the Workload API by introducing PodGroup as a standalone runtime object in scheduling.k8s.io/v1alpha2. It adds new fields to Workload and Pod specs to reference PodGroup templates and scheduling groups, enabling independent lifecycle, improved scalability, and clearer status ownership for gang scheduling.",
+      "labels": [
+        "scheduling",
+        "pod-placement",
+        "workloads",
+        "api"
+      ],
+      "affectedKinds": [
+        "PodGroup",
+        "Workload",
+        "Pod"
+      ],
+      "affectedFields": [
+        "spec.podGroupTemplates[]",
+        "spec.schedulingGroup",
+        "spec.schedulingGroup.podGroupName",
+        "spec.podGroupTemplateRef",
+        "spec.schedulingPolicy"
+      ],
+      "keyConcepts": [
+        "gang-scheduling",
+        "scheduling-policy",
+        "controller",
+        "ownerReferences"
+      ]
+    },
+    "KEP-5491": {
+      "title": "DRA: List Types for Attributes",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5491-dra-list-types-for-attributes",
+      "featureGate": "DRAListTypeAttributes",
+      "summary": "This KEP adds support for list\u2011typed attributes in the DRA DeviceAttribute schema, allowing drivers to expose sets of values such as multiple PCIe roots or NUMA nodes. It also redefines the semantics of ResourceClaim matchAttribute and distinctAttribute constraints to operate on list intersections, while preserving backward compatibility with scalar attributes.",
+      "labels": [
+        "resource-management",
+        "device-attributes",
+        "cel",
+        "topology"
+      ],
+      "affectedKinds": [
+        "ResourceSlice",
+        "ResourceClaim"
+      ],
+      "affectedFields": [
+        "spec.devices[].attributes.<attributeName>.list",
+        "spec.devices[].attributes.<attributeName>.list.string",
+        "spec.devices[].attributes.<attributeName>.list.int",
+        "spec.devices[].attributes.<attributeName>.list.bool",
+        "spec.devices[].attributes.<attributeName>.list.version"
+      ],
+      "keyConcepts": [
+        "dynamic-resource-allocation",
+        "cel",
+        "topology",
+        "numa",
+        "pci"
+      ]
+    },
+    "KEP-5554": {
+      "title": "In-place Update Pod Resources alognside Static CPU Manager Policy",
+      "sig": "sig-node",
+      "kepPath": "sig-node/5554-in-place-update-pod-resources-alongside-static-cpu-manager-policy",
+      "featureGate": "InPlacePodVerticalScalingExclusiveCPUs",
+      "summary": "This KEP extends the In\u2011place Resource Resize feature to work with pods that use the static CPU manager policy and have Guaranteed QoS. It enables safe CPU limit increases and decreases without restarting containers while preserving the original CPU allocation and NUMA affinity.",
+      "labels": [
+        "cpu-manager",
+        "topology",
+        "resource-management",
+        "numa",
+        "pod-qos"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "cpu manager",
+        "topology manager",
+        "NUMA",
+        "cgroups",
+        "in-place resource resize",
+        "Guaranteed QoS"
+      ]
+    },
+    "KEP-5710": {
+      "title": "Workload-aware preemption",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5710-workload-aware-preemption",
+      "featureGate": "WorkloadAwarePreemption",
+      "summary": "This KEP extends the Workload and PodGroup APIs to define preemption units and pod group priorities, enabling the kube-scheduler to perform workload-aware preemption. By treating groups of tightly-coupled pods as a single preemption unit, it reduces disruptive partial preemptions and improves resource utilization for AI and multi-host workloads.",
+      "labels": [
+        "scheduling",
+        "preemption",
+        "gang-scheduling",
+        "workload-aware"
+      ],
+      "affectedKinds": [
+        "Workload",
+        "PodGroup"
+      ],
+      "affectedFields": [
+        "spec.preemptionUnit",
+        "spec.podGroupPriority"
+      ],
+      "keyConcepts": [
+        "preemption",
+        "gang scheduling",
+        "priority class",
+        "workload-aware scheduling"
+      ]
+    },
+    "KEP-5825": {
+      "title": "CRI List Streaming",
+      "sig": "sig-node",
+      "kepPath": "sig-node/5825-cri-pagination",
+      "featureGate": "CRIListStreaming",
+      "summary": "This KEP adds server\u2011side streaming RPCs to the Container Runtime Interface (CRI) for list operations, such as StreamContainers and StreamPodSandboxes, allowing results to be sent one item at a time and avoiding the 16\u202fMiB gRPC message size limit. The change preserves existing unary List* APIs for backward compatibility while enabling nodes with large numbers of containers or pods to operate without RPC failures.",
+      "labels": [
+        "cri",
+        "grpc",
+        "streaming",
+        "kubelet",
+        "node"
+      ],
+      "affectedKinds": [],
+      "affectedFields": [],
+      "keyConcepts": [
+        "cri",
+        "grpc",
+        "protobuf",
+        "server-side streaming",
+        "container runtime"
+      ]
+    },
+    "KEP-5517": {
+      "title": "DRA Node Allocatable Resources",
+      "sig": "sig-scheduling",
+      "kepPath": "sig-scheduling/5517-dra-node-allocatable-resources",
+      "featureGate": "DRANodeAllocatableResources",
+      "summary": "This KEP adds a unified accounting model that integrates node allocatable resources managed via Dynamic Resource Allocation (DRA) with the kube-scheduler and kubelet. By synchronizing the standard NodeResourcesFit plugin and the DRA DynamicResources plugin, it prevents overcommitment and enables the kubelet to correctly calculate QoS, configure cgroups, and enforce resource isolation.",
+      "labels": [
+        "scheduling",
+        "kubelet",
+        "cgroups",
+        "numa",
+        "resource-management"
+      ],
+      "affectedKinds": [
+        "Pod",
+        "DeviceClass",
+        "ResourceClaim",
+        "ResourceSlice"
+      ],
+      "affectedFields": [
+        "spec.resourceClaims",
+        "spec.devices[].resources",
+        "status.allocatable"
+      ],
+      "keyConcepts": [
+        "dynamic resource allocation",
+        "resourceclaim",
+        "resourceslice",
+        "cgroups",
+        "numa",
+        "quality of service"
+      ]
     }
   },
-  "total_keps": 555
+  "total_keps": 578
 }

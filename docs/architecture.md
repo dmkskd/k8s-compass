@@ -103,7 +103,7 @@ k8s-compass/
 
 ```
 Upstream Sources:
-├── cdn.dl.k8s.io/release/vX.YY.Z/release-notes.json
+├── dl.k8s.io/release/vX.YY.Z/release-notes.json
 └── kubernetes/CHANGELOG/CHANGELOG-X.YY.md
         ↓
     Stage (release/stager.py)

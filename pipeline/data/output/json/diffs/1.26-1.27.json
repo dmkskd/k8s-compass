@@ -11,12 +11,12 @@
   },
   "kindsAdded": [
     {
-      "kind": "PodSchedulingContext",
-      "group": "resource.k8s.io"
-    },
-    {
       "kind": "IPAddress",
       "group": "networking.k8s.io"
+    },
+    {
+      "kind": "PodSchedulingContext",
+      "group": "resource.k8s.io"
     },
     {
       "kind": "ClusterTrustBundle",
@@ -31,70 +31,22 @@
   ],
   "fieldsAdded": [
     {
-      "path": "template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].resizePolicy",
-      "kind": "PodTemplate",
-      "group": "core",
+      "path": "webhooks[].matchConditions",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
       "type": "array"
     },
     {
-      "path": "template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
+      "path": "webhooks[].matchConditions[].expression",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "PodTemplate",
-      "group": "core",
+      "path": "webhooks[].matchConditions[].name",
+      "kind": "ValidatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
-    },
-    {
-      "path": "template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.initContainers[].resizePolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "PodTemplate",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "array"
-    },
-    {
-      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "array"
     },
     {
       "path": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy[].resourceName",
@@ -109,19 +61,19 @@
       "type": "string"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "CronJob",
-      "group": "batch",
-      "type": "string"
-    },
-    {
       "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy",
       "kind": "CronJob",
       "group": "batch",
       "type": "array"
     },
     {
-      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
       "kind": "CronJob",
       "group": "batch",
       "type": "string"
@@ -133,9 +85,297 @@
       "type": "string"
     },
     {
+      "path": "spec.jobTemplate.spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "string"
+    },
+    {
       "path": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy[].restartPolicy",
       "kind": "CronJob",
       "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.jobTemplate.spec.template.spec.containers[].resizePolicy",
+      "kind": "CronJob",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Job",
+      "group": "batch",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.containerStatuses[].resources.claims[].name",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.initContainerStatuses[].allocatedResources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.containerStatuses[].resources.requests",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.initContainers[].resizePolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "status.containerStatuses[].resources.limits",
+      "kind": "Pod",
+      "group": "core",
+      "type": "map"
+    },
+    {
+      "path": "spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.containers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.resize",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources.claims",
+      "kind": "Pod",
+      "group": "core",
+      "type": "array"
+    },
+    {
+      "path": "spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Pod",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "status.containerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "status.ephemeralContainerStatuses[].resources",
+      "kind": "Pod",
+      "group": "core",
+      "type": "object"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "Deployment",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "Deployment",
+      "group": "apps",
       "type": "string"
     },
     {
@@ -145,10 +385,10 @@
       "type": "array"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
       "kind": "ReplicationController",
       "group": "core",
-      "type": "array"
+      "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
@@ -157,13 +397,7 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "path": "spec.template.spec.initContainers[].resizePolicy",
       "kind": "ReplicationController",
       "group": "core",
       "type": "array"
@@ -175,19 +409,7 @@
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "ReplicationController",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
       "kind": "ReplicationController",
       "group": "core",
       "type": "string"
@@ -199,147 +421,27 @@
       "type": "string"
     },
     {
-      "path": "webhooks[].matchConditions[].name",
-      "kind": "ValidatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "webhooks[].matchConditions",
-      "kind": "ValidatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "array"
-    },
-    {
-      "path": "webhooks[].matchConditions[].expression",
-      "kind": "ValidatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
     },
     {
       "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "array"
     },
     {
       "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
+      "kind": "ReplicationController",
+      "group": "core",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "DaemonSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "webhooks[].matchConditions[].name",
-      "kind": "MutatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "webhooks[].matchConditions",
-      "kind": "MutatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
-      "type": "array"
-    },
-    {
-      "path": "webhooks[].matchConditions[].expression",
-      "kind": "MutatingWebhookConfiguration",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "Deployment",
-      "group": "apps",
+      "path": "status.allocation.resourceHandles[].driverName",
+      "kind": "ResourceClaim",
+      "group": "resource.k8s.io",
       "type": "string"
     },
     {
@@ -355,211 +457,61 @@
       "type": "string"
     },
     {
-      "path": "status.allocation.resourceHandles[].driverName",
-      "kind": "ResourceClaim",
-      "group": "resource.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].resources.claims",
-      "kind": "Pod",
+      "path": "template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "array"
     },
     {
-      "path": "spec.containers[].resizePolicy",
-      "kind": "Pod",
+      "path": "template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
+      "group": "core",
+      "type": "string"
+    },
+    {
+      "path": "template.spec.containers[].resizePolicy",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "array"
     },
     {
-      "path": "status.containerStatuses[].resources.requests",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].allocatedResources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].resources.limits",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "status.containerStatuses[].resources.claims",
-      "kind": "Pod",
+      "path": "template.spec.initContainers[].resizePolicy",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "array"
     },
     {
-      "path": "status.initContainerStatuses[].allocatedResources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "Pod",
+      "path": "template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "string"
     },
     {
-      "path": "status.initContainerStatuses[].resources.claims[].name",
-      "kind": "Pod",
+      "path": "template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "string"
     },
     {
-      "path": "status.containerStatuses[].resources.claims[].name",
-      "kind": "Pod",
+      "path": "template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "string"
     },
     {
-      "path": "spec.initContainers[].resizePolicy",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "Pod",
+      "path": "template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "PodTemplate",
       "group": "core",
       "type": "string"
     },
     {
-      "path": "status.ephemeralContainerStatuses[].resources.requests",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "spec.containers[].resizePolicy[].resourceName",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].resources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "status.containerStatuses[].resources.limits",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].resources.claims",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "status.containerStatuses[].allocatedResources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "spec.ephemeralContainers[].resizePolicy",
-      "kind": "Pod",
-      "group": "core",
-      "type": "array"
-    },
-    {
-      "path": "status.ephemeralContainerStatuses[].resources.claims[].name",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].resources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "status.resize",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.containerStatuses[].resources",
-      "kind": "Pod",
-      "group": "core",
-      "type": "object"
-    },
-    {
-      "path": "status.initContainerStatuses[].resources.requests",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "Pod",
-      "group": "core",
-      "type": "string"
-    },
-    {
-      "path": "status.initContainerStatuses[].resources.limits",
-      "kind": "Pod",
-      "group": "core",
-      "type": "map"
-    },
-    {
-      "path": "spec.matchConditions",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "array"
-    },
-    {
-      "path": "spec.auditAnnotations[].key",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.auditAnnotations[].valueExpression",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "status.conditions[].type",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.validations[].messageExpression",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "status.conditions[].lastTransitionTime",
+      "path": "status.conditions[].status",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
       "type": "string"
@@ -571,43 +523,25 @@
       "type": "string"
     },
     {
-      "path": "spec.auditAnnotations",
+      "path": "spec.auditAnnotations[].key",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "status.typeChecking.expressionWarnings",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
       "type": "array"
     },
     {
-      "path": "status.conditions[].observedGeneration",
+      "path": "status.observedGeneration",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
       "type": "integer"
     },
     {
-      "path": "status.conditions[].status",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "spec.matchConditions[].name",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "status",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "object"
-    },
-    {
-      "path": "status.conditions[].message",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "string"
-    },
-    {
-      "path": "status.typeChecking.expressionWarnings[].warning",
+      "path": "status.conditions[].type",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
       "type": "string"
@@ -619,28 +553,10 @@
       "type": "string"
     },
     {
-      "path": "status.typeChecking",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "object"
-    },
-    {
-      "path": "status.conditions[].reason",
+      "path": "spec.auditAnnotations[].valueExpression",
       "kind": "ValidatingAdmissionPolicy",
       "group": "admissionregistration.k8s.io",
       "type": "string"
-    },
-    {
-      "path": "status.observedGeneration",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "integer"
-    },
-    {
-      "path": "status.typeChecking.expressionWarnings",
-      "kind": "ValidatingAdmissionPolicy",
-      "group": "admissionregistration.k8s.io",
-      "type": "array"
     },
     {
       "path": "status.conditions",
@@ -649,171 +565,255 @@
       "type": "array"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "spec.matchConditions",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "array"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "status",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "status.typeChecking.expressionWarnings[].warning",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "status.typeChecking",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "type": "object"
+    },
+    {
+      "path": "spec.validations[].messageExpression",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "spec.auditAnnotations",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "array"
     },
     {
-      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "status.conditions[].message",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "spec.matchConditions[].name",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "array"
+      "path": "status.conditions[].observedGeneration",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
+      "type": "integer"
     },
     {
-      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
+      "path": "status.conditions[].reason",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "ReplicaSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "StatefulSet",
-      "group": "apps",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "array"
-    },
-    {
-      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
-      "type": "string"
-    },
-    {
-      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
-      "kind": "Job",
-      "group": "batch",
+      "path": "status.conditions[].lastTransitionTime",
+      "kind": "ValidatingAdmissionPolicy",
+      "group": "admissionregistration.k8s.io",
       "type": "string"
     },
     {
       "path": "spec.versions[].schema.openAPIV3Schema.x-kubernetes-validations[].messageExpression",
       "kind": "CustomResourceDefinition",
       "group": "apiextensions.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "ReplicaSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "webhooks[].matchConditions",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "type": "array"
+    },
+    {
+      "path": "webhooks[].matchConditions[].expression",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "webhooks[].matchConditions[].name",
+      "kind": "MutatingWebhookConfiguration",
+      "group": "admissionregistration.k8s.io",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "DaemonSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy[].resourceName",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.initContainers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "string"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.ephemeralContainers[].resizePolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
+      "type": "array"
+    },
+    {
+      "path": "spec.template.spec.containers[].resizePolicy[].restartPolicy",
+      "kind": "StatefulSet",
+      "group": "apps",
       "type": "string"
     }
   ],

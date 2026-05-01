@@ -353,6 +353,11 @@
           "name": "stage",
           "type": "string",
           "description": "alpha/beta/stable"
+        },
+        {
+          "name": "is_highlight",
+          "type": "bool",
+          "description": "True if curated as a release highlight"
         }
       ]
     },

@@ -229,6 +229,32 @@ def save_release(version: str, data: dict) -> None:
     log(f"  Saved to {path}")
 
 
+def _change_key(change: dict) -> str:
+    """Get a unique key for a change. Uses prNumber, falls back to description hash."""
+    if pr := change.get("prNumber"):
+        return str(pr)
+    import hashlib
+    desc = change.get("description", "")
+    return f"desc:{hashlib.sha256(desc.encode()).hexdigest()[:16]}"
+
+
+def load_changes_enrichment(version: str) -> dict[str, dict]:
+    """Load change enrichment data from {version}-changes-enriched.json."""
+    path = RELEASES_DIR / f"{version}-changes-enriched.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        return json.load(f)
+
+
+def save_changes_enrichment(version: str, data: dict[str, dict]) -> None:
+    """Save change enrichment data to {version}-changes-enriched.json."""
+    path = RELEASES_DIR / f"{version}-changes-enriched.json"
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
+    log(f"  Saved enrichment to {path}")
+
+
 # ============================================================================
 # Main enrichment functions
 # ============================================================================
@@ -285,6 +311,10 @@ def enrich_changes(
         log("  [ERROR] No changesByKind in release")
         return {}
 
+    enrichment_data = load_changes_enrichment(version)
+    if enrichment_data:
+        log(f"  Loaded {len(enrichment_data)} existing enrichments")
+
     # Filter to specific kind if requested
     kinds_to_process = [kind] if kind else ENRICHABLE_KINDS
     kinds_to_process = [k for k in kinds_to_process if k in changes_by_kind]
@@ -296,7 +326,7 @@ def enrich_changes(
 
     for change_kind in kinds_to_process:
         for idx, change in enumerate(changes_by_kind[change_kind]):
-            if skip_enriched and change.get("enrichment"):
+            if skip_enriched and _change_key(change) in enrichment_data:
                 continue
             if only_with_issues and not change.get("issueContext"):
                 continue
@@ -311,7 +341,7 @@ def enrich_changes(
                 if change_kind not in patch_changes:
                     continue
                 for idx, change in enumerate(patch_changes[change_kind]):
-                    if skip_enriched and change.get("enrichment"):
+                    if skip_enriched and _change_key(change) in enrichment_data:
                         continue
                     to_process.append((change_kind, idx, change, patch_version))
 
@@ -372,15 +402,8 @@ def enrich_changes(
                     pr_num = change.get("prNumber", "?")
 
                     if result_data:
-                        # Update the change in place
-                        if result_patch:
-                            # Find the patch and update
-                            for patch in release["patchReleases"]:
-                                if patch.get("version") == result_patch:
-                                    patch["changesByKind"][result_kind][result_idx]["enrichment"] = result_data
-                                    break
-                        else:
-                            changes_by_kind[result_kind][result_idx]["enrichment"] = result_data
+                        key = _change_key(change)
+                        enrichment_data[key] = result_data
 
                         enriched_count += 1
                         patch_info = f" [{result_patch}]" if result_patch else ""
@@ -391,7 +414,7 @@ def enrich_changes(
 
                     # Save checkpoint every 20 changes
                     if enriched_count > 0 and enriched_count % 20 == 0:
-                        save_release(version, release)
+                        save_changes_enrichment(version, enrichment_data)
                         log(f"    [CHECKPOINT] Saved {enriched_count} enriched changes")
 
             except Exception as e:
@@ -404,13 +427,13 @@ def enrich_changes(
 
     # Final save
     if enriched_count > 0:
-        save_release(version, release)
+        save_changes_enrichment(version, enrichment_data)
 
     # Log total usage
     if tracker.total_input or tracker.total_output:
         log(f"\n[USAGE] {tracker.format_total()}")
 
-    return changes_by_kind
+    return enrichment_data
 
 
 def enrich_changes_batch(
@@ -440,11 +463,15 @@ def enrich_changes_batch(
     kinds_to_process = [kind] if kind else ENRICHABLE_KINDS
     kinds_to_process = [k for k in kinds_to_process if k in changes_by_kind]
 
+    enrichment_data = load_changes_enrichment(version)
+    if enrichment_data:
+        log(f"  Loaded {len(enrichment_data)} existing enrichments")
+
     # Collect all changes to process
     to_process: list[tuple[str, int, dict]] = []
     for change_kind in kinds_to_process:
         for idx, change in enumerate(changes_by_kind[change_kind]):
-            if change.get("enrichment"):
+            if _change_key(change) in enrichment_data:
                 continue
             if only_with_issues and not change.get("issueContext"):
                 continue
@@ -453,7 +480,7 @@ def enrich_changes_batch(
     log(f"  Found {len(to_process)} changes to enrich")
 
     if not to_process:
-        return changes_by_kind
+        return enrichment_data
 
     tracker = UsageTracker(effective_model_id)
     total_enriched = 0
@@ -474,7 +501,8 @@ def enrich_changes_batch(
             tracker.add(in_tokens, out_tokens)
 
             if enrichment:
-                changes_by_kind[change_kind][idx]["enrichment"] = {
+                key = _change_key(change)
+                enrichment_data[key] = {
                     "problem": enrichment.problem,
                     "affected": enrichment.affected,
                     "fix": enrichment.fix,
@@ -489,7 +517,7 @@ def enrich_changes_batch(
             else:
                 log("      [FAIL]")
 
-        save_release(version, release)
+        save_changes_enrichment(version, enrichment_data)
         log(f"  [Batch {batch_num}] Saved progress ({total_enriched} total enriched)")
 
     log(f"\n[DONE] Total enriched: {total_enriched}/{len(to_process)}")
@@ -497,4 +525,4 @@ def enrich_changes_batch(
     if tracker.total_input or tracker.total_output:
         log(f"\n[USAGE] {tracker.format_total()}")
 
-    return changes_by_kind
+    return enrichment_data
