@@ -13,43 +13,23 @@
   "features": [
     {
       "kep": "KEP-1491",
-      "title": "In-tree Storage Plugin to CSI Migration - vSphere",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/1491-csi-migration-vsphere"
+      "isHighlight": true
     },
     {
       "kep": "KEP-1885",
-      "title": "In-tree Storage Plugin to CSI Migration - Azurefile",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/1885-csi-migration-azurefile"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2317",
-      "title": "Provide fsgroup of pod to CSI driver on mount",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/2317-fsgroup-on-mount"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2133",
-      "title": "Kubelet Credential Providers",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/2133-kubelet-credential-providers"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3570",
-      "title": "CPU Manager",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/3570-cpumanager"
+      "isHighlight": true
     }
   ]
 }

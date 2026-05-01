@@ -13,35 +13,19 @@
   "features": [
     {
       "kep": "KEP-2268",
-      "title": "non graceful shutdown",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/2268-non-graceful-shutdown"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3935",
-      "title": "Support Oldest Node And Newest Control Plane",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Architecture",
-      "kepPath": "sig-architecture/3935-oldest-node-newest-control-plane"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3488",
-      "title": "CEL for Admission Control",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Api Machinery",
-      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3488",
-      "title": "CEL for Admission Control",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Api Machinery",
-      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+      "isHighlight": true
     }
   ]
 }

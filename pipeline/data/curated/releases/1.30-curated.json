@@ -13,43 +13,23 @@
   "features": [
     {
       "kep": "KEP-3521",
-      "title": "Pod Scheduling Readiness",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Scheduling",
-      "kepPath": "sig-scheduling/3521-pod-scheduling-readiness"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3488",
-      "title": "CEL for Admission Control",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Api Machinery",
-      "kepPath": "sig-api-machinery/3488-cel-admission-control"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3022",
-      "title": "Tuning the number of domains in PodTopologySpread",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Scheduling",
-      "kepPath": "sig-scheduling/3022-min-domains-in-pod-topology-spread"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3756",
-      "title": "Robust VolumeManager reconstruction after kubelet restart",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/3756-volume-reconstruction"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3141",
-      "title": "Prevent unauthorised volume mode conversion",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/3141-prevent-volume-mode-conversion"
+      "isHighlight": true
     }
   ],
   "projectVelocity": {

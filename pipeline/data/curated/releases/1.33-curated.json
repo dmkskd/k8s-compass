@@ -12,27 +12,15 @@
   "features": [
     {
       "kep": "KEP-753",
-      "title": "Sidecar Containers",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/753-sidecar-containers"
+      "isHighlight": true
     },
     {
       "kep": "KEP-1287",
-      "title": "In-place Update of Pod Resources",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/1287-in-place-update-pod-resources"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3104",
-      "title": "Introduce kuberc",
-      "stage": "alpha",
-      "isHighlight": true,
-      "sig": "Cli",
-      "kepPath": "sig-cli/3104-introduce-kuberc"
+      "isHighlight": true
     }
   ],
   "projectVelocity": {

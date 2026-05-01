@@ -13,35 +13,19 @@
   "features": [
     {
       "kep": "KEP-24",
-      "title": "Add AppArmor Support",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/24-apparmor"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3836",
-      "title": "Kube-proxy improved ingress connectivity reliability",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Network",
-      "kepPath": "sig-network/3836-kube-proxy-improved-ingress-connectivity-reliability"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3762",
-      "title": "PersistentVolume last phase transition time",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/3762-persistent-volume-last-phase-transition-time"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3866",
-      "title": "Add an nftables-based kube-proxy backend",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Network",
-      "kepPath": "sig-network/3866-nftables-proxy"
+      "isHighlight": true
     }
   ],
   "projectVelocity": {

@@ -13,27 +13,15 @@
   "features": [
     {
       "kep": "KEP-127",
-      "title": "Support User Namespaces",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/127-user-namespaces"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2862",
-      "title": "Fine grained Kubelet API authorization",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/2862-fine-grained-kubelet-authz"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3962",
-      "title": "Mutating Admission Policies",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Api Machinery",
-      "kepPath": "sig-api-machinery/3962-mutating-admission-policies"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2570",
@@ -45,11 +33,7 @@
     },
     {
       "kep": "KEP-4680",
-      "title": "Add Resource Health Status to the Pod Status for Device Plugin and DRA",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/4680-add-resource-health-to-pod-status"
+      "isHighlight": true
     }
   ],
   "deprecations": [],

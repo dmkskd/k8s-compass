@@ -574,10 +574,6 @@
         },
         {
           "targetType": "kep",
-          "targetId": "KEP-1710"
-        },
-        {
-          "targetType": "kep",
           "targetId": "KEP-2400"
         },
         {

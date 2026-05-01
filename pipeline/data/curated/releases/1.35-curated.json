@@ -13,10 +13,6 @@
   "features": [
     {
       "kep": "KEP-1287",
-      "kepPath": "sig-node/1287-in-place-update-pod-resources",
-      "title": "In-place Update of Pod Resources",
-      "stage": "stable",
-      "sig": "Node",
       "category": "Resource Management",
       "description": "Allows adjusting CPU and memory resources without restarting Pods or Containers",
       "impact": "Smoother vertical scaling, less disruption for stateful/batch workloads",
@@ -39,10 +35,6 @@
     },
     {
       "kep": "KEP-4671",
-      "kepPath": "sig-scheduling/4671-gang-scheduling",
-      "title": "Gang Scheduling",
-      "stage": "alpha",
-      "sig": "Scheduling",
       "category": "Scheduling",
       "description": "All-or-nothing scheduling for pod groups via Workload API",
       "impact": "Prevents partial scheduling deadlocks for AI/ML training jobs",
@@ -61,10 +53,6 @@
     },
     {
       "kep": "KEP-4317",
-      "kepPath": "sig-auth/4317-pod-certificates",
-      "title": "Pod Certificates for Workload Identity",
-      "stage": "beta",
-      "sig": "Auth",
       "category": "Security",
       "description": "Native workload identity with automated certificate rotation via PodCertificateRequest",
       "impact": "Simplifies mTLS and zero-trust architectures without external controllers",

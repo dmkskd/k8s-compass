@@ -13,43 +13,23 @@
   "features": [
     {
       "kep": "KEP-2579",
-      "title": "PSP Replacement Policy",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Auth",
-      "kepPath": "sig-auth/2579-psp-replacement"
+      "isHighlight": true
     },
     {
       "kep": "KEP-277",
-      "title": "Ephemeral Containers",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/277-ephemeral-containers"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2254",
-      "title": "cgroups v2",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/2254-cgroup-v2"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2413",
-      "title": "Seccomp by default",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/2413-seccomp-by-default"
+      "isHighlight": true
     },
     {
       "kep": "KEP-361",
-      "title": "Local Ephemeral Storage Capacity Isolation",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/361-local-ephemeral-storage-isolation"
+      "isHighlight": true
     }
   ]
 }

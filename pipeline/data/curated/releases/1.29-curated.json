@@ -13,35 +13,19 @@
   "features": [
     {
       "kep": "KEP-2485",
-      "title": "ReadWriteOncePod PersistentVolume AccessMode",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Storage",
-      "kepPath": "sig-storage/2485-read-write-once-pod-pv-access-mode"
+      "isHighlight": true
     },
     {
       "kep": "KEP-3299",
-      "title": "KMS v2 Improvements",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Auth",
-      "kepPath": "sig-auth/3299-kms-v2-improvements"
+      "isHighlight": true
     },
     {
       "kep": "KEP-753",
-      "title": "Sidecar Containers",
-      "stage": "beta",
-      "isHighlight": true,
-      "sig": "Node",
-      "kepPath": "sig-node/753-sidecar-containers"
+      "isHighlight": true
     },
     {
       "kep": "KEP-2876",
-      "title": "CRD Validation Expression Language",
-      "stage": "stable",
-      "isHighlight": true,
-      "sig": "Api Machinery",
-      "kepPath": "sig-api-machinery/2876-crd-validation-expression-language"
+      "isHighlight": true
     }
   ]
 }
