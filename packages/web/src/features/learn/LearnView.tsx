@@ -47,6 +47,28 @@ function extractDeepDiveId(url: string): string | null {
 }
 
 /**
+ * Extract a YouTube video ID from common URL shapes.
+ * Returns null for non-YouTube or unparseable URLs.
+ */
+function getYoutubeVideoId(url: string): string | null {
+  try {
+    const u = new URL(url)
+    const host = u.hostname.replace(/^www\./, '')
+    if (host === 'youtu.be') {
+      const id = u.pathname.slice(1)
+      return /^[\w-]{6,}$/.test(id) ? id : null
+    }
+    if (host === 'youtube.com' || host === 'm.youtube.com') {
+      const id = u.searchParams.get('v')
+      return id && /^[\w-]{6,}$/.test(id) ? id : null
+    }
+    return null
+  } catch {
+    return null
+  }
+}
+
+/**
  * Convert a content_links entry to DeepDiveMetadata for rendering
  */
 
@@ -116,6 +138,12 @@ export function LearnView() {
   const [showLabelDropdown, setShowLabelDropdown] = useState(false)
   const labelSearchRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Pagination: only render this many cards at a time to keep React reconciliation fast
+  // when the unfiltered list has thousands of entries.
+  const PAGE_SIZE = 60
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const loadMoreRef = useRef<HTMLDivElement>(null)
   
   // Wrapped setters that update URL state
   const setContentType = useCallback((type: ContentType) => {
@@ -399,6 +427,28 @@ export function LearnView() {
     })
   }, [content, contentType, sourceFilter, selectedLabels, searchQuery, sortOption])
 
+  // Reset pagination whenever the filtered list changes (filter/search/sort).
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [contentType, sourceFilter, selectedLabels, searchQuery, sortOption])
+
+  // Auto-load more when the sentinel scrolls into view.
+  useEffect(() => {
+    const el = loadMoreRef.current
+    if (!el) return
+    if (visibleCount >= filteredContent.length) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          setVisibleCount(c => c + PAGE_SIZE)
+        }
+      },
+      { rootMargin: '600px 0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [visibleCount, filteredContent.length])
+
   // Group content by type for stats (including deep dives)
   const stats = useMemo(() => {
     if (!content) return { total: 0, blog: 0, documentation: 0, video: 0, tutorial: 0, reference: 0, official: 0, 'deep-dive': 0 }
@@ -651,9 +701,9 @@ export function LearnView() {
             ))}
             
             {/* Regular Content Cards */}
-            {filteredContent.map((item) => (
-              <article 
-                key={item.url} 
+            {filteredContent.slice(0, visibleCount).map((item) => (
+              <article
+                key={item.url}
                 className={`${styles.contentCard} ${expandedItem === item.url ? styles.expanded : ''}`}
                 onClick={(e) => {
                   // Don't toggle if clicking on interactive elements
@@ -665,6 +715,36 @@ export function LearnView() {
                   setExpandedItem(expandedItem === item.url ? null : item.url)
                 }}
               >
+                {(() => {
+                  const ytId = item.content_type === 'video' ? getYoutubeVideoId(item.url) : null
+                  if (!ytId) return null
+                  return (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.thumbnail}
+                      aria-label={`Watch on YouTube: ${item.title}`}
+                    >
+                      <img
+                        src={`https://img.youtube.com/vi/${ytId}/mqdefault.jpg`}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        // @ts-expect-error - fetchpriority is a valid HTML attribute, types lag
+                        fetchpriority="low"
+                        className={styles.thumbnailImg}
+                      />
+                      <span className={styles.thumbnailPlay} aria-hidden="true">
+                        <svg viewBox="0 0 68 48" width="56" height="40">
+                          <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74 0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#f00"/>
+                          <path d="M45 24L27 14v20" fill="#fff"/>
+                        </svg>
+                      </span>
+                    </a>
+                  )
+                })()}
+
                 <div className={styles.cardHeader}>
                   <span 
                     className={styles.contentType}
@@ -791,6 +871,9 @@ export function LearnView() {
                 className={styles.deepDiveCard}
               />
             ))}
+            {visibleCount < filteredContent.length && (
+              <div ref={loadMoreRef} className={styles.loadMoreSentinel} aria-hidden="true" />
+            )}
           </div>
 
           {filteredContent.length === 0 && filteredDeepDives.length === 0 && (
