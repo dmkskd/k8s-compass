@@ -357,7 +357,8 @@
         "kubecon",
         "artifact",
         "security",
-        "supply-chain"
+        "supply-chain",
+        "notary"
       ],
       "links": [],
       "author": "Toddy Mladenov",
@@ -885,7 +886,8 @@
         "ai",
         "observability",
         "ml",
-        "case-study"
+        "case-study",
+        "argo"
       ],
       "links": [
         {
@@ -1123,7 +1125,8 @@
         "progressive-delivery",
         "observability",
         "otel",
-        "metrics"
+        "metrics",
+        "argo"
       ],
       "links": [
         {
@@ -1255,7 +1258,8 @@
         "ai",
         "kubecon",
         "security",
-        "supply-chain"
+        "supply-chain",
+        "harbor"
       ],
       "links": [],
       "author": "Orlin Vasilev",
@@ -2163,7 +2167,8 @@
         "progressive-delivery",
         "observability",
         "otel",
-        "metrics"
+        "metrics",
+        "argo"
       ],
       "links": [
         {
@@ -2299,7 +2304,8 @@
         "ai",
         "kubecon",
         "security",
-        "supply-chain"
+        "supply-chain",
+        "harbor"
       ],
       "links": [],
       "author": "Orlin Vasilev",
@@ -2874,7 +2880,8 @@
         "kubecon",
         "metrics",
         "observability",
-        "tracing"
+        "tracing",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -3353,7 +3360,8 @@
         "networking",
         "ipv6",
         "service-mesh",
-        "security"
+        "security",
+        "linkerd"
       ],
       "links": [
         {
@@ -3439,7 +3447,8 @@
         "blue-green",
         "gitops",
         "kubecon",
-        "deep-dive"
+        "deep-dive",
+        "argo"
       ],
       "links": [
         {
@@ -4258,7 +4267,8 @@
         "storage",
         "kubecon",
         "case-study",
-        "criu"
+        "criu",
+        "argo"
       ],
       "links": [
         {
@@ -5434,7 +5444,8 @@
         "observability",
         "gitops",
         "ci-cd",
-        "backstage"
+        "backstage",
+        "argo"
       ],
       "links": [],
       "author": "Tomer Patel",
@@ -6407,7 +6418,8 @@
         "ebpf",
         "node",
         "kubecon",
-        "security"
+        "security",
+        "falco"
       ],
       "links": [
         {
@@ -7467,7 +7479,8 @@
         "observability",
         "gitops",
         "ci-cd",
-        "backstage"
+        "backstage",
+        "argo"
       ],
       "links": [
         {
@@ -8424,7 +8437,8 @@
         "ebpf",
         "node",
         "kubecon",
-        "security"
+        "security",
+        "falco"
       ],
       "links": [
         {
@@ -10450,7 +10464,8 @@
         "kubecon-na-2024",
         "observability",
         "deployment",
-        "kubecon"
+        "kubecon",
+        "thanos"
       ],
       "links": [],
       "author": "Ben Ye",
@@ -11332,7 +11347,9 @@
         "database",
         "statefulset",
         "case-study",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -11734,7 +11751,8 @@
         "kubecon",
         "opentelemetry",
         "kubecon-na-2025",
-        "deep-dive"
+        "deep-dive",
+        "opensearch"
       ],
       "links": [
         {

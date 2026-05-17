@@ -215,7 +215,8 @@
         "security",
         "kubecon-eu-2024",
         "observability",
-        "maintainer-track"
+        "maintainer-track",
+        "falco"
       ],
       "links": [
         {
@@ -294,7 +295,8 @@
         "deep-dive",
         "ai",
         "gpu",
-        "job"
+        "job",
+        "kueue"
       ],
       "links": [
         {
@@ -661,7 +663,8 @@
         "platform-engineering",
         "kubecon-eu-2024",
         "plugins",
-        "maintainer-track"
+        "maintainer-track",
+        "backstage"
       ],
       "links": [],
       "author": "Ben Lambert & Patrik Oldsberg",
@@ -685,7 +688,9 @@
         "kubecon-eu-2024",
         "statefulset",
         "observability",
-        "maintainer-track"
+        "maintainer-track",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -1131,7 +1136,8 @@
         "security",
         "integrity",
         "kubecon-eu-2024",
-        "maintainer-track"
+        "maintainer-track",
+        "notary"
       ],
       "links": [],
       "author": "Toddy Mladenov, Ivan Wallis, Shuting Zhao",
@@ -1568,7 +1574,8 @@
         "security",
         "kubecon-eu-2024",
         "zero-trust",
-        "maintainer-track"
+        "maintainer-track",
+        "dapr"
       ],
       "links": [
         {
@@ -1602,7 +1609,8 @@
         "security",
         "kubecon-eu-2024",
         "service-mesh",
-        "ingress"
+        "ingress",
+        "linkerd"
       ],
       "links": [
         {
@@ -2310,7 +2318,8 @@
         "security",
         "supply-chain",
         "image-signing",
-        "kubecon-eu-2024"
+        "kubecon-eu-2024",
+        "sigstore"
       ],
       "links": [
         {
@@ -2634,7 +2643,8 @@
         "kubecon",
         "kubecon-eu-2024",
         "observability",
-        "maintainer-track"
+        "maintainer-track",
+        "thanos"
       ],
       "links": [],
       "author": "Michael Hoffmann",
@@ -2682,7 +2692,8 @@
         "block-storage",
         "kubecon-eu-2024",
         "snapshot",
-        "maintainer-track"
+        "maintainer-track",
+        "longhorn"
       ],
       "links": [
         {
@@ -2717,7 +2728,8 @@
         "sbom",
         "oci",
         "ai",
-        "maintainer-track"
+        "maintainer-track",
+        "harbor"
       ],
       "links": [],
       "author": "Vadim Bauer",
@@ -3302,7 +3314,8 @@
         "sig-node",
         "kubecon-eu-2024",
         "podman",
-        "maintainer-track"
+        "maintainer-track",
+        "cri-o"
       ],
       "links": [
         {
@@ -3376,7 +3389,8 @@
         "security",
         "kubecon-eu-2024",
         "observability",
-        "monitoring"
+        "monitoring",
+        "keda"
       ],
       "links": [
         {
@@ -4804,7 +4818,8 @@
         "security",
         "kubecon-eu-2024",
         "service-mesh",
-        "maintainer-track"
+        "maintainer-track",
+        "opa"
       ],
       "links": [],
       "author": "Anders Eknert",
@@ -5384,7 +5399,8 @@
         "openkruise",
         "deep-dive",
         "kubecon-eu-2024",
-        "statefulset"
+        "statefulset",
+        "clickhouse"
       ],
       "links": [
         {
@@ -5853,7 +5869,8 @@
         "database",
         "deep-dive",
         "ai",
-        "statefulset"
+        "statefulset",
+        "postgres"
       ],
       "links": [
         {
@@ -6704,7 +6721,8 @@
         "ml",
         "ai",
         "gpu",
-        "job"
+        "job",
+        "volcano"
       ],
       "links": [
         {
@@ -7445,7 +7463,8 @@
         "deep-dive",
         "sbom",
         "oci",
-        "vulnerability-scanning"
+        "vulnerability-scanning",
+        "harbor"
       ],
       "links": [],
       "author": "Anais Urlichs",

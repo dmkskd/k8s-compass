@@ -354,7 +354,8 @@
         "container-runtime",
         "kubecon",
         "performance",
-        "sig-node"
+        "sig-node",
+        "cri-o"
       ],
       "links": [
         {
@@ -441,7 +442,8 @@
         "replication",
         "kubecon",
         "storage",
-        "backup"
+        "backup",
+        "longhorn"
       ],
       "links": [
         {
@@ -470,7 +472,8 @@
         "ml",
         "scheduling",
         "data-pipeline",
-        "kubecon"
+        "kubecon",
+        "volcano"
       ],
       "links": [
         {
@@ -741,7 +744,8 @@
         "observability",
         "service-mesh",
         "platform-engineering",
-        "kubecon"
+        "kubecon",
+        "dapr"
       ],
       "links": [],
       "author": "Yaron Schneider",
@@ -1155,7 +1159,8 @@
         "networking",
         "tekton",
         "kubecon",
-        "storage"
+        "storage",
+        "kubevirt"
       ],
       "links": [],
       "author": "Alice Frosi",
@@ -1454,7 +1459,8 @@
         "security",
         "supply-chain",
         "kubecon",
-        "image-signing"
+        "image-signing",
+        "notary"
       ],
       "links": [],
       "author": "Justin Cormack",
@@ -2140,7 +2146,8 @@
         "security",
         "cloud-native",
         "supply-chain",
-        "kubecon"
+        "kubecon",
+        "harbor"
       ],
       "links": [],
       "author": "Yan Wang",
@@ -2229,7 +2236,8 @@
         "identity",
         "service-mesh",
         "security",
-        "kubecon"
+        "kubecon",
+        "spire"
       ],
       "links": [],
       "author": "Andres Vega & Frederick Kautz",
@@ -2252,7 +2260,8 @@
         "object-storage",
         "operator",
         "kubecon",
-        "block"
+        "block",
+        "rook"
       ],
       "links": [],
       "author": "Travis Nielsen, Satoru Takeuchi",
@@ -2647,7 +2656,8 @@
         "logging",
         "kubecon",
         "storage",
-        "operator"
+        "operator",
+        "elasticsearch"
       ],
       "links": [
         {
@@ -2741,7 +2751,8 @@
         "argocd",
         "kubecon",
         "kubeflow",
-        "gitops"
+        "gitops",
+        "argo"
       ],
       "links": [],
       "author": "Alex Collins, Alexander Matyushentsev, Dan Garfield",
@@ -4336,7 +4347,8 @@
         "case-study",
         "networking",
         "platform-engineering",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [],
       "author": "Mark Swarbrick",
@@ -4865,7 +4877,9 @@
         "statefulset",
         "operator",
         "kubecon",
-        "aws"
+        "aws",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -4904,7 +4918,8 @@
         "security",
         "kubecon",
         "auth",
-        "windows"
+        "windows",
+        "spire"
       ],
       "links": [],
       "author": "Agust\u00edn Mart\u00ednez Fay\u00f3 & Marcos Yacob",
@@ -5363,7 +5378,8 @@
         "policy",
         "security",
         "networking",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [],
       "author": "Matei David",

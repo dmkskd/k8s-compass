@@ -124,7 +124,10 @@
         "ml",
         "ai",
         "kubecon-eu-2025",
-        "kubecon"
+        "kubecon",
+        "kueue",
+        "volcano",
+        "yunikorn"
       ],
       "links": [
         {
@@ -278,7 +281,8 @@
         "observability",
         "kubecon-eu-2025",
         "kubecon",
-        "metrics"
+        "metrics",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Daniel Gomez Blanco, Severin Neumann, Alolita Sharma, Trask Stalnaker, Pablo Baeyens",
@@ -302,7 +306,9 @@
         "kubecon-eu-2025",
         "kubecon",
         "storage",
-        "object-storage"
+        "object-storage",
+        "rook",
+        "ceph"
       ],
       "links": [
         {
@@ -1249,7 +1255,8 @@
         "kubecon-eu-2025",
         "kubecon",
         "autoscaling",
-        "webhooks"
+        "webhooks",
+        "keda"
       ],
       "links": [],
       "author": "Zbynek Roubalik",
@@ -1529,7 +1536,8 @@
         "service-mesh",
         "security",
         "kubecon-eu-2025",
-        "kubecon"
+        "kubecon",
+        "trino"
       ],
       "links": [
         {
@@ -1934,7 +1942,8 @@
         "ai",
         "kubecon-eu-2025",
         "inference",
-        "model-serving"
+        "model-serving",
+        "ollama"
       ],
       "links": [
         {
@@ -3035,7 +3044,8 @@
         "deep-dive",
         "observability",
         "sustainability",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -3072,7 +3082,8 @@
         "performance",
         "kubecon-eu-2025",
         "kubecon",
-        "autoscaling"
+        "autoscaling",
+        "elasticsearch"
       ],
       "links": [
         {
@@ -3897,7 +3908,6 @@
         "kubecon",
         "storage",
         "clickhouse"
-
       ],
       "links": [
         {
@@ -4435,7 +4445,8 @@
         "policy",
         "multicluster",
         "kubecon-eu-2025",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [
         {
@@ -5060,7 +5071,8 @@
         "snapshot",
         "kubecon-eu-2025",
         "cloud-native",
-        "storage"
+        "storage",
+        "longhorn"
       ],
       "links": [
         {
@@ -5257,7 +5269,8 @@
         "security",
         "kubecon-eu-2025",
         "kubecon",
-        "authentication"
+        "authentication",
+        "spire"
       ],
       "links": [],
       "author": "Joonas Bergius",
@@ -5800,7 +5813,8 @@
         "observability",
         "kubecon-eu-2025",
         "kubecon",
-        "maintainer"
+        "maintainer",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Reese Lee",
@@ -5974,7 +5988,9 @@
         "pod",
         "statefulset",
         "kubecon-eu-2025",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Rohit Nayak & Shlomi Noach",
@@ -6172,7 +6188,8 @@
         "ai",
         "kubecon-eu-2025",
         "kubecon",
-        "registry"
+        "registry",
+        "harbor"
       ],
       "links": [],
       "author": "Orlin Vasilev",
@@ -6220,7 +6237,8 @@
         "security",
         "cicd",
         "kubecon-eu-2025",
-        "kubecon"
+        "kubecon",
+        "opa"
       ],
       "links": [],
       "author": "Charlie Egan & Anders Eknert",
@@ -7382,7 +7400,8 @@
         "cloudnativepg",
         "kubecon-eu-2025",
         "kubecon",
-        "storage"
+        "storage",
+        "postgres"
       ],
       "links": [
         {
@@ -8338,7 +8357,9 @@
         "llm",
         "kubecon-eu-2025",
         "kubecon",
-        "metrics"
+        "metrics",
+        "opentelemetry",
+        "fluent-bit"
       ],
       "links": [],
       "author": "Celalettin Calis",

@@ -615,7 +615,8 @@
         "testing",
         "deep-dive",
         "helm",
-        "policy"
+        "policy",
+        "opa"
       ],
       "links": [],
       "author": "Gareth Rushgrove",
@@ -760,7 +761,8 @@
         "maintainer-track",
         "kubecon",
         "observability",
-        "security"
+        "security",
+        "linkerd"
       ],
       "links": [],
       "author": "William Morgan",
@@ -810,7 +812,8 @@
         "maintainer-track",
         "kubecon",
         "security",
-        "authentication"
+        "authentication",
+        "spire"
       ],
       "links": [
         {
@@ -1869,7 +1872,8 @@
         "supply-chain",
         "registry",
         "helm",
-        "rbac"
+        "rbac",
+        "harbor"
       ],
       "links": [],
       "author": "Henry Zhang & Steven Ren",
@@ -1922,7 +1926,8 @@
         "kubecon",
         "security",
         "rbac",
-        "policy"
+        "policy",
+        "opa"
       ],
       "links": [],
       "author": "Rita Zhang",
@@ -3084,7 +3089,9 @@
         "database",
         "kubecon",
         "operator",
-        "statefulset"
+        "statefulset",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -3243,7 +3250,8 @@
         "observability",
         "load-balancing",
         "microservices",
-        "grpc"
+        "grpc",
+        "linkerd"
       ],
       "links": [
         {
@@ -3999,7 +4007,8 @@
         "kubecon",
         "deep-dive",
         "ai",
-        "kubeflow"
+        "kubeflow",
+        "tensorflow"
       ],
       "links": [],
       "author": "Holden Karau",
@@ -4022,7 +4031,8 @@
         "observability",
         "logging",
         "deep-dive",
-        "stream-processing"
+        "stream-processing",
+        "fluent-bit"
       ],
       "links": [],
       "author": "Eduardo Silva",
@@ -4620,7 +4630,8 @@
         "supply-chain",
         "kubecon",
         "deep-dive",
-        "helm"
+        "helm",
+        "harbor"
       ],
       "links": [],
       "author": "Steven Zou & Daniel Jiang",
@@ -4702,7 +4713,8 @@
         "security",
         "configmap",
         "deep-dive",
-        "statefulset"
+        "statefulset",
+        "spire"
       ],
       "links": [
         {
@@ -6191,7 +6203,8 @@
         "kubecon",
         "observability",
         "deep-dive",
-        "thanos"
+        "thanos",
+        "linkerd"
       ],
       "links": [],
       "author": "Andrew Seigner",
@@ -6513,7 +6526,8 @@
         "observability",
         "logging",
         "deep-dive",
-        "grafana"
+        "grafana",
+        "loki"
       ],
       "links": [
         {
@@ -6950,7 +6964,8 @@
         "kubecon",
         "observability",
         "security",
-        "deep-dive"
+        "deep-dive",
+        "linkerd"
       ],
       "links": [],
       "author": "Oliver Gould",
@@ -6974,7 +6989,8 @@
         "kubecon",
         "observability",
         "deployment",
-        "deep-dive"
+        "deep-dive",
+        "jaeger"
       ],
       "links": [
         {
@@ -7191,7 +7207,8 @@
         "kubecon",
         "security",
         "authentication",
-        "deep-dive"
+        "deep-dive",
+        "spire"
       ],
       "links": [
         {
@@ -7532,7 +7549,9 @@
         "kubecon",
         "node",
         "deep-dive",
-        "statefulset"
+        "statefulset",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -7788,7 +7807,8 @@
         "finops",
         "platform-engineering",
         "operator",
-        "statefulset"
+        "statefulset",
+        "mysql"
       ],
       "links": [
         {

@@ -639,7 +639,8 @@
         "storage",
         "kubecon-na-2023",
         "disaster-recovery",
-        "statefulset"
+        "statefulset",
+        "postgres"
       ],
       "links": [
         {
@@ -1124,7 +1125,8 @@
         "kubecon",
         "argo-workflows",
         "kubecon-na-2023",
-        "observability"
+        "observability",
+        "argo"
       ],
       "links": [
         {
@@ -1941,7 +1943,8 @@
         "kubecon",
         "storage",
         "caching",
-        "kubecon-na-2023"
+        "kubecon-na-2023",
+        "redis"
       ],
       "links": [],
       "author": "Madelyn Olson",
@@ -2219,7 +2222,8 @@
         "kubecon",
         "open-telemetry",
         "kubecon-na-2023",
-        "observability"
+        "observability",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Jamie Danielson",
@@ -2691,7 +2695,8 @@
         "kubecon",
         "kubecon-na-2023",
         "multi-cluster",
-        "gitops"
+        "gitops",
+        "linkerd"
       ],
       "links": [
         {
@@ -2725,7 +2730,8 @@
         "kubecon-na-2023",
         "logging",
         "tracing",
-        "observability"
+        "observability",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -3229,7 +3235,9 @@
         "storage",
         "kubecon-na-2023",
         "sharding",
-        "statefulset"
+        "statefulset",
+        "mysql",
+        "vitess"
       ],
       "links": [],
       "author": "Matt Lord & Deepthi Sigireddi",
@@ -4436,7 +4444,8 @@
         "kubecon",
         "registry",
         "kubecon-na-2023",
-        "terraform"
+        "terraform",
+        "harbor"
       ],
       "links": [],
       "author": "Yan Wang",
@@ -6020,7 +6029,8 @@
         "workflow",
         "kubecon",
         "kubecon-na-2023",
-        "multi-cluster"
+        "multi-cluster",
+        "dapr"
       ],
       "links": [],
       "author": "Mark Fussell & Chris Gillium",
@@ -6419,7 +6429,8 @@
         "kubecon",
         "storage",
         "kubecon-na-2023",
-        "object-storage"
+        "object-storage",
+        "longhorn"
       ],
       "links": [
         {
@@ -7410,7 +7421,8 @@
         "kubecon",
         "container-runtime",
         "sigstore",
-        "kubecon-na-2023"
+        "kubecon-na-2023",
+        "cri-o"
       ],
       "links": [
         {

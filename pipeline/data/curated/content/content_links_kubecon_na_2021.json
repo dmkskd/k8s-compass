@@ -445,7 +445,8 @@
         "security",
         "cryptography",
         "kubecon",
-        "deep-dive"
+        "deep-dive",
+        "sigstore"
       ],
       "links": [
         {
@@ -583,7 +584,8 @@
         "kubecon-na-2021",
         "observability",
         "kubecon",
-        "service-mesh"
+        "service-mesh",
+        "linkerd"
       ],
       "links": [],
       "author": "Oliver Gould",
@@ -899,7 +901,8 @@
         "observability",
         "kubecon",
         "service",
-        "deep-dive"
+        "deep-dive",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -1560,7 +1563,8 @@
         "kubecon-na-2021",
         "statefulset",
         "kubecon",
-        "deep-dive"
+        "deep-dive",
+        "postgres"
       ],
       "links": [
         {
@@ -1717,7 +1721,8 @@
         "kubecon-na-2021",
         "observability",
         "kubecon",
-        "container-runtime"
+        "container-runtime",
+        "cri-o"
       ],
       "links": [
         {
@@ -1950,7 +1955,8 @@
         "kubecon-na-2021",
         "security",
         "kubecon",
-        "platform-engineering"
+        "platform-engineering",
+        "harbor"
       ],
       "links": [],
       "author": "Alex Xu",
@@ -2122,7 +2128,8 @@
         "inference",
         "kubecon",
         "deep-dive",
-        "model-serving"
+        "model-serving",
+        "kserve"
       ],
       "links": [],
       "author": "Animesh Singh",
@@ -2574,7 +2581,8 @@
         "security",
         "kubecon",
         "image-signing",
-        "container-runtime"
+        "container-runtime",
+        "notary"
       ],
       "links": [],
       "author": "Justin Cormack",
@@ -2812,7 +2820,8 @@
         "security",
         "rbac",
         "kubecon",
-        "service-mesh"
+        "service-mesh",
+        "spire"
       ],
       "links": [],
       "author": "Evan Gilman & Andrew Harding",
@@ -2856,7 +2865,9 @@
         "kubecon-na-2021",
         "statefulset",
         "kubecon",
-        "multi-cluster"
+        "multi-cluster",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
@@ -3785,7 +3796,8 @@
         "tracing",
         "metrics",
         "kubecon",
-        "open-telemetry"
+        "open-telemetry",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Ted Young",
@@ -3866,7 +3878,8 @@
         "kubecon",
         "case-study",
         "multi-cluster",
-        "service-mesh"
+        "service-mesh",
+        "linkerd"
       ],
       "links": [
         {

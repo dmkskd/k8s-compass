@@ -707,7 +707,8 @@
         "block",
         "panel",
         "kubecon",
-        "operator"
+        "operator",
+        "rook"
       ],
       "links": [
         {
@@ -1506,7 +1507,8 @@
         "security",
         "observability",
         "maintainer-track",
-        "kubecon"
+        "kubecon",
+        "falco"
       ],
       "links": [],
       "author": "Leonardo Grasso & Leonardo Di Giovanna",
@@ -2180,7 +2182,8 @@
         "observability",
         "kubecon",
         "microservices",
-        "pubsub"
+        "pubsub",
+        "dapr"
       ],
       "links": [],
       "summary": "The session demonstrates how Dapr’s building‑block APIs—service invocation, pub/sub, and state management—enable developers to quickly build reliable, observable, and secure distributed microservice applications on Kubernetes.",
@@ -2366,7 +2369,8 @@
         "telemetry",
         "observability",
         "maintainer-track",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -3638,7 +3642,8 @@
         "cost",
         "observability",
         "kubecon",
-        "platform-engineering"
+        "platform-engineering",
+        "karpenter"
       ],
       "links": [
         {
@@ -3855,7 +3860,8 @@
         "observability",
         "maintainer-track",
         "opentelemetry",
-        "kubecon"
+        "kubecon",
+        "fluent-bit"
       ],
       "links": [],
       "author": "Eduardo Silva",
@@ -4463,7 +4469,9 @@
         "scaling",
         "maintainer-track",
         "sharding",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Matt Lord & Florent Poinsard",
@@ -4957,7 +4965,8 @@
         "containerd",
         "observability",
         "kubecon",
-        "pod"
+        "pod",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -5465,7 +5474,8 @@
         "autoscaling",
         "llm",
         "observability",
-        "kubecon"
+        "kubecon",
+        "ollama"
       ],
       "links": [
         {
@@ -5864,7 +5874,8 @@
         "ai",
         "maintainer-track",
         "workflow",
-        "platform-engineering"
+        "platform-engineering",
+        "dapr"
       ],
       "links": [],
       "author": "Yaron Schneider",
@@ -6056,7 +6067,9 @@
         "llm",
         "observability",
         "kubecon",
-        "platform-engineering"
+        "platform-engineering",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Brett Warminski & Gourav Khanijoe",
@@ -6336,7 +6349,8 @@
         "block-storage",
         "storage",
         "maintainer-track",
-        "kubecon"
+        "kubecon",
+        "longhorn"
       ],
       "links": [
         {
@@ -6482,7 +6496,8 @@
         "finops",
         "observability",
         "helm",
-        "platform-engineering"
+        "platform-engineering",
+        "backstage"
       ],
       "links": [],
       "author": "Mathieu Girard & Teddy Poingt",
@@ -6622,7 +6637,8 @@
         "llm",
         "deep-dive",
         "kubecon",
-        "multi-cluster"
+        "multi-cluster",
+        "kubeflow"
       ],
       "links": [
         {
@@ -7296,7 +7312,8 @@
         "maintainer-track",
         "plugins",
         "kubecon",
-        "platform-engineering"
+        "platform-engineering",
+        "backstage"
       ],
       "links": [],
       "author": "Ben Lambert & Patrik Oldsberg",
@@ -7843,7 +7860,8 @@
         "maintainer-track",
         "kubecon",
         "multi-cluster",
-        "model-serving"
+        "model-serving",
+        "kubeflow"
       ],
       "links": [],
       "author": "Yuki Iwai, Valentina Rodriguez Sosa, Johnu George, Akshay Chitneni, Josh Bottum",
@@ -7867,7 +7885,8 @@
         "supply-chain",
         "observability",
         "maintainer-track",
-        "kubecon"
+        "kubecon",
+        "harbor"
       ],
       "links": [],
       "author": "Orlin Vasilev",
@@ -7890,7 +7909,9 @@
         "canary",
         "observability",
         "maintainer-track",
-        "kubecon"
+        "kubecon",
+        "argo-rollouts",
+        "argo"
       ],
       "links": [
         {
@@ -8123,7 +8144,8 @@
         "kuberay",
         "vllm",
         "kubecon",
-        "model-serving"
+        "model-serving",
+        "pytorch"
       ],
       "links": [
         {

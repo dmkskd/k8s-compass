@@ -747,7 +747,8 @@
         "kubecon-na-2022",
         "kubecon",
         "cicd",
-        "maintainer-track"
+        "maintainer-track",
+        "backstage"
       ],
       "links": [],
       "author": "Ben Lambert & Francesco Corti",
@@ -1070,7 +1071,8 @@
         "scheduling",
         "observability",
         "ml",
-        "case-study"
+        "case-study",
+        "volcano"
       ],
       "links": [
         {
@@ -1344,7 +1346,8 @@
         "service-mesh",
         "progressive-delivery",
         "deep-dive",
-        "gateway-api"
+        "gateway-api",
+        "linkerd"
       ],
       "links": [
         {
@@ -1725,7 +1728,8 @@
         "metrics",
         "tracing",
         "maintainer-track",
-        "opentelemetry"
+        "opentelemetry",
+        "fluent-bit"
       ],
       "links": [],
       "author": "Eduardo Silva & Anurag Gupta",
@@ -2136,7 +2140,8 @@
         "provenance",
         "tekton",
         "maintainer-track",
-        "sigstore"
+        "sigstore",
+        "spire"
       ],
       "links": [
         {
@@ -2553,7 +2558,8 @@
         "longhorn",
         "case-study",
         "storage",
-        "cert-manager"
+        "cert-manager",
+        "k3s"
       ],
       "links": [],
       "author": "Harry Lee",
@@ -2750,7 +2756,8 @@
         "maintainer-track",
         "replication",
         "storage",
-        "encryption"
+        "encryption",
+        "longhorn"
       ],
       "links": [
         {
@@ -3082,7 +3089,8 @@
         "observability",
         "service-mesh",
         "maintainer-track",
-        "gateway-api"
+        "gateway-api",
+        "linkerd"
       ],
       "links": [
         {
@@ -3378,7 +3386,8 @@
         "security",
         "tuf",
         "in-toto",
-        "maintainer-track"
+        "maintainer-track",
+        "notary"
       ],
       "links": [],
       "author": "Justin Cormack",
@@ -3856,7 +3865,8 @@
         "mtls",
         "security",
         "deep-dive",
-        "cert-manager"
+        "cert-manager",
+        "spire"
       ],
       "links": [
         {
@@ -3955,7 +3965,8 @@
         "observability",
         "security",
         "maintainer-track",
-        "sigstore"
+        "sigstore",
+        "cri-o"
       ],
       "links": [
         {
@@ -4727,7 +4738,8 @@
         "cloud-native",
         "data-management",
         "statefulset",
-        "database"
+        "database",
+        "vitess"
       ],
       "links": [],
       "author": "Deepthi Sigireddi",
@@ -5596,7 +5608,8 @@
         "service-mesh",
         "security",
         "maintainer-track",
-        "gateway-api"
+        "gateway-api",
+        "linkerd"
       ],
       "links": [
         {
@@ -5804,7 +5817,8 @@
         "eks",
         "case-study",
         "spinnaker",
-        "argo-workflows"
+        "argo-workflows",
+        "argo"
       ],
       "links": [],
       "author": "Mayank Kumar & Andy Chen",
@@ -5829,7 +5843,8 @@
         "kubecon",
         "ml",
         "deep-dive",
-        "cost"
+        "cost",
+        "kubeflow"
       ],
       "links": [],
       "author": "Jihye Choi",

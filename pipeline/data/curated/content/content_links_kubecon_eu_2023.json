@@ -683,7 +683,8 @@
         "messaging",
         "performance",
         "service-mesh",
-        "kubecon"
+        "kubecon",
+        "dapr"
       ],
       "links": [],
       "author": "Shubham Sharma",
@@ -1240,7 +1241,8 @@
         "observability",
         "kubecon-eu-2023",
         "opentelemetry",
-        "kubecon"
+        "kubecon",
+        "jaeger"
       ],
       "links": [],
       "author": "Pavol Loffay",
@@ -1491,7 +1493,8 @@
         "kubecon-eu-2023",
         "microservices",
         "open-telemetry",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -2853,7 +2856,8 @@
         "kubecon-eu-2023",
         "multi-cluster",
         "platform-engineering",
-        "kubecon"
+        "kubecon",
+        "backstage"
       ],
       "links": [],
       "author": "Rotem Refael",
@@ -4097,7 +4101,8 @@
         "api-versioning",
         "case-study",
         "feature-gates",
-        "kubecon"
+        "kubecon",
+        "kubevirt"
       ],
       "links": [
         {
@@ -4236,7 +4241,8 @@
         "kubecon-eu-2023",
         "multi-tenant",
         "cost",
-        "kubecon"
+        "kubecon",
+        "keda"
       ],
       "links": [
         {
@@ -4670,7 +4676,8 @@
         "networking",
         "service-mesh",
         "ingress",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [
         {
@@ -4908,7 +4915,8 @@
         "kubecon-eu-2023",
         "job",
         "preemption",
-        "kubecon"
+        "kubecon",
+        "yunikorn"
       ],
       "links": [
         {
@@ -4956,7 +4964,8 @@
         "deep-dive",
         "observability",
         "kubecon-eu-2023",
-        "kubecon"
+        "kubecon",
+        "postgres"
       ],
       "links": [
         {
@@ -5434,7 +5443,8 @@
         "cloud-native",
         "kubecon-eu-2023",
         "kubecon",
-        "distributed"
+        "distributed",
+        "longhorn"
       ],
       "links": [
         {

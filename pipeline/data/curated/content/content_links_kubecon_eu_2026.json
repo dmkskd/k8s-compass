@@ -361,7 +361,8 @@
         "platform-engineering",
         "observability",
         "case-study",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -758,7 +759,9 @@
         "database",
         "platform-engineering",
         "storage",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Matt Lord & Rohit Nayak",
@@ -806,7 +809,8 @@
         "case-study",
         "performance",
         "helm",
-        "kubecon"
+        "kubecon",
+        "argo"
       ],
       "links": [],
       "author": "Yug Gupta",
@@ -1956,7 +1960,8 @@
         "observability",
         "sig-observability",
         "distribution",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [
         {
@@ -2435,7 +2440,8 @@
         "maintainer-track",
         "ml",
         "llm",
-        "kubecon"
+        "kubecon",
+        "volcano"
       ],
       "links": [
         {
@@ -5155,7 +5161,8 @@
         "open-telemetry",
         "otel-collector",
         "observability",
-        "kubecon"
+        "kubecon",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Jo\u00e3o Duarte",
@@ -5628,7 +5635,8 @@
         "platform-engineering",
         "case-study",
         "policy",
-        "kubecon"
+        "kubecon",
+        "trino"
       ],
       "links": [
         {
@@ -6209,7 +6217,8 @@
         "ml",
         "case-study",
         "argocd",
-        "kubecon"
+        "kubecon",
+        "ray"
       ],
       "links": [],
       "author": "Chaitanya G",
@@ -6300,7 +6309,8 @@
         "zero-downtime",
         "performance",
         "aws",
-        "kubecon"
+        "kubecon",
+        "redis"
       ],
       "links": [
         {
@@ -6504,7 +6514,8 @@
         "block-storage",
         "deep-dive",
         "storage",
-        "kubecon"
+        "kubecon",
+        "longhorn"
       ],
       "links": [
         {
@@ -6578,7 +6589,8 @@
         "kyverno",
         "case-study",
         "argocd",
-        "kubecon"
+        "kubecon",
+        "argo"
       ],
       "links": [],
       "author": "Bhavani Indukuri & Aparna Prabhu",
@@ -7502,7 +7514,8 @@
         "grafana",
         "observability",
         "llm",
-        "kubecon"
+        "kubecon",
+        "vllm"
       ],
       "links": [],
       "author": "Christopher Nuland & Hilliary Lipsig",

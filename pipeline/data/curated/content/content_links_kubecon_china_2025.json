@@ -50,7 +50,8 @@
         "storage",
         "maintainer-track",
         "argo-workflows",
-        "kubecon-china-2025"
+        "kubecon-china-2025",
+        "argo"
       ],
       "links": [],
       "author": "Shuangkun Tian & Yashi Su",
@@ -469,7 +470,8 @@
         "autoscaling",
         "kubecon",
         "cost",
-        "kubecon-china-2025"
+        "kubecon-china-2025",
+        "vllm"
       ],
       "links": [],
       "author": "Jiaxin Shan & Liguang Xie",
@@ -531,7 +533,8 @@
         "go",
         "telemetry",
         "maintainer-track",
-        "observability"
+        "observability",
+        "opentelemetry"
       ],
       "links": [],
       "author": "Zihao Rao, Hui Wang, Jared Tan",
@@ -911,7 +914,9 @@
         "kubecon-china-2025",
         "kubecon",
         "service-mesh",
-        "observability"
+        "observability",
+        "argo-rollouts",
+        "argo"
       ],
       "links": [
         {
@@ -1178,7 +1183,8 @@
         "composable",
         "self-service",
         "kubecon",
-        "kubecon-china-2025"
+        "kubecon-china-2025",
+        "backstage"
       ],
       "links": [],
       "author": "Hossein Salahi",

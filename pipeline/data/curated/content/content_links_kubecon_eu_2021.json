@@ -65,7 +65,8 @@
         "kubecon",
         "maintainer-track",
         "platform-engineering",
-        "supply-chain"
+        "supply-chain",
+        "harbor"
       ],
       "links": [],
       "author": "Daniel Jiang & Yan Wang",
@@ -181,7 +182,8 @@
         "terraform",
         "kubecon",
         "ci-cd",
-        "platform-engineering"
+        "platform-engineering",
+        "argo-workflows"
       ],
       "links": [],
       "author": "Thomas Meadows",
@@ -1208,7 +1210,8 @@
         "case-study",
         "kubecon",
         "platform-engineering",
-        "cost"
+        "cost",
+        "kubeflow"
       ],
       "links": [
         {
@@ -1826,7 +1829,8 @@
         "kubecon",
         "inference",
         "ai",
-        "scheduling"
+        "scheduling",
+        "volcano"
       ],
       "links": [
         {
@@ -1924,7 +1928,8 @@
         "kubelet",
         "kubecon",
         "maintainer-track",
-        "node"
+        "node",
+        "cri-o"
       ],
       "links": [
         {
@@ -2008,7 +2013,8 @@
         "service-mesh",
         "networking",
         "kubecon",
-        "maintainer-track"
+        "maintainer-track",
+        "linkerd"
       ],
       "links": [],
       "author": "William Morgan & Matei David",
@@ -2229,7 +2235,8 @@
         "data-pipeline",
         "gitops",
         "case-study",
-        "kubecon"
+        "kubecon",
+        "k3s"
       ],
       "links": [],
       "author": "Sergio Mendez",
@@ -2674,7 +2681,8 @@
         "kubecon",
         "policy",
         "maintainer-track",
-        "gatekeeper"
+        "gatekeeper",
+        "opa"
       ],
       "links": [],
       "author": "Ash Narkar",

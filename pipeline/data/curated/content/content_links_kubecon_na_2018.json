@@ -740,7 +740,8 @@
         "registry",
         "kubecon-na-2018",
         "supply-chain",
-        "kubecon"
+        "kubecon",
+        "harbor"
       ],
       "links": [],
       "author": "Steven Zou & Henry Zhang",
@@ -864,7 +865,8 @@
         "observability",
         "kubecon-na-2018",
         "grafana",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [],
       "author": "Andrew Seigner",
@@ -2023,7 +2025,8 @@
         "dbaas",
         "kubecon-na-2018",
         "database",
-        "kubecon"
+        "kubecon",
+        "postgres"
       ],
       "links": [
         {
@@ -2235,7 +2238,9 @@
         "statefulset",
         "kubecon-na-2018",
         "database",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Dan Kozlowski & Sugu Sougoumarane",
@@ -3055,7 +3060,8 @@
         "service-mesh",
         "kubecon-na-2018",
         "multi-cluster",
-        "kubecon"
+        "kubecon",
+        "spire"
       ],
       "links": [
         {
@@ -4307,7 +4313,8 @@
         "workflow",
         "kubecon-na-2018",
         "data-pipeline",
-        "kubecon"
+        "kubecon",
+        "argo"
       ],
       "links": [
         {
@@ -4450,7 +4457,8 @@
         "service-mesh",
         "observability",
         "go",
-        "kubecon"
+        "kubecon",
+        "linkerd"
       ],
       "links": [
         {
@@ -4477,7 +4485,9 @@
         "deep-dive",
         "kubecon-na-2018",
         "database",
-        "kubecon"
+        "kubecon",
+        "vitess",
+        "mysql"
       ],
       "links": [],
       "author": "Dan Kozlowski & Sugu Sougoumarane",
@@ -4797,7 +4807,8 @@
         "ci",
         "deep-dive",
         "kubecon-na-2018",
-        "skaffold"
+        "skaffold",
+        "jenkins-x"
       ],
       "links": [],
       "author": "Carlos Sanchez",
@@ -4993,7 +5004,8 @@
         "rbac",
         "policy",
         "kubecon-na-2018",
-        "kubecon"
+        "kubecon",
+        "opa"
       ],
       "links": [
         {
@@ -6751,7 +6763,8 @@
         "authentication",
         "kubecon-na-2018",
         "multi-cluster",
-        "kubecon"
+        "kubecon",
+        "spire"
       ],
       "links": [
         {
@@ -7274,7 +7287,8 @@
         "container-images",
         "registry",
         "kubecon-na-2018",
-        "kubecon"
+        "kubecon",
+        "harbor"
       ],
       "links": [],
       "author": "Jia Zou",
@@ -7384,7 +7398,8 @@
         "storage",
         "kubecon-na-2018",
         "database",
-        "kubecon"
+        "kubecon",
+        "mysql"
       ],
       "links": [
         {
@@ -7908,7 +7923,8 @@
         "storage",
         "kubecon-na-2018",
         "database",
-        "kubecon"
+        "kubecon",
+        "mysql"
       ],
       "links": [
         {
@@ -8005,7 +8021,8 @@
         "registry",
         "kubecon-na-2018",
         "supply-chain",
-        "kubecon"
+        "kubecon",
+        "harbor"
       ],
       "links": [],
       "author": "Tan Jiang & Jia Zou",

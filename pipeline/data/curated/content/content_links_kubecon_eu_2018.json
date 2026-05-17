@@ -1090,7 +1090,8 @@
         "image",
         "signing",
         "kubecon-eu-2018",
-        "registry"
+        "registry",
+        "notary"
       ],
       "links": [
         {
@@ -1304,7 +1305,8 @@
         "docker",
         "supply-chain",
         "general",
-        "kubecon-eu-2018"
+        "kubecon-eu-2018",
+        "notary"
       ],
       "links": [],
       "summary": "An introductory overview of the CNCF Notary and TUF projects, explaining how secure, compromise\u2011resilient software supply\u2011chain mechanisms can protect container image distribution for Kubernetes users.",
@@ -1610,7 +1612,8 @@
         "virtualization",
         "general",
         "oci",
-        "kubecon-eu-2018"
+        "kubecon-eu-2018",
+        "kata"
       ],
       "links": [
         {
@@ -1744,7 +1747,8 @@
         "platform-engineering",
         "helm",
         "kubecon-eu-2018",
-        "jenkins"
+        "jenkins",
+        "jenkins-x"
       ],
       "links": [],
       "author": "James Strachan",
@@ -1842,7 +1846,8 @@
         "authentication",
         "specification",
         "general",
-        "kubecon-eu-2018"
+        "kubecon-eu-2018",
+        "spire"
       ],
       "links": [],
       "author": "Andrew Jessup & Emiliano Berenbaum",
@@ -3488,7 +3493,8 @@
         "observability",
         "tutorial",
         "intro",
-        "kubecon-eu-2018"
+        "kubecon-eu-2018",
+        "linkerd"
       ],
       "links": [],
       "summary": "An introductory session on Linkerd that explains the problems a service mesh solves and demonstrates how to implement it on Kubernetes, showing how adding a mesh can improve application performance and reliability.",
@@ -6013,7 +6019,9 @@
         "storage",
         "operator",
         "statefulset",
-        "kubecon-eu-2018"
+        "kubecon-eu-2018",
+        "vitess",
+        "mysql"
       ],
       "links": [
         {
